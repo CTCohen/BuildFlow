@@ -27,10 +27,32 @@ generation are AI-agent automated; the sell and onboarding are human.
 - **Onboarding** — smooth path for a business to adopt and go live with their new site.
 - **Bilingual output** — sites and messaging work equally well in English and Spanish.
 
+## Delivery model
+
+**One multi-tenant codebase. We host and maintain every site. No code is ever handed over.**
+Each site = the same Astro app rendering a per-client content folder + theme config.
+
+- **B — Managed Growth (default offer):** $99/mo. Hosting, SSL, domain, local + AI SEO,
+  unlimited small content edits, monthly check-in. Annual: $990/yr.
+- **A — Ownership (downsell, offer only if they reject monthly):** $497 one-time. Static
+  starter site on the client's own host, 1 month transition support, then no ongoing
+  service. Hosting/domain/email bills become theirs at handoff (in writing).
+- Cold outreach leads with B; A is the fallback.
+- No per-client custom code. New needs become config-flagged template features or are declined.
+
+Full detail: `docs/delivery-model.md`.
+
 ## Technical stack
 
-_To be locked down. Requirement: one clear stack that works for a solo operator, is cheap
-to run, and won't force a rewrite later. Candidate decisions tracked in `docs/tech-stack.md`._
+- **Public sites:** Astro, single multi-tenant app, routed by domain
+- **Content:** files in repo — `content/<client>/{pages,theme.json}` (no DB until ~10 clients)
+- **Hosting:** Railway (one service, many custom domains) + Cloudflare (DNS/SSL/cache)
+- **Forms → leads:** contact/quote form → small endpoint → email + SMS to owner
+- **Agents (discovery, outreach, site-gen):** run native on Chase's machine + cloud against
+  **Claude Pro** — no Anthropic API. Embedding Claude *in* a product is a separate metered call.
+- **Pipeline state:** `pipeline.md` / Airtable free tier — not a database
+
+Candidate decisions + open questions: `docs/tech-stack.md`.
 
 ## Critical paths (cannot break)
 
@@ -43,10 +65,11 @@ to run, and won't force a rewrite later. Candidate decisions tracked in `docs/te
 
 ## Constraints
 
-- **Token budget:** Claude Pro plan this month — limited usage. Every automation run must
-  report tokens consumed. Track production vs. spend in `metrics/` so automation doesn't
-  starve other work.
+- **Claude Pro usage:** agents and site-gen run against the Pro plan (no API). Log each
+  significant automation run in `metrics/token-log.md` so pipeline work doesn't starve
+  other Claude Code work.
 - Minimalist business: few moving parts by design. Prefer removing a step to adding one.
+- One codebase. If a fix would only help one client, it's the wrong fix.
 
 ## Decision rules
 
@@ -66,24 +89,27 @@ to run, and won't force a rewrite later. Candidate decisions tracked in `docs/te
 
 ## Testing strategy
 
-Owner needs help defining this. Known targets:
-- Website output quality checks (automated + human eyes)
-- AI-agent integration + handoff correctness across the full process
-- Speed: start→built, start→closed
-- E2E of the full pipeline
-- Auth + onboarding
-- Discovery quality (how well the AI finds real candidates)
-- Language: EN + ES site operation
-See `routines/testing.md`.
+Two layers (`routines/testing.md`):
+- **Template** — full suite run only when the shared Astro app/theme changes (responsive,
+  a11y, Lighthouse, components, visual regression).
+- **Per-client QA gate** — `npm run qa -- --client <slug>` on every generated site before
+  it goes to outreach/handoff: no placeholder leakage, required content present, links,
+  form submit, EN/ES parity, Lighthouse budget, layout sanity, LLM rubric review.
+- Calibrate: first ~10 sites also reviewed by hand against the same rubric to tune thresholds.
+
+Still to define: agent-handoff correctness, speed (start→built / start→closed), discovery
+quality metric, auth + onboarding walkthrough.
 
 ## Do's
 
-_TBD — capture proven patterns here as they emerge._
 - Keep the pipeline minimal; delete steps before adding them.
-- Every automated run logs token cost.
+- Every fix lands in the shared codebase and helps all sites.
+- Run the per-client QA gate before any site leaves the pipeline.
+- Log significant automation runs in `metrics/token-log.md`.
 
 ## Don'ts
 
-_TBD — capture anti-patterns here as they emerge._
 - Don't ship outreach copy or onboarding changes without approval.
-- Don't let an automation run untracked against the Pro token budget.
+- Don't write per-client code or one-off patches.
+- Don't promise lead *outcomes* in package B — promise the lead-capture machinery.
+- Don't hand over code, hosting, or DNS under package B.

@@ -13,11 +13,12 @@ _Set a specific, shippable goal here._
 
 ## Focus areas
 
-- Lock the tech stack (`docs/tech-stack.md`) — solo-friendly, cheap, durable
+- Stand up the multi-tenant Astro app on Railway + Cloudflare (one site rendering)
+- Build the per-client QA gate (`npm run qa`) — see `routines/testing.md`
 - Stand up automated discovery of candidate service businesses
 - Stand up automated email + SMS outreach with human first-reply handoff
 - Site-generation agent producing a full, high-quality EN/ES site per candidate
-- Token accounting for every automated run (`metrics/`)
+- Finalize the offer sheet (B $99/mo default, A $497 downsell) — `docs/delivery-model.md`
 
 ## In scope
 
@@ -41,5 +42,7 @@ _Set a specific, shippable goal here._
 
 ## Constraints
 
-- Claude Pro usage limits this month — automation must report and cap token use
+- Claude Pro usage limits — log significant automation/site-gen runs in `metrics/token-log.md`
+  so pipeline work doesn't starve other Claude Code work (no Anthropic API in use)
 - Solo operator — no step that needs a second person
+- One codebase — no per-client code

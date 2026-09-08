@@ -23,9 +23,13 @@ structure, copy, imagery. Drop-in replacement or first site.
 ### 5. Onboarding / go-live — `idea`
 Business adopts the site and makes it live without a support call. Changes require approval.
 
-### 6. Token accounting — `idea`
-Every automated run reports tokens consumed to `metrics/`. Enforce per-run caps against
-the Claude Pro budget.
+### 6. Per-client QA gate — `building`
+`npm run qa -- --client <slug>` on every generated site before outreach/handoff.
+9 checks incl. placeholder leakage, EN/ES parity, Lighthouse budget, LLM rubric review
+(`routines/testing.md`). Hard-fail blocks the site.
+
+### 7. Usage logging — `idea`
+Significant automation + site-gen runs logged in `metrics/token-log.md` (Claude Pro, no API).
 
 ## Supporting
 
