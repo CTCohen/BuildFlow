@@ -1,0 +1,60 @@
+{
+  "slug": "demo-plumbing",
+  "business": {
+    "name": "Northgate Plumbing Co.",
+    "trade": "plumbing",
+    "phone": "+1-512-555-0148",
+    "email": "office@northgateplumbing.example",
+    "cityState": "Austin, TX",
+    "serviceAreas": ["Austin", "Round Rock", "Pflugerville", "Cedar Park", "Georgetown"],
+    "hours": "Mon–Fri 7am–6pm · Sat 8am–2pm · 24/7 emergency line",
+    "yearsInBusiness": 17,
+    "licenseNo": "TX-MPL-38842"
+  },
+  "brand": {
+    "primary": "#0b5cad",
+    "accent": "#f2a516",
+    "heroStyle": "split",
+    "typePairing": "grotesk-serif",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "Licensed plumbers, same-day service",
+      "heroHeadline": "Austin plumbing done right the first time",
+      "heroSub": "From a leaking water heater to a full repipe, Northgate Plumbing shows up on time, quotes before we start, and cleans up when we leave.",
+      "primaryCta": "Get a free quote",
+      "about": "Northgate Plumbing has served the north Austin metro since 2007. We're a family-run shop of licensed master plumbers who treat your home like our own — flat-rate pricing, no upsells, and a one-year workmanship guarantee on every job. When you call, you talk to a plumber, not a call center.",
+      "services": [
+        { "name": "Water heater repair & install", "blurb": "Tank and tankless. We stock the common brands so most swaps are done in a day." },
+        { "name": "Drain cleaning & camera inspection", "blurb": "Hydro-jetting and in-line camera to find the real problem, not just clear it once." },
+        { "name": "Leak detection & repipe", "blurb": "Slab leaks, pinhole leaks, old galvanized lines — located precisely and repaired cleanly." },
+        { "name": "Emergency plumbing", "blurb": "Burst pipes and sewer backups, 24/7. Live dispatch, no answering service." }
+      ],
+      "reviews": [
+        { "quote": "Called at 6am with no hot water, had a new heater installed by lunch. Fair price, spotless work.", "author": "Marcy D.", "location": "Round Rock" },
+        { "quote": "They found a slab leak two other companies missed. Honest, thorough, and they explained everything.", "author": "Sam T.", "location": "Austin" },
+        { "quote": "Quoted before starting, stuck to the number, and cleaned up better than they found it.", "author": "Priya R.", "location": "Cedar Park" }
+      ]
+    },
+    "es": {
+      "tagline": "Plomeros con licencia, servicio el mismo día",
+      "heroHeadline": "Plomería en Austin bien hecha desde la primera vez",
+      "heroSub": "Desde un calentador de agua con fugas hasta un recambio completo de tubería, Northgate Plumbing llega a tiempo, cotiza antes de empezar y deja todo limpio.",
+      "primaryCta": "Pide tu presupuesto gratis",
+      "about": "Northgate Plumbing atiende al norte del área metropolitana de Austin desde 2007. Somos un negocio familiar de plomeros maestros con licencia que tratan su casa como la nuestra: precio fijo, sin ventas adicionales y garantía de un año en cada trabajo. Cuando llama, habla con un plomero, no con un centro de llamadas.",
+      "services": [
+        { "name": "Reparación e instalación de calentadores", "blurb": "De tanque y sin tanque. Tenemos las marcas comunes en stock, así que la mayoría se cambian en un día." },
+        { "name": "Limpieza de drenajes e inspección con cámara", "blurb": "Hidrojet y cámara en línea para encontrar el problema real, no solo destaparlo una vez." },
+        { "name": "Detección de fugas y recambio de tubería", "blurb": "Fugas bajo losa, fugas de alfiler y tuberías galvanizadas viejas: localizadas con precisión y reparadas sin desorden." },
+        { "name": "Plomería de emergencia", "blurb": "Tuberías rotas y reflujo de aguas negras, 24/7. Despacho en vivo, sin contestador." }
+      ],
+      "reviews": [
+        { "quote": "Llamé a las 6am sin agua caliente y para el mediodía tenía un calentador nuevo. Precio justo, trabajo impecable.", "author": "Marcy D.", "location": "Round Rock" },
+        { "quote": "Encontraron una fuga bajo la losa que otras dos empresas pasaron por alto. Honestos y minuciosos.", "author": "Sam T.", "location": "Austin" },
+        { "quote": "Cotizaron antes de empezar, respetaron el precio y dejaron todo más limpio de como lo encontraron.", "author": "Priya R.", "location": "Cedar Park" }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}

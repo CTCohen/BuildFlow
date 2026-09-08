@@ -1,0 +1,142 @@
+// Client data contract — shared by the Astro app and scripts/qa.mjs.
+// Zero dependencies so the QA gate runs standalone.
+
+export const TRADES = [
+  "plumbing", "hvac", "electrical", "roofing", "carpentry",
+  "house-cleaning", "carpet-cleaning", "pressure-washing", "junk-removal",
+];
+
+export const HERO_STYLES = ["photo-left", "full-bleed", "split"];
+export const TYPE_PAIRINGS = ["grotesk-serif", "humanist", "classic"];
+export const DENSITIES = ["compact", "comfortable", "spacious"];
+export const LANGS = ["en", "es"];
+
+const PHONE_RE = /^\+?[0-9][0-9\-().\s]{7,}$/;
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const HEX_RE = /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
+
+// Regexes, not bare substrings — "todo" is a common Spanish word, "insert" etc.
+// need boundaries. Each entry: [label, regex].
+const PLACEHOLDER_PATTERNS = [
+  ["lorem ipsum", /lorem\s+ipsum/i],
+  ["TODO marker", /\bTODO\b|\btodo:|\bFIXME\b/],
+  ["TBD marker", /\bTBD\b/],
+  ["mustache token", /\{\{|\}\}/],
+  ["bracket token", /\[(business|name|city|phone|trade|company|insert)[^\]]*\]/i],
+  ["example.com", /example\.com/i],
+  ["'placeholder'", /\bplaceholder\b/i],
+  ["'your business'", /\byour business name\b/i],
+  ["'insert X here'", /\binsert\b[^.]{0,30}\bhere\b/i],
+  ["xxxx", /x{4,}/i],
+  ["lipsum filler", /\bipsum\b/i],
+];
+
+function isNonEmptyString(v) {
+  return typeof v === "string" && v.trim().length > 0;
+}
+
+function hasPlaceholder(str) {
+  const s = String(str);
+  return PLACEHOLDER_PATTERNS.filter(([, re]) => re.test(s)).map(([label]) => label);
+}
+
+/**
+ * @param {any} data
+ * @returns {{ ok: boolean, errors: string[], warnings: string[] }}
+ */
+export function validateClient(data) {
+  const errors = [];
+  const warnings = [];
+  const err = (m) => errors.push(m);
+  const warn = (m) => warnings.push(m);
+
+  if (!data || typeof data !== "object") {
+    return { ok: false, errors: ["client data is not an object"], warnings };
+  }
+
+  if (!isNonEmptyString(data.slug)) err("slug: required");
+  else if (!/^[a-z0-9-]+$/.test(data.slug)) err("slug: lowercase letters, digits, hyphens only");
+
+  // ---- business ----
+  const b = data.business || {};
+  if (!isNonEmptyString(b.name)) err("business.name: required");
+  if (!TRADES.includes(b.trade)) err(`business.trade: must be one of ${TRADES.join(", ")}`);
+  if (!isNonEmptyString(b.phone) || !PHONE_RE.test(b.phone)) err("business.phone: required, valid phone");
+  if (!isNonEmptyString(b.email) || !EMAIL_RE.test(b.email)) err("business.email: required, valid email");
+  if (!isNonEmptyString(b.cityState)) err("business.cityState: required (e.g. 'Austin, TX')");
+  if (!Array.isArray(b.serviceAreas) || b.serviceAreas.length < 1) err("business.serviceAreas: >= 1 area");
+  if (!isNonEmptyString(b.hours)) err("business.hours: required");
+  if (b.yearsInBusiness != null && typeof b.yearsInBusiness !== "number") err("business.yearsInBusiness: number");
+  if (!isNonEmptyString(b.licenseNo)) warn("business.licenseNo: missing (trades trust signal)");
+
+  // ---- brand ----
+  const br = data.brand || {};
+  if (!HEX_RE.test(br.primary || "")) err("brand.primary: required hex color");
+  if (!HEX_RE.test(br.accent || "")) err("brand.accent: required hex color");
+  if (!HERO_STYLES.includes(br.heroStyle)) err(`brand.heroStyle: one of ${HERO_STYLES.join(", ")}`);
+  if (!TYPE_PAIRINGS.includes(br.typePairing)) err(`brand.typePairing: one of ${TYPE_PAIRINGS.join(", ")}`);
+  if (!DENSITIES.includes(br.density)) err(`brand.density: one of ${DENSITIES.join(", ")}`);
+
+  // ---- content, per language ----
+  const content = data.content || {};
+  for (const lang of LANGS) {
+    const c = content[lang];
+    const p = `content.${lang}`;
+    if (!c || typeof c !== "object") {
+      err(`${p}: required (both en and es must be present)`);
+      continue;
+    }
+    for (const key of ["tagline", "heroHeadline", "heroSub", "primaryCta", "about"]) {
+      if (!isNonEmptyString(c[key])) err(`${p}.${key}: required`);
+    }
+    if (!Array.isArray(c.services) || c.services.length < 3) {
+      err(`${p}.services: >= 3`);
+    } else {
+      c.services.forEach((s, i) => {
+        if (!isNonEmptyString(s?.name)) err(`${p}.services[${i}].name: required`);
+        if (!isNonEmptyString(s?.blurb)) err(`${p}.services[${i}].blurb: required`);
+      });
+    }
+    if (!Array.isArray(c.reviews) || c.reviews.length < 2) {
+      err(`${p}.reviews: >= 2`);
+    } else {
+      c.reviews.forEach((r, i) => {
+        if (!isNonEmptyString(r?.quote)) err(`${p}.reviews[${i}].quote: required`);
+        if (!isNonEmptyString(r?.author)) err(`${p}.reviews[${i}].author: required`);
+      });
+    }
+
+    // placeholder leakage
+    for (const [k, v] of Object.entries(c)) {
+      const hits = hasPlaceholder(typeof v === "string" ? v : JSON.stringify(v));
+      if (hits.length) err(`${p}.${k}: placeholder text (${[...new Set(hits)].join(", ")})`);
+    }
+  }
+
+  // ---- EN/ES parity ----
+  if (content.en && content.es) {
+    const enKeys = Object.keys(content.en).sort().join(",");
+    const esKeys = Object.keys(content.es).sort().join(",");
+    if (enKeys !== esKeys) err("content: en and es key sets differ");
+
+    for (const key of ["tagline", "heroHeadline", "heroSub", "about"]) {
+      if (
+        isNonEmptyString(content.en[key]) &&
+        content.en[key].trim() === (content.es[key] || "").trim()
+      ) {
+        warn(`content.es.${key}: identical to English (untranslated?)`);
+      }
+    }
+    if (
+      Array.isArray(content.en.services) &&
+      Array.isArray(content.es.services) &&
+      content.en.services.length !== content.es.services.length
+    ) {
+      err("content: en.services and es.services length differ");
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+export { PLACEHOLDER_PATTERNS, hasPlaceholder };

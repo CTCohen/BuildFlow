@@ -1,0 +1,13 @@
+---
+import { client, tel, t } from "../lib/client";
+const c = t("en");
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--color-line)] bg-white p-3 shadow-[0_-8px_24px_-16px_rgba(16,24,40,0.3)] md:hidden"
+>
+  <a href={`tel:${tel}`} class="btn btn-primary w-full justify-center">
+    {c.primaryCta} · {client.business.phone}
+  </a>
+</div>
+<div class="h-20 md:hidden" aria-hidden="true"></div>

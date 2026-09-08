@@ -1,0 +1,98 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+import { client, tel, t, type Lang } from "../lib/client";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+  path?: string;
+}
+
+const { title, lang = "en", path = "/" } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const pageTitle = title
+  ? `${title} · ${biz.name}`
+  : `${biz.name} — ${c.tagline}`;
+const description = Astro.props.description ?? c.heroSub;
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "";
+
+// contrast pick for text on the brand color
+function readableInk(hex: string): string {
+  const h = hex.replace("#", "");
+  const full = h.length === 3 ? h.split("").map((x) => x + x).join("") : h;
+  const r = parseInt(full.slice(0, 2), 16);
+  const g = parseInt(full.slice(2, 4), 16);
+  const b = parseInt(full.slice(4, 6), 16);
+  const l = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return l > 0.6 ? "#14181f" : "#ffffff";
+}
+const brandInk = readableInk(client.brand.primary);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: biz.name,
+  telephone: biz.phone,
+  email: biz.email,
+  areaServed: biz.serviceAreas,
+  address: { "@type": "PostalAddress", addressLocality: biz.cityState },
+  description: c.heroSub,
+  ...(siteUrl ? { url: siteUrl } : {}),
+};
+---
+
+<!doctype html>
+<html
+  lang={lang}
+  class={`type-${client.brand.typePairing} density-${client.brand.density}`}
+  style={`--brand:${client.brand.primary};--brand-ink:${brandInk};--brand-accent:${client.brand.accent};`}
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={client.brand.primary} />
+    <link rel="canonical" href={`${siteUrl}${path}`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index,follow" />
+    <meta name="generator" content={Astro.generator} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow"
+      >Skip to content</a
+    >
+    <Nav lang={lang} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <CallBar />
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-in");
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+    <span hidden data-tel={tel}></span>
+  </body>
+</html>

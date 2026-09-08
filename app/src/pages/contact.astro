@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import ServiceArea from "../components/ServiceArea.astro";
+import { client, tel, t } from "../lib/client";
+const c = t("en");
+const biz = client.business;
+---
+
+<Base title="Contact" path="/contact">
+  <section class="section pb-0">
+    <div class="container max-w-3xl">
+      <h1 class="text-4xl md:text-5xl">Contact {biz.name}</h1>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)]">
+        Call <a class="font-semibold" style="color:var(--brand)" href={`tel:${tel}`}>{biz.phone}</a>
+        or send the form below — {c.services[0].name.toLowerCase()} to emergencies, we reply the same business day.
+      </p>
+    </div>
+  </section>
+  <QuoteForm />
+  <ServiceArea />
+</Base>

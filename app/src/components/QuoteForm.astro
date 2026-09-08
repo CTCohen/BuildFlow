@@ -1,0 +1,55 @@
+---
+import { client, t, type Lang } from "../lib/client";
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+
+// Wire a real handler with FORM_ENDPOINT (e.g. a Web3Forms / Railway URL).
+// Until then the form falls back to the owner's email so leads never drop.
+const endpoint = import.meta.env.FORM_ENDPOINT as string | undefined;
+const action = endpoint || `mailto:${biz.email}`;
+const method = endpoint ? "POST" : "GET";
+
+const L =
+  lang === "es"
+    ? { h: "Pide tu presupuesto gratis", name: "Nombre", phone: "Teléfono", email: "Correo",
+        service: "Servicio", msg: "¿Cómo podemos ayudar?", send: "Enviar", note: "Te respondemos el mismo día hábil." }
+    : { h: "Get your free quote", name: "Name", phone: "Phone", email: "Email",
+        service: "Service", msg: "How can we help?", send: "Send request", note: "We reply the same business day." };
+---
+
+<section class="section" id="contact">
+  <div class="container max-w-2xl">
+    <h2 class="text-3xl md:text-4xl">{L.h}</h2>
+    <p class="mt-2 text-[var(--color-ink-soft)]">{L.note}</p>
+    <form action={action} method={method} class="mt-8 grid gap-4">
+      <input type="hidden" name="_subject" value={`New lead — ${biz.name}`} />
+      <input type="hidden" name="business" value={biz.name} />
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="grid gap-1.5 text-sm font-medium">
+          {L.name}
+          <input name="name" required autocomplete="name" class="rounded-lg border border-[var(--color-line)] px-3 py-2.5" />
+        </label>
+        <label class="grid gap-1.5 text-sm font-medium">
+          {L.phone}
+          <input name="phone" type="tel" required autocomplete="tel" class="rounded-lg border border-[var(--color-line)] px-3 py-2.5" />
+        </label>
+      </div>
+      <label class="grid gap-1.5 text-sm font-medium">
+        {L.email}
+        <input name="email" type="email" required autocomplete="email" class="rounded-lg border border-[var(--color-line)] px-3 py-2.5" />
+      </label>
+      <label class="grid gap-1.5 text-sm font-medium">
+        {L.service}
+        <select name="service" class="rounded-lg border border-[var(--color-line)] px-3 py-2.5">
+          {c.services.map((s) => <option value={s.name}>{s.name}</option>)}
+        </select>
+      </label>
+      <label class="grid gap-1.5 text-sm font-medium">
+        {L.msg}
+        <textarea name="message" rows="4" class="rounded-lg border border-[var(--color-line)] px-3 py-2.5"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary justify-center">{L.send}</button>
+    </form>
+  </div>
+</section>

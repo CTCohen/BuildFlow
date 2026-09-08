@@ -13,8 +13,9 @@ _Set a specific, shippable goal here._
 
 ## Focus areas
 
-- Stand up the multi-tenant Astro app on Railway + Cloudflare (one site rendering)
-- Build the per-client QA gate (`npm run qa`) — see `routines/testing.md`
+- [in progress] Astro app scaffolded + demo site building + QA gate passing (`app/`)
+- QA gate: wire the 3 stubbed checks (Lighthouse, layout sanity, LLM rubric)
+- Deploy the demo site to Railway + Cloudflare to prove the hosting path
 - Stand up automated discovery of candidate service businesses
 - Stand up automated email + SMS outreach with human first-reply handoff
 - Site-generation agent producing a full, high-quality EN/ES site per candidate

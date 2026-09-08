@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import Services from "../components/Services.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import { client, t } from "../lib/client";
+const c = t("en");
+const biz = client.business;
+---
+
+<Base title="Services" path="/services">
+  <section class="section pb-0">
+    <div class="container max-w-3xl">
+      <h1 class="text-4xl md:text-5xl">Our services</h1>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)]">
+        {biz.name} provides {c.services.length} core services across {biz.serviceAreas.join(", ")}.
+        {biz.licenseNo ? " Licensed, insured, and workmanship guaranteed." : ""}
+      </p>
+    </div>
+  </section>
+  <Services heading="Every service we offer" />
+  <QuoteForm />
+</Base>

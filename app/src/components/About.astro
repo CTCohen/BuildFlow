@@ -1,0 +1,31 @@
+---
+import { client, t, type Lang } from "../lib/client";
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const title = lang === "es" ? "Por qué elegirnos" : "Why choose us";
+const facts = [
+  biz.yearsInBusiness
+    ? { k: biz.yearsInBusiness + "+", v: lang === "es" ? "años de experiencia" : "years in business" }
+    : null,
+  { k: biz.serviceAreas.length + "", v: lang === "es" ? "zonas atendidas" : "areas served" },
+  biz.licenseNo ? { k: "✓", v: lang === "es" ? "Con licencia y asegurado" : "Licensed & insured" } : null,
+].filter(Boolean) as { k: string; v: string }[];
+---
+
+<section class="section bg-[var(--color-surface-2)]" id="about">
+  <div class="container grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl">{title}</h2>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)] measure">{c.about}</p>
+    </div>
+    <dl class="grid grid-cols-3 gap-4">
+      {facts.map((f) => (
+        <div class="card p-4 text-center">
+          <dt class="text-2xl font-bold" style="color:var(--brand)">{f.k}</dt>
+          <dd class="mt-1 text-xs text-[var(--color-ink-soft)]">{f.v}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

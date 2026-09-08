@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import About from "../components/About.astro";
+import Testimonials from "../components/Testimonials.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import { client, t } from "../lib/client";
+const c = t("en");
+const biz = client.business;
+---
+
+<Base title="About" path="/about">
+  <section class="section pb-0">
+    <div class="container max-w-3xl">
+      <h1 class="text-4xl md:text-5xl">About {biz.name}</h1>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)]">{c.about}</p>
+    </div>
+  </section>
+  <About />
+  <Testimonials />
+  <QuoteForm />
+</Base>

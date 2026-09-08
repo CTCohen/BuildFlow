@@ -1,0 +1,39 @@
+---
+import { client, tel, t, type Lang } from "../lib/client";
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-line)] bg-white">
+  <div class="container grid gap-8 py-12 md:grid-cols-3">
+    <div>
+      <p class="font-bold">{biz.name}</p>
+      <p class="mt-2 text-sm text-[var(--color-ink-soft)]">{c.tagline}</p>
+      {biz.licenseNo && (
+        <p class="mt-2 text-xs text-[var(--color-ink-soft)]">
+          {lang === "es" ? "Licencia" : "License"} #{biz.licenseNo}
+        </p>
+      )}
+    </div>
+    <div class="text-sm">
+      <p class="font-semibold">{lang === "es" ? "Contacto" : "Contact"}</p>
+      <ul class="mt-2 space-y-1 text-[var(--color-ink-soft)]">
+        <li><a class="hover:text-[var(--color-ink)]" href={`tel:${tel}`}>{biz.phone}</a></li>
+        <li><a class="hover:text-[var(--color-ink)]" href={`mailto:${biz.email}`}>{biz.email}</a></li>
+        <li>{biz.hours}</li>
+      </ul>
+    </div>
+    <div class="text-sm">
+      <p class="font-semibold">{lang === "es" ? "Zona de servicio" : "Service area"}</p>
+      <p class="mt-2 text-[var(--color-ink-soft)]">{biz.serviceAreas.join(" · ")}</p>
+    </div>
+  </div>
+  <div class="border-t border-[var(--color-line)]">
+    <div class="container flex flex-col gap-1 py-5 text-xs text-[var(--color-ink-soft)] sm:flex-row sm:justify-between">
+      <span>© {year} {biz.name}. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}</span>
+      <span>{lang === "es" ? "Sitio por" : "Site by"} BuildFlow</span>
+    </div>
+  </div>
+</footer>

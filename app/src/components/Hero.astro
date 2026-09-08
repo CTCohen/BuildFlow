@@ -1,0 +1,89 @@
+---
+import { client, tel, t, type Lang } from "../lib/client";
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const style = client.brand.heroStyle;
+const secondaryCta = lang === "es" ? "Ver servicios" : "See services";
+const trust = [
+  biz.yearsInBusiness ? `${biz.yearsInBusiness}+ ${lang === "es" ? "años" : "years"}` : null,
+  biz.licenseNo ? (lang === "es" ? "Con licencia y asegurado" : "Licensed & insured") : null,
+  biz.serviceAreas.length
+    ? `${lang === "es" ? "Sirviendo" : "Serving"} ${biz.serviceAreas.slice(0, 3).join(", ")}`
+    : null,
+].filter(Boolean) as string[];
+---
+
+<section
+  class:list={[
+    "relative overflow-hidden",
+    style === "full-bleed" ? "text-[var(--brand-ink)]" : "",
+  ]}
+  style={style === "full-bleed"
+    ? "background:linear-gradient(135deg,var(--brand),color-mix(in srgb,var(--brand) 70%, #000))"
+    : ""}
+>
+  <div
+    class:list={[
+      "container grid items-center gap-10 py-16 md:py-24",
+      style === "split" || style === "photo-left" ? "md:grid-cols-2" : "max-w-3xl text-center mx-auto",
+    ]}
+  >
+    <div class:list={[style === "photo-left" ? "md:order-2" : ""]}>
+      <p
+        class="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+        style={style === "full-bleed"
+          ? "background:rgba(255,255,255,.16)"
+          : "background:var(--color-surface-2);color:var(--color-ink-soft)"}
+      >
+        {c.tagline}
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-[3.4rem]">{c.heroHeadline}</h1>
+      <p
+        class:list={[
+          "mt-4 text-lg measure",
+          style === "full-bleed" ? "opacity-90" : "text-[var(--color-ink-soft)]",
+          style === "full-bleed" ? "mx-auto" : "",
+        ]}
+      >
+        {c.heroSub}
+      </p>
+      <div
+        class:list={[
+          "mt-7 flex flex-wrap gap-3",
+          style === "full-bleed" ? "justify-center" : "",
+        ]}
+      >
+        <a href={`tel:${tel}`} class="btn btn-primary">{c.primaryCta}</a>
+        <a href="/services" class="btn btn-ghost">{secondaryCta}</a>
+      </div>
+      <ul
+        class:list={[
+          "mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm",
+          style === "full-bleed" ? "justify-center opacity-90" : "text-[var(--color-ink-soft)]",
+        ]}
+      >
+        {trust.map((item) => (
+          <li class="flex items-center gap-1.5">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {(style === "split" || style === "photo-left") && (
+      <div class:list={[style === "photo-left" ? "md:order-1" : ""]}>
+        <div
+          class="aspect-[4/3] w-full rounded-[var(--radius-xl)] shadow-[var(--shadow-lift)]"
+          style="background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 22%, #fff),color-mix(in srgb,var(--brand-accent) 30%, #fff))"
+          role="img"
+          aria-label={`${biz.name} team at work`}
+        >
+        </div>
+      </div>
+    )}
+  </div>
+</section>
