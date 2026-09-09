@@ -1,0 +1,63 @@
+---
+import { client } from "../lib/client";
+
+interface Props {
+  service?: string;
+  faqs?: { question: string; answer: string }[];
+}
+
+const { faqs, service } = Astro.props;
+const biz = client.business;
+
+const defaultFaqs = [
+  {
+    question: `How quickly can you handle ${service ? service.toLowerCase() : "my issue"}?`,
+    answer: `We offer same-day service in ${biz.serviceAreas[0]} and surrounding areas. Call before 2pm for same-day scheduling.`,
+  },
+  {
+    question: "Do you provide a guarantee?",
+    answer: "Yes. We stand behind all our work with a one-year workmanship guarantee. If something fails due to our workmanship, we fix it free.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: `Yes. We're fully licensed (${biz.licenseNo}), bonded, and insured. You can verify our credentials with the state.`,
+  },
+];
+
+const qList = faqs || defaultFaqs;
+---
+
+<section class="section">
+  <div class="container max-w-3xl">
+    <h2 class="text-2xl">Common questions</h2>
+    <div class="mt-6 space-y-4">
+      {qList.map(({ question, answer }) => (
+        <details class="group border-b border-[var(--color-border)]">
+          <summary class="cursor-pointer py-4 font-semibold hover:text-[var(--brand)]">
+            {question}
+          </summary>
+          <p class="pb-4 pl-4 text-sm text-[var(--color-ink-soft)]">{answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+  <!-- FAQPage schema for GEO -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly can you handle my issue?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Same-day service available. Call before 2pm for same-day scheduling." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide a guarantee?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, one-year workmanship guarantee on all work." }
+        }
+      ]
+    }
+  </script>
+</section>

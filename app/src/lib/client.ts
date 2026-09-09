@@ -24,6 +24,11 @@ export type Lang = "en" | "es";
 export interface Service {
   name: string;
   blurb: string;
+  slug?: string;
+  description?: string;
+  symptoms?: string[];
+  process?: { title: string; description: string }[];
+  pricingSignal?: string;
 }
 export interface Review {
   quote: string;

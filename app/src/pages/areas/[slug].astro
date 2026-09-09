@@ -1,0 +1,82 @@
+---
+import Base from "../../layouts/Base.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
+import FAQ from "../../components/FAQ.astro";
+import { client, t } from "../../lib/client";
+
+export function getStaticPaths() {
+  const langs = ["en", "es"] as const;
+  const paths = [];
+  for (const lang of langs) {
+    for (const area of client.business.serviceAreas) {
+      paths.push({
+        params: { slug: area.toLowerCase().replace(/[^\w]+/g, "-") },
+        props: { lang, area },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  lang: "en" | "es";
+  area: string;
+}
+
+const { lang, area } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const [city, state] = biz.cityState.split(",").map((s: string) => s.trim());
+const title = `${biz.trade} in ${area} · ${biz.name}`;
+---
+
+<Base title={title} path={`/areas/${area.toLowerCase().replace(/[^\w]+/g, "-")}`}>
+  <!-- Hero -->
+  <section class="section pb-0">
+    <div class="container max-w-3xl">
+      <h1 class="text-3xl md:text-4xl">
+        {biz.name} in {area}
+      </h1>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)]">
+        We serve {area} with same-day service, licensed technicians, and a one-year guarantee on all work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Local proof -->
+  <section class="section">
+    <div class="container max-w-3xl">
+      <div class="card">
+        <p class="text-sm text-[var(--color-ink-soft)] uppercase tracking-wide">Service area</p>
+        <p class="mt-3 font-semibold">{area}, {state}</p>
+        <p class="mt-2 text-sm text-[var(--color-ink-soft)]">
+          Based in {city}, we cover {area} and {biz.serviceAreas.length} neighboring areas with response times under {biz.hours.includes("emergency") ? "1 hour" : "4 hours"}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services offered here -->
+  <section class="section">
+    <div class="container max-w-3xl">
+      <h2 class="text-2xl">Services we offer in {area}</h2>
+      <ul class="mt-4 space-y-3">
+        {c.services.map((svc: any) => (
+          <li class="flex gap-3">
+            <span class="text-[var(--brand)]">✓</span>
+            <div>
+              <p class="font-semibold">{svc.name}</p>
+              <p class="text-sm text-[var(--color-ink-soft)]">{svc.blurb}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQ />
+
+  <!-- CTA -->
+  <QuoteForm />
+</Base>

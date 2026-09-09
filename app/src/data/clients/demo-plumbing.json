@@ -26,10 +26,56 @@
       "primaryCta": "Get a free quote",
       "about": "Northgate Plumbing has served the north Austin metro since 2007. We're a family-run shop of licensed master plumbers who treat your home like our own — flat-rate pricing, no upsells, and a one-year workmanship guarantee on every job. When you call, you talk to a plumber, not a call center.",
       "services": [
-        { "name": "Water heater repair & install", "blurb": "Tank and tankless. We stock the common brands so most swaps are done in a day." },
-        { "name": "Drain cleaning & camera inspection", "blurb": "Hydro-jetting and in-line camera to find the real problem, not just clear it once." },
-        { "name": "Leak detection & repipe", "blurb": "Slab leaks, pinhole leaks, old galvanized lines — located precisely and repaired cleanly." },
-        { "name": "Emergency plumbing", "blurb": "Burst pipes and sewer backups, 24/7. Live dispatch, no answering service." }
+        {
+          "name": "Water heater repair & install",
+          "slug": "water-heater",
+          "blurb": "Tank and tankless. We stock the common brands so most swaps are done in a day.",
+          "description": "No hot water? We repair existing water heaters or install a new system — tank, tankless, or hybrid.",
+          "pricingSignal": "Most repairs $150–$500. New installations $1,200–$3,500 including install. Free estimates, no surprise charges.",
+          "symptoms": [
+            "No hot water at all",
+            "Water only warm, not hot",
+            "Takes forever to get hot",
+            "Leaking or rust on the tank",
+            "Strange noises from the tank",
+            "High energy bills"
+          ],
+          "process": [
+            { "title": "Diagnose", "description": "We test the tank, thermostat, and incoming water to identify the real problem." },
+            { "title": "Quote before starting", "description": "We show you the repair cost or replacement options with pricing and financing." },
+            { "title": "Repair or replace", "description": "Most tanks swap in a day. We haul away the old one and make a clean connection." },
+            { "title": "Test and clean up", "description": "We verify hot water flows, drain is sealed, and there's no mess left behind." }
+          ]
+        },
+        {
+          "name": "Drain cleaning & camera inspection",
+          "slug": "drain-cleaning",
+          "blurb": "Hydro-jetting and in-line camera to find the real problem, not just clear it once.",
+          "description": "Slow drains, backups, or odors? We use video inspection to find the real cause — hair, roots, grease, or collapse.",
+          "pricingSignal": "Camera inspection $200–$350. Cleaning with hydro-jet $400–$1,200. Same-day service available.",
+          "symptoms": [
+            "Drain is slow but not completely blocked",
+            "Water backs up when you run other fixtures",
+            "Bad smell from the drain",
+            "Wet spot in the yard",
+            "Multiple drains are slow",
+            "Frequent clogs in the same line"
+          ]
+        },
+        {
+          "name": "Leak detection & repipe",
+          "slug": "leak-detection",
+          "blurb": "Slab leaks, pinhole leaks, old galvanized lines — located precisely and repaired cleanly.",
+          "description": "Find hidden leaks and repair them without tearing up your whole house. Localized service, flat pricing.",
+          "pricingSignal": "Leak detection $150–$300. Repair cost depends on access and material. We always quote before starting."
+        },
+        {
+          "name": "Emergency plumbing",
+          "slug": "emergency",
+          "blurb": "Burst pipes and sewer backups, 24/7. Live dispatch, no answering service.",
+          "description": "Pipe burst at midnight? We're here. No answering service, no delays. A real person and a tech within hours.",
+          "pricingSignal": "Emergency calls available 24/7. Standard rates apply. Call the emergency line for fastest response."
+        }
       ],
       "reviews": [
         { "quote": "Called at 6am with no hot water, had a new heater installed by lunch. Fair price, spotless work.", "author": "Marcy D.", "location": "Round Rock" },
@@ -44,10 +90,27 @@
       "primaryCta": "Pide tu presupuesto gratis",
       "about": "Northgate Plumbing atiende al norte del área metropolitana de Austin desde 2007. Somos un negocio familiar de plomeros maestros con licencia que tratan su casa como la nuestra: precio fijo, sin ventas adicionales y garantía de un año en cada trabajo. Cuando llama, habla con un plomero, no con un centro de llamadas.",
       "services": [
-        { "name": "Reparación e instalación de calentadores", "blurb": "De tanque y sin tanque. Tenemos las marcas comunes en stock, así que la mayoría se cambian en un día." },
-        { "name": "Limpieza de drenajes e inspección con cámara", "blurb": "Hidrojet y cámara en línea para encontrar el problema real, no solo destaparlo una vez." },
-        { "name": "Detección de fugas y recambio de tubería", "blurb": "Fugas bajo losa, fugas de alfiler y tuberías galvanizadas viejas: localizadas con precisión y reparadas sin desorden." },
-        { "name": "Plomería de emergencia", "blurb": "Tuberías rotas y reflujo de aguas negras, 24/7. Despacho en vivo, sin contestador." }
+        {
+          "name": "Reparación e instalación de calentadores",
+          "slug": "water-heater",
+          "blurb": "De tanque y sin tanque. Tenemos las marcas comunes en stock, así que la mayoría se cambian en un día.",
+          "description": "¿Sin agua caliente? Reparamos calentadores existentes o instalamos un sistema nuevo — tanque, sin tanque o híbrido."
+        },
+        {
+          "name": "Limpieza de drenajes e inspección con cámara",
+          "slug": "drain-cleaning",
+          "blurb": "Hidrojet y cámara en línea para encontrar el problema real, no solo destaparlo una vez."
+        },
+        {
+          "name": "Detección de fugas y recambio de tubería",
+          "slug": "leak-detection",
+          "blurb": "Fugas bajo losa, fugas de alfiler y tuberías galvanizadas viejas: localizadas con precisión y reparadas sin desorden."
+        },
+        {
+          "name": "Plomería de emergencia",
+          "slug": "emergency",
+          "blurb": "Tuberías rotas y reflujo de aguas negras, 24/7. Despacho en vivo, sin contestador."
+        }
       ],
       "reviews": [
         { "quote": "Llamé a las 6am sin agua caliente y para el mediodía tenía un calentador nuevo. Precio justo, trabajo impecable.", "author": "Marcy D.", "location": "Round Rock" },

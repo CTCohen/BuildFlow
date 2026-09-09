@@ -1,0 +1,98 @@
+---
+import Base from "../../layouts/Base.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
+import FAQ from "../../components/FAQ.astro";
+import { client, t } from "../../lib/client";
+
+export function getStaticPaths() {
+  const langs = ["en", "es"] as const;
+  const paths = [];
+  for (const lang of langs) {
+    const content = client.content[lang];
+    for (const service of content.services) {
+      paths.push({
+        params: { slug: service.slug || service.name.toLowerCase().replace(/[^\w]+/g, "-") },
+        props: { lang, service },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  lang: "en" | "es";
+  service: any;
+}
+
+const { lang, service } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const title = `${service.name} in ${biz.cityState.split(",")[0]} | ${biz.name}`;
+---
+
+<Base title={title} path={`/services/${service.slug || service.name.toLowerCase().replace(/[^\w]+/g, "-")}`}>
+  <!-- Hero -->
+  <section class="section pb-0">
+    <div class="container max-w-3xl">
+      <h1 class="text-4xl md:text-5xl">{service.name}</h1>
+      <p class="mt-4 text-lg text-[var(--color-ink-soft)]">
+        {service.description || service.blurb}
+      </p>
+    </div>
+  </section>
+
+  <!-- Direct answer -->
+  {service.pricingSignal && (
+    <section class="section">
+      <div class="container max-w-3xl">
+        <div class="card">
+          <p class="text-sm text-[var(--color-ink-soft)] uppercase tracking-wide">Quick answer</p>
+          <p class="mt-2">{service.pricingSignal}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Symptoms -->
+  {service.symptoms && service.symptoms.length > 0 && (
+    <section class="section">
+      <div class="container max-w-3xl">
+        <h2 class="text-2xl">When you need this</h2>
+        <ul class="mt-4 space-y-2">
+          {service.symptoms.map((s: string) => (
+            <li class="flex gap-3">
+              <span class="text-[var(--brand)]">•</span>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Process -->
+  {service.process && service.process.length > 0 && (
+    <section class="section">
+      <div class="container max-w-3xl">
+        <h2 class="text-2xl">What we do</h2>
+        <ol class="mt-6 space-y-4">
+          {service.process.map((step: any, i: number) => (
+            <li class="flex gap-4">
+              <span class="text-xl font-bold text-[var(--brand)] min-w-8">{i + 1}</span>
+              <div>
+                <h3 class="font-semibold">{step.title}</h3>
+                <p class="mt-1 text-sm text-[var(--color-ink-soft)]">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <FAQ service={service.name} />
+
+  <!-- CTA -->
+  <QuoteForm />
+</Base>
