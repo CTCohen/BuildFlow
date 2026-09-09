@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-09-09T04:21:40.032Z",
+  "rounds": 10,
+  "passed": 10,
+  "failed": 0,
+  "passRate": "100.0%",
+  "elapsedSeconds": "24.9",
+  "averagePerRound": "2.5s",
+  "tradeBreakdown": {
+    "hvac": 8,
+    "plumbing": 2
+  },
+  "results": [
+    {
+      "round": 1,
+      "trade": "plumbing",
+      "client": "Precision Plumbing Plumbing",
+      "slug": "round-loop-1-plumbing-precision-plumbing",
+      "status": "pass",
+      "services": 3,
+      "areas": 3,
+      "years": 12,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 2,
+      "trade": "hvac",
+      "client": "Expert Climate HVAC",
+      "slug": "round-loop-2-hvac-expert-climate",
+      "status": "pass",
+      "services": 4,
+      "areas": 3,
+      "years": 14,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 3,
+      "trade": "hvac",
+      "client": "Comfort Zone HVAC",
+      "slug": "round-loop-3-hvac-comfort-zone",
+      "status": "pass",
+      "services": 3,
+      "areas": 2,
+      "years": 7,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 4,
+      "trade": "hvac",
+      "client": "Cool Guys HVAC",
+      "slug": "round-loop-4-hvac-cool-guys",
+      "status": "pass",
+      "services": 4,
+      "areas": 4,
+      "years": 14,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 5,
+      "trade": "hvac",
+      "client": "Quick Cool HVAC",
+      "slug": "round-loop-5-hvac-quick-cool",
+      "status": "pass",
+      "services": 4,
+      "areas": 4,
+      "years": 7,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 6,
+      "trade": "plumbing",
+      "client": "Local Pipes Plumbing",
+      "slug": "round-loop-6-plumbing-local-pipes",
+      "status": "pass",
+      "services": 4,
+      "areas": 2,
+      "years": 9,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 7,
+      "trade": "hvac",
+      "client": "AirFlow Systems HVAC",
+      "slug": "round-loop-7-hvac-airflow-systems",
+      "status": "pass",
+      "services": 3,
+      "areas": 4,
+      "years": 6,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 8,
+      "trade": "hvac",
+      "client": "AirFlow Systems HVAC",
+      "slug": "round-loop-8-hvac-airflow-systems",
+      "status": "pass",
+      "services": 4,
+      "areas": 3,
+      "years": 3,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 9,
+      "trade": "hvac",
+      "client": "AirFlow Systems HVAC",
+      "slug": "round-loop-9-hvac-airflow-systems",
+      "status": "pass",
+      "services": 4,
+      "areas": 2,
+      "years": 9,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    },
+    {
+      "round": 10,
+      "trade": "hvac",
+      "client": "Phoenix Cooling HVAC",
+      "slug": "round-loop-10-hvac-phoenix-cooling",
+      "status": "pass",
+      "services": 4,
+      "areas": 2,
+      "years": 7,
+      "qaOutput": "PASS · 0 failed · 0 warnings · 3 not-yet-implemented"
+    }
+  ]
+}

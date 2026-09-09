@@ -1,0 +1,123 @@
+{
+  "slug": "round-loop-4-hvac-expert-climate",
+  "business": {
+    "name": "Expert Climate HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-3621",
+    "email": "contact@expertclimate.local",
+    "cityState": "Scottsdale, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Mesa",
+      "Scottsdale"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 10,
+    "licenseNo": "AZ-HVAC-795549"
+  },
+  "brand": {
+    "primary": "#dc2626",
+    "accent": "#0369a1",
+    "heroStyle": "full-bleed",
+    "typePairing": "classic",
+    "density": "compact"
+  },
+  "content": {
+    "en": {
+      "tagline": "Professional hvac service in Mesa, AZ",
+      "heroHeadline": "AC problems solved today",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 10+ years serving Scottsdale area.",
+      "primaryCta": "Get service now",
+      "about": "Serving the Phoenix area for 10 years. Licensed, insured, and committed to fair pricing and honest work.",
+      "services": [
+        {
+          "name": "AC repair",
+          "slug": "ac-repair",
+          "blurb": "Professional ac repair service"
+        },
+        {
+          "name": "System replacement",
+          "slug": "system-replacement",
+          "blurb": "Professional system replacement service"
+        },
+        {
+          "name": "Maintenance",
+          "slug": "maintenance",
+          "blurb": "Professional maintenance service"
+        },
+        {
+          "name": "Ductwork",
+          "slug": "ductwork",
+          "blurb": "Professional ductwork service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Best hvac service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Scottsdale"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de hvac en Mesa, AZ",
+      "heroHeadline": "Problemas de aire acondicionado resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 10+ años sirviendo el área de Mesa.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 10 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "AC repair (Spanish)",
+          "slug": "ac-repair",
+          "blurb": "Servicio profesional de ac repair"
+        },
+        {
+          "name": "System replacement (Spanish)",
+          "slug": "system-replacement",
+          "blurb": "Servicio profesional de system replacement"
+        },
+        {
+          "name": "Maintenance (Spanish)",
+          "slug": "maintenance",
+          "blurb": "Servicio profesional de maintenance"
+        },
+        {
+          "name": "Ductwork (Spanish)",
+          "slug": "ductwork",
+          "blurb": "Servicio profesional de ductwork"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "El mejor servicio de hvac de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Mesa"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

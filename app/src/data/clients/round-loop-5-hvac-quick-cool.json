@@ -1,0 +1,124 @@
+{
+  "slug": "round-loop-5-hvac-quick-cool",
+  "business": {
+    "name": "Quick Cool HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-0223",
+    "email": "contact@quickcool.local",
+    "cityState": "Mesa, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Mesa",
+      "Scottsdale",
+      "Chandler"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 7,
+    "licenseNo": "AZ-HVAC-410235"
+  },
+  "brand": {
+    "primary": "#dc2626",
+    "accent": "#1e40af",
+    "heroStyle": "photo-left",
+    "typePairing": "classic",
+    "density": "compact"
+  },
+  "content": {
+    "en": {
+      "tagline": "Professional hvac service in Chandler, AZ",
+      "heroHeadline": "AC problems solved today",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 7+ years serving Scottsdale area.",
+      "primaryCta": "Get service now",
+      "about": "Serving the Phoenix area for 7 years. Licensed, insured, and committed to fair pricing and honest work.",
+      "services": [
+        {
+          "name": "Emergency repair",
+          "slug": "emergency-repair",
+          "blurb": "Professional emergency repair service"
+        },
+        {
+          "name": "System upgrade",
+          "slug": "system-upgrade",
+          "blurb": "Professional system upgrade service"
+        },
+        {
+          "name": "Maintenance plans",
+          "slug": "maintenance-plans",
+          "blurb": "Professional maintenance plans service"
+        },
+        {
+          "name": "Thermostat installation",
+          "slug": "thermostat-installation",
+          "blurb": "Professional thermostat installation service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Best hvac service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Chandler"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de hvac en Phoenix, AZ",
+      "heroHeadline": "Problemas de aire acondicionado resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 7+ años sirviendo el área de Scottsdale.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 7 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Emergency repair (Spanish)",
+          "slug": "emergency-repair",
+          "blurb": "Servicio profesional de emergency repair"
+        },
+        {
+          "name": "System upgrade (Spanish)",
+          "slug": "system-upgrade",
+          "blurb": "Servicio profesional de system upgrade"
+        },
+        {
+          "name": "Maintenance plans (Spanish)",
+          "slug": "maintenance-plans",
+          "blurb": "Servicio profesional de maintenance plans"
+        },
+        {
+          "name": "Thermostat installation (Spanish)",
+          "slug": "thermostat-installation",
+          "blurb": "Servicio profesional de thermostat installation"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "El mejor servicio de hvac de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Chandler"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

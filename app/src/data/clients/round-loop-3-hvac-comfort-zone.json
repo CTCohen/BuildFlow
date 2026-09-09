@@ -1,0 +1,112 @@
+{
+  "slug": "round-loop-3-hvac-comfort-zone",
+  "business": {
+    "name": "Comfort Zone HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-1140",
+    "email": "contact@comfortzone.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Mesa"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 7,
+    "licenseNo": "AZ-HVAC-585944"
+  },
+  "brand": {
+    "primary": "#dc2626",
+    "accent": "#059669",
+    "heroStyle": "photo-left",
+    "typePairing": "humanist",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Professional hvac service in Phoenix, AZ",
+      "heroHeadline": "AC problems solved today",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 7+ years serving Mesa area.",
+      "primaryCta": "Get service now",
+      "about": "Serving the Phoenix area for 7 years. Licensed, insured, and committed to fair pricing and honest work.",
+      "services": [
+        {
+          "name": "Emergency repair",
+          "slug": "emergency-repair",
+          "blurb": "Professional emergency repair service"
+        },
+        {
+          "name": "System upgrade",
+          "slug": "system-upgrade",
+          "blurb": "Professional system upgrade service"
+        },
+        {
+          "name": "Maintenance plans",
+          "slug": "maintenance-plans",
+          "blurb": "Professional maintenance plans service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Best hvac service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Phoenix"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de hvac en Mesa, AZ",
+      "heroHeadline": "Problemas de aire acondicionado resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 7+ años sirviendo el área de Phoenix.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 7 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Emergency repair (Spanish)",
+          "slug": "emergency-repair",
+          "blurb": "Servicio profesional de emergency repair"
+        },
+        {
+          "name": "System upgrade (Spanish)",
+          "slug": "system-upgrade",
+          "blurb": "Servicio profesional de system upgrade"
+        },
+        {
+          "name": "Maintenance plans (Spanish)",
+          "slug": "maintenance-plans",
+          "blurb": "Servicio profesional de maintenance plans"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "El mejor servicio de hvac de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Phoenix"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

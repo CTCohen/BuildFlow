@@ -1,0 +1,113 @@
+{
+  "slug": "round-loop-1-plumbing-precision-plumbing",
+  "business": {
+    "name": "Precision Plumbing Plumbing",
+    "trade": "plumbing",
+    "phone": "+1-602-555-6357",
+    "email": "contact@precisionplumbing.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Chandler",
+      "Gilbert"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 12,
+    "licenseNo": "AZ-ROC-165887"
+  },
+  "brand": {
+    "primary": "#0369a1",
+    "accent": "#1e40af",
+    "heroStyle": "photo-left",
+    "typePairing": "humanist",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Professional plumbing service in Gilbert, AZ",
+      "heroHeadline": "Plumbing problems solved today",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 12+ years serving Chandler area.",
+      "primaryCta": "Get service now",
+      "about": "Serving the Phoenix area for 12 years. Licensed, insured, and committed to fair pricing and honest work.",
+      "services": [
+        {
+          "name": "Burst pipe repair",
+          "slug": "burst-pipe-repair",
+          "blurb": "Professional burst pipe repair service"
+        },
+        {
+          "name": "Clogged drain",
+          "slug": "clogged-drain",
+          "blurb": "Professional clogged drain service"
+        },
+        {
+          "name": "Leak repair",
+          "slug": "leak-repair",
+          "blurb": "Professional leak repair service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "Best plumbing service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Gilbert"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de plumbing en Phoenix, AZ",
+      "heroHeadline": "Problemas de plomería resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 12+ años sirviendo el área de Gilbert.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 12 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Burst pipe repair (Spanish)",
+          "slug": "burst-pipe-repair",
+          "blurb": "Servicio profesional de burst pipe repair"
+        },
+        {
+          "name": "Clogged drain (Spanish)",
+          "slug": "clogged-drain",
+          "blurb": "Servicio profesional de clogged drain"
+        },
+        {
+          "name": "Leak repair (Spanish)",
+          "slug": "leak-repair",
+          "blurb": "Servicio profesional de leak repair"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "El mejor servicio de plumbing de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Phoenix"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}
