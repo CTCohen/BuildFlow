@@ -1,0 +1,113 @@
+{
+  "slug": "round-loop-4-hvac-thermal-pros",
+  "business": {
+    "name": "Thermal Pros HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-0133",
+    "email": "contact@thermalpros.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Mesa",
+      "Scottsdale"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 13,
+    "licenseNo": "AZ-HVAC-630233"
+  },
+  "brand": {
+    "primary": "#0369a1",
+    "accent": "#f59e0b",
+    "heroStyle": "split",
+    "typePairing": "classic",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Mesa's fast AC repair — same day, fair price",
+      "heroHeadline": "AC stopped? We're here in 2 hours",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 13+ years serving Mesa area.",
+      "primaryCta": "Get your AC fixed today",
+      "about": "Serving the Scottsdale area for 13 years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.",
+      "services": [
+        {
+          "name": "Heat pump repair",
+          "slug": "heat-pump-repair",
+          "blurb": "Professional heat pump repair service"
+        },
+        {
+          "name": "Installation",
+          "slug": "installation",
+          "blurb": "Professional installation service"
+        },
+        {
+          "name": "Seasonal maintenance",
+          "slug": "seasonal-maintenance",
+          "blurb": "Professional seasonal maintenance service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Best hvac service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Phoenix"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de hvac en Scottsdale, AZ",
+      "heroHeadline": "Problemas de aire acondicionado resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 13+ años sirviendo el área de Mesa.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 13 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Heat pump repair (Spanish)",
+          "slug": "heat-pump-repair",
+          "blurb": "Servicio profesional de heat pump repair"
+        },
+        {
+          "name": "Installation (Spanish)",
+          "slug": "installation",
+          "blurb": "Servicio profesional de installation"
+        },
+        {
+          "name": "Seasonal maintenance (Spanish)",
+          "slug": "seasonal-maintenance",
+          "blurb": "Servicio profesional de seasonal maintenance"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "El mejor servicio de hvac de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Scottsdale"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

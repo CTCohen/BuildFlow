@@ -1,60 +1,61 @@
 {
-  "slug": "round-loop-6-plumbing-local-pipes",
+  "slug": "round-loop-5-plumbing-precision-plumbing",
   "business": {
-    "name": "Local Pipes Plumbing",
+    "name": "Precision Plumbing Plumbing",
     "trade": "plumbing",
-    "phone": "+1-602-555-8985",
-    "email": "contact@localpipes.local",
-    "cityState": "Phoenix, AZ",
+    "phone": "+1-602-555-8365",
+    "email": "contact@precisionplumbing.local",
+    "cityState": "Gilbert, AZ",
     "serviceAreas": [
       "Phoenix",
-      "Chandler"
+      "Chandler",
+      "Gilbert"
     ],
     "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
     "yearsInBusiness": 5,
-    "licenseNo": "AZ-ROC-60171"
+    "licenseNo": "AZ-ROC-502746"
   },
   "brand": {
     "primary": "#1e40af",
     "accent": "#ec4899",
-    "heroStyle": "full-bleed",
+    "heroStyle": "split",
     "typePairing": "classic",
     "density": "spacious"
   },
   "content": {
     "en": {
-      "tagline": "Fast, honest plumbing for Chandler homes and businesses",
-      "heroHeadline": "Backed-up drain? Same-day diagnosis and clearing",
+      "tagline": "Fast, honest plumbing for Phoenix homes and businesses",
+      "heroHeadline": "Phoenix emergency plumbing — we answer 24/7",
       "heroSub": "Same-day service, fair pricing, licensed and insured. 5+ years serving Phoenix area.",
       "primaryCta": "Get a plumber here fast",
-      "about": "Serving the Chandler area for 5 years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.",
+      "about": "Serving the Phoenix area for 5 years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.",
       "services": [
         {
-          "name": "Burst pipe repair",
-          "slug": "burst-pipe-repair",
-          "blurb": "Professional burst pipe repair service"
+          "name": "Emergency service",
+          "slug": "emergency-service",
+          "blurb": "Professional emergency service service"
         },
         {
-          "name": "Clogged drain",
-          "slug": "clogged-drain",
-          "blurb": "Professional clogged drain service"
+          "name": "Drain line",
+          "slug": "drain-line",
+          "blurb": "Professional drain line service"
         },
         {
-          "name": "Leak repair",
-          "slug": "leak-repair",
-          "blurb": "Professional leak repair service"
+          "name": "Water line",
+          "slug": "water-line",
+          "blurb": "Professional water line service"
         },
         {
-          "name": "Sump pump",
-          "slug": "sump-pump",
-          "blurb": "Professional sump pump service"
+          "name": "Fixture installation",
+          "slug": "fixture-installation",
+          "blurb": "Professional fixture installation service"
         }
       ],
       "reviews": [
         {
           "quote": "Great service, fair price, professional team. Highly recommend!",
           "author": "John D.",
-          "location": "Chandler"
+          "location": "Gilbert"
         },
         {
           "quote": "Fast, honest, reliable. Will use again.",
@@ -64,7 +65,7 @@
         {
           "quote": "Best plumbing service in the area. Trust them completely.",
           "author": "Robert M.",
-          "location": "Chandler"
+          "location": "Phoenix"
         }
       ]
     },
@@ -76,36 +77,36 @@
       "about": "Sirviendo el área de Phoenix durante 5 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
       "services": [
         {
-          "name": "Burst pipe repair (Spanish)",
-          "slug": "burst-pipe-repair",
-          "blurb": "Servicio profesional de burst pipe repair"
+          "name": "Emergency service (Spanish)",
+          "slug": "emergency-service",
+          "blurb": "Servicio profesional de emergency service"
         },
         {
-          "name": "Clogged drain (Spanish)",
-          "slug": "clogged-drain",
-          "blurb": "Servicio profesional de clogged drain"
+          "name": "Drain line (Spanish)",
+          "slug": "drain-line",
+          "blurb": "Servicio profesional de drain line"
         },
         {
-          "name": "Leak repair (Spanish)",
-          "slug": "leak-repair",
-          "blurb": "Servicio profesional de leak repair"
+          "name": "Water line (Spanish)",
+          "slug": "water-line",
+          "blurb": "Servicio profesional de water line"
         },
         {
-          "name": "Sump pump (Spanish)",
-          "slug": "sump-pump",
-          "blurb": "Servicio profesional de sump pump"
+          "name": "Fixture installation (Spanish)",
+          "slug": "fixture-installation",
+          "blurb": "Servicio profesional de fixture installation"
         }
       ],
       "reviews": [
         {
           "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
           "author": "Juan D.",
-          "location": "Chandler"
+          "location": "Phoenix"
         },
         {
           "quote": "Rápido, honesto, confiable. Volveré a usar.",
           "author": "María S.",
-          "location": "Phoenix"
+          "location": "Chandler"
         },
         {
           "quote": "El mejor servicio de plumbing de la zona. Les confío completamente.",

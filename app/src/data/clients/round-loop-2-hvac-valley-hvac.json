@@ -1,0 +1,123 @@
+{
+  "slug": "round-loop-2-hvac-valley-hvac",
+  "business": {
+    "name": "Valley HVAC HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-9875",
+    "email": "contact@valleyhvac.local",
+    "cityState": "Scottsdale, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Mesa",
+      "Scottsdale"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 12,
+    "licenseNo": "AZ-HVAC-280672"
+  },
+  "brand": {
+    "primary": "#7c3aed",
+    "accent": "#0ea5e9",
+    "heroStyle": "full-bleed",
+    "typePairing": "grotesk-serif",
+    "density": "compact"
+  },
+  "content": {
+    "en": {
+      "tagline": "Phoenix's fast AC repair — same day, fair price",
+      "heroHeadline": "Your AC is broken. We'll fix it fast.",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 12+ years serving Phoenix area.",
+      "primaryCta": "Get your AC fixed today",
+      "about": "Serving the Mesa area for 12 years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.",
+      "services": [
+        {
+          "name": "Heat pump repair",
+          "slug": "heat-pump-repair",
+          "blurb": "Professional heat pump repair service"
+        },
+        {
+          "name": "Installation",
+          "slug": "installation",
+          "blurb": "Professional installation service"
+        },
+        {
+          "name": "Seasonal maintenance",
+          "slug": "seasonal-maintenance",
+          "blurb": "Professional seasonal maintenance service"
+        },
+        {
+          "name": "Ductwork optimization",
+          "slug": "ductwork-optimization",
+          "blurb": "Professional ductwork optimization service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Best hvac service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Phoenix"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de hvac en Mesa, AZ",
+      "heroHeadline": "Problemas de aire acondicionado resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 12+ años sirviendo el área de Mesa.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 12 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Heat pump repair (Spanish)",
+          "slug": "heat-pump-repair",
+          "blurb": "Servicio profesional de heat pump repair"
+        },
+        {
+          "name": "Installation (Spanish)",
+          "slug": "installation",
+          "blurb": "Servicio profesional de installation"
+        },
+        {
+          "name": "Seasonal maintenance (Spanish)",
+          "slug": "seasonal-maintenance",
+          "blurb": "Servicio profesional de seasonal maintenance"
+        },
+        {
+          "name": "Ductwork optimization (Spanish)",
+          "slug": "ductwork-optimization",
+          "blurb": "Servicio profesional de ductwork optimization"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "El mejor servicio de hvac de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Phoenix"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

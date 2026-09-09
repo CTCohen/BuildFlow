@@ -62,9 +62,19 @@ function generateClient(round, trade) {
   const densities = ["compact", "spacious"];
   const typePairings = ["humanist", "classic", "grotesk-serif"];
 
+  // Use pre-tested mood boards instead of random colors
+  const MOOD_BOARDS = [
+    { primary: "#0369a1", accent: "#f59e0b", name: "Trust + Speed" },      // Board 1
+    { primary: "#1e40af", accent: "#ec4899", name: "Modern Minimal" },     // Board 2
+    { primary: "#059669", accent: "#dc2626", name: "Green Eco" },          // Board 3
+    { primary: "#7c3aed", accent: "#0ea5e9", name: "Premium" },           // Board 4
+    { primary: "#dc2626", accent: "#0369a1", name: "Bold Direct" }        // Board 5
+  ];
+
   const heroStyles = ["full-bleed", "photo-left", "split"];
-  const primary = randomChoice(brands);
-  const accent = randomChoice(brands.filter(b => b !== primary));
+  const moodBoard = randomChoice(MOOD_BOARDS);
+  const primary = moodBoard.primary;
+  const accent = moodBoard.accent;
 
   return {
     slug: `round-loop-${round}-${trade}-${name.toLowerCase().replace(/\s+/g, "-")}`,
@@ -88,11 +98,15 @@ function generateClient(round, trade) {
     },
     content: {
       en: {
-        tagline: `Professional ${trade} service in ${randomChoice(cities)}, AZ`,
-        heroHeadline: `${trade === "hvac" ? "AC" : "Plumbing"} problems solved today`,
+        tagline: trade === "hvac"
+          ? `${randomChoice(cities)}'s fast AC repair — same day, fair price`
+          : `Fast, honest plumbing for ${randomChoice(cities)} homes and businesses`,
+        heroHeadline: trade === "hvac"
+          ? randomChoice([`AC stopped? We're here in 2 hours`, `Your AC is broken. We'll fix it fast.`, `${randomChoice(cities)} AC repair — today, not tomorrow`])
+          : randomChoice([`Burst pipe? We stop the damage and fix it today`, `Backed-up drain? Same-day diagnosis and clearing`, `${randomChoice(cities)} emergency plumbing — we answer 24/7`]),
         heroSub: `Same-day service, fair pricing, licensed and insured. ${years}+ years serving ${randomChoice(cities)} area.`,
-        primaryCta: `Get service now`,
-        about: `Serving the Phoenix area for ${years} years. Licensed, insured, and committed to fair pricing and honest work.`,
+        primaryCta: trade === "hvac" ? `Get your AC fixed today` : `Get a plumber here fast`,
+        about: `Serving the ${randomChoice(cities)} area for ${years} years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.`,
         services: services.map(s => ({
           name: s,
           slug: s.toLowerCase().replace(/\s+/g, "-"),

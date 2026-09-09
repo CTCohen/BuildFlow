@@ -1,0 +1,113 @@
+{
+  "slug": "round-loop-7-plumbing-trustflow",
+  "business": {
+    "name": "TrustFlow Plumbing",
+    "trade": "plumbing",
+    "phone": "+1-602-555-0030",
+    "email": "contact@trustflow.local",
+    "cityState": "Gilbert, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Chandler",
+      "Gilbert"
+    ],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency",
+    "yearsInBusiness": 13,
+    "licenseNo": "AZ-ROC-56863"
+  },
+  "brand": {
+    "primary": "#7c3aed",
+    "accent": "#0ea5e9",
+    "heroStyle": "full-bleed",
+    "typePairing": "humanist",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Fast, honest plumbing for Chandler homes and businesses",
+      "heroHeadline": "Chandler emergency plumbing — we answer 24/7",
+      "heroSub": "Same-day service, fair pricing, licensed and insured. 13+ years serving Gilbert area.",
+      "primaryCta": "Get a plumber here fast",
+      "about": "Serving the Chandler area for 13 years. Licensed, insured, and committed to fair pricing and honest work. We show you what's wrong before charging you to fix it.",
+      "services": [
+        {
+          "name": "Emergency repair",
+          "slug": "emergency-repair",
+          "blurb": "Professional emergency repair service"
+        },
+        {
+          "name": "Drain cleaning",
+          "slug": "drain-cleaning",
+          "blurb": "Professional drain cleaning service"
+        },
+        {
+          "name": "Leak detection",
+          "slug": "leak-detection",
+          "blurb": "Professional leak detection service"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Great service, fair price, professional team. Highly recommend!",
+          "author": "John D.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "Fast, honest, reliable. Will use again.",
+          "author": "Maria S.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "Best plumbing service in the area. Trust them completely.",
+          "author": "Robert M.",
+          "location": "Chandler"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de plumbing en Phoenix, AZ",
+      "heroHeadline": "Problemas de plomería resueltos hoy",
+      "heroSub": "Servicio el mismo día, precios justos, con licencia y asegurado. 13+ años sirviendo el área de Chandler.",
+      "primaryCta": "Obtener servicio ahora",
+      "about": "Sirviendo el área de Phoenix durante 13 años. Con licencia, asegurado y comprometido con precios justos y trabajo honesto.",
+      "services": [
+        {
+          "name": "Emergency repair (Spanish)",
+          "slug": "emergency-repair",
+          "blurb": "Servicio profesional de emergency repair"
+        },
+        {
+          "name": "Drain cleaning (Spanish)",
+          "slug": "drain-cleaning",
+          "blurb": "Servicio profesional de drain cleaning"
+        },
+        {
+          "name": "Leak detection (Spanish)",
+          "slug": "leak-detection",
+          "blurb": "Servicio profesional de leak detection"
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "¡Excelente servicio, precio justo, equipo profesional! ¡Altamente recomendado!",
+          "author": "Juan D.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Rápido, honesto, confiable. Volveré a usar.",
+          "author": "María S.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "El mejor servicio de plumbing de la zona. Les confío completamente.",
+          "author": "Roberto M.",
+          "location": "Chandler"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

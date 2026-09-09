@@ -1,11 +1,11 @@
 # Testing Loop Analysis Report
-Generated: 2026-09-09T04:22:16.231Z
+Generated: 2026-09-09T04:26:51.612Z
 
 ## Executive Summary
 - **Pass Rate:** 100.0% (10 successful builds)
 - **Total Rounds:** 10
 - **Average Build Time:** 2.5s
-- **Trade Coverage:** HVAC 8, Plumbing 2
+- **Trade Coverage:** HVAC 3, Plumbing 7
 
 ## Validated Patterns
 All of the following held up across all passing rounds:
@@ -25,14 +25,14 @@ All of the following held up across all passing rounds:
 ## Scale Testing Results
 | Service Count | Passes | Status |
 |---|---|---|
-| 3 | 3/10 | ✓ Validated |
-| 4 | 7/10 | ✓ Validated |
+| 3 | 5/10 | ✓ Validated |
+| 4 | 5/10 | ✓ Validated |
 
 | Area Count | Passes | Status |
 |---|---|---|
-| 2 | 4/10 | ✓ Validated |
-| 3 | 3/10 | ✓ Validated |
-| 4 | 3/10 | ✓ Validated |
+| 2 | 2/10 | ✓ Validated |
+| 3 | 6/10 | ✓ Validated |
+| 4 | 2/10 | ✓ Validated |
 
 ## KB & Template Improvements Needed
 ### 1. Trade-specific copy templates (draft)
