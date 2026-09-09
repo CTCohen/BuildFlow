@@ -153,10 +153,14 @@ if (pages.length === 0) {
   add("internal-links", linkIssues.length ? "fail" : "pass", linkIssues.join("; "));
 }
 
-// ---------------------------------------------------------------- 7-9 stubs
-add("lighthouse-budget", "skip", "TODO: needs lighthouse + chrome");
-add("layout-sanity", "skip", "TODO: needs playwright");
-add("llm-rubric", "skip", "TODO: run Claude rubric on rendered pages/screenshots");
+// ---------------------------------------------------------------- 7. Lighthouse (skip for now — needs server + chrome)
+// TODO: Implement with simple HTTP server; Lighthouse requires running Chrome
+// which adds 5–30s per audit. Gate for later when perf budget matters more.
+add("lighthouse-budget", "skip", "deferred: needs running Chrome instance");
+
+// ---------------------------------------------------------------- 8-9 stubs (deferred — need running server + Chrome)
+add("layout-sanity", "skip", "deferred: needs running server + Playwright");
+add("llm-rubric", "skip", "deferred: screenshot + Claude eval (10+ sec/page)");
 
 // ---------------------------------------------------------------- report
 const icon = { pass: "✓", fail: "✗", warn: "!", skip: "·" };
