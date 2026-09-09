@@ -1,0 +1,118 @@
+{
+  "slug": "round3-rootready-plumbing-phoenix",
+  "business": {
+    "name": "RootReady Plumbing",
+    "trade": "plumbing",
+    "phone": "+1-602-555-0842",
+    "email": "dispatch@rootready.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": ["Phoenix", "Chandler", "Gilbert", "Queen Creek"],
+    "hours": "Mon–Fri 8am–6pm · Sat 9am–2pm · 24/7 emergency",
+    "yearsInBusiness": 7,
+    "licenseNo": "AZ-ROC-235789"
+  },
+  "brand": {
+    "primary": "#059669",
+    "accent": "#dc2626",
+    "heroStyle": "photo-left",
+    "typePairing": "humanist",
+    "density": "compact"
+  },
+  "content": {
+    "en": {
+      "tagline": "Fast, honest plumbing for Phoenix homes and businesses",
+      "heroHeadline": "Leaks fixed today, not next week",
+      "heroSub": "Same-day diagnosis and repair. No hidden fees. Licensed and insured. Serving Phoenix valley for 7 years.",
+      "primaryCta": "Get a plumber here fast",
+      "about": "RootReady Plumbing has been fixing Phoenix's pipes since 2019. Our licensed plumbers handle everything from burst pipes to drain cleaning. We specialize in older Phoenix homes and their specific plumbing challenges. Upfront pricing, transparent work, and a hassle-free guarantee.",
+      "services": [
+        {
+          "name": "Emergency repair",
+          "slug": "emergency-repair",
+          "blurb": "Burst pipe? Backed-up drain? We come fast, fix it right.",
+          "description": "Burst pipes, leaks, clogs — we handle emergency plumbing fast. Same-day service available.",
+          "pricingSignal": "Service call: $75. Most repairs: $200–$600. 1-year warranty on all work."
+        },
+        {
+          "name": "Drain cleaning & root removal",
+          "slug": "drain-cleaning",
+          "blurb": "Clogged drains are our specialty. We use video inspection to find the exact problem."
+        },
+        {
+          "name": "Leak detection & repair",
+          "slug": "leak-detection",
+          "blurb": "Hidden water leaks waste money every day. We find and fix them without tearing up your walls."
+        },
+        {
+          "name": "Water heater service",
+          "slug": "water-heater",
+          "blurb": "Tank or tankless, repair or replacement. We handle all brands and types."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Pipe burst at 2am on a Sunday. RootReady was here in 45 minutes. Stayed until the problem was solved. Best $400 I ever spent.",
+          "author": "David R.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Other plumbers wanted to replace the whole line. RootReady found the leak, fixed it without digging, and saved me $3,000.",
+          "author": "Jennifer S.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "Trustworthy people. No upsell, no pressure. They tell you what needs fixing and what doesn't. Will call them again.",
+          "author": "Robert D.",
+          "location": "Gilbert"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Plomería rápida y honesta para hogares y negocios de Phoenix",
+      "heroHeadline": "Fugas reparadas hoy, no la próxima semana",
+      "heroSub": "Diagnóstico y reparación el mismo día. Sin cargos ocultos. Con licencia y asegurado. Sirviendo al valle de Phoenix durante 7 años.",
+      "primaryCta": "Llama a un plomero ahora",
+      "about": "RootReady Plumbing ha estado reparando las tuberías de Phoenix desde 2019. Nuestros plomeros con licencia manejan todo, desde tuberías rotas hasta limpiezas de desagües. Nos especializamos en casas antiguas de Phoenix y sus desafíos de plomería específicos. Precios transparentes, trabajo honesto y garantía sin molestias.",
+      "services": [
+        {
+          "name": "Reparación de emergencia",
+          "slug": "emergency-repair",
+          "blurb": "¿Tubería rota? ¿Desagüe bloqueado? Llegamos rápido y reparamos bien."
+        },
+        {
+          "name": "Limpieza de desagües y remoción de raíces",
+          "slug": "drain-cleaning",
+          "blurb": "Los desagües bloqueados son nuestra especialidad. Usamos inspección por video para encontrar el problema exacto."
+        },
+        {
+          "name": "Detección y reparación de fugas",
+          "slug": "leak-detection",
+          "blurb": "Las fugas de agua ocultas desperdician dinero cada día. Las encontramos y reparamos sin romper tus paredes."
+        },
+        {
+          "name": "Servicio de calentador de agua",
+          "slug": "water-heater",
+          "blurb": "Tanque o sin tanque, reparación o reemplazo. Manejamos todas las marcas y tipos."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Tubería rota a las 2am un domingo. RootReady estuvo aquí en 45 minutos. Se quedaron hasta que se resolvió el problema. El mejor dinero que gasté.",
+          "author": "David R.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Otros plomeros querían reemplazar toda la línea. RootReady encontró la fuga, la reparó sin cavar y me ahorró $3,000.",
+          "author": "Jennifer S.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "Gente de confianza. Sin venta forzada, sin presión. Te dicen qué necesita reparación y qué no. Los llamaré de nuevo.",
+          "author": "Roberto D.",
+          "location": "Gilbert"
+        }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}

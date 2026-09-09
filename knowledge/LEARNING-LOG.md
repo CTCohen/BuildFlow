@@ -139,3 +139,29 @@ principle to name how compliance is verified, which is what feeds the QA battery
 **Metrics:** 3 clients built (R0 + R1) · 0 build failures · 100% QA pass rate · 8 cards validated · ~1.5s build + test cycle
 
 **Session time:** ~50 min (KB init + theme extension + 3 rounds)
+
+---
+
+## 2026-09-08 · Round 2–3 — Trade + variant validation
+
+**Setup:**
+- Round 2: Precision HVAC Solutions (Phoenix, 10 years, 5 services incl. smart thermostat, 5 areas)
+- Round 3: RootReady Plumbing (Phoenix, 7 years, 4 services, 4 areas) — **different trade**
+
+**Build metrics:**
+- Precision: 25 pages, ~600ms, PASS
+- RootReady: 19 pages, ~550ms, PASS
+
+**Test results:**
+- Precision: ✓ schema (0 warnings), ✓ placeholders, ✓ required-content, ✓ internal-links
+- RootReady: ✓ schema (0 warnings), ✓ placeholders, ✓ required-content, ✓ internal-links
+
+**Learning:**
+- **Schema validation is catching real errors.** Fixed brand.typePairing typo in Round 2 before build.
+- **Theme is trade-agnostic.** Plumbing renders identically to HVAC. Generic service/area routes work.
+- **5-service + 5-area pages build fast.** No regression on size/complexity.
+- **Cross-trade QA parity.** Same 5 checks, same pass rate.
+
+**Confidence level:** HIGH. Tested HVAC (3 clients, 2 themes) + Plumbing (1 client). Theme is robust across trades.
+
+**Metrics:** 5 clients built total · 0 systemic issues found · 100% pass rate maintained · Ready for first ~10 blind-set samples

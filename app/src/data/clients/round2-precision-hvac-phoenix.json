@@ -1,0 +1,128 @@
+{
+  "slug": "round2-precision-hvac-phoenix",
+  "business": {
+    "name": "Precision HVAC Solutions",
+    "trade": "hvac",
+    "phone": "+1-602-555-0421",
+    "email": "contact@precisionhvac.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": ["Phoenix", "Paradise Valley", "Tempe", "Scottsdale", "Ahwatukee"],
+    "hours": "Mon–Sat 7am–7pm · 24/7 emergency available",
+    "yearsInBusiness": 10,
+    "licenseNo": "AZ-HVAC-76543"
+  },
+  "brand": {
+    "primary": "#1e40af",
+    "accent": "#ec4899",
+    "heroStyle": "full-bleed",
+    "typePairing": "grotesk-serif",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Phoenix's trusted HVAC company — 10 years, 2000+ homes served",
+      "heroHeadline": "Your AC problem, solved today",
+      "heroSub": "Same-day diagnosis and repair. Honest pricing. Real guarantee. Serving Phoenix for over a decade.",
+      "primaryCta": "Schedule service now",
+      "about": "Precision HVAC has been keeping Phoenix families comfortable since 2014. Our EPA 608-certified technicians have repaired over 2,000 systems. We stand behind every repair with a no-questions-asked 2-year guarantee. No upsell, no surprises — just honest work.",
+      "services": [
+        {
+          "name": "AC & heat pump repair",
+          "slug": "ac-heat-pump-repair",
+          "blurb": "Broken AC? We diagnose and fix it same day. Covers all brands and models.",
+          "description": "From compressor failures to refrigerant leaks, we fix every problem. Honest diagnosis, transparent pricing, guaranteed work.",
+          "pricingSignal": "Service call: $89 (free if you book repair). Average repair: $400–$900. 2-year warranty on parts and labor."
+        },
+        {
+          "name": "System installation & upgrades",
+          "slug": "system-installation",
+          "blurb": "Old system making noise? We design, install, and warranty new systems with financing options."
+        },
+        {
+          "name": "Seasonal maintenance",
+          "slug": "seasonal-maintenance",
+          "blurb": "Spring and fall tune-ups add years to your system. Keep your warranty valid, cut your bills."
+        },
+        {
+          "name": "Ductwork optimization",
+          "slug": "ductwork-optimization",
+          "blurb": "Bad ductwork costs you $100+ per month. We find leaks and redesign airflow for even cooling."
+        },
+        {
+          "name": "Thermostat & smart controls",
+          "slug": "smart-thermostat",
+          "blurb": "Smart thermostat installation and integration. Monitor and control your AC from your phone."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Our AC died on a 115-degree day. Precision had someone here within 2 hours, diagnosed the issue, and fixed it the same day. Professional, affordable, and fast. Highly recommend.",
+          "author": "Karen P.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Been a customer for 5 years. They've always treated me fairly, showed up on time, and stood behind their work. That 2-year warranty is real — they honored it without hesitation.",
+          "author": "Michael T.",
+          "location": "Tempe"
+        },
+        {
+          "quote": "Got a quote for $7,000 to replace our entire system from another company. Precision said it was just the compressor ($680). Saved us over $6,000. Still running strong a year later.",
+          "author": "Lisa M.",
+          "location": "Scottsdale"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "La compañía HVAC de confianza de Phoenix — 10 años, más de 2000 casas atendidas",
+      "heroHeadline": "Tu problema de aire acondicionado, resuelto hoy",
+      "heroSub": "Diagnóstico y reparación el mismo día. Precios honestos. Garantía real. Sirviendo a Phoenix durante más de una década.",
+      "primaryCta": "Programar servicio ahora",
+      "about": "Precision HVAC ha mantenido cómodas a las familias de Phoenix desde 2014. Nuestros técnicos certificados EPA 608 han reparado más de 2000 sistemas. Respaldamos cada reparación con una garantía sin condiciones de 2 años. Sin ventas forzadas, sin sorpresas — solo trabajo honesto.",
+      "services": [
+        {
+          "name": "Reparación de aire acondicionado y bomba de calor",
+          "slug": "ac-heat-pump-repair",
+          "blurb": "¿Aire acondicionado roto? Diagnosticamos y reparamos el mismo día. Cubre todas las marcas y modelos."
+        },
+        {
+          "name": "Instalación y actualización de sistemas",
+          "slug": "system-installation",
+          "blurb": "¿Sistema viejo haciendo ruido? Diseñamos, instalamos y garantizamos nuevos sistemas con opciones de financiamiento."
+        },
+        {
+          "name": "Mantenimiento estacional",
+          "slug": "seasonal-maintenance",
+          "blurb": "Ajustes de primavera y otoño añaden años a tu sistema. Mantén tu garantía válida, reduce tus facturas."
+        },
+        {
+          "name": "Optimización de ductería",
+          "slug": "ductwork-optimization",
+          "blurb": "La mala ductería te cuesta $100+ al mes. Encontramos fugas y rediseñamos el flujo de aire para enfriamiento uniforme."
+        },
+        {
+          "name": "Termostato y controles inteligentes",
+          "slug": "smart-thermostat",
+          "blurb": "Instalación e integración de termostatos inteligentes. Supervisa y controla tu aire acondicionado desde tu teléfono."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Nuestro aire acondicionado se apagó en un día de 115 grados. Precision tuvo a alguien aquí en 2 horas, diagnosticó el problema y lo reparó el mismo día. Profesional, asequible y rápido. Altamente recomendado.",
+          "author": "Karen P.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "He sido cliente durante 5 años. Siempre me han tratado justamente, llegaban a tiempo y respaldaban su trabajo. Esa garantía de 2 años es real — la honraron sin dudarlo.",
+          "author": "Michael T.",
+          "location": "Tempe"
+        },
+        {
+          "quote": "Obtuve una cotización de $7,000 para reemplazar todo nuestro sistema de otra compañía. Precision dijo que era solo el compresor ($680). Ahorramos más de $6,000. Sigue funcionando perfectamente después de un año.",
+          "author": "Lisa M.",
+          "location": "Scottsdale"
+        }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}
