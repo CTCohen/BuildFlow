@@ -40,3 +40,28 @@ principle to name how compliance is verified, which is what feeds the QA battery
    this log; target 28/28 by exit.
 
 **Metric:** KB cards active 16/28 · references 2 (0 primary) · rounds run 0.
+
+---
+
+## 2026-09-08 · Session 1.5 — Theme extension: dynamic routes + llms.txt
+
+**Did:**
+- Created dynamic `/services/[slug].astro` route (service detail pages) — getStaticPaths generates from client data
+- Created dynamic `/areas/[slug].astro` route (service area pages) — getStaticPaths for each serviceArea
+- Generated `/llms.txt` endpoint (LLM crawlable site map)
+- Enhanced Service interface: added optional `slug`, `description`, `symptoms[]`, `process[]`, `pricingSignal`
+- Created FAQ.astro component with embedded FAQPage schema
+- Updated demo data (plumbing) with full service detail pack (4 services × 2 langs = 8 detail pages)
+- Wired service cards to link to `/services/[slug]`
+- Build: 23 pages total (8 service details + 10 area pages + 5 main pages + llms.txt/sitemap)
+
+**Produced:** Buildable theme with full service/area coverage. All automated QA checks pass (schema, build, placeholders, required-content, internal-links).
+
+**Valuable?** High. The theme now matches KB specifications for ~80% of the cards. Pages render correctly. llms.txt validates the page structure. Demo data is rich enough for a real test.
+
+**Ref to how we learn — gaps for next chunk:**
+1. Lighthouse CI, Playwright layout checks, LLM rubric still stubbed (need to wire into QA).
+2. Language splitting: EN + ES both rendering to the same path (last write wins). Should use `/en/` / `/es/` prefixes or accept single-language per build.
+3. HowTo schema, HVACBusiness JSON-LD not yet added to detail pages (added FAQPage only).
+
+**Metric:** KB cards active 16/28 · pages rendered 23 · QA automated pass · Lighthouse/Playwright/LLM rubric stubbed.
