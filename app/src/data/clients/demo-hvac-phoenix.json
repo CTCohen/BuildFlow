@@ -1,0 +1,131 @@
+{
+  "slug": "demo-hvac-phoenix",
+  "business": {
+    "name": "Desert Comfort HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-555-0192",
+    "email": "dispatch@desertcomfort.local",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": ["Phoenix", "Tempe", "Chandler", "Scottsdale", "Mesa"],
+    "hours": "Mon–Fri 7am–7pm · Sat 8am–5pm · 24/7 emergency hotline",
+    "yearsInBusiness": 12,
+    "licenseNo": "AZ-HVAC-77231"
+  },
+  "brand": {
+    "primary": "#1e40af",
+    "accent": "#f59e0b",
+    "heroStyle": "split",
+    "typePairing": "humanist",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "AC repair & installation, licensed & local",
+      "heroHeadline": "Phoenix AC repair — fast, fair, guaranteed",
+      "heroSub": "Your AC quit in July? Desert Comfort shows up same day, diagnoses the real problem, and gets you cooling again — all for one flat price with no surprises.",
+      "primaryCta": "Schedule service or call",
+      "about": "Desert Comfort HVAC has been keeping Phoenix cool since 2011. We're a team of EPA 608 and NATE-certified technicians who believe in honest diagnoses, upfront pricing, and getting it right the first time. We service all brands — Trane, Carrier, Lennox, Rheem — and we're Factory Authorized dealers for heating and heat-pump systems. When your AC fails, you get a real person on the phone and a tech within 4 hours.",
+      "services": [
+        {
+          "name": "AC repair & emergency",
+          "slug": "ac-repair",
+          "blurb": "Not cooling, running non-stop, or dead? Same-day diagnosis, flat rate, one-year warranty.",
+          "description": "AC acting up? We diagnose the real problem — compressor, capacitor, refrigerant, airflow — and fix it without the guesswork.",
+          "pricingSignal": "Diagnostic: $89. Repair labor: $150–$400. Emergency calls same rate, 24/7.",
+          "symptoms": [
+            "AC won't turn on",
+            "Runs but house won't cool",
+            "Warm air blowing from vents",
+            "Unit cycles on and off constantly",
+            "No airflow at all",
+            "Loud or grinding noise from outside"
+          ],
+          "process": [
+            { "title": "Quick check", "description": "We inspect the thermostat, outdoor unit, and airflow. Takes 15–20 min." },
+            { "title": "Diagnosis", "description": "We tell you exactly what's broken and show you repair options with pricing." },
+            { "title": "Repair", "description": "Fix it on the spot, usually same day. We test cooling, calibrate, and clean up." },
+            { "title": "Warranty", "description": "One-year warranty on parts and labor. If it fails due to our work, we fix it free." }
+          ]
+        },
+        {
+          "name": "AC installation & replacement",
+          "slug": "ac-installation",
+          "blurb": "New system or upgrade? Financing available, efficiency rebates, heat-pump options.",
+          "description": "Thinking about a new AC or heat pump? We size, install, and set up efficiency programs.",
+          "pricingSignal": "System + install: $3,000–$8,000 depending on size & brand. Financing available. Free quotes."
+        },
+        {
+          "name": "Maintenance & tune-ups",
+          "slug": "maintenance",
+          "blurb": "Spring prep before summer? Annual maintenance keeps your system running and warranties valid.",
+          "description": "Pre-summer check ensures your system is ready for the heat and catches small issues before they fail."
+        },
+        {
+          "name": "Heating & furnace repair",
+          "slug": "furnace",
+          "blurb": "Furnace won't ignite or heat dead zones? Phoenix winters are mild, but when you need heat, we're here.",
+          "description": "Winter issues are rare in Phoenix, but when they hit, same-day service."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "AC stopped working in 115° heat. Desert Comfort answered in 2 min, tech here in 3 hours, fully fixed by dinner. Fair price, real warranty.",
+          "author": "James K.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Got a quote from another company for $2,800 to replace the whole system. Desert Comfort diagnosed it as a bad capacitor — $210 and we're running. Honest work.",
+          "author": "Patricia M.",
+          "location": "Chandler"
+        },
+        {
+          "quote": "We signed up for their maintenance plan. They caught a slow leak before it killed the compressor. Worth every penny.",
+          "author": "Robert D.",
+          "location": "Tempe"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Reparación e instalación de aire acondicionado, con licencia y local",
+      "heroHeadline": "Reparación de aire acondicionado en Phoenix — rápido, justo y garantizado",
+      "heroSub": "¿Tu aire acondicionado se apagó en julio? Desert Comfort llega el mismo día, diagnostica el verdadero problema y te devuelve la refrigeración — todo por un precio fijo sin sorpresas.",
+      "primaryCta": "Programar servicio o llamar",
+      "about": "Desert Comfort HVAC mantiene Phoenix fresco desde 2011. Somos un equipo de técnicos certificados EPA 608 y NATE que creemos en diagnósticos honestos, precios transparentes y hacer el trabajo bien a la primera. Reparamos todas las marcas — Trane, Carrier, Lennox, Rheem — y somos distribuidores autorizados de fábrica para sistemas de calefacción y bombas de calor. Cuando tu aire se descompone, hablas con una persona real y un técnico llega en 4 horas.",
+      "services": [
+        {
+          "name": "Reparación de aire acondicionado y emergencia",
+          "slug": "ac-repair",
+          "blurb": "¿No enfría, funciona sin parar o está muerto? Diagnóstico el mismo día, precio fijo, garantía de un año."
+        },
+        {
+          "name": "Instalación y reemplazo de aire acondicionado",
+          "slug": "ac-installation",
+          "blurb": "¿Sistema nuevo o actualización? Financiamiento disponible, reembolsos de eficiencia, opciones de bomba de calor."
+        },
+        {
+          "name": "Mantenimiento y ajustes",
+          "slug": "maintenance",
+          "blurb": "¿Preparación de primavera antes del verano? El mantenimiento anual mantiene tu sistema funcionando y las garantías vigentes."
+        },
+        {
+          "name": "Calefacción y reparación de horno",
+          "slug": "furnace",
+          "blurb": "¿Horno que no enciende o zonas muertas sin calor? Los inviernos de Phoenix son suaves, pero cuando necesitas calor, estamos aquí."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "El aire se apagó con calor de 115°. Desert Comfort contestó en 2 min, técnico aquí en 3 horas, totalmente reparado antes de cenar. Precio justo, garantía real.",
+          "author": "James K.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Obtuve un presupuesto de otra empresa por $2,800 para reemplazar todo el sistema. Desert Comfort diagnosticó que era un capacitor malo — $210 y funcionamos. Trabajo honesto.",
+          "author": "Patricia M.",
+          "location": "Chandler"
+        }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}

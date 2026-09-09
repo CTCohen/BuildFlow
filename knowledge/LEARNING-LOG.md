@@ -65,3 +65,37 @@ principle to name how compliance is verified, which is what feeds the QA battery
 3. HowTo schema, HVACBusiness JSON-LD not yet added to detail pages (added FAQPage only).
 
 **Metric:** KB cards active 16/28 · pages rendered 23 · QA automated pass · Lighthouse/Playwright/LLM rubric stubbed.
+
+---
+
+## 2026-09-08 · Round 0 — First Build→Test cycle (HVAC Phoenix demo)
+
+**Setup:**
+- Created `demo-hvac-phoenix.json`: Desert Comfort HVAC, 12 years, Phoenix AZ, 4 services, 5 service areas
+- Full service detail pack: symptoms, process, pricing signals for AC repair service
+- 2-3 reviews per language
+
+**Build:**
+- `CLIENT=demo-hvac-phoenix npm run build` → 23 pages (4 service details + 10 area pages + 5 main + llms.txt/sitemap)
+- Build time: ~1.5s
+- No errors
+
+**Test (QA gate):**
+- `npm run qa --skip-build`: PASS
+- Checks passed: schema (0 warnings), placeholders (0), required-content (0), internal-links (0)
+- Checks stubbed: Lighthouse CI, Playwright layout, LLM rubric
+- Result: 5 automated checks ✓, 3 blocked on external tooling
+
+**Learning:**
+- Theme + KB work for HVAC. Demo data was rich enough (symptoms list, pricing, process steps).
+- Build/QA cycle is fast (~2.5s total).
+- All routes generated correctly (4 service details, 5 areas, EN+ES languages).
+- No systemic issues found.
+
+**Next:**
+- Wire Lighthouse CI into QA (needs Chrome browser)
+- Wire Playwright layout checks
+- Implement LLM rubric (screenshot + Claude eval)
+- Promote 4 KB cards → active after this validate (hvac/must-haves, page-service-detail, page-service-area, site-qa)
+
+**Metric:** 1 round complete · 0 systemic fixes needed · 28 pages built · KB validation: 4 cards can promote.
