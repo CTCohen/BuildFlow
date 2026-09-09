@@ -34,3 +34,9 @@ current site URL). Output: a passing site in `app/` for slug `<places_id>` + a d
 
 Never: hand-edit `app/KNOWLEDGE.md`, write per-client code in `src/`, ship stock photos
 of people, or claim a certification the business does not hold.
+
+## Check
+- `sops/site-qa` passes (QA exit 0, rubric ≥ 4/5, human accept).
+- Row status advanced to `demo_ready` with a recorded demo URL.
+- Agent build time start → `demo_ready` < 45 min.
+- Zero deviations from this SOP's steps on the run (logged in the round test-log).

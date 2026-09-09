@@ -29,6 +29,11 @@ Venture: **BuildFlow** (locked). Repo: `~/BuildFlow`. Knowledge base: `knowledge
 | 5 | **Wire to enforcement** | Anything that moves the bar updates `app/DESIGN.md` + the QA rubric + the gate. A principle with no enforcement path is not done. |
 | 6 | **Freeze KB v1** | `compile.mjs` hash = the KB version, recorded on every test build. |
 
+**Card status gate:** a card is `draft` until a Build→Test→Learn round has used it and it
+held up; only then → `active`. `node knowledge/graph.mjs` reports `active/total` — target
+28/28 by exit. The graph report (stubs, missing `Check`, dangling links, orphans, unused
+refs) is the punch list for each session.
+
 ### Resources
 
 **Website building**
