@@ -6,7 +6,7 @@
   "description": "BuildFlow multi-tenant website generator. One codebase; one client per build.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/inline-css.mjs dist",
     "preview": "astro preview",
     "check": "astro check",
     "qa": "node scripts/qa.mjs",
