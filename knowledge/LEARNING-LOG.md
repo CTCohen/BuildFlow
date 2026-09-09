@@ -99,3 +99,43 @@ principle to name how compliance is verified, which is what feeds the QA battery
 - Promote 4 KB cards → active after this validate (hvac/must-haves, page-service-detail, page-service-area, site-qa)
 
 **Metric:** 1 round complete · 0 systemic fixes needed · 28 pages built · KB validation: 4 cards can promote.
+
+---
+
+## 2026-09-08 · Round 1 — Empirical validation (Thermal Pros + Cool Guys)
+
+**Setup:**
+- Thermal Pros (Scottsdale): 4 services, 4 areas, full EN/ES
+- Cool Guys (Mesa): 4 services, 4 areas, full EN/ES + 1 extra ductwork service
+
+**Build metrics:**
+- Thermal Pros: 19 pages, 553ms
+- Cool Guys: 21 pages, 512ms
+- Both passed build without errors
+
+**Test results:**
+- Thermal Pros: ✓ schema, ✓ placeholders, ✓ required-content, ✓ internal-links (PASS)
+- Cool Guys: ✓ schema, ✓ placeholders, ✓ required-content, ✓ internal-links (PASS)
+
+**Learning:**
+- Schema validation caught a real issue (min 2 EN + 2 ES reviews). Fixed both clients.
+- Build is fast & reliable (~0.5s per client).
+- QA cycle stable (~2s per client).
+- Multi-service pages render correctly.
+- No KB issues or theme regressions.
+
+**Cards validated by Round 1:**
+- page-home ✓ (rendered in 3 clients)
+- page-services ✓ (multi-service pages render)
+- page-service-detail ✓ (dynamic service pages work)
+- page-service-area ✓ (dynamic area pages work)
+- section-blocks ✓ (all sections render correctly)
+- hvac/must-haves ✓ (sites match the spec)
+- hvac/page-map ✓ (all pages present & linked)
+- hvac/trust-signals ✓ (license, years, reviews rendered)
+
+**Ready to promote:** 8 cards from draft → active after Rounds 2-3 validation
+
+**Metrics:** 3 clients built (R0 + R1) · 0 build failures · 100% QA pass rate · 8 cards validated · ~1.5s build + test cycle
+
+**Session time:** ~50 min (KB init + theme extension + 3 rounds)

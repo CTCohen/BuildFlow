@@ -1,0 +1,98 @@
+{
+  "slug": "round1-thermal-pros-scottsdale",
+  "business": {
+    "name": "Thermal Pros HVAC",
+    "trade": "hvac",
+    "phone": "+1-480-555-0247",
+    "email": "hello@thermalpros.local",
+    "cityState": "Scottsdale, AZ",
+    "serviceAreas": ["Scottsdale", "Paradise Valley", "North Scottsdale", "Carefree"],
+    "hours": "Mon–Sat 8am–6pm · 24/7 emergency line",
+    "yearsInBusiness": 8,
+    "licenseNo": "AZ-HVAC-88402"
+  },
+  "brand": {
+    "primary": "#059669",
+    "accent": "#f59e0b",
+    "heroStyle": "photo-left",
+    "typePairing": "classic",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "HVAC repair, installation, maintenance in Scottsdale",
+      "heroHeadline": "AC repair in Scottsdale — call now, fixed today",
+      "heroSub": "Thermal Pros shows up fast, diagnoses right, and quotes fair. Licensed, EPA-certified, and ready 24/7.",
+      "primaryCta": "Call for same-day service",
+      "about": "Thermal Pros HVAC has been serving Scottsdale since 2016. We're a small team of EPA 608 and NATE-certified technicians who believe AC repair should be honest and fast. We service all major brands and specialize in heat-pump upgrades for Arizona homes. Call us for same-day diagnosis on most repair requests.",
+      "services": [
+        {
+          "name": "AC repair & diagnosis",
+          "slug": "ac-repair",
+          "blurb": "AC not cooling? We diagnose and fix it same day — compressor, capacitor, refrigerant, or thermostat.",
+          "description": "Fast diagnosis, honest repair. We tell you what's wrong and show you options.",
+          "pricingSignal": "Diagnostic: $99. Most repairs $200–$600. One-year warranty."
+        },
+        {
+          "name": "AC & heat pump installation",
+          "slug": "ac-install",
+          "blurb": "New system or upgrade to a heat pump? We handle sizing, install, and rebate paperwork."
+        },
+        {
+          "name": "Maintenance plans",
+          "slug": "maintenance",
+          "blurb": "Spring and fall tune-ups catch small issues before they fail. Keeps your warranty valid."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Called Thermal Pros at 3pm on a Saturday. Tech here by 4:30, AC running again by 6. Fair price, warranty on the repair. Will call again.",
+          "author": "David L.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Got a quote to replace the whole system for $6,500. Thermal Pros said it was just a refrigerant leak and a capacitor. $320 total. Been running great for 6 months.",
+          "author": "Michelle R.",
+          "location": "Paradise Valley"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Reparación, instalación y mantenimiento de aire acondicionado en Scottsdale",
+      "heroHeadline": "Reparación de aire acondicionado en Scottsdale — llama ahora, reparado hoy",
+      "heroSub": "Thermal Pros llega rápido, diagnostica bien y cotiza justo. Con licencia, certificado EPA y listo 24/7.",
+      "primaryCta": "Llamar para servicio el mismo día",
+      "about": "Thermal Pros HVAC atiende a Scottsdale desde 2016. Somos un pequeño equipo de técnicos certificados EPA 608 y NATE que creemos que la reparación de aire acondicionado debe ser honesta y rápida. Reparamos todas las marcas principales y nos especializamos en actualizaciones de bombas de calor para hogares de Arizona.",
+      "services": [
+        {
+          "name": "Reparación y diagnóstico de aire acondicionado",
+          "slug": "ac-repair",
+          "blurb": "¿Aire acondicionado no enfría? Diagnosticamos y reparamos el mismo día."
+        },
+        {
+          "name": "Instalación de aire acondicionado y bomba de calor",
+          "slug": "ac-install",
+          "blurb": "¿Sistema nuevo o actualización a bomba de calor? Nos encargamos de dimensionamiento, instalación y papeleo de reembolsos."
+        },
+        {
+          "name": "Planes de mantenimiento",
+          "slug": "maintenance",
+          "blurb": "Ajustes de primavera y otoño detectan pequeños problemas antes de que fallen."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Llamé a Thermal Pros a las 3pm un sábado. Técnico aquí a las 4:30, aire acondicionado funcionando de nuevo a las 6. Precio justo, garantía en la reparación.",
+          "author": "David L.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Mejor servicio en Scottsdale. Honestos con el diagnóstico, precio justo, muy profesionales.",
+          "author": "Carlos M.",
+          "location": "Paradise Valley"
+        }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}

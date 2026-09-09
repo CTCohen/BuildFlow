@@ -1,0 +1,118 @@
+{
+  "slug": "round1-cool-guys-mesa",
+  "business": {
+    "name": "Cool Guys HVAC",
+    "trade": "hvac",
+    "phone": "+1-480-555-0356",
+    "email": "dispatch@coolguyshvac.local",
+    "cityState": "Mesa, AZ",
+    "serviceAreas": ["Mesa", "Gilbert", "Chandler", "Ahwatukee"],
+    "hours": "Mon–Fri 7am–6pm · Sat 9am–3pm · 24/7 emergency",
+    "yearsInBusiness": 6,
+    "licenseNo": "AZ-HVAC-91567"
+  },
+  "brand": {
+    "primary": "#0369a1",
+    "accent": "#f59e0b",
+    "heroStyle": "full-bleed",
+    "typePairing": "humanist",
+    "density": "compact"
+  },
+  "content": {
+    "en": {
+      "tagline": "Mesa's fastest HVAC repair — same day, fair price",
+      "heroHeadline": "AC stopped? Cool Guys fixes it fast",
+      "heroSub": "We get you running again the same day. Licensed, insured, and transparent pricing. No surprises.",
+      "primaryCta": "Get your AC fixed today",
+      "about": "Cool Guys HVAC started in 2018 as a two-person shop in Mesa. Now we're a team of 8 EPA-certified techs who handle AC repair, installation, and maintenance across the East Valley. We're a Trane Factory Authorized dealer and we stand behind every repair with a one-year warranty.",
+      "services": [
+        {
+          "name": "Emergency AC repair",
+          "slug": "ac-repair",
+          "blurb": "AC died? We come fast, diagnose clear, fix right. Same day, usually within 4 hours.",
+          "description": "We specialize in getting your AC back online fast. Honest diagnostics, fair prices.",
+          "pricingSignal": "Service call: $75 (waived with repair). Repairs typically $250–$800. Warranty: 1 year."
+        },
+        {
+          "name": "System replacement",
+          "slug": "ac-install",
+          "blurb": "Old system? We'll size a new one right and install it clean. Financing and rebates available."
+        },
+        {
+          "name": "Preventive maintenance",
+          "slug": "maintenance",
+          "blurb": "Spring check-up catches problems early. Keeps your warranty valid and your bill low."
+        },
+        {
+          "name": "Ductwork & airflow",
+          "slug": "ductwork",
+          "blurb": "Dead zones or high bills? Bad ductwork wastes 30% of your cooling. We find and fix it."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "AC went out during a heat wave. Cool Guys had someone here in 2 hours, fixed it in 1. Best $400 I ever spent.",
+          "author": "Tom H.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Been using them for 3 years. Always on time, always fair, always professional. Recommend to everyone.",
+          "author": "Susan K.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "They found a disconnected duct that was costing me $100/month in wasted AC. Fixed it, saved me $1200 a year.",
+          "author": "Robert J.",
+          "location": "Chandler"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Reparación más rápida de aire acondicionado en Mesa — mismo día, precio justo",
+      "heroHeadline": "¿Aire acondicionado roto? Cool Guys lo repara rápido",
+      "heroSub": "Te devolvemos la refrigeración el mismo día. Con licencia, asegurado y precios transparentes. Sin sorpresas.",
+      "primaryCta": "Repara tu aire acondicionado hoy",
+      "about": "Cool Guys HVAC comenzó en 2018 como un taller de dos personas en Mesa. Ahora somos un equipo de 8 técnicos certificados EPA que manejan reparación, instalación y mantenimiento de aire acondicionado en East Valley. Somos distribuidor autorizado de fábrica Trane y respaldamos cada reparación con una garantía de un año.",
+      "services": [
+        {
+          "name": "Reparación de emergencia de aire acondicionado",
+          "slug": "ac-repair",
+          "blurb": "¿Se apagó el aire? Llegamos rápido, diagnosticamos claro, reparamos bien. El mismo día, generalmente dentro de 4 horas."
+        },
+        {
+          "name": "Reemplazo de sistema",
+          "slug": "ac-install",
+          "blurb": "¿Sistema viejo? Dimensionamos uno nuevo correctamente e instalamos limpiamente. Financiamiento y reembolsos disponibles."
+        },
+        {
+          "name": "Mantenimiento preventivo",
+          "slug": "maintenance",
+          "blurb": "Revisión de primavera detecta problemas temprano. Mantiene tu garantía válida y tu factura baja."
+        },
+        {
+          "name": "Ductería y flujo de aire",
+          "slug": "ductwork",
+          "blurb": "¿Zonas muertas o facturas altas? La mala ductería desperdicia el 30% de tu refrigeración. La encontramos y la reparamos."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "El aire se apagó durante una ola de calor. Cool Guys tenía a alguien aquí en 2 horas, lo reparó en 1. El mejor dinero que gasté.",
+          "author": "Tom H.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Los he usado durante 3 años. Siempre puntuales, siempre justos, siempre profesionales. Altamente recomendado.",
+          "author": "Susan K.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "Encontraron un conducto desconectado que me estaba costando $100 al mes en aire desperdiciado. Lo repararon y ahorro $1200 anuales.",
+          "author": "Roberto J.",
+          "location": "Chandler"
+        }
+      ]
+    }
+  },
+  "media": { "heroImage": null, "logo": null }
+}
