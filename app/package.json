@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "qa": "node scripts/qa.mjs",
-    "new-client": "node scripts/new-client.mjs"
+    "new-client": "node scripts/new-client.mjs",
+    "knowledge": "node ../knowledge/compile.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",

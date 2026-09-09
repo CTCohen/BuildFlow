@@ -1,0 +1,300 @@
+<title>BuildFlow Workflow Graph</title>
+<style>
+  :root {
+    --bg: #f6f8fa; --panel: #ffffff; --ink: #14181f; --ink-soft: #55606f;
+    --line: #d8dee6; --accent: #0ea5e9;
+  }
+  :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #0f1319; --panel: #161b22; --ink: #e7ecf2; --ink-soft: #9aa6b2;
+      --line: #2b333d; --accent: #38bdf8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1319; --panel: #161b22; --ink: #e7ecf2; --ink-soft: #9aa6b2;
+    --line: #2b333d; --accent: #38bdf8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 14px 18px 10px; }
+  h1 { margin: 0 0 2px; font-size: 16px; }
+  header p { margin: 0; color: var(--ink-soft); font-size: 12.5px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    padding: 8px 18px; border-block: 1px solid var(--line); background: var(--panel);
+    position: sticky; top: 0; z-index: 5; }
+  .toolbar button { font: inherit; font-size: 12.5px; padding: 4px 10px; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 7px; background: var(--bg); color: var(--ink); }
+  .toolbar button:hover { border-color: var(--accent); }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-left: auto; font-size: 12px; color: var(--ink-soft); }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .sw { width: 13px; height: 13px; border-radius: 3px; border: 1.5px solid; }
+  #stage { width: 100%; height: calc(100vh - 118px); overflow: hidden; cursor: grab; touch-action: none; background: var(--bg); }
+  #stage.grabbing { cursor: grabbing; }
+  svg { width: 100%; height: 100%; display: block; }
+  .box-title { font-weight: 700; font-size: 15px; fill: #14181f; }
+  .box-task { font-size: 12.5px; fill: #2b323c; }
+  .pill-text { font-weight: 700; font-size: 12.5px; }
+  .q-text { font-size: 12px; fill: #7a5b00; }
+  .q-title { font-weight: 700; font-size: 12px; fill: #7a5b00; letter-spacing: .02em; }
+  .edge-label { font-size: 12px; fill: var(--ink-soft); }
+  .note-text { font-size: 11.5px; fill: #14181f; }
+</style>
+
+<header>
+  <h1>BuildFlow — end-to-end workflow</h1>
+  <p>Discovery → delivery → managed. Scroll / pinch to zoom, drag to pan. Tell me the edits and I'll redraw.</p>
+</header>
+
+<div class="toolbar">
+  <button id="zin">Zoom in</button>
+  <button id="zout">Zoom out</button>
+  <button id="fit">Fit</button>
+  <div class="legend">
+    <span><i class="sw" style="border-color:#0ea5e9;background:#e0f2fe"></i>Agent</span>
+    <span><i class="sw" style="border-color:#f59e0b;background:#fef3c7"></i>Human</span>
+    <span><i class="sw" style="border-color:#8b5cf6;background:#ede9fe"></i>Human + Agent</span>
+    <span><i class="sw" style="border-color:#334155;background:#e9edf2"></i>Data store</span>
+    <span><i class="sw" style="border-color:#f59e0b;background:transparent;border-style:dashed"></i>Open question</span>
+  </div>
+</div>
+
+<div id="stage">
+  <svg id="svg" role="img" aria-label="BuildFlow workflow from business discovery through outreach, onboarding, and managed-account operations, showing which stages are run by AI agents, humans, or both, plus the open design questions at each stage."></svg>
+</div>
+
+<script>
+const WHO = {
+  agent:  { stroke: "#0ea5e9", fill: "#e0f2fe", label: "AGENT" },
+  human:  { stroke: "#f59e0b", fill: "#fef3c7", label: "HUMAN" },
+  both:   { stroke: "#8b5cf6", fill: "#ede9fe", label: "HUMAN + AGENT" },
+  store:  { stroke: "#334155", fill: "#e9edf2", label: "DATA STORE (FIFO)" },
+  term:   { stroke: "#10b981", fill: "#d1fae5", label: "DONE" },
+  decide: { stroke: "#334155", fill: "#f1f5f9", label: "DECISION" },
+};
+
+// ---- content ---------------------------------------------------------------
+const STAGES = [
+  { n: "1", type: "agent", title: "Search for businesses",
+    task: ["Find candidate local service businesses in a target trade + geo."],
+    q: ["Best source? Google Maps / Places API, Yelp,", "data broker, scrape? Which trades + metros first?"] },
+  { n: "2", type: "agent", title: "Vet the business",
+    task: ["Enough public info to build them a real site?", "Score against fixed metrics."],
+    q: ["Define the metrics: # reviews, rating floor, has photos,", "has hours, no/weak existing site, years listed.",
+        "What are the pass thresholds?"] },
+  { n: "3", type: "store", title: "Vetted Businesses Warehouse",
+    task: ["Store: site URL, key info, contact (email +", "phone/SMS min). Serve oldest-first (FIFO)."],
+    q: ["Where does it live — Postgres on Railway / Airtable?", "De-dup rule. Contact enrichment source.",
+        "How much info per record is enough?"] },
+  { n: "4", type: "agent", title: "Build website & perfect",
+    task: ["Generate the site in the Astro codebase;", "iterate to the quality bar."],
+    q: ["One agent, or builder + design-critic loop?", "How many iterations before human review?",
+        "Where do the photos come from?"] },
+  { n: "5", type: "agent", title: "Build demo",
+    task: ["Produce a shareable hosted demo URL,", "using skills + tools."],
+    q: ["Which skills / tools? Where is the demo hosted", "(temp subdomain)? How long does it stay live?"] },
+  { n: "6", type: "agent", title: "Outreach email",
+    task: ["Send a business-grade email containing the demo.", "Wait window between touches."],
+    q: ["Wait interval — 12h / 1d / 2d? How many follow-ups?",
+        "Link to your site (packages A & B) — yes/no?",
+        "Distinct warmed sending domain. Zero spam signals. SMS too?"] },
+  { n: "7", type: "both", title: "Inbound hit → notify founder",
+    task: ["Reply / text / call back = interested.", "Founder notified directly with number + script.",
+           "Agent governs; human takes the conversation."],
+    q: ["Digital phone number provider (not personal cell).",
+        "Notify via SMS / push / email? Write the call script."] },
+  { n: "8", type: "both", title: "Onboarding",
+    task: ["Smooth all-digital onboarding: contract signing,", "ToS (managed), payment setup.",
+           "Founder on front-end comms; agent runs the docs."],
+    q: ["E-sign tool (DocuSign or cheaper). Payment = Stripe.",
+        "Contract + ToS drafts. What differs between A and B?"] },
+  { n: "D", type: "decide", title: "Package A or B?",
+    task: ["A = one-time ownership.  B = managed $99/mo."],
+    q: [] },
+  { n: "A", type: "term", title: "Package A — handoff complete",
+    task: ["Deliver static files to their host, 30-day", "transition support, then done. No managed pipeline."],
+    q: [] },
+  { n: "9", type: "agent", title: "Managed-account workflow  (Package B only)",
+    task: ["Move the site into the managed pipeline: hosting,", "SEO + AI SEO, content edits, monthly check-in."],
+    q: ["Recurring cadence? What does “AI SEO” concretely do?",
+        "Edit-intake channel. Client reporting."] },
+];
+
+const NOTES = [
+  { after: "6", text: ["Needs: dedicated domain + warmed inbox,", "SPF/DKIM/DMARC, plain-text-feel, real signature."] },
+  { after: "7", text: ["Needs: a digital number that is NOT the", "founder's personal phone (routing + logging)."] },
+];
+
+// ---- layout --------------------------------------------------------------
+const W = 1520;
+const COL_X = 760;          // spine centre
+const BOX_W = 470, BOX_H = 118;
+const PILL_CX = 250;
+const Q_X = 1040, Q_W = 440;
+const ROW_H = 250;
+const TOP = 90;
+
+const svg = document.getElementById("svg");
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, kids) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  (kids || []).forEach((c) => n.appendChild(c));
+  return n;
+}
+function text(x, y, s, cls, extra) {
+  const t = el("text", Object.assign({ x, y, class: cls || "" }, extra || {}));
+  t.textContent = s;
+  return t;
+}
+function mline(x, y, lines, cls, lh) {
+  const g = el("g");
+  lines.forEach((ln, i) => g.appendChild(text(x, y + i * (lh || 15), ln, cls)));
+  return g;
+}
+
+const vp = el("g", { id: "viewport" });
+svg.appendChild(vp);
+
+// defs: arrowhead
+const defs = el("defs");
+const mk = el("marker", { id: "arw", viewBox: "0 0 10 10", refX: "9", refY: "5",
+  markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" });
+mk.appendChild(el("path", { d: "M0 0L10 5L0 10z", fill: "#55606f" }));
+defs.appendChild(mk);
+svg.appendChild(defs);
+
+let y = TOP;
+const rowY = {};
+STAGES.forEach((s) => {
+  const w = WHO[s.type];
+  const isSide = s.n === "A";
+  const bx = isSide ? COL_X - BOX_W - 90 : COL_X - BOX_W / 2;
+  const by = y;
+  rowY[s.n] = { y: by, x: isSide ? bx + BOX_W / 2 : COL_X, side: isSide };
+
+  // main box
+  const shape = s.type === "decide"
+    ? el("polygon", { points: `${COL_X} ${by-14}, ${COL_X+BOX_W/2+20} ${by+BOX_H/2}, ${COL_X} ${by+BOX_H+14}, ${COL_X-BOX_W/2-20} ${by+BOX_H/2}`,
+        fill: w.fill, stroke: w.stroke, "stroke-width": 2 })
+    : el(s.type === "store" ? "rect" : "rect",
+        { x: bx, y: by, width: BOX_W, height: BOX_H, rx: s.type === "store" ? 16 : 12,
+          fill: w.fill, stroke: w.stroke, "stroke-width": 2 });
+  vp.appendChild(shape);
+
+  const tx = isSide ? bx + 18 : COL_X - BOX_W / 2 + 20;
+  vp.appendChild(text(tx, by + 26, (s.n.match(/[0-9]/) ? "Stage " + s.n + " — " : "") + s.title, "box-title"));
+  vp.appendChild(mline(tx, by + 48, s.task, "box-task", 15));
+
+  // responsibility pill
+  if (!["decide", "term"].includes(s.type)) {
+    const pw = 190, ph = 30;
+    vp.appendChild(el("rect", { x: PILL_CX - pw / 2, y: by + BOX_H / 2 - ph / 2, width: pw, height: ph, rx: 15,
+      fill: w.fill, stroke: w.stroke, "stroke-width": 1.5 }));
+    vp.appendChild(text(PILL_CX, by + BOX_H / 2 + 4, w.label, "pill-text", { "text-anchor": "middle", fill: w.stroke }));
+    vp.appendChild(el("line", { x1: PILL_CX + pw / 2, y1: by + BOX_H / 2, x2: bx, y2: by + BOX_H / 2,
+      stroke: w.stroke, "stroke-width": 1.5, "stroke-dasharray": "3 3" }));
+  }
+
+  // open-questions box
+  if (s.q && s.q.length) {
+    const qh = 26 + s.q.length * 15;
+    vp.appendChild(el("rect", { x: Q_X, y: by + BOX_H / 2 - qh / 2, width: Q_W, height: qh, rx: 10,
+      fill: "none", stroke: "#f59e0b", "stroke-width": 1.6, "stroke-dasharray": "6 4" }));
+    vp.appendChild(text(Q_X + 14, by + BOX_H / 2 - qh / 2 + 18, "OPEN QUESTIONS", "q-title"));
+    vp.appendChild(mline(Q_X + 14, by + BOX_H / 2 - qh / 2 + 36, s.q, "q-text", 15));
+    vp.appendChild(el("line", { x1: (isSide ? bx + BOX_W : COL_X + BOX_W / 2), y1: by + BOX_H / 2,
+      x2: Q_X, y2: by + BOX_H / 2, stroke: "#f59e0b", "stroke-width": 1.4, "stroke-dasharray": "3 3" }));
+  }
+
+  y += ROW_H;
+});
+
+// spine arrows (sequential 1..8 -> D)
+const spineSeq = ["1", "2", "3", "4", "5", "6", "7", "8", "D"];
+for (let i = 0; i < spineSeq.length - 1; i++) {
+  const a = rowY[spineSeq[i]], b = rowY[spineSeq[i + 1]];
+  vp.appendChild(el("line", { x1: COL_X, y1: a.y + BOX_H + (spineSeq[i] === "D" ? 14 : 0),
+    x2: COL_X, y2: b.y - (spineSeq[i + 1] === "D" ? 14 : 0) - 6,
+    stroke: "#55606f", "stroke-width": 2, "marker-end": "url(#arw)" }));
+}
+// D -> A (left branch)
+{
+  const d = rowY["D"], a = rowY["A"];
+  vp.appendChild(el("path", { d: `M ${COL_X - BOX_W/2 - 20} ${d.y + BOX_H/2} H ${a.x} V ${a.y - 6}`,
+    fill: "none", stroke: "#10b981", "stroke-width": 2, "marker-end": "url(#arw)" }));
+  vp.appendChild(text(a.x - 8, d.y + BOX_H/2 - 8, "Package A", "edge-label", { "text-anchor": "end" }));
+}
+// D -> 9 (down branch, continue spine)
+{
+  const d = rowY["D"], s9 = rowY["9"];
+  vp.appendChild(el("line", { x1: COL_X, y1: d.y + BOX_H + 14, x2: COL_X, y2: s9.y - 6,
+    stroke: "#8b5cf6", "stroke-width": 2, "marker-end": "url(#arw)" }));
+  vp.appendChild(text(COL_X + 12, (d.y + BOX_H + 14 + s9.y) / 2, "Package B", "edge-label"));
+}
+
+// infra notes
+NOTES.forEach((nt) => {
+  const r = rowY[nt.after];
+  const nx = COL_X - BOX_W / 2 - 250, ny = r.y + BOX_H + 22, nw = 300, nh = 22 + nt.text.length * 14;
+  vp.appendChild(el("rect", { x: nx, y: ny, width: nw, height: nh, rx: 8,
+    fill: "#fff7e6", stroke: "#f59e0b", "stroke-width": 1.2 }));
+  vp.appendChild(mline(nx + 12, ny + 16, nt.text, "note-text", 14));
+  vp.appendChild(el("line", { x1: nx + nw, y1: ny + nh / 2, x2: COL_X - BOX_W / 2, y2: r.y + BOX_H / 2 + 30,
+    stroke: "#f59e0b", "stroke-width": 1, "stroke-dasharray": "2 3" }));
+});
+
+const CONTENT_H = y + 60;
+svg.setAttribute("viewBox", `0 0 ${W} ${CONTENT_H}`);
+svg.setAttribute("preserveAspectRatio", "xMidYMin meet");
+
+// ---- pan / zoom --------------------------------------------------------
+let scale = 1, tx = 0, ty = 0;
+const stage = document.getElementById("stage");
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+function apply() { vp.setAttribute("transform", `translate(${tx} ${ty}) scale(${scale})`); }
+function pt(clientX, clientY) {
+  const p = svg.createSVGPoint(); p.x = clientX; p.y = clientY;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+function zoomAt(cx, cy, k) {
+  const m = pt(cx, cy);
+  const ns = clamp(scale * k, 0.15, 8);
+  tx = m.x - (m.x - tx) * (ns / scale);
+  ty = m.y - (m.y - ty) * (ns / scale);
+  scale = ns; apply();
+}
+stage.addEventListener("wheel", (e) => { e.preventDefault();
+  zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1.12 : 1 / 1.12); }, { passive: false });
+
+let drag = false, last = null;
+stage.addEventListener("pointerdown", (e) => { drag = true; last = pt(e.clientX, e.clientY);
+  stage.classList.add("grabbing"); stage.setPointerCapture(e.pointerId); });
+stage.addEventListener("pointermove", (e) => { if (!drag) return;
+  const n = pt(e.clientX, e.clientY); tx += n.x - last.x; ty += n.y - last.y; last = n; apply(); });
+stage.addEventListener("pointerup", (e) => { drag = false; stage.classList.remove("grabbing");
+  try { stage.releasePointerCapture(e.pointerId); } catch (_) {} });
+
+// pinch
+let pinch = null;
+stage.addEventListener("touchmove", (e) => {
+  if (e.touches.length !== 2) return; e.preventDefault();
+  const [a, b] = e.touches;
+  const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+  const cx = (a.clientX + b.clientX) / 2, cy = (a.clientY + b.clientY) / 2;
+  if (pinch) zoomAt(cx, cy, d / pinch);
+  pinch = d;
+}, { passive: false });
+stage.addEventListener("touchend", () => { pinch = null; });
+
+function fit() {
+  const r = stage.getBoundingClientRect();
+  scale = clamp(Math.min(r.width / W, r.height / CONTENT_H) * 0.98, 0.15, 8);
+  tx = (r.width - W * scale) / 2; ty = 12; apply();
+}
+document.getElementById("zin").onclick = () => { const r = stage.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1.25); };
+document.getElementById("zout").onclick = () => { const r = stage.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, 0.8); };
+document.getElementById("fit").onclick = fit;
+fit();
+window.addEventListener("resize", fit);
+</script>

@@ -1,0 +1,39 @@
+{
+  "_comment": "Ordered card lists per task. Paths are relative to knowledge/, no .md extension. compile.mjs concatenates 'always' then 'byTrade[trade]'.",
+  "build": {
+    "always": [
+      "principles/web-design",
+      "principles/conversion",
+      "principles/accessibility-baseline",
+      "principles/performance-baseline",
+      "principles/anti-ai-slop-copy",
+      "templates/page-home",
+      "templates/page-services",
+      "templates/page-service-detail",
+      "templates/page-about",
+      "templates/page-contact",
+      "templates/page-service-area",
+      "templates/section-blocks"
+    ],
+    "byTrade": {
+      "hvac": [
+        "trades/hvac/must-haves",
+        "trades/hvac/page-map",
+        "trades/hvac/copy-bank",
+        "trades/hvac/objection-handling",
+        "trades/hvac/trust-signals",
+        "trades/hvac/schema",
+        "trades/hvac/keyword-map",
+        "trades/hvac/phoenix-seasonal"
+      ]
+    }
+  },
+  "seo": {
+    "always": ["principles/local-seo", "principles/ai-seo", "sops/seo-audit", "sops/ai-seo-setup"],
+    "byTrade": { "hvac": ["trades/hvac/schema", "trades/hvac/keyword-map"] }
+  },
+  "managed": {
+    "always": ["sops/managed-monthly", "sops/content-refresh", "principles/local-seo", "principles/ai-seo"],
+    "byTrade": {}
+  }
+}
