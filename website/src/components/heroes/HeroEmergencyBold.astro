@@ -1,0 +1,152 @@
+---
+/**
+ * Hero: Emergency Bold
+ * Full-bleed hero with bold red accent, large white text
+ * Best for: HVAC, emergency services, urgent repair
+ * Mood: Bold, energetic, action-oriented
+ */
+
+interface Props {
+  businessName: string;
+  headline?: string;
+  subheadline?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  heroImage?: string;
+  accentColor?: string;
+}
+
+const {
+  businessName,
+  headline = `Professional ${businessName} Services`,
+  subheadline = "Fast Response. Trusted Results.",
+  ctaText = "Get Started Today",
+  ctaUrl = "#contact",
+  heroImage = "/hero-default.jpg",
+  accentColor = "#FF6B35"
+} = Astro.props;
+---
+
+<section class="hero hero-emergency-bold" style={`--accent-color: ${accentColor}`}>
+  <div class="hero-background">
+    <img src={heroImage} alt={businessName} />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-headline">{headline}</h1>
+    <p class="hero-subheadline">{subheadline}</p>
+    <a href={ctaUrl} class="hero-cta">
+      {ctaText}
+    </a>
+  </div>
+</section>
+
+<style define:vars={{ accentColor }}>
+  .hero-emergency-bold {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 40px 20px;
+    color: white;
+  }
+
+  .hero-headline {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  .hero-subheadline {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    line-height: 1.4;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .hero-emergency-bold {
+      min-height: 400px;
+    }
+
+    .hero-headline {
+      font-size: 32px;
+    }
+
+    .hero-subheadline {
+      font-size: 16px;
+    }
+
+    .hero-content {
+      padding: 30px 20px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cta {
+      transition: none;
+    }
+
+    .hero-cta:hover {
+      transform: none;
+    }
+  }
+</style>

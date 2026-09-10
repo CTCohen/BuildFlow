@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Austin House Cleaning - Professional Cleaning Services">
+  <section class="hero hero-cleaning">
+    <div class="hero-content">
+      <h1>Professional House Cleaning in Austin</h1>
+      <p class="tagline">Fresh Spaces. Happy Homes. Reliable Service.</p>
+      <a href="#contact" class="cta-button">Book Your Cleaning Today</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Our Cleaning Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Regular Cleaning</h3>
+        <p>Weekly or bi-weekly cleaning to keep your home fresh and clean.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Deep Cleaning</h3>
+        <p>Thorough deep cleaning of every room, including baseboards and windows.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Move-In/Move-Out</h3>
+        <p>Complete cleaning for moving transitions. We get your home ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Why Customers Choose Us</h2>
+    <div class="testimonials-carousel">
+      <div class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p class="testimonial-text">"They transformed my house! So detailed and professional. I've been using them for a year now."</p>
+        <p class="customer-name">— Emma Johnson</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p class="testimonial-text">"Finally found a cleaning service I can trust. They're reliable, friendly, and thorough."</p>
+        <p class="customer-name">— Michael Torres</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p class="testimonial-text">"Best decision ever. They handle everything so I can focus on what matters. Highly recommend!"</p>
+        <p class="customer-name">— Sarah Williams</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <h2>Simple Pricing</h2>
+    <div class="pricing-options">
+      <div class="pricing-card">
+        <h3>Regular (2-3 hrs)</h3>
+        <p class="price">Starting at $120</p>
+        <p>Weekly or bi-weekly cleaning</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Deep Clean (4-5 hrs)</h3>
+        <p class="price">Starting at $200</p>
+        <p>Full deep cleaning service</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Move-In/Out</h3>
+        <p class="price">Custom Quote</p>
+        <p>Complete move cleaning</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Ready to Get Your Home Cleaned?</h2>
+    <p>Schedule your cleaning or get a free quote today.</p>
+    <div class="contact-cta">
+      <a href="tel:+15125551234" class="button-primary">Call: (512) 555-1234</a>
+      <a href="#" class="button-secondary">Request a Quote</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-cleaning {
+    background: linear-gradient(135deg, #00D9FF 0%, #00A8CC 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    font-weight: 800;
+  }
+
+  .tagline {
+    font-size: 20px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: #FF6F00;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+  .cta-button:hover {
+    background: #E55A00;
+    transform: scale(1.05);
+  }
+
+  .services {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 32px 24px;
+    background: #f0f9ff;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid #00D9FF;
+  }
+
+  .service-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #00A8CC;
+  }
+
+  .service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .testimonials {
+    padding: 60px 20px;
+    background: #f9f9f9;
+  }
+
+  .testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .testimonials-carousel {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .rating {
+    font-size: 18px;
+    color: #FF6F00;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .customer-name {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .pricing {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pricing h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .pricing-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+    background: #f0f9ff;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #00D9FF;
+  }
+
+  .pricing-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #00A8CC;
+    margin: 12px 0;
+  }
+
+  .pricing-card p {
+    color: #666;
+    margin: 0;
+  }
+
+  .contact {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 32px;
+  }
+
+  .contact-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button-primary,
+  .button-secondary {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .button-primary {
+    background: #00D9FF;
+    color: #003D4D;
+  }
+
+  .button-primary:hover {
+    background: #00A8CC;
+  }
+
+  .button-secondary {
+    background: white;
+    color: #00D9FF;
+    border: 2px solid #00D9FF;
+  }
+
+  .button-secondary:hover {
+    background: #f0f9ff;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 32px;
+    }
+    .tagline {
+      font-size: 16px;
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title ?? 'Legal — BuildFlow';
+---
+
+<Layout title={title}>
+  <article class="legal">
+    <slot />
+  </article>
+</Layout>
+
+<style is:global>
+  .legal {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+  }
+  .legal h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+  }
+  .legal h2 {
+    font-size: 22px;
+    margin: 40px 0 12px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+  }
+  .legal h3 {
+    font-size: 17px;
+    margin: 24px 0 8px;
+  }
+  .legal p, .legal li {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .legal ul {
+    padding-left: 22px;
+    margin: 8px 0 16px;
+  }
+  .legal li {
+    margin: 4px 0;
+  }
+  .legal hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 32px 0;
+  }
+  .legal strong {
+    color: #222;
+  }
+  .legal a {
+    color: #dc2626;
+  }
+</style>
