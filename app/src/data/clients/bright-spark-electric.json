@@ -1,0 +1,127 @@
+{
+  "slug": "bright-spark-electric",
+  "business": {
+    "name": "Bright Spark Electric",
+    "trade": "electrical",
+    "phone": "+1-512-555-0173",
+    "email": "office@brightsparkelectric.local",
+    "cityState": "Austin, TX",
+    "serviceAreas": ["Austin", "Round Rock", "Cedar Park", "Pflugerville"],
+    "hours": "Mon–Fri 7am–6pm · Sat 8am–2pm · 24/7 emergency line",
+    "yearsInBusiness": 9,
+    "licenseNo": "TECL 34821"
+  },
+  "brand": {
+    "primary": "#0b5cad",
+    "accent": "#f2a516",
+    "heroStyle": "split",
+    "typePairing": "grotesk-serif",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "Licensed master electrician serving Austin since 2017",
+      "heroHeadline": "Power problems fixed right, the first time",
+      "heroSub": "Family-owned electrical contractor in Austin. Panel upgrades, EV charger installs, troubleshooting, and 24/7 emergency calls — licensed, insured, and upfront about pricing before we start.",
+      "primaryCta": "Get a free quote",
+      "about": "Bright Spark Electric has served Austin and the surrounding suburbs since 2017. We're a small, licensed crew — not a call center — so the electrician who quotes your job is usually the one who shows up. TECL-licensed, fully insured, and we explain what's wrong before we touch anything. From a flickering breaker to a full panel upgrade or EV charger install, we do it up to code and stand behind the work.",
+      "services": [
+        {
+          "name": "Panel upgrades & replacement",
+          "slug": "panel-upgrades",
+          "blurb": "Old fuse box or tripping breakers? We upgrade panels to safely handle modern loads.",
+          "description": "Full panel replacement or upgrade, permitted and inspected, sized for your home's actual electrical load — including EV chargers and future additions."
+        },
+        {
+          "name": "EV charger installation",
+          "slug": "ev-charger-install",
+          "blurb": "Level 2 home charger installed and wired correctly — most jobs done in a day.",
+          "description": "Dedicated circuit, load calculation, and permitted install for Tesla, ChargePoint, and other Level 2 home chargers."
+        },
+        {
+          "name": "Electrical troubleshooting & repair",
+          "slug": "troubleshooting",
+          "blurb": "Flickering lights, dead outlets, tripping breakers — we find the actual cause.",
+          "description": "Diagnostic visit with a flat trip fee credited toward the repair. No guessing — we trace the problem before we quote the fix."
+        },
+        {
+          "name": "24/7 emergency electrical",
+          "slug": "emergency",
+          "blurb": "Power out, burning smell, or exposed wiring? We answer around the clock.",
+          "description": "Same-day emergency response for safety issues: no power, sparking outlets, burning smell, storm damage."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Panel was original to a 1980s house and way overdue. They walked me through exactly what needed to happen and why, no upselling. Passed inspection first try.",
+          "author": "Marcus D.",
+          "location": "Austin"
+        },
+        {
+          "quote": "Had our EV charger installed in an afternoon. Electrician explained the breaker sizing and even labeled the panel for us. Would call again.",
+          "author": "Priya R.",
+          "location": "Round Rock"
+        },
+        {
+          "quote": "Breaker kept tripping at 11pm and they picked up. Out within the hour, found a bad connection in the attic, fixed it same night.",
+          "author": "Jenna K.",
+          "location": "Cedar Park"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Electricista maestro con licencia, sirviendo a Austin desde 2017",
+      "heroHeadline": "Problemas eléctricos resueltos bien, a la primera",
+      "heroSub": "Contratista eléctrico familiar en Austin. Actualización de paneles, instalación de cargadores para vehículos eléctricos, diagnóstico y llamadas de emergencia 24/7 — con licencia, asegurados y precios claros antes de empezar.",
+      "primaryCta": "Pide tu presupuesto gratis",
+      "about": "Bright Spark Electric ha servido a Austin y sus suburbios desde 2017. Somos un equipo pequeño con licencia TECL, no un centro de llamadas, así que el electricista que cotiza tu trabajo casi siempre es quien llega a tu casa. Totalmente asegurados, y te explicamos el problema antes de tocar nada. Desde un interruptor que se dispara hasta una actualización completa de panel o instalación de cargador eléctrico, trabajamos conforme al código y respaldamos el trabajo.",
+      "services": [
+        {
+          "name": "Actualización de paneles eléctricos",
+          "slug": "panel-upgrades",
+          "blurb": "¿Caja de fusibles vieja o interruptores que se disparan? Actualizamos paneles de forma segura.",
+          "description": "Reemplazo o actualización completa del panel, permisado e inspeccionado, dimensionado para la carga eléctrica real de tu hogar — incluyendo cargadores eléctricos y futuras ampliaciones."
+        },
+        {
+          "name": "Instalación de cargador para vehículo eléctrico",
+          "slug": "ev-charger-install",
+          "blurb": "Cargador de Nivel 2 instalado y cableado correctamente — la mayoría de trabajos en un día.",
+          "description": "Circuito dedicado, cálculo de carga e instalación permisada para cargadores Tesla, ChargePoint y otros de Nivel 2."
+        },
+        {
+          "name": "Diagnóstico y reparación eléctrica",
+          "slug": "troubleshooting",
+          "blurb": "Luces parpadeantes, enchufes sin corriente, interruptores que se disparan — encontramos la causa real.",
+          "description": "Visita de diagnóstico con tarifa fija que se aplica a la reparación. Sin adivinar — rastreamos el problema antes de cotizar la solución."
+        },
+        {
+          "name": "Electricista de emergencia 24/7",
+          "slug": "emergency",
+          "blurb": "¿Sin electricidad, olor a quemado o cables expuestos? Respondemos a toda hora.",
+          "description": "Respuesta de emergencia el mismo día para problemas de seguridad: sin electricidad, enchufes con chispas, olor a quemado, daños por tormenta."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "El panel era original de una casa de los años 80 y ya hacía falta cambiarlo. Me explicaron exactamente qué se necesitaba y por qué, sin presionar para vender más. Pasó la inspección a la primera.",
+          "author": "Marcus D.",
+          "location": "Austin"
+        },
+        {
+          "quote": "Instalaron el cargador de nuestro auto eléctrico en una tarde. El electricista explicó el tamaño del interruptor e incluso etiquetó el panel.",
+          "author": "Priya R.",
+          "location": "Round Rock"
+        },
+        {
+          "quote": "El interruptor se disparaba a las 11pm y contestaron. Llegaron en menos de una hora, encontraron una conexión mala en el ático y la arreglaron esa misma noche.",
+          "author": "Jenna K.",
+          "location": "Cedar Park"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}
