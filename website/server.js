@@ -10,11 +10,23 @@ const PORT = process.env.PORT || 3000;
 const DIST_DIR = path.join(__dirname, 'dist');
 
 const server = http.createServer((req, res) => {
-  // Normalize path
-  let filePath = path.join(DIST_DIR, req.url === '/' ? 'index.html' : req.url);
+  // Reject paths with .. to prevent directory traversal
+  if (req.url.includes('..') || req.url.startsWith('/')) {
+    const normalized = req.url.replace(/\.\./g, '');
+    if (normalized !== req.url || req.url.startsWith('/')) {
+      res.writeHead(403, { 'Content-Type': 'text/plain' });
+      res.end('Forbidden');
+      return;
+    }
+  }
 
-  // Security: prevent directory traversal
-  if (!filePath.startsWith(DIST_DIR)) {
+  // Normalize and resolve path
+  const requestPath = req.url === '/' ? 'index.html' : req.url;
+  let filePath = path.resolve(DIST_DIR, requestPath);
+
+  // Security: prevent directory traversal by checking canonical paths
+  const realDistDir = path.resolve(DIST_DIR);
+  if (!filePath.startsWith(realDistDir + path.sep) && filePath !== realDistDir) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
     res.end('Forbidden');
     return;
