@@ -1,0 +1,89 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang, heading } = Astro.props;
+const c = t(lang);
+const title = heading ?? (lang === "es" ? "Lo que hacemos" : "What we do");
+
+const services = c.services;
+const reviews = c.reviews || [];
+
+// Cycle through reviews to match with services
+const serviceCards = services.map((service, index) => ({
+  service,
+  review: reviews[index % reviews.length],
+  index,
+}));
+---
+
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl">{title}</h2>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {serviceCards.map(({ service: s, review: r, index: i }) => {
+        const slug = s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-");
+        return (
+          <div class="reveal card p-6 flex flex-col h-full hover:shadow-lg transition-shadow" style={`transition-delay:${i * 60}ms`}>
+            <!-- Service Content -->
+            <a href={`/services/${slug}`} class="flex-1">
+              <div class="mb-4 inline-flex items-center justify-center h-11 w-11 rounded-xl" style="background:color-mix(in srgb,var(--brand) 12%, #fff);color:var(--brand)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold hover:text-[var(--brand)] transition-colors">{s.name}</h3>
+              <p class="mt-2 text-[var(--color-ink-soft)]">{s.blurb}</p>
+            </a>
+
+            <!-- Testimonial Divider -->
+            {r && (
+              <>
+                <div class="my-5 h-px bg-[var(--color-line)]"></div>
+
+                <!-- Testimonial -->
+                <figure class="flex-1 flex flex-col">
+                  <div class="flex gap-0.5 mb-3" style="color:var(--brand-accent)" aria-hidden="true">
+                    {Array.from({ length: 5 }).map(() => (
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <blockquote class="text-xs italic text-[var(--color-ink)] flex-1 mb-3">
+                    "{r.quote}"
+                  </blockquote>
+                  <figcaption class="text-xs font-medium text-[var(--color-ink-soft)]">
+                    — {r.author}{r.location ? `, ${r.location}` : ""}
+                  </figcaption>
+                </figure>
+              </>
+            )}
+
+            <!-- CTA -->
+            <a href={`/services/${slug}`} class="mt-4 inline-block text-sm font-medium text-[var(--brand)] hover:underline">
+              View details →
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reveal {
+    animation: revealUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

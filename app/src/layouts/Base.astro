@@ -32,6 +32,18 @@ function readableInk(hex: string): string {
   return l > 0.6 ? "#14181f" : "#ffffff";
 }
 const brandInk = readableInk(client.brand.primary);
+const accentInk = readableInk(client.brand.accent);
+
+// Extended CSS variables for mega-scale design tokens
+const cssVars = [
+  `--brand:${client.brand.primary}`,
+  `--brand-ink:${brandInk}`,
+  `--brand-accent:${client.brand.accent}`,
+  `--brand-accent-ink:${accentInk}`,
+  // Support primaryDark/primaryLight if present (from vertical pools)
+  ...(client.brand.primaryDark ? [`--brand-dark:${client.brand.primaryDark}`] : []),
+  ...(client.brand.primaryLight ? [`--brand-light:${client.brand.primaryLight}`] : []),
+].join(';');
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -50,7 +62,7 @@ const jsonLd = {
 <html
   lang={lang}
   class={`type-${client.brand.typePairing} density-${client.brand.density}`}
-  style={`--brand:${client.brand.primary};--brand-ink:${brandInk};--brand-accent:${client.brand.accent};`}
+  style={cssVars}
 >
   <head>
     <meta charset="utf-8" />

@@ -1,0 +1,26 @@
+---
+import { client, type Lang } from "../../lib/client";
+import { getOptimalHeroVariant } from "../../lib/conditional-features";
+import HeroFullBleed from "./HeroFullBleed.astro";
+import HeroPhotoLeft from "./HeroPhotoLeft.astro";
+import HeroSplit from "./HeroSplit.astro";
+import HeroMinimal from "./HeroMinimal.astro";
+import HeroAccentBar from "./HeroAccentBar.astro";
+
+const { lang = "en" as Lang } = Astro.props;
+
+// Get hero variant: explicit config > conditional features > fallback
+const heroVariant = client.brand.heroStyle || getOptimalHeroVariant();
+
+const variants = {
+  "full-bleed": HeroFullBleed,
+  "photo-left": HeroPhotoLeft,
+  "split": HeroSplit,
+  "minimal": HeroMinimal,
+  "accent-bar": HeroAccentBar,
+};
+
+const Component = variants[heroVariant] || HeroPhotoLeft;
+---
+
+<Component lang={lang} />

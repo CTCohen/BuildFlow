@@ -1,0 +1,184 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang, heading } = Astro.props;
+const c = t(lang);
+const title = heading ?? (lang === "es" ? "Lo que hacemos" : "What we do");
+const services = c.services;
+const reviews = c.reviews || [];
+---
+
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl">{title}</h2>
+    <div class="mt-12 grid gap-8 md:grid-cols-4">
+      <!-- Sidebar Navigation -->
+      <aside class="md:col-span-1">
+        <nav class="sticky top-24 space-y-2">
+          {services.map((s, i) => {
+            const slug = s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-");
+            const isActive = i === 0;
+            return (
+              <a
+                href={`#service-${slug}`}
+                data-service-index={i}
+                class="service-nav-link block py-3 px-4 rounded-lg text-sm font-medium transition-all duration-200"
+                style={isActive
+                  ? "background:var(--brand);color:var(--brand-ink);text-decoration:none"
+                  : "color:var(--color-ink-soft);text-decoration:none"
+                }
+              >
+                {s.name}
+              </a>
+            );
+          })}
+        </nav>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="md:col-span-3 space-y-6">
+        {services.map((s, i) => {
+          const slug = s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-");
+          const review = reviews[i % reviews.length];
+          return (
+            <div
+              id={`service-${slug}`}
+              class="service-card card p-8 scroll-mt-32 reveal"
+              style={`transition-delay:${i * 60}ms`}
+            >
+              <!-- Service Header -->
+              <div class="flex gap-4 items-start mb-6">
+                <div class="flex-shrink-0">
+                  <div class="h-14 w-14 rounded-xl flex items-center justify-center" style="background:color-mix(in srgb,var(--brand) 12%, #fff);color:var(--brand)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-semibold text-[var(--color-ink)]">{s.name}</h3>
+                  <p class="mt-2 text-lg text-[var(--color-ink-soft)]">{s.blurb}</p>
+                </div>
+              </div>
+
+              <!-- Service Description -->
+              {s.description && (
+                <p class="text-[var(--color-ink-soft)] mb-6">
+                  {s.description}
+                </p>
+              )}
+
+              <!-- Testimonial Section -->
+              {review && (
+                <div class="mt-8 pt-8 border-t border-[var(--color-line)]">
+                  <p class="text-sm font-semibold text-[var(--color-ink-soft)] uppercase tracking-wide mb-4">
+                    {lang === "es" ? "Cliente verificado" : "Customer review"}
+                  </p>
+                  <figure class="space-y-3">
+                    <!-- Stars -->
+                    <div class="flex gap-0.5" style="color:var(--brand-accent)" aria-hidden="true">
+                      {Array.from({ length: 5 }).map(() => (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <!-- Quote -->
+                    <blockquote class="text-lg italic text-[var(--color-ink)]">
+                      "{review.quote}"
+                    </blockquote>
+                    <!-- Attribution -->
+                    <figcaption class="text-sm font-medium text-[var(--color-ink-soft)]">
+                      — {review.author}{review.location ? `, ${review.location}` : ""}
+                    </figcaption>
+                  </figure>
+                </div>
+              )}
+
+              <!-- CTA -->
+              <a href={`/services/${slug}`} class="mt-8 inline-block px-6 py-3 bg-[var(--brand)] text-[var(--brand-ink)] font-semibold rounded-lg hover:shadow-lg transition-shadow">
+                {lang === "es" ? "Solicitar presupuesto" : "Get a quote"}
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reveal {
+    animation: revealUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-nav-link {
+    position: relative;
+  }
+
+  .service-nav-link:not([style*="background"]):hover {
+    background: var(--color-surface-2);
+  }
+
+  /* Active state styling */
+  .service-nav-link[style*="background"] {
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--brand) 25%, transparent);
+  }
+</style>
+
+<script>
+  // Smooth scroll and highlight active nav item
+  const navLinks = document.querySelectorAll('.service-nav-link');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = parseInt(link.getAttribute('data-service-index') || '0');
+      updateActive(index);
+      serviceCards[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  function updateActive(index: number) {
+    navLinks.forEach((link, i) => {
+      if (i === index) {
+        link.style.background = 'var(--brand)';
+        link.style.color = 'var(--brand-ink)';
+      } else {
+        link.style.background = '';
+        link.style.color = 'var(--color-ink-soft)';
+      }
+    });
+  }
+
+  // Intersection observer to highlight nav based on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const index = Array.from(serviceCards).indexOf(entry.target as HTMLElement);
+          if (index >= 0) {
+            updateActive(index);
+          }
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  serviceCards.forEach((card) => observer.observe(card));
+</script>

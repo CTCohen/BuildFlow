@@ -1,0 +1,53 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say";
+---
+
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl mb-12">{title}</h2>
+    <div
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
+      style="perspective: 1200px"
+    >
+      {c.reviews.map((r, idx) => (
+        <figure
+          class="card p-4 reveal"
+          style={`
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease-out;
+            transform: rotateX(${(idx % 2) * 2}deg) rotateY(${((idx % 3) - 1) * 3}deg);
+          `}
+          onmouseover="this.style.transform='rotateX(0deg) rotateY(0deg) translateZ(20px)'; this.style.boxShadow='var(--shadow-lift)'"
+          onmouseout={`this.style.transform='rotateX(${(idx % 2) * 2}deg) rotateY(${((idx % 3) - 1) * 3}deg)'; this.style.boxShadow='var(--shadow-card)'`}
+        >
+          <div class="mb-2 flex gap-0.5" style="color:var(--brand-accent)" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-xs sm:text-sm text-[var(--color-ink)] line-clamp-3">
+            "{r.quote}"
+          </blockquote>
+          <figcaption class="mt-2 text-xs text-[var(--color-ink-soft)] truncate">
+            — {r.author}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="text-xs text-[var(--color-ink-soft)] mt-8 text-center">
+      {lang === "es" ? "Pasa el cursor para ver el efecto 3D" : "Hover for 3D effect"}
+    </p>
+  </div>
+</section>
+
+<style>
+  figure:hover {
+    box-shadow: var(--shadow-lift);
+  }
+</style>

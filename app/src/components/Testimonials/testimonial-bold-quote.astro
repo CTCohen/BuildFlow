@@ -1,0 +1,56 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say";
+---
+
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-4xl">{title}</h2>
+    </div>
+
+    <div class="space-y-10">
+      {c.reviews.map((r) => (
+        <div class="reveal grid gap-6 md:grid-cols-12 items-start">
+          {/* Star rating: large and prominent */}
+          <div
+            class="md:col-span-2 flex gap-1"
+            style="color: var(--brand-accent)"
+            aria-hidden="true"
+          >
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+              </svg>
+            ))}
+          </div>
+
+          {/* Quote and author */}
+          <div class="md:col-span-10">
+            <blockquote class="text-lg md:text-xl text-[var(--color-ink)] mb-4 leading-relaxed font-medium">
+              "{r.quote}"
+            </blockquote>
+            <figcaption class="text-[var(--color-ink-soft)]">
+              <span class="font-semibold text-[var(--color-ink)]">{r.author}</span>
+              {r.location && (
+                <>
+                  <br />
+                  <span class="text-sm">{r.location}</span>
+                </>
+              )}
+            </figcaption>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: linear-gradient(to bottom, transparent 0%, var(--color-surface-2) 100%);
+  }
+</style>

@@ -1,0 +1,134 @@
+{
+  "slug": "az-landscaping-desert-green",
+  "business": {
+    "name": "Desert Green Landscaping",
+    "trade": "landscaping",
+    "phone": "+1-480-555-8833",
+    "email": "quotes@desertgreen.com",
+    "cityState": "Mesa, AZ",
+    "serviceAreas": [
+      "Mesa",
+      "Gilbert",
+      "Chandler",
+      "Ahwatukee"
+    ],
+    "hours": "Mon–Fri 8am–5pm · Sat 9am–3pm",
+    "yearsInBusiness": 11,
+    "teamSize": 8,
+    "licenseNo": "AZ-LANDSCAPE-67234"
+  },
+  "brand": {
+    "primary": "#059669",
+    "accent": "#ea580c",
+    "heroStyle": null,
+    "typePairing": "humanist",
+    "density": "comfortable",
+    "servicesLayout": "grid-2col-feature"
+  },
+  "content": {
+    "en": {
+      "tagline": "Desert landscape design, installation, and xeriscaping for Arizona homes",
+      "heroHeadline": "Your yard transformed. Water-smart. Stunning.",
+      "heroSub": "Desert Green creates landscapes that thrive in Arizona's climate, reduce water bills, and look incredible year-round. From design to installation.",
+      "primaryCta": "Schedule Your Project",
+      "about": "Desert Green has designed and installed landscapes across the Phoenix valley for 11 years. We specialize in native plants, water-wise design, and low-maintenance gardens that work with Arizona's unique environment.",
+      "services": [
+        {
+          "name": "Desert landscape design",
+          "slug": "design",
+          "blurb": "Custom designs that fit your space and Arizona's seasons. Drawings, plant lists, phased budgets."
+        },
+        {
+          "name": "Installation & build",
+          "slug": "installation",
+          "blurb": "Full hardscape to planting. Drainage, irrigation, stonework—we build it right."
+        },
+        {
+          "name": "Native plant gardens",
+          "slug": "natives",
+          "blurb": "Palo verde, desert rose, and native shrubs that thrive without excess water."
+        },
+        {
+          "name": "Maintenance & seasonal care",
+          "slug": "maintenance",
+          "blurb": "Ongoing gardens need ongoing care. We keep them healthy and beautiful."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Designed a front yard with native plants. Gorgeous, and our water bill dropped 40%. Worth every penny.",
+          "author": "Robert H.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "They understood what we wanted and executed perfectly. Professional crew, clean work, great communication.",
+          "author": "Jennifer S.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Five stars for turning our boring yard into an oasis. Desert Green really knows their plants and design.",
+          "author": "David C.",
+          "location": "Chandler"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Diseño de paisaje desértico, instalación y xeriscaping para hogares de Arizona",
+      "heroHeadline": "Tu patio transformado. Eficiente en agua. Impresionante.",
+      "heroSub": "Desert Green crea paisajes que prosperan en el clima de Arizona, reducen las facturas de agua y se ven increíbles todo el año.",
+      "primaryCta": "Programar tu proyecto",
+      "about": "Desert Green ha diseñado e instalado paisajes en el valle de Phoenix durante 11 años. Nos especializamos en plantas nativas y diseño eficiente en agua.",
+      "services": [
+        {
+          "name": "Diseño de paisaje desértico",
+          "slug": "design",
+          "blurb": "Diseños personalizados que se adapten a tu espacio y estaciones de Arizona."
+        },
+        {
+          "name": "Instalación y construcción",
+          "slug": "installation",
+          "blurb": "Instalación completa desde trabajos duros hasta plantación."
+        },
+        {
+          "name": "Jardines de plantas nativas",
+          "slug": "natives",
+          "blurb": "Plantas nativas de Arizona que prosperan sin exceso de agua."
+        },
+        {
+          "name": "Mantenimiento y cuidado estacional",
+          "slug": "maintenance",
+          "blurb": "Los jardines en curso necesitan cuidado continuo. Los mantenemos saludables."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Diseñaron un patio delantero con plantas nativas. Hermoso, y nuestra factura de agua bajó 40%.",
+          "author": "Robert H.",
+          "location": "Gilbert"
+        },
+        {
+          "quote": "Entendieron lo que queríamos e hicieron un trabajo perfecto. Equipo profesional.",
+          "author": "Jennifer S.",
+          "location": "Mesa"
+        },
+        {
+          "quote": "Cinco estrellas por convertir nuestro patio aburrido en un oasis. Desert Green realmente sabe de plantas.",
+          "author": "David C.",
+          "location": "Chandler"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  },
+  "vertical": "landscaping",
+  "conditionalFeatures": {
+    "portfolioHeavy": true,
+    "seasonal": true,
+    "projectBased": true,
+    "multiLocation": true
+  }
+}

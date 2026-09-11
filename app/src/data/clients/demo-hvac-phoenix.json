@@ -6,7 +6,13 @@
     "phone": "+1-602-555-0192",
     "email": "dispatch@desertcomfort.local",
     "cityState": "Phoenix, AZ",
-    "serviceAreas": ["Phoenix", "Tempe", "Chandler", "Scottsdale", "Mesa"],
+    "serviceAreas": [
+      "Phoenix",
+      "Tempe",
+      "Chandler",
+      "Scottsdale",
+      "Mesa"
+    ],
     "hours": "Mon–Fri 7am–7pm · Sat 8am–5pm · 24/7 emergency hotline",
     "yearsInBusiness": 12,
     "licenseNo": "AZ-HVAC-77231"
@@ -41,10 +47,22 @@
             "Loud or grinding noise from outside"
           ],
           "process": [
-            { "title": "Quick check", "description": "We inspect the thermostat, outdoor unit, and airflow. Takes 15–20 min." },
-            { "title": "Diagnosis", "description": "We tell you exactly what's broken and show you repair options with pricing." },
-            { "title": "Repair", "description": "Fix it on the spot, usually same day. We test cooling, calibrate, and clean up." },
-            { "title": "Warranty", "description": "One-year warranty on parts and labor. If it fails due to our work, we fix it free." }
+            {
+              "title": "Quick check",
+              "description": "We inspect the thermostat, outdoor unit, and airflow. Takes 15–20 min."
+            },
+            {
+              "title": "Diagnosis",
+              "description": "We tell you exactly what's broken and show you repair options with pricing."
+            },
+            {
+              "title": "Repair",
+              "description": "Fix it on the spot, usually same day. We test cooling, calibrate, and clean up."
+            },
+            {
+              "title": "Warranty",
+              "description": "One-year warranty on parts and labor. If it fails due to our work, we fix it free."
+            }
           ]
         },
         {
@@ -127,5 +145,9 @@
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }

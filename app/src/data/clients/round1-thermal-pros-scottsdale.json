@@ -6,7 +6,12 @@
     "phone": "+1-480-555-0247",
     "email": "hello@thermalpros.local",
     "cityState": "Scottsdale, AZ",
-    "serviceAreas": ["Scottsdale", "Paradise Valley", "North Scottsdale", "Carefree"],
+    "serviceAreas": [
+      "Scottsdale",
+      "Paradise Valley",
+      "North Scottsdale",
+      "Carefree"
+    ],
     "hours": "Mon–Sat 8am–6pm · 24/7 emergency line",
     "yearsInBusiness": 8,
     "licenseNo": "AZ-HVAC-88402"
@@ -94,5 +99,9 @@
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }

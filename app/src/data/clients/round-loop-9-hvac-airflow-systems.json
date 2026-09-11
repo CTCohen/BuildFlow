@@ -117,6 +117,7 @@
   },
   "media": {
     "heroImage": null,
-    "logo": null
+    "logo": null,
+    "source": "generated-identity"
   }
 }

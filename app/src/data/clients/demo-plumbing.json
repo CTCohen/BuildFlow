@@ -6,7 +6,13 @@
     "phone": "+1-512-555-0148",
     "email": "office@northgateplumbing.example",
     "cityState": "Austin, TX",
-    "serviceAreas": ["Austin", "Round Rock", "Pflugerville", "Cedar Park", "Georgetown"],
+    "serviceAreas": [
+      "Austin",
+      "Round Rock",
+      "Pflugerville",
+      "Cedar Park",
+      "Georgetown"
+    ],
     "hours": "Mon–Fri 7am–6pm · Sat 8am–2pm · 24/7 emergency line",
     "yearsInBusiness": 17,
     "licenseNo": "TX-MPL-38842"
@@ -41,10 +47,22 @@
             "High energy bills"
           ],
           "process": [
-            { "title": "Diagnose", "description": "We test the tank, thermostat, and incoming water to identify the real problem." },
-            { "title": "Quote before starting", "description": "We show you the repair cost or replacement options with pricing and financing." },
-            { "title": "Repair or replace", "description": "Most tanks swap in a day. We haul away the old one and make a clean connection." },
-            { "title": "Test and clean up", "description": "We verify hot water flows, drain is sealed, and there's no mess left behind." }
+            {
+              "title": "Diagnose",
+              "description": "We test the tank, thermostat, and incoming water to identify the real problem."
+            },
+            {
+              "title": "Quote before starting",
+              "description": "We show you the repair cost or replacement options with pricing and financing."
+            },
+            {
+              "title": "Repair or replace",
+              "description": "Most tanks swap in a day. We haul away the old one and make a clean connection."
+            },
+            {
+              "title": "Test and clean up",
+              "description": "We verify hot water flows, drain is sealed, and there's no mess left behind."
+            }
           ]
         },
         {
@@ -78,9 +96,21 @@
         }
       ],
       "reviews": [
-        { "quote": "Called at 6am with no hot water, had a new heater installed by lunch. Fair price, spotless work.", "author": "Marcy D.", "location": "Round Rock" },
-        { "quote": "They found a slab leak two other companies missed. Honest, thorough, and they explained everything.", "author": "Sam T.", "location": "Austin" },
-        { "quote": "Quoted before starting, stuck to the number, and cleaned up better than they found it.", "author": "Priya R.", "location": "Cedar Park" }
+        {
+          "quote": "Called at 6am with no hot water, had a new heater installed by lunch. Fair price, spotless work.",
+          "author": "Marcy D.",
+          "location": "Round Rock"
+        },
+        {
+          "quote": "They found a slab leak two other companies missed. Honest, thorough, and they explained everything.",
+          "author": "Sam T.",
+          "location": "Austin"
+        },
+        {
+          "quote": "Quoted before starting, stuck to the number, and cleaned up better than they found it.",
+          "author": "Priya R.",
+          "location": "Cedar Park"
+        }
       ]
     },
     "es": {
@@ -113,11 +143,27 @@
         }
       ],
       "reviews": [
-        { "quote": "Llamé a las 6am sin agua caliente y para el mediodía tenía un calentador nuevo. Precio justo, trabajo impecable.", "author": "Marcy D.", "location": "Round Rock" },
-        { "quote": "Encontraron una fuga bajo la losa que otras dos empresas pasaron por alto. Honestos y minuciosos.", "author": "Sam T.", "location": "Austin" },
-        { "quote": "Cotizaron antes de empezar, respetaron el precio y dejaron todo más limpio de como lo encontraron.", "author": "Priya R.", "location": "Cedar Park" }
+        {
+          "quote": "Llamé a las 6am sin agua caliente y para el mediodía tenía un calentador nuevo. Precio justo, trabajo impecable.",
+          "author": "Marcy D.",
+          "location": "Round Rock"
+        },
+        {
+          "quote": "Encontraron una fuga bajo la losa que otras dos empresas pasaron por alto. Honestos y minuciosos.",
+          "author": "Sam T.",
+          "location": "Austin"
+        },
+        {
+          "quote": "Cotizaron antes de empezar, respetaron el precio y dejaron todo más limpio de como lo encontraron.",
+          "author": "Priya R.",
+          "location": "Cedar Park"
+        }
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }

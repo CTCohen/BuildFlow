@@ -6,7 +6,12 @@
     "phone": "+1-512-555-0173",
     "email": "office@brightsparkelectric.local",
     "cityState": "Austin, TX",
-    "serviceAreas": ["Austin", "Round Rock", "Cedar Park", "Pflugerville"],
+    "serviceAreas": [
+      "Austin",
+      "Round Rock",
+      "Cedar Park",
+      "Pflugerville"
+    ],
     "hours": "Mon–Fri 7am–6pm · Sat 8am–2pm · 24/7 emergency line",
     "yearsInBusiness": 9,
     "licenseNo": "TECL 34821"
@@ -122,6 +127,7 @@
   },
   "media": {
     "heroImage": null,
-    "logo": null
+    "logo": null,
+    "source": "generated-identity"
   }
 }

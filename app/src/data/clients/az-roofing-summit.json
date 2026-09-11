@@ -1,0 +1,133 @@
+{
+  "slug": "az-roofing-summit",
+  "business": {
+    "name": "Summit Roofing & Restoration",
+    "trade": "roofing",
+    "phone": "+1-602-777-4422",
+    "email": "projects@summitroofing.com",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Scottsdale",
+      "Paradise Valley"
+    ],
+    "hours": "Mon–Fri 8am–5pm · Project consultations by appointment",
+    "yearsInBusiness": 16,
+    "teamSize": 14,
+    "licenseNo": "AZ-ROOFING-12891"
+  },
+  "brand": {
+    "primary": "#1e293b",
+    "accent": "#f59e0b",
+    "heroStyle": "minimal",
+    "typePairing": "grotesk-serif",
+    "density": "spacious",
+    "servicesLayout": "grid-2col-feature"
+  },
+  "content": {
+    "en": {
+      "tagline": "Premium roofing, restoration, and architectural excellence",
+      "heroHeadline": "Your roof isn't just shelter. It's architecture.",
+      "heroSub": "For 16 years, Summit Roofing has built roofs that last generations and look intentional. We work with architects, builders, and homeowners who demand craftsmanship.",
+      "primaryCta": "Schedule Your Consultation",
+      "about": "Summit Roofing is an established roofing and restoration firm serving the Phoenix area for 16 years. We specialize in high-end residential and light commercial roofing, historic restoration, and architectural details. Every project is led by a master craftsman with 20+ years of experience.",
+      "services": [
+        {
+          "name": "Architectural roofing",
+          "slug": "architectural",
+          "blurb": "High-end roofs designed with architects. Custom details, premium materials, lasting craftsmanship."
+        },
+        {
+          "name": "Historic restoration",
+          "slug": "restoration",
+          "blurb": "Period-correct restoration of slate, tile, and copper roofs. Preserving Arizona's architectural heritage."
+        },
+        {
+          "name": "Premium installation & maintenance",
+          "slug": "premium-maintenance",
+          "blurb": "Master-level installation and long-term maintenance of premium roofing systems."
+        },
+        {
+          "name": "Consultations & design",
+          "slug": "consultation",
+          "blurb": "Detailed roof consultations and design reviews for architects and builders."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "We brought in Summit Roofing on a high-end residential project. Their attention to detail and collaboration with our architect was exceptional. The roof is stunning.",
+          "author": "Anderson Architects",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Restored our 1960s home's original tile roof with period-correct materials and techniques. They understood the architectural significance. Perfection.",
+          "author": "Eleanor H.",
+          "location": "Paradise Valley"
+        },
+        {
+          "quote": "Not just roofers. Craftsmen who understand architecture. Working with them elevated our entire project.",
+          "author": "Sterling Builders",
+          "location": "Scottsdale"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Techos premium, restauración y excelencia arquitectónica",
+      "heroHeadline": "Tu techo no es solo refugio. Es arquitectura.",
+      "heroSub": "Durante 16 años, Summit Roofing ha construido techos que duran generaciones. Trabajamos con arquitectos y constructores que exigen artesanía.",
+      "primaryCta": "Programar tu consulta",
+      "about": "Summit Roofing es una empresa establecida de techos y restauración que sirve al área de Phoenix durante 16 años. Nos especializamos en techos residenciales de alta gama y restauración histórica.",
+      "services": [
+        {
+          "name": "Techos arquitectónicos",
+          "slug": "architectural",
+          "blurb": "Techos de alta gama diseñados con arquitectos. Detalles personalizados, materiales premium."
+        },
+        {
+          "name": "Restauración histórica",
+          "slug": "restoration",
+          "blurb": "Restauración históricamente correcta de techos de pizarra, baldosa y cobre."
+        },
+        {
+          "name": "Instalación y mantenimiento premium",
+          "slug": "premium-maintenance",
+          "blurb": "Instalación a nivel maestro y mantenimiento a largo plazo de sistemas de techos premium."
+        },
+        {
+          "name": "Consultas y diseño",
+          "slug": "consultation",
+          "blurb": "Consultas detalladas de techos y revisiones de diseño para arquitectos y constructores."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Trajimos a Summit Roofing a un proyecto residencial de alta gama. Su atención a los detalles fue excepcional.",
+          "author": "Anderson Architects",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Restauraron el techo original de baldosa de nuestro hogar de los años 60 con materiales y técnicas históricamente correctos.",
+          "author": "Eleanor H.",
+          "location": "Paradise Valley"
+        },
+        {
+          "quote": "No solo techadores. Artesanos que entienden la arquitectura. Trabajar con ellos elevó todo nuestro proyecto.",
+          "author": "Sterling Builders",
+          "location": "Scottsdale"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  },
+  "vertical": "roofing",
+  "conditionalFeatures": {
+    "portfolioHeavy": true,
+    "projectBased": true,
+    "premiumPositioning": true,
+    "multiLocation": true
+  }
+}

@@ -1,15 +1,25 @@
 #!/usr/bin/env node
 /**
  * Scaffold a client data file.
- *   node scripts/new-client.mjs <slug> [trade]
+ *   node scripts/new-client.mjs <slug> [trade] [--has-logo]
  * Then fill every FILL_ value. `npm run qa -- --client <slug>` fails until it's complete.
+ *
+ * --has-logo: pass this when the business already has a logo / visual identity you found
+ * during discovery. That's the design system's one branch point (media.source in schema.mjs):
+ *   existing-identity  → set media.logo to where it lives, and set brand.primary/accent to
+ *                         colors EXTRACTED from that logo. Honor their brand, don't restyle it.
+ *   generated-identity → no usable existing brand. brand.primary/accent are BuildFlow's own
+ *                         invented identity, chosen freely.
+ * Omit the flag (the default) for generated-identity.
  */
 import { writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { TRADES } from "../src/data/schema.mjs";
 
-const [slug, trade = "plumbing"] = process.argv.slice(2);
+const rawArgs = process.argv.slice(2);
+const hasLogo = rawArgs.includes("--has-logo");
+const [slug, trade = "plumbing"] = rawArgs.filter((a) => !a.startsWith("--"));
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
@@ -54,17 +64,31 @@ const template = {
     yearsInBusiness: 0,
     licenseNo: "FILL_or remove",
   },
-  brand: {
-    primary: "#0b5cad",
-    accent: "#f2a516",
-    heroStyle: "split",
-    typePairing: "grotesk-serif",
-    density: "comfortable",
-  },
+  brand: hasLogo
+    ? {
+        primary: "FILL_hex extracted from their logo",
+        accent: "FILL_hex extracted from their logo",
+        heroStyle: null,
+        typePairing: "grotesk-serif",
+        density: "comfortable",
+      }
+    : {
+        primary: "#0b5cad",
+        accent: "#f2a516",
+        heroStyle: "split",
+        typePairing: "grotesk-serif",
+        density: "comfortable",
+      },
   content: { en: lang("en"), es: lang("es") },
-  media: { heroImage: null, logo: null },
+  media: hasLogo
+    ? { heroImage: null, logo: "FILL_where their logo lives (file path or URL)", source: "existing-identity" }
+    : { heroImage: null, logo: null, source: "generated-identity" },
 };
 
 writeFileSync(out, JSON.stringify(template, null, 2) + "\n");
 console.log(`created ${out}`);
+if (hasLogo) {
+  console.log(`existing-identity: extract brand.primary/brand.accent from the logo at media.logo by eye.`);
+  console.log(`Don't invent colors for this one — honor what they already have.`);
+}
 console.log(`next: fill every FILL_ value, then  npm run qa -- --client ${slug}`);

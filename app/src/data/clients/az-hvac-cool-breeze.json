@@ -1,0 +1,133 @@
+{
+  "slug": "az-hvac-cool-breeze",
+  "business": {
+    "name": "Cool Breeze HVAC",
+    "trade": "hvac",
+    "phone": "+1-602-438-2345",
+    "email": "dispatch@coolbreezehvac.com",
+    "cityState": "Phoenix, AZ",
+    "serviceAreas": [
+      "Phoenix",
+      "Scottsdale",
+      "Tempe",
+      "Chandler"
+    ],
+    "hours": "Mon–Fri 7am–7pm · Sat 8am–5pm · 24/7 emergency hotline",
+    "yearsInBusiness": 8,
+    "teamSize": 6,
+    "licenseNo": "AZ-HVAC-45892"
+  },
+  "brand": {
+    "primary": "#0369a1",
+    "accent": "#f59e0b",
+    "heroStyle": null,
+    "typePairing": "humanist",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "24/7 AC repair & installation for Phoenix families",
+      "heroHeadline": "Your AC quit in 115° heat? We're 4 hours away.",
+      "heroSub": "Cool Breeze shows up same day, diagnoses the problem, and gets you cooling again—flat rate, no surprise charges, one-year warranty.",
+      "primaryCta": "Call for Emergency Service",
+      "about": "Cool Breeze HVAC has served Phoenix since 2018. EPA 608 certified, licensed, and insured. We fix all major brands and stand behind our work.",
+      "services": [
+        {
+          "name": "Emergency AC repair",
+          "slug": "ac-repair",
+          "blurb": "AC not cooling? Leaking? Running constantly? Same-day diagnosis and flat-rate repair."
+        },
+        {
+          "name": "AC installation & replacement",
+          "slug": "ac-install",
+          "blurb": "New system or upgrade? We handle sizing, install, and rebate paperwork."
+        },
+        {
+          "name": "Maintenance & tune-ups",
+          "slug": "maintenance",
+          "blurb": "Pre-summer check keeps your system running and warranties valid."
+        },
+        {
+          "name": "Heat pump systems",
+          "slug": "heat-pump",
+          "blurb": "Energy-efficient heating and cooling in one system."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "AC died in July. Cool Breeze came same day, fixed it for $325. Fair price, real warranty, no upsell.",
+          "author": "Maria G.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Called at 6pm on a Saturday. Tech showed up by 8. Professional, fixed our compressor. Highly recommend.",
+          "author": "James L.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "Not the cheapest but the most honest. They diagnosed our issue correctly and only charged for what needed fixing.",
+          "author": "Patricia M.",
+          "location": "Tempe"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Reparación e instalación de aire acondicionado 24/7 para familias de Phoenix",
+      "heroHeadline": "¿Tu aire acondicionado se apagó en calor de 115°? Estamos a 4 horas.",
+      "heroSub": "Cool Breeze llega el mismo día, diagnostica el problema y te devuelve la refrigeración—tarifa plana, sin sorpresas, garantía de un año.",
+      "primaryCta": "Llamar para servicio de emergencia",
+      "about": "Cool Breeze HVAC sirve a Phoenix desde 2018. Certificado EPA 608, con licencia y asegurado. Reparamos todas las marcas principales.",
+      "services": [
+        {
+          "name": "Reparación de emergencia de aire acondicionado",
+          "slug": "ac-repair",
+          "blurb": "¿AC no enfría? ¿Gotea? ¿Funciona constantemente? Diagnóstico el mismo día."
+        },
+        {
+          "name": "Instalación y reemplazo de aire acondicionado",
+          "slug": "ac-install",
+          "blurb": "¿Sistema nuevo o actualización? Nos encargamos del dimensionamiento e instalación."
+        },
+        {
+          "name": "Mantenimiento y puesta a punto",
+          "slug": "maintenance",
+          "blurb": "Revisión previa al verano mantiene tu sistema funcionando."
+        },
+        {
+          "name": "Sistemas de bomba de calor",
+          "slug": "heat-pump",
+          "blurb": "Calefacción y refrigeración energéticamente eficientes en un sistema."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "El aire se apagó en julio. Cool Breeze vino el mismo día, lo arregló por $325. Precio justo.",
+          "author": "María G.",
+          "location": "Phoenix"
+        },
+        {
+          "quote": "Llamé a las 6pm un sábado. El técnico llegó a las 8. Profesional, arreglaron nuestro compresor.",
+          "author": "James L.",
+          "location": "Scottsdale"
+        },
+        {
+          "quote": "No el más barato pero el más honesto. Diagnosticaron correctamente.",
+          "author": "Patricia M.",
+          "location": "Tempe"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  },
+  "vertical": "hvac",
+  "conditionalFeatures": {
+    "emergencyFocused": true,
+    "multiLocation": true,
+    "seasonal": true,
+    "soloOperator": false
+  }
+}

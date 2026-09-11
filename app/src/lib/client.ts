@@ -56,16 +56,31 @@ export interface Client {
     hours: string;
     yearsInBusiness?: number;
     licenseNo?: string;
+    teamSize?: number;
   };
   brand: {
     primary: string;
     accent: string;
-    heroStyle: "photo-left" | "full-bleed" | "split";
+    heroStyle: "photo-left" | "full-bleed" | "split" | "accent-bar" | "minimal";
     typePairing: "grotesk-serif" | "humanist" | "classic";
     density: "compact" | "comfortable" | "spacious";
+    servicesLayout?: "grid-3col" | "grid-2col-feature" | "card-stack" | "list-sidebar";
+    testimonialStyle?: "grid" | "carousel" | "sidebar";
   };
   content: Record<Lang, ClientContent>;
   media?: { heroImage?: string; logo?: string };
+  // Mega-scale: Vertical pool + conditional features
+  vertical?: string;
+  conditionalFeatures?: {
+    emergencyFocused?: boolean;
+    portfolioHeavy?: boolean;
+    seasonal?: boolean;
+    projectBased?: boolean;
+    premiumPositioning?: boolean;
+    multiLocation?: boolean;
+    soloOperator?: boolean;
+    healthSafety?: boolean;
+  };
 }
 
 const raw = loadRaw(SLUG);

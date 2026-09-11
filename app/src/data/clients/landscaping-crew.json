@@ -1,0 +1,134 @@
+{
+  "slug": "landscaping-crew",
+  "business": {
+    "name": "Urban Roots Landscaping",
+    "trade": "landscaping",
+    "phone": "+1-206-555-0289",
+    "email": "jobs@urbanroots.local",
+    "cityState": "Seattle, WA",
+    "serviceAreas": [
+      "Seattle",
+      "Bellevue",
+      "Redmond",
+      "Tacoma"
+    ],
+    "hours": "Mon–Fri 7am–5pm · Sat 8am–3pm",
+    "yearsInBusiness": 8,
+    "teamSize": 5
+  },
+  "brand": {
+    "primary": "#059669",
+    "accent": "#ea580c",
+    "heroStyle": null,
+    "typePairing": "humanist",
+    "density": "comfortable",
+    "servicesLayout": "grid-2col-feature"
+  },
+  "content": {
+    "en": {
+      "tagline": "Landscape design, installation, and seasonal maintenance",
+      "heroHeadline": "Your yard. Transformed.",
+      "heroSub": "From design to dig to grow. We create landscapes that work for Seattle's climate, need less water, and look incredible year-round. See our work.",
+      "primaryCta": "Book Your Project Consultation",
+      "about": "Urban Roots has been designing and installing landscapes across Seattle for 8 years. We're a crew of 5 who specialize in native plants, water-smart design, and low-maintenance gardens that thrive in the Pacific Northwest. Every project starts with design, builds with precision, and grows into something you'll love.",
+      "services": [
+        {
+          "name": "Landscape design & consultation",
+          "slug": "design",
+          "blurb": "Custom landscape design for your space. Drawings, plant list, phased budget — ready to build.",
+          "description": "We listen to your vision, measure your site, and design a landscape that fits your space and Seattle's seasons."
+        },
+        {
+          "name": "Installation & build",
+          "slug": "installation",
+          "blurb": "Full installation from hardscape to planting. Drainage, irrigation, stone work — we build it right."
+        },
+        {
+          "name": "Seasonal maintenance & care",
+          "slug": "maintenance",
+          "blurb": "Spring cleanups, summer watering, fall prep, winter care. Ongoing gardens need ongoing love."
+        },
+        {
+          "name": "Native plant gardens",
+          "slug": "natives",
+          "blurb": "Gardens full of Pacific NW natives. Low water, high beauty, supports local wildlife."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Walked us through design, built exactly what they promised, and our yard is now the envy of the neighborhood. Worth every penny.",
+          "author": "Christine V.",
+          "location": "Bellevue"
+        },
+        {
+          "quote": "We wanted native plants and less watering. They created a beautiful garden that the hummingbirds love. Professional and patient.",
+          "author": "Mark R.",
+          "location": "Seattle"
+        },
+        {
+          "quote": "Five-star crew. Showed up on time, cleaned up perfectly, and the landscape they built is stunning.",
+          "author": "Jenna P.",
+          "location": "Redmond"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Diseño de paisaje, instalación y mantenimiento estacional",
+      "heroHeadline": "Tu patio. Transformado.",
+      "heroSub": "De diseño a excavación a crecimiento. Creamos paisajes que funcionan para el clima de Seattle, necesitan menos agua, y se ven increíbles todo el año. Ve nuestro trabajo.",
+      "primaryCta": "Reservar consulta de proyecto",
+      "about": "Urban Roots ha estado diseñando e instalando paisajes en Seattle durante 8 años. Somos un equipo de 5 que se especializa en plantas nativas, diseño inteligente con agua, y jardines de bajo mantenimiento que prospera en el Pacífico Noroeste. Cada proyecto comienza con diseño, se construye con precisión, y crece en algo que amarás.",
+      "services": [
+        {
+          "name": "Diseño de paisaje y consulta",
+          "slug": "design",
+          "blurb": "Diseño de paisaje personalizado para tu espacio. Planos, lista de plantas, presupuesto por fases — listo para construir."
+        },
+        {
+          "name": "Instalación y construcción",
+          "slug": "installation",
+          "blurb": "Instalación completa de trabajo de piedra a plantación. Drenaje, riego, trabajos en piedra — lo construimos correctamente."
+        },
+        {
+          "name": "Mantenimiento y cuidado estacional",
+          "slug": "maintenance",
+          "blurb": "Limpiezas de primavera, riego de verano, preparación de otoño, cuidado de invierno. Los jardines en curso necesitan amor continuo."
+        },
+        {
+          "name": "Jardines de plantas nativas",
+          "slug": "natives",
+          "blurb": "Jardines llenos de plantas nativas del Pacífico Noroeste. Poca agua, mucha belleza, apoya la vida silvestre local."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Nos guió a través del diseño, construyó exactamente lo que prometieron, y nuestro patio es ahora la envidia del vecindario. Valió cada centavo.",
+          "author": "Christine V.",
+          "location": "Bellevue"
+        },
+        {
+          "quote": "Queríamos plantas nativas y menos riego. Crearon un hermoso jardín que los colibrís aman. Profesional y pacientes.",
+          "author": "Mark R.",
+          "location": "Seattle"
+        },
+        {
+          "quote": "Equipo de cinco estrellas. Llegaron a tiempo, limpiaron perfectamente, y el paisaje que construyeron es impresionante.",
+          "author": "Jenna P.",
+          "location": "Redmond"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  },
+  "vertical": "landscaping",
+  "conditionalFeatures": {
+    "portfolioHeavy": true,
+    "seasonal": true,
+    "projectBased": true,
+    "multiLocation": true
+  }
+}

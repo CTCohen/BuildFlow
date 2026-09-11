@@ -1,0 +1,51 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang, heading } = Astro.props;
+const c = t(lang);
+const title = heading ?? (lang === "es" ? "Lo que hacemos" : "What we do");
+const services = c.services;
+---
+
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl">{title}</h2>
+    <div class="mt-10 grid gap-8 md:grid-cols-4">
+      <nav class="flex flex-col gap-2">
+        {services.map((s, i) => {
+          const slug = s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-");
+          return (
+            <a
+              href={`/services/${slug}`}
+              class="py-2 px-3 rounded text-sm font-medium transition-colors"
+              style={i === 0
+                ? "background:var(--brand);color:var(--brand-ink);text-decoration:none"
+                : "color:var(--color-ink-soft);text-decoration:none;hover:background:var(--color-surface-2)"
+              }
+            >
+              {s.name}
+            </a>
+          );
+        })}
+      </nav>
+
+      <div class="md:col-span-3">
+        {services[0] && (
+          <a href={`/services/${services[0].slug || services[0].name.toLowerCase().replace(/[^\w]+/g, "-")}`} class="card p-8 hover:shadow-lg transition-shadow block">
+            <div
+              class="mb-4 grid h-16 w-16 place-items-center rounded-xl"
+              style="background:color-mix(in srgb,var(--brand) 12%, #fff);color:var(--brand)"
+              aria-hidden="true"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold">{services[0].name}</h3>
+            <p class="mt-4 text-lg text-[var(--color-ink-soft)]">{services[0].blurb}</p>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

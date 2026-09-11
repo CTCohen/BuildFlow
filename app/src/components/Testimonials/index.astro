@@ -1,0 +1,23 @@
+---
+import { client, t, type Lang } from "../../lib/client";
+import { getOptimalTestimonialStyle } from "../../lib/conditional-features";
+import TestimonialsGrid from "./TestimonialsGrid.astro";
+import TestimonialsSidebar from "./TestimonialsSidebar.astro";
+import TestimonialsCarousel from "./TestimonialsCarousel.astro";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+
+// Get testimonials style: explicit config > conditional features > fallback
+const testimonialStyle = client.brand.testimonialStyle || getOptimalTestimonialStyle();
+
+const variants = {
+  "grid": TestimonialsGrid,
+  "carousel": TestimonialsCarousel,
+  "sidebar": TestimonialsSidebar,
+};
+
+const Component = variants[testimonialStyle] || TestimonialsGrid;
+---
+
+<Component lang={lang} />

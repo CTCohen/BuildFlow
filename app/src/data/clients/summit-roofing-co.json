@@ -1,0 +1,107 @@
+{
+  "slug": "summit-roofing-co",
+  "business": {
+    "name": "Summit Roofing Co.",
+    "trade": "roofing",
+    "phone": "+1-303-555-0114",
+    "email": "office@summitroofingco.local",
+    "cityState": "Boulder, CO",
+    "serviceAreas": ["Boulder", "Longmont", "Louisville", "Lafayette"],
+    "hours": "Mon–Fri 7am–5pm · Storm calls 24/7",
+    "yearsInBusiness": 22,
+    "licenseNo": "CO-ROOF-4471"
+  },
+  "brand": {
+    "primary": "#1c3a5e",
+    "accent": "#8c2f2f",
+    "heroStyle": null,
+    "typePairing": "classic",
+    "density": "comfortable",
+    "_extractedFrom": "logo — navy shield mark with a brick-red banner, est. 2004 lockup. Colors extracted, not invented; don't restyle."
+  },
+  "content": {
+    "en": {
+      "tagline": "Boulder's roofing company since 2004 — same crew, same warranty",
+      "heroHeadline": "The roof over your head, done right the first time",
+      "heroSub": "Summit Roofing Co. has repaired and replaced roofs across Boulder County for 22 years. Licensed, insured, and every job backed by a written workmanship warranty — not just the manufacturer's.",
+      "primaryCta": "Get a free quote",
+      "about": "Summit Roofing Co. has been a Boulder County name since 2004. We're not a storm-chasing crew that shows up after a hailstorm and disappears — we're local, licensed (CO-ROOF-4471), and insured, with a real address and a phone that gets answered. Every roof comes with a written workmanship warranty on top of the manufacturer's material warranty, because we stand behind our own work separately from theirs.",
+      "services": [
+        {
+          "name": "Roof replacement",
+          "slug": "roof-replacement",
+          "blurb": "Full tear-off and replacement, asphalt or metal, with a written workmanship warranty.",
+          "description": "Complete roof replacement including tear-off, decking inspection and repair, underlayment, and your choice of asphalt shingle or standing-seam metal."
+        },
+        {
+          "name": "Roof repair",
+          "slug": "roof-repair",
+          "blurb": "Leaks, missing shingles, flashing failures — fixed without a full replacement pitch.",
+          "description": "Diagnostic inspection and targeted repair. We tell you honestly when a repair is enough and when it isn't."
+        },
+        {
+          "name": "Storm & hail damage",
+          "slug": "storm-damage",
+          "blurb": "Free inspection after a storm, plus help documenting the claim for your insurer.",
+          "description": "Post-storm roof inspection with photo documentation, and direct coordination with your insurance adjuster if you file a claim."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Same company that reroofed our house 15 years ago came back for a repair after hail. Recognized our address before I gave it. That's a business built to last.",
+          "author": "Carol N.",
+          "location": "Boulder"
+        },
+        {
+          "quote": "Dealt with our insurance adjuster directly and got us a fair settlement. Zero pressure, zero storm-chaser vibe — just did the work right.",
+          "author": "Dev P.",
+          "location": "Longmont"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "La empresa de techos de Boulder desde 2004 — el mismo equipo, la misma garantía",
+      "heroHeadline": "El techo sobre tu cabeza, hecho bien desde la primera vez",
+      "heroSub": "Summit Roofing Co. ha reparado y reemplazado techos en todo el condado de Boulder durante 22 años. Con licencia, asegurados, y cada trabajo respaldado por una garantía de mano de obra por escrito — no solo la del fabricante.",
+      "primaryCta": "Pide tu presupuesto gratis",
+      "about": "Summit Roofing Co. ha sido un nombre reconocido en el condado de Boulder desde 2004. No somos una cuadrilla que aparece después de una granizada y desaparece — somos locales, con licencia (CO-ROOF-4471) y seguro, con una dirección real y un teléfono que sí contesta. Cada techo incluye una garantía de mano de obra por escrito además de la garantía de materiales del fabricante, porque respaldamos nuestro propio trabajo por separado.",
+      "services": [
+        {
+          "name": "Reemplazo de techo",
+          "slug": "roof-replacement",
+          "blurb": "Remoción completa y reemplazo, asfalto o metal, con garantía de mano de obra por escrito.",
+          "description": "Reemplazo completo de techo incluyendo remoción, inspección y reparación de la cubierta, membrana impermeabilizante, y tu elección de teja asfáltica o metal de costura vertical."
+        },
+        {
+          "name": "Reparación de techo",
+          "slug": "roof-repair",
+          "blurb": "Goteras, tejas faltantes, fallas en el tapajuntas — reparadas sin presionar por un reemplazo completo.",
+          "description": "Inspección diagnóstica y reparación específica. Te decimos honestamente cuándo una reparación es suficiente y cuándo no."
+        },
+        {
+          "name": "Daño por tormenta y granizo",
+          "slug": "storm-damage",
+          "blurb": "Inspección gratuita después de una tormenta, además de ayuda para documentar tu reclamo de seguro.",
+          "description": "Inspección de techo después de tormenta con documentación fotográfica, y coordinación directa con el ajustador de tu aseguradora si presentas un reclamo."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "La misma empresa que nos puso el techo hace 15 años regresó para una reparación después del granizo. Reconocieron nuestra dirección antes de que la diera. Así se construye un negocio duradero.",
+          "author": "Carol N.",
+          "location": "Boulder"
+        },
+        {
+          "quote": "Trataron directamente con nuestro ajustador de seguros y logramos un acuerdo justo. Cero presión, nada de esa onda de cazadores de tormentas — solo hicieron el trabajo bien.",
+          "author": "Dev P.",
+          "location": "Longmont"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": "intake/summit-roofing-co/logo.png",
+    "source": "existing-identity"
+  }
+}

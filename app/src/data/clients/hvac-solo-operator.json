@@ -1,0 +1,112 @@
+{
+  "slug": "hvac-solo-operator",
+  "business": {
+    "name": "Miguel's HVAC & Emergency Service",
+    "trade": "hvac",
+    "phone": "+1-303-555-0142",
+    "email": "miguel@hvacemergency.local",
+    "cityState": "Denver, CO",
+    "serviceAreas": [
+      "Denver",
+      "Aurora",
+      "Littleton"
+    ],
+    "hours": "Mon–Fri 8am–6pm · Sat 9am–4pm · 24/7 emergency hotline",
+    "yearsInBusiness": 6,
+    "teamSize": 1
+  },
+  "brand": {
+    "primary": "#0369a1",
+    "accent": "#f59e0b",
+    "heroStyle": null,
+    "typePairing": "humanist",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "Solo HVAC tech, 24/7 emergency AC & heating",
+      "heroHeadline": "Your furnace is out. I answer. Same day.",
+      "heroSub": "I'm Miguel — one tech who knows your neighborhood. When you need emergency heat or AC repair in Denver, call me. I'll be there same day, fix it right, and charge you fair.",
+      "primaryCta": "Call for Emergency Service",
+      "about": "I've been fixing HVAC in Denver for 6 years. I work alone, so I know every house I service personally. EPA 608 certified, licensed, and insured. No franchises, no call centers — you get me directly. Fast diagnosis, honest pricing, one-year warranty.",
+      "services": [
+        {
+          "name": "Emergency AC & heating",
+          "slug": "emergency",
+          "blurb": "Furnace won't start? AC stopped cooling? Call me. Same-day emergency service, 24/7.",
+          "description": "Emergency repair with diagnosis, parts, labor, and one-year warranty included. No markup on emergency calls."
+        },
+        {
+          "name": "AC repair & tune-up",
+          "slug": "ac-repair",
+          "blurb": "Unit running weird? Noisy compressor? I'll diagnose and fix it."
+        },
+        {
+          "name": "Furnace & heating service",
+          "slug": "furnace",
+          "blurb": "Winter prep or emergency heat? Denver heating issues hit hard — I'm here 24/7."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Heat died on a Sunday. Miguel answered, came within 2 hours, and had us warm by dinner. Charged us fair. No drama.",
+          "author": "Sarah T.",
+          "location": "Denver"
+        },
+        {
+          "quote": "Not some faceless company. Miguel comes himself, explains what's wrong, and doesn't upsell. Trust him completely.",
+          "author": "David L.",
+          "location": "Aurora"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Técnico HVAC solo, servicio de emergencia 24/7",
+      "heroHeadline": "Tu horno está fuera. Yo contesto. El mismo día.",
+      "heroSub": "Soy Miguel — un técnico que conoce tu barrio. Cuando necesitas reparación de emergencia de calefacción o aire acondicionado en Denver, llámame. Estaré allí el mismo día, lo reparo bien, y te cobro justo.",
+      "primaryCta": "Llamar para servicio de emergencia",
+      "about": "He estado reparando HVAC en Denver durante 6 años. Trabajo solo, así que conozco personalmente cada casa que reparo. Certificado EPA 608, con licencia y asegurado. Sin franquicias, sin centros de llamadas — me obtienes a mí directamente. Diagnóstico rápido, precios justos, garantía de un año.",
+      "services": [
+        {
+          "name": "Emergencia de aire acondicionado y calefacción",
+          "slug": "emergency",
+          "blurb": "¿Horno que no arranca? ¿Aire que dejó de enfriar? Llámame. Servicio de emergencia el mismo día, 24/7."
+        },
+        {
+          "name": "Reparación y ajuste de aire acondicionado",
+          "slug": "ac-repair",
+          "blurb": "¿Unidad funcionando raro? ¿Compresor ruidoso? Yo la diagnosticaré y la repararé."
+        },
+        {
+          "name": "Servicio de horno y calefacción",
+          "slug": "furnace",
+          "blurb": "¿Preparación de invierno o emergencia de calor? Los problemas de calefacción de Denver golpean duro — estoy aquí 24/7."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "El calor se apagó un domingo. Miguel contestó, llegó en 2 horas, y nos tuvo calientes antes de cenar. Nos cobró justo. Sin drama.",
+          "author": "Sarah T.",
+          "location": "Denver"
+        },
+        {
+          "quote": "No alguna empresa sin rostro. Miguel viene él mismo, explica qué está mal, y no te vende lo que no necesitas. Confío completamente en él.",
+          "author": "David L.",
+          "location": "Aurora"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  },
+  "vertical": "hvac",
+  "conditionalFeatures": {
+    "emergencyFocused": true,
+    "soloOperator": true,
+    "multiLocation": true,
+    "seasonal": true
+  }
+}

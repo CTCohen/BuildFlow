@@ -1,0 +1,39 @@
+---
+import { client, t, type Lang } from "../../lib/client";
+import { getOptimalServicesLayout } from "../../lib/conditional-features";
+// Legacy variants
+import ServicesGrid3Col from "./ServicesGrid3Col.astro";
+import ServicesGrid2ColFeature from "./ServicesGrid2ColFeature.astro";
+import ServicesCardStack from "./ServicesCardStack.astro";
+import ServicesListSidebar from "./ServicesListSidebar.astro";
+// New variants
+import Grid2ColFeatureGallery from "./grid-2col-feature-gallery.astro";
+import Grid3ColCardsWithTestimonials from "./grid-3col-cards-with-testimonials.astro";
+import Grid2ColCompact from "./grid-2col-compact.astro";
+import Grid3ColLargeCards from "./grid-3col-large-cards.astro";
+import GridListWithSidebar from "./grid-list-with-sidebar.astro";
+
+const { lang = "en" as Lang, heading } = Astro.props;
+const c = t(lang);
+
+// Get services layout: explicit config > conditional features > fallback
+const servicesLayout = client.brand.servicesLayout || getOptimalServicesLayout();
+
+const variants = {
+  // Legacy variants
+  "grid-3col": ServicesGrid3Col,
+  "grid-2col-feature": ServicesGrid2ColFeature,
+  "card-stack": ServicesCardStack,
+  "list-sidebar": ServicesListSidebar,
+  // New variants
+  "grid-2col-feature-gallery": Grid2ColFeatureGallery,
+  "grid-3col-cards-with-testimonials": Grid3ColCardsWithTestimonials,
+  "grid-2col-compact": Grid2ColCompact,
+  "grid-3col-large-cards": Grid3ColLargeCards,
+  "grid-list-with-sidebar": GridListWithSidebar,
+};
+
+const Component = variants[servicesLayout] || ServicesGrid3Col;
+---
+
+<Component lang={lang} heading={heading} />

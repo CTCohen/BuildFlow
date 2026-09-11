@@ -1,0 +1,42 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say";
+---
+
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl mb-12">{title}</h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {c.reviews.map((r) => (
+        <figure
+          class="card reveal border-t-[3px] p-8"
+          style="border-top-color: var(--brand-accent)"
+        >
+          <div class="mb-6 flex gap-1" style="color:var(--brand-accent)" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+              </svg>
+            ))}
+          </div>
+
+          <blockquote class="mb-6 text-[var(--color-ink)] leading-relaxed">
+            "{r.quote}"
+          </blockquote>
+
+          <div class="pt-6 border-t border-[var(--color-line)]">
+            <figcaption class="font-semibold text-[var(--color-ink)]">
+              {r.author}
+            </figcaption>
+            {r.location && (
+              <p class="text-sm text-[var(--color-ink-soft)] mt-1">{r.location}</p>
+            )}
+          </div>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import { client, tel, t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const secondaryCta = lang === "es" ? "Ver servicios" : "See services";
+const trust = [
+  biz.yearsInBusiness ? `${biz.yearsInBusiness}+ ${lang === "es" ? "años" : "years"}` : null,
+  biz.licenseNo ? (lang === "es" ? "Con licencia y asegurado" : "Licensed & insured") : null,
+  biz.serviceAreas.length
+    ? `${lang === "es" ? "Sirviendo" : "Serving"} ${biz.serviceAreas.slice(0, 3).join(", ")}`
+    : null,
+].filter(Boolean) as string[];
+---
+
+<section class="relative overflow-hidden">
+  <div class="container grid items-center gap-10 py-20 md:py-32 max-w-2xl text-center mx-auto">
+    <div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold">{c.heroHeadline}</h1>
+      <p class="mt-6 text-xl measure text-[var(--color-ink-soft)] mx-auto">
+        {c.heroSub}
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3 justify-center">
+        <a href={`tel:${tel}`} class="btn btn-primary btn-lg">{c.primaryCta}</a>
+        <a href="/services" class="btn btn-ghost btn-lg">{secondaryCta}</a>
+      </div>
+      <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[var(--color-ink-soft)] justify-center">
+        {trust.map((item) => (
+          <li class="flex items-center gap-1.5">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

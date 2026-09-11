@@ -4,12 +4,42 @@
 export const TRADES = [
   "plumbing", "hvac", "electrical", "roofing", "carpentry",
   "house-cleaning", "carpet-cleaning", "pressure-washing", "junk-removal",
+  "landscaping", "snow-removal", "pool-services", "tree-care",
+  "masonry", "concrete", "fence-installation", "deck-building",
+  "restoration", "fire-remediation", "mold-remediation", "septic-services",
+  "well-drilling", "chimney-services", "radon-mitigation", "pressure-washing-premium",
+  "custom-carpentry", "junk-removal-premium"
 ];
 
-export const HERO_STYLES = ["photo-left", "full-bleed", "split"];
+export const VERTICALS = [
+  "hvac", "plumbing", "electrical",           // Emergency
+  "landscaping", "snow-removal", "pool-services", "tree-care", "pressure-washing",  // Seasonal
+  "roofing", "carpentry", "masonry", "concrete",                                     // Premium
+  "fence-installation", "deck-building", "bathroom-renovation", "kitchen-renovation", // Project-based
+  "septic-services", "well-drilling", "chimney-services", "radon-mitigation", "mold-remediation"  // Specialized
+];
+
+// The one branch point in the design system: does this business already have a logo /
+// visual identity, or are we inventing one for them? Everything downstream (brand colors,
+// hero/type selection) reads this instead of guessing from whether media.logo is truthy.
+export const BRAND_SOURCES = ["existing-identity", "generated-identity"];
+
+export const HERO_STYLES = ["photo-left", "full-bleed", "split", "accent-bar", "minimal"];
 export const TYPE_PAIRINGS = ["grotesk-serif", "humanist", "classic"];
 export const DENSITIES = ["compact", "comfortable", "spacious"];
 export const LANGS = ["en", "es"];
+
+// Conditional feature flags
+export const CONDITIONAL_FEATURES = {
+  emergencyFocused: "emergency",
+  portfolioHeavy: "before-after",
+  seasonal: "seasonal-availability",
+  projectBased: "project-timeline",
+  premiumPositioning: "luxury-aesthetic",
+  multiLocation: "location-switcher",
+  soloOperator: "owner-story",
+  healthSafety: "certifications-education"
+};
 
 const PHONE_RE = /^\+?[0-9][0-9\-().\s]{7,}$/;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -69,11 +99,27 @@ export function validateClient(data) {
   if (b.yearsInBusiness != null && typeof b.yearsInBusiness !== "number") err("business.yearsInBusiness: number");
   if (!isNonEmptyString(b.licenseNo)) warn("business.licenseNo: missing (trades trust signal)");
 
+  // ---- media / brand source (the logo-first branch) ----
+  // "existing-identity": the business already has a logo/brand — media.logo must point to it,
+  //   and brand.primary/accent below are expected to be EXTRACTED from that logo (by eye today;
+  //   automatable later), not invented. Don't restyle these businesses — honor what they have.
+  // "generated-identity": no usable existing brand — brand.primary/accent are BuildFlow's
+  //   invented identity for them, chosen freely per the conditional-features rules.
+  const media = data.media || {};
+  if (!BRAND_SOURCES.includes(media.source)) {
+    err(`media.source: required, one of ${BRAND_SOURCES.join(", ")} — the design system's` +
+      ` logo-first branch point`);
+  } else if (media.source === "existing-identity" && !isNonEmptyString(media.logo)) {
+    err("media.logo: required when media.source is existing-identity");
+  } else if (media.source === "generated-identity" && isNonEmptyString(media.logo)) {
+    warn("media.logo is set but media.source is generated-identity — should this be existing-identity?");
+  }
+
   // ---- brand ----
   const br = data.brand || {};
   if (!HEX_RE.test(br.primary || "")) err("brand.primary: required hex color");
   if (!HEX_RE.test(br.accent || "")) err("brand.accent: required hex color");
-  if (!HERO_STYLES.includes(br.heroStyle)) err(`brand.heroStyle: one of ${HERO_STYLES.join(", ")}`);
+  if (br.heroStyle != null && !HERO_STYLES.includes(br.heroStyle)) err(`brand.heroStyle: one of ${HERO_STYLES.join(", ")} (or null for auto-selection)`);
   if (!TYPE_PAIRINGS.includes(br.typePairing)) err(`brand.typePairing: one of ${TYPE_PAIRINGS.join(", ")}`);
   if (!DENSITIES.includes(br.density)) err(`brand.density: one of ${DENSITIES.join(", ")}`);
 

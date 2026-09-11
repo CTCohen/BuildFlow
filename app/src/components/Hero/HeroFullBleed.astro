@@ -1,0 +1,49 @@
+---
+import { client, tel, t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const biz = client.business;
+const secondaryCta = lang === "es" ? "Ver servicios" : "See services";
+const trust = [
+  biz.yearsInBusiness ? `${biz.yearsInBusiness}+ ${lang === "es" ? "años" : "years"}` : null,
+  biz.licenseNo ? (lang === "es" ? "Con licencia y asegurado" : "Licensed & insured") : null,
+  biz.serviceAreas.length
+    ? `${lang === "es" ? "Sirviendo" : "Serving"} ${biz.serviceAreas.slice(0, 3).join(", ")}`
+    : null,
+].filter(Boolean) as string[];
+---
+
+<section
+  class="relative overflow-hidden text-[var(--brand-ink)]"
+  style="background:linear-gradient(135deg,var(--brand),color-mix(in srgb,var(--brand) 70%, #000))"
+>
+  <div class="container grid items-center gap-10 py-16 md:py-24 max-w-3xl text-center mx-auto">
+    <div>
+      <p
+        class="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+        style="background:rgba(255,255,255,.16)"
+      >
+        {c.tagline}
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-[3.4rem]">{c.heroHeadline}</h1>
+      <p class="mt-4 text-lg measure opacity-90 mx-auto">
+        {c.heroSub}
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3 justify-center">
+        <a href={`tel:${tel}`} class="btn btn-primary">{c.primaryCta}</a>
+        <a href="/services" class="btn btn-ghost">{secondaryCta}</a>
+      </div>
+      <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm justify-center opacity-90">
+        {trust.map((item) => (
+          <li class="flex items-center gap-1.5">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

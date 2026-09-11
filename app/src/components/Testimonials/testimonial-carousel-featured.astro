@@ -1,0 +1,81 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say";
+
+const [featured, ...rest] = c.reviews;
+---
+
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl mb-12">{title}</h2>
+
+    {featured && (
+      <div class="mb-16 reveal">
+        <figure
+          class="card p-8 md:p-12 border-t-4"
+          style="border-top-color: var(--brand-accent)"
+        >
+          <div class="flex gap-1 mb-6" style="color:var(--brand-accent)" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-2xl md:text-3xl text-[var(--color-ink)] mb-6 leading-tight">
+            "{featured.quote}"
+          </blockquote>
+          <div>
+            <figcaption class="text-lg font-semibold text-[var(--color-ink)]">
+              {featured.author}
+            </figcaption>
+            {featured.location && (
+              <p class="text-sm text-[var(--color-ink-soft)] mt-1">{featured.location}</p>
+            )}
+          </div>
+        </figure>
+      </div>
+    )}
+
+    {rest.length > 0 && (
+      <div>
+        <h3 class="text-lg font-semibold mb-6">
+          {lang === "es" ? "Más testimonios" : "More reviews"}
+        </h3>
+        <div
+          class="overflow-x-auto snap-x snap-mandatory flex gap-4 pb-4"
+          style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch"
+        >
+          {rest.map((r) => (
+            <figure
+              class="card flex-shrink-0 w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-10px)] p-6 snap-start"
+            >
+              <div class="flex gap-0.5 mb-4" style="color:var(--brand-accent)" aria-hidden="true">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote class="text-sm text-[var(--color-ink)] mb-4 line-clamp-3">
+                "{r.quote}"
+              </blockquote>
+              <figcaption class="text-sm font-medium text-[var(--color-ink)]">
+                {r.author}
+              </figcaption>
+              {r.location && (
+                <p class="text-xs text-[var(--color-ink-soft)] mt-1">{r.location}</p>
+              )}
+            </figure>
+          ))}
+        </div>
+        <p class="text-xs text-[var(--color-ink-soft)] mt-4">
+          {lang === "es" ? "Desliza para ver más" : "Swipe to see more"}
+        </p>
+      </div>
+    )}
+  </div>
+</section>

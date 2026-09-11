@@ -1,0 +1,482 @@
+[
+  {
+    "themeId": "trust-blue-gold",
+    "themeName": "Trust + Speed",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["hvac", "plumbing", "electrical"],
+    "colors": {
+      "primary": "#0369a1",
+      "accent": "#f59e0b",
+      "primaryDark": "#024e7a",
+      "primaryLight": "#e0f2fe"
+    },
+    "wcagRatio": 7.2,
+    "rationale": "Professional blue with warm amber for trust + urgency. Default for established service businesses."
+  },
+  {
+    "themeId": "modern-blue-pink",
+    "themeName": "Modern Minimal",
+    "maturity": "new",
+    "positioning": "premium",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#1e40af",
+      "accent": "#ec4899",
+      "primaryDark": "#1e3a8a",
+      "primaryLight": "#eff6ff"
+    },
+    "wcagRatio": 6.8,
+    "rationale": "Contemporary royal blue + energetic pink. For younger teams and tech-forward positioning."
+  },
+  {
+    "themeId": "eco-green-red",
+    "themeName": "Eco Green",
+    "maturity": "established",
+    "positioning": "specialist",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#059669",
+      "accent": "#dc2626",
+      "primaryDark": "#055b4f",
+      "primaryLight": "#d1fae5"
+    },
+    "wcagRatio": 6.9,
+    "rationale": "Teal for eco-conscious positioning. High-contrast red for efficiency-focused CTAs."
+  },
+  {
+    "themeId": "premium-purple-cyan",
+    "themeName": "Premium",
+    "maturity": "veteran",
+    "positioning": "premium",
+    "trades": ["hvac"],
+    "colors": {
+      "primary": "#7c3aed",
+      "accent": "#0ea5e9",
+      "primaryDark": "#6d28d9",
+      "primaryLight": "#f3e8ff"
+    },
+    "wcagRatio": 6.1,
+    "rationale": "Purple conveys expertise and premium service. Cyan accent for high-end installations."
+  },
+  {
+    "themeId": "bold-red-blue",
+    "themeName": "Bold Direct",
+    "maturity": "established",
+    "positioning": "discount",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#dc2626",
+      "accent": "#0369a1",
+      "primaryDark": "#b91c1c",
+      "primaryLight": "#fee2e2"
+    },
+    "wcagRatio": 5.2,
+    "rationale": "High-volume emergency positioning. Red commands attention, blue grounds trust."
+  },
+  {
+    "themeId": "coastal-teal-orange",
+    "themeName": "Coastal",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["plumbing"],
+    "colors": {
+      "primary": "#0d9488",
+      "accent": "#f97316",
+      "primaryDark": "#0f766e",
+      "primaryLight": "#ccfbf1"
+    },
+    "wcagRatio": 6.5,
+    "rationale": "Calm teal for water-related services (plumbing). Warm orange for approachability."
+  },
+  {
+    "themeId": "slate-indigo-amber",
+    "themeName": "Professional Slate",
+    "maturity": "veteran",
+    "positioning": "value",
+    "trades": ["hvac", "electrical"],
+    "colors": {
+      "primary": "#475569",
+      "accent": "#fbbf24",
+      "primaryDark": "#334155",
+      "primaryLight": "#f1f5f9"
+    },
+    "wcagRatio": 6.2,
+    "rationale": "Neutral slate for established, serious positioning. Golden accent adds warmth."
+  },
+  {
+    "themeId": "sapphire-lime",
+    "themeName": "Tech Sapphire",
+    "maturity": "new",
+    "positioning": "premium",
+    "trades": ["hvac", "electrical"],
+    "colors": {
+      "primary": "#2563eb",
+      "accent": "#84cc16",
+      "primaryDark": "#1d4ed8",
+      "primaryLight": "#eff6ff"
+    },
+    "wcagRatio": 7.8,
+    "rationale": "Bold blue for tech positioning. Bright lime for modern, energy-efficient tech."
+  },
+  {
+    "themeId": "rose-slate",
+    "themeName": "Warm Rose",
+    "maturity": "new",
+    "positioning": "value",
+    "trades": ["plumbing"],
+    "colors": {
+      "primary": "#be153d",
+      "accent": "#64748b",
+      "primaryDark": "#831843",
+      "primaryLight": "#ffe4e6"
+    },
+    "wcagRatio": 5.8,
+    "rationale": "Warm rose for approachable, caring service positioning. Slate grounds professionalism."
+  },
+  {
+    "themeId": "emerald-gold",
+    "themeName": "Emerald Luxury",
+    "maturity": "veteran",
+    "positioning": "premium",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#047857",
+      "accent": "#fbbf24",
+      "primaryDark": "#065f46",
+      "primaryLight": "#d1fae5"
+    },
+    "wcagRatio": 7.1,
+    "rationale": "Deep emerald for luxury. Gold accent suggests premium craftsmanship."
+  },
+  {
+    "themeId": "navy-coral",
+    "themeName": "Navy Coral",
+    "maturity": "established",
+    "positioning": "premium",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#001f3f",
+      "accent": "#ff6b6b",
+      "primaryDark": "#000814",
+      "primaryLight": "#e6f1ff"
+    },
+    "wcagRatio": 7.4,
+    "rationale": "Classic navy conveys trust and stability. Coral brings energy and approachability."
+  },
+  {
+    "themeId": "forest-amber",
+    "themeName": "Forest",
+    "maturity": "established",
+    "positioning": "specialist",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#15803d",
+      "accent": "#f59e0b",
+      "primaryDark": "#166534",
+      "primaryLight": "#dcfce7"
+    },
+    "wcagRatio": 7.0,
+    "rationale": "Deep forest green for environmental responsibility. Amber for energy and warmth."
+  },
+  {
+    "themeId": "cobalt-orange",
+    "themeName": "Cobalt",
+    "maturity": "new",
+    "positioning": "value",
+    "trades": ["electrical"],
+    "colors": {
+      "primary": "#0051ba",
+      "accent": "#ff9500",
+      "primaryDark": "#003087",
+      "primaryLight": "#e6f2ff"
+    },
+    "wcagRatio": 7.6,
+    "rationale": "Vibrant cobalt suggests technical expertise. Orange conveys energy and speed."
+  },
+  {
+    "themeId": "slate-emerald",
+    "themeName": "Modern Slate",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["electrical", "hvac"],
+    "colors": {
+      "primary": "#1e293b",
+      "accent": "#10b981",
+      "primaryDark": "#0f172a",
+      "primaryLight": "#f1f5f9"
+    },
+    "wcagRatio": 7.2,
+    "rationale": "Dark slate for serious, technical work. Green suggests reliability and nature."
+  },
+  {
+    "themeId": "crimson-silver",
+    "themeName": "Crimson",
+    "maturity": "new",
+    "positioning": "discount",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#c41e3a",
+      "accent": "#b0b0b0",
+      "primaryDark": "#8b1a2e",
+      "primaryLight": "#ffe6e6"
+    },
+    "wcagRatio": 5.9,
+    "rationale": "Bold crimson for emergency urgency. Silver grounds urgency with calm professionalism."
+  },
+  {
+    "themeId": "teal-rose",
+    "themeName": "Teal Rose",
+    "maturity": "new",
+    "positioning": "premium",
+    "trades": ["plumbing"],
+    "colors": {
+      "primary": "#14b8a6",
+      "accent": "#ec4899",
+      "primaryDark": "#0d9488",
+      "primaryLight": "#ccfbf1"
+    },
+    "wcagRatio": 6.3,
+    "rationale": "Modern teal for water services. Soft pink accent for accessible, friendly tone."
+  },
+  {
+    "themeId": "indigo-orange",
+    "themeName": "Indigo Warm",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["hvac"],
+    "colors": {
+      "primary": "#4338ca",
+      "accent": "#f97316",
+      "primaryDark": "#3730a3",
+      "primaryLight": "#e0e7ff"
+    },
+    "wcagRatio": 6.4,
+    "rationale": "Deep indigo for technical expertise. Warm orange for approachable service."
+  },
+  {
+    "themeId": "violet-yellow",
+    "themeName": "Violet Energy",
+    "maturity": "new",
+    "positioning": "premium",
+    "trades": ["electrical"],
+    "colors": {
+      "primary": "#6d28d9",
+      "accent": "#eab308",
+      "primaryDark": "#5b21b6",
+      "primaryLight": "#f3e8ff"
+    },
+    "wcagRatio": 7.5,
+    "rationale": "Violet for modern electrical tech. Bright yellow conveys energy and brightness."
+  },
+  {
+    "themeId": "charcoal-lime",
+    "themeName": "Tech Charcoal",
+    "maturity": "established",
+    "positioning": "premium",
+    "trades": ["electrical"],
+    "colors": {
+      "primary": "#27272a",
+      "accent": "#65a30d",
+      "primaryDark": "#18181b",
+      "primaryLight": "#fafafa"
+    },
+    "wcagRatio": 7.8,
+    "rationale": "Dark charcoal for sleek, technical positioning. Bright lime suggests modern energy."
+  },
+  {
+    "themeId": "maroon-gold",
+    "themeName": "Heritage Maroon",
+    "maturity": "veteran",
+    "positioning": "value",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#800020",
+      "accent": "#fbbf24",
+      "primaryDark": "#660018",
+      "primaryLight": "#ffebcd"
+    },
+    "wcagRatio": 5.1,
+    "rationale": "Heritage maroon for established, family-run businesses. Gold adds warmth and prestige."
+  },
+  {
+    "themeId": "ocean-sand",
+    "themeName": "Ocean",
+    "maturity": "established",
+    "positioning": "specialist",
+    "trades": ["plumbing"],
+    "colors": {
+      "primary": "#0369a1",
+      "accent": "#d2691e",
+      "primaryDark": "#024e7a",
+      "primaryLight": "#e0f2fe"
+    },
+    "wcagRatio": 6.1,
+    "rationale": "Ocean blue for water expertise. Sandy brown for grounded, reliable service."
+  },
+  {
+    "themeId": "silver-red",
+    "themeName": "Silver Alert",
+    "maturity": "new",
+    "positioning": "discount",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#a0aec0",
+      "accent": "#ef4444",
+      "primaryDark": "#64748b",
+      "primaryLight": "#f8fafc"
+    },
+    "wcagRatio": 5.0,
+    "rationale": "Silver conveys affordability. Bright red ensures emergency awareness."
+  },
+  {
+    "themeId": "bronze-teal",
+    "themeName": "Bronze Professional",
+    "maturity": "veteran",
+    "positioning": "value",
+    "trades": ["electrical", "hvac"],
+    "colors": {
+      "primary": "#92400e",
+      "accent": "#06b6d4",
+      "primaryDark": "#78350f",
+      "primaryLight": "#fef3c7"
+    },
+    "wcagRatio": 5.2,
+    "rationale": "Bronze suggests craftsmanship. Cyan adds modern technical credibility."
+  },
+  {
+    "themeId": "midnight-gold",
+    "themeName": "Midnight Gold",
+    "maturity": "veteran",
+    "positioning": "premium",
+    "trades": ["hvac"],
+    "colors": {
+      "primary": "#0f172a",
+      "accent": "#f59e0b",
+      "primaryDark": "#020617",
+      "primaryLight": "#f8fafc"
+    },
+    "wcagRatio": 7.9,
+    "rationale": "Elegant midnight for luxury positioning. Gold is timeless premium accent."
+  },
+  {
+    "themeId": "pine-coral",
+    "themeName": "Pine",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["plumbing"],
+    "colors": {
+      "primary": "#065f46",
+      "accent": "#ff7f50",
+      "primaryDark": "#064e3b",
+      "primaryLight": "#d1fae5"
+    },
+    "wcagRatio": 6.2,
+    "rationale": "Deep pine for natural, earth-based positioning. Coral for warmth and service."
+  },
+  {
+    "themeId": "rust-cream",
+    "themeName": "Rustic Rust",
+    "maturity": "established",
+    "positioning": "value",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#b45309",
+      "accent": "#fef3c7",
+      "primaryDark": "#92400e",
+      "primaryLight": "#fef08a"
+    },
+    "wcagRatio": 5.8,
+    "rationale": "Warm rust for durable, handcrafted positioning. Cream suggests approachable expertise."
+  },
+  {
+    "themeId": "slate-emerald-dark",
+    "themeName": "Dark Growth",
+    "maturity": "new",
+    "positioning": "premium",
+    "trades": ["electrical"],
+    "colors": {
+      "primary": "#1f2937",
+      "accent": "#34d399",
+      "primaryDark": "#111827",
+      "primaryLight": "#f3f4f6"
+    },
+    "wcagRatio": 7.7,
+    "rationale": "Dark slate for modern tech. Bright emerald suggests growth and innovation."
+  },
+  {
+    "themeId": "sunburst-navy",
+    "themeName": "Sunburst",
+    "maturity": "new",
+    "positioning": "value",
+    "trades": ["hvac"],
+    "colors": {
+      "primary": "#f59e0b",
+      "accent": "#1e3a8a",
+      "primaryDark": "#d97706",
+      "primaryLight": "#fef3c7"
+    },
+    "wcagRatio": 6.7,
+    "rationale": "Bright sunburst for fast service (HVAC). Navy grounds urgency with professionalism."
+  },
+  {
+    "themeId": "charcoal-cyan-bright",
+    "themeName": "Tech Bright",
+    "maturity": "established",
+    "positioning": "premium",
+    "trades": ["electrical"],
+    "colors": {
+      "primary": "#374151",
+      "accent": "#06b6d4",
+      "primaryDark": "#1f2937",
+      "primaryLight": "#f3f4f6"
+    },
+    "wcagRatio": 6.8,
+    "rationale": "Charcoal for technical credibility. Bright cyan suggests innovation and energy."
+  },
+  {
+    "themeId": "burgundy-silver",
+    "themeName": "Burgundy Executive",
+    "maturity": "veteran",
+    "positioning": "premium",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#6b1d47",
+      "accent": "#d4d4d8",
+      "primaryDark": "#480935",
+      "primaryLight": "#fce7f3"
+    },
+    "wcagRatio": 5.3,
+    "rationale": "Rich burgundy for executive positioning. Silver conveys refinement and quality."
+  },
+  {
+    "themeId": "sage-rust",
+    "themeName": "Sage",
+    "maturity": "established",
+    "positioning": "specialist",
+    "trades": ["hvac", "plumbing"],
+    "colors": {
+      "primary": "#6b7280",
+      "accent": "#d2691e",
+      "primaryDark": "#4b5563",
+      "primaryLight": "#f3f4f6"
+    },
+    "wcagRatio": 5.4,
+    "rationale": "Calming sage for thoughtful service. Warm rust for handcrafted expertise."
+  },
+  {
+    "themeId": "ultramarine-gold",
+    "themeName": "Ultramarine",
+    "maturity": "veteran",
+    "positioning": "premium",
+    "trades": ["hvac"],
+    "colors": {
+      "primary": "#0a3161",
+      "accent": "#f59e0b",
+      "primaryDark": "#051a3a",
+      "primaryLight": "#ecf0f9"
+    },
+    "wcagRatio": 7.3,
+    "rationale": "Deep ultramarine for premium, established positioning. Gold accents luxury and experience."
+  }
+]

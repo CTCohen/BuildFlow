@@ -6,7 +6,12 @@
     "phone": "+1-602-555-0842",
     "email": "dispatch@rootready.local",
     "cityState": "Phoenix, AZ",
-    "serviceAreas": ["Phoenix", "Chandler", "Gilbert", "Queen Creek"],
+    "serviceAreas": [
+      "Phoenix",
+      "Chandler",
+      "Gilbert",
+      "Queen Creek"
+    ],
     "hours": "Mon–Fri 8am–6pm · Sat 9am–2pm · 24/7 emergency",
     "yearsInBusiness": 7,
     "licenseNo": "AZ-ROC-235789"
@@ -114,5 +119,9 @@
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }

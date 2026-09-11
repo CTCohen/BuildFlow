@@ -6,7 +6,13 @@
     "phone": "+1-602-555-0421",
     "email": "contact@precisionhvac.local",
     "cityState": "Phoenix, AZ",
-    "serviceAreas": ["Phoenix", "Paradise Valley", "Tempe", "Scottsdale", "Ahwatukee"],
+    "serviceAreas": [
+      "Phoenix",
+      "Paradise Valley",
+      "Tempe",
+      "Scottsdale",
+      "Ahwatukee"
+    ],
     "hours": "Mon–Sat 7am–7pm · 24/7 emergency available",
     "yearsInBusiness": 10,
     "licenseNo": "AZ-HVAC-76543"
@@ -124,5 +130,9 @@
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }

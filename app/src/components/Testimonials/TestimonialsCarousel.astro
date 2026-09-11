@@ -1,0 +1,40 @@
+---
+import { t, type Lang } from "../../lib/client";
+
+const { lang = "en" as Lang } = Astro.props;
+const c = t(lang);
+const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say";
+---
+
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl">{title}</h2>
+    <div class="mt-10">
+      <div
+        class="overflow-x-auto snap-x snap-mandatory flex gap-5 pb-4"
+        style="scroll-behavior:smooth;-webkit-overflow-scrolling:touch"
+      >
+        {c.reviews.map((r) => (
+          <figure
+            class="card flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-10px)] p-6 snap-start"
+          >
+            <div class="mb-3 flex gap-0.5" style="color:var(--brand-accent)" aria-hidden="true">
+              {Array.from({ length: 5 }).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-[var(--color-ink)]">"{r.quote}"</blockquote>
+            <figcaption class="mt-4 text-sm text-[var(--color-ink-soft)]">
+              — {r.author}{r.location ? `, ${r.location}` : ""}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="text-xs text-[var(--color-ink-soft)] mt-4">
+        {lang === "es" ? "Desliza para ver más" : "Swipe to see more"}
+      </p>
+    </div>
+  </div>
+</section>

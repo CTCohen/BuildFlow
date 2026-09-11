@@ -6,7 +6,12 @@
     "phone": "+1-480-555-0356",
     "email": "dispatch@coolguyshvac.local",
     "cityState": "Mesa, AZ",
-    "serviceAreas": ["Mesa", "Gilbert", "Chandler", "Ahwatukee"],
+    "serviceAreas": [
+      "Mesa",
+      "Gilbert",
+      "Chandler",
+      "Ahwatukee"
+    ],
     "hours": "Mon–Fri 7am–6pm · Sat 9am–3pm · 24/7 emergency",
     "yearsInBusiness": 6,
     "licenseNo": "AZ-HVAC-91567"
@@ -114,5 +119,9 @@
       ]
     }
   },
-  "media": { "heroImage": null, "logo": null }
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
 }
