@@ -1,0 +1,119 @@
+{
+  "slug": "sparkle-clean-co",
+  "business": {
+    "name": "Sparkle Clean Co.",
+    "trade": "house-cleaning",
+    "phone": "+1-303-555-0198",
+    "email": "hello@sparklecleanco.local",
+    "cityState": "Denver, CO",
+    "serviceAreas": [
+      "Denver",
+      "Lakewood",
+      "Wheat Ridge"
+    ],
+    "hours": "Mon–Sat 8am–6pm",
+    "yearsInBusiness": 5,
+    "teamSize": 6
+  },
+  "brand": {
+    "primary": "#0d9488",
+    "accent": "#fb7185",
+    "heroStyle": "photo-left",
+    "typePairing": "humanist",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "Recurring house cleaning, same trusted team every time",
+      "heroHeadline": "Come home to clean, every single time",
+      "heroSub": "Sparkle Clean Co. sends the same background-checked team to your home on a schedule you set. Weekly, biweekly, or monthly — book online in under two minutes.",
+      "primaryCta": "Get a free quote",
+      "about": "We started Sparkle Clean Co. in 2021 because too many cleaning services send a different stranger every visit. We do it differently: you get the same small team every time, so they learn your home and your preferences. Every cleaner is background-checked, insured, and trained on our 42-point checklist. Not happy with a visit? We come back free within 24 hours.",
+      "services": [
+        {
+          "name": "Recurring house cleaning",
+          "slug": "recurring-cleaning",
+          "blurb": "Weekly, biweekly, or monthly — the same team, on your schedule.",
+          "description": "Standard visit covers kitchens, bathrooms, living areas, bedrooms, dusting, floors, and trash. 42-point checklist every time."
+        },
+        {
+          "name": "Deep cleaning",
+          "slug": "deep-cleaning",
+          "blurb": "Baseboards, inside appliances, behind furniture — the reset your home needs.",
+          "description": "A thorough one-time or first-visit clean covering everything a standard visit doesn't: inside oven/fridge, baseboards, window sills, light fixtures."
+        },
+        {
+          "name": "Move-in / move-out cleaning",
+          "slug": "move-out-cleaning",
+          "blurb": "Full clean for closing day — get your deposit back or hand over a spotless home.",
+          "description": "Empty-home deep clean including cabinets, closets, appliances inside and out. Landlord/agent checklist available on request."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Same two people every other week for a year now. They know exactly how we like things and text us before they arrive. Never had to think about cleaning again.",
+          "author": "Elena V.",
+          "location": "Denver"
+        },
+        {
+          "quote": "Move-out clean got our full deposit back — landlord actually commented on it. Worth every dollar.",
+          "author": "Tom B.",
+          "location": "Lakewood"
+        },
+        {
+          "quote": "Booked online in like a minute, team showed up on time, house looked incredible. Now on a monthly plan.",
+          "author": "Rina P.",
+          "location": "Wheat Ridge"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Limpieza recurrente del hogar, el mismo equipo de confianza cada vez",
+      "heroHeadline": "Llega a casa y encuéntrala limpia, siempre",
+      "heroSub": "Sparkle Clean Co. envía el mismo equipo verificado a tu hogar según el horario que elijas. Semanal, quincenal o mensual — reserva en línea en menos de dos minutos.",
+      "primaryCta": "Pide tu presupuesto gratis",
+      "about": "Fundamos Sparkle Clean Co. en 2021 porque muchos servicios de limpieza envían a una persona distinta cada visita. Nosotros lo hacemos diferente: recibes el mismo equipo pequeño cada vez, para que conozcan tu hogar y tus preferencias. Cada persona tiene verificación de antecedentes, seguro, y está capacitada en nuestra lista de 42 puntos. ¿No quedaste satisfecho? Regresamos gratis dentro de 24 horas.",
+      "services": [
+        {
+          "name": "Limpieza recurrente del hogar",
+          "slug": "recurring-cleaning",
+          "blurb": "Semanal, quincenal o mensual — el mismo equipo, en tu horario.",
+          "description": "La visita estándar cubre cocinas, baños, áreas comunes, recámaras, polvo, pisos y basura. Lista de 42 puntos cada vez."
+        },
+        {
+          "name": "Limpieza profunda",
+          "slug": "deep-cleaning",
+          "blurb": "Zócalos, interior de electrodomésticos, detrás de muebles — el reinicio que tu hogar necesita.",
+          "description": "Limpieza única o de primera visita que cubre todo lo que una visita estándar no incluye: interior de horno/refrigerador, zócalos, repisas de ventanas, lámparas."
+        },
+        {
+          "name": "Limpieza de mudanza",
+          "slug": "move-out-cleaning",
+          "blurb": "Limpieza completa para el día de cierre — recupera tu depósito o entrega un hogar impecable.",
+          "description": "Limpieza profunda de casa vacía incluyendo gabinetes, clósets, electrodomésticos por dentro y fuera. Lista para arrendador disponible a solicitud."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Las mismas dos personas cada dos semanas durante un año. Saben exactamente cómo nos gustan las cosas y nos avisan antes de llegar.",
+          "author": "Elena V.",
+          "location": "Denver"
+        },
+        {
+          "quote": "La limpieza de mudanza nos ayudó a recuperar todo el depósito — el arrendador lo notó. Vale cada centavo.",
+          "author": "Tom B.",
+          "location": "Lakewood"
+        },
+        {
+          "quote": "Reservé en línea en un minuto, el equipo llegó a tiempo, la casa quedó increíble. Ahora tenemos plan mensual.",
+          "author": "Rina P.",
+          "location": "Wheat Ridge"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}

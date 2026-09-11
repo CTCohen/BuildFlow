@@ -1,0 +1,120 @@
+{
+  "slug": "cascade-deck-co",
+  "business": {
+    "name": "Cascade Deck Co.",
+    "trade": "deck-building",
+    "phone": "+1-206-555-0142",
+    "email": "info@cascadedeckco.local",
+    "cityState": "Seattle, WA",
+    "serviceAreas": [
+      "Seattle",
+      "Bellevue",
+      "Kirkland",
+      "Renton"
+    ],
+    "hours": "Mon–Fri 8am–5pm · Site visits by appointment",
+    "yearsInBusiness": 14,
+    "licenseNo": "CASCADC891LB"
+  },
+  "brand": {
+    "primary": "#3f4a3d",
+    "accent": "#c98a3e",
+    "heroStyle": "full-bleed",
+    "typePairing": "classic",
+    "density": "spacious"
+  },
+  "content": {
+    "en": {
+      "tagline": "Custom decks and outdoor living, built to last through Northwest winters",
+      "heroHeadline": "A deck built for how you actually live outside",
+      "heroSub": "Cascade Deck Co. designs and builds custom decks, pergolas, and outdoor living spaces around Seattle. Composite or cedar, permitted and engineered for our wet winters — not a one-size template.",
+      "primaryCta": "Get a free quote",
+      "about": "For 14 years, Cascade Deck Co. has designed and built decks that hold up to Pacific Northwest weather, not just look good the first summer. Every project starts with a design consultation — we walk your yard, talk through how you'll actually use the space, and draw a layout before any lumber moves. Licensed, bonded, and insured, with in-house permitting on every job over 200 sq ft.",
+      "services": [
+        {
+          "name": "Custom deck design & build",
+          "slug": "custom-decks",
+          "blurb": "Composite or cedar, designed around your yard and how you entertain.",
+          "description": "Full design-to-build service: consultation, 3D layout, permitting, construction. Trex and other composite options alongside traditional cedar."
+        },
+        {
+          "name": "Pergolas & shade structures",
+          "slug": "pergolas",
+          "blurb": "Covered outdoor space that extends your season into fall.",
+          "description": "Attached or freestanding pergolas, louvered or fixed roof options, built to integrate with an existing or new deck."
+        },
+        {
+          "name": "Deck repair & restoration",
+          "slug": "deck-repair",
+          "blurb": "Soft boards, loose railings, failing ledger boards — brought back to code.",
+          "description": "Structural inspection and repair for existing decks, including ledger board and railing code compliance for older builds."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "They actually designed around how we use our yard instead of handing us a catalog deck. Three winters in and it looks brand new.",
+          "author": "Grant H.",
+          "location": "Bellevue"
+        },
+        {
+          "quote": "Old deck had a failing ledger board a previous contractor missed. Cascade caught it during the quote walk and fixed it right.",
+          "author": "Won-Jae K.",
+          "location": "Seattle"
+        },
+        {
+          "quote": "Pergola turned our deck into a space we use nine months a year now instead of three. Permit process was painless — they handled all of it.",
+          "author": "Ashley M.",
+          "location": "Kirkland"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Terrazas personalizadas y espacios exteriores, construidos para durar los inviernos del noroeste",
+      "heroHeadline": "Una terraza construida para cómo realmente vives afuera",
+      "heroSub": "Cascade Deck Co. diseña y construye terrazas, pérgolas y espacios de vida exterior en Seattle. Composite o cedro, permisados y diseñados para nuestros inviernos húmedos — no una plantilla genérica.",
+      "primaryCta": "Pide tu presupuesto gratis",
+      "about": "Durante 14 años, Cascade Deck Co. ha diseñado y construido terrazas que resisten el clima del Pacífico Noroeste, no solo que se ven bien el primer verano. Cada proyecto comienza con una consulta de diseño — recorremos tu patio, hablamos sobre cómo usarás el espacio, y dibujamos un plano antes de mover madera. Con licencia, fianza y seguro, con permisos internos en cada proyecto mayor a 200 pies cuadrados.",
+      "services": [
+        {
+          "name": "Diseño y construcción de terrazas a medida",
+          "slug": "custom-decks",
+          "blurb": "Composite o cedro, diseñada según tu patio y cómo recibes visitas.",
+          "description": "Servicio completo de diseño a construcción: consulta, plano 3D, permisos, construcción. Opciones de composite Trex junto con cedro tradicional."
+        },
+        {
+          "name": "Pérgolas y estructuras de sombra",
+          "slug": "pergolas",
+          "blurb": "Espacio exterior cubierto que extiende tu temporada hasta el otoño.",
+          "description": "Pérgolas adosadas o independientes, con techo fijo o de láminas móviles, construidas para integrarse con una terraza existente o nueva."
+        },
+        {
+          "name": "Reparación y restauración de terrazas",
+          "slug": "deck-repair",
+          "blurb": "Tablas blandas, barandales sueltos, vigas de apoyo fallando — restauradas a código.",
+          "description": "Inspección estructural y reparación de terrazas existentes, incluyendo cumplimiento de código en vigas de apoyo y barandales para construcciones antiguas."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Diseñaron según cómo usamos nuestro patio en lugar de darnos un catálogo genérico. Tres inviernos después y se ve como nueva.",
+          "author": "Grant H.",
+          "location": "Bellevue"
+        },
+        {
+          "quote": "La terraza vieja tenía una viga de apoyo fallando que un contratista anterior no detectó. Cascade lo detectó durante la visita de cotización y lo arregló bien.",
+          "author": "Won-Jae K.",
+          "location": "Seattle"
+        },
+        {
+          "quote": "La pérgola convirtió nuestra terraza en un espacio que usamos nueve meses al año en vez de tres. El proceso de permisos fue sencillo — ellos se encargaron de todo.",
+          "author": "Ashley M.",
+          "location": "Kirkland"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null
+  }
+}
