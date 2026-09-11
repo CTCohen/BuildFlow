@@ -2,31 +2,39 @@
 /**
  * BuildFlow per-client QA gate.
  *
- *   node scripts/qa.mjs --client demo-plumbing [--skip-build]
+ *   node scripts/qa.mjs --client demo-plumbing [--skip-build] [--skip-browser]
  *
- * Implemented tonight (static, zero extra deps):
+ * Implemented:
  *   1. client data schema validation (schema.mjs)
  *   2. production build for that client
  *   3. placeholder-leakage scan of rendered HTML
  *   4. required-content presence (phone, CTA, title, h1, meta description, JSON-LD)
  *   5. internal link check across built pages
  *   6. EN/ES parity (from schema warnings/errors)
+ *   7. Lighthouse budget (perf >= 90, a11y >= 95, SEO >= 95) — headless Chrome via `lighthouse`
+ *   8. layout sanity (horizontal scroll, broken images, console errors) — Playwright, mobile + desktop
  *
- * Stubbed — wired next (need Playwright + Lighthouse + a browser):
- *   7. Lighthouse budget (perf >= 90, a11y >= 95, SEO >= 95)
- *   8. layout sanity (no horizontal scroll, no broken images, no overlap)
- *   9. LLM rubric review (credibility / copy specificity / polish / completeness)
+ * Still stubbed — needs a real decision before wiring it in:
+ *   9. LLM rubric review (credibility / copy specificity / polish / completeness). This would
+ *      call the Anthropic API, which bills pay-per-token separately from the Claude Code
+ *      subscription (see ~/.claude/CLAUDE.md — ANTHROPIC_API_KEY is deliberately not
+ *      auto-exported). Don't wire this to run unattended in the gate until that's a decision
+ *      someone's made on purpose, not a side effect of "finish the QA checks."
+ *
+ * `--skip-browser` skips 7 and 8 (schema/build/content checks only, no Chrome launch).
  */
 import { execFileSync } from "node:child_process";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createServer } from "node:http";
 import { validateClient } from "../src/data/schema.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const slug = valueOf("--client");
 const skipBuild = args.includes("--skip-build");
+const skipBrowser = args.includes("--skip-browser");
 
 if (!slug) {
   console.error("usage: node scripts/qa.mjs --client <slug> [--skip-build]");
@@ -153,14 +161,140 @@ if (pages.length === 0) {
   add("internal-links", linkIssues.length ? "fail" : "pass", linkIssues.join("; "));
 }
 
-// ---------------------------------------------------------------- 7. Lighthouse (skip for now — needs server + chrome)
-// TODO: Implement with simple HTTP server; Lighthouse requires running Chrome
-// which adds 5–30s per audit. Gate for later when perf budget matters more.
-add("lighthouse-budget", "skip", "deferred: needs running Chrome instance");
+// ------------------------------------------------------ 7-8. Lighthouse + layout sanity
+if (skipBrowser || pages.length === 0) {
+  add("lighthouse-budget", "skip", skipBrowser ? "--skip-browser" : "no built pages");
+  add("layout-sanity", "skip", skipBrowser ? "--skip-browser" : "no built pages");
+} else {
+  await runBrowserChecks();
+}
 
-// ---------------------------------------------------------------- 8-9 stubs (deferred — need running server + Chrome)
-add("layout-sanity", "skip", "deferred: needs running server + Playwright");
-add("llm-rubric", "skip", "deferred: screenshot + Claude eval (10+ sec/page)");
+async function serveDist() {
+  const mime = {
+    ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".mjs": "text/javascript",
+    ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+    ".webp": "image/webp", ".avif": "image/avif", ".ico": "image/x-icon", ".json": "application/json",
+    ".woff2": "font/woff2", ".xml": "application/xml", ".txt": "text/plain",
+  };
+  const server = createServer((req, res) => {
+    let p = decodeURIComponent(req.url.split("?")[0]);
+    if (p.endsWith("/")) p += "index.html";
+    const candidates = [join(dist, p), join(dist, p + ".html"), join(dist, p, "index.html")];
+    let full = candidates.find((c) => c.startsWith(dist) && existsSync(c));
+    if (!full) {
+      res.writeHead(404).end("not found");
+      return;
+    }
+    const ext = full.slice(full.lastIndexOf("."));
+    res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream" });
+    res.end(readFileSync(full));
+  });
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const port = server.address().port;
+  return { server, base: `http://127.0.0.1:${port}` };
+}
+
+async function runBrowserChecks() {
+  const { server, base } = await serveDist();
+  try {
+    await runLighthouse(base);
+    await runLayoutSanity(base);
+  } finally {
+    server.close();
+  }
+}
+
+async function runLighthouse(base) {
+  try {
+    const { default: lighthouse } = await import("lighthouse");
+    const { launch } = await import("chrome-launcher");
+    const chrome = await launch({ chromeFlags: ["--headless=new", "--no-sandbox"] });
+    try {
+      const url = pages.some((p) => relative(dist, p.file) === "index.html") ? base + "/" : base;
+      const result = await lighthouse(url, {
+        port: chrome.port,
+        output: "json",
+        onlyCategories: ["performance", "accessibility", "seo"],
+        logLevel: "silent",
+      });
+      const cats = result.lhr.categories;
+      const perf = Math.round(cats.performance.score * 100);
+      const a11y = Math.round(cats.accessibility.score * 100);
+      const seo = Math.round(cats.seo.score * 100);
+      const BUDGET = { perf: 90, a11y: 95, seo: 95 };
+      const misses = [];
+      if (perf < BUDGET.perf) misses.push(`performance ${perf} < ${BUDGET.perf}`);
+      if (a11y < BUDGET.a11y) misses.push(`accessibility ${a11y} < ${BUDGET.a11y}`);
+      if (seo < BUDGET.seo) misses.push(`seo ${seo} < ${BUDGET.seo}`);
+      add(
+        "lighthouse-budget",
+        misses.length ? "fail" : "pass",
+        `perf ${perf} · a11y ${a11y} · seo ${seo}${misses.length ? "  (" + misses.join("; ") + ")" : ""}`,
+      );
+    } finally {
+      await chrome.kill();
+    }
+  } catch (e) {
+    add("lighthouse-budget", "fail", `lighthouse run error: ${String(e.message || e).slice(0, 200)}`);
+  }
+}
+
+async function runLayoutSanity(base) {
+  try {
+    const { chromium } = await import("playwright");
+    const browser = await chromium.launch();
+    const issues = [];
+    const VIEWPORTS = [
+      { name: "mobile", width: 375, height: 812 },
+      { name: "desktop", width: 1280, height: 800 },
+    ];
+    try {
+      for (const { file } of pages) {
+        const routePath = "/" + relative(dist, file).replace(/index\.html$/, "").replace(/\.html$/, "");
+        const url = base + routePath;
+        for (const vp of VIEWPORTS) {
+          const page = await browser.newPage({ viewport: { width: vp.width, height: vp.height } });
+          const consoleErrors = [];
+          page.on("console", (msg) => {
+            if (msg.type() === "error") consoleErrors.push(msg.text());
+          });
+          page.on("pageerror", (err) => consoleErrors.push(String(err)));
+          try {
+            await page.goto(url, { waitUntil: "networkidle", timeout: 15000 });
+            const { scrollWidth, clientWidth } = await page.evaluate(() => ({
+              scrollWidth: document.documentElement.scrollWidth,
+              clientWidth: document.documentElement.clientWidth,
+            }));
+            if (scrollWidth > clientWidth + 2) {
+              issues.push(`${routePath} @ ${vp.name}: horizontal scroll (${scrollWidth}px content in ${clientWidth}px viewport)`);
+            }
+            const broken = await page.evaluate(() =>
+              Array.from(document.images)
+                .filter((img) => img.src && img.complete && img.naturalWidth === 0)
+                .map((img) => img.src),
+            );
+            for (const src of broken) issues.push(`${routePath} @ ${vp.name}: broken image ${src}`);
+            if (consoleErrors.length) {
+              issues.push(`${routePath} @ ${vp.name}: console error(s): ${consoleErrors.slice(0, 2).join(" | ")}`);
+            }
+          } catch (e) {
+            issues.push(`${routePath} @ ${vp.name}: navigation error — ${String(e.message || e).slice(0, 150)}`);
+          } finally {
+            await page.close();
+          }
+        }
+      }
+    } finally {
+      await browser.close();
+    }
+    add("layout-sanity", issues.length ? "fail" : "pass", issues.join("; "));
+  } catch (e) {
+    add("layout-sanity", "fail", `playwright run error: ${String(e.message || e).slice(0, 200)}`);
+  }
+}
+
+// ---------------------------------------------------------------- 9. LLM rubric (deliberately not automated — see header)
+add("llm-rubric", "skip", "not wired: would call the metered Anthropic API — see header note");
 
 // ---------------------------------------------------------------- report
 const icon = { pass: "✓", fail: "✗", warn: "!", skip: "·" };
