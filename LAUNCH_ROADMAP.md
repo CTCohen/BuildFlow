@@ -1,8 +1,8 @@
 # Launch Roadmap — what's between here and a tight, strong launch
 
-> Pre-launch hardening plan. Distinct from `PHASE_1_BLOCKERS.md` (which tracks what's
-> blocking the *first 5 outreach emails*). This tracks what's blocking a launch you'd
-> point real volume at with confidence. Last updated: 2026-09-10.
+> Single continuous roadmap: current Phase 1 blockers through full-volume launch readiness.
+> §0 is pulled from `PHASE_1_BLOCKERS.md` (kept as the detailed/live-updated version — check
+> there for the latest state); §1–5 is pre-launch hardening. Last updated: 2026-09-10.
 
 **Current foundation (already real, not aspirational):**
 - Multi-tenant Astro app with a design-decision engine (`app/src/lib/design-decision-engine.ts`,
@@ -14,6 +14,34 @@
 
 **What "launch" means here:** ready to run outreach at real volume (50+/week) and have every
 resulting site, onboarding, and cancellation handled without Chase doing manual one-offs.
+
+---
+
+## 0. Phase 1 — immediate blockers (before the first 5 emails go out)
+
+✅ **Resolved:** pricing contradiction across legal/sales/messaging — commits `9ee7f8e`, `aff977b`.
+
+🔴 **Needs Chase (external accounts, only he can do):**
+| # | Blocker | Action |
+|---|---------|--------|
+| B1 | No Calendly link | Create it; replace `[CALENDLY_LINK]`/`[CALENDAR_LINK]` placeholders in outreach + messaging docs |
+| B2 | Outreach not sent | Send the 5 emails in `outreach/REAL_PROSPECTS_READY_TO_SEND.md` |
+| B3 | No Stripe products | Create $99/mo subscription + $497 one-time; get checkout links |
+| B4 | No business email addresses | `hello@`, `support@`, `legal@`, `chase@buildflow.com` need to exist |
+| B5 | Domain not confirmed | Confirm `buildflow.com` registered + DNS-pointable to Railway |
+| B6 | Terms missing business address | `legal/TERMS_OF_SERVICE.md` §16 placeholder needs a real address |
+
+🟡 **Needs a decision:**
+| # | Blocker | The call |
+|---|---------|----------|
+| D1 | "Ownership" messaging pillar in `EMAIL-HOOKS.md` still leads with "you own it" | Reframe or drop — undercuts the subscription pitch |
+| D2 | `outreach/PHASE_1_EXECUTED_EXAMPLE.md` fictional narrative still on old pricing | Update to $99/mo or move to `archive/` |
+
+🟢 **Claude can do — done this session:**
+- Website rebuilt on $99/mo model (`c206286`), not yet deployed (needs approval — publishes public content)
+
+**Critical path to first revenue:** B1 + B6 → B2 (send) → replies → B3 (bill) → close → build → launch.
+Full detail and dependency graph: `PHASE_1_BLOCKERS.md`.
 
 ---
 
