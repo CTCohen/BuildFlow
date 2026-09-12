@@ -1,0 +1,311 @@
+---
+// Customer Site Template — Ready to Deploy
+// Trade: HVAC | Customization: Logo colors + business name
+// This is a REAL Astro component, not a template
+// Replace [VARIABLES] with customer data and deploy
+
+const customerName = "[CUSTOMER_NAME]"; // Example: "Glendale Heating & Cooling"
+const heroHeadline = "[BUSINESS_NAME]";
+const heroSubheading = "Professional HVAC Services in [CITY]";
+const ctaPhone = "[PHONE]";
+const primaryColor = "#FF6B35"; // Extract from logo
+const accentColor = "#004E89"; // Extract from logo
+
+// This maps to real customer data. When they respond with their info,
+// you fill in these variables and deploy.
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{heroHeadline} | HVAC Services in [CITY]</title>
+  <meta name="description" content="Professional HVAC services in [CITY]. Fast response, expert solutions, 24/7 availability.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, ${primaryColor} 0%, ${accentColor} 100%);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .hero .cta-button {
+      background: white;
+      color: ${primaryColor};
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+      color: ${primaryColor};
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .service-card h3 {
+      color: ${accentColor};
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials {
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .testimonials h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+      color: ${primaryColor};
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid ${primaryColor};
+    }
+
+    .stars {
+      color: ${primaryColor};
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      color: #555;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: ${accentColor};
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: ${accentColor};
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      background: white;
+      color: ${accentColor};
+      padding: 16px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: #999;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .services h2,
+      .testimonials h2,
+      .contact h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>{heroHeadline}</h1>
+    <p>{heroSubheading}</p>
+    <p style="font-size: 16px; margin-bottom: 20px;">Fast Response • Expert Solutions • 24/7 Availability</p>
+    <a href="tel:{ctaPhone}" class="cta-button">Call Now: {ctaPhone}</a>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>AC Repair & Maintenance</h3>
+        <p>Expert diagnosis and repair for all AC units. Same-day service available. Keep your system running efficiently.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Heating System Installation</h3>
+        <p>Professional installation of energy-efficient heating systems for homes and businesses. Certified and insured.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Emergency HVAC Service</h3>
+        <p>24/7 emergency service when you need it most. We're here on weekends and holidays. Fast response guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials">
+    <h2>What Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Called on a Saturday and they came out the same day. Fixed our AC in 2 hours. Best service in [CITY]!"</p>
+        <div class="testimonial-author">— John Smith, Homeowner</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Professional team, fair pricing, and they actually explained what was wrong. Highly recommend!"</p>
+        <div class="testimonial-author">— Lisa Martinez, Homeowner</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Been using them for 5 years. Reliable, honest, and always on time. Never had an issue."</p>
+        <div class="testimonial-author">— Mike Johnson, Business Owner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+    <h2>Ready to Get Service?</h2>
+    <p style="margin-bottom: 30px; font-size: 18px;">Call now or fill out the form below and we'll get back to you within 1 hour.</p>
+    <div class="contact-buttons">
+      <a href="tel:{ctaPhone}" class="contact-btn">Call: {ctaPhone}</a>
+      <a href="mailto:contact@[domain].com" class="contact-btn">Email Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 {heroHeadline}. All rights reserved. Serving [CITY] and surrounding areas.</p>
+  </footer>
+
+  <!-- GOOGLE ANALYTICS (add tracking ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_ID');
+  </script>
+</body>
+</html>

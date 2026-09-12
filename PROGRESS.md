@@ -1,10 +1,14 @@
-# BuildFlow Progress — Pass 0 to Optimization Ready
+# BuildFlow Progress — Pass 0 → Phase 1-2: Diversity at Scale
 
-> **Status:** Ready for production. 20 sites generated, 100% QA pass. Theme locked. KB high-value cards active.
+> **Status:** Phase 1-2 Complete. Design tokens system + component variants implemented. 30 themes + 5 hero variants + 4 service layouts + 3 testimonial styles = 1,800+ visual combinations ready for agent selection.
 
 ---
 
 ## Session Timeline
+
+### Session 3: Diversity at Scale (Phase 1-2)
+**Did:** Implemented design tokens system + component variant architecture.
+**Result:** 30 color themes, 5 hero variants, 4 service layouts, 3 testimonial styles. Build passes. Ready for Phase 3 (agent decision engine).
 
 ### Session 1: Foundation (KB v1 + Theme)
 **Did:** Built knowledge-base architecture + Astro multi-tenant theme with dynamic routes.

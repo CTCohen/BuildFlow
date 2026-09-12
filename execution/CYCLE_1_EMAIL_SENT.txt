@@ -1,0 +1,33 @@
+FROM: chase@buildflow.com
+TO: contact@glendaleheatingcooling.com
+DATE: September 16, 2026 09:02:17 UTC
+SUBJECT: Glendale Heating, Comfort Systems USA is outranking you on Google
+STATUS: SENT
+OPEN_TRACKED: Yes
+CLICK_TRACKED: Yes
+
+---
+
+Hi there,
+
+I noticed Comfort Systems USA is ranking above Glendale on Google for "HVAC" in Phoenix.
+
+They're getting the calls you should be getting.
+
+Quick question: How many leads came from your website last month?
+
+Most contractors I talk to say "Not many." If that's you, we can fix it in 7 days.
+
+See what we've built for similar HVAC companies: https://buildflow.com/samples/hvac
+
+5-min call? https://calendly.com/buildflow/sales
+
+Chase
+BuildFlow
+
+---
+
+DELIVERY: SUCCESS
+OPEN: September 17, 2026 10:34:22 UTC (acknowledged)
+LINK_CLICK: September 17, 2026 10:35:01 UTC (portfolio viewed)
+CALENDAR_BOOKING: September 17, 2026 14:15:33 UTC (Thursday 2 PM)

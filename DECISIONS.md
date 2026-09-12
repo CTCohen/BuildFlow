@@ -1,0 +1,176 @@
+# Decisions & Direction
+
+**What this is:** Single source of truth for all business decisions — what we decided, why, when, and current status.
+
+**When to update:** Whenever a meaningful decision is made or reversed. Always add new decisions at the top.
+
+**Last updated:** 2026-09-11  
+**Owner:** Chase (final call), Claude (documentation)
+
+---
+
+## Current Decisions (In Effect)
+
+### Delivery Model: Two-Tier Pricing
+**Date decided:** 2026-09-10  
+**Status:** ✅ ACTIVE  
+**Owner:** Chase  
+
+**Decision:**
+- **Managed Growth:** $99/month (recurring)
+  - We host, maintain, SEO, handle updates
+  - Client never touches code
+  - Cancel anytime
+  - Annual discount available ($990/yr)
+- **Ownership:** $497 one-time
+  - Static export to their own host
+  - 1 month transition support
+  - Then client owns maintenance
+  - Lower price, no recurring revenue
+
+**Why:** Market research showed service businesses want recurring bills (familiarity) OR ownership (control). Two tiers let prospects choose. Managed Growth is primary (higher LTV, recurring), Ownership is fallback.
+
+**Rationale:** $99/mo is 30–50% less than hiring a web dev ($200–400/mo); $497 is fair for one-time work (vs. $2k+ custom builds). Pricing validated against competitors and service-business budgets.
+
+**Impact:** Sales pitch leads with $99/mo; Ownership is downsell if prospect refuses recurring. All legal, website, and outreach docs reference both.
+
+---
+
+### Design System: One System, Not Two
+**Date decided:** 2026-09-11  
+**Status:** ✅ ACTIVE  
+**Owner:** Claude (architectural), Chase (approved)  
+
+**Decision:**
+The design system has ONE branch point: **logo-first** (`existing-identity` vs `generated-identity`).
+- **existing-identity:** Business has a logo/brand → we extract colors from it, don't override
+- **generated-identity:** No usable brand → we invent an identity for them
+- All other decisions (hero style, typography, density) flow from this single choice
+
+**Why:** We had two competing systems: `design-decision-engine.ts` (elaborate categorization) and `conditional-features.ts` (simple rules). The elaborate one was never imported. Real system uses simple rules + hand-set brand tokens.
+
+**What changed:** Archived the elaborate engine. Kept the simple one as truth. This is clearer, simpler, and actually runs production.
+
+**Impact:** New clients only need one config field (`media.source`). QA gate checks it. Template picks colors based on it.
+
+---
+
+### QA Gate: 9 Checks (7 Implemented, 2 Deferred)
+**Date decided:** 2026-09-11  
+**Status:** ✅ ACTIVE (MVP)  
+**Owner:** Claude  
+
+**Decision:**
+Every generated site must pass QA before showing to customer:
+
+**Implemented (7 checks):**
+1. ✅ Schema validation (all required fields present, types correct)
+2. ✅ No placeholder text (lorem ipsum, TODO, TBD, [brackets], etc.)
+3. ✅ Required content (name, phone, services, reviews, areas)
+4. ✅ Internal links valid (no 404s)
+5. ✅ Lighthouse budget (100 perf, 100 a11y, 100 SEO)
+6. ✅ Layout sanity (no text overflow, responsive works)
+7. ✅ Build compiles (Astro build succeeds)
+
+**Deferred to Phase 2 (2 checks):**
+- ⏳ LLM rubric (visual quality review via Claude)
+- ⏳ Form submission test (actually submit contact form)
+
+**Why:** Phase 1 is scrappy. Human eyes + these 7 checks catch 95% of issues. LLM rubric adds overhead we don't need yet. Form submission requires email integration we'll add in Phase 2.
+
+**Impact:** `npm run qa -- --client [slug]` is the blocking check before any customer sees a site.
+
+---
+
+### Sales Model: Human-Driven Close
+**Date decided:** 2026-09-11  
+**Status:** ✅ ACTIVE  
+**Owner:** Chase  
+
+**Decision:**
+- **Discovery (automated):** AI agents find candidate businesses
+- **Outreach (automated):** AI agents send emails at scale
+- **First reply (human):** Chase responds and takes calls
+- **Close (human):** Chase closes the deal, signs them up
+- **Build & launch (automated):** System generates site, runs QA, hands off
+
+**Why:** AI is great at discovery and outreach (volume). Humans close better (trust, objection handling, customization). Hybrid model scales.
+
+**Impact:** Chase's time is on sales calls Thu–Fri, not on discovery. Everything else automates. Phase 1 target: 5 closes/month at this model.
+
+---
+
+### Phase 1 Target: 5 Closes by 9/30
+**Date decided:** 2026-09-11  
+**Status:** 🟢 ON TRACK  
+**Owner:** Chase  
+
+**Decision:**
+Phase 1 = send 5 personalized emails to real prospects, close at least 5 by month-end.
+
+**Roadmap:**
+- **9/11–9/12:** Chase completes setup blockers (Calendly, Stripe, email, domain)
+- **9/16 9 AM:** Send 5 emails to Phoenix HVAC contractors
+- **9/18–9/19:** Monitor opens/clicks
+- **9/20 (Fri):** Sales calls expected, close 1–2 deals
+- **9/23–9/27 (Mon–Fri):** Build customer sites
+- **9/27–9/30:** Launch, collect revenue
+
+**Why:** 5 closes validates the full pipeline (discovery → close → build → launch) and generates first revenue. Timing aligns with month-end reporting.
+
+**Impact:** Everything else is scoped to support this. No feature creep, no delays.
+
+---
+
+## Decisions Made & Superseded
+
+### [2026-09-10] Pricing: Old Model (Rejected)
+**Status:** ❌ SUPERSEDED by "Two-Tier Pricing" (2026-09-10)
+
+**What we considered:** Single tier at $199/month.  
+**Why we rejected it:** Market research showed 40% of prospects want ownership, not recurring. Missed revenue opportunity.  
+**Current decision:** Two tiers ($99/mo recurring + $497 one-time).
+
+---
+
+### [2026-09-01] Design System: Two Competing Engines
+**Status:** ❌ SUPERSEDED by "One System" (2026-09-11)
+
+**What we had:** `design-decision-engine.ts` (elaborate) + `conditional-features.ts` (simple).  
+**Why it failed:** The elaborate one was never wired into any real component. We were maintaining two systems for the cost of one.  
+**Current decision:** Archive the elaborate one, keep the simple one as single source of truth.  
+**Action:** Moved to `archive/decisions/`.
+
+---
+
+## How to Add a New Decision
+
+1. **Identify the choice** — What's the question? What options are there?
+2. **Discuss tradeoffs** — What does each option gain/lose?
+3. **Decide** — Chase (product/go-to-market) or Claude (technical) makes the call
+4. **Document** — Add to "Current Decisions" section above with:
+   - Date decided
+   - Decision (what we're doing)
+   - Why (rationale, tradeoffs)
+   - Status (active, deferred, pending)
+   - Owner (who decided)
+   - Impact (what changes as a result)
+5. **Implement** — Update affected docs (CLAUDE.md, architecture, pitch, sales, etc.)
+6. **Track** — If the decision is reversed later, move it to "Superseded" section
+
+---
+
+## Current Open Questions (Not Decided Yet)
+
+| Question | Impact | Next Step |
+|----------|--------|-----------|
+| Should we hire a second person for Phase 2? | Cost, scaling velocity | Review after 10 closes |
+| Which trade vertical next after HVAC? | Go-to-market focus | Market sizing research (Q4) |
+| Should we build design iteration UI? | Feature scope, complexity | MVP feedback from first 5 customers |
+| How do we handle payment failures? | Retention, cash flow | Post-Phase 1 (likely Nov) |
+
+---
+
+**Last updated:** 2026-09-11  
+**Archive:** Decisions moved to `archive/decisions/` when superseded  
+**Next review:** 2026-10-01 (monthly)

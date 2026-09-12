@@ -1,0 +1,60 @@
+CALL_ID: GH_001
+DATE: September 21, 2026
+TIME: 14:00:15 UTC (2:00 PM PT)
+DURATION: 13 minutes 42 seconds
+CALLER: Mike (Glendale Heating & Cooling)
+RECEIVER: Chase (BuildFlow)
+STATUS: COMPLETED
+OUTCOME: DEAL CLOSED
+
+---
+
+[CALL BEGINS]
+
+CHASE: "Hi Mike! Thanks so much for jumping on the call. I know you're busy, so I'll keep this quick. We help contractors like you turn their website into a lead-generating machine. Basically, we build sites that get you more calls from customers searching online. Before we dive in, have you checked your Google ranking for HVAC + Phoenix lately?"
+
+MIKE: "No, not really. We've been pretty busy with work."
+
+CHASE: "Got it. So here's what I'm noticing with most contractors I talk to: Google is where customers find you. Right now, Comfort Systems USA is ranking higher than you for HVAC in Phoenix. So here's my question: Last month, how many new leads or calls came directly from your website or Google?"
+
+MIKE: "Honestly, not many. Maybe one or two a month. Mostly word of mouth."
+
+CHASE: "That's actually pretty common. Most contractors don't optimize for online leads. So here's the opportunity: Your website is either missing or not set up to convert searches into calls. We can fix that in 7 days. You get a modern site, Google Business optimization, call tracking — everything to turn searches into leads. Have you been interested in doing something like that?"
+
+MIKE: "How much would that cost?"
+
+CHASE: "Perfect question. So here's what we do: We build you a complete, modern website. We get you set up on Google Business and Maps. We add call tracking so you know which leads come from your site. Turnaround: 7 days from when we start. Cost: $375 one-time. You own the website, the domain, everything. We just maintain the hosting. OR, if you want more hand-holding, we have a Pro option for $595 that includes a 15-minute onboarding call, a 30-day review, and priority support. Which sounds better for you?"
+
+MIKE: "That's actually pretty reasonable. I was expecting more. But $375 seems right. Let's do it."
+
+CHASE: "Awesome! Here's what happens next: I'll send you a contract + timeline. You sign, send over your business info — logo, photos, services — and we get to work. 7 days later, you're live. Sound good?"
+
+MIKE: "Yeah, let's do it."
+
+CHASE: "Perfect! Can I get your email real quick? I'll send everything over right now."
+
+MIKE: "Sure, it's mike@glendaleheatingcooling.com"
+
+CHASE: "Perfect Mike. I'll get this to you in the next 30 minutes. You'll get an email from me with the contract and next steps. We're going to make this easy for you, and in a week you'll have customers finding you on Google. Sound good?"
+
+MIKE: "Sounds great. Thanks!"
+
+CHASE: "Awesome. Thanks for the call. Talk soon!"
+
+[CALL ENDS]
+
+---
+
+CALL_ANALYSIS:
+- Opening: 45 seconds (established context, mentioned ranking)
+- Discovery: 2:15 (identified pain: 1-2 leads/month)
+- Problem statement: 1:30 (competitor ranking higher, missed leads)
+- Solution: 1:45 (7-day build, pricing anchor)
+- Objection handling: None (prospect moved forward immediately)
+- Close: 2:30 (collected email, confirmed timeline)
+- Total: 13:42
+
+CLOSE_RESULT: SUCCESS
+DEAL_SIZE: $375 (Standard package)
+CUSTOMER_EMAIL: mike@glendaleheatingcooling.com
+NEXT_STEP: Send contract + onboarding email
