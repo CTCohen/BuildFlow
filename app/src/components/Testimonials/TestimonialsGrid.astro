@@ -11,7 +11,7 @@ const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say"
     <h2 class="text-3xl md:text-4xl animate-fade-in-up">{title}</h2>
     <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {c.reviews.map((r, i) => (
-        <figure class="card-premium reveal p-6 hover-lift group animate-fade-in-up" style={`animation-delay:${i * 80}ms`}>
+        <figure class="testimonial-alive card-premium reveal p-6 animate-fade-in-up" style={`animation-delay:${i * 80}ms`}>
           <div class="mb-4 flex gap-1" style="color:var(--brand-accent)" aria-hidden="true">
             {Array.from({ length: 5 }).map((_, idx) => (
               <svg
@@ -19,18 +19,18 @@ const title = lang === "es" ? "Lo que dicen los clientes" : "What customers say"
                 height="18"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="transition-transform duration-300 group-hover:scale-110"
+                class="star-alive"
                 style={`animation: scale-up 0.5s var(--ease-bounce) forwards; animation-delay:${idx * 80}ms`}
               >
                 <path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L6.8 14 1.8 9.1l7-.9z" />
               </svg>
             ))}
           </div>
-          <blockquote class="text-lg text-[var(--color-ink)] leading-relaxed italic transition-colors duration-300 group-hover:text-[var(--brand)]">
+          <blockquote class="testimonial-quote text-lg text-[var(--color-ink)] leading-relaxed italic">
             "{r.quote}"
           </blockquote>
-          <figcaption class="mt-4 text-sm font-medium text-[var(--color-ink-soft)] transition-colors duration-300 group-hover:text-[var(--color-ink)]">
-            <span class="block text-[var(--brand)] font-semibold">{r.author}</span>
+          <figcaption class="mt-4 text-sm font-medium text-[var(--color-ink-soft)]">
+            <span class="author-name block">{r.author}</span>
             {r.location && <span class="text-xs">{r.location}</span>}
           </figcaption>
         </figure>

@@ -1,0 +1,270 @@
+/*
+ * Premium "Alive" Design System
+ * Dramatic animations, bold interactions, breathing motion
+ * Apply to example sites to test before integrating into global system
+ */
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--brand-rgb), 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(var(--brand-rgb), 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0) translateZ(0);
+  }
+}
+
+@keyframes counter {
+  from { content: "0"; }
+  to { content: ""; }
+}
+
+/* Hero section — breathing motion */
+.hero-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(var(--brand-rgb), 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(var(--brand-accent-rgb), 0.05) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card — bold hover with scale and glow */
+.card-alive {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.card-alive::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--brand-accent), transparent);
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.card-alive:hover {
+  transform: scale(1.05) rotateY(2deg);
+  box-shadow: 0 20px 40px rgba(var(--brand-rgb), 0.25);
+}
+
+.card-alive:hover::before {
+  opacity: 0.1;
+}
+
+/* Button — dramatic feedback */
+.btn-alive {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-alive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+}
+
+.btn-alive:hover {
+  transform: scale(1.08) translateY(-3px);
+  letter-spacing: 0.5px;
+}
+
+.btn-alive:active {
+  transform: scale(0.98);
+}
+
+/* Icon animation — pop and color */
+.icon-alive {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-alive:hover .icon-alive {
+  transform: scale(1.3) rotate(5deg);
+  filter: drop-shadow(0 8px 16px rgba(var(--brand-rgb), 0.3));
+}
+
+/* Service cards — staggered reveal */
+.service-alive {
+  opacity: 0;
+  transform: translateY(30px) rotateX(-20deg);
+  animation: none;
+}
+
+.service-alive.in-view {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+  animation: rotate-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Stat counter — animated numbers */
+.stat-counter {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-counter.animate {
+  animation: count-up 2s ease-out forwards;
+}
+
+/* Testimonial stars — cascade animation */
+.star-alive {
+  display: inline-block;
+  animation: none;
+  transform-origin: center;
+}
+
+.testimonial-alive .star-alive {
+  animation: scale-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.testimonial-alive:nth-child(1) .star-alive:nth-child(1) { animation-delay: 0ms; }
+.testimonial-alive:nth-child(1) .star-alive:nth-child(2) { animation-delay: 80ms; }
+.testimonial-alive:nth-child(1) .star-alive:nth-child(3) { animation-delay: 160ms; }
+.testimonial-alive:nth-child(1) .star-alive:nth-child(4) { animation-delay: 240ms; }
+.testimonial-alive:nth-child(1) .star-alive:nth-child(5) { animation-delay: 320ms; }
+
+/* Testimonial card — larger on hover with color shift */
+.testimonial-alive {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.testimonial-alive:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 24px 48px rgba(var(--brand-rgb), 0.2);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--brand) 3%, white 97%) 0%,
+    color-mix(in srgb, var(--brand-accent) 2%, white 98%) 100%
+  );
+}
+
+.testimonial-alive:hover .testimonial-quote {
+  color: var(--brand);
+  font-size: 1.1em;
+}
+
+.testimonial-alive:hover .author-name {
+  color: var(--brand);
+  letter-spacing: 0.5px;
+}
+
+/* Quote styling */
+.testimonial-quote {
+  transition: all 0.3s ease-out;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.author-name {
+  transition: all 0.3s ease-out;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/* Parallax background */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Pulse glow on CTA */
+.cta-pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Intersection observer utility */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text gradient effect */
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth page transitions */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    animation: fade-in 0.4s ease-out;
+  }
+}
+
+/* Link underline animation */
+a.link-alive {
+  position: relative;
+  text-decoration: none;
+}
+
+a.link-alive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-accent);
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a.link-alive:hover::after {
+  width: 100%;
+}
+
+/* Ensure RGB values exist for rgba calculations */
+:root {
+  --brand-rgb: 30, 90, 150; /* Default, will be overridden per client */
+  --brand-accent-rgb: 245, 158, 11; /* Default, will be overridden per client */
+}

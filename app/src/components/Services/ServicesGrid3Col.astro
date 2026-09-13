@@ -15,15 +15,15 @@ const title = heading ?? (lang === "es" ? "Lo que hacemos" : "What we do");
         return (
           <a
             href={`/services/${slug}`}
-            class="card-premium reveal p-6 hover-lift animate-fade-in-up group"
+            class="card-alive card-premium reveal p-6 animate-fade-in-up group"
             style={`animation-delay:${i * 80}ms`}
           >
             <div
-              class="mb-4 grid h-12 w-12 place-items-center rounded-xl transition-all duration-300 group-hover:scale-110"
+              class="mb-4 grid h-12 w-12 place-items-center rounded-xl"
               style="background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 15%, #fff) 0%, color-mix(in srgb, var(--brand) 8%, #fff) 100%); color:var(--brand)"
               aria-hidden="true"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="icon-alive">
                 <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
               </svg>
             </div>
