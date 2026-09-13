@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import QuoteForm from "../../components/QuoteForm.astro";
 import FAQ from "../../components/FAQ.astro";
 import { client, t } from "../../lib/client";
@@ -31,6 +32,17 @@ const title = `${service.name} in ${biz.cityState.split(",")[0]} | ${biz.name}`;
 ---
 
 <Base title={title} path={`/services/${service.slug || service.name.toLowerCase().replace(/[^\w]+/g, "-")}`}>
+  <!-- Breadcrumb -->
+  <section class="section pb-0 pt-6">
+    <div class="container max-w-3xl">
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/#services" },
+        { label: service.name, href: "#" }
+      ]} />
+    </div>
+  </section>
+
   <!-- Hero -->
   <section class="section pb-0">
     <div class="container max-w-3xl">
@@ -95,4 +107,14 @@ const title = `${service.name} in ${biz.cityState.split(",")[0]} | ${biz.name}`;
 
   <!-- CTA -->
   <QuoteForm />
+
+  <!-- Back Navigation -->
+  <section class="section">
+    <div class="container max-w-3xl">
+      <div class="flex gap-4 justify-center">
+        <a href="/#services" class="btn btn-ghost">← Back to Services</a>
+        <a href="/" class="btn btn-ghost">Home</a>
+      </div>
+    </div>
+  </section>
 </Base>
