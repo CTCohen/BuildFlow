@@ -1,3 +1,13 @@
+---
+title: Positioning
+purpose: Documentation for POSITIONING.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Positioning — How the Three Tiers Relate
 
 **Stub: Sales positioning matrix for Micro, SMB, Mid-market.**

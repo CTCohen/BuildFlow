@@ -1,3 +1,17 @@
+---
+title: 'Phase 1: SMB Launch'
+purpose: Execution plan for Phase 1 SMB tier launch by 2026-09-30
+status: active
+owner: c.t.cohen
+version: '1.0'
+tier_scope: smb
+phase: phase_1
+critical_path: true
+related:
+- ROADMAP.md
+- DECISIONS.md
+---
+
 # Phase 1 — First 5 Closes
 
 **Status:** 🟢 READY TO EXECUTE  

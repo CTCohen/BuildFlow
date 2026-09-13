@@ -1,3 +1,13 @@
+---
+title: Smb
+purpose: Documentation for SMB.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Design System — SMB Tier
 
 **Fully built. Professional design system for established contractors and small businesses.**

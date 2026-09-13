@@ -1,3 +1,13 @@
+---
+title: Terms_Of_Service
+purpose: Documentation for TERMS_OF_SERVICE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # BuildFlow Terms of Service
 
 **Last Updated:** September 2026

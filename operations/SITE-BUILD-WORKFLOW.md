@@ -1,3 +1,13 @@
+---
+title: Site Build Workflow
+purpose: Documentation for SITE-BUILD-WORKFLOW.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Site Build Workflow — 7-Day Execution
 
 **Purpose:** Once a customer is closed, use this workflow to build and launch their site in 7 days.

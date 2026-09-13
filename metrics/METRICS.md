@@ -1,3 +1,13 @@
+---
+title: Metrics
+purpose: Documentation for METRICS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Metrics & KPIs
 
 **Purpose:** Dashboard of business health — financial, operational, customer.

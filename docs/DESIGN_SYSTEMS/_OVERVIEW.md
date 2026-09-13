@@ -1,3 +1,13 @@
+---
+title: _Overview
+purpose: Documentation for _OVERVIEW.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Design Systems — Three Tiers
 
 **How the design system scales across Micro, SMB, and Mid-market.**

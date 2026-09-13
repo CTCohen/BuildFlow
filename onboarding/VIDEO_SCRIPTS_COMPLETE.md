@@ -1,3 +1,13 @@
+---
+title: Video_Scripts_Complete
+purpose: Documentation for VIDEO_SCRIPTS_COMPLETE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Video Scripts — Complete & Ready to Record
 
 **5 complete video scripts. Read directly into camera. No improvisation needed.**

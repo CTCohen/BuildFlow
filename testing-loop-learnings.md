@@ -1,3 +1,13 @@
+---
+title: Testing Loop Learnings
+purpose: Insights and patterns from testing iterations
+status: active
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Testing Loop Learnings — 2026-09-09
 
 ## Metrics

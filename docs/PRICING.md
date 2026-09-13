@@ -1,3 +1,13 @@
+---
+title: Pricing
+purpose: Documentation for PRICING.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Pricing Strategy
 
 **Three-tier pricing model: Micro ($49/mo or $297), SMB ($99/mo or $497), Mid-market ($299/mo or $1,497).**

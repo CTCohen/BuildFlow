@@ -1,3 +1,13 @@
+---
+title: Variant Pools
+purpose: Documentation for VARIANT-POOLS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Variant Pools — Logo-First Design System
 
 **Purpose:** 8+ variants per category ensure diverse, non-homogeneous site output.

@@ -1,3 +1,13 @@
+---
+title: Phase_1_Executed_Example
+purpose: Documentation for PHASE_1_EXECUTED_EXAMPLE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 Execution — Complete End-to-End Example
 
 **THIS IS REAL EXECUTION** — Not preparation, not templates. An actual worked example showing the entire Phase 1 flow from prospect to close to site build.

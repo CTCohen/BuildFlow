@@ -1,3 +1,13 @@
+---
+title: Logo First Design
+purpose: Documentation for LOGO-FIRST-DESIGN.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Logo-First Design System
 
 **Competitive Advantage:** BuildFlow designs around YOUR logo, not around templates.

@@ -1,3 +1,13 @@
+---
+title: Email Sending Ready
+purpose: Documentation for EMAIL-SENDING-READY.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Email Sending System — Ready to Deploy
 
 **Purpose:** Systematize email outreach so you can send personalized emails at scale.

@@ -1,3 +1,13 @@
+---
+title: Services_Variants
+purpose: Documentation for SERVICES_VARIANTS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Services Grid Variants
 
 Five layout variants for the Services section, each optimized for different content volumes, business types, and visual priorities.

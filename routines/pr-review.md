@@ -1,3 +1,13 @@
+---
+title: Pr Review
+purpose: Documentation for pr-review.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # PR review checklist — BuildFlow
 
 ## Before requesting review

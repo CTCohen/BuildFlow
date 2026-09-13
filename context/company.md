@@ -1,3 +1,13 @@
+---
+title: Company
+purpose: Documentation for company.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Company context — BuildFlow
 
 **Tagline:** Professional websites on your doorstep.

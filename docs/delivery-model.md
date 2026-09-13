@@ -1,3 +1,13 @@
+---
+title: Delivery Model
+purpose: Documentation for delivery-model.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Delivery & ownership model — BuildFlow
 
 ## Core principle

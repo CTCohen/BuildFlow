@@ -1,3 +1,13 @@
+---
+title: Readme
+purpose: Documentation for README.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # references/
 
 The visual bar. Drop 8–12 screenshots of local service-business sites that represent the

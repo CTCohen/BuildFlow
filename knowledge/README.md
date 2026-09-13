@@ -1,3 +1,13 @@
+---
+title: Readme
+purpose: Documentation for README.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # knowledge/
 
 The build knowledge base. Plain files, version-controlled next to the theme code they

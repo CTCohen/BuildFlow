@@ -1,3 +1,13 @@
+---
+title: Email Sequences
+purpose: Documentation for EMAIL-SEQUENCES.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Automated Onboarding Email Sequences
 
 **Goal:** Guide customers through setup (Google Business, call tracking, customer outreach) with minimal manual intervention.

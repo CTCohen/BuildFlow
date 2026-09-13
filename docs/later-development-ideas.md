@@ -1,3 +1,13 @@
+---
+title: Later Development Ideas
+purpose: Documentation for later-development-ideas.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Later development ideas — BuildFlow
 
 Parked ideas. Not in the current build. Revisit after the core pipeline works.

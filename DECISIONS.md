@@ -1,3 +1,16 @@
+---
+title: BuildFlow Decisions & Rationale
+purpose: Single source of truth for all business, product, and technical decisions with context and impact
+status: active
+owner: c.t.cohen
+updated: 2026-09-12
+version: 1.0
+tier_scope: all
+phase: operational
+critical_path: false
+related: [CLAUDE.md, ROADMAP.md, GOVERNANCE.md]
+---
+
 # Decisions & Direction
 
 **What this is:** Single source of truth for all business decisions — what we decided, why, when, and current status.

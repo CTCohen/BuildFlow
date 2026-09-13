@@ -1,3 +1,13 @@
+---
+title: Prospect Research Template
+purpose: Documentation for PROSPECT-RESEARCH-TEMPLATE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Prospect Research Template & Guide
 
 **Purpose:** Systematize prospect research so you can fill this in and immediately launch outreach.

@@ -1,3 +1,13 @@
+---
+title: Sales Call Script
+purpose: Documentation for SALES-CALL-SCRIPT.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phone Sales Call Script — Ready to Use
 
 **Purpose:** Close contractor deals over the phone using a proven 12–15 minute script.

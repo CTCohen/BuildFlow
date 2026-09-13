@@ -1,3 +1,13 @@
+---
+title: Capability Buildout
+purpose: Documentation for capability-buildout.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Capability Buildout (Pass 0) — learning & testing tactic
 
 **Purpose:** before running the discovery→delivery pipeline, prove we can build

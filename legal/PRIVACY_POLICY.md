@@ -1,3 +1,13 @@
+---
+title: Privacy_Policy
+purpose: Documentation for PRIVACY_POLICY.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # BuildFlow Privacy Policy
 
 **Last Updated:** September 2026

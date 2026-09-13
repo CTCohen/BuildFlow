@@ -1,3 +1,13 @@
+---
+title: Usage Guide
+purpose: Documentation for USAGE-GUIDE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Color Token System - Usage Guide
 
 ## Overview

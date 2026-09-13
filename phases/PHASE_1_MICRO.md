@@ -1,3 +1,13 @@
+---
+title: Phase_1_Micro
+purpose: Documentation for PHASE_1_MICRO.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 — Micro Tier Launch (Future)
 
 **Stub: Plan for launching Micro tier in Phase 2 (Oct).**

@@ -1,3 +1,13 @@
+---
+title: Implementation Checklist
+purpose: Documentation for IMPLEMENTATION-CHECKLIST.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Implementation Checklist & Troubleshooting
 
 ## Pre-Implementation Checklist

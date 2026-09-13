@@ -1,3 +1,15 @@
+---
+title: BuildFlow
+purpose: Workspace overview, quick navigation, and status dashboard
+status: active
+owner: c.t.cohen
+updated: 2026-09-12
+version: 1.0
+tier_scope: all
+phase: operational
+related: [CLAUDE.md, DECISIONS.md, ROADMAP.md]
+---
+
 # BuildFlow
 
 **Professional websites for service businesses, automated end-to-end.**

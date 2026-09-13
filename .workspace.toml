@@ -1,0 +1,229 @@
+# .workspace.toml — BuildFlow Governance & Structure
+# Auto-improving governance system with frontmatter as first-class metadata
+
+[workspace]
+name = "BuildFlow"
+description = "Professional websites on your doorstep — AI-automated discovery, outreach, site generation"
+version = "1.0"
+owner = "c.t.cohen"
+created = 2026-09-12
+
+# ============================================================================
+# GOVERNANCE: Frontmatter Schema (Layered & Composable)
+# ============================================================================
+
+# LAYER 1: Global defaults (apply to all .md files unless overridden)
+[governance.frontmatter.global]
+required = ["title", "purpose", "status"]
+recommended = ["owner", "updated", "version"]
+
+# Field validation
+[governance.frontmatter.global.validation]
+status = { type = "enum", allowed = ["draft", "active", "deprecated", "archived"] }
+owner = { type = "string", pattern = "c.t.cohen|chase" }
+updated = { type = "date", format = "YYYY-MM-DD" }
+version = { type = "semver", pattern = "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+
+# LAYER 2: BuildFlow workspace overrides (inherits global, adds specificity)
+[governance.frontmatter.workspace]
+required = ["title", "purpose", "status", "owner", "updated"]
+recommended = ["version", "tier_scope", "phase", "critical_path", "related"]
+
+# Additional fields specific to BuildFlow
+[governance.frontmatter.workspace.additional]
+tier_scope = { type = "enum", allowed = ["micro", "smb", "mid-market", "all"], default = "all" }
+phase = { type = "enum", allowed = ["phase_1", "phase_2", "phase_3", "operational"], default = "operational" }
+critical_path = { type = "boolean", default = false }
+related = { type = "array", items = { type = "string" }, description = "Related file paths" }
+
+# LAYER 3: Path-specific rules (override workspace rules by path)
+
+# Governance & decision documents — highest rigor
+[governance.frontmatter."CLAUDE.md"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["critical_path", "related"]
+critical_path = true
+
+[governance.frontmatter."DECISIONS.md"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "related"]
+staleness_days = 21  # Decisions should be reviewed at least monthly
+
+[governance.frontmatter."GOVERNANCE.md"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+critical_path = true
+
+[governance.frontmatter."ROADMAP.md"]
+required = ["title", "purpose", "status", "owner", "updated"]
+staleness_days = 7  # Active roadmap, update weekly
+
+[governance.frontmatter."README.md"]
+required = ["title", "purpose", "status", "owner"]
+recommended = ["updated", "related"]
+
+# Planning documents — phase-aware
+[governance.frontmatter."phases/"]
+required = ["title", "purpose", "status", "owner", "updated", "version", "phase"]
+recommended = ["tier_scope", "critical_path", "related"]
+
+[governance.frontmatter."LAUNCH_ROADMAP.md"]
+required = ["title", "purpose", "status", "owner", "updated", "version", "phase"]
+staleness_days = 14
+critical_path = true
+
+# Specifications — detailed rigor
+[governance.frontmatter."specs/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "critical_path", "related"]
+
+# Design & architecture documents
+[governance.frontmatter."design/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "related"]
+
+[governance.frontmatter."app/"]
+required = ["title", "purpose", "status", "owner", "updated"]
+recommended = ["version", "related"]
+
+# Context & research — looser (informational)
+[governance.frontmatter."context/"]
+required = ["title", "purpose", "status", "owner"]
+recommended = ["updated", "tier_scope", "related"]
+
+[governance.frontmatter."research/"]
+required = ["title", "purpose", "status"]
+recommended = ["owner", "updated", "tier_scope", "related"]
+
+# Operations & procedures — maintainability critical
+[governance.frontmatter."operations/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["critical_path", "phase", "related"]
+
+[governance.frontmatter."sales/"]
+required = ["title", "purpose", "status", "owner", "updated"]
+recommended = ["tier_scope", "phase", "related"]
+
+# Metrics & tracking — current data
+[governance.frontmatter."metrics/"]
+required = ["title", "purpose", "status", "owner", "updated"]
+recommended = ["phase", "related"]
+staleness_days = 3  # Metrics should be fresh
+
+# Customers — per-engagement docs
+[governance.frontmatter."customers/"]
+required = ["title", "purpose", "status"]
+recommended = ["owner", "updated", "tier_scope"]
+
+# Archive — exempt (historical, no enforcement)
+[governance.frontmatter."archive/"]
+exempt = true
+
+# Temporary/scratch — exempt (work in progress)
+[governance.frontmatter.exempt_files]
+patterns = ["testing-*.md", "scratch/", "temp/", "tmp/", "node_modules/", "knowledge/"]
+
+# ============================================================================
+# AUDIT CONFIGURATION
+# ============================================================================
+
+[audit]
+enabled = true
+phase = "learning"  # learning | advisory | strict
+log_file = ".workspace-audit-log.yml"
+report_frequency = "weekly"
+
+# Thresholds for audit reporting
+[audit.thresholds]
+min_coverage = 0.85  # 85% of files should have frontmatter
+max_staleness_override = false  # Report stale files but don't block
+
+# ============================================================================
+# FOLDER STRUCTURE (Reference)
+# ============================================================================
+
+[folders.structure]
+"CLAUDE.md" = "Venture operating manual (governance)"
+"DECISIONS.md" = "Decision log with rationale and status"
+"ROADMAP.md" = "Weekly/active planning and goals"
+"README.md" = "Workspace overview and quick links"
+"GOVERNANCE.md" = "Auto-governance system documentation"
+"STATUS.md" = "Phase execution status and blockers"
+
+"phases/" = "Phase-specific plans (Phase 1, 2, 3)"
+"operations/" = "Standard operating procedures and workflows"
+"sales/" = "Positioning, outreach templates, customer stories"
+"specs/" = "Feature specifications, technical design"
+"design/" = "Design systems, visual identity, architecture"
+"context/" = "Buyer personas, company context, market info"
+"docs/" = "Delivery model, pricing, tech stack decisions"
+"research/" = "Market research, competitive analysis"
+"metrics/" = "KPIs, execution tracking, token logs"
+"customers/" = "Per-customer information and status"
+"app/" = "Application code documentation"
+"archive/" = "Historical plans and retired documents"
+
+# ============================================================================
+# PROGRESSIVE ENFORCEMENT PHASES
+# ============================================================================
+
+[enforcement]
+# Phase sequence: learning → advisory → strict
+# Each phase adds constraints
+
+learning = { duration_weeks = 2, action = "audit_only", deadline = "2026-09-26" }
+advisory = { duration_weeks = 6, action = "warn_missing_frontmatter", deadline = "2026-11-07" }
+strict = { duration_weeks = 99999, action = "require_frontmatter", deadline = null }
+
+# Current phase (set by governance team)
+current_phase = "learning"
+phase_start_date = "2026-09-12"
+
+# ============================================================================
+# SUGGESTION ENGINE CONFIGURATION
+# ============================================================================
+
+[suggestions]
+enabled = true
+confidence_threshold = 0.80  # Only suggest rules with 80%+ confidence
+min_sample_size = 3  # Observe at least 3 files before suggesting
+
+# Suggestion triggers
+[[suggestions.triggers]]
+name = "coverage_gap"
+description = "Field missing on 3+ files"
+action = "suggest_making_field_required"
+
+[[suggestions.triggers]]
+name = "invalid_values"
+description = "4+ files with invalid field values"
+action = "suggest_enum_validation"
+
+[[suggestions.triggers]]
+name = "staleness_pattern"
+description = "Multiple files exceeding staleness threshold"
+action = "suggest_adjusting_threshold"
+
+[[suggestions.triggers]]
+name = "path_divergence"
+description = "Path-specific rules differ from workspace rules"
+action = "suggest_harmonizing_rules"
+
+# ============================================================================
+# AUDIT LOG TEMPLATE
+# ============================================================================
+# (.workspace-audit-log.yml will be appended to on each audit run)
+
+[audit_log_template]
+date = "YYYY-MM-DD"
+audit_phase = "learning|advisory|strict"
+summary = "Coverage % and key findings"
+frontmatter_audit = {
+  total_files = 0,
+  with_frontmatter = 0,
+  coverage_pct = 0.0,
+  by_path = {},
+  missing_fields = [],
+  invalid_fields = [],
+  stale_files = [],
+}
+suggestions = []

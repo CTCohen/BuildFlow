@@ -1,3 +1,13 @@
+---
+title: Design
+purpose: Documentation for DESIGN.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # DESIGN.md — BuildFlow house style
 
 Read this before generating or editing any site. The goal: every site feels like a real,

@@ -1,3 +1,13 @@
+---
+title: Video Recording Guide
+purpose: Documentation for VIDEO-RECORDING-GUIDE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Video Recording Guide — Phase 1
 
 Quick setup for recording 5 onboarding videos (rough + authentic).

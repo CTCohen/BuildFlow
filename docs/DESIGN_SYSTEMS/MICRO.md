@@ -1,3 +1,13 @@
+---
+title: Micro
+purpose: Documentation for MICRO.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Design System — Micro Tier
 
 **Stub: Simple, fast design system for solopreneurs and just-starting contractors.**

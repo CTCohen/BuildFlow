@@ -1,3 +1,13 @@
+---
+title: Email Hooks
+purpose: Documentation for EMAIL-HOOKS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Email Subject Lines & Messaging Hooks
 
 **Purpose:** Data-driven email templates for cold outreach to contractor businesses.

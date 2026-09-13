@@ -1,3 +1,13 @@
+---
+title: Testing
+purpose: Documentation for testing.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Testing strategy — BuildFlow
 
 Two layers. The template is tested thoroughly but rarely; every client site passes an

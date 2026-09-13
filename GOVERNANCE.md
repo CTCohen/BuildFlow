@@ -1,15 +1,19 @@
-# BuildFlow Governance Framework
-
-**Last Updated:** September 2026
-
+---
+title: BuildFlow Governance & Frontmatter System
+purpose: Auto-improving governance system with frontmatter as first-class metadata
+status: active
+owner: c.t.cohen
+updated: 2026-09-12
+version: 1.0
+critical_path: true
+tier_scope: all
+phase: operational
+related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 ---
 
-## 1. Overview
+# BuildFlow Auto-Governance System
 
-BuildFlow is a solo-operated venture (currently) with plans to scale to a team by Phase 4-5. This governance document establishes decision-making authority, role clarity, and operational procedures to ensure consistency, accountability, and scalability.
-
-**Current Structure:** Solo operation (Chase)
-**Target Structure (Phase 4+):** 3-4 person team (closer, support, contractor)
+**Frontmatter as first-class governance.** Every `.md` file in the workspace declares its purpose, status, and dependencies via structured metadata. The system observes compliance patterns and suggests tighter rules as the workspace scales.
 
 ---
 

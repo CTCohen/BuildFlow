@@ -1,3 +1,13 @@
+---
+title: Variant Specifications
+purpose: Documentation for VARIANT-SPECIFICATIONS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Variant Specifications
 
 Complete specifications for all 5 color scheme variants in the BuildFlow token system.

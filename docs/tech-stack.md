@@ -1,3 +1,13 @@
+---
+title: Tech Stack
+purpose: Documentation for tech-stack.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Tech stack — BuildFlow
 
 Solo operator. Cheap to run. No rewrite later. One codebase for all sites.

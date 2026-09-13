@@ -1,3 +1,13 @@
+---
+title: Execution_Tracker
+purpose: Documentation for EXECUTION_TRACKER.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 Execution Tracker
 
 **Real-time tracking of Phase 1 execution. Update as you go.**

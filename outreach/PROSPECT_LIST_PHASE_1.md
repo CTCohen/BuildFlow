@@ -1,3 +1,13 @@
+---
+title: Prospect_List_Phase_1
+purpose: Documentation for PROSPECT_LIST_PHASE_1.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 Prospect List — Ready to Outreach
 
 **Instructions:** Use this list as your Batch 1 (5 prospects) for Week 2 outreach.

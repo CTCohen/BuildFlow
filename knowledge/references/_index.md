@@ -1,3 +1,13 @@
+---
+title: _Index
+purpose: Documentation for _index.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # references/
 
 One note per source consumed. Filename = `ref:` id used in card `source:` fields.

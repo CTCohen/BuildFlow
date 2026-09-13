@@ -1,3 +1,13 @@
+---
+title: Readme
+purpose: Documentation for README.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Color Token System
 
 BuildFlow's design token system provides 5 pre-configured color variants optimized for different service business positioning strategies. Each variant includes complete token definitions for light and dark modes, semantic colors, and badge configurations.

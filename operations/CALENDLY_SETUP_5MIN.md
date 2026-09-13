@@ -1,3 +1,13 @@
+---
+title: Calendly_Setup_5Min
+purpose: Documentation for CALENDLY_SETUP_5MIN.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Calendly Setup — 5 Minutes
 
 **Do this TODAY so your emails have a working link.**

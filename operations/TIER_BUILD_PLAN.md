@@ -1,3 +1,13 @@
+---
+title: Tier_Build_Plan
+purpose: Documentation for TIER_BUILD_PLAN.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Tier Build Plan — What Needs to be Built
 
 **Comprehensive roadmap for bringing all three tiers to production.**

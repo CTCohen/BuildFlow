@@ -1,3 +1,14 @@
+---
+title: Phase 1 Launch Review Checklist
+purpose: Quality gates and shipping checklist for Phase 1 launch
+status: active
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: smb
+phase: phase_1
+critical_path: true
+---
+
 # REVIEW.md — BuildFlow shipping checklist
 
 > Run before shipping anything on a critical path: a delivered site, an outreach change,

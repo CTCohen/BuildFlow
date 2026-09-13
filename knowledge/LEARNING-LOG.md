@@ -1,3 +1,13 @@
+---
+title: Learning Log
+purpose: Documentation for LEARNING-LOG.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # LEARNING-LOG
 
 Meta-log for Pass 0. Each entry: what was done, what it produced, was it valuable, and

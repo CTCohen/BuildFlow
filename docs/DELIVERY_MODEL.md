@@ -1,3 +1,13 @@
+---
+title: Delivery_Model
+purpose: Documentation for DELIVERY_MODEL.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Delivery Model
 
 **Three service tiers, two pricing options (A/B) per tier.**

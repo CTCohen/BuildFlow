@@ -1,3 +1,13 @@
+---
+title: Sms Hooks
+purpose: Documentation for SMS-HOOKS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # SMS Messaging Strategy
 
 **Purpose:** High-converting SMS follow-up sequences for contractor outreach.

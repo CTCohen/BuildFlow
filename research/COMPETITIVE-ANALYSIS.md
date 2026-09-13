@@ -1,3 +1,13 @@
+---
+title: Competitive Analysis
+purpose: Documentation for COMPETITIVE-ANALYSIS.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Competitive Analysis: Agave + Contractor Web Design Market
 
 **Research Date:** September 2026

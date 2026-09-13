@@ -1,3 +1,13 @@
+---
+title: Readme
+purpose: Documentation for README.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # BuildFlow — website generator
 
 One Astro codebase. **One client per build.** Each client is a single JSON file in

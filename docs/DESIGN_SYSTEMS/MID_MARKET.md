@@ -1,3 +1,13 @@
+---
+title: Mid_Market
+purpose: Documentation for MID_MARKET.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Design System — Mid-Market Tier
 
 **Stub: Full white-label design system for enterprises and large businesses.**

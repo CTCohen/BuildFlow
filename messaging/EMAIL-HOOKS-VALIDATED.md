@@ -1,3 +1,13 @@
+---
+title: Email Hooks Validated
+purpose: Documentation for EMAIL-HOOKS-VALIDATED.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Email Messaging — Validated Subject Lines & Copy
 
 **Based on:** Competitive market research (Agave, local agencies, SaaS platforms)

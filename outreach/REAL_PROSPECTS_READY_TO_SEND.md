@@ -1,3 +1,13 @@
+---
+title: Real_Prospects_Ready_To_Send
+purpose: Documentation for REAL_PROSPECTS_READY_TO_SEND.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Real Prospects — Ready to Send Tomorrow
 
 **5 real HVAC contractors in Phoenix researched with actual emails and personalized copy.**

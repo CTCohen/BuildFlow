@@ -1,3 +1,18 @@
+---
+title: Launch Roadmap
+purpose: Detailed roadmap for product launch sequence and milestones
+status: active
+owner: c.t.cohen
+updated: '2026-09-12'
+version: '1.0'
+tier_scope: smb
+phase: phase_1
+critical_path: true
+related:
+- ROADMAP.md
+- PHASE_1.md
+---
+
 # Launch Roadmap — what's between here and a tight, strong launch
 
 > Single continuous roadmap: current Phase 1 blockers through full-volume launch readiness.

@@ -1,3 +1,13 @@
+---
+title: Token Log
+purpose: Documentation for token-log.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Token & production log — BuildFlow
 
 Claude Pro budget this month. Every automated run records here.

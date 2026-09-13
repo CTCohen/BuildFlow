@@ -1,3 +1,16 @@
+---
+title: BuildFlow Operating Manual
+purpose: Governance and decision-making for the BuildFlow venture
+status: active
+owner: c.t.cohen
+updated: 2026-09-12
+version: 1.0
+critical_path: true
+tier_scope: all
+phase: operational
+related: [DECISIONS.md, ROADMAP.md, GOVERNANCE.md]
+---
+
 # CLAUDE.md — BuildFlow
 
 > Operating manual for this venture. Read before any build, spec, or outreach work.

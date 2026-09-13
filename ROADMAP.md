@@ -1,3 +1,16 @@
+---
+title: BuildFlow Weekly Roadmap
+purpose: Weekly planning and execution tracking with clear goals and success metrics
+status: active
+owner: c.t.cohen
+updated: 2026-09-12
+version: 1.0
+tier_scope: all
+phase: phase_1
+staleness_days: 7
+related: [CLAUDE.md, DECISIONS.md, phases/PHASE_1.md]
+---
+
 # ROADMAP.md — BuildFlow
 
 > Weekly planning. Keep it short. One goal, clear scope, measurable done.

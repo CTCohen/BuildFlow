@@ -1,3 +1,13 @@
+---
+title: BuildFlow Weekly Progress
+purpose: Weekly snapshot of progress, blockers, and next steps
+status: active
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # BuildFlow Progress — Pass 0 → Phase 1-2: Diversity at Scale
 
 > **Status:** Phase 1-2 Complete. Design tokens system + component variants implemented. 30 themes + 5 hero variants + 4 service layouts + 3 testimonial styles = 1,800+ visual combinations ready for agent selection.

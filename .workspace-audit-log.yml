@@ -1,0 +1,281 @@
+
+---
+- date: '2026-09-12'
+  time: '17:56:20'
+  findings:
+    missing_field:
+    - file: app/node_modules/lighthouse/.agents/skills/lighthouse-verification/SKILL.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/lighthouse/.agents/skills/lighthouse-verification/SKILL.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/lighthouse/.agents/skills/lighthouse-verification/SKILL.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-coverage.prompt.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-coverage.prompt.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-coverage.prompt.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generate.prompt.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generate.prompt.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generate.prompt.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generator.agent.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generator.agent.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-generator.agent.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-heal.prompt.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-heal.prompt.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-heal.prompt.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-healer.agent.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-healer.agent.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-healer.agent.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-plan.prompt.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-plan.prompt.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-plan.prompt.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-planner.agent.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-planner.agent.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright/lib/agents/playwright-test-planner.agent.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/faqs.partial.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/faqs.partial.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/faqs.partial.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/goals.partial.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/goals.partial.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/goals.partial.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/methodology.partial.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/methodology.partial.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: app/node_modules/third-party-web/lib/markdown/methodology.partial.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: knowledge/copy-hvac.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/copy-hvac.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/copy-plumbing.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/copy-plumbing.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/design-tokens-schema.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/design-tokens-schema.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/mood-boards.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/mood-boards.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/references/geo-2025.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/references/geo-2025.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/references/local-seo-hvac-2025.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/references/local-seo-hvac-2025.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: knowledge/service-details.md
+      message: 'Missing required field: title'
+      severity: error
+    - file: knowledge/service-details.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: website/src/pages/legal/privacy.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: website/src/pages/legal/privacy.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: website/src/pages/legal/security.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: website/src/pages/legal/security.md
+      message: 'Missing required field: status'
+      severity: error
+    - file: website/src/pages/legal/terms.md
+      message: 'Missing required field: purpose'
+      severity: error
+    - file: website/src/pages/legal/terms.md
+      message: 'Missing required field: status'
+      severity: error
+    missing_frontmatter:
+    - file: knowledge/principles/accessibility-baseline.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/ai-seo.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/anti-ai-slop-copy.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/conversion.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/local-seo.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/performance-baseline.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/principles/web-design.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/ai-seo-setup.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/build-a-site.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/content-refresh.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/managed-monthly.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/seo-audit.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/sops/site-qa.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-about.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-contact.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-home.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-service-area.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-service-detail.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/page-services.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/templates/section-blocks.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/copy-bank.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/keyword-map.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/must-haves.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/objection-handling.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/page-map.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/phoenix-seasonal.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/schema.md
+      message: No frontmatter found
+      severity: error
+    - file: knowledge/trades/hvac/trust-signals.md
+      message: No frontmatter found
+      severity: error
+  summary:
+    total: 90
+    errors: 90
+    warnings: 0

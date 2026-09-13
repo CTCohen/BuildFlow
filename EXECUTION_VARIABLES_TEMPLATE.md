@@ -1,3 +1,12 @@
+---
+title: Execution Variables Template
+purpose: Template for tracking execution variables and environment setup
+status: draft
+owner: c.t.cohen
+tier_scope: all
+phase: operational
+---
+
 # Execution Variables Template
 
 > When Chase provides the 6 blockers (B1–B6), use this template to update all files at once.

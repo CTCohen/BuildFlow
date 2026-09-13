@@ -1,3 +1,13 @@
+---
+title: Resource Index
+purpose: Documentation for resource-index.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Resource index — Pass 0 sourcing
 
 Ranked source list for building website / SEO / AI-SEO / management capability.

@@ -1,3 +1,13 @@
+---
+title: Video Outline
+purpose: Documentation for VIDEO-OUTLINE.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Onboarding Video Outline
 
 **Purpose:** Automate customer onboarding so sites are self-setup without manual calls.

@@ -1,3 +1,13 @@
+---
+title: Features
+purpose: Documentation for features.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Feature registry — BuildFlow
 
 Status: `idea` | `building` | `live` | `blocked`

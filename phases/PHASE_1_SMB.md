@@ -1,3 +1,13 @@
+---
+title: Phase_1_Smb
+purpose: Documentation for PHASE_1_SMB.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 — SMB Tier Launch
 
 **Status:** 🟢 READY TO EXECUTE

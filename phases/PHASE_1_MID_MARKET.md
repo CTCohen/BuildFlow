@@ -1,3 +1,13 @@
+---
+title: Phase_1_Mid_Market
+purpose: Documentation for PHASE_1_MID_MARKET.md
+status: draft
+owner: c.t.cohen
+updated: '2026-09-12'
+tier_scope: all
+phase: operational
+---
+
 # Phase 1 — Mid-Market Tier Launch (Future)
 
 **Stub: Plan for launching Mid-market tier in Phase 3 (Nov+).**
