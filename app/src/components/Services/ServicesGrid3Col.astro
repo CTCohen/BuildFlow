@@ -8,23 +8,27 @@ const title = heading ?? (lang === "es" ? "Lo que hacemos" : "What we do");
 
 <section class="section" id="services">
   <div class="container">
-    <h2 class="text-3xl md:text-4xl">{title}</h2>
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <h2 class="text-3xl md:text-4xl animate-fade-in-up">{title}</h2>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {c.services.map((s, i) => {
         const slug = s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-");
         return (
-          <a href={`/services/${slug}`} class="card reveal p-6 hover:shadow-lg transition-shadow" style={`transition-delay:${i * 60}ms`}>
+          <a
+            href={`/services/${slug}`}
+            class="card-premium reveal p-6 hover-lift animate-fade-in-up group"
+            style={`animation-delay:${i * 80}ms`}
+          >
             <div
-              class="mb-4 grid h-11 w-11 place-items-center rounded-xl"
-              style="background:color-mix(in srgb,var(--brand) 12%, #fff);color:var(--brand)"
+              class="mb-4 grid h-12 w-12 place-items-center rounded-xl transition-all duration-300 group-hover:scale-110"
+              style="background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 15%, #fff) 0%, color-mix(in srgb, var(--brand) 8%, #fff) 100%); color:var(--brand)"
               aria-hidden="true"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                 <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold">{s.name}</h3>
-            <p class="mt-2 text-[var(--color-ink-soft)]">{s.blurb}</p>
+            <h3 class="text-lg font-semibold transition-colors duration-300 group-hover:text-[var(--brand)]">{s.name}</h3>
+            <p class="mt-2 text-[var(--color-ink-soft)] transition-colors duration-300 group-hover:text-[var(--color-ink)]">{s.blurb}</p>
           </a>
         );
       })}

@@ -1,0 +1,178 @@
+{
+  "slug": "example-hvac-showcase",
+  "business": {
+    "name": "Climate Comfort HVAC",
+    "trade": "hvac",
+    "phone": "+1-720-555-0147",
+    "email": "contact@climatecomfort.local",
+    "cityState": "Denver, CO",
+    "serviceAreas": [
+      "Denver",
+      "Boulder",
+      "Littleton",
+      "Aurora",
+      "Westminster"
+    ],
+    "hours": "Mon–Fri 7am–7pm · Sat 8am–4pm · 24/7 emergency service",
+    "yearsInBusiness": 12,
+    "licenseNo": "HVAC-2847-CO"
+  },
+  "brand": {
+    "primary": "#1e5a96",
+    "accent": "#f59e0b",
+    "heroStyle": "full-bleed",
+    "typePairing": "grotesk-serif",
+    "density": "comfortable"
+  },
+  "content": {
+    "en": {
+      "tagline": "Professional heating & cooling service in Denver since 2012",
+      "heroHeadline": "Stay comfortable year-round",
+      "heroSub": "Fast, honest HVAC service. Same-day emergency response, upfront pricing, licensed technicians. Whether you need a repair, maintenance, or a new system, we handle it right.",
+      "primaryCta": "Get a free estimate",
+      "about": "Climate Comfort HVAC has been keeping Denver homes and businesses comfortable for over 12 years. We're a family-owned team of certified technicians who believe in doing things right the first time. We show up on time, explain what's happening, give you honest advice, and stand behind every job. From emergency furnace repairs in winter to AC tune-ups before summer, we're here for you.",
+      "services": [
+        {
+          "name": "AC repair & maintenance",
+          "slug": "ac-repair",
+          "blurb": "Air conditioning not cooling? We diagnose and fix it fast, with same-day service available.",
+          "description": "Professional air conditioning repair and routine maintenance to keep your system running efficiently all summer. We service all brands and handle emergency calls 24/7."
+        },
+        {
+          "name": "Furnace repair & replacement",
+          "slug": "furnace-repair",
+          "blurb": "No heat? We get your furnace running again, fast. Emergency service available anytime.",
+          "description": "Expert furnace repair and installation for Denver's cold winters. We work with all furnace types and can have you warm again same day for emergency calls."
+        },
+        {
+          "name": "System installation",
+          "slug": "system-installation",
+          "blurb": "New heating or cooling system? We handle sizing, installation, and startup so it runs perfectly.",
+          "description": "Complete HVAC system installation including load calculations, equipment selection, installation, and testing. We'll help you choose the right system for your home and budget."
+        },
+        {
+          "name": "Preventive maintenance",
+          "slug": "preventive-maintenance",
+          "blurb": "Annual tune-ups keep your system running smoothly and catch problems before they become expensive.",
+          "description": "Seasonal maintenance plans to keep your heating and cooling running at peak efficiency. Regular service catches issues early and extends system life."
+        },
+        {
+          "name": "Thermostat & smart home",
+          "slug": "smart-thermostat",
+          "blurb": "Smart thermostats save money and let you control your climate from anywhere.",
+          "description": "Professional installation of modern smart thermostats, including Nest, Ecobee, and others. Save on energy bills and control your home's climate remotely."
+        },
+        {
+          "name": "Indoor air quality",
+          "slug": "air-quality",
+          "blurb": "Air filters, humidifiers, and purifiers for healthier air in your home.",
+          "description": "We install and service air filters, humidifiers, and whole-home air purifiers to improve your home's air quality."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Our furnace went out in the middle of winter. Climate Comfort was here within 2 hours and had us warm by evening. Professional, friendly, and fair pricing. Highly recommend.",
+          "author": "Robert M.",
+          "location": "Denver"
+        },
+        {
+          "quote": "Been using them for maintenance for 3 years now. They're honest, on time, and actually explain what they're doing instead of trying to upsell you. It's rare to find a contractor like this.",
+          "author": "Sarah K.",
+          "location": "Boulder"
+        },
+        {
+          "quote": "New AC system installed in a day. The team was professional, cleaned up after themselves, and the system runs great. Worth every penny.",
+          "author": "Michael D.",
+          "location": "Littleton"
+        },
+        {
+          "quote": "Emergency call on a Saturday, and they came out same day. Fixed the problem, explained everything, and the price was exactly what they quoted. That's how service should be.",
+          "author": "Jennifer L.",
+          "location": "Aurora"
+        },
+        {
+          "quote": "Had them do a full system tune-up. They found a small issue that could have become expensive, fixed it, and now everything runs better. Smart investment.",
+          "author": "David T.",
+          "location": "Westminster"
+        }
+      ]
+    },
+    "es": {
+      "tagline": "Servicio profesional de calefacción y aire acondicionado en Denver desde 2012",
+      "heroHeadline": "Mantente cómodo todo el año",
+      "heroSub": "Servicio HVAC rápido y honesto. Respuesta de emergencia el mismo día, precios justos, técnicos licenciados. Ya sea que necesites una reparación, mantenimiento o un nuevo sistema, nosotros lo hacemos bien.",
+      "primaryCta": "Obtén una estimación gratuita",
+      "about": "Climate Comfort HVAC ha mantenido cómodos los hogares y negocios de Denver durante más de 12 años. Somos un equipo familiar de técnicos certificados que creemos en hacer las cosas bien la primera vez. Llegamos a tiempo, explicamos qué está pasando, te damos consejos honestos y respaldamos cada trabajo. Desde reparaciones de emergencia de hornos en invierno hasta ajustes de aire acondicionado antes del verano, estamos aquí para ti.",
+      "services": [
+        {
+          "name": "Reparación y mantenimiento de AC",
+          "slug": "ac-repair",
+          "blurb": "¿El aire acondicionado no enfría? Diagnosticamos y lo reparamos rápido, con servicio el mismo día.",
+          "description": "Reparación profesional de aire acondicionado y mantenimiento rutinario para mantener tu sistema funcionando eficientemente todo el verano. Atendemos todas las marcas y manejamos llamadas de emergencia 24/7."
+        },
+        {
+          "name": "Reparación e instalación de hornos",
+          "slug": "furnace-repair",
+          "blurb": "¿Sin calor? Ponemos tu horno funcionando de nuevo, rápido. Servicio de emergencia disponible en cualquier momento.",
+          "description": "Reparación e instalación experta de hornos para los inviernos fríos de Denver. Trabajamos con todos los tipos de hornos y podemos calentarte de nuevo el mismo día para llamadas de emergencia."
+        },
+        {
+          "name": "Instalación de sistemas",
+          "slug": "system-installation",
+          "blurb": "¿Nuevo sistema de calefacción o aire acondicionado? Nos encargamos del dimensionamiento, instalación e inicio para que funcione perfectamente.",
+          "description": "Instalación completa del sistema HVAC incluyendo cálculos de carga, selección de equipos, instalación y prueba. Te ayudaremos a elegir el sistema correcto para tu hogar y presupuesto."
+        },
+        {
+          "name": "Mantenimiento preventivo",
+          "slug": "preventive-maintenance",
+          "blurb": "Los ajustes anuales mantienen tu sistema funcionando sin problemas y detectan problemas antes de que se vuelvan costosos.",
+          "description": "Planes de mantenimiento estacional para mantener tu calefacción y aire acondicionado en funcionamiento con máxima eficiencia. El servicio regular detecta problemas temprano y extiende la vida útil del sistema."
+        },
+        {
+          "name": "Termostato y hogar inteligente",
+          "slug": "smart-thermostat",
+          "blurb": "Los termostatos inteligentes ahorran dinero y te permiten controlar tu clima desde cualquier lugar.",
+          "description": "Instalación profesional de termostatos inteligentes modernos, incluyendo Nest, Ecobee y otros. Ahorra en facturas de energía y controla el clima de tu hogar desde cualquier lugar."
+        },
+        {
+          "name": "Calidad del aire interior",
+          "slug": "air-quality",
+          "blurb": "Filtros de aire, humidificadores y purificadores para aire más saludable en tu hogar.",
+          "description": "Instalamos y damos servicio a filtros de aire, humidificadores y purificadores de aire para toda la casa para mejorar la calidad del aire de tu hogar."
+        }
+      ],
+      "reviews": [
+        {
+          "quote": "Nuestro horno se apagó en medio del invierno. Climate Comfort llegó en 2 horas y nos calentó para la tarde. Profesional, amable y precios justos. Muy recomendado.",
+          "author": "Robert M.",
+          "location": "Denver"
+        },
+        {
+          "quote": "Hemos estado usándolos para mantenimiento durante 3 años. Son honestos, puntuales y en realidad explican qué están haciendo en lugar de intentar venderte cosas que no necesitas. Es raro encontrar un contratista así.",
+          "author": "Sarah K.",
+          "location": "Boulder"
+        },
+        {
+          "quote": "Nuevo sistema de aire acondicionado instalado en un día. El equipo fue profesional, limpió después de sí mismo y el sistema funciona perfecto. Valió la pena cada centavo.",
+          "author": "Michael D.",
+          "location": "Littleton"
+        },
+        {
+          "quote": "Llamada de emergencia un sábado y vinieron el mismo día. Arreglaron el problema, explicaron todo y el precio fue exactamente el que cotizaron. Así es como debe ser el servicio.",
+          "author": "Jennifer L.",
+          "location": "Aurora"
+        },
+        {
+          "quote": "Les pedimos que hicieran un ajuste completo del sistema. Encontraron un pequeño problema que podría haber sido costoso, lo arreglaron y ahora todo funciona mejor. Una inversión inteligente.",
+          "author": "David T.",
+          "location": "Westminster"
+        }
+      ]
+    }
+  },
+  "media": {
+    "heroImage": null,
+    "logo": null,
+    "source": "generated-identity"
+  }
+}

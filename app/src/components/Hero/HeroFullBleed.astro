@@ -16,31 +16,34 @@ const trust = [
 
 <section
   class="relative overflow-hidden text-[var(--brand-ink)]"
-  style="background:linear-gradient(135deg,var(--brand),color-mix(in srgb,var(--brand) 70%, #000))"
+  style="background:linear-gradient(135deg, var(--brand) 0%, color-mix(in srgb, var(--brand) 60%, #000 40%) 100%)"
 >
-  <div class="container grid items-center gap-10 py-16 md:py-24 max-w-3xl text-center mx-auto">
+  <!-- Gradient overlay animation -->
+  <div class="absolute inset-0 opacity-30" style="background:radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 70%); animation: fade-in 1.2s ease-out"></div>
+
+  <div class="container relative grid items-center gap-10 py-16 md:py-24 max-w-3xl text-center mx-auto">
     <div>
       <p
-        class="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
-        style="background:rgba(255,255,255,.16)"
+        class="mb-3 inline-block rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider animate-fade-in-up"
+        style="background:rgba(255,255,255,.18); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.15)"
       >
         {c.tagline}
       </p>
-      <h1 class="text-4xl md:text-5xl lg:text-[3.4rem]">{c.heroHeadline}</h1>
-      <p class="mt-4 text-lg measure opacity-90 mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-[3.4rem] animate-fade-in-up leading-tight" style="animation-delay: 100ms">{c.heroHeadline}</h1>
+      <p class="mt-6 text-lg md:text-xl measure opacity-95 mx-auto animate-fade-in-up leading-relaxed" style="animation-delay: 200ms">
         {c.heroSub}
       </p>
-      <div class="mt-7 flex flex-wrap gap-3 justify-center">
-        <a href={`tel:${tel}`} class="btn btn-primary">{c.primaryCta}</a>
+      <div class="mt-8 flex flex-wrap gap-4 justify-center animate-fade-in-up" style="animation-delay: 300ms">
+        <a href={`tel:${tel}`} class="btn btn-primary hover:shadow-2xl">{c.primaryCta}</a>
         <a href="/services" class="btn btn-ghost">{secondaryCta}</a>
       </div>
-      <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm justify-center opacity-90">
-        {trust.map((item) => (
-          <li class="flex items-center gap-1.5">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm justify-center opacity-95 animate-fade-in-up" style="animation-delay: 400ms">
+        {trust.map((item, i) => (
+          <li class="flex items-center gap-2 animate-fade-in-up" style={`animation-delay: ${400 + i * 50}ms`}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="text-[var(--brand-accent)] flex-shrink-0">
               <path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            {item}
+            <span>{item}</span>
           </li>
         ))}
       </ul>
