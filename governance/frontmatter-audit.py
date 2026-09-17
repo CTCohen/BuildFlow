@@ -312,7 +312,7 @@ def save_audit_log(workspace_root: str, findings: List[AuditFinding]):
     # Append to log
     with open(log_path, 'a') as f:
         f.write(f"\n---\n")
-        yaml.dump([audit_entry], f, default_flow_style=False, sort_keys=False)
+        yaml.dump(audit_entry, f, default_flow_style=False, sort_keys=False)
 
     print(f"\n✅ Audit log saved to: {log_path}")
 

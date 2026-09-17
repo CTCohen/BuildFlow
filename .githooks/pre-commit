@@ -1,0 +1,56 @@
+#!/bin/bash
+# Pre-commit hook: Enforce frontmatter on new .md files
+# Install: git config core.hooksPath .githooks
+
+set -e
+
+WORKSPACE_ROOT=$(git rev-parse --show-toplevel)
+cd "$WORKSPACE_ROOT"
+
+# Load enforcement phase
+PHASE=$(grep "current_phase" .workspace.toml | grep -o '"[^"]*"' | head -1 | tr -d '"')
+PHASE=${PHASE:-learning}
+
+# Get staged .md files
+STAGED_MD_FILES=$(git diff --cached --name-only --diff-filter=A | grep '\.md$' || true)
+
+if [ -z "$STAGED_MD_FILES" ]; then
+  exit 0
+fi
+
+echo "🔍 Checking frontmatter on new .md files (phase: $PHASE)..."
+
+# Check each staged file
+HAS_ERRORS=0
+for file in $STAGED_MD_FILES; do
+  # Skip exempt paths
+  if [[ "$file" =~ ^(archive/|node_modules/|knowledge/|scratch/|testing-) ]]; then
+    continue
+  fi
+
+  # Check if file has frontmatter
+  if ! head -1 "$file" | grep -q "^---"; then
+    HAS_ERRORS=1
+    echo "  ❌ $file: Missing frontmatter"
+
+    if [ "$PHASE" = "strict" ]; then
+      echo "     Run: python3 governance/add-frontmatter.py --apply"
+      exit 1
+    elif [ "$PHASE" = "advisory" ]; then
+      echo "     ⚠️  Advisory: add frontmatter before committing"
+    fi
+  fi
+done
+
+if [ "$PHASE" = "strict" ] && [ $HAS_ERRORS -eq 1 ]; then
+  echo ""
+  echo "❌ Strict phase: frontmatter required on all new .md files"
+  echo "   Fix: python3 governance/add-frontmatter.py --apply"
+  exit 1
+fi
+
+if [ $HAS_ERRORS -eq 0 ]; then
+  echo "✅ All new .md files have frontmatter"
+fi
+
+exit 0
