@@ -19,6 +19,18 @@ This index maps every component, explains how to use it, and shows the flow from
 
 ---
 
+## First Time Setup
+
+Enable the pre-commit hook to block commits with missing frontmatter (strict phase only):
+
+```bash
+git config core.hooksPath .githooks
+```
+
+One-time only. After this, new `.md` files without frontmatter will be rejected at commit time (when in strict phase).
+
+---
+
 ## Quick Start
 
 **I want to...**
@@ -27,8 +39,10 @@ This index maps every component, explains how to use it, and shows the flow from
 - **Check workspace compliance** → Run `python3 governance/frontmatter-audit.py audit`
 - **Add frontmatter to files** → Run `python3 governance/add-frontmatter.py --apply`
 - **See suggestions for rules** → Run `python3 governance/suggestions-engine.py analyze`
+- **Approve & apply suggestions** → Run `python3 governance/suggestions-engine.py approve suggest-1`
 - **Enforce compliance** → Run `python3 governance/enforce.py` (runs full cycle)
 - **Change enforcement phase** → Run `python3 governance/enforce.py --phase strict`
+- **Schedule weekly audits** → Use `/schedule --weekly "python3 governance/enforce.py"`
 
 ---
 
@@ -207,6 +221,44 @@ See [`GOVERNANCE.md`](GOVERNANCE.md) for full field reference.
 
 ---
 
+## Automation & Scheduling
+
+### Automatic Phase Transitions
+
+Phase-manager.py automatically advances phases on schedule:
+
+```bash
+# Run daily (cron or /schedule)
+python3 governance/phase-manager.py
+
+# Automatically promotes:
+# 2026-09-26 → learning to advisory
+# 2026-11-07 → advisory to strict
+```
+
+Set it up:
+```bash
+# One-time: schedule daily at 9 AM
+/schedule --daily "python3 governance/phase-manager.py" "Advance governance phases"
+
+# Or via cron:
+0 9 * * * cd /Users/c.t.cohen/BuildFlow && python3 governance/phase-manager.py
+```
+
+### Scheduled Audits
+
+Run weekly audits to detect workspace drift:
+
+```bash
+# One-time: schedule weekly
+/schedule --weekly "python3 governance/enforce.py" "Weekly governance audit"
+
+# Or via cron:
+0 9 * * 1 cd /Users/c.t.cohen/BuildFlow && python3 governance/enforce.py
+```
+
+---
+
 ## Current Status
 
 | Phase | Status | Deadline | What Happens |
@@ -216,6 +268,8 @@ See [`GOVERNANCE.md`](GOVERNANCE.md) for full field reference.
 | **Strict** | ⏳ Pending | — | Enforce compliance, auto-fix with approval |
 
 **Current:** 1,082 of 1,145 files (94.5% coverage) have compliant frontmatter.
+
+**Phases advance automatically via `phase-manager.py` when scheduled daily.**
 
 ---
 

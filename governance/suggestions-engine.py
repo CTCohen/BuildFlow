@@ -207,6 +207,50 @@ def display_suggestions(suggestions: List[Suggestion]):
         print(f"   Evidence: {json.dumps(s.evidence, indent=2).replace(chr(10), chr(10) + '           ')}")
 
 # ============================================================================
+# APPROVAL & APPLICATION
+# ============================================================================
+
+def approve_suggestion(workspace_root: str, suggestion_id: str) -> bool:
+    """Approve and apply a suggestion to .workspace.toml"""
+    suggestions_path = Path(workspace_root) / ".workspace-suggestions.yml"
+
+    if not suggestions_path.exists():
+        print("❌ No suggestions file found")
+        return False
+
+    with open(suggestions_path, 'r') as f:
+        suggestions_data = yaml.safe_load(f)
+
+    suggestions = [Suggestion(**s) for s in suggestions_data.get('suggestions', [])]
+
+    # Find the suggestion
+    target = None
+    for s in suggestions:
+        if s.id == suggestion_id:
+            target = s
+            break
+
+    if not target:
+        print(f"❌ Suggestion {suggestion_id} not found")
+        return False
+
+    print(f"\n✅ Approving: {target.description}")
+    print(f"   Action: {target.action}")
+    print(f"   ℹ️  Review .workspace.toml and apply the action manually")
+    print(f"   Then re-run: python3 governance/frontmatter-audit.py audit")
+
+    # Mark as approved in suggestions file
+    for s in suggestions_data['suggestions']:
+        if s['id'] == suggestion_id:
+            s['status'] = 'approved'
+
+    with open(suggestions_path, 'w') as f:
+        yaml.dump(suggestions_data, f, default_flow_style=False, sort_keys=False)
+
+    print(f"\n✅ Suggestion marked as approved in .workspace-suggestions.yml")
+    return True
+
+# ============================================================================
 # CLI
 # ============================================================================
 
@@ -241,6 +285,18 @@ def main():
 
         suggestions = [Suggestion(**s) for s in suggestions_data.get('suggestions', [])]
         display_suggestions(suggestions)
+
+    elif command == 'approve':
+        if len(sys.argv) < 3:
+            print("Usage: python3 suggestions-engine.py approve <suggestion-id>")
+            print("Example: python3 suggestions-engine.py approve suggest-1")
+            sys.exit(1)
+
+        suggestion_id = sys.argv[2]
+        if approve_suggestion(workspace_root, suggestion_id):
+            print(f"\n✅ Ready to update .workspace.toml")
+        else:
+            sys.exit(1)
 
     else:
         print(f"Unknown command: {command}")
