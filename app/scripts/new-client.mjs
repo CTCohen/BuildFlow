@@ -2,6 +2,7 @@
 /**
  * Scaffold a client data file.
  *   node scripts/new-client.mjs <slug> [trade] [--has-logo]
+ * Options: --tier micro|smb (default smb), --profile <id> (default professional-service), --es (also scaffold Spanish; English-only by default).
  * Then fill every FILL_ value. `npm run qa -- --client <slug>` fails until it's complete.
  *
  * --has-logo: pass this when the business already has a logo / visual identity you found
@@ -15,11 +16,20 @@
 import { writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { TRADES } from "../src/data/schema.mjs";
+import { TRADES, TIERS, STYLE_PROFILES } from "../src/data/schema.mjs";
 
 const rawArgs = process.argv.slice(2);
 const hasLogo = rawArgs.includes("--has-logo");
-const [slug, trade = "plumbing"] = rawArgs.filter((a) => !a.startsWith("--"));
+const withEs = rawArgs.includes("--es");
+const opt = (name, dflt) => { const i = rawArgs.indexOf(name); return i >= 0 ? rawArgs[i + 1] : dflt; };
+const tier = opt("--tier", "smb");
+const styleProfile = opt("--profile", "professional-service");
+if (!TIERS.includes(tier) || !STYLE_PROFILES.includes(styleProfile)) {
+  console.error(`--tier must be one of ${TIERS.join(", ")}; --profile one of ${STYLE_PROFILES.join(", ")}`);
+  process.exit(2);
+}
+const positional = rawArgs.filter((a, i) => !a.startsWith("--") && !["--tier", "--profile"].includes(rawArgs[i - 1]));
+const [slug, trade = "plumbing"] = positional;
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
@@ -53,6 +63,8 @@ const lang = (x) => ({
 
 const template = {
   slug,
+  tier,
+  styleProfile,
   business: {
     name: "FILL_Legal or trading name",
     trade,
@@ -79,7 +91,7 @@ const template = {
         typePairing: "grotesk-serif",
         density: "comfortable",
       },
-  content: { en: lang("en"), es: lang("es") },
+  content: withEs ? { en: lang("en"), es: lang("es") } : { en: lang("en") },
   media: hasLogo
     ? { heroImage: null, logo: "FILL_where their logo lives (file path or URL)", source: "existing-identity" }
     : { heroImage: null, logo: null, source: "generated-identity" },

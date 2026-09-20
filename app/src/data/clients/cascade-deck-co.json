@@ -1,5 +1,7 @@
 {
   "slug": "cascade-deck-co",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Cascade Deck Co.",
     "trade": "deck-building",

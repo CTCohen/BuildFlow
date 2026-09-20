@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-3-hvac-valley-hvac",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Valley HVAC HVAC",
     "trade": "hvac",

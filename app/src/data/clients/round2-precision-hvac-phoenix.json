@@ -1,5 +1,7 @@
 {
   "slug": "round2-precision-hvac-phoenix",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Precision HVAC Solutions",
     "trade": "hvac",

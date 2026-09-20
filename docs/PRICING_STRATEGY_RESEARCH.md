@@ -1,3 +1,17 @@
+---
+title: Pricing Strategy Analysis and Market Research
+purpose: Research on whether the spec pricing is positioned correctly against DIY builders, managed SaaS and agencies; informs the price-increase decision (D02)
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+related: [docs/PRICING.md, RECONCILIATION_LOG.md]
+---
+
+> Written in a separate session on 2026-09-18 and kept as research input. Its "raise prices 2-3 months in" suggestion is one option for D02; Tyler expects to raise prices sooner than the spec's Month 7 and has not fixed the timing. Prices of record: `docs/PRICING.md`.
+
 # Pricing Strategy Analysis & Market Research
 
 > Comprehensive pricing research, competitive analysis, and signal positioning for BuildFlow.

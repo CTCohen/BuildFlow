@@ -1,5 +1,7 @@
 {
   "slug": "demo-plumbing",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Northgate Plumbing Co.",
     "trade": "plumbing",

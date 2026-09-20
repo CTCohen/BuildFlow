@@ -67,7 +67,9 @@ export interface Client {
     servicesLayout?: "grid-3col" | "grid-2col-feature" | "card-stack" | "list-sidebar";
     testimonialStyle?: "grid" | "carousel" | "sidebar";
   };
-  content: Record<Lang, ClientContent>;
+  content: { en: ClientContent; es?: ClientContent };
+  tier: "micro" | "smb" | "mid-market";
+  styleProfile: string;
   media?: { heroImage?: string; logo?: string };
   // Mega-scale: Vertical pool + conditional features
   vertical?: string;
@@ -100,5 +102,7 @@ if (result.warnings.length) {
 export const client = raw as Client;
 export const tel = client.business.phone.replace(/[^+0-9]/g, "");
 export function t(lang: Lang): ClientContent {
-  return client.content[lang];
+  return client.content[lang] ?? client.content.en;
 }
+// Languages this client actually has content for (English-only at launch).
+export const langs = (Object.keys(client.content) as Lang[]).filter((l) => client.content[l]);

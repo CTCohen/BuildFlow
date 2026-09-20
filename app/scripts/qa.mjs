@@ -10,8 +10,9 @@
  *   3. placeholder-leakage scan of rendered HTML
  *   4. required-content presence (phone, CTA, title, h1, meta description, JSON-LD)
  *   5. internal link check across built pages
- *   6. EN/ES parity (from schema warnings/errors)
- *   7. Lighthouse budget (perf >= 90, a11y >= 95, SEO >= 95) — headless Chrome via `lighthouse`
+ *   6. Language (English-only at launch; EN/ES parity only when a client opts into Spanish)
+ *   7. Lighthouse budget, spec floors by stage: demo (perf/SEO >= 80, a11y >= 90), live (all >= 90);
+ *      `--stage demo|live` (default live). The stricter design targets (90/95/95) are reported as notes.
  *   8. layout sanity (horizontal scroll, broken images, console errors) — Playwright, mobile + desktop
  *
  * Still stubbed — needs a real decision before wiring it in:
@@ -221,15 +222,22 @@ async function runLighthouse(base) {
       const perf = Math.round(cats.performance.score * 100);
       const a11y = Math.round(cats.accessibility.score * 100);
       const seo = Math.round(cats.seo.score * 100);
-      const BUDGET = { perf: 90, a11y: 95, seo: 95 };
+      const STAGE = (process.argv.includes("--stage") ? process.argv[process.argv.indexOf("--stage") + 1] : "live");
+      const FLOORS = { demo: { perf: 80, a11y: 90, seo: 80 }, live: { perf: 90, a11y: 90, seo: 90 } };
+      const BUDGET = FLOORS[STAGE] || FLOORS.live;
+      const TARGET = { perf: 90, a11y: 95, seo: 95 };
       const misses = [];
       if (perf < BUDGET.perf) misses.push(`performance ${perf} < ${BUDGET.perf}`);
       if (a11y < BUDGET.a11y) misses.push(`accessibility ${a11y} < ${BUDGET.a11y}`);
       if (seo < BUDGET.seo) misses.push(`seo ${seo} < ${BUDGET.seo}`);
+      const belowTarget = [];
+      if (perf < TARGET.perf) belowTarget.push(`perf<${TARGET.perf}`);
+      if (a11y < TARGET.a11y) belowTarget.push(`a11y<${TARGET.a11y}`);
+      if (seo < TARGET.seo) belowTarget.push(`seo<${TARGET.seo}`);
       add(
         "lighthouse-budget",
         misses.length ? "fail" : "pass",
-        `perf ${perf} · a11y ${a11y} · seo ${seo}${misses.length ? "  (" + misses.join("; ") + ")" : ""}`,
+        `[${STAGE}] perf ${perf} · a11y ${a11y} · seo ${seo}${misses.length ? "  (" + misses.join("; ") + ")" : ""}${belowTarget.length ? "  note: below design target " + belowTarget.join(",") : ""}`,
       );
     } finally {
       await chrome.kill();

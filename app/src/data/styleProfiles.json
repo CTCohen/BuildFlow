@@ -1,0 +1,119 @@
+{
+  "source": "docs: design/SPEC-04-design-quality.md Section 6",
+  "default": "professional-service",
+  "note": "Each of the 32 existing themes maps to exactly one of the 10 spec styling profiles. Customers choose a profile; the Design Agent picks a theme within it.",
+  "profiles": [
+    {
+      "id": "professional-service",
+      "name": "Professional Service",
+      "vibe": "Corporate, trustworthy",
+      "bestFor": "Electrical, plumbing (established firms)",
+      "themes": [
+        "trust-blue-gold",
+        "slate-indigo-amber",
+        "navy-coral"
+      ]
+    },
+    {
+      "id": "modern-minimalist",
+      "name": "Modern Minimalist",
+      "vibe": "Clean, tech-forward",
+      "bestFor": "Tech-savvy contractors, startups",
+      "themes": [
+        "modern-blue-pink",
+        "slate-emerald",
+        "teal-rose"
+      ]
+    },
+    {
+      "id": "cutting-edge-tech",
+      "name": "Cutting-Edge Tech",
+      "vibe": "Innovative, future-focused",
+      "bestFor": "Solar, smart home, tech services",
+      "themes": [
+        "sapphire-lime",
+        "charcoal-lime",
+        "violet-yellow"
+      ]
+    },
+    {
+      "id": "established-authority",
+      "name": "Established Authority",
+      "vibe": "Heritage, reliability",
+      "bestFor": "Long-standing businesses, family firms",
+      "themes": [
+        "maroon-gold",
+        "ultramarine-gold",
+        "bronze-teal",
+        "burgundy-silver"
+      ]
+    },
+    {
+      "id": "energetic-bold",
+      "name": "Energetic & Bold",
+      "vibe": "Approachable, dynamic",
+      "bestFor": "Younger contractors, growth-focused",
+      "themes": [
+        "bold-red-blue",
+        "sunburst-navy",
+        "crimson-silver"
+      ]
+    },
+    {
+      "id": "eco-conscious",
+      "name": "Eco-Conscious",
+      "vibe": "Sustainable, responsible",
+      "bestFor": "Green services, solar, water",
+      "themes": [
+        "eco-green-red",
+        "forest-amber",
+        "pine-coral",
+        "sage-rust"
+      ]
+    },
+    {
+      "id": "luxury-premium",
+      "name": "Luxury Premium",
+      "vibe": "High-end, exclusive",
+      "bestFor": "Premium services",
+      "themes": [
+        "premium-purple-cyan",
+        "emerald-gold",
+        "midnight-gold"
+      ]
+    },
+    {
+      "id": "community-focused",
+      "name": "Community-Focused",
+      "vibe": "Local, personal, friendly",
+      "bestFor": "Family businesses, local heroes",
+      "themes": [
+        "rose-slate",
+        "indigo-orange",
+        "coastal-teal-orange"
+      ]
+    },
+    {
+      "id": "modern-industrial",
+      "name": "Modern Industrial",
+      "vibe": "Tough, capable, technical",
+      "bestFor": "Construction trades, skilled trades",
+      "themes": [
+        "slate-emerald-dark",
+        "charcoal-cyan-bright",
+        "rust-cream"
+      ]
+    },
+    {
+      "id": "transparent-honest",
+      "name": "Transparent & Honest",
+      "vibe": "Direct, no-BS",
+      "bestFor": "Value contractors, budget-conscious market",
+      "themes": [
+        "cobalt-orange",
+        "ocean-sand",
+        "silver-red"
+      ]
+    }
+  ]
+}

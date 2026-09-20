@@ -1,5 +1,7 @@
 {
   "slug": "example-hvac-showcase",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Climate Comfort HVAC",
     "trade": "hvac",

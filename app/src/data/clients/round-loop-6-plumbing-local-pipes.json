@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-6-plumbing-local-pipes",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Local Pipes Plumbing",
     "trade": "plumbing",

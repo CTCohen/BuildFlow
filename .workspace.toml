@@ -20,7 +20,7 @@ recommended = ["owner", "updated", "version"]
 # Field validation
 [governance.frontmatter.global.validation]
 status = { type = "enum", allowed = ["draft", "active", "deprecated", "archived"] }
-owner = { type = "string", pattern = "c.t.cohen|chase" }
+owner = { type = "string", pattern = "c.t.cohen|tyler" }
 updated = { type = "date", format = "YYYY-MM-DD" }
 version = { type = "semver", pattern = "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
 
@@ -227,3 +227,20 @@ frontmatter_audit = {
   stale_files = [],
 }
 suggestions = []
+
+# Spec modules (2026-09-18): each holds a SPEC-*.md beside its code
+[governance.frontmatter."platform/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "critical_path", "related"]
+
+[governance.frontmatter."agents/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "critical_path", "related"]
+
+[governance.frontmatter."billing/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "critical_path", "related"]
+
+[governance.frontmatter."crm/"]
+required = ["title", "purpose", "status", "owner", "updated", "version"]
+recommended = ["tier_scope", "phase", "critical_path", "related"]

@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-10-hvac-phoenix-cooling",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Phoenix Cooling HVAC",
     "trade": "hvac",

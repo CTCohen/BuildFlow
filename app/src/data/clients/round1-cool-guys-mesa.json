@@ -1,5 +1,7 @@
 {
   "slug": "round1-cool-guys-mesa",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Cool Guys HVAC",
     "trade": "hvac",

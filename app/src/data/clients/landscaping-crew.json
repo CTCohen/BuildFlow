@@ -1,5 +1,7 @@
 {
   "slug": "landscaping-crew",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Urban Roots Landscaping",
     "trade": "landscaping",

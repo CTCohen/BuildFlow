@@ -1,5 +1,7 @@
 {
   "slug": "round1-thermal-pros-scottsdale",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Thermal Pros HVAC",
     "trade": "hvac",

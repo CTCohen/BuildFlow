@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-3-hvac-comfort-zone",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Comfort Zone HVAC",
     "trade": "hvac",

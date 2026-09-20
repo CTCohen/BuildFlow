@@ -5,7 +5,7 @@ import FAQ from "../../components/FAQ.astro";
 import { client, t } from "../../lib/client";
 
 export function getStaticPaths() {
-  const langs = ["en", "es"] as const;
+  const langs = (Object.keys(client.content) as ("en" | "es")[]).filter((l) => client.content[l]);
   const paths = [];
   for (const lang of langs) {
     for (const area of client.business.serviceAreas) {

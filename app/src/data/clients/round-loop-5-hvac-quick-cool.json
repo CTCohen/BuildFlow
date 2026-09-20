@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-5-hvac-quick-cool",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Quick Cool HVAC",
     "trade": "hvac",

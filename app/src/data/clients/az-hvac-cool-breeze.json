@@ -1,5 +1,7 @@
 {
   "slug": "az-hvac-cool-breeze",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Cool Breeze HVAC",
     "trade": "hvac",

@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** this 5-variant color-token layer sits under the spec's 10 styling profiles (`../data/styleProfiles.json`), which map the 32 themes. Keep using these tokens for color; profiles decide which theme and variants a customer sees. The other token docs in this folder (COLOR-REFERENCE, IMPLEMENTATION-CHECKLIST, USAGE-GUIDE, VARIANT-SPECIFICATIONS) are reference material and have no spec conflict.
+
+
 # Color Token System
 
 BuildFlow's design token system provides 5 pre-configured color variants optimized for different service business positioning strategies. Each variant includes complete token definitions for light and dark modes, semantic colors, and badge configurations.
