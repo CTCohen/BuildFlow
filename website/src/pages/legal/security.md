@@ -1,418 +1,51 @@
 ---
 layout: ../../layouts/LegalLayout.astro
-title: "Security — BuildFlow"
+title: "Security Statement — BuildFlow (DRAFT)"
 ---
+
+> **DRAFT for counsel review (2026-09-18).** Rebuilt from spec System 11 and System 03. It states commitments and targets only; it does not claim certifications BuildFlow does not hold. Not to be published until reviewed.
 
 # BuildFlow Security Statement
 
-**Last Updated:** September 2026
-
----
-
-## Executive Summary
-
-BuildFlow takes security seriously. We host customer websites on secure, certified infrastructure, encrypt all data in transit and at rest, perform regular backups, and maintain industry-standard access controls and audit logging.
-
-This document outlines our security practices and commitments.
-
----
-
-## 1. Infrastructure Security
-
-### Hosting Provider: Railway
-
-**Railway Security Certifications:**
-- SOC 2 Type II certified (independently audited security and operations controls)
-- Compliant with GDPR, HIPAA, and CCPA
-- ISO 27001 committed
-- Undergoes annual third-party security audits
-
-**Railway Infrastructure:**
-- Deployed across multiple geographic regions for redundancy
-- Automatic DDoS protection and rate limiting
-- Intrusion detection systems (IDS)
-- Network segmentation and firewalls
-- Encrypted inter-server communication
-
-**Data Centers:**
-- Multiple data centers in North America
-- Automatic failover if primary region goes down
-- 99.99% uptime SLA (99.5% guaranteed to customers)
-
-### CDN & DNS: Cloudflare
-
-**Cloudflare Security:**
-- SOC 2 Type II certified
-- DDoS protection (up to 100 Tbps capacity)
-- Web Application Firewall (WAF) rules
-- Rate limiting to prevent abuse
-- Bot management
-- Automatic HTTPS redirect (if misconfigured)
-
-**Cloudflare Services:**
-- Global CDN for fast, secure content delivery
-- DNS routing (domain pointing)
-- SSL/TLS certificate management
-- Cache to reduce server load
-
----
-
-## 2. Encryption & Data in Transit
-
-### HTTPS/TLS Encryption
-
-**All Site Traffic:**
-- Every connection to your site is encrypted with TLS 1.2 or higher
-- SSL/TLS certificates issued by Let's Encrypt (industry standard)
-- Certificates auto-renew every 90 days (no action required from you)
-- A+ SSL Labs rating maintained
-
-**Certificate Details:**
-- Algorithm: RSA 2048-bit (or ECDSA 256-bit)
-- Cipher suites: Modern, secure algorithms only
-- OCSP stapling enabled (faster certificate verification)
-- HTTP Strict Transport Security (HSTS) enabled (prevent downgrade attacks)
-
-### Data in Transit
-
-**Secure Channels:**
-- All API calls use HTTPS
-- Database connections use encrypted tunnels
-- Backup transfers use encrypted channels
-- Admin panel uses HTTPS only (no HTTP fallback)
-
----
-
-## 3. Encryption & Data at Rest
-
-### Database Encryption
-
-**Encryption Standard:**
-- AES-256 encryption for all stored data
-- Encryption keys are separate from data storage
-- Key rotation performed annually
-
-**What's Encrypted:**
-- Business information (name, address, phone, email)
-- Site content (pages, images, testimonials)
-- Payment information (stored by Stripe, not us)
-- Backup files
-- Server logs (access logs, error logs, audit logs)
-
-### Backup Security
-
-**Backup Encryption:**
-- All backups encrypted with AES-256
-- Backups stored on geographically separate servers
-- Encryption keys held separately from backups
-
-**Backup Retention:**
-- Daily automated backups
-- Retained for 30 days
-- Tested monthly for restore integrity
-- Deleted securely after retention period (data shredded, not just file-deleted)
-
----
-
-## 4. Access Control & Authentication
-
-### Admin Access
-
-**Who Has Access:**
-- BuildFlow engineering team (authorized personnel only)
-- Support staff (limited to support functions)
-- CEO/founders (full access)
-- Contractors (background-checked, NDA required)
-
-**No One Else Has Access:**
-- Your customers cannot access your site's backend
-- Other customers cannot access your site
-- Third parties cannot access without legal process
-
-### Passwords & Credentials
-
-**Password Requirements:**
-- All staff passwords: minimum 14 characters, mixed case, numbers, symbols
-- Multi-factor authentication (MFA) required for all admin access
-- Passwords rotated every 90 days
-- No password reuse (last 10 passwords remembered)
-
-**Credential Storage:**
-- Passwords hashed with bcrypt (industry standard)
-- API keys stored securely with encryption
-- No plaintext passwords anywhere
-- Credentials never logged or displayed in error messages
-
-### Access Logs
-
-**Every Access Is Logged:**
-- IP address of person accessing
-- Timestamp of access
-- What resource was accessed
-- What action was taken (read, write, delete)
-- Logs retained for 90 days
-- Logs reviewed quarterly for suspicious activity
-
----
-
-## 5. Vulnerability Management
-
-### Vulnerability Scanning
-
-**Regular Scanning:**
-- Automated vulnerability scans run daily
-- Manual penetration testing performed annually
-- Third-party security audits performed yearly
-- Security advisories from dependencies monitored continuously
-
-**Patch Management:**
-- Critical vulnerabilities patched within 24 hours
-- High-severity vulnerabilities patched within 1 week
-- Medium-severity vulnerabilities patched within 2 weeks
-- Low-severity vulnerabilities patched within 1 month
-
-### Responsible Disclosure
-
-**If You Discover A Vulnerability:**
-- Email: security@buildflow.com
-- Do not publicly disclose until we have patched
-- We will acknowledge receipt within 24 hours
-- We will provide estimated patch timeline
-- You will be credited (unless you prefer anonymity)
-
----
-
-## 6. Uptime & Availability
-
-### Service Level Agreement (SLA)
-
-**Uptime Guarantee:**
-- 99.5% uptime per month (measured)
-- ~3.5 hours of acceptable downtime per month
-- Excludes scheduled maintenance
-
-**Scheduled Maintenance:**
-- 1-4 times per year, typically 2-4 hours
-- Scheduled for Sunday 2 AM - 6 AM PT (low-traffic time)
-- Announced via email at least 7 days in advance
-- Maintenance does not count against uptime SLA
-
-### Monitoring & Alerting
-
-**Continuous Monitoring:**
-- Real-time uptime monitoring from 3 geographic locations
-- Automated alerts to on-call engineer if site goes down
-- Typical response time: <5 minutes
-- Typical resolution time: <15 minutes
-
-**Status Page:**
-- Public status page at status.buildflow.com
-- Real-time uptime metrics
-- Incident reports and post-mortems
-- Maintenance schedule
-
----
-
-## 7. Compliance & Standards
-
-### Legal Compliance
-
-**GDPR (Europe):**
-- Data Protection Impact Assessments (DPIA) completed
-- Data Processing Agreement (DPA) available upon request
-- Privacy by design implemented
-- Data subject rights fully supported
-
-**CCPA (California):**
-- Privacy Policy compliant with CCPA requirements
-- Consumer rights requests fulfilled within 30 days
-- No sale of personal information
-
-**HIPAA (Healthcare - if applicable):**
-- Business Associate Agreement (BAA) available upon request
-- Encryption, access controls, and audit logging in place
-- Not HIPAA-certified but can be used with BAA
-
-**PCI DSS (Payment Card Data):**
-- We do NOT store or handle payment card data (Stripe does)
-- Stripe is PCI DSS Level 1 certified
-- We are not in PCI scope
-
-### Industry Standards
-
-**Certifications Held By Our Providers:**
-- SOC 2 Type II (Railway, Cloudflare)
-- ISO 27001 (Cloudflare, Railway)
-- ISO 9001 (Railway)
-
-**Security Standards Followed:**
-- OWASP Top 10 (secure coding practices)
-- CWE Top 25 (common weakness enumeration)
-- NIST Cybersecurity Framework
-
----
-
-## 8. Incident Response
-
-### If A Security Incident Occurs
-
-**Detection:**
-- Continuous monitoring detects anomalies
-- Alerts trigger immediate investigation
-- Typical detection time: <1 hour
-
-**Response:**
-1. Incident declared and severity assessed (1-4: low to critical)
-2. Affected systems isolated within 30 minutes
-3. Forensic investigation begins
-4. Customer notification within 48 hours (if data affected)
-5. Post-incident review within 1 week
-
-**Your Notification:**
-- Email to your account email address
-- Details: what happened, what data was affected, what we did, what you should do
-- Phone call if severity is critical
-- Follow-up support to help you notify your own customers
-
-### Breach Reporting
-
-**Legal Notification:**
-- Complies with all state/federal breach notification laws
-- Reports to relevant authorities if required
-- Cooperates with law enforcement investigations
-- Transparent communication with affected customers
-
----
-
-## 9. Backup & Disaster Recovery
-
-### Backup Strategy
-
-**Frequency:**
-- Daily automated backups of all site data
-- Backups taken at 2 AM PT (off-peak time)
-- Backup window: <30 minutes
-
-**Retention:**
-- 30-day retention (rolling window)
-- Backups kept in geographically separate location from primary data
-- Encrypted with AES-256
-- Tested monthly for restore integrity
-
-### Disaster Recovery
-
-**If Data Is Corrupted:**
-- Restore from clean backup within 4 hours
-- Customer notified immediately
-- RTO (Recovery Time Objective): 4 hours
-- RPO (Recovery Point Objective): 24 hours (worst case, lose 1 day of data)
-
-**If Primary Data Center Fails:**
-- Automatic failover to secondary region
-- Traffic redirected within 5 minutes
-- Data replicated in real-time (RPO: <1 minute)
-- No manual intervention required
-
-**You Can Request A Backup:**
-- Email: support@buildflow.com
-- We will provide full export of your site (HTML, CSS, images, etc.)
-- Export provided within 24 hours
-- No charge for export
-
----
-
-## 10. Employee Security
-
-### Background Checks
-
-- All staff undergo background checks before hiring
-- Criminal history, employment verification, reference checks
-- Checks repeated every 2 years
-
-### Security Training
-
-- All staff complete security training before day 1
-- Annual refresher training required
-- Incident response drills performed quarterly
-- Phishing simulations run monthly
-
-### Confidentiality
-
-- All staff sign NDA (Non-Disclosure Agreement)
-- Confidentiality obligations continue after employment ends
-- Data access rights revoked immediately upon termination
-
-### Offboarding
-
-- All credentials rotated when staff leaves
-- All access revoked within 24 hours
-- All company equipment returned and wiped
-- Exit interview includes confidentiality reminder
-
----
-
-## 11. Third-Party Risk Management
-
-### Vendor Assessment
-
-**Before Adding Any Third Party:**
-- Security questionnaire completed
-- References checked
-- SOC 2/ISO certifications verified
-- Privacy/security practices reviewed
-
-**Ongoing Monitoring:**
-- Annual vendor risk assessments
-- Security incidents tracked
-- Compliance verified
-
-### Current Vendors
-
-**Primary Vendors:**
-- **Railway:** SOC 2 Type II certified, DPA available
-- **Cloudflare:** SOC 2 Type II certified, DPA available
-- **Stripe:** PCI DSS Level 1 certified, SOC 2, DPA available
-- **Google (Analytics):** SOC 2 certified, DPA available
-
----
-
-## 12. Security Roadmap
-
-**Q4 2026:**
-- Implement Web Application Firewall (WAF) rules for attack prevention
-- Set up real-time security monitoring dashboard
-- Conduct third-party penetration test
-
-**Q1 2027:**
-- ISO 27001 certification pursuit
-- HIPAA BAA availability (if customer demand)
-- Zero-trust architecture evaluation
-
----
-
-## 13. Contact & Reporting
-
-**Security Concerns:**
-- Email: security@buildflow.com
-- Response time: 24 hours
-- Confidential handling of all reports
-
-**Data Requests (GDPR/CCPA):**
-- Email: privacy@buildflow.com
-- Response time: 30 days
-
-**General Support:**
-- Email: support@buildflow.com
-- Response time: 24-48 hours
-
----
-
-## 14. Updates to This Statement
-
-This Security Statement may be updated as our security practices improve. Changes will be posted here with an updated "Last Updated" date. Material changes will be communicated via email.
-
----
-
-**Last Updated: September 2026**
-
-**Build with confidence. Your site is secure.**
+## Summary
+BuildFlow hosts customer websites on established infrastructure providers, isolates each customer's data, encrypts sensitive credentials, keeps daily backups, and logs administrative access. This page describes our practices and targets.
+
+## 1. Infrastructure
+- **Sites, DNS, CDN, storage:** Cloudflare. **Database and authentication:** Supabase (PostgreSQL). **Backend services:** a containerized cloud service. **Payments:** Stripe (we never see card numbers). **Email:** SendGrid.
+- Our providers publish their own certifications (for example SOC 2). **These are the providers' certifications, not BuildFlow's.** BuildFlow has not yet completed its own SOC 2 audit; we plan to pursue it as we grow.
+- Availability target: 99.5% per month, excluding scheduled maintenance. Scheduled maintenance happens outside business hours with notice where possible.
+
+## 2. Encryption
+- **In transit:** TLS 1.2 or higher on all connections, HSTS enabled.
+- **Secrets and credentials:** CRM connection tokens and payment tokens are encrypted with AES-256, keys are held in a secrets manager separate from the data, and keys rotate at least annually.
+- **At rest:** our infrastructure providers encrypt stored data at rest; ordinary business and lead data is protected by access controls rather than field-level encryption.
+- **Backups:** daily, retained 30 days, stored in a separate region.
+
+## 3. Access control and data isolation
+- Customer accounts use email and password (12+ characters, stored hashed) or Google sign-in; optional two-factor authentication.
+- Every customer's data is isolated with row-level security tied to the customer identifier; every request checks that the user owns the resource. We run isolation tests before launch and regularly.
+- Administrative access is limited to the founder, uses a separate account with two-factor sign-in, and is logged, including when customer data is viewed.
+- Sessions: httpOnly, Secure, SameSite cookies, CSRF protection, inactivity timeout.
+
+## 4. Payments
+Stripe handles all card data; BuildFlow stores tokens only. Payment card data is out of BuildFlow's PCI scope.
+
+## 5. Vendor risk
+We review each critical vendor (Stripe, Cloudflare, Supabase, SendGrid, our backend cloud provider) for security posture, retention policy and incident response before relying on it, and sign data processing terms where personal data is involved.
+
+## 6. Incident response
+- Incidents are classified P0-P3. P0 (data or payment exposed, or service down over an hour) is handled immediately.
+- Timeline: triage within the first hour, containment and customer communication within 24 hours, root cause and remediation within a week, and a written post-incident review.
+- If personal data is exposed we notify affected customers without undue delay and follow applicable notification laws (72 hours is our internal target).
+
+## 7. Compliance
+- **CCPA:** we act as a service provider for your customers' data, honor deletion requests within 45 days, and never sell data.
+- **GDPR:** we do not target EU customers at launch; we will add a data processing agreement and data-subject-rights handling if EU customers appear.
+- **WCAG 2.1 AA:** every generated site is checked against accessibility gates before it is published.
+- **HIPAA:** not applicable; we do not handle protected health information.
+
+## 8. Reporting a vulnerability
+Email security@buildflow.com. We aim to acknowledge within 24 hours.
+
+## 9. Changes
+We will update this statement as our practices change.
