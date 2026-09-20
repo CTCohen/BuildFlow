@@ -1,9 +1,29 @@
 ---
-name: 07-lead-to-customer-pipeline
-description: Lead warehouse population, qualification scoring, outbound campaigns, GTM feedback loop
-sources: [chat]
-aliases: [lead generation, lead qualification, outbound sales, GTM engine]
+title: System 07 — Lead-to-Customer Pipeline
+purpose: Lead warehouse population, qualification scoring, outbound campaigns, GTM feedback loop
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 07-lead-to-customer-pipeline
+spec_aliases:
+- lead generation
+- lead qualification
+- outbound sales
+- GTM engine
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Email only at launch; SMS cold outreach is off. Send from a separate, warmed sender domain.
+> - Lead agents and their infrastructure are built together from the start.
+> - Leads scored at Mid-Market size are suppressed or routed to a waitlist (not outreached).
+> - Lead sources start on free tiers, throttled by the daily lead-acquisition dial, to stay inside the platform budget.
+
 
 # System 07 — Lead-to-Customer Pipeline
 
@@ -93,4 +113,4 @@ Lock down how leads are discovered, enriched, scored, prioritized, and contacted
 
 **Lead Lookup Agent (Agent Registry #5)** is the same fan-out (Apollo + Hunter + LinkedIn) mechanism used in System 18's photo intake — this system's Section 1 warehouse population uses it for batch enrichment; System 18 uses it for single-lead real-time lookup.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

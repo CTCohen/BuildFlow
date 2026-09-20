@@ -1,9 +1,28 @@
 ---
-name: buildflow-website-system
-description: BuildFlow public marketing website — buildflow.io. Positioning, messaging, sections, UX, CTAs, blog, docs. Separate from admin CRM and customer dashboard.
-sources: [chat]
-aliases: [marketing website, buildflow.io, public website, landing page]
+title: buildflow-website-system
+purpose: BuildFlow public marketing website — buildflow.io. Positioning, messaging, sections, UX, CTAs, blog, docs. Separate from admin CRM and customer dashboard.
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: buildflow-website-system
+spec_aliases:
+- marketing website
+- buildflow.io
+- public website
+- landing page
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - No free trial and no lead or site limits on the pricing page. No fabricated testimonials, customer logo grid or case studies before real customers exist.
+> - Hero uses done-for-you framing (not 'website builder'). Mid-Market appears as a waitlist. The 'Done-For-You Setup $99' add-on is dropped; Professional Redesign is a waitlist.
+> - The Demo page includes the sandbox dashboard preview. Domains follow the domain map (D32).
+
 
 ## System 19: BuildFlow Public Marketing Website
 

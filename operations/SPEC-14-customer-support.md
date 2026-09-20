@@ -1,9 +1,27 @@
 ---
-name: 14-customer-support-documentation-system
-description: Support workflow, help center, knowledge base, SLA targets, feedback loop
-sources: [chat]
-aliases: [customer support, documentation, help center, knowledge base]
+title: System 14 — Customer Support Documentation System
+purpose: Support workflow, help center, knowledge base, SLA targets, feedback loop
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 14-customer-support-documentation-system
+spec_aliases:
+- customer support
+- documentation
+- help center
+- knowledge base
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Published support promise is a 24-48 hour first response; the P0-P3 targets are internal, with alerting automated (Tyler works a day job).
+> - Support email and help center domains follow the domain map (D32).
+
 
 # System 14 — Customer Support Documentation System
 
@@ -79,4 +97,4 @@ Lock down customer support workflows, help center documentation, and SLA targets
 
 **Monitoring:** auto-resolve rate, false-priority rate, category accuracy (spot-checked monthly)
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

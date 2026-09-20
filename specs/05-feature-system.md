@@ -1,9 +1,28 @@
 ---
-name: 05-feature-system
-description: Phase 1 product scope, feature list, acceptance criteria per tranche, locked vs. future features
-sources: [chat]
-aliases: [MVP features, product scope, feature list, phase 1]
+title: System 05 — Feature System
+purpose: Phase 1 product scope, feature list, acceptance criteria per tranche, locked vs. future features
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 05-feature-system
+spec_aliases:
+- MVP features
+- product scope
+- feature list
+- phase 1
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Mid-Market is paused about 12 months: shown on the website and pricing, nothing built for it. Features 15-22 are deferred.
+> - Micro has no CRM at launch (email alerts and CSV export); SMB gets one CRM (HubSpot first).
+> - Launch is English-only. Launch sequence: SMB first, then Micro.
+
 
 # System 05 — Feature System
 

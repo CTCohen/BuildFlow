@@ -1,9 +1,27 @@
 ---
-name: 06-demo-to-customer-system
-description: Demo generation, delivery, tracking, conversion, and post-purchase fulfillment
-sources: [chat]
-aliases: [demo lifecycle, conversion workflow, demo delivery]
+title: System 06 — Demo-to-Customer System
+purpose: Demo generation, delivery, tracking, conversion, and post-purchase fulfillment
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 06-demo-to-customer-system
+spec_aliases:
+- demo lifecycle
+- conversion workflow
+- demo delivery
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - The demo shows the built site **and a sandbox of the prospect's tier dashboard** (sample leads; notes and pipeline for SMB, lead inbox only for Micro).
+> - Demo live window is 90 days (not 30), with the day-3 and day-7 resend cadence unchanged.
+> - Tier is prescriptive: pre-selected at checkout, no choice screen. Static files live on Cloudflare R2/Workers.
+
 
 # System 06 — Demo-to-Customer System
 
@@ -106,4 +124,4 @@ Lock down the complete flow from demo generation through conversion to payment a
 
 **Outreach/Copy Agent (Agent Registry #7)** is the source of any personalized copy on the demo page; the outbound email that drives traffic to the demo is System 7's responsibility.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

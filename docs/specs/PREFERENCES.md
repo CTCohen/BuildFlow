@@ -1,8 +1,17 @@
 ---
-name: BuildFlow project preferences
-description: Communication style, presentation format, and workflow preferences for BuildFlow documentation and specification work
-sources: [chat]
-aliases: []
+title: BuildFlow project preferences
+purpose: Communication style, presentation format, and workflow preferences for BuildFlow documentation and specification work
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: BuildFlow project preferences
+spec_aliases: []
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 - [stated] "Show me [docs]" means: present as clickable file links Tyler can open, NOT prose descriptions

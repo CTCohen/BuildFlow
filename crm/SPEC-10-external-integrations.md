@@ -1,9 +1,27 @@
 ---
-name: external-integrations-system
-description: BuildFlow customer integrations with external CRMs. Top 10 trades CRMs supported; bidirectional sync of leads, conversions, and customer data. MCP-based connectors for easy customer onboarding.
-sources: [chat]
-aliases: [CRM integrations, external APIs, customer integrations, third-party sync]
+title: external-integrations-system
+purpose: BuildFlow customer integrations with external CRMs. Top 10 trades CRMs supported; bidirectional sync of leads, conversions, and customer data. MCP-based connectors for easy customer onboarding.
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: external-integrations-system
+spec_aliases:
+- CRM integrations
+- external APIs
+- customer integrations
+- third-party sync
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Launch with one CRM (HubSpot). The real-time <2 min push, 2-hour status pull and daily reconciliation described here wait for two-way sync; launch cadence is the 5-minute batch in System 09.
+> - Mid-Market multi-CRM and two-way sync are deferred.
+
 
 ## System 10: External Integrations System
 
@@ -94,7 +112,7 @@ Phase 1: top 3 CRMs (ServiceTitan, Jobber, HubSpot), lead push + status pull. Ph
 
 **CRM Sync Agent (Agent Registry #8)** is the same agent implementing System 9's customer-CRM connectors — this system specifies the top-10-CRM data contracts and conflict rules that agent operates under.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`
 
 ---
 

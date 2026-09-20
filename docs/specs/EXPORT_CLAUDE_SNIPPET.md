@@ -1,3 +1,14 @@
+---
+title: BuildFlow — Claude Code Project Instructions
+purpose: BuildFlow spec export document
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
+---
 # BuildFlow — Claude Code Project Instructions
 
 This repo includes `docs/buildflow-specs/` — the full system specification

@@ -1,8 +1,21 @@
 ---
-name: 15-customer-feedback-iteration-system
-description: Feedback capture, triage, prioritization, roadmap planning, release coordination
-sources: [chat]
-aliases: [feedback, roadmap, product iteration, release notes]
+title: System 15 — Customer Feedback Iteration System
+purpose: Feedback capture, triage, prioritization, roadmap planning, release coordination
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 15-customer-feedback-iteration-system
+spec_aliases:
+- feedback
+- roadmap
+- product iteration
+- release notes
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 # System 15 — Customer Feedback Iteration System
@@ -83,4 +96,4 @@ Lock down how customer feedback flows into product decisions and how BuildFlow i
 
 **Monitoring:** duplicate-detection accuracy, category accuracy, volume trend by category
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

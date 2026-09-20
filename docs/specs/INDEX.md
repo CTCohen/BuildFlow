@@ -1,13 +1,25 @@
 ---
-name: BuildFlow Master Index
-description: Macro-level overview of all 19 BuildFlow systems, organized by tier, dependencies, and launch phase
-sources: [chat]
-aliases: [systems index, architecture index, master overview]
+title: BuildFlow — Master System Index
+purpose: Macro-level overview of all 19 BuildFlow systems, organized by tier, dependencies, and launch phase
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: BuildFlow Master Index
+spec_aliases:
+- systems index
+- architecture index
+- master overview
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 # BuildFlow — Master System Index
 
-**19 consolidated systems** — one doc per system + this overview. All files at `systems/`
+**19 consolidated systems** — one doc per system + this overview. See "File Locations" below
 
 ---
 
@@ -59,7 +71,7 @@ aliases: [systems index, architecture index, master overview]
 
 ## Agent Registry (Cross-Cutting — Not a Numbered System)
 
-`systems/agent-registry.md` — catalogs all 15 BuildFlow agents (Design, Discovery, Design QA, Lead Scoring, Lead Lookup, OCR, Outreach/Copy, CRM Sync, Dunning, Support Triage, Feedback Triage, Lifecycle/Churn, SEO Optimization, Review Sync, Experimentation/Guardrail) with pattern classification, model tier, retry logic, human-gate requirements, 2026 eval standards, and an agent-scaling model confirming no additional agents are needed per vertical/tranche/outbound-touch. Read this alongside any system that mentions an agent (2, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18). Systems 1, 3, 5, 11, 19 need no agent; System 13's "agents" are infrastructure cron jobs, not LLM agents.
+`agents/AGENT_REGISTRY.md` — catalogs all 15 BuildFlow agents (Design, Discovery, Design QA, Lead Scoring, Lead Lookup, OCR, Outreach/Copy, CRM Sync, Dunning, Support Triage, Feedback Triage, Lifecycle/Churn, SEO Optimization, Review Sync, Experimentation/Guardrail) with pattern classification, model tier, retry logic, human-gate requirements, 2026 eval standards, and an agent-scaling model confirming no additional agents are needed per vertical/tranche/outbound-touch. Read this alongside any system that mentions an agent (2, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18). Systems 1, 3, 5, 11, 19 need no agent; System 13's "agents" are infrastructure cron jobs, not LLM agents.
 
 ---
 
@@ -100,30 +112,30 @@ Internal Ops:
 
 ## File Locations
 
-All 19 systems + agent registry at: `systems/`
+Each system's spec now sits beside the module it governs. Full map: [`README.md`](README.md).
 
-- 01-business-operations-system.md
-- 02-platform-architecture-system.md
-- 03-hosting-infrastructure-system.md
-- 04-design-quality-system.md
-- 05-feature-system.md
-- 06-demo-to-customer-system.md
-- 07-lead-to-customer-pipeline.md
-- 08-payments-billing-system.md
-- 09-crm-integration-system.md
-- 10-external-integrations-system.md
-- 11-compliance-security-system.md
-- 12-customer-lifecycle-success-system.md
-- 13-observability-system.md
-- 14-customer-support-documentation-system.md
-- 15-customer-feedback-iteration-system.md
-- 16-seo-geo-system.md
-- 17-experimentation-system.md
-- 18-admin-crm-operations-system.md
-- 19-buildflow-website-system.md
-- agent-registry.md
+- 01: `docs/01-business-operations-system.md`
+- 02: `platform/SPEC-02-platform-architecture.md`
+- 03: `platform/SPEC-03-hosting-infrastructure.md`
+- 04: `design/SPEC-04-design-quality.md`
+- 05: `specs/05-feature-system.md`
+- 06: `platform/SPEC-06-demo-to-customer.md`
+- 07: `outreach/SPEC-07-lead-to-customer-pipeline.md`
+- 08: `billing/SPEC-08-payments-billing.md`
+- 09: `crm/SPEC-09-crm-integration.md`
+- 10: `crm/SPEC-10-external-integrations.md`
+- 11: `legal/SPEC-11-compliance-security.md`
+- 12: `onboarding/SPEC-12-customer-lifecycle.md`
+- 13: `platform/SPEC-13-observability.md`
+- 14: `operations/SPEC-14-customer-support.md`
+- 15: `operations/SPEC-15-customer-feedback.md`
+- 16: `knowledge/SPEC-16-seo-geo.md`
+- 17: `operations/SPEC-17-experimentation.md`
+- 18: `platform/SPEC-18-admin-crm-operations.md`
+- 19: `website/SPEC-19-website.md`
+- Agent registry: `agents/AGENT_REGISTRY.md`
 
-Top-level: `index.md`, `business-model-and-constraints.md`, `launch-readiness-plan.md`, `preferences.md`
+Cross-cutting: `docs/specs/INDEX.md` (this file), `docs/BUSINESS_MODEL.md`, `docs/specs/LAUNCH_READINESS_PLAN.md`, `docs/specs/PREFERENCES.md`.
 
 ---
 

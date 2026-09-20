@@ -1,9 +1,28 @@
 ---
-name: 11-compliance-security-system
-description: GDPR/CCPA compliance, authentication, encryption, data isolation, incident response, audit trails, liability
-sources: [chat]
-aliases: [compliance, security, data privacy, PII handling]
+title: System 11 — Compliance Security System
+purpose: GDPR/CCPA compliance, authentication, encryption, data isolation, incident response, audit trails, liability
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 11-compliance-security-system
+spec_aliases:
+- compliance
+- security
+- data privacy
+- PII handling
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Auth uses Supabase Auth: Google and email/password (12+ characters), optional TOTP; Tyler's admin login is Google OAuth plus 2FA.
+> - Secrets live in the provider's secret store rather than AWS Secrets Manager.
+> - Compliance documents are drafted from this spec and must be reviewed by counsel before the first charge; published claims must not exceed what this spec commits to.
+
 
 # System 11 — Compliance Security System
 

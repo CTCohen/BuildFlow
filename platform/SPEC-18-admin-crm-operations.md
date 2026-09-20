@@ -1,9 +1,29 @@
 ---
-name: admin-crm-operations-system
-description: Tyler's operations dashboard — iOS app + web admin panel. Pipeline management, photo intake (OCR + auto-scoring), customer health, revenue tracking, agent QA feedback loop, and operational alerts.
-sources: [chat]
-aliases: [admin CRM, operations dashboard, Tyler's CRM, photo intake system, admin app]
+title: admin-crm-operations-system
+purpose: Tyler's operations dashboard — iOS app + web admin panel. Pipeline management, photo intake (OCR + auto-scoring), customer health, revenue tracking, agent QA feedback loop, and operational alerts.
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: admin-crm-operations-system
+spec_aliases:
+- admin CRM
+- operations dashboard
+- Tyler's CRM
+- photo intake system
+- admin app
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Web admin ships at launch; the iOS photo-intake app is Phase 1.5.
+> - Remove the 'Trial Active' pipeline stage and the trial-conversion metric (no free trial).
+> - Mid-Market tier reporting is deferred.
+
 
 ## System 18: Admin CRM & Operations System
 
@@ -102,7 +122,7 @@ Heaviest consumer of shared agents — must not fork any:
 - **Design Agent (#1)** — Section 2 auto-build, one of four call sites, identical logic required
 - **Lifecycle/Churn Prediction Agent (#12)** — Section 4's health score formula is the canonical definition System 12 reuses
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`
 
 ---
 

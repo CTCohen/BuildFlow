@@ -1,8 +1,22 @@
 ---
-name: Platform Architecture System
-description: Master schema, data flows, agent execution engine, orchestration, and system integration
-sources: [chat]
-aliases: [database schema, data model, agents, orchestration, data flows]
+title: System 02 — Platform Architecture System
+purpose: Master schema, data flows, agent execution engine, orchestration, and system integration
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: Platform Architecture System
+spec_aliases:
+- database schema
+- data model
+- agents
+- orchestration
+- data flows
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 # System 02 — Platform Architecture System
@@ -150,7 +164,7 @@ BuildFlow has TWO distinct dashboards with different purposes, data access, and 
 
 ## AGENT REGISTRY CROSS-REFERENCE (Supersedes Section 3's Agent Catalog)
 
-**Section 3's agent list above predates the unified Agent Registry and has naming drift.** The Agent Registry (`systems/agent-registry.md`) is now the source of truth for agent names, patterns, retry logic, and eval standards. Corrections:
+**Section 3's agent list above predates the unified Agent Registry and has naming drift.** The Agent Registry (`agents/AGENT_REGISTRY.md`) is now the source of truth for agent names, patterns, retry logic, and eval standards. Corrections:
 
 | Section 3 name (this doc) | Registry name | Note |
 |---|---|---|

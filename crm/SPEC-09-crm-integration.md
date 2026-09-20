@@ -1,9 +1,28 @@
 ---
-name: 09-crm-integration-system
-description: Customer external CRM connection via BuildFlow MCPs—supported platforms, sync depth, authentication, onboarding
-sources: [chat]
-aliases: [CRM sync, integrations, crm connectors, external CRM export]
+title: System 09 — CRM Integration System
+purpose: Customer external CRM connection via BuildFlow MCPs—supported platforms, sync depth, authentication, onboarding
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 09-crm-integration-system
+spec_aliases:
+- CRM sync
+- integrations
+- crm connectors
+- external CRM export
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Launch with one CRM: HubSpot first. Jobber, ServiceTitan, Housecall Pro and Successware follow.
+> - One-way push, 5-minute batch, retries 1 s/5 s/30 s/5 min (max 5), Tyler notified after 3 failures, sync paused at 5. Status pull and the conflict resolver wait for two-way sync.
+> - Micro has no CRM connector at launch.
+
 
 # System 09 — CRM Integration System
 
@@ -110,4 +129,4 @@ Lock down how customers connect their own external CRM (ServiceTitan, Jobber, Hu
 
 **Shared implementation:** SAME agent referenced by System 10 (customer-facing data flow spec) and surfaced in System 18 (Tyler's sync-health dashboard).
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

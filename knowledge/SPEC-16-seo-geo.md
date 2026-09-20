@@ -1,9 +1,27 @@
 ---
-name: 16-seo-geo-system
-description: Design defaults, dynamic optimization, ranking monitoring, and auto-triggered optimizations
-sources: [chat]
-aliases: [SEO, geo-targeting, search optimization, local SEO]
+title: System 16 — SEO GEO System
+purpose: Design defaults, dynamic optimization, ranking monitoring, and auto-triggered optimizations
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 16-seo-geo-system
+spec_aliases:
+- SEO
+- geo-targeting
+- search optimization
+- local SEO
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Layer 1 (design defaults, plus `llms.txt` and answer-structured FAQ) applies to every tier. Layer 2 monthly optimization is SMB. Layer 3 ranking tracking is deferred until revenue.
+> - 'GEO' in this spec means geographic targeting; AI-answer optimization is handled inside Layer 1.
+
 
 # System 16 — SEO GEO System
 
@@ -77,4 +95,4 @@ Lock down three layers of SEO/geo-targeting: design defaults, dynamic optimizati
 
 **Human gate:** content/meta changes route through Tyler's approval workflow — agent drafts, Tyler applies or dismisses. Never auto-publishes to a live customer site.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

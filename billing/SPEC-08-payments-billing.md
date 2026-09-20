@@ -1,9 +1,29 @@
 ---
-name: 08-payments-billing-system
-description: Payment processor selection, subscription billing, revenue recognition, refunds, tax compliance
-sources: [chat]
-aliases: [payment processor, billing, revenue, subscriptions]
+title: System 08 — Payments Billing System
+purpose: Payment processor selection, subscription billing, revenue recognition, refunds, tax compliance
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 08-payments-billing-system
+spec_aliases:
+- payment processor
+- billing
+- revenue
+- subscriptions
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Launch dunning is manual (Tyler) using a deterministic state machine and templates; LLM personalization comes later.
+> - Prices will rise soon after launch: use versioned Stripe Price IDs and a launch-cohort flag on the customer.
+> - Dunning clock starts at the third failed retry (delinquency day 0): site paused, Tier 1 emails days 1/4/7, Tier 2 (Tyler) from day 7, grace 14 days.
+> - Mid-Market prices are shown, not sold.
+
 
 # System 08 — Payments Billing System
 
@@ -148,4 +168,4 @@ Tracked daily: % delinquent by tier, total MRR at-risk, recovery rate by tier, l
 
 **Cross-system coordination:** On entry to Tier 3 (30+ days late), this agent notifies the Lifecycle/Churn Prediction Agent (Agent Registry #12, System 12) immediately rather than waiting for System 12's next scheduled health-score recompute.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

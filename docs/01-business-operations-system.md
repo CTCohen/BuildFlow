@@ -1,9 +1,31 @@
 ---
-name: 01-business-operations-system
-description: Unit economics, margin targets, financial modeling, budget guardrails, and hiring triggers across all growth stages
-sources: [chat]
-aliases: [business model, cost control, scaling, financial model, hiring plan]
+title: System 01 — Business Operations System
+purpose: Unit economics, margin targets, financial modeling, budget guardrails, and hiring triggers across all growth stages
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 01-business-operations-system
+spec_aliases:
+- business model
+- cost control
+- scaling
+- financial model
+- hiring plan
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Mid-Market is paused about 12 months: shown on the website and pricing, nothing built for it.
+> - Hiring: none until Tyler says (about $150K annual profit). The customer-count hiring triggers (10/50/100/500) are alerts only.
+> - Prices will rise soon after launch; keep versioned prices and a launch-cohort flag.
+> - Claude Pro for build and operator work; Claude API only for unattended real-time steps, capped at $30/mo pre-revenue. The $50/mo platform budget excludes per-customer cost to serve and the Claude Pro plan.
+> - Launch scope: English only, Micro and SMB, email-only outreach.
+
 
 # System 01 — Business Operations System
 

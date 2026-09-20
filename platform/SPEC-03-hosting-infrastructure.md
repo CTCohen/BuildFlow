@@ -1,9 +1,29 @@
 ---
-name: 03-hosting-infrastructure-system
-description: Infrastructure for managed customer websites, cost model, failover strategy, domain management
-sources: [chat]
-aliases: [hosting, infrastructure, domains, deployment]
+title: System 03 — Hosting Infrastructure System
+purpose: Infrastructure for managed customer websites, cost model, failover strategy, domain management
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 03-hosting-infrastructure-system
+spec_aliases:
+- hosting
+- infrastructure
+- domains
+- deployment
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Hosting split: static sites (demo and live) run on Cloudflare Pages/Workers with R2 storage (not S3); dashboards, API and agents run as a container, on Railway first and Google Cloud Run later. Lightsail and Vercel are not used.
+> - Database: Supabase Postgres. Secrets live in the provider's secret store (not AWS Secrets Manager).
+> - The 'cannot migrate infrastructure between phases' rule is relaxed: start on Railway and migrate later; containerize from day 1 so the move is a redeploy.
+> - After conversion a site runs on our hosting or the client's (Offboard export).
+
 
 # System 03 — Hosting Infrastructure System
 

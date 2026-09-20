@@ -1,8 +1,21 @@
 ---
-name: launch-readiness-plan
-description: The 8 remaining steps to BuildFlow launch, broken into sub-steps, mapped to the 19 locked systems + agent registry. Includes conflicts needing Tyler's decision and a consolidated Phase 2+ list.
-sources: [chat]
-aliases: [launch plan, launch checklist, path to launch, remaining steps]
+title: BuildFlow — Launch Readiness Plan
+purpose: The 8 remaining steps to BuildFlow launch, broken into sub-steps, mapped to the 19 locked systems + agent registry. Includes conflicts needing Tyler's decision and a consolidated Phase 2+ list.
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: launch-readiness-plan
+spec_aliases:
+- launch plan
+- launch checklist
+- path to launch
+- remaining steps
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 # BuildFlow — Launch Readiness Plan

@@ -1,8 +1,22 @@
 ---
-name: 13-observability-system
-description: Monitor uptime, performance, errors, and business metrics across all BuildFlow systems with alerting and dashboards
-sources: [chat]
-aliases: [monitoring, observability, alerting, metrics, dashboards]
+title: System 13 — Observability System
+purpose: Monitor uptime, performance, errors, and business metrics across all BuildFlow systems with alerting and dashboards
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 13-observability-system
+spec_aliases:
+- monitoring
+- observability
+- alerting
+- metrics
+- dashboards
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
 # System 13 — Observability System

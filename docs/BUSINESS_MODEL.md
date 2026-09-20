@@ -1,9 +1,31 @@
 ---
-name: BuildFlow Business Model & Constraints
-description: Complete business model, GTM strategy, unit economics, pricing, constraints, and operational limits—consolidated for iOS readability
-sources: [chat]
-aliases: [business summary, GTM strategy, unit economics, operational constraints]
+title: BuildFlow — COMPLETE BUSINESS MODEL & CONSTRAINTS
+purpose: Complete business model, GTM strategy, unit economics, pricing, constraints, and operational limits—consolidated for iOS readability
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: BuildFlow Business Model & Constraints
+spec_aliases:
+- business summary
+- GTM strategy
+- unit economics
+- operational constraints
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Mid-Market is paused about 12 months: shown on the website and pricing, nothing built for it.
+> - Hiring: none until Tyler says (about $150K annual profit).
+> - Prices will rise soon after launch, sooner than Month 7; the increase trigger and numbers are open (D02).
+> - Revenue projections (Part 8) assumed 20% Mid-Market by revenue; re-cut in `metrics/METRICS.md`.
+> - Managed hosting: Cloudflare static sites plus a containerized backend (Railway now, Cloud Run later); Lightsail is not used (see SPEC-03). Starting on Railway and migrating later is allowed.
+> - Claude API only for unattended real-time steps, capped at $30/mo pre-revenue.
+
 
 # BuildFlow — COMPLETE BUSINESS MODEL & CONSTRAINTS
 

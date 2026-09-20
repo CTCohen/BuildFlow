@@ -1,9 +1,28 @@
 ---
-name: agent-registry
-description: Unified catalog of every BuildFlow AI agent — purpose, pattern, model tier, inputs/outputs, retry/escalation logic, monitoring, scaling model, and 2026 eval standards. Covers all 19 systems.
-sources: [chat]
-aliases: [agent catalog, agent architecture, agent list, orchestration patterns]
+title: BuildFlow Agent Registry
+purpose: Unified catalog of every BuildFlow AI agent — purpose, pattern, model tier, inputs/outputs, retry/escalation logic, monitoring, scaling model, and 2026 eval standards. Covers all 19 systems.
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: agent-registry
+spec_aliases:
+- agent catalog
+- agent architecture
+- agent list
+- orchestration patterns
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Build order follows the launch plan; Dunning Agent LLM personalization is later (manual dunning first).
+> - Claude API only for unattended real-time steps, capped at $30/mo pre-revenue; every agent has a monthly cap and logs tokens and dollars.
+> - Agents that the spec says need no LLM (CRM push, Review Sync, churn formula, experiment math, health checks) are plain code.
+
 
 # BuildFlow Agent Registry
 

@@ -1,9 +1,27 @@
 ---
-name: 12-customer-lifecycle-success-system
-description: Onboarding, success milestones, churn prediction, retention motions, review sync and display
-sources: [chat]
-aliases: [customer success, retention, lifecycle, onboarding]
+title: System 12 — Customer Lifecycle Success System
+purpose: Onboarding, success milestones, churn prediction, retention motions, review sync and display
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 12-customer-lifecycle-success-system
+spec_aliases:
+- customer success
+- retention
+- lifecycle
+- onboarding
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Mid-Market milestones and the SMB to Mid-Market upsell are deferred; only Micro to SMB upsell applies.
+> - Launch is English-only.
+
 
 # System 12 — Customer Lifecycle Success System
 
@@ -100,4 +118,4 @@ Lock down customer onboarding, engagement milestones, churn prediction, and rete
 
 **Review Sync Agent (Agent Registry #14)** executes Section 4's daily poll/dedup — cheap-tier, no LLM reasoning needed.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

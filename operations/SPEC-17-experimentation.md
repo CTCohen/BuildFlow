@@ -1,9 +1,26 @@
 ---
-name: 17-experimentation-system
-description: A/B testing infrastructure for outbound campaigns, pricing, and features to drive optimization and product learning
-sources: [chat]
-aliases: [A/B testing, testing framework, experimentation, optimization]
+title: System 17 — Experimentation System
+purpose: A/B testing infrastructure for outbound campaigns, pricing, and features to drive optimization and product learning
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 17-experimentation-system
+spec_aliases:
+- A/B testing
+- testing framework
+- experimentation
+- optimization
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Post-launch. First test: outbound email variants in Month 1. Pricing tests wait until after the price increase is decided.
+
 
 # System 17 — Experimentation System
 
@@ -109,4 +126,4 @@ Pattern recognition across tests feeds a living playbook per motion (outbound se
 
 **Monitoring:** false-guardrail-trigger rate, missed-guardrail rate.
 
-Full agent detail: `systems/agent-registry.md`
+Full agent detail: `agents/AGENT_REGISTRY.md`

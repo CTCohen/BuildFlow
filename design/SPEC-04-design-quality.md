@@ -1,9 +1,31 @@
 ---
-name: 04-design-quality-system
-description: AI-generated website templates, components, design constraints, QA validation gates including WCAG 2.1 AA
-sources: [chat]
-aliases: [design system, quality assurance, design templates, QA gates]
+title: System 04 — Design Quality System
+purpose: AI-generated website templates, components, design constraints, QA validation gates including WCAG 2.1 AA
+status: active
+owner: c.t.cohen
+updated: '2026-09-18'
+version: 1.0.0
+tier_scope: all
+phase: phase_1
+spec_name: 04-design-quality-system
+spec_aliases:
+- design system
+- quality assurance
+- design templates
+- QA gates
+spec_sources:
+- chat
+spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
+
+> **Overrides (Tyler, 2026-09-18).** This spec is authoritative except where Tyler ruled otherwise (`RECONCILIATION_LOG.md`, `DECISIONS.md`):
+> - Existing SMB design system is the base; Micro templates next. Mid-Market customization is deferred. Launch is English-only.
+> - Customer sliders (Section 7) are SMB-only; Micro edits text and images and has no sliders.
+> - The 32 existing themes map to the 10 profiles (`app/src/data/styleProfiles.json`).
+> - Discovery Agent is built pre-launch in a minimal form (not Phase 1.5).
+> - QA floors: demo Lighthouse >= 80 and accessibility >= 90 with axe zero must-fix; live sites >= 90. Initial render plus 2 retries, escalate on the 3rd failure. Manual review is for escalations and a sample, not every render; Tyler scores the first ~10 sites.
+> - Redesign service is a waitlist item (human-executed).
+
 
 # System 04 — Design Quality System
 
@@ -172,7 +194,7 @@ Lock down how AI generates high-quality websites, design constraints that ensure
 
 ## Agent Registry Cross-Reference
 
-Design Agent, Design Discovery Agent, and Design QA Agent are cataloged in `systems/agent-registry.md` (#1, #2, #3). Design Agent is invoked from FOUR places — System 4 direct, System 6 demo generation, System 18 photo-intake auto-build, and the customer-edit-triggered regeneration (System 2/12) — and must use identical logic/template warehouse across all four; no forked implementations per entry point.
+Design Agent, Design Discovery Agent, and Design QA Agent are cataloged in `agents/AGENT_REGISTRY.md` (#1, #2, #3). Design Agent is invoked from FOUR places — System 4 direct, System 6 demo generation, System 18 photo-intake auto-build, and the customer-edit-triggered regeneration (System 2/12) — and must use identical logic/template warehouse across all four; no forked implementations per entry point.
 
 ---
 
