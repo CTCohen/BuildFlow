@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** logo-first is the design branch point the spec's **Design Discovery Agent** feeds (System 04 section 5): it crawls the prospect's site, extracts logo, colors, fonts, tone and layout into a brand profile, and the Design Agent preserves it (`existing-identity`) or invents an identity (`generated-identity`). It is built pre-launch in a minimal form. Customer-facing choice is limited to the 10 styling profiles.
+
+
 # Logo-First Design System
 
 **Competitive Advantage:** BuildFlow designs around YOUR logo, not around templates.

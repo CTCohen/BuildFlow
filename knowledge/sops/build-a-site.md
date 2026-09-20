@@ -21,7 +21,7 @@ current site URL). Output: a passing site in `app/` for slug `<places_id>` + a d
 4. **Scaffold the client file:** `npm run new-client -- <slug> <trade>`; fill every
    field from step 3. Never invent a badge, license, or review.
 5. **Write copy** per [[anti-ai-slop-copy]] and the trade `copy-bank` — from their
-   review language and `derived_voice`. EN first, then ES with true parity.
+   review language and `derived_voice`. English at launch; add Spanish with true parity only when a site opts in.
 6. **Choose brand tokens** (`heroStyle`, `typePairing`, `density`, colors) per
    `app/DESIGN.md` knobs — pull colors from their existing branding if any.
 7. **Build:** `CLIENT=<slug> npm run build`. Fix until it compiles clean.

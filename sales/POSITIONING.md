@@ -3,10 +3,40 @@ title: Positioning
 purpose: Documentation for POSITIONING.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Positioning: how the tiers relate
+
+> Rebuilt 2026-09-18 from the business model (Part 7) and Systems 05/19. Message tone: casual but professional, direct, action-oriented. Core message: "Qualified leads, automatically. Your website does the work."
+
+## Why BuildFlow (not a cheaper Wix)
+Wix/Squarespace are generic, cheap and DIY. ServiceTitan/Jobber/Housecall Pro have basic landing pages. BuildFlow is a trade-specific site, CRM integration, built-in WCAG 2.1 AA, automated review aggregation, and done-for-you generation in one place.
+Moats: trades-specific design, accessibility built in, review aggregation, CRM integration, done-for-you.
+
+## The three stories
+### SMB (Phase 1 ICP, $249/mo)
+**Headline:** "Professional branding that competes with bigger players, and your leads go straight to your CRM."
+Message: we build it from your existing brand, host it, keep it optimized, and push every lead into your CRM.
+Objections: "It's expensive" - it is priced against the CRM you already pay for and replaces an agency retainer. "We tried websites before" - this one is built to capture leads and connects to your CRM. "What if I want changes?" - edit text and images yourself; design stays professional.
+### Micro (next, $149/mo)
+**Headline:** "A professional website, live in a minute."
+Message: you don't have time for a web project; we made yours already, see it now.
+Objections: "I can do it myself" - your demo is already built. "Can I customize it?" - you edit text and images; the design is fixed and tested.
+### Mid-Market ($399/mo): paused
+Shown on the site as "contact us". Not actively sold for about 12 months.
+
+## Choosing the tier
+Assigned by lead scoring from business-size signals; the prospect sees only their tier. Recalibrate scoring if misclassification exceeds 20%.
+
+## Go-to-market
+Every prospect gets their own demo site and a preview of their tier's dashboard. Outreach is email-only at launch (5-touch sequence). Tyler takes the replies and closes the high-touch path; the self-serve path pays through Stripe without him.
+
+---
+
+## Superseded positioning (2026-09-12)
 
 # Positioning — How the Three Tiers Relate
 
@@ -125,4 +155,4 @@ Messaging: Full control, white-label, scale with your business
 ---
 
 **Status:** STUB (SMB pitch fully built, Micro/Mid-market stubs ready)  
-**Owner:** Chase (sales strategy), Claude (documentation)
+**Owner:** Tyler (sales strategy), Claude (documentation)

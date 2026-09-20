@@ -18,14 +18,16 @@ critical_path: true
 
 - [ ] Delivered site renders correctly on mobile + desktop
 - [ ] All forms (contact, quote request) submit and route somewhere a human sees
-- [ ] EN and ES versions both correct — no machine-translation errors, no untranslated strings
+- [ ] English copy is correct and specific (no placeholders); Spanish only if the site opts in
 - [ ] Site has no broken links, no placeholder/lorem content
 - [ ] Discovery output is real, reachable businesses (valid name, location, contact)
-- [ ] Outreach: email + SMS actually deliver (not spam-foldered / carrier-blocked)
+- [ ] Outreach: email actually delivers (not spam-foldered; bounce under 5%, complaints under 0.1%). SMS cold outreach is off at launch
 - [ ] Handoff to human first-reply is triggered and logged
 - [ ] Onboarding path lets the business adopt the site without a support call
 - [ ] Auth on anything customer-facing works and fails safe
-- [ ] Automated run reported its token cost to `metrics/`
+- [ ] Automated run reported its token and dollar cost to `metrics/token-log.md` and stayed inside its cap
+- [ ] Site passed the spec QA gate (demo: Lighthouse 80+, accessibility 90+, axe clean; live: 90+)
+- [ ] Legal drafts approved and reviewed by counsel before the first charge
 
 ## Should have
 
@@ -39,7 +41,7 @@ critical_path: true
 
 - Analytics dashboards beyond token tracking
 - Multi-vertical support
-- Self-serve / billing
+- Mid-Market features, iOS photo intake, Spanish sites, SMS
 
 ## Eyes / UX checks
 
@@ -51,7 +53,7 @@ critical_path: true
 
 - [ ] No secrets in the repo or in generated site output
 - [ ] Rate limits / caps on outreach sending
-- [ ] Token cap enforced per automation run (Pro budget)
+- [ ] Token and dollar cap enforced per agent (API cap $30/mo pre-revenue)
 - [ ] PII from discovery/onboarding stored minimally and not logged in plaintext
 
 ## Common mistakes to avoid
@@ -59,4 +61,4 @@ critical_path: true
 - Shipping outreach copy or onboarding changes without approval
 - Letting an automation run without token accounting
 - Adding a pipeline step instead of removing one
-- Treating ES as an afterthought
+- Letting an LLM output trigger an irreversible action without a human gate

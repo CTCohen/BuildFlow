@@ -7,6 +7,9 @@ applies_to: [seo]
 links: [[local-seo]] [[hvac-schema]] [[hvac-keyword-map]]
 ---
 
+> **Updated 2026-09-18:** the technical, Core Web Vitals and schema checks fold into the QA gate (`app/scripts/qa.mjs`) as scripted checks; this SOP stays for the human-run local and prospect-audit steps. Layer definitions: `SPEC-16-seo-geo.md`.
+
+
 # SOP — SEO audit
 
 Two uses: (a) score a **prospect's** current site (Stage 2B — becomes an outreach asset),

@@ -3,10 +3,41 @@ title: Tier_Build_Plan
 purpose: Documentation for TIER_BUILD_PLAN.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Tier Build Plan
+
+> Rebuilt 2026-09-18 from the launch plan (Steps 4, 6, 7) and Tyler's rulings: SMB first on the existing design system, Micro next, **Mid-Market paused about 12 months**.
+
+## Sequence
+| Order | Tier | Build |
+|---|---|---|
+| 1 | SMB (ICP) | Existing design system becomes the base template set; tier flags; 10 styling profiles; sliders; SMB dashboard (lead inbox, notes, simple pipeline, image uploads, CRM config) |
+| 2 | Micro | Reduced component set (6-8), Professional Service profile, lead-inbox-only dashboard, text and image edits, email alerts and CSV export |
+| 3 | Mid-Market | **Deferred ~12 months.** Price table and "contact us" only. Feature list stays in `docs/TIER-FEATURE-MATRIX.md` for later |
+
+## Work items
+1. **Tier field and flags:** `tier` and `styleProfile` in the client data (`app/src/data/schema.mjs`); components render behind the tier flag; one component library, no forks.
+2. **Templates:** four vertical bases (plumbing, HVAC, electrical, roofing); existing themes curated into 10 profiles; smoke-test each vertical at each built tier with 2-3 profiles.
+3. **Dashboards:** one customer dashboard with a feature-flag layer (System 05 §1); sandbox version shown to prospects in the demo.
+4. **Tier assignment:** Lead Scoring assigns the tier from business-size signals (LinkedIn headcount, hiring velocity, traffic, revenue proxies; free signals first). Recalibrate if misclassification exceeds 20%. The earlier Google-API detector and "trifurcated lead warehouse" are replaced by this.
+5. **Research and validation (still valid):** Micro CAC and churn after launch, SMB churn and willingness to pay, TAM/SAM/SOM for the four verticals, capacity plan (the 15-20 hrs/week wall at about 100 customers).
+6. **Pricing checks:** conversion assumption 2-5%; CAC under $50; per-tier margin from real cost (System 01 says $11/$16/$21 per month cost to serve).
+
+## Blockers
+| Item | Impact |
+|---|---|
+| Customer dashboard not built | No self-serve edits, no Managed at scale |
+| Micro templates not built | Micro cannot launch |
+| Discovery, Design and QA agents not built | No automated demos |
+| Stripe, fulfillment, CRM not built | No revenue path |
+
+---
+
+## Superseded tier build plan (2026-09-12)
 
 # Tier Build Plan — What Needs to be Built
 
@@ -37,7 +68,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] Validation: Test on 100+ known prospects to calibrate thresholds
 - [ ] Documentation: Tier detection logic + edge cases
 
-**Owner:** Claude (implementation), Chase (validation)  
+**Owner:** Claude (implementation), Tyler (validation)  
 **Timeline:** Phase 2 (Oct)  
 **Blocking:** No, Micro can launch with manual tier assignment first
 
@@ -61,7 +92,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] Lead scoring model (what signals indicate each tier?)
 - [ ] CRM integration (Airtable or Linear: track prospect → tier → close)
 
-**Owner:** Chase (discovery + qualification), Claude (infrastructure)  
+**Owner:** Tyler (discovery + qualification), Claude (infrastructure)  
 **Timeline:** Phase 1 (SMB), Phase 2 (add Micro), Phase 3 (add Mid-market)  
 **Blocking:** No for Phase 1 (manual lists work), yes before scaling to 50+ prospects/week
 
@@ -146,9 +177,9 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] Estimate Mid-market sales cycle length (3-month average?)
 - [ ] LTV calculation per tier (CAC payback period)
 - [ ] Gross margin per tier (build cost, hosting, support)
-- [ ] Capacity constraint (how many customers can Chase support at each tier?)
+- [ ] Capacity constraint (how many customers can Tyler support at each tier?)
 
-**Owner:** Chase (data collection), Claude (analysis)  
+**Owner:** Tyler (data collection), Claude (analysis)  
 **Timeline:** Phase 1 (collect SMB data), Phase 2+ (add Micro/Mid data)  
 **Blocking:** No for Phase 1, but important before scaling
 
@@ -170,7 +201,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] Competitive positioning (why is our $99 better than competitors' $150?)
 - [ ] Sales script per tier (how to justify pricing in calls)
 
-**Owner:** Chase (sales validation), Claude (cost analysis)  
+**Owner:** Tyler (sales validation), Claude (cost analysis)  
 **Timeline:** Phase 1 (SMB), Phase 2+ (Micro/Mid justification)  
 **Blocking:** No for Phase 1 (pricing set), but important for Phase 2+ expansion
 
@@ -196,7 +227,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] CAC feasibility (can we acquire Micro customers for <$100?)
   - Hypothesis: Cold email open rates lower, need higher volume
 
-**Owner:** Claude (research), Chase (validation)  
+**Owner:** Claude (research), Tyler (validation)  
 **Timeline:** Phase 2 (early Oct, before Micro launch)  
 **Blocking:** Yes for Micro launch decision (if CAC > LTV, we don't launch)
 
@@ -220,7 +251,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
   - 5 closes from 5 emails = 100% close rate (likely won't repeat)
   - Real CAC = time spent + follow-ups
 
-**Owner:** Chase (data), Claude (analysis)  
+**Owner:** Tyler (data), Claude (analysis)  
 **Timeline:** Phase 1 (ongoing measurement)  
 **Blocking:** No (we launch regardless), but data informs Phase 2 strategy
 
@@ -244,7 +275,7 @@ To launch and scale three tiers (Micro, SMB, Mid-market), we need to build infra
 - [ ] Competitive landscape (who else serves this segment?)
   - Unacast? ServiceTitan? Other vertical SaaS?
 
-**Owner:** Chase (strategic research)  
+**Owner:** Tyler (strategic research)  
 **Timeline:** Phase 2–3 (research during Phase 2, launch Phase 3)  
 **Blocking:** No for Phase 1
 
@@ -369,10 +400,10 @@ Scale: Multi-tier sales & support playbook
 | Dashboard build | Claude | 🔴 CRITICAL (Phase 2) |
 | Micro tier build | Claude | 🟡 HIGH (Phase 2) |
 | Mid-market tier build | Claude | 🟡 HIGH (Phase 3) |
-| Market research | Chase | 🟡 HIGH (inform strategy) |
-| Lead warehouse | Chase | 🟡 HIGH (manage prospects) |
+| Market research | Tyler | 🟡 HIGH (inform strategy) |
+| Lead warehouse | Tyler | 🟡 HIGH (manage prospects) |
 | Google API integration | Claude | 🟢 MEDIUM (automation, Phase 2+) |
-| Sales playbooks | Chase | 🟢 MEDIUM (Phase 2–3) |
+| Sales playbooks | Tyler | 🟢 MEDIUM (Phase 2–3) |
 
 ---
 

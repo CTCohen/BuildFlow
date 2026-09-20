@@ -1,3 +1,45 @@
+---
+updated: '2026-09-18'
+title: docs/CRM_MCP_INTEGRATION_ROADMAP.md
+purpose: BuildFlow document
+status: active
+owner: c.t.cohen
+---
+
+# CRM Integration Roadmap
+
+> Rebuilt 2026-09-18 from System 09 and System 10. The spec's CRM list and mechanism replace the earlier vertical-by-vertical MCP plan. **One CRM at launch (Tyler): HubSpot first.**
+
+## Launch and Phase 1 (five CRMs)
+| Order | CRM | Auth | Rate limit | Notes |
+|---|---|---|---|---|
+| 1 | **HubSpot** | OAuth 2.0 / API key | 500 req/min | Build first: no partner approval, general SMB CRM |
+| 2 | Jobber | OAuth 2.0 | 100 req/min | Apply for developer/partner access now |
+| 3 | ServiceTitan | OAuth 2.0 | 200 req/min | Apply now; market leader HVAC/plumbing/electrical |
+| 4 | Housecall Pro | API key | 50 req/min | |
+| 5 | Successware | OAuth 2.0 | 100 req/min | HVAC-heavy |
+These five cover about 70-85% of the Phase 1 trades market. Custom connectors, built and maintained by BuildFlow; the customer owns their CRM credentials.
+
+## Mechanism (locked)
+One-way push, BuildFlow dashboard to the customer's CRM, batch every 5 minutes. Cloud Scheduler triggers a function that reads new submissions, groups by customer, decrypts the token, pushes through the CRM API, logs to `crm_sync_log`, and retries with backoff (1 s, 5 s, 30 s, 5 min, max 5 attempts). No LLM in the push.
+Synced: name, email, phone, message, submission time. Field mapping is confirmed during onboarding. Errors: transient errors auto-retry; persistent errors (mapping mismatch, revoked token) need the customer; after 3 failures Tyler is notified; after 5 the sync pauses and the customer is alerted; a sync down more than 2 hours alerts both.
+Tokens: AES-256, separate secrets manager, decryptable only by the sync agent, refreshed automatically, revoked immediately on disconnect.
+Targets: latency under 5 min, success above 99%.
+
+## Later (in the spec; not launch)
+- **Phase 1.5-2:** remaining top-10 CRMs (Spike, FieldEdge, Knowify, Zoho, Pipedrive), Salesforce, Zendesk; two-way sync and status pull; the conflict resolver ("CRM wins by default", four signals, confidence under 60% flags Tyler); custom field-mapping UI; Zapier; webhooks; conditional sync.
+- **Tier fit:** Micro has no CRM at launch; SMB gets one CRM; multiple CRMs and two-way sync belong to Mid-Market (paused).
+
+## Parked ideas from the earlier roadmap (not in the spec)
+Vertical-specific CRMs for later expansion: RealGreen, ZenMaid, Swept, QuoteIQ (maintenance); Tekmetric, AutoLeap, Shopmonkey (automotive); security/specialized TBD. Live job-status display and service-history widgets on the site. **Dropped:** the "+$50/mo CRM upsell"; CRM is included in the SMB tier.
+
+## Checklist per CRM
+OAuth flow and token refresh · API review · create-lead endpoint · rate limiting and queue · retry and escalation per the mechanism · sync-status dashboard · test with a real account · runbook · monitor two weeks.
+
+---
+
+## Superseded CRM roadmap (2026-09-13)
+
 # CRM MCP Integration Roadmap
 
 > Backend MCP integrations for each vertical phase.

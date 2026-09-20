@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** the spec's SEO/GEO system is `SPEC-16-seo-geo.md` in this folder. Phase 1 verticals are plumbing, HVAC, electrical and roofing; HVAC is complete, plumbing and electrical are partial, roofing has no pack yet. The cards also feed the **reusable copy pool** (copy generated once per vertical x service x city x profile, not per prospect; see `docs/LLM_COST_AND_API_PLAN.md`).
+
+
 # knowledge/
 
 The build knowledge base. Plain files, version-controlled next to the theme code they

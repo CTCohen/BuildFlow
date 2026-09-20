@@ -1,7 +1,7 @@
 ---
 title: BuildFlow Implementation Roadmap
-purpose: Complete folder structure map, task breakdown, and credentials checklist for launch execution
-status: active
+purpose: SUPERSEDED by RECONCILIATION_LOG.md v2 (written before specs were fully read; do not build from this)
+status: deprecated
 owner: c.t.cohen
 updated: 2026-09-18
 ---

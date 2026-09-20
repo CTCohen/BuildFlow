@@ -16,6 +16,10 @@ phase: operational
 
 ## Session Timeline
 
+### Session 4: Spec export applied (2026-09-18)
+**Did:** Read all 27 spec files; wrote `RECONCILIATION_LOG.md` (43 conflicts); moved specs beside their modules; updated the workspace from the specs (name, pricing, roadmap, docs, legal, website); added the LLM cost plan, manifest and loops.
+**Result:** Spec is authoritative; Mid-Market paused; Phase 1 re-baselined. See `ROADMAP.md`.
+
 ### Session 3: Diversity at Scale (Phase 1-2)
 **Did:** Implemented design tokens system + component variant architecture.
 **Result:** 30 color themes, 5 hero variants, 4 service layouts, 3 testimonial styles. Build passes. Ready for Phase 3 (agent decision engine).

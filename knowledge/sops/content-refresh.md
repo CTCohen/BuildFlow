@@ -7,6 +7,9 @@ applies_to: [managed]
 links: [[managed-monthly]] [[page-service-detail]] [[ai-seo]] [[hvac-keyword-map]]
 ---
 
+> **Updated 2026-09-18:** run on demand or quarterly for SMB (or when a rank drop triggers it), not monthly for every site; Tyler approves changes before they publish (System 16). Micro sites are not refreshed by this SOP.
+
+
 # SOP — content refresh (per managed client, monthly)
 
 One meaningful content change per month. Pick the highest-leverage option:

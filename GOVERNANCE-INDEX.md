@@ -204,7 +204,7 @@ Every `.md` file declares:
 title:          What is this document?
 purpose:        Why does it exist?
 status:         draft | active | deprecated | archived
-owner:          c.t.cohen | chase
+owner:          c.t.cohen | tyler
 updated:        YYYY-MM-DD (when last touched)
 version:        1.0 (semver, optional)
 tier_scope:     micro | smb | mid-market | all (optional)

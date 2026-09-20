@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** the Build -> Test -> Learn rounds and exit criteria below stay valid as the design-engine calibration (launch plan Steps 4.6-4.8). Thresholds now follow the spec QA gates (`routines/testing.md`); launch is English-only, so the Spanish parity items apply only to opt-in sites.
+
+
 # Capability Buildout (Pass 0) — learning & testing tactic
 
 **Purpose:** before running the discovery→delivery pipeline, prove we can build

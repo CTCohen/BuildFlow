@@ -3,17 +3,67 @@ title: Metrics
 purpose: Documentation for METRICS.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
 
 # Metrics & KPIs
 
+> Rebuilt 2026-09-18 from the business model (Parts 3, 8, 9), System 01, System 13 and System 18. Update monthly (1st Friday review). Owner: Tyler; tracking by loops (`operations/LOOPS.md`).
+
+## Financial targets
+| Metric | Target | Source |
+|---|---|---|
+| Gross margin | 90%+ (planning: 92-95% using System 01 cost to serve) | System 01 |
+| Platform budget | $50/mo until first $500 MRR, then flexible to $100; API cap $30/mo | System 01, D14 |
+| CAC | Under $50 per customer; Micro up to $894 at a 6-month payback | Systems 01, 07 |
+| Demo to customer conversion | 2-5% assumed; validate in months 1-3 (if under 2%, demo cost exceeds LTV) | Business model |
+| Monthly churn | 8% or better | Business model |
+| Lead-scoring accuracy | 80%+; recalibrate if misclassification exceeds 20% | Business model |
+| Hiring gate | None until Tyler says (about $150K annual profit) | Tyler |
+
+## Revenue projection, re-cut for Micro and SMB only
+The spec's Month 1/3/6/12 projection (5 / 15 / 35 / 75 customers; $1.2k / $3.5k / $8.3k / $17k MRR) assumed a 40/40/20 Micro/SMB/Mid-Market mix. With Mid-Market paused, a 50/50 Micro/SMB mix averages about $199 per customer:
+| Month | Customers | MRR (50/50 mix) |
+|---|---|---|
+| 1 | 5 | ~$1,000 |
+| 3 | 15 | ~$3,000 |
+| 6 | 35 | ~$7,000 |
+| 12 | 75 | ~$14,900 |
+Prices will rise after launch, so treat these as a floor. Recompute when the price increase is decided.
+
+## Operational (launch gate and after)
+| Metric | Target |
+|---|---|
+| Demo generation | Under 10 s per site; first-pass QA rate tracked |
+| Payment to live | Under 60 s |
+| CRM sync | Latency under 5 min; success above 99% |
+| Uptime | 99.5% monthly |
+| Demo QA | Lighthouse at least 80 to ship a demo; live sites at least 90 |
+| Email health | Bounce under 5%, complaint under 0.1%; pause at 5% spam |
+| Agent quality | Task completion rate and human override rate per agent (registry Section D) |
+| LLM spend | Per-agent monthly cap; total under $30/mo pre-revenue |
+
+## Customer
+Health score 0-100 (engagement 40%, payment 30%, retention 20%, growth 10%); 80+ healthy, 60-79 at risk, under 60 churning. Contact-form submission rate above 2%. NPS after 30 days.
+
+## Funnel (weekly pipeline report)
+Leads scored, emails sent, open rate, click rate, demo view rate, conversion rate, CAC, best template/vertical/location.
+
+## Status (2026-09-18)
+Pre-launch. No customers, no revenue. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md`.
+
+---
+
+## Superseded metrics dashboard (2026-09-12)
+
+# Metrics & KPIs
+
 **Purpose:** Dashboard of business health — financial, operational, customer.
 
 **Updated:** Monthly (or as data arrives)  
-**Owner:** Chase (data collection), Claude (tracking)  
+**Owner:** Tyler (data collection), Claude (tracking)  
 **Last updated:** 2026-09-11
 
 ---
@@ -140,6 +190,6 @@ See `logs/` folder for monthly & weekly summaries.
 
 ---
 
-**Owner:** Chase (data), Claude (reporting)  
+**Owner:** Tyler (data), Claude (reporting)  
 **Last updated:** 2026-09-11  
 **Next update:** 2026-10-01 (monthly) or as closes come in

@@ -3,10 +3,57 @@ title: Pricing
 purpose: Documentation for PRICING.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Pricing
+
+> Rebuilt 2026-09-18 from System 01, System 05, System 08 and the business model. **Prices will rise soon after launch** (Tyler): billing keeps
+> versioned price IDs and a `launch_cohort` flag so early customers can be grandfathered. Increase timing and numbers: `RECONCILIATION_LOG.md` D02.
+
+## The offer (locked)
+| Tier | Managed (monthly) | Managed (annual, 10x monthly) | Offboard (one-time) | Target customer |
+|---|---|---|---|---|
+| **Micro** | $149/mo | $1,490/yr (saves $298) | $499 | Solo contractors, under 3 employees |
+| **SMB (ICP)** | $249/mo | $2,490/yr (saves $498) | $799 | Established trades, 3-20 employees, $250k-$5M revenue |
+| **Mid-Market** | $399/mo | $3,990/yr (saves $798) | $1,299 | **Paused ~12 months.** Shown on the site and here, not built |
+
+- **Prescriptive tier:** lead scoring assigns the tier; a prospect sees only their tier. If misclassification exceeds 20%, recalibrate scoring; never offer a choice.
+- **No free trial.** Payment happens at conversion; the site is live in about a minute. (Earlier "first 3 free" pilots are retired unless Tyler reinstates them as a soft-launch cohort.)
+- **Managed:** we host and maintain, SEO, CRM sync (SMB), support. **Offboard:** the customer takes domain ownership plus docs and videos; no ongoing support.
+- **Annual:** "2 months free" (~16.7% off), single payment, **non-refundable and not prorated** on cancellation; access stops at cancellation. Monthly plans get a 30-day pro-rata refund; full refund for billing error or a 24+ hour unplanned outage (reported within 7 days).
+- Offboard = about 3.2-3.3 months of Managed; annual = 10 months of Managed.
+
+## Unit economics (System 01, conservative)
+| Tier | Monthly cost to serve | Managed margin | Offboard margin |
+|---|---|---|---|
+| Micro | $11 | 92.6% | 99.6% |
+| SMB | $16 | 93.6% | 99.75% |
+| Mid-Market | $21 | 94.7% | 99.85% |
+The infrastructure model (System 03) implies $4/$5/$8 (97-98%); plan with the conservative numbers until real cost is measured.
+Design generation is amortized at about $2 per site. CAC must stay under $50 per customer; Micro CAC up to $894 is acceptable at a 6-month payback. Demo conversion (assumed 2-5%) is the one variable the model depends on.
+
+## Positioning
+Premium, not a cheaper Wix: trade-specific design, built-in WCAG 2.1 AA, automated review aggregation, CRM integration, done-for-you generation.
+| | BuildFlow | ServiceTitan | Jobber | Wix |
+|---|---|---|---|---|
+| Website | AI-generated, trade-specific | Basic landing page | Basic landing page | DIY |
+| WCAG 2.1 AA | Built in | No | No | No |
+| CRM integration | Yes (Phase 1 five) | Own CRM only | Own CRM only | No |
+| Review aggregation | Automated | No | No | No |
+| Price | $149-399/mo | $398+/mo | $49-349/mo | $10-30/mo |
+
+## Price increase and grandfathering (spec plan; timing under review)
+Spec plan: validate at launch prices, then after about 25 customers raise new-customer pricing (spec example $199/$349/$599) while the first 25-50 stay at launch pricing indefinitely; optional migration at first renewal (month 18-24) framed as added value. Tyler expects to raise prices sooner than the spec's Month 7, so the numbers and trigger are an open decision.
+
+## Add-ons
+Professional Redesign ($199 layout tweaks, $299 for 2-3 sections, $499 full custom) is human-executed; treated as a waitlist item (System 04 §8). The System 19 "Done-For-You Setup $99" add-on is dropped: done-for-you is the product.
+
+---
+
+## Superseded pricing document (2026-09-12, kept for history)
 
 # Pricing Strategy
 

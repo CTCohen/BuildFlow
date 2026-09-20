@@ -5,6 +5,9 @@ status: active
 links: [mood-boards, web-design, accessibility-baseline]
 ---
 
+> **Updated 2026-09-18:** themes map to the spec's 10 styling profiles in `app/src/data/styleProfiles.json`; a client's `styleProfile` selects the theme family and the Design Agent chooses within it.
+
+
 # Design Tokens Schema & Agent Decision Rules
 
 ## Overview

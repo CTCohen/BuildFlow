@@ -3,10 +3,41 @@ title: _Overview
 purpose: Documentation for _OVERVIEW.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Design Systems — Micro and SMB (Mid-Market deferred)
+
+> Updated 2026-09-18 from System 04 and System 05. The existing SMB design system is the base (Tyler's ruling); Micro templates come next; Mid-Market is paused ~12 months.
+> Spec: `design/SPEC-04-design-quality.md`.
+
+## What all tiers share
+- **Logo-first branch point:** `existing-identity` (extract colors from the client's logo; the Design Discovery Agent crawls their current site for brand, tone and layout) or `generated-identity` (we invent one).
+- **One template warehouse:** per-vertical wireframes (plumbing, HVAC, electrical, roofing), locked layout, 10 styling profiles as swappable design-token sets, a constrained set of hero/services/testimonial variants chosen by the Design Agent.
+- **Accessibility baseline in every template:** 4.5:1 contrast, 44x44 px targets, keyboard navigation, ARIA, skip links, `lang="en"`.
+- **Same agent, four call sites:** demo generation, post-payment build, photo-intake auto-build, customer-edit regeneration. No forked implementations.
+
+## How tiers differ
+| Aspect | Micro | SMB | Mid-Market (paused) |
+|---|---|---|---|
+| Components | 6-8, fixed | 10-12 | 15+ |
+| Styling profile | Default (Professional Service) | Any of 10 | Any of 10 |
+| Customization | None (text and image edits in the dashboard) | Color, font, spacing, radius sliders | Custom sections, layout |
+| Layout | Locked | Locked | Restructurable |
+| QA | Same spec gates | Same spec gates | Enhanced (deferred) |
+
+## Styling profiles (System 04 §6)
+Professional Service (default) · Modern Minimalist · Cutting-Edge Tech · Established Authority · Energetic & Bold · Eco-Conscious · Luxury Premium · Community-Focused · Modern Industrial · Transparent & Honest.
+The existing 30 themes in `app/src/data/themes-30.json` are curated into these 10; the existing 5 hero styles, 4 service layouts and 3 testimonial styles stay as vertical-keyed variants chosen by the Design Agent (not customer-facing).
+
+## See also
+[`MICRO.md`](MICRO.md) · [`SMB.md`](SMB.md) · [`MID_MARKET.md`](MID_MARKET.md) (deferred) · [`../DELIVERY_MODEL.md`](../DELIVERY_MODEL.md)
+
+---
+
+## Superseded design-systems overview (2026-09-12)
 
 # Design Systems — Three Tiers
 

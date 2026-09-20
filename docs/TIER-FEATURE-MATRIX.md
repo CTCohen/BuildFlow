@@ -1,3 +1,59 @@
+---
+updated: '2026-09-18'
+title: docs/TIER-FEATURE-MATRIX.md
+purpose: BuildFlow document
+status: active
+owner: c.t.cohen
+---
+
+# Tier Feature Matrix
+
+> Rebuilt 2026-09-18 from System 05 (feature inventory), System 04 (customization), the business model (dashboards) and Systems 12, 16. **Mid-Market is paused ~12 months: shown on the site and pricing, not built.**
+> Provisional rulings applied: D18 (Micro edit scope), D19 (sliders SMB only), D21 (Micro has no CRM).
+
+## Website features
+| Feature | Micro ($149) | SMB ($249) | Mid-Market ($399, paused) |
+|---|---|---|---|
+| Components | 6-8 (hero, services, testimonials, contact form) | 10-12 | 15+ |
+| Service pages | Single service page | Up to 5 | Unlimited |
+| Contact form, email lead alerts | Yes | Yes | Yes (advanced form builder) |
+| Review aggregation (Google first) | Yes, latest 5 | Yes | Yes |
+| Mobile-responsive, WCAG 2.1 AA, SSL, custom domain | Yes | Yes | Yes |
+| Team profiles, photo gallery, service-area targeting, map, FAQ, seasonal offers | No | Yes | Yes |
+| Custom colors and fonts (sliders, 10 styling profiles) | No | Yes | Yes |
+| Lead priority tagging | No | Yes | Yes |
+| Pricing table, case studies, blog, client logos, video | No | No | Yes |
+| Multi-location, lead automation, Slack | No | No | Yes |
+| Language | English at launch | English at launch | English |
+
+## Dashboard (one dashboard, tier flags)
+| Feature | Micro | SMB | Mid-Market (paused) |
+|---|---|---|---|
+| Lead inbox, CSV export, email notifications | Yes | Yes | Yes |
+| Content editing | Business name, service text, contact, hours, logo and gallery images. Hero, layout, colors, fonts locked | Text and images, reorder items | Plus conditional and scheduled content |
+| Notes and simple pipeline (new/contacted/converted) | No | Yes | Custom stages |
+| CRM connection | No (email alerts, CSV) | One CRM (HubSpot first) | Multiple CRMs, two-way |
+| Analytics | Monthly email report | Real-time lead count, sources, 3-month trend | Lead scoring, sync health, quarterly PDF |
+| Lead scoring display, task assignment, bulk actions | No | No | Yes |
+| Demo preview (sandbox) shown to prospects | Yes | Yes | n/a |
+
+## SEO and GEO (System 16; "GEO" there means geographic targeting)
+- **Layer 1, every tier:** meta tags, schema (LocalBusiness, Review, Service, Breadcrumb), sitemap, canonical, Core Web Vitals, geo-content, plus `llms.txt` and answer-structured FAQ.
+- **Layer 2, monthly optimization:** SMB; suggestions triggered by rank drops, approved by Tyler.
+- **Layer 3, ranking monitoring:** deferred until revenue (tool cost).
+
+## QA per tier (spec gates; existing stricter numbers remain design targets)
+- Demo: Lighthouse at least 80, accessibility at least 90, axe zero must-fix. Live sites: at least 90. Core Web Vitals within budget (LCP under 2.5 s, CLS under 0.1).
+- The existing 9-check gate (`app/scripts/qa.mjs`) stays: schema, placeholders, required content, links, build, layout sanity, Lighthouse, rubric sampling.
+
+## Content requirements
+Micro: business name, phone/email, hours, services (2-4), testimonials (2-3), logo or generated identity.
+SMB: as Micro plus address, 5-10 services, 5+ testimonials, about/brand story, service areas.
+
+---
+
+## Superseded tier matrix (2026-09-12)
+
 # Tier Feature Matrix — Website & Dashboard Capabilities
 
 **Purpose:** Lock in what each tier can do. This drives design system scope, QA criteria, and dashboard development.

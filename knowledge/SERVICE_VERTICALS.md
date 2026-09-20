@@ -1,3 +1,5 @@
+> **Updated 2026-09-18:** Phase 1 verticals follow the spec (plumbing, HVAC, electrical, roofing). Vertical expansion beyond those waits for Phase 2+.
+
 # Service Business Verticals — BuildFlow Target Market
 
 > Complete taxonomy of service businesses BuildFlow can serve.
@@ -68,16 +70,13 @@
 
 ---
 
-## Phase 1 Focus (Emergency/Seasonal Priority)
+## Phase 1 Focus (spec: plumbing, HVAC, electrical, roofing)
 
-**Currently targeting:** HVAC (emergency-focused, recurring revenue)
+**Phase 1 verticals (System 07 and the business model):** plumbing, HVAC, electrical, roofing. **First market:** Phoenix, starting with HVAC (the only complete trade pack); each other trade needs its knowledge pack before outreach in it.
 
-**Expand to (Phase 2):**
-- Plumbing (same emergency pattern, seasonal spike)
-- Electrical (emergency calls, but harder sales)
-- Roofing (seasonal, high-value, project-based)
+**Phase 2+ (spec):** landscaping, cleaning, pest control, automotive, security/infrastructure.
 
-**Later phases (Phase 3+):**
+**Later ideas from earlier planning (not in the spec):**
 - Landscaping (seasonal, many competitors online)
 - Cleaning (high volume, low price, churn risk)
 - Tree Care (seasonal, safety-conscious buyers)
@@ -96,13 +95,13 @@
 - ✅ Roofing, Tree Care, Snow Removal
 - Pattern: Seasonal spike = concentrated lead capture
 - Website benefit: Moderate value (competitors online)
-- Revenue: Subscription workable, one-time ownership also attractive
+- Revenue: Managed workable, Offboard (one-time) also attractive
 
 ### Lower-Priority Verticals (High Volume, Low Price, High Churn)
 - ⚠️ Cleaning, Pest Control, Pressure Washing
 - Pattern: Volume-based, low cost per job
 - Website benefit: Nice-to-have, not critical
-- Revenue: Subscription risky (price sensitivity), one-time better
+- Revenue: Managed risky (price sensitivity), Offboard may fit better
 
 ### Specialized Verticals (Low Volume, High Value)
 - ⚠️ Security, Environmental Testing, Disaster Restoration
@@ -138,7 +137,7 @@
 ### HVAC
 - **Pattern:** Emergency calls year-round, peak summer/winter
 - **Website value:** High (captures emergency leads, builds trust)
-- **Revenue model:** Subscription ($99/mo) strong, recurring calls
+- **Revenue model:** Managed subscription ($149 Micro / $249 SMB per month) is a strong fit, recurring calls
 - **Pricing:** Mid-range ($50–150 per service call)
 - **SEO keywords:** "AC repair near me", "emergency HVAC", "furnace service"
 - **Trust signals:** Licensing, emergency response time, reviews
@@ -162,7 +161,7 @@
 ### Roofing
 - **Pattern:** Project-based, seasonal (spring/fall inspections, winter damage)
 - **Website value:** High (inspires confidence for large projects)
-- **Revenue model:** Subscription workable, but one-time Ownership also fits
+- **Revenue model:** Subscription workable, but one-time Offboard also fits
 - **Pricing:** High ($5k–50k per project)
 - **SEO keywords:** "roof repair", "new roof cost", "roof replacement"
 - **Trust signals:** Warranty on materials/labor, before/after photos, insurance

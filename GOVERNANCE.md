@@ -11,6 +11,9 @@ phase: operational
 related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 ---
 
+> **Updated 2026-09-18:** the owner is Tyler. Spec files carry the extra fields `spec_name`, `spec_aliases`, `spec_sources`, `spec_authority` and follow the spec convention: (1) what is this file for, (2) what is in it, (3) the specs. Root docs must not contain the stale terms listed in `governance/enforce.py` (the stale-term lint).
+
+
 # BuildFlow Auto-Governance System
 
 **Frontmatter as first-class governance.** Every `.md` file in the workspace declares its purpose, status, and dependencies via structured metadata. The system observes compliance patterns and suggests tighter rules as the workspace scales.
@@ -35,7 +38,7 @@ related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 
 **Financial Decisions (You Approve)**
 - Examples: hire contractor, spend >$500/month on tools, new infrastructure
-- Authority: You (Chase)
+- Authority: You (Tyler)
 - Process: Proposal → budget review → approval
 - Timeline: 24-48 hours
 
@@ -65,7 +68,7 @@ related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 
 ## 3. Roles & Responsibilities
 
-### Current Role: You (Chase)
+### Current Role: You (Tyler)
 
 **Title:** Founder & Operator
 

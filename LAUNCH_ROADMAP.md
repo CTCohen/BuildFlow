@@ -3,7 +3,7 @@ title: Launch Roadmap
 purpose: Detailed roadmap for product launch sequence and milestones
 status: active
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 version: '1.0'
 tier_scope: smb
 phase: phase_1
@@ -12,6 +12,57 @@ related:
 - ROADMAP.md
 - PHASE_1.md
 ---
+
+# Launch Roadmap — every step of the spec launch plan
+
+> Rebuilt 2026-09-18. Source: `docs/specs/LAUNCH_READINESS_PLAN.md` (8 steps, all sub-steps). Rulings applied: Mid-Market paused, English-only launch,
+> one CRM first (HubSpot), lead agents built with their infrastructure, manual dunning first. Legend: ✔ done · ◐ partly · ☐ to do · ⏸ deferred.
+> The pre-spec roadmap is kept at the bottom as history; its still-valid items are carried in the "Carry-over" section.
+
+**Standing principle:** the specs are the starting point, not the finished depth. Where a spec is thin, research current docs and write the detail back into the spec.
+
+## The 8 steps
+**Step 1: Migrate specs** — 1.1 ✔ unzip · 1.2 ✔ snapshot (tag `pre-spec-reconciliation`, branch `spec-reconciliation`) · 1.3 ✔ snippet merged into `CLAUDE.md` · 1.4 ✔ specs committed separately (6913061) · 1.5 ◐ re-export process: the repo copy is now the source of truth.
+
+**Step 2: Reconcile, then implement** — 2.1 ✔ reconciliation pass · 2.2 ✔ conflict log (`RECONCILIATION_LOG.md`) · 2.3 ◐ Tyler's rulings (D06, D14, D15, D42 done; the rest provisional) · 2.4 ✔ specs moved beside their modules · 2.5 ☐ implementation task list per system (`TASKS.md` in each module) · 2.6 ☐ pre-launch open items vs Phase 2+ · 2.7 ☐ research-driven gap-filling, written back into specs.
+
+**Step 3: Agents and APIs** — 3.1 ☐ build order: first Design, Design QA, Design Discovery; second Lead Scoring, Lead Lookup, Outreach/Copy (with their infrastructure); third CRM Sync and Dunning; fourth OCR, Review Sync, Lifecycle, Support and Feedback Triage, SEO/GEO, Experimentation · 3.2 ☐ wire APIs: Cloudflare, Stripe, SendGrid, Apollo/Hunter, Google Places and Business Profile, CRM (HubSpot first), Twilio alerts · 3.3 ☐ retry, escalation and human-gate logic per registry Section F · 3.4 ☐ eval suite (15–20 cases) per agent before "done" · 3.5 ☐ System 13 monitoring jobs ingest agent runs.
+
+**Step 4: Design system, looped testing** — 4.1 ☐ four vertical base templates (existing SMB system as base) · 4.2 ☐ tier feature-gating (Micro, SMB; Mid-Market ⏸) · 4.3 ☐ 10 styling profiles (curate the existing 30 themes) · 4.4 ☐ Discovery Agent crawl-and-extract · 4.5 ☐ customization sliders (SMB only) · 4.6 ☐ Design QA evaluator-optimizer loop (max 2 retries, escalate on the 3rd failure) · 4.7 ☐ rejection-reason log + monthly top-3 failure-mode job · 4.8 ☐ smoke-test matrix (every vertical × built tier × 2–3 profiles; full 120 is Phase 2+).
+
+**Step 5: Videos** — 5.1 ☐ scripts from System 6 §5 and System 12 §1 (existing scripts in `onboarding/`) · 5.2 ☐ Managed walkthrough · 5.3 ☐ Offboard handoff · 5.4 ☐ tier-specific segments only where the dashboard differs · 5.5 ☐ host and link in welcome emails and Help Center.
+
+**Step 6: Website, dashboards, logo** — 6.1 ☐ logo and brand identity · 6.2 ☐ marketing site (System 19) · 6.3 ☐ customer dashboard · 6.4 ☐ admin web dashboard · 6.5 ⏸ iOS admin app (Phase 1.5) · 6.6 ⏸ customer mobile app (Phase 2+).
+
+**Step 7: Tier dashboards** — 7.1 ☐ one dashboard with a feature-flag layer · 7.2 ☐ Micro: lead inbox, text-only editing · 7.3 ☐ SMB: + notes, simple pipeline, image uploads, CRM config · 7.4 ⏸ Mid-Market (custom stages, scoring display, task assignment, bulk actions, multi-CRM).
+
+**Step 8: End-to-end testing (the gate)** — 8.1 ☐ full funnel dry run (monthly and annual) · 8.2 ☐ agent eval suites · 8.3 ☐ dunning tiers 1–3 live, 4–5 by document review · 8.4 ⏸ photo-intake cycle · 8.5 ☐ WCAG sample, data-isolation, auth · 8.6 ☐ load smoke test · 8.7 ☐ monitoring populated by real events · 8.8 ☐ soft-launch cohort (the 5 Phoenix HVAC prospects, re-priced).
+
+**Dependency order:** Steps 1→2 block everything. Steps 3 and 4 run mostly in parallel once 2 clears, but 4 needs Design and Design QA from 3.1 first. Step 6 needs 3 and 4 functional; scaffolding, logo and marketing site can start earlier. Step 7 finishes with 6.3. Step 5 comes near the end. Step 8 is the gate.
+
+## Phase 1 launch gate (business model Part 9; all must be complete)
+Data Model · Agent Orchestration · Design System · Feature System (Micro and SMB) · Pricing · Hosting Decision · Payment Processor · Compliance · CRM Integration (one CRM: HubSpot) · Demo System.
+Open questions to close before code: hosting (ruled), conversion validation (2–5%, measure Months 1–3), lead-scoring accuracy ≥80%, churn ≤8%/mo, CAC by channel.
+
+## Carry-over from earlier roadmaps (not in the specs, still valid)
+1. Onboarding automation: Stripe webhook → Day 0 sequence → intake form → build → preview with approve/request-changes → auto-launch rule → monthly check-in; nudge and hard-stop for an unfinished intake.
+2. Offboarding automation (does not exist yet): the Offboard export mechanism (zip or one-click deploy to the client's host), Managed cancellation flow (live to period end, takedown, win-back at +30/+60 days), data retention and deletion.
+3. Pass 0 capability loop (`docs/capability-buildout.md`): Build → Test → Learn rounds on Phoenix HVAC samples; exit criteria feed Steps 4.6–4.8.
+4. Wire the stubbed QA checks (Lighthouse, layout sanity, rubric); calibrate on the first ~10 sites; visual-regression baselines.
+5. SEO and AI-SEO automation folded into the QA gate; define AI SEO (llms.txt, FAQ schema, entity consistency); decide Google Business Profile ownership.
+6. Trade packs: HVAC complete; plumbing, electrical partial; roofing missing. Each before outreach in that trade.
+7. Synthetic dry runs across trades before the first real client.
+8. Business plan docs: unit economics, TAM/SAM/SOM, capacity plan, churn plan, one consolidated `BUSINESS_PLAN.md`.
+9. Monitoring and uptime, support intake, backup and disaster recovery (now System 13/14/11 items).
+
+## Cadence (from the specs)
+Monthly Business Review (1st Friday) · quarterly review · weekly pipeline report · monthly QA failure-mode review, feedback triage, feature metrics, help-center review, SEO run · daily delinquency metrics.
+Monitoring rollout by customer count: pre-launch = health check + alerts + basic dashboard; 10 customers = business metrics job; 50 = anomaly detection.
+The spec's Month 1–12 revenue projection assumed 20% Mid-Market by revenue and must be re-cut before use as a target (`metrics/METRICS.md`).
+
+---
+
+## Superseded pre-spec roadmap (2026-09-10, kept for history)
 
 # Launch Roadmap — what's between here and a tight, strong launch
 

@@ -17,7 +17,7 @@ Run after `sops/build-a-site` step 8. Any hard-fail blocks the site.
 3. Required content — title/meta/H1 per page; hero `tel:`; NAP consistent; service-area strings rendered.
 4. Internal links — no broken links; graph connected; every page ≤ 2 clicks from home.
 5. Form submit — headless submit reaches the test inbox.
-6. EN/ES parity — key sets match; no untranslated ES.
+6. Language — launch is English-only; when a site opts into Spanish, EN/ES key sets must match with no untranslated ES.
 7. Lighthouse — perf ≥ 90, a11y ≥ 95, LCP/CLS/TBT within [[performance-baseline]].
 8. Layout sanity (Playwright mobile+desktop) — no h-scroll, overlap, or broken images.
 9. Schema — `HVACBusiness` sitewide, `FAQPage` on `/` + `/services/*`, validates.

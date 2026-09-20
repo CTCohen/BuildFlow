@@ -7,6 +7,9 @@ applies_to: [seo]
 links: [[ai-seo]] [[hvac-schema]] [[page-service-detail]]
 ---
 
+> **Updated 2026-09-18:** `llms.txt`, direct-answer structure and schema are **Layer 1 defaults in every tier** (System 16 override), not an SMB-only extra. In the spec, "GEO" means geographic targeting; this SOP covers AI-answer optimization.
+
+
 # SOP — AI SEO setup (per site)
 
 ## Steps

@@ -3,10 +3,53 @@ title: Delivery_Model
 purpose: Documentation for DELIVERY_MODEL.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Delivery Model
+
+> Rebuilt 2026-09-18 from Systems 03, 04, 05, 06 and the business model. Pricing: `PRICING.md`. Feature detail by tier: `TIER-FEATURE-MATRIX.md`.
+
+## Core principle
+**One codebase, no per-client code.** Each site is the existing design system rendered by the Design Agent from a per-client data file into a static bundle.
+Demo and live site are the same thing: gated before conversion, public after. Nothing is ever handed over under Managed.
+
+## How a prospect becomes a customer
+1. Agents discover and score a lead; the score assigns the tier (Micro or SMB at launch).
+2. The Design Agent builds a personalized static site and the Design QA Agent gates it (Lighthouse and axe). The demo lives on Cloudflare at a non-guessable URL for 90 days.
+3. The prospect sees their site **and a sandbox of their tier's dashboard**, gets the outreach email (5-touch email sequence), and clicks "Get This Site".
+4. Self-serve path: pay through Stripe, then the customer record, live site, DNS and SSL, welcome email and dashboard access are created in under 60 seconds. High-touch path: Tyler quotes and closes by hand.
+5. Managed: the site stays on our hosting. Offboard: we export and transfer domain ownership with docs and videos; no ongoing support.
+
+## The two ways to pay
+| | Managed | Offboard |
+|---|---|---|
+| Hosting, SSL, CDN, custom domain | We host | Customer hosts |
+| SEO | Layer 1 defaults for all tiers; monthly optimization for SMB | Customer's job |
+| Content edits | Self-serve dashboard | Customer's job |
+| CRM sync | SMB (HubSpot first) | n/a |
+| Support | Email and help center | None (docs and videos) |
+| Cancel | Monthly: through end of month. Annual: non-refundable, stops immediately | n/a |
+
+## Tiers at a glance
+- **Micro:** 6-8 components, lead inbox only, text-only edits, no CRM (email alerts and CSV export), monthly email report.
+- **SMB:** Micro plus gallery, map, FAQ, seasonal offers, team profiles, service-area targeting, custom colors and fonts, notes, simple pipeline, image uploads, one CRM.
+- **Mid-Market:** paused; see `TIER-FEATURE-MATRIX.md`.
+Launch is English-only, email-outreach-only.
+
+## Hosting and migration
+Static sites live on Cloudflare (Pages/Workers, R2). Customer subdomains: `[company].buildflowsites.com`; custom domains through Cloudflare DNS with automatic SSL.
+The platform (dashboards, API, agents) runs containerized: Railway first, Google Cloud Run later. Because demo and live share the same infrastructure, conversion is a
+re-render and a domain change, not a provider migration. Offboard exports the static bundle to the customer's host.
+
+## What we promise
+The lead-capture machinery: a fast, accessible site, click-to-call, quote forms routed to the owner, review display, CRM sync. We do **not** promise lead volume or outcomes.
+
+---
+
+## Superseded delivery model (2026-09-12, kept for history)
 
 # Delivery Model
 
