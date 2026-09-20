@@ -219,6 +219,16 @@ async function runLighthouse(base) {
         logLevel: "silent",
       });
       const cats = result.lhr.categories;
+      const lhrErr = result.lhr.runtimeError;
+      const noScore = ["performance", "accessibility", "seo"].filter((k) => cats[k]?.score == null);
+      if (lhrErr || noScore.length) {
+        add(
+          "lighthouse-budget",
+          "fail",
+          `lighthouse could not score the page (not a low score): ${lhrErr ? lhrErr.code + " - " + String(lhrErr.message).slice(0, 160) : "no score for " + noScore.join(", ")}`,
+        );
+        return;
+      }
       const perf = Math.round(cats.performance.score * 100);
       const a11y = Math.round(cats.accessibility.score * 100);
       const seo = Math.round(cats.seo.score * 100);
