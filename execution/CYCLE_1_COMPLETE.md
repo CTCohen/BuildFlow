@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **SIMULATION, NOT A REAL RECORD.** This is a fictional worked example. It names a real business and contains invented statements. Never use it publicly or as proof. Kept for reference only (2026-09-18).
+
+
 # CYCLE 1: COMPLETE EXECUTION RECORD
 
 **Status: EXECUTED**

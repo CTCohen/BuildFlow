@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** launch plan Step 5: scripts come from System 06 section 5 (first-login tour, checklist) and System 12 section 1 (30-day journey). Record the Managed walkthrough (dashboard tour, customize name/services/photos, CRM connection), an **Offboard handoff** video (domain transfer, what no ongoing support means, where to get help), and tier-specific segments only where the dashboard differs (Micro vs SMB; Mid-Market deferred). Host and link in the welcome sequence and Help Center.
+
+
 # Onboarding Video Outline
 
 **Purpose:** Automate customer onboarding so sites are self-setup without manual calls.

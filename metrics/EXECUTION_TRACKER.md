@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Phase 1 Execution Tracker
 
 **Real-time tracking of Phase 1 execution. Update as you go.**

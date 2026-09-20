@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Phase 1 Prospect List — Ready to Outreach
 
 **Instructions:** Use this list as your Batch 1 (5 prospects) for Week 2 outreach.
@@ -235,7 +238,7 @@ From 5 emails:
 
 | Date | Prospect | Email | Trade | City | Sent | Opened | Clicked | Called | Closed | Deal $ | Notes |
 |------|----------|-------|-------|------|------|--------|---------|--------|--------|-------|-------|
-| 9/16 | Mike | mike@... | HVAC | Phoenix | ✓ | ✓ | ✓ | ✓ | ✓ | $99/mo | Closed! |
+| 9/16 | Mike | mike@... | HVAC | Phoenix | ✓ | ✓ | ✓ | ✓ | ✓ | $249/mo | Closed! |
 | 9/16 | Sarah | sarah@... | Plumbing | Denver | ✓ | | | | | | Pending |
 | 9/16 | David | david@... | Electrical | Austin | ✓ | | ✓ | | | | Clicked link |
 | 9/16 | Lisa | lisa@... | Cleaning | LA | ✓ | | | | | | No response |

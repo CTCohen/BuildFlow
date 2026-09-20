@@ -116,7 +116,7 @@ They're already getting online quotes and calls.
 If you want to join them before the holidays/summer rush, we still have availability.
 
 Turnaround time: 5-7 days from start to launch.
-Price: $99/mo — we build it, host it, and keep it optimized (cancel anytime)
+Price: $249/mo — we build it, host it, and keep it optimized (cancel anytime)
 
 Want to see an example? [Link to 2 case studies]
 
@@ -185,7 +185,7 @@ Perfect! Many of our customers had one too.
 
 Question: How many online quotes/leads came from it last month?
 
-If it's less than 5, most sites can be rebuilt and kept optimized for $99/mo.
+If it's less than 5, most sites can be rebuilt and kept optimized for $249/mo.
 
 Quick call to see if it's worth it? [Calendar link]
 
@@ -198,7 +198,7 @@ BuildFlow
 ```
 Understandable. Most of our customers made back the cost in 2-3 new jobs.
 
-Real example: HVAC contractor on the $99/mo plan got 2 online quote requests in the first month.
+Illustrative example (hypothetical, not a customer result): HVAC contractor on the $249/mo plan got 2 online quote requests in the first month.
 Each quote → $400-600 job. Covered the year in one month.
 
 Worth 15 minutes to talk about your specific situation? [Calendar link]
@@ -216,7 +216,7 @@ BuildFlow
 - "Live this week" (urgency + credibility)
 - "No waiting" (pain point from competitors)
 
-### Theme 2: Ownership
+### Theme 2: Offboard
 - "You own the website" (vs. "rent" from other platforms)
 - "Full control" (not locked into platform)
 - "Your domain, your content" (clarity on what they get)
@@ -227,7 +227,7 @@ BuildFlow
 - "Google finds your customers" (they already search)
 
 ### Theme 4: Simplicity
-- "$99/mo, cancel anytime" (clarity, no big upfront, no lock-in)
+- "$249/mo, cancel anytime" (clarity, no big upfront, no lock-in)
 - "We handle hosting/SSL/updates" (one less thing for them)
 - "Done in 5-7 days" (not a long project)
 
@@ -282,7 +282,7 @@ BuildFlow
 
 **Phase 2:**
 - A/B test follow-up sequences (SMS vs. email cadence)
-- Test pricing language ("$99/mo" vs. "less than one service call a month" vs. "starting at...")
+- Test pricing language ("$249/mo" vs. "less than one service call a month" vs. "starting at...")
 - Refine objection handlers based on real replies
 
 ---

@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** map these emails to System 12's 30-day journey (Day 0 welcome, Day 1 first login, Day 3 customization check-in, Day 7 first leads, Day 15 engagement check, Day 30 success confirmation) and System 06's cadence (welcome 5 minutes after payment, Day 1 site screenshot, Day 7 analytics recap, Day 30 tips). Sequences are deterministic templates with merge fields (no LLM). Add an Offboard sequence (handoff, domain transfer, where to get help).
+
+
 # Automated Onboarding Email Sequences
 
 **Goal:** Guide customers through setup (Google Business, call tracking, customer outreach) with minimal manual intervention.
@@ -297,7 +300,7 @@ BuildFlow
 **Metadata:**
 - Email: Celebratory tone (you're done!)
 - Re-engagement: Multiple CTA options (dashboard, email, calendar, call)
-- Monthly check-in call is included in Managed Growth
+- Monthly check-in call is included in Managed
 
 ---
 

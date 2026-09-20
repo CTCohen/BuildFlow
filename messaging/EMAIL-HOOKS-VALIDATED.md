@@ -136,7 +136,7 @@ Average result: [metric] new leads/month."
 
 ### ROI Reframe
 ```
-"Managed website, live in 7 days, $99/mo.
+"Managed website, live in 7 days, $249/mo.
 Average ROI: 1 new job = $400-600 revenue.
 One job every few months covers the year."
 ```
@@ -161,7 +161,7 @@ One job every few months covers the year."
 ```
 That's great! Quick question: How many new customers came from it last month?
 
-If it's less than 5, most sites can be rebuilt and kept optimized for $99/mo.
+If it's less than 5, most sites can be rebuilt and kept optimized for $249/mo.
 
 Worth a quick call to see if it's worth doing? [CALENDAR]
 ```
@@ -172,7 +172,7 @@ Worth a quick call to see if it's worth doing? [CALENDAR]
 Totally get it. Here's how most clients think about it:
 
 One job from a better website = $400-600 revenue.
-Plan cost = $99/mo.
+Plan cost = $249/mo.
 ROI: one extra job every few months covers a full year.
 
 Everything after that is profit. Worth 5 minutes? [CALENDAR]
@@ -186,7 +186,7 @@ Definitely possible! Here's what most contractors find:
 DIY: 20-40 hours of learning + building + fixing = ~$500-800 in time.
 Risk: Design looks amateur, poor conversions, ongoing maintenance.
 
-Done-for-you: 7 days, professional result, we host it and handle every update = $99/mo.
+Done-for-you: 7 days, professional result, we host it and handle every update = $249/mo.
 
 You decide what's worth your time. Happy to help either way.
 ```
@@ -227,9 +227,9 @@ We work with [trade type] contractors to turn their site into a lead-generating 
 ```
 "Here's what we do: We build a complete site, get you on Google Maps, set up call tracking. Live in 7 days.
 
-Then we run it for you — hosting, security, ongoing SEO, any content changes. That's Managed Growth, $99/mo. No upfront cost, cancel anytime.
+Then we run it for you — hosting, security, ongoing SEO, any content changes. That's Managed, $249/mo. No upfront cost, cancel anytime.
 
-If a monthly plan isn't for you, we can do a one-time build you host yourself — $497, and then it's on you to maintain."
+If a monthly plan isn't for you, we can do a one-time build you host yourself — $799, and then it's on you to maintain."
 ```
 
 **Handle Objections (1 min):**
@@ -255,8 +255,8 @@ If a monthly plan isn't for you, we can do a one-time build you host yourself �
 ✓ Email open rate: ≥30% (vs. industry 25%)
 ✓ Click rate: ≥12% (vs. industry 8%)  
 ✓ Call booking: ≥20% of opens (vs. industry 10%)
-✓ Close rate on calls: ≥30% (recurring plan; downsell to $497 Ownership if they reject monthly)
-✓ Average first-year value: ~$1,000+ ($99/mo Managed Growth; $497 one-time Ownership on downsell)
+✓ Close rate on calls: ≥30% (recurring plan; downsell to $799 Offboard if they reject monthly)
+✓ Average first-year value: ~$1,000+ ($249/mo Managed; $799 one-time Offboard on downsell)
 
 ---
 

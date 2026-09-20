@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Email Sending System — Ready to Deploy
 
 **Purpose:** Systematize email outreach so you can send personalized emails at scale.
@@ -93,7 +96,7 @@ BuildFlow
 - [ ] `[trade]` — lowercase version for portfolio link (hvac, plumbing, electrical, cleaning)
 - [ ] `[CALENDAR LINK]` — Your Calendly or Google Calendar link
 
-**Real example:**
+**Illustrative example (hypothetical, not a customer result):**
 ```
 Hi Mike,
 
@@ -109,7 +112,7 @@ See what we've built for similar contractors: https://buildflow.com/samples/hvac
 
 5-min call? https://calendly.com/buildflow/sales
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -149,7 +152,7 @@ Here's the reality: Customers search online before calling. If you're not there,
 
 Most contractors lose 40% of potential leads just because they don't have a web presence.
 
-We can fix that in 7 days. We build it, host it, and keep it optimized for $99/mo — cancel anytime.
+We can fix that in 7 days. We build it, host it, and keep it optimized for $249/mo — cancel anytime.
 
 Interested in seeing what we build? [PORTFOLIO LINK]
 
@@ -218,7 +221,7 @@ Tom, Apex Pressure Washing is ranking higher than you on Google
 ```
 | Date | Prospect | Email | Sent | Opened | Clicked | Replied | Reply | Call Booked | Call Date | Closed? | Deal $ | Notes |
 |------|----------|-------|------|--------|---------|---------|-------|-------------|-----------|---------|-------|-------|
-| 9/16 | Mike | mike@... | 9:15a | ? | | ✓ | "Sounds good" | ✓ | 9/18 10am | ✓ | $99/mo | |
+| 9/16 | Mike | mike@... | 9:15a | ? | | ✓ | "Sounds good" | ✓ | 9/18 10am | ✓ | $249/mo | |
 | 9/16 | Sarah | sarah@... | 9:20a | | | | | | | | | No response |
 | 9/16 | David | david@... | 9:25a | ? | ✓ | | | | | | | Clicked link |
 ```
@@ -235,7 +238,7 @@ Tom, Apex Pressure Washing is ranking higher than you on Google
 - `Call Booked` — Did they book a call? (✓ or blank)
 - `Call Date` — When is the call?
 - `Closed?` — Did they buy? (✓ or blank)
-- `Deal $` — Which plan? ($99/mo Managed Growth, or $497 Ownership)
+- `Deal $` — Which plan? ($249/mo Managed, or $799 Offboard)
 - `Notes` — Anything else?
 
 **This data shows:**
@@ -313,7 +316,7 @@ Details: https://buildflow.com/samples
 
 [CALENDAR LINK]
 
-Chase
+Tyler
 ```
 
 ### After Call (Day after call)
@@ -326,11 +329,11 @@ As discussed, here's what we'll build:
 - [Service 3]
 
 Timeline: 7 days to launch
-Plan: $99/mo Managed Growth (we host it and keep it optimized; cancel anytime)
+Plan: $249/mo Managed (we host it and keep it optimized; cancel anytime)
 
 Ready to move forward? Reply with "yes" and I'll get the ball rolling.
 
-Chase
+Tyler
 BuildFlow
 ```
 

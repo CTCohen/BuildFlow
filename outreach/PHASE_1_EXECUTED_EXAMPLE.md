@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **SIMULATION, NOT A REAL RECORD.** This is a fictional worked example. It names a real business and contains invented statements. Never use it publicly or as proof. Kept for reference only (2026-09-18).
+
+
 # Phase 1 Execution — Complete End-to-End Example
 
 **THIS IS REAL EXECUTION** — Not preparation, not templates. An actual worked example showing the entire Phase 1 flow from prospect to close to site build.
@@ -61,7 +64,7 @@ See what we've built for similar HVAC companies: https://buildflow.com/samples/h
 
 5-min call? https://calendly.com/buildflow/sales
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -181,7 +184,7 @@ What to look for:
 
 Reply with feedback. 24-hour turnaround for revisions.
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -222,7 +225,7 @@ Next steps:
 
 Questions? Reply anytime.
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -239,7 +242,7 @@ BuildFlow
 ```
 [Phone rings]
 
-Chase: "Hi Jorge! Thanks so much for jumping on the call. 
+Tyler: "Hi Jorge! Thanks so much for jumping on the call. 
 I know you're busy, so I'll keep this quick. 
 
 We help contractors like you turn their website into a 
@@ -251,7 +254,7 @@ for HVAC + Phoenix lately?"
 
 Jorge: "Not recently. We've been busy."
 
-Chase: "Got it. So here's what I'm noticing with most 
+Tyler: "Got it. So here's what I'm noticing with most 
 contractors I talk to:
 
 Google is where customers find you. Right now, Comfort 
@@ -262,7 +265,7 @@ or calls came directly from your website or Google?"
 
 Jorge: "Honestly, not many. Maybe 1-2 a month."
 
-Chase: "That's actually pretty common. Most contractors 
+Tyler: "That's actually pretty common. Most contractors 
 don't optimize for online leads.
 
 So here's the opportunity: Your website is either missing 
@@ -276,7 +279,7 @@ Have you been interested in doing something like that?"
 
 Jorge: "How much would that cost?"
 
-Chase: "Perfect question. So here's what we do:
+Tyler: "Perfect question. So here's what we do:
 
 We build you a complete, modern website. We get you set up 
 on Google Business and Maps. We add call tracking so you 
@@ -296,7 +299,7 @@ Which sounds better for you?"
 Jorge: "That's actually pretty reasonable. I was expecting 
 more. But $375 seems right. Let's do it."
 
-Chase: "Awesome! Here's what happens next:
+Tyler: "Awesome! Here's what happens next:
 
 I'll send you a contract + timeline.
 
@@ -309,12 +312,12 @@ Sound good?"
 
 Jorge: "Yeah, let's do it."
 
-Chase: "Perfect! Can I get your email real quick? 
+Tyler: "Perfect! Can I get your email real quick? 
 I'll send everything over right now."
 
 Jorge: "Sure, it's jorge@azhvacsolutions.com"
 
-Chase: "Perfect Jorge. I'll get this to you in the next 
+Tyler: "Perfect Jorge. I'll get this to you in the next 
 30 minutes.
 
 You'll get an email from me with the contract and next steps.
@@ -326,7 +329,7 @@ Sound good?"
 
 Jorge: "Sounds great. Thanks!"
 
-Chase: "Awesome. Thanks for the call. Talk soon!"
+Tyler: "Awesome. Thanks for the call. Talk soon!"
 
 [Call ends - 12 minutes total]
 ```

@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** this 7-day manual workflow is now the **fallback and high-touch path**. The spec's fulfillment path (System 06 section 5) is automated: after Stripe confirms payment, the customer record, live site, DNS and SSL, welcome email and dashboard access are created in under 60 seconds from the already-built demo. Use this document when a customer needs a hand-built or custom-intake site. Prices and plan names follow `docs/PRICING.md`.
+
+
 # Site Build Workflow — 7-Day Execution
 
 **Purpose:** Once a customer is closed, use this workflow to build and launch their site in 7 days.
@@ -311,7 +314,7 @@ Days 6-7:
 - Launch & send onboarding (30 min)
 
 Total time investment: ~8-10 hours per site
-Deliverable value: $99/mo recurring per site ($497 one-time on Ownership downsell)
+Deliverable value: $249/mo recurring per site ($799 one-time on Offboard downsell)
 Profit margin: 95%+ (after hosting costs)
 ```
 

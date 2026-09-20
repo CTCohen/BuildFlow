@@ -12,12 +12,15 @@ related:
 - DECISIONS.md
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Phase 1 — First 5 Closes
 
 **Status:** 🟢 READY TO EXECUTE  
 **Timeline:** 9/11–9/30  
 **Target:** 5 closes, $495/mo MRR, 5 sites live  
-**Owner:** Chase (sales), Claude (builds + delivery)
+**Owner:** Tyler (sales), Claude (builds + delivery)
 
 ---
 
@@ -32,7 +35,7 @@ Everything is built and tested. Phase 1 is 6 setup tasks away from launch.
 - ✅ Security hardened, design system consolidated
 
 **What's blocking:**
-- ⏳ Chase: 6 setup blockers (75 minutes of work)
+- ⏳ Tyler: 6 setup blockers (75 minutes of work)
 
 **Next:**
 - Today/tomorrow: Complete blockers
@@ -84,7 +87,7 @@ REVENUE COLLECTED
    - Mon–Fri, 9 AM–5 PM PT
    - Location: Zoom or phone
    - Note: "We'll discuss your current website, competitors, and how BuildFlow can help in 7 days"
-3. Copy public link (e.g., `calendly.com/chase/buildflow-demo`)
+3. Copy public link (e.g., `calendly.com/tyler/buildflow-demo`)
 4. Send to Claude
 
 **Status:** ☐ Not done / ☐ In progress / ☐ Done (link: ___________________)
@@ -98,7 +101,7 @@ REVENUE COLLECTED
 **Why:** Prospects need to see a real business, not a personal Gmail account
 
 **Emails needed:**
-- `chase@buildflow.com` (your personal address, used in outreach)
+- `tyler@buildflow.com` (your personal address, used in outreach)
 - `hello@buildflow.com` (main contact, website footer)
 - `support@buildflow.com` (customer support)
 - `legal@buildflow.com` (legal notices)
@@ -111,7 +114,7 @@ REVENUE COLLECTED
 **Action:**
 1. Choose option above
 2. Set up all 4 emails
-3. Test: Send from `chase@buildflow.com` to yourself
+3. Test: Send from `tyler@buildflow.com` to yourself
 4. Verify it arrives (don't want bounces on prospects)
 5. Confirm ready to Claude
 
@@ -127,17 +130,17 @@ REVENUE COLLECTED
 
 **Products to create:**
 
-1. **BuildFlow Managed Growth (Monthly)**
-   - Name: "BuildFlow Managed Growth"
+1. **BuildFlow Managed (Monthly)**
+   - Name: "BuildFlow Managed"
    - Description: "Professional website + hosting + SEO, managed monthly"
-   - Price: **$99/month** (recurring)
+   - Price: **$249/month** (recurring)
    - Billing interval: Monthly
    - Get checkout link (looks like `https://buy.stripe.com/XXXXX`)
 
-2. **BuildFlow Ownership (One-Time)**
-   - Name: "BuildFlow Ownership"
+2. **BuildFlow Offboard (One-Time)**
+   - Name: "BuildFlow Offboard"
    - Description: "One-time site delivery + 1 month transition support"
-   - Price: **$497 one-time** (non-recurring)
+   - Price: **$799 one-time** (non-recurring)
    - Get checkout link
 
 **Action:**
@@ -149,8 +152,8 @@ REVENUE COLLECTED
 **Status:** ☐ Not done / ☐ In progress / ☐ Done (links collected: ☐)
 
 **Links (send to Claude):**
-- Managed Growth: _________________________
-- Ownership: _________________________
+- Managed: _________________________
+- Offboard: _________________________
 
 ---
 
@@ -206,7 +209,7 @@ REVENUE COLLECTED
 **Why:** Email providers (Gmail, Outlook) flag new accounts as spam. A warm account has higher deliverability.
 
 **Action:**
-1. After setting up `chase@buildflow.com`, send 5–10 test emails to yourself
+1. After setting up `tyler@buildflow.com`, send 5–10 test emails to yourself
    - Subject: "Testing email deliverability"
    - Content: Anything
 2. Wait 24 hours before sending prospect emails
@@ -239,7 +242,7 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 
 ### Critical Path (Must Be Done Before Sending Emails)
 
-**Chase's Setup (B1–B6)**
+**Tyler's Setup (B1–B6)**
 - [ ] B1: Calendly link created and working
 - [ ] B2: Email addresses confirmed working (@buildflow.com)
 - [ ] B3: Stripe checkout links created
@@ -260,7 +263,7 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 - [ ] Calendly shows 30-min slots, correct timezone (PT for Phoenix prospects)
 - [ ] Calendly invitation message mentions BuildFlow + 7-day timeline
 - [ ] 5 prospect emails personalized (not generic)
-- [ ] Email From: address is `chase@buildflow.com`
+- [ ] Email From: address is `tyler@buildflow.com`
 - [ ] Subject lines follow pattern: "[Business], [Competitor] outranks you"
 - [ ] Tracking spreadsheet ready (see REAL_PROSPECTS_READY_TO_SEND.md)
 - [ ] Prospect phone numbers on hand (fallback if emails bounce)
@@ -391,7 +394,7 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 
 ## Sign-Off
 
-**Chase signs off when:**
+**Tyler signs off when:**
 - [ ] All blockers B1–B6 complete
 - [ ] Ready to send emails Monday 9 AM
 
@@ -416,7 +419,7 @@ A: Yes, but Monday is better (more replies Thu–Fri). Tuesday works fine.
 A: Calendly is better (low friction, no back-and-forth). Phone is fallback if Calendly breaks.
 
 **Q: What if a prospect asks to customize their site?**  
-A: Phase 1 is fixed scope. Say: "We build it standard in 7 days. After launch, you can request edits (included with Managed Growth)." This keeps timeline tight.
+A: Phase 1 is fixed scope. Say: "We build it standard in 7 days. After launch, you can request edits (included with Managed)." This keeps timeline tight.
 
 **Q: How many times can I follow up if they don't reply?**  
 A: Phase 1 is one send. If they don't reply in the first week, move on. Phase 2 will have follow-up sequences.

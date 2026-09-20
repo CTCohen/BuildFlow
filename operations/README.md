@@ -37,4 +37,4 @@ How we run BuildFlow day-to-day.
 
 ## Owner
 
-Chase (data collection), Claude (documentation)
+Tyler (data collection), Claude (documentation)

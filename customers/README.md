@@ -42,10 +42,10 @@ customers/
    - Location, years in business
    - Why they signed up
    - What they valued most
-   - Deal terms ($99/mo or $497 one-time)
+   - Tier and deal terms (Micro $149/mo or $499 offboard; SMB $249/mo or $799 offboard)
 3. Add FEEDBACK.md after launch (post-mortem: what went well, what to improve)
 4. Update CASE_STUDIES.md with win summary
 
 ## Owner
 
-Chase (customer relationships), Claude (documentation)
+Tyler (customer relationships), Claude (documentation)

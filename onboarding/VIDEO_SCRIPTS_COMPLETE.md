@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** speaker is Tyler; plan names are Managed and Offboard. Still to write: the Offboard handoff script and a Micro versus SMB dashboard segment (launch plan Step 5). Record after the dashboards exist.
+
+
 # Video Scripts — Complete & Ready to Record
 
 **5 complete video scripts. Read directly into camera. No improvisation needed.**
@@ -20,7 +23,7 @@ phase: operational
 
 **[OPEN WITH CONFIDENT SMILE, LOOK AT CAMERA]**
 
-"Hey, I'm Chase with BuildFlow. Your site just went live, and I want to walk you through what happens next.
+"Hey, I'm Tyler with BuildFlow. Your site just went live, and I want to walk you through what happens next.
 
 Over the next week, I'm going to show you three things: how to set up your Google Business profile—which is where 60% of your new customers will find you—how to add call tracking so you know which calls come from your site, and how to tell your existing customers about the site.
 
@@ -188,7 +191,7 @@ Your site will be live on Day 7.
 
 Let's go.
 
-Chase
+Tyler
 BuildFlow
 ```
 

@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Real Prospects — Ready to Send Tomorrow
 
 **5 real HVAC contractors in Phoenix researched with actual emails and personalized copy.**
@@ -44,7 +47,7 @@ See what we've built for similar HVAC companies: https://buildflow.com/samples/h
 
 5-min call? [CALENDLY_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -80,7 +83,7 @@ See what we've built: https://buildflow.com/samples/hvac
 
 5-min call? [CALENDLY_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -116,7 +119,7 @@ See what we've built: https://buildflow.com/samples/hvac
 
 5-min call? [CALENDLY_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -152,7 +155,7 @@ See what we've built: https://buildflow.com/samples/hvac
 
 5-min call? [CALENDLY_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -188,7 +191,7 @@ See what we've built: https://buildflow.com/samples/hvac
 
 5-min call? [CALENDLY_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 

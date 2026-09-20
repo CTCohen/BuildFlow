@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **SMS cold outreach is OFF at launch** (spec System 07 is email-only; consent-law risk, RECONCILIATION_LOG D33). This file is kept for later; do not send SMS to prospects until Tyler and counsel approve.
+
+
 # SMS Messaging Strategy
 
 **Purpose:** High-converting SMS follow-up sequences for contractor outreach.
@@ -104,7 +107,7 @@ If it's under 5, we can help.
 ```
 [Name], most contractors make back the cost in 2-3 new jobs.
 
-Real example: One HVAC contractor on our $99/mo plan got 2 jobs ($600 each) in month 1.
+Illustrative example (hypothetical, not a customer result): One HVAC contractor on our $249/mo plan got 2 jobs ($600 each) in month 1.
 
 Worth 10 minutes to talk? [Calendar]
 
