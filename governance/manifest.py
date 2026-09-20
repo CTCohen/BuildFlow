@@ -41,7 +41,7 @@ RULES = [
  ("metrics/METRICS.md","R",""), ("metrics/EXECUTION_TRACKER.md","B","on hold"), ("metrics/token-log.md","U","add dollar columns"),
  ("routines/testing.md","R",""), ("routines/pr-review.md","U",""),
  ("operations/README.md","U",""), ("operations/CALENDLY_SETUP_5MIN.md","U",""), ("operations/SITE-BUILD-WORKFLOW.md","U","spec fulfillment path"),
- ("operations/TIER_BUILD_PLAN.md","R",""), ("operations/LOOPS.md","N",""), ("operations/TYLER_QUEUE.md","N",""), ("operations/SPEC-*","S",""),
+ ("operations/TIER_BUILD_PLAN.md","R",""), ("operations/lanes/*","N","parallel lane briefs"), ("operations/LOOPS.md","N",""), ("operations/TYLER_QUEUE.md","N",""), ("operations/SPEC-*","S",""),
  ("phases/PHASE_1.md","B","on hold"), ("phases/PHASE_1_MID_MARKET.md","B","deferred"), ("phases/*","U",""),
  ("outreach/SPEC-*","S",""), ("outreach/PHASE_1_EXECUTED_EXAMPLE.md","B","simulation"), ("outreach/PROSPECT-RESEARCH-TEMPLATE.md","U",""),
  ("outreach/*","B","on hold, re-priced"), ("execution/*","B","simulation"), ("messaging/*","U",""),
