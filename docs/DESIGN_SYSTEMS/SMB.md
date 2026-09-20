@@ -8,6 +8,11 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** this remains the ICP design system and the base for the spec's 10 styling profiles, quad-vertical templates and tier flags
+> (`design/SPEC-04-design-quality.md`). Customer-facing customization is limited to the spec sliders (color, font, spacing, radius) inside a profile; layout stays locked.
+> Launch is English-only. The build timeline below (5-7 days) is superseded by the spec's fulfillment path (under 60 seconds from payment once the demo exists).
+
+
 # Design System — SMB Tier
 
 **Fully built. Professional design system for established contractors and small businesses.**
@@ -98,7 +103,7 @@ Based on business signals:
 
 ---
 
-## Self-Service Dashboard (Managed Growth)
+## Self-Service Dashboard (Managed)
 
 Customers can edit via dashboard:
 - [ ] Business hours
@@ -131,5 +136,5 @@ What they **cannot** change:
 ---
 
 **Status:** FULLY BUILT (launching Phase 1)  
-**Owner:** Claude (implementation), Chase (UX validation)  
+**Owner:** Claude (implementation), Tyler (UX validation)  
 **Last updated:** 2026-09-12

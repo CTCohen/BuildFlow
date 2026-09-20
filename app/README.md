@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** clients now carry `tier` (micro|smb) and `styleProfile` (see `src/data/schema.mjs`); `content.es` is optional (English-only at launch). Scaffold with `npm run new-client -- <slug> <trade> [--tier micro|smb] [--profile <id>] [--es]`. QA takes `--stage demo|live` (demo floor: Lighthouse 80/90/80; live 90). Deploy: static output goes to Cloudflare Pages/R2 (not one Railway service per client); see `docs/tech-stack.md`.
+
+
 # BuildFlow — website generator
 
 One Astro codebase. **One client per build.** Each client is a single JSON file in
@@ -54,5 +57,4 @@ sanity, LLM rubric review. Stubs present in `scripts/qa.mjs`.
 
 ## Deploy (per client, later)
 
-Railway service with `CLIENT=<slug>` + `SITE_URL=<their domain>`, custom domain attached,
-Cloudflare in front. Static output — any static host works.
+Static output (`dist/`) uploaded to Cloudflare Pages/R2 with `CLIENT=<slug>` + `SITE_URL=<their domain>`; custom domains through Cloudflare DNS. Any static host works for Offboard exports.

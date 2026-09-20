@@ -3,31 +3,29 @@ title: Company
 purpose: Documentation for company.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
 
-# Company context — BuildFlow
+# Company context: BuildFlow
 
-**Tagline:** Professional websites on your doorstep.
+**Tagline:** Professional websites on your doorstep. **Positioning:** Your website, your leads and your CRM in one place. Built for trades.
 
-**What we do:** Build finished websites for small service businesses and hand them over —
-as a drop-in replacement for a weak existing site, or as their first web presence.
+**What we do:** an AI-powered outbound sales engine. Agents generate a personalized website for each prospect, email it as a demo, and the site goes live when the prospect says yes.
+We are not a website builder like Wix or Squarespace.
 
-**How it runs:** AI agents do discovery, outreach (email + SMS), and site generation.
-A human (Chase) takes over at the first candidate reply and owns the sell + onboarding.
+**How it runs:** agents handle lead discovery, scoring, design, QA, outreach, CRM sync and dunning. **Tyler** (solo, about 15-20 hrs/week) handles sales calls, escalations and decisions.
 
-**Beachhead:** Service businesses — plumber, HVAC, electrician, roofer, carpenter, house
-cleaning, carpet cleaning, pressure washing, junk removal.
+**Beachhead:** residential and commercial trades: plumbing, HVAC, electrical, roofing. Later: landscaping, cleaning, pest control, automotive, security. First market: Phoenix, then AZ, CA, TX, FL, NY.
 
-**Languages:** English and Spanish, both first-class.
+**Offer:** Micro $149/mo, SMB $249/mo (ICP), Mid-Market $399/mo (paused about 12 months); offboard $499 / $799 / $1,299. See `docs/PRICING.md`.
 
-**Stage:** Pre-first-customer. Goal: 3 free businesses live within the month with all
-automations running smoothly.
+**Language:** English at launch; Spanish is built into the template and comes as an opt-in fast follow.
 
-**Operating principle:** Minimalist. Few moving parts. Remove steps before adding them.
+**Stage:** pre-first-customer. Goal: platform launch, then a soft-launch cohort of real prospects.
+
+**Operating principle:** minimalist and automated. Remove steps before adding them; automate everything that is not a decision.
 
 ## Values / principles
-
-_TBD — add as they solidify._
+_To be written by Tyler as they solidify._

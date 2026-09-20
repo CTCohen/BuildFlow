@@ -1,5 +1,7 @@
 {
   "slug": "demo-hvac-phoenix",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Desert Comfort HVAC",
     "trade": "hvac",

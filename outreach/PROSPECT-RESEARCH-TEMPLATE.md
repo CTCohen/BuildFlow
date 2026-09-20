@@ -185,7 +185,7 @@ See what we built: buildflow.com/samples
 
 5-min call? [CALENDAR_LINK]
 
-Chase
+Tyler
 BuildFlow
 ```
 
@@ -256,7 +256,7 @@ BuildFlow
 
 | Date Sent | Prospect Name | Email | Subject | Opened | Clicked | Replied | Call Booked | Close Date | Deal Size | Notes |
 |-----------|--------------|-------|---------|--------|---------|---------|------------|-----------|-----------|-------|
-| 9/16 | Mike | mike@... | "Mike, AZ HVAC..." | ✓ | ✓ | ✓ | 9/18 | 9/25 | $99/mo | Closed! |
+| 9/16 | Mike | mike@... | "Mike, AZ HVAC..." | ✓ | ✓ | ✓ | 9/18 | 9/25 | $249/mo | Closed! |
 | 9/16 | Sarah | sarah@... | "Sarah, ABC Plumb..." | ✗ | | | | | | Follow up SMS |
 
 **Track in real-time:**

@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **DRAFT for counsel review (2026-09-18).** Aligned to spec System 11 (US-only at launch; GDPR handling applies if EU customers appear). Not to be published until reviewed.
+
+
 # BuildFlow Privacy Policy
 
 **Last Updated:** September 2026
@@ -106,9 +109,11 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 ## 4. Data Retention
 
 **Your Website Content:**
-- Retained as long as your site is active
-- Deleted 30 days after you cancel (30-day grace period to export)
-- Backups kept for 30 days after cancellation, then deleted
+- Retained as long as your subscription is active
+- After you cancel, retained 90 days and then deleted
+- Backups are kept for 30 days
+- Prospect (unconverted lead) records are deleted or anonymized after 12 months
+- Data under a legal hold is kept until the hold ends
 
 **Server Logs & Analytics:**
 - Server logs retained for 90 days, then deleted
@@ -131,8 +136,8 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 
 **Encryption:**
 - All site traffic uses HTTPS (SSL certificate)
-- Data in transit is encrypted (AES-256)
-- Data at rest is encrypted on our servers
+- Data in transit is encrypted with TLS 1.2 or higher
+- Sensitive credentials (for example CRM connection tokens) are encrypted with AES-256; our infrastructure providers also encrypt stored data at rest
 
 **Access Control:**
 - BuildFlow staff access is restricted to authorized personnel only
@@ -142,12 +147,10 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 **Backups:**
 - Daily automated backups of your site
 - Backups are stored on separate secure servers
-- Restore testing performed monthly
 
 **Infrastructure:**
-- Hosted on Railway (SOC 2 Type II certified cloud provider)
-- Cloudflare provides DDoS protection and WAF (Web Application Firewall)
-- Regular security audits and penetration testing
+- Hosted on Cloudflare (sites, DNS, CDN), Supabase (database and authentication) and our backend cloud provider; these providers hold their own security certifications, which are not certifications of BuildFlow
+- Cloudflare provides DDoS protection and a web application firewall
 
 **However:**
 - No security measure is 100% guaranteed
@@ -161,8 +164,9 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 **We Share Data With:**
 
 **Service Providers:**
-- **Railway** (hosting): your site content and visitor data
-- **Cloudflare** (DNS/CDN): domain routing and traffic patterns
+- **Cloudflare** (hosting, DNS, CDN, storage): your site content and visitor data
+- **Supabase** (database and authentication): account and lead data
+- **SendGrid** (email): notices and lead alerts
 - **Stripe** (payments): billing information only
 - **Google Analytics**: visitor analytics (if you enable it)
 
@@ -203,7 +207,7 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 **To Exercise These Rights:**
 - Email: privacy@buildflow.com
 - Subject line: "Data Request" + your name
-- We will respond within 30 days
+- We will respond within 45 days
 - No fee required
 
 ---

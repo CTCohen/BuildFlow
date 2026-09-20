@@ -8,16 +8,18 @@ tier_scope: all
 phase: phase_1
 ---
 
+> **Historical snapshot (2026-09-07).** Current status lives in `ROADMAP.md`, `PROGRESS.md` and `RECONCILIATION_LOG.md`.
+
 # STATUS — 2026-09-07 (overnight build)
 
 ## Done this session
 
 **Decisions locked** (in `docs/`, `CLAUDE.md`):
 - Delivery: one multi-tenant Astro codebase, BuildFlow hosts + maintains, no code handoff.
-- Offer: **B Managed Growth $99/mo** (default, lead offer) · **A Ownership $497 one-time**
+- Offer (then): a two-tier pre-spec offer. **Superseded 2026-09-18** by the spec pricing: see `docs/PRICING.md`.
   (downsell, "you host it", offered only if they reject monthly). Market-researched — see
   `docs/delivery-model.md`.
-- Stack: Astro + Railway + Cloudflare, client data as JSON files, no Anthropic API (Claude Pro).
+- Stack: Astro + Railway + Cloudflare, client data as JSON files, Claude Pro only (superseded: see `docs/tech-stack.md`).
 
 **Built — `app/` (Astro project, one client per build):**
 - Full theme: Base layout (SEO, OpenGraph, canonical, **LocalBusiness JSON-LD**, sitemap,

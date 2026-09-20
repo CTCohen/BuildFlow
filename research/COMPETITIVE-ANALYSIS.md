@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** BuildFlow's own offer and prices are in `docs/PRICING.md` and `sales/POSITIONING.md`. Competitor prices below are market data. The earlier BuildFlow price recommendations in this file ($375 and $595 one-time, monthly as a fallback) are superseded.
+
+
 # Competitive Analysis: Agave + Contractor Web Design Market
 
 **Research Date:** September 2026
@@ -290,17 +293,17 @@ Details: [LINK]"
 - Mid-range: $399-$499 (standard offering, most common)
 - High-end: $699-$999 (premium, includes SEO/support)
 
-**BuildFlow positioning:**
-- Standard: $375 (competitive with mid-range)
-- Pro: $595 (between mid-range and high-end)
-- Justification: Logo-first design + ownership clarity + support
+**BuildFlow positioning (2026-09-18):**
+- Offboard (one-time): $499 Micro, $799 SMB
+- Managed (monthly): $149 Micro, $249 SMB
+- Justification: trade-specific design, built-in accessibility, review aggregation, CRM integration, done-for-you
 
 **Monthly pricing (alternative):**
 - Low-end: $49-$79/mo (full DIY)
 - Mid-range: $99-$149/mo (managed hosting + updates)
 - High-end: $199-$299/mo (managed hosting + marketing)
 
-**BuildFlow decision:** Offer monthly as fallback, not primary.
+**BuildFlow decision (2026-09-18):** Managed is the primary offer; Offboard is offered alongside at conversion.
 
 ---
 

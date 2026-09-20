@@ -1,5 +1,7 @@
 {
   "slug": "roofing-premium",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Precision Roofing & Restoration",
     "trade": "roofing",

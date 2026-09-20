@@ -18,16 +18,46 @@ related: [CLAUDE.md, ROADMAP.md, GOVERNANCE.md]
 **When to update:** Whenever a meaningful decision is made or reversed. Always add new decisions at the top.
 
 **Last updated:** 2026-09-11  
-**Owner:** Chase (final call), Claude (documentation)
+**Owner:** Tyler (final call), Claude (documentation)
 
 ---
 
-## Current Decisions (In Effect)
+
+## Decisions of 2026-09-18 (spec export applied; these override anything below)
+
+Ruled = Tyler decided. Provisional = my recommendation applied, easy to reverse (IDs refer to `RECONCILIATION_LOG.md`).
+
+| # | Decision | Status |
+|---|---|---|
+| 1 | The spec export (19 systems + agent registry) is authoritative over older workspace docs. | Ruled |
+| 2 | Owner is **Tyler**. | Ruled |
+| 3 | Pricing: Micro $149/mo or $499, SMB $249/mo or $799, Mid-Market $399/mo or $1,299; annual = 10x monthly. Prices rise soon after launch; billing keeps versioned price IDs and a launch-cohort flag (D02). | Ruled / provisional |
+| 4 | **Mid-Market paused ~12 months:** shown on the website and pricing, nothing built. | Ruled |
+| 5 | ICP is SMB on the existing design system; Micro templates next. | Ruled |
+| 6 | Demo = the built site plus the tier's dashboard (sandbox). SEO/GEO Layer 1 is in every tier (D26). | Ruled / provisional |
+| 7 | Hosting: static sites on Cloudflare; platform on Supabase; backend containerized on Railway now, Cloud Run later (D10-D12). After conversion, sites move to our hosting or the client's. | Ruled / provisional |
+| 8 | Claude Pro for build and operator work; Claude API only for unattended real-time steps, **capped $30/mo pre-revenue** (D14). | Ruled |
+| 9 | English-only launch; Spanish stays in the template as an opt-in fast follow (D15). | Ruled |
+| 10 | Phase 1 re-baselined to the platform launch; the 5 drafted emails are on hold (D42). | Ruled |
+| 11 | Lead agents and their infrastructure are built together from the start. | Ruled |
+| 12 | One CRM at launch (HubSpot first, D22); Stripe with manual dunning first; Google plus email/password auth; compliance docs plus lawyer review before first charge. | Ruled / provisional |
+| 13 | No hiring until Tyler says (about $150K annual profit) (D06). | Ruled |
+| 14 | Provisional: Offboard replaces Ownership (D04), no free trial (D03), 90-day demos (D30), QA floors 80/90 demo and 90 live (D31), email-only outreach (D33), 24-48 h published support (D37), pre-selected tier (D28). | Provisional |
+| 15 | Orchestration between phases is parked until most of the platform exists; today handoffs run through Tyler and documents. | Ruled |
+| 16 | Open items from System 01 still undecided: spend-approval thresholds, tool sunset policy, CAC/LTV targets, multi-year projections, hire-onboarding budget, remote-hiring policy. | Open |
+
+Risk register: `docs/RISKS.md`. LLM cost plan: `docs/LLM_COST_AND_API_PLAN.md`.
+
+---
+
+## Earlier decisions (pre-spec). Entries marked SUPERSEDED no longer apply.
+
+## Current Decisions (In Effect at the time)
 
 ### Delivery Model: Two-Tier Pricing
 **Date decided:** 2026-09-10  
-**Status:** ✅ ACTIVE  
-**Owner:** Chase  
+**Status:** ❌ SUPERSEDED 2026-09-18 by the spec pricing (decisions 3 and 14 above)  
+**Owner:** Tyler  
 
 **Decision:**
 - **Managed Growth:** $99/month (recurring)
@@ -52,7 +82,7 @@ related: [CLAUDE.md, ROADMAP.md, GOVERNANCE.md]
 ### Design System: One System, Not Two
 **Date decided:** 2026-09-11  
 **Status:** ✅ ACTIVE  
-**Owner:** Claude (architectural), Chase (approved)  
+**Owner:** Claude (architectural), Tyler (approved)  
 
 **Decision:**
 The design system has ONE branch point: **logo-first** (`existing-identity` vs `generated-identity`).
@@ -70,7 +100,7 @@ The design system has ONE branch point: **logo-first** (`existing-identity` vs `
 
 ### QA Gate: 9 Checks (7 Implemented, 2 Deferred)
 **Date decided:** 2026-09-11  
-**Status:** ✅ ACTIVE (MVP)  
+**Status:** ⚠️ PARTLY SUPERSEDED 2026-09-18: keep the checks; thresholds and EN/ES follow the spec (decision 14 above)  
 **Owner:** Claude  
 
 **Decision:**
@@ -97,32 +127,32 @@ Every generated site must pass QA before showing to customer:
 
 ### Sales Model: Human-Driven Close
 **Date decided:** 2026-09-11  
-**Status:** ✅ ACTIVE  
-**Owner:** Chase  
+**Status:** ✅ ACTIVE as the high-touch path (the spec adds a self-serve path)  
+**Owner:** Tyler  
 
 **Decision:**
 - **Discovery (automated):** AI agents find candidate businesses
 - **Outreach (automated):** AI agents send emails at scale
-- **First reply (human):** Chase responds and takes calls
-- **Close (human):** Chase closes the deal, signs them up
+- **First reply (human):** Tyler responds and takes calls
+- **Close (human):** Tyler closes the deal, signs them up
 - **Build & launch (automated):** System generates site, runs QA, hands off
 
 **Why:** AI is great at discovery and outreach (volume). Humans close better (trust, objection handling, customization). Hybrid model scales.
 
-**Impact:** Chase's time is on sales calls Thu–Fri, not on discovery. Everything else automates. Phase 1 target: 5 closes/month at this model.
+**Impact:** Tyler's time is on sales calls Thu–Fri, not on discovery. Everything else automates. Phase 1 target: 5 closes/month at this model.
 
 ---
 
 ### Phase 1 Target: 5 Closes by 9/30
 **Date decided:** 2026-09-11  
-**Status:** 🟢 ON TRACK  
-**Owner:** Chase  
+**Status:** ❌ SUPERSEDED 2026-09-18, re-baselined to the platform launch (decision 10 above)  
+**Owner:** Tyler  
 
 **Decision:**
 Phase 1 = send 5 personalized emails to real prospects, close at least 5 by month-end.
 
 **Roadmap:**
-- **9/11–9/12:** Chase completes setup blockers (Calendly, Stripe, email, domain)
+- **9/11–9/12:** Tyler completes setup blockers (Calendly, Stripe, email, domain)
 - **9/16 9 AM:** Send 5 emails to Phoenix HVAC contractors
 - **9/18–9/19:** Monitor opens/clicks
 - **9/20 (Fri):** Sales calls expected, close 1–2 deals
@@ -160,7 +190,7 @@ Phase 1 = send 5 personalized emails to real prospects, close at least 5 by mont
 
 1. **Identify the choice** — What's the question? What options are there?
 2. **Discuss tradeoffs** — What does each option gain/lose?
-3. **Decide** — Chase (product/go-to-market) or Claude (technical) makes the call
+3. **Decide** — Tyler (product/go-to-market) or Claude (technical) makes the call
 4. **Document** — Add to "Current Decisions" section above with:
    - Date decided
    - Decision (what we're doing)
@@ -177,7 +207,7 @@ Phase 1 = send 5 personalized emails to real prospects, close at least 5 by mont
 
 | Question | Impact | Next Step |
 |----------|--------|-----------|
-| Should we hire a second person for Phase 2? | Cost, scaling velocity | Review after 10 closes |
+| Should we hire a second person? | Cost, scaling velocity | Not until Tyler says (~$150K annual profit) |
 | Which trade vertical next after HVAC? | Go-to-market focus | Market sizing research (Q4) |
 | Should we build design iteration UI? | Feature scope, complexity | MVP feedback from first 5 customers |
 | How do we handle payment failures? | Retention, cash flow | Post-Phase 1 (likely Nov) |

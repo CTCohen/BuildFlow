@@ -8,11 +8,14 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Phone Sales Call Script — Ready to Use
 
 **Purpose:** Close contractor deals over the phone using a proven 12–15 minute script.
 
-**Offer:** Managed Growth — $99/mo (lead with this). Ownership — $497 one-time (downsell only, if they reject a monthly fee).
+**Offer:** Managed — $249/mo (lead with this). Offboard — $799 one-time (downsell only, if they reject a monthly fee).
 
 **Target:** 30–45% close rate on qualified calls (a recurring plan closes a little lower than a one-timer; that's expected).
 
@@ -33,7 +36,7 @@ phase: operational
 2. Have these open:
    - [ ] Portfolio link (buildflow.com/samples/[trade])
    - [ ] Calendly booking link (in case they want to book right then)
-   - [ ] Pricing: **$99/mo Managed Growth** (lead) · **$497 one-time Ownership** (downsell only)
+   - [ ] Pricing: **$249/mo Managed** (lead) · **$799 one-time Offboard** (downsell only)
    - [ ] Stripe subscription checkout link
    - [ ] Objection handlers (from `/messaging/EMAIL-HOOKS-VALIDATED.md`)
 
@@ -129,7 +132,7 @@ We build you a complete, modern website in 7 days. We get you on Google Business
 
 Then we run it for you — hosting, security, the domain, ongoing local SEO, and any content changes you need. You email us 'add a service' or 'new photo' and we just do it. Monthly check-in so it never goes stale.
 
-That's our Managed Growth plan — $99 a month. No big upfront cost, cancel anytime.
+That's our Managed plan — $249 a month. No big upfront cost, cancel anytime.
 
 Think of it as less than one service call a month to have a website that's actually bringing you work — and one you never have to babysit."
 
@@ -143,9 +146,9 @@ Think of it as less than one service call a month to have a website that's actua
 - Price anchored against a service call ("less than one a month")
 - Low friction ("no big upfront cost, cancel anytime")
 
-**Only if they reject a monthly fee outright** → downsell to Ownership:
+**Only if they reject a monthly fee outright** → downsell to Offboard:
 ```
-"Totally fair. There's another way to do it: we build the site, export it, and hand it to you on your own hosting. One-time, $497, and then it's yours to run.
+"Totally fair. There's another way to do it: we build the site, export it, and hand it to you on your own hosting. One-time, $799, and then it's yours to run.
 
 Heads up — after that, updates, hosting, keeping it optimized, that's all on you. Most guys find the monthly plan easier because we handle all of that. But the option's there."
 ```
@@ -154,13 +157,13 @@ Heads up — after that, updates, hosting, keeping it optimized, that's all on y
 
 ### Section 4: Handle Objections (3-5 min)
 
-#### Objection #1: "$99 a month adds up / I don't want another bill"
+#### Objection #1: "$249 a month adds up / I don't want another bill"
 
 ```
 Your response:
 "I hear that. Here's how most of our customers think about it:
 
-One new job from a better website = $400-600 in revenue. The plan is $99. So one extra job every few months and it's paid for the whole year — everything after that is profit.
+One new job from a better website = $400-600 in revenue. The plan is $249 a month. So roughly one extra job every two months covers it — a typical job here is $400-600, and anything beyond that is profit. (Illustrative arithmetic, not a promise of results.)
 
 And you're not just paying for a website file sitting there. You're paying for us to host it, keep it fast, keep it ranking, and make your changes. It's a service, not a one-time build that rots.
 
@@ -195,7 +198,7 @@ Your response:
 
 DIY takes 20-40 hours to build. Then it needs updates, security patches, SEO attention — and that never stops. That's your time, every month, forever.
 
-Our plan: we build it, and then we're the ones keeping it fast, secure, and ranking. $99/mo. You never open a website editor.
+Our plan: we build it, and then we're the ones keeping it fast, secure, and ranking. $249/mo. You never open a website editor.
 
 You focus on the trucks, we focus on the leads. Make sense?"
 ```
@@ -350,7 +353,7 @@ Let me know in the next 24 hours and I'll get you scheduled. Sound fair?"
 ```
 | Date | Name | Trade | City | Call Length | Result | Notes | Plan |
 |------|------|-------|------|------------|--------|-------|------|
-| 9/18 | Mike | HVAC | Phoenix | 12 min | Started | Managed Growth, monthly | $99/mo |
+| 9/18 | Mike | HVAC | Phoenix | 12 min | Started | Managed, monthly | $249/mo |
 | 9/18 | Sarah | Plumbing | Denver | 10 min | Maybe | Needs to check with accountant | — |
 | 9/18 | David | Electrical | Austin | 6 min | No | Already has website | — |
 ```
@@ -359,7 +362,7 @@ Let me know in the next 24 hours and I'll get you scheduled. Sound fair?"
 - Close rate % (started / total calls)
 - Average call length (getting faster = more efficient)
 - Common objections (helps refine pitch)
-- Downsell rate (how often you fall back to $497 Ownership)
+- Downsell rate (how often you fall back to $799 Offboard)
 
 ---
 
@@ -386,7 +389,7 @@ Let me know in the next 24 hours and I'll get you scheduled. Sound fair?"
 
 ✓ **You're helping.** They need this. They're losing leads.
 ✓ **~40% will start.** That's normal for a monthly plan. Most will pass.
-✓ **You set the price.** Don't discount the $99/mo. If they truly can't do monthly, downsell to $497 Ownership — don't cut the monthly rate.
+✓ **You set the price.** Don't discount the $249/mo. If they truly can't do monthly, downsell to $799 Offboard — don't cut the monthly rate.
 ✓ **Speed matters.** "7 days" is a differentiator.
 ✓ **Ongoing is the pitch.** They're not buying a site, they're buying never having to think about it.
 

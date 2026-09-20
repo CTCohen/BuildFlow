@@ -23,10 +23,9 @@ Go-to-market strategy, pitch, and outreach.
 
 ## Current Status (Phase 1)
 
-- 5 real prospects identified (Phoenix HVAC)
-- Emails drafted and ready to send Monday 9 AM
-- Target: 5 closes by 9/30
+- 5 real prospects identified (Phoenix HVAC); emails drafted but **on hold and re-priced** (SMB $249/mo). They become the soft-launch cohort.
+- Phase 1 re-baselined to the platform launch (see `../ROADMAP.md`)
 
 ## Owner
 
-Chase (sales strategy), Claude (documentation, templates)
+Tyler (sales strategy), Claude (documentation, templates)

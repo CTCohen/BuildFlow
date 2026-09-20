@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-1-plumbing-fast-pipes",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Fast Pipes Plumbing",
     "trade": "plumbing",

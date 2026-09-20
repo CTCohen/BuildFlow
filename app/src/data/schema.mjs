@@ -28,6 +28,17 @@ export const HERO_STYLES = ["photo-left", "full-bleed", "split", "accent-bar", "
 export const TYPE_PAIRINGS = ["grotesk-serif", "humanist", "classic"];
 export const DENSITIES = ["compact", "comfortable", "spacious"];
 export const LANGS = ["en", "es"];
+// Launch is English-only (spec). Spanish content is optional and validated only when present.
+export const REQUIRED_LANGS = ["en"];
+
+// Service tier (spec: Micro, SMB, Mid-Market). Mid-Market is paused, so it is accepted but warned.
+export const TIERS = ["micro", "smb", "mid-market"];
+// The 10 spec styling profiles (System 04 section 6); themes map to them in styleProfiles.json.
+export const STYLE_PROFILES = [
+  "professional-service", "modern-minimalist", "cutting-edge-tech", "established-authority",
+  "energetic-bold", "eco-conscious", "luxury-premium", "community-focused",
+  "modern-industrial", "transparent-honest",
+];
 
 // Conditional feature flags
 export const CONDITIONAL_FEATURES = {
@@ -87,6 +98,11 @@ export function validateClient(data) {
   if (!isNonEmptyString(data.slug)) err("slug: required");
   else if (!/^[a-z0-9-]+$/.test(data.slug)) err("slug: lowercase letters, digits, hyphens only");
 
+  // ---- tier and styling profile (spec) ----
+  if (!TIERS.includes(data.tier)) err(`tier: required, one of ${TIERS.join(", ")}`);
+  else if (data.tier === "mid-market") warn("tier: mid-market is paused (not built); use smb or micro");
+  if (!STYLE_PROFILES.includes(data.styleProfile)) err(`styleProfile: required, one of ${STYLE_PROFILES.join(", ")}`);
+
   // ---- business ----
   const b = data.business || {};
   if (!isNonEmptyString(b.name)) err("business.name: required");
@@ -129,7 +145,8 @@ export function validateClient(data) {
     const c = content[lang];
     const p = `content.${lang}`;
     if (!c || typeof c !== "object") {
-      err(`${p}: required (both en and es must be present)`);
+      if (!REQUIRED_LANGS.includes(lang)) continue; // Spanish is optional at launch
+      err(`${p}: required`);
       continue;
     }
     for (const key of ["tagline", "heroHeadline", "heroSub", "primaryCta", "about"]) {

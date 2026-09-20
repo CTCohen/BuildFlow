@@ -1,5 +1,7 @@
 {
   "slug": "sparkle-clean-co",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Sparkle Clean Co.",
     "trade": "house-cleaning",

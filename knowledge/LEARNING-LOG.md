@@ -15,6 +15,18 @@ what to change about *how* we learn. Newest first.
 
 ---
 
+## 2026-09-18 · Spec export applied
+
+**Did:** applied the spec export across the workspace (see `RECONCILIATION_LOG.md`, `docs/specs/APPLICATION_MANIFEST.md`): pricing, owner, roadmap, docs, legal, website, schema and QA thresholds.
+
+**Produced:** the copy-pool idea (generate copy per vertical x service x city x profile, reuse across prospects) and the deterministic-first LLM plan.
+
+**Valuable?** Yes. The manifest plus the stale-term lint turned "did we update everything?" into a check.
+
+**Change for next session:** build the copy pool from these cards before any per-prospect LLM copy; measure real token cost.
+
+---
+
 ## 2026-09-08 · Session 1 — KB v1 draft + graph engineering
 
 **Did:**

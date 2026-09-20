@@ -3,10 +3,22 @@ title: Delivery Model
 purpose: Documentation for delivery-model.md
 status: draft
 owner: c.t.cohen
-updated: '2026-09-12'
+updated: '2026-09-18'
 tier_scope: all
 phase: operational
 ---
+
+# Delivery & ownership model, short form
+
+> Rebuilt 2026-09-18. The full version is [`DELIVERY_MODEL.md`](DELIVERY_MODEL.md); prices are in [`PRICING.md`](PRICING.md).
+
+- **One multi-tenant codebase.** BuildFlow hosts and maintains every Managed site. No code, hosting or DNS is handed over under Managed. No per-client code.
+- **Managed** (default): Micro $149/mo, SMB $249/mo (Mid-Market $399/mo, paused). Annual is 10x monthly.
+- **Offboard** (one-time): Micro $499, SMB $799 (Mid-Market $1,299, paused). The customer takes domain ownership, files and docs; no ongoing support. Hosting, domain and email bills become theirs at handoff, stated in writing.
+- **Go-to-market:** every prospect gets their own demo site and their tier's dashboard preview; the tier is assigned by scoring. Managed is the default; Offboard is offered alongside at conversion.
+- **We promise the machinery, not lead volume.** Copy says "built to capture leads", never "you will get N leads".
+
+## Superseded delivery model (2026-09-07, kept for history)
 
 # Delivery & ownership model — BuildFlow
 

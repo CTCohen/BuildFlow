@@ -1,5 +1,7 @@
 {
   "slug": "bright-spark-electric",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Bright Spark Electric",
     "trade": "electrical",

@@ -7,7 +7,10 @@ applies_to: [managed]
 links: [[content-refresh]] [[local-seo]] [[ai-seo]] [[hvac-phoenix-seasonal]]
 ---
 
-# SOP — managed account, monthly (Package B)
+> **Updated 2026-09-18:** per System 16, monthly optimization (steps 2-3, 5-6) applies to the **SMB** tier; Micro gets the Layer 1 defaults only. Rank tracking (step 2) waits for Layer 3 (deferred until revenue). Run steps only when triggered where possible, to stay inside the LLM budget (`docs/LLM_COST_AND_API_PLAN.md`).
+
+
+# SOP — managed account, monthly (Managed plan)
 
 Runs once per calendar month per managed client. Agent-run; human reviews the report.
 

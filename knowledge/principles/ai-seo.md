@@ -8,6 +8,9 @@ applies_to: [build, seo, managed]
 links: [[local-seo]] [[anti-ai-slop-copy]] [[hvac-schema]]
 ---
 
+> **Updated 2026-09-18:** applied as a Layer 1 default in every tier (see `knowledge/SPEC-16-seo-geo.md`).
+
+
 # AI SEO / GEO
 
 ## Rule

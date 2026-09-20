@@ -1,5 +1,7 @@
 {
   "slug": "az-roofing-summit",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Summit Roofing & Restoration",
     "trade": "roofing",

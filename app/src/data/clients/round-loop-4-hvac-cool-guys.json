@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-4-hvac-cool-guys",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Cool Guys HVAC",
     "trade": "hvac",

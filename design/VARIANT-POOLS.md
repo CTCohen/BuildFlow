@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** these variant pools are Design Agent choices keyed by vertical and profile, not customer-facing options. The customer chooses one of 10 styling profiles (`app/src/data/styleProfiles.json`); layout structure stays locked per the spec. Micro uses a reduced component set; Mid-Market variants are deferred.
+
+
 # Variant Pools — Logo-First Design System
 
 **Purpose:** 8+ variants per category ensure diverse, non-homogeneous site output.

@@ -1,5 +1,7 @@
 {
   "slug": "hvac-solo-operator",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Miguel's HVAC & Emergency Service",
     "trade": "hvac",

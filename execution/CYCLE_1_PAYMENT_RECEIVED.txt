@@ -1,3 +1,5 @@
+> **SIMULATION, NOT A REAL RECORD.** This is a fictional worked example. It names a real business and contains invented statements. Never use it publicly or as proof. Kept for reference only (2026-09-18).
+
 TRANSACTION_ID: stripe_pi_1234567890
 DATE: September 21, 2026
 TIME: 15:45:33 UTC (3:45 PM PT)

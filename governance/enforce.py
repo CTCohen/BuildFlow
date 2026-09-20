@@ -10,6 +10,7 @@ Usage:
   python3 enforce.py --phase learning         # Set enforcement phase
   python3 enforce.py --phase advisory
   python3 enforce.py --phase strict
+  python3 enforce.py --lint                   # stale-term lint only (exit 1 on hits)
 """
 
 import os
@@ -41,6 +42,51 @@ PHASES = {
         'blocks_commits': True
     }
 }
+
+# ============================================================================
+# STALE-TERM LINT (spec reconciliation 2026-09-18)
+# ============================================================================
+
+import re
+
+# Terms retired by the spec export and Tyler's rulings. Content below a "## Superseded" or
+# "## Earlier decisions" heading is history and is not linted.
+STALE_TERMS = [
+    (r"\bChase\b", "owner is Tyler"),
+    (r"\$99\s*(?:/|a |per )\s*mo", "old SMB price; SMB is $249/mo"),
+    (r"\$99/month", "old SMB price; SMB is $249/mo"),
+    (r"\$497\b", "old Ownership price; SMB Offboard is $799"),
+    (r"\$990/y", "old annual price; SMB annual is $2,490/yr"),
+    (r"Managed Growth", "plan is named Managed"),
+    (r"\bOwnership (?:plan|pricing|package)\b", "plan is named Offboard"),
+    (r"no Anthropic API", "Claude API is allowed, capped, for unattended real-time steps"),
+]
+LINT_EXEMPT = ("archive/", "node_modules/", ".git/", "RECONCILIATION_LOG.md", "IMPLEMENTATION_ROADMAP.md",
+               "docs/specs/", "docs/PRICING_STRATEGY_RESEARCH.md", "research/", "governance/", "dist/", ".astro/", "app/src/data/clients/")
+LINT_EXTS = (".md", ".astro", ".txt", ".html", ".toml", ".mjs", ".ts")
+
+def lint_stale_terms(workspace_root: str) -> list:
+    """Return [(path, line_no, term, hint)] for retired terms found outside history sections."""
+    hits = []
+    root = Path(workspace_root)
+    for path in root.rglob("*"):
+        if not path.is_file() or path.suffix not in LINT_EXTS:
+            continue
+        rel = str(path.relative_to(root))
+        if any(rel.startswith(e) or f"/{e}" in f"/{rel}" for e in LINT_EXEMPT) or "SPEC-" in rel or rel in ("docs/01-business-operations-system.md", "docs/BUSINESS_MODEL.md", "specs/05-feature-system.md", "agents/AGENT_REGISTRY.md"):
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        m = re.search(r"^## (?:Superseded|Earlier decisions)", text, re.M)
+        if m:
+            text = text[:m.start()]
+        for i, line in enumerate(text.splitlines(), 1):
+            for pat, hint in STALE_TERMS:
+                if re.search(pat, line):
+                    hits.append((rel, i, pat, hint))
+    return hits
 
 # ============================================================================
 # ENFORCEMENT LOGIC
@@ -175,6 +221,15 @@ def run_enforcement_cycle(workspace_root: str):
     print(f"   Phase: {phase.upper()} — {PHASES[phase]['description']}")
     print(f"   Workspace: {workspace_root}")
 
+    # Step 0: Stale-term lint (all phases; reported, never blocks a learning-phase run)
+    stale = lint_stale_terms(workspace_root)
+    if stale:
+        print(f"\n⚠️  Stale-term lint: {len(stale)} hit(s)")
+        for rel, line, pat, hint in stale[:25]:
+            print(f"   • {rel}:{line}  ({hint})")
+    else:
+        print("\n✅ Stale-term lint: clean")
+
     # Step 1: Audit
     audit_result = run_audit(workspace_root)
     if not audit_result:
@@ -217,6 +272,13 @@ def run_enforcement_cycle(workspace_root: str):
 
 def main():
     workspace_root = os.getcwd()
+
+    if len(sys.argv) > 1 and sys.argv[1] == '--lint':
+        hits = lint_stale_terms(workspace_root)
+        for rel, line, pat, hint in hits:
+            print(f"{rel}:{line}: {hint}")
+        print(f"{len(hits)} stale-term hit(s)")
+        sys.exit(1 if hits else 0)
 
     if len(sys.argv) > 1 and sys.argv[1] == '--phase':
         if len(sys.argv) < 3:

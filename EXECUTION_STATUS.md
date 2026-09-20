@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **ON HOLD (2026-09-18):** re-priced to the spec pricing (SMB $249/mo, offboard $799). Do not send or use this until Tyler approves the updated copy. Phase 1 was re-baselined to the platform launch; see `ROADMAP.md` and `RECONCILIATION_LOG.md` (D42).
+
+
 # Phase 1 Execution Status — Live Dashboard
 
 > Real-time tracking of Phase 1 progress from today through revenue generation.
@@ -24,10 +27,10 @@ phase: operational
 - ✅ 5 real prospects identified with personalized outreach emails
 - ✅ Automated QA gate operational and passing all tests
 - ✅ Deployment infrastructure in place on Railway
-- 🔴 **Waiting on:** Chase to complete 6 setup blockers (B1–B6)
+- 🔴 **Waiting on:** Tyler to complete 6 setup blockers (B1–B6)
 
 **Timeline:**
-- **Today/Tomorrow (9/11–9/12):** Chase completes blockers B1–B6
+- **Today/Tomorrow (9/11–9/12):** Tyler completes blockers B1–B6
 - **Monday 9 AM (9/16):** Send 5 prospect emails
 - **Wed–Thu (9/18–9/19):** Prospect opens/clicks (automated tracking)
 - **Friday (9/20):** Calls expected; closing conversations
@@ -54,7 +57,7 @@ phase: operational
 
 ### Website & Landing Page
 - ✅ BuildFlow.com landing page built (Astro, responsive, fast)
-- ✅ Pricing section with two clear offers ($99/mo Managed Growth, $497 Ownership)
+- ✅ Pricing section with two clear offers ($249/mo Managed, $799 Offboard)
 - ✅ Sample portfolio pages (HVAC, Plumbing, Cleaning)
 - ✅ Legal pages (Terms of Service, Privacy Policy, Security Statement)
 - ✅ All pages EN/ES ready (translations in place)
@@ -95,10 +98,10 @@ phase: operational
 - ✅ Terms of Service drafted (pricing, uptime SLA, cancellation policy)
 - ✅ Privacy Policy drafted (GDPR-aligned, data retention clear)
 - ✅ Security Statement drafted (encryption, backups, breach notification)
-- ✅ Placeholder for business address (needs B5 from Chase)
+- ✅ Placeholder for business address (needs B5 from Tyler)
 
 ### Business Model & Positioning
-- ✅ Delivery model finalized: Managed Growth ($99/mo) + Ownership ($497 one-time)
+- ✅ Delivery model finalized: Managed ($249/mo) + Offboard ($799 one-time)
 - ✅ Pricing rationale documented with market research
 - ✅ Competitive analysis complete (vs Wix, Squarespace, local agencies)
 - ✅ Sales messaging aligned across outreach + website
@@ -106,19 +109,19 @@ phase: operational
 
 ---
 
-## What's Blocked (🔴 Waiting on Chase)
+## What's Blocked (🔴 Waiting on Tyler)
 
 ### B1: Calendly Link (⏱️ 15 min)
 - **Status:** ☐ Not started
 - **Blocker for:** Phase 1 email send (Monday 9 AM)
-- **Action:** Chase creates Calendly account + 30-min call slot
-- **Output:** Calendly link (e.g., `calendly.com/chase/buildflow-demo`)
+- **Action:** Tyler creates Calendly account + 30-min call slot
+- **Output:** Calendly link (e.g., `calendly.com/tyler/buildflow-demo`)
 - **Impact:** Without this, prospects can't book calls
 
 ### B2: Business Email Addresses (⏱️ 30 min)
 - **Status:** ☐ Not started
 - **Blocker for:** Outreach email delivery (Monday 9 AM)
-- **Action:** Set up `chase@buildflow.com`, `hello@buildflow.com`, `support@buildflow.com`
+- **Action:** Set up `tyler@buildflow.com`, `hello@buildflow.com`, `support@buildflow.com`
 - **Output:** 3 working email addresses
 - **Impact:** Emails from personal Gmail look unprofessional; prospects trust @buildflow.com
 
@@ -126,8 +129,8 @@ phase: operational
 - **Status:** ☐ Not started
 - **Blocker for:** Sales close → payment collection
 - **Action:** Create 2 Stripe products with checkout links
-  1. Managed Growth ($99/mo recurring)
-  2. Ownership ($497 one-time)
+  1. Managed ($249/mo recurring)
+  2. Offboard ($799 one-time)
 - **Output:** 2 Stripe checkout URLs
 - **Impact:** Can't collect payment without working Stripe links
 
@@ -154,11 +157,11 @@ phase: operational
 
 ## What Claude Needs to Do (Next Steps)
 
-### Immediately (Once Chase Provides Blockers)
-1. **Update prospect emails** — Replace `[CALENDLY_LINK]` with Chase's actual link (B1)
+### Immediately (Once Tyler Provides Blockers)
+1. **Update prospect emails** — Replace `[CALENDLY_LINK]` with Tyler's actual link (B1)
 2. **Update website pricing buttons** — Replace `mailto:` placeholders with Stripe checkout URLs (B3)
 3. **Fill in Terms §16** — Add business address (B5)
-4. **Confirm email sender** — Use `chase@buildflow.com` for outreach (B2)
+4. **Confirm email sender** — Use `tyler@buildflow.com` for outreach (B2)
 
 ### In Parallel
 1. **Deploy website to Railway** — Point `buildflow.com` custom domain once B4 confirmed
@@ -177,7 +180,7 @@ phase: operational
 
 ```
 TODAY (9/11)
-├─ Chase: Complete B1–B6 blockers ──→ Claude: Update emails/website
+├─ Tyler: Complete B1–B6 blockers ──→ Claude: Update emails/website
 ├─ Claude: Deploy website to Railway (doesn't depend on B1–B6)
 └─ Claude: Prepare build pipeline
 
@@ -187,7 +190,7 @@ TOMORROW (9/12)
 └─ Verify: No placeholders remain
 
 MONDAY 9 AM (9/16)
-├─ Chase: Send 5 emails (spaced 2–3 min apart)
+├─ Tyler: Send 5 emails (spaced 2–3 min apart)
 └─ Claude: Monitor for bounces, adjust if needed
 
 WED–THU (9/18–9/19)
@@ -196,18 +199,18 @@ WED–THU (9/18–9/19)
 
 FRIDAY (9/20)
 ├─ Prospects: Call to book Calendly slots
-├─ Chase: Take calls, run sales conversation
+├─ Tyler: Take calls, run sales conversation
 └─ Claude: Prepare site-build pipeline for closeouts
 
 FRI–MON (9/20–9/23)
-├─ Chase: Close 1–2 deals + collect customer info
+├─ Tyler: Close 1–2 deals + collect customer info
 ├─ Claude: Build 1–2 customer sites, run QA
 └─ Claude: Generate preview links for approval
 
 MON–FRI (9/23–9/27)
 ├─ Customers: Review/approve sites
 ├─ Claude: Launch approved sites live
-└─ Chase: Collect Stripe payment + start onboarding
+└─ Tyler: Collect Stripe payment + start onboarding
 
 TARGET: 5 closes + revenue flowing by 9/30
 ```
@@ -262,7 +265,7 @@ TARGET: 5 closes + revenue flowing by 9/30
 
 ---
 
-## How to Unblock Phase 1 (Chase's Checklist)
+## How to Unblock Phase 1 (Tyler's Checklist)
 
 1. ☐ **B1: Calendly** (15 min) — Create account + meeting link
 2. ☐ **B2: Email** (30 min) — Set up @buildflow.com addresses
@@ -288,7 +291,7 @@ Once done, email Claude with:
 ## How Claude Will Execute (Once Unblocked)
 
 1. ✅ Update `/BuildFlow/outreach/REAL_PROSPECTS_READY_TO_SEND.md`
-   - Replace all `[CALENDLY_LINK]` with Chase's link
+   - Replace all `[CALENDLY_LINK]` with Tyler's link
 2. ✅ Update `/BuildFlow/website/src/pages/index.astro`
    - Replace email buttons with Stripe checkout links
 3. ✅ Update `/BuildFlow/legal/TERMS_OF_SERVICE.md`
@@ -333,7 +336,7 @@ Once done, email Claude with:
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `/BuildFlow/PHASE_1_EXECUTION_SETUP.md` | Chase's blockers checklist | ✅ Ready |
+| `/BuildFlow/PHASE_1_EXECUTION_SETUP.md` | Tyler's blockers checklist | ✅ Ready |
 | `/BuildFlow/EXECUTION_VARIABLES_TEMPLATE.md` | Claude's update checklist | ✅ Ready |
 | `/BuildFlow/EXECUTION_STATUS.md` | This file — live dashboard | ✅ Live |
 | `/BuildFlow/outreach/REAL_PROSPECTS_READY_TO_SEND.md` | 5 drafted emails (needs B1) | ⏳ Waiting |
@@ -344,7 +347,7 @@ Once done, email Claude with:
 
 ## Conclusion
 
-**Phase 1 is operationally ready.** The only blockers are account setup tasks that only Chase can do. The moment those 6 blockers are complete (75 minutes of work), Claude can update everything in 30 minutes, and the first 5 prospect emails go out Monday 9 AM.
+**Phase 1 is operationally ready.** The only blockers are account setup tasks that only Tyler can do. The moment those 6 blockers are complete (75 minutes of work), Claude can update everything in 30 minutes, and the first 5 prospect emails go out Monday 9 AM.
 
 **No product work remains. No code changes required. The pipeline is locked, tested, and ready to run.**
 
@@ -356,5 +359,5 @@ Track progress in the spreadsheet in `REAL_PROSPECTS_READY_TO_SEND.md`. Monitor 
 
 **This file:** `/BuildFlow/EXECUTION_STATUS.md`  
 **Last updated:** 2026-09-11  
-**Next update:** After Chase completes blockers B1–B6  
+**Next update:** After Tyler completes blockers B1–B6  
 **Status:** 🟢 READY TO EXECUTE

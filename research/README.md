@@ -32,4 +32,4 @@ Market, competitive, and customer research.
 
 ## Owner
 
-Claude (research), Chase (validation)
+Claude (research), Tyler (validation)

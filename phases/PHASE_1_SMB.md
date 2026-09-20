@@ -10,16 +10,13 @@ phase: operational
 
 # Phase 1 — SMB Tier Launch
 
-**Status:** 🟢 READY TO EXECUTE
+**Status:** SMB is the ICP and the first tier being built on the platform.
 
-**This is our current Phase 1.** Send 5 SMB-tier emails, close 5 SMB deals, launch 5 SMB sites.
+The original plan (send 5 SMB emails, close 5 by 9/30 at the old price) is **on hold and re-baselined** to the platform launch (RECONCILIATION_LOG D42). See `../ROADMAP.md`; the 5 Phoenix HVAC prospects become the soft-launch cohort, re-priced at SMB $249/mo.
 
-See: [../phases/PHASE_1.md](../PHASE_1.md) for full execution plan.
-
-**Timeline:** 9/16–9/30  
-**Target:** 5 closes, $495/mo MRR
+**Target:** soft launch ~2026-11-23
 
 ---
 
-**Status:** FULLY BUILT (launching Mon 9/16)  
-**Owner:** Chase (sales), Claude (delivery)
+**Status:** design system built; platform in progress  
+**Owner:** Tyler (sales), Claude (delivery)

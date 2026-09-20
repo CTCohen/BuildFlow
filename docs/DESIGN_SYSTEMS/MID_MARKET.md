@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **DEFERRED ~12 months (Tyler, 2026-09-18).** Mid-Market is shown on the website and pricing but nothing is being built for it now. Kept as a future reference.
+
+
 # Design System — Mid-Market Tier
 
 **Stub: Full white-label design system for enterprises and large businesses.**
@@ -117,4 +120,4 @@ At $299/mo (or $1,497 one-time), this tier includes:
 ---
 
 **Status:** STUB (ready to build when Phase 3 launches Mid-market tier)  
-**Owner:** Claude (implementation), Chase (sales strategy)
+**Owner:** Claude (implementation), Tyler (sales strategy)

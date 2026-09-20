@@ -8,9 +8,12 @@ tier_scope: all
 phase: operational
 ---
 
+> **DEFERRED ~12 months (Tyler, 2026-09-18).** Mid-Market is shown on the website and pricing but nothing is being built for it now. Kept as a future reference.
+
+
 # Phase 1 — Mid-Market Tier Launch (Future)
 
-**Stub: Plan for launching Mid-market tier in Phase 3 (Nov+).**
+**Stub, deferred about 12 months (Tyler, 2026-09-18).** Revisit when SMB and Micro are stable.
 
 ---
 
@@ -27,10 +30,10 @@ phase: operational
 
 - Should we do targeted outreach or wait for inbound demand?
 - What's the sales cycle for Mid-market (likely 2–4 weeks vs. 3–5 days for SMB)?
-- Who handles Mid-market sales (Chase, or do we hire)?
+- Who handles Mid-market sales? Not before Tyler decides to hire (about $150K annual profit).
 - What integrations are table stakes for Mid-market?
 
 ---
 
 **Status:** STUB (ready to plan in Nov)  
-**Owner:** Chase (strategy), Claude (execution)
+**Owner:** Tyler (strategy), Claude (execution)

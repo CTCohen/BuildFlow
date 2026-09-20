@@ -6,10 +6,10 @@ import FAQ from "../../components/FAQ.astro";
 import { client, t } from "../../lib/client";
 
 export function getStaticPaths() {
-  const langs = ["en", "es"] as const;
+  const langs = (Object.keys(client.content) as ("en" | "es")[]).filter((l) => client.content[l]);
   const paths = [];
   for (const lang of langs) {
-    const content = client.content[lang];
+    const content = client.content[lang]!;
     for (const service of content.services) {
       paths.push({
         params: { slug: service.slug || service.name.toLowerCase().replace(/[^\w]+/g, "-") },

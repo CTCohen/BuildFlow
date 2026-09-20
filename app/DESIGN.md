@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18 (spec reconciliation):** see `design/SPEC-04-design-quality.md`. Tiers: Micro and SMB are built (Mid-Market deferred); the customer-facing choice is one of 10 styling profiles (`src/data/styleProfiles.json`, mapping the 32 themes) and the hero, services and testimonial variants stay Design Agent choices keyed by vertical. Launch is **English-only** (Spanish is optional per client). QA floors: demo Lighthouse 80+ / accessibility 90+ / axe clean; live 90+; the stricter numbers in this file remain design targets. Logo-first is the Discovery Agent's `existing-identity` / `generated-identity` branch.
+
+
 # DESIGN.md — BuildFlow house style
 
 Read this before generating or editing any site. The goal: every site feels like a real,
@@ -63,5 +66,5 @@ Never fork a client. If it keeps coming up, it's a roadmap item.
 
 - Real photography pipeline (hero + team). Right now heroes are brand-tinted gradients.
 - Self-hosted fonts per `typePairing` (currently system stack).
-- EN/ES routing (data holds both languages; only EN routes are wired).
+- Spanish is opt-in per client (English-only at launch); revisit routing when a client opts in.
 - `references/` needs 8–12 bar-setting screenshots added.

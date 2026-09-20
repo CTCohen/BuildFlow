@@ -8,6 +8,9 @@ tier_scope: all
 phase: operational
 ---
 
+> **Updated 2026-09-18:** the Calendly link is for the **high-touch path** (prospect replies, Tyler takes the call). The self-serve path (demo to Stripe checkout) needs no call. Do this in Phase 0 so outreach templates have a working link.
+
+
 # Calendly Setup — 5 Minutes
 
 **Do this TODAY so your emails have a working link.**

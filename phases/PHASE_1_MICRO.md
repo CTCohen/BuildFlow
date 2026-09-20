@@ -8,18 +8,18 @@ tier_scope: all
 phase: operational
 ---
 
-# Phase 1 — Micro Tier Launch (Future)
+# Phase 1 — Micro Tier Launch
 
-**Stub: Plan for launching Micro tier in Phase 2 (Oct).**
+**Plan: Micro is built right after the SMB templates and dashboard (see `../docs/DESIGN_SYSTEMS/MICRO.md`). Launch scope includes Micro.**
 
 ---
 
 ## Approach
 
-1. Validate SMB demand and CAC (Phase 1)
-2. Design Micro tier (September)
-3. Build Micro sites in parallel with SMB (late September)
-4. Launch Phase 1 Micro (October) with 5+ micro closes
+1. Build the SMB template and dashboard first.
+2. Add the Micro reduced component set and lead-inbox dashboard behind the tier flag.
+3. Include Micro in the soft-launch cohort once QA and legal are ready.
+4. Validate Micro CAC and churn before scaling.
 
 ---
 
@@ -33,4 +33,4 @@ phase: operational
 ---
 
 **Status:** STUB (ready to plan in Oct)  
-**Owner:** Chase (strategy), Claude (execution)
+**Owner:** Tyler (strategy), Claude (execution)

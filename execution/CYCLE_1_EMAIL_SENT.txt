@@ -1,4 +1,6 @@
-FROM: chase@buildflow.com
+> **SIMULATION, NOT A REAL RECORD.** This is a fictional worked example. It names a real business and contains invented statements. Never use it publicly or as proof. Kept for reference only (2026-09-18).
+
+FROM: tyler@buildflow.com
 TO: contact@glendaleheatingcooling.com
 DATE: September 16, 2026 09:02:17 UTC
 SUBJECT: Glendale Heating, Comfort Systems USA is outranking you on Google
@@ -22,7 +24,7 @@ See what we've built for similar HVAC companies: https://buildflow.com/samples/h
 
 5-min call? https://calendly.com/buildflow/sales
 
-Chase
+Tyler
 BuildFlow
 
 ---

@@ -1,5 +1,7 @@
 {
   "slug": "round-loop-2-hvac-expert-climate",
+  "tier": "smb",
+  "styleProfile": "professional-service",
   "business": {
     "name": "Expert Climate HVAC",
     "trade": "hvac",
