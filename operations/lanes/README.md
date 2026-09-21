@@ -19,7 +19,12 @@ Each lane is one Claude session working in its own copy of the repo (a git workt
 | A. Foundation | `lane/foundation` | `~/BuildFlow-lanes/foundation` | `LANE-A-foundation.md` | `platform/` |
 | B. Design engine | `lane/design` | `~/BuildFlow-lanes/design` | `LANE-B-design.md` | `app/`, `design/`, `agents/design/` |
 | C. Lead engine | `lane/lead` | `~/BuildFlow-lanes/lead` | `LANE-C-lead.md` | `agents/lead/`, `outreach/`, `messaging/` |
-Later lanes (start after A's contract and Tyler's Stripe test account): D. Billing and fulfillment (`billing/`), E. CRM (`crm/`), F. Dashboards (`platform/dashboards/`), G. Content (`knowledge/`), H. Public side (`website/`, `onboarding/`).
+| D. Content (light) | `lane/content` | created when it starts | `LANE-D-content.md` | `knowledge/` |
+| E. Public side (light) | `lane/public` | created when it starts | `LANE-E-public.md` | `website/`, `onboarding/` |
+| F. Billing and fulfillment | `lane/billing` | created when it starts | `LANE-F-billing.md` | `billing/` |
+| G. CRM | `lane/crm` | created when it starts | `LANE-G-crm.md` | `crm/` |
+| H. Dashboards | `lane/dashboards` | created when it starts | `LANE-H-dashboards.md` | `platform/dashboards/` |
+I. Integration and QA is the main session (root and `metrics/`). The week-by-week schedule and gates are in `ROADMAP.md`.
 
 ## Rules
 1. **Stay in your folders.** Do not edit another lane's folders or the root docs (`ROADMAP.md`, `DECISIONS.md`, `CLAUDE.md`). If you need a change there, write it in your status file and Tyler's main session applies it.
