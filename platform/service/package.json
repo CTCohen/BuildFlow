@@ -1,0 +1,12 @@
+{
+  "name": "buildflow-platform-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Platform service skeleton: health endpoint now, API and jobs later. Runs on Railway now, Cloud Run later.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test ../monitoring/ ./"
+  },
+  "engines": { "node": ">=20" }
+}
