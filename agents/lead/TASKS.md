@@ -12,7 +12,7 @@ related: [operations/lanes/LANE-C-lead.md, outreach/SPEC-07-lead-to-customer-pip
 
 # Lane C tasks
 
-Run everything: `python3 -m agents.lead.run_evals` (stdlib only, Python 3.9+; no keys, no network, no LLM).
+Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Python 3.14; no keys, no network, no LLM).
 
 | # | Task | Status | Where |
 |---|---|---|---|
