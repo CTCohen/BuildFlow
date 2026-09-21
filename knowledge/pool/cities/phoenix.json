@@ -1,0 +1,35 @@
+{
+  "metro": "Phoenix",
+  "state": "AZ",
+  "status": "draft-unverified",
+  "note": "General context for copy. Each fact must be verified before use on a client site.",
+  "cities": [
+    "Phoenix",
+    "Scottsdale",
+    "Mesa",
+    "Tempe",
+    "Chandler",
+    "Gilbert",
+    "Glendale",
+    "Peoria",
+    "Surprise",
+    "Goodyear"
+  ],
+  "facts": [
+    {
+      "id": "cooling-season",
+      "text": "Cooling demand runs long, roughly May through October, with summer highs regularly above 110 degrees Fahrenheit.",
+      "verified": false
+    },
+    {
+      "id": "monsoon",
+      "text": "Monsoon season, roughly June to September, brings dust, high winds, and sudden storms.",
+      "verified": false
+    },
+    {
+      "id": "hard-water",
+      "text": "Water in much of the Phoenix area is hard, which leaves scale that can shorten the life of water heaters and fixtures.",
+      "verified": false
+    }
+  ]
+}

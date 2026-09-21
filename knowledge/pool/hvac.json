@@ -1,0 +1,384 @@
+{
+  "vertical": "hvac",
+  "version": 1,
+  "status": "draft",
+  "note": "Draft. Merge fields are filled at build time. Claims tagged 'requires' are used only when the business confirms them. Educational answers are general and unverified against local code; review before relying on them.",
+  "services": [
+    {
+      "id": "ac-repair",
+      "name": "AC repair",
+      "symptoms": [
+        "Warm air from the vents",
+        "Unit runs but the house will not cool",
+        "Ice on the coil or refrigerant lines",
+        "Breaker keeps tripping",
+        "Loud buzzing or grinding"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "{city} AC repair, done right the first time"
+        },
+        {
+          "tone": "urgent",
+          "text": "AC not cooling in {city}? Call {business}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "A clear diagnosis before any repair in {city}"
+        },
+        {
+          "tone": "direct",
+          "text": "AC repair in {city}. Call {phone}"
+        },
+        {
+          "tone": "friendly",
+          "text": "Let {business} get your {city} home cool again"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} finds the cause of the problem, explains it plainly, and quotes before starting work."
+        },
+        {
+          "tone": "urgent",
+          "text": "Call {phone} and describe what your AC is doing. {business} serves {areas}."
+        }
+      ],
+      "blurb": "Warm air, short cycling, ice on the lines, or a tripped breaker: we find out why and fix it.",
+      "directAnswer": "{business} repairs air conditioners across {areas}. Most cooling problems come from a few causes: a dirty filter, low refrigerant, a failed capacitor, or a control fault. A technician finds which one, explains the repair, and quotes it before work begins. Call {phone}.",
+      "process": [
+        "Diagnose the cause with a full system check",
+        "Explain what failed and what the repair involves",
+        "Quote the repair before starting work",
+        "Fix it and confirm the system cools"
+      ],
+      "faq": [
+        {
+          "q": "Why is my AC blowing warm air?",
+          "a": "Common causes include a dirty air filter, low refrigerant from a leak, a failed capacitor or compressor, or a thermostat setting. Refrigerant is regulated, so low refrigerant needs a certified technician rather than a top-off from a kit."
+        },
+        {
+          "q": "Should I keep running an AC that has ice on it?",
+          "a": "No. Turn the system off and let the ice melt. Running it while frozen can damage the compressor. Then call a technician to find out why it froze."
+        },
+        {
+          "q": "How often should I change my air filter?",
+          "a": "Many manufacturers suggest every one to three months, depending on the filter type, pets, and dust. A clogged filter is one of the most common causes of poor cooling."
+        }
+      ]
+    },
+    {
+      "id": "ac-installation",
+      "name": "AC installation and replacement",
+      "symptoms": [
+        "System is 10 to 15 years old or older",
+        "Repairs keep adding up",
+        "Uneven cooling between rooms",
+        "Cooling bills keep rising",
+        "Refrigerant type is being phased out"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "AC replacement in {city}, sized to your home"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Thinking about a new AC? Get a straight answer from {business}"
+        },
+        {
+          "tone": "premium",
+          "text": "A properly sized AC system for your {city} home"
+        },
+        {
+          "tone": "direct",
+          "text": "New AC installation in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} measures your home, sizes the system correctly, and installs it to the manufacturer's specifications."
+        },
+        {
+          "tone": "reassuring",
+          "text": "Compare repair against replacement with a clear cost picture before you decide."
+        }
+      ],
+      "blurb": "When repairs stop making sense, we size and install the right system for your home.",
+      "directAnswer": "{business} installs replacement air conditioners across {areas}. Sizing matters: a system that is too large or too small wastes energy and cools poorly. We calculate your home's cooling load, explain your options, and install the system to the manufacturer's specifications. Call {phone}.",
+      "process": [
+        "Measure the home and calculate the cooling load",
+        "Present options and explain the differences",
+        "Install to manufacturer specifications",
+        "Test, explain the controls, and register the warranty"
+      ],
+      "faq": [
+        {
+          "q": "How long does an air conditioner last?",
+          "a": "Often 10 to 15 years, and heavy use in a hot climate can shorten that. Age, repair history, and efficiency all matter when deciding between repair and replacement."
+        },
+        {
+          "q": "Why does system size matter?",
+          "a": "An oversized system cycles on and off too quickly and removes humidity poorly. An undersized one runs constantly and cannot keep up. A load calculation sizes it to the home."
+        },
+        {
+          "q": "Do I need a permit for a new AC?",
+          "a": "Many cities require a permit for replacing an air conditioner. A licensed contractor normally handles it. Ask {business} what applies in {city}."
+        }
+      ]
+    },
+    {
+      "id": "heating-repair",
+      "name": "Heating repair",
+      "symptoms": [
+        "No heat",
+        "Furnace will not ignite",
+        "Heat runs but the house stays cold",
+        "Strange smells or noises",
+        "Thermostat does not respond"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "No heat in {city}? Call {business}"
+        },
+        {
+          "tone": "practical",
+          "text": "Furnace and heating repair in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "A clear diagnosis for your heating problem"
+        },
+        {
+          "tone": "direct",
+          "text": "Heating repair in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} finds why your heat stopped, explains the repair, and quotes it before starting."
+        },
+        {
+          "tone": "friendly",
+          "text": "Cold house? Call {phone} and tell us what you are seeing."
+        }
+      ],
+      "blurb": "No heat, a furnace that will not ignite, or a system that runs but does not warm: we diagnose and repair it.",
+      "directAnswer": "{business} repairs furnaces and heat pumps across {areas}. Heating problems usually trace to ignition or a dirty flame sensor, a failed thermostat, airflow restrictions, or a control fault. A technician finds the cause, explains it, and quotes the repair before work begins. If you smell gas, leave the home and call your gas utility or 911 first.",
+      "process": [
+        "Check thermostat, power, and airflow",
+        "Test ignition, safety controls, and combustion",
+        "Explain the cause and quote the repair",
+        "Repair and confirm safe operation"
+      ],
+      "faq": [
+        {
+          "q": "What should I do if I smell gas?",
+          "a": "Leave the home right away, do not use switches or phones inside, and call your gas utility or 911 from outside. Do not try to repair it yourself."
+        },
+        {
+          "q": "Why will my furnace not ignite?",
+          "a": "Common causes are a dirty flame sensor, a failed igniter, a gas supply problem, or a control board fault. A technician tests each safely."
+        },
+        {
+          "q": "How often should a furnace be serviced?",
+          "a": "Annual service is commonly recommended before the heating season to check safety controls and airflow."
+        }
+      ]
+    },
+    {
+      "id": "heating-installation",
+      "name": "Furnace and heat pump installation",
+      "symptoms": [
+        "Furnace is old or repeatedly failing",
+        "Heat is uneven or weak",
+        "High heating bills",
+        "Cracked heat exchanger found",
+        "Interested in a heat pump"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Furnace or heat pump installation in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Heating replacement explained in plain language"
+        },
+        {
+          "tone": "premium",
+          "text": "Efficient, correctly sized heating for your {city} home"
+        },
+        {
+          "tone": "direct",
+          "text": "New furnace in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} sizes the system to your home, explains your options, and installs to specification."
+        }
+      ],
+      "blurb": "Replacing an old or failing furnace or adding a heat pump, sized and installed correctly.",
+      "directAnswer": "{business} installs furnaces and heat pumps across {areas}. We assess your home, explain the difference between systems, size the equipment to the load, and install it to the manufacturer's specifications. Call {phone} for an assessment.",
+      "process": [
+        "Assess the home and existing ductwork",
+        "Explain options and efficiency ratings",
+        "Install and connect controls safely",
+        "Test, explain operation, and register the warranty"
+      ],
+      "faq": [
+        {
+          "q": "What is the difference between a furnace and a heat pump?",
+          "a": "A furnace burns fuel or uses electric resistance to make heat. A heat pump moves heat and can also cool. Which fits depends on your climate, existing equipment, and utility costs."
+        },
+        {
+          "q": "How long does a furnace last?",
+          "a": "Often 15 to 20 years with regular maintenance, though it varies by model and use."
+        },
+        {
+          "q": "Can I replace only the furnace?",
+          "a": "Sometimes. Matching the outdoor unit, coil, and ductwork affects performance, so a technician should assess the whole system."
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "name": "HVAC maintenance and tune-ups",
+      "symptoms": [
+        "Never serviced the system",
+        "Rising energy bills",
+        "Weak airflow",
+        "Uneven temperatures",
+        "System is going into heavy-use season"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "HVAC tune-ups in {city} before the busy season"
+        },
+        {
+          "tone": "friendly",
+          "text": "A yearly check keeps your system running"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Catch small problems before they become breakdowns"
+        },
+        {
+          "tone": "direct",
+          "text": "HVAC maintenance in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} inspects, cleans, and tests your system so small issues get fixed before the heat arrives."
+        }
+      ],
+      "blurb": "A yearly tune-up that checks, cleans, and tests the system before heavy use.",
+      "directAnswer": "{business} provides HVAC maintenance across {areas}. A tune-up typically covers the air filter, coils, capacitor and electrical connections, refrigerant levels, condensate drain, and thermostat operation. Catching a weak part early is usually cheaper than an emergency repair. Call {phone} to schedule.",
+      "process": [
+        "Inspect and test electrical parts and controls",
+        "Clean coils and check the condensate drain",
+        "Check refrigerant, airflow, and temperature split",
+        "Report findings and recommend only what is needed"
+      ],
+      "faq": [
+        {
+          "q": "What does an HVAC tune-up include?",
+          "a": "Typically filter, coils, electrical connections, capacitor, refrigerant check, drain line, and thermostat operation. Ask exactly what your technician covers."
+        },
+        {
+          "q": "How often should I service my system?",
+          "a": "Once a year is commonly recommended, ideally before the season when you use it most."
+        },
+        {
+          "q": "Will a tune-up lower my bills?",
+          "a": "A clean, well-adjusted system runs more efficiently, but savings depend on the system's condition. It also reduces the chance of a breakdown."
+        }
+      ]
+    },
+    {
+      "id": "emergency-hvac",
+      "name": "Emergency HVAC service",
+      "symptoms": [
+        "No cooling in extreme heat",
+        "No heat in freezing weather",
+        "Burning smell or smoke from the unit",
+        "Water leaking from the system",
+        "System stopped after hours"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Emergency AC and heating in {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "urgent",
+          "text": "No cooling right now? Call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "reassuring",
+          "text": "After-hours HVAC help for {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "direct",
+          "text": "Emergency HVAC in {city}. Call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "urgent",
+          "text": "Call {phone} any time. {business} serves {areas}.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "blurb": "After-hours breakdowns handled by a technician who can get you back to a safe temperature.",
+      "directAnswer": "{business} provides emergency HVAC service across {areas}. If your system stops in extreme heat or cold, call {phone}. If you smell burning or see smoke, turn the system off at the thermostat and breaker and call emergency services if there is any sign of fire.",
+      "process": [
+        "Take your call and confirm the problem",
+        "Dispatch a technician to your home",
+        "Diagnose and make the system safe",
+        "Repair, or explain the next step clearly"
+      ],
+      "faq": [
+        {
+          "q": "What counts as an HVAC emergency?",
+          "a": "No cooling during dangerous heat, no heat in freezing weather, burning smells, smoke, or water leaking from the unit. Elderly people, infants, and pets are at higher risk."
+        },
+        {
+          "q": "What should I do while I wait for a technician?",
+          "a": "Turn the system off if there is a burning smell or leak, keep the home as cool or warm as you can, and stay hydrated in heat."
+        },
+        {
+          "q": "Is emergency service the same price?",
+          "a": "Pricing for after-hours calls varies by company. Ask {business} for the rate when you call."
+        }
+      ],
+      "requires": [
+        "emergency_24_7"
+      ]
+    }
+  ]
+}

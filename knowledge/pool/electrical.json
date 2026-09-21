@@ -1,0 +1,368 @@
+{
+  "vertical": "electrical",
+  "version": 1,
+  "status": "draft",
+  "note": "Draft. Merge fields are filled at build time. Claims tagged 'requires' are used only when the business confirms them. Educational answers are general and unverified against local code; review before relying on them.",
+  "services": [
+    {
+      "id": "panel-upgrade",
+      "name": "Electrical panel upgrades",
+      "symptoms": [
+        "Breakers trip often",
+        "Lights flicker or dim",
+        "Panel feels warm or buzzes",
+        "Home has an older panel",
+        "Adding a large load such as an EV charger or a new AC"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Electrical panel upgrades in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Is your panel ready for what your home needs?"
+        },
+        {
+          "tone": "premium",
+          "text": "A safer, higher-capacity panel for your {city} home"
+        },
+        {
+          "tone": "direct",
+          "text": "Panel upgrade in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} checks your load, explains whether an upgrade is needed, and does the work to code."
+        }
+      ],
+      "blurb": "Frequent tripping, flickering lights, or new large loads may mean it is time for a new panel.",
+      "directAnswer": "{business} upgrades electrical panels across {areas}. Frequent breaker trips, flickering lights, or planned additions like an EV charger or a larger AC can outgrow an older panel. We assess your load, explain your options, and do the work to code with the required permits. Call {phone}.",
+      "process": [
+        "Assess the existing panel and household load",
+        "Explain whether an upgrade is needed and why",
+        "Pull permits and schedule the utility shutoff",
+        "Install, label, and pass inspection"
+      ],
+      "faq": [
+        {
+          "q": "How do I know if my panel needs an upgrade?",
+          "a": "Frequent breaker trips, flickering lights, a warm or buzzing panel, and adding large loads are common reasons to have it checked."
+        },
+        {
+          "q": "Do panel upgrades need a permit?",
+          "a": "In most places, yes, and they are inspected. A licensed electrician normally handles both."
+        },
+        {
+          "q": "Can I upgrade my panel myself?",
+          "a": "No. Work inside the panel is dangerous and is normally restricted to licensed electricians."
+        }
+      ]
+    },
+    {
+      "id": "wiring-outlets",
+      "name": "Wiring, outlets, and switches",
+      "symptoms": [
+        "Outlets do not work",
+        "Warm or discolored outlets",
+        "Ungrounded two-prong outlets",
+        "Buzzing switches",
+        "Need more outlets"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Outlet and wiring repair in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Safe, code-compliant electrical work"
+        },
+        {
+          "tone": "friendly",
+          "text": "More outlets, fewer extension cords"
+        },
+        {
+          "tone": "direct",
+          "text": "Electrician in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} repairs and adds outlets and wiring so they are safe and to code."
+        }
+      ],
+      "blurb": "Dead, warm, or outdated outlets repaired, and new outlets added where you need them.",
+      "directAnswer": "{business} repairs and installs outlets, switches, and wiring across {areas}. A warm or discolored outlet, a burning smell, or frequent sparks needs prompt attention. Kitchens, bathrooms, and outdoor outlets generally need GFCI protection. Call {phone}.",
+      "process": [
+        "Find the cause of the failure",
+        "Explain the safe repair",
+        "Repair or install to code",
+        "Test and confirm everything works"
+      ],
+      "faq": [
+        {
+          "q": "Why is my outlet warm?",
+          "a": "Loose connections, overloads, or worn devices can cause heat. Stop using it and have an electrician check it."
+        },
+        {
+          "q": "What is a GFCI outlet?",
+          "a": "A protective outlet that cuts power quickly when it detects a ground fault. Codes commonly require it near water."
+        },
+        {
+          "q": "Can I replace an outlet myself?",
+          "a": "Only if you are qualified and turn off the breaker. Many people prefer a licensed electrician for safety and code compliance."
+        }
+      ]
+    },
+    {
+      "id": "lighting",
+      "name": "Lighting installation",
+      "symptoms": [
+        "Dim or outdated lighting",
+        "Want recessed or accent lighting",
+        "Flickering fixtures",
+        "Outdoor or security lighting needed",
+        "Ceiling fan installation"
+      ],
+      "headlines": [
+        {
+          "tone": "friendly",
+          "text": "Better lighting for your {city} home"
+        },
+        {
+          "tone": "practical",
+          "text": "Lighting and fan installation in {city}"
+        },
+        {
+          "tone": "premium",
+          "text": "Lighting designed for how you use each room"
+        },
+        {
+          "tone": "direct",
+          "text": "Lighting installation in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} installs fixtures, recessed lights, fans, and outdoor lighting safely and to code."
+        }
+      ],
+      "blurb": "Fixtures, recessed lighting, ceiling fans, and outdoor lighting installed correctly.",
+      "directAnswer": "{business} installs lighting and ceiling fans across {areas}. New recessed lighting, outdoor lighting, and fixture swaps look simple but involve wiring, load, and often ceiling access. We plan the layout with you and install to code. Call {phone}.",
+      "process": [
+        "Talk through what you want in each room",
+        "Plan the layout, circuits, and switches",
+        "Install fixtures and wiring safely",
+        "Test and clean up"
+      ],
+      "faq": [
+        {
+          "q": "Can any ceiling hold a ceiling fan?",
+          "a": "Fans need a box rated for fan weight and movement. An electrician can check and replace the box if needed."
+        },
+        {
+          "q": "What does recessed lighting need?",
+          "a": "Space above the ceiling, correct fixtures for insulation contact, and wiring planned for the circuit load."
+        },
+        {
+          "q": "Do dimmers work with all bulbs?",
+          "a": "No. LED bulbs and dimmers must be compatible. Ask when choosing fixtures."
+        }
+      ]
+    },
+    {
+      "id": "ev-charger",
+      "name": "EV charger installation",
+      "symptoms": [
+        "Charging a car from a regular outlet",
+        "Want a faster home charger",
+        "Panel may not have capacity",
+        "Garage has no dedicated circuit",
+        "Planning to buy an electric vehicle"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "EV charger installation in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Will your panel handle an EV charger? We check first"
+        },
+        {
+          "tone": "friendly",
+          "text": "Charge at home, ready every morning"
+        },
+        {
+          "tone": "direct",
+          "text": "EV charger install in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} checks your panel capacity, installs a dedicated circuit, and mounts the charger."
+        }
+      ],
+      "blurb": "A dedicated circuit and charger installed safely, with your panel capacity checked first.",
+      "directAnswer": "{business} installs home EV chargers across {areas}. A charger typically needs a dedicated circuit, and your panel must have capacity for the added load. We assess the panel, explain what is needed, pull the permit, and install to code. Call {phone}.",
+      "process": [
+        "Assess panel capacity and the charger location",
+        "Explain the circuit and any panel work needed",
+        "Pull the permit and install",
+        "Test and show you how it operates"
+      ],
+      "faq": [
+        {
+          "q": "Do I need a special circuit for a home charger?",
+          "a": "Most dedicated chargers do. The size depends on the charger and your vehicle. An electrician sizes it to your panel."
+        },
+        {
+          "q": "Can I plug into a regular outlet?",
+          "a": "Slow charging from a standard outlet is possible, but a continuous load on a regular outlet needs to be assessed for safety."
+        },
+        {
+          "q": "Does my panel need an upgrade?",
+          "a": "Sometimes. A load calculation shows whether it has capacity."
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "name": "Electrical troubleshooting and repair",
+      "symptoms": [
+        "Breaker trips repeatedly",
+        "Part of the house has no power",
+        "Lights flicker",
+        "Burning smell near outlets or panel",
+        "Power surges damage devices"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Electrical troubleshooting in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "We find the cause, not just reset the breaker"
+        },
+        {
+          "tone": "urgent",
+          "text": "Power out in part of your {city} home?"
+        },
+        {
+          "tone": "direct",
+          "text": "Electrical repair in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} tracks down the cause of the problem and repairs it safely."
+        }
+      ],
+      "blurb": "Tripping breakers, lost circuits, and flickering lights traced to their cause and repaired.",
+      "directAnswer": "{business} diagnoses and repairs electrical problems across {areas}. A breaker that trips repeatedly is a warning, not a nuisance. Causes include overloads, short circuits, and failing devices. We find the cause and repair it safely. Call {phone}.",
+      "process": [
+        "Ask what happened and when",
+        "Test circuits to find the fault",
+        "Explain the cause and the repair",
+        "Repair, test, and confirm safe operation"
+      ],
+      "faq": [
+        {
+          "q": "Why does my breaker keep tripping?",
+          "a": "Overloaded circuits, short circuits, ground faults, or a failing breaker. A repeated trip means something needs to be found and fixed."
+        },
+        {
+          "q": "Is it safe to keep resetting a breaker?",
+          "a": "If it trips repeatedly, do not keep resetting it. Have an electrician find the cause."
+        },
+        {
+          "q": "What causes flickering lights?",
+          "a": "Loose connections, failing fixtures, or a load on the circuit. A widespread flicker can indicate a bigger issue."
+        }
+      ]
+    },
+    {
+      "id": "emergency-electrical",
+      "name": "Emergency electrical service",
+      "symptoms": [
+        "Sparks or burning smell",
+        "Downed power line on your property",
+        "Water in the panel or outlets",
+        "Partial or total loss of power in your home only",
+        "Shocks from an appliance"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Emergency electrician in {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "urgent",
+          "text": "Sparks or burning smell? Call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "reassuring",
+          "text": "After-hours electrical help for {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "direct",
+          "text": "Emergency electrical in {city}. Call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "urgent",
+          "text": "Call {phone} any time. {business} serves {areas}.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "blurb": "Sparks, burning smells, and dangerous faults handled right away.",
+      "directAnswer": "{business} handles electrical emergencies across {areas}. If you see flames or heavy smoke, get everyone out and call 911. For a downed power line, stay far away and call your utility and 911. For other faults, call {phone}.",
+      "process": [
+        "Take your call and give safety instructions",
+        "Send an electrician to your home",
+        "Make the fault safe",
+        "Repair, or explain the next step"
+      ],
+      "faq": [
+        {
+          "q": "What should I do if I smell burning near an outlet?",
+          "a": "Stop using it. If it is safe, switch off the breaker for that circuit. If you see smoke or flames, leave and call 911."
+        },
+        {
+          "q": "What if a power line is down?",
+          "a": "Stay far away, keep others away, and call your utility and 911. Do not touch anything in contact with the line."
+        },
+        {
+          "q": "When should I call 911 instead?",
+          "a": "Any fire, heavy smoke, or someone who was shocked and is injured."
+        }
+      ],
+      "requires": [
+        "emergency_24_7"
+      ]
+    }
+  ]
+}

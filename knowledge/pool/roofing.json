@@ -1,0 +1,350 @@
+{
+  "vertical": "roofing",
+  "version": 1,
+  "status": "draft",
+  "note": "Draft. Merge fields are filled at build time. Claims tagged 'requires' are used only when the business confirms them. Educational answers are general and unverified against local code; review before relying on them.",
+  "services": [
+    {
+      "id": "roof-repair",
+      "name": "Roof repair",
+      "symptoms": [
+        "Missing, cracked, or slipped tiles or shingles",
+        "Flashing pulling away",
+        "Sagging or worn spots",
+        "Granules in gutters",
+        "Visible damage after a storm"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Roof repair in {city}, done properly"
+        },
+        {
+          "tone": "reassuring",
+          "text": "A straight answer: repair or replace?"
+        },
+        {
+          "tone": "urgent",
+          "text": "Storm damage in {city}? Call {business}"
+        },
+        {
+          "tone": "direct",
+          "text": "Roof repair in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} inspects the roof, explains what is wrong, and repairs it."
+        }
+      ],
+      "blurb": "Missing or damaged roofing repaired before small problems become leaks.",
+      "directAnswer": "{business} repairs roofs across {areas}. Missing tiles or shingles, failed flashing, and worn spots let water in. We inspect, explain what we found with photos, and repair it properly. If the roof is beyond repair we say so plainly. Call {phone}.",
+      "process": [
+        "Inspect the roof and document the damage",
+        "Explain the repair and quote it",
+        "Repair the damaged areas and flashing",
+        "Check the work and clean up"
+      ],
+      "faq": [
+        {
+          "q": "Can I fix my roof myself?",
+          "a": "Roofs are dangerous, and improper repairs can make leaks worse. Many homeowners prefer a professional."
+        },
+        {
+          "q": "How do I know if I need repair or replacement?",
+          "a": "Age, how widespread the damage is, and repair history all matter. An inspection gives the answer."
+        },
+        {
+          "q": "Why does flashing matter?",
+          "a": "Flashing seals joints such as chimneys and vents. It is a common leak source when it fails."
+        }
+      ]
+    },
+    {
+      "id": "roof-replacement",
+      "name": "Roof replacement",
+      "symptoms": [
+        "Roof is near the end of its lifespan",
+        "Widespread damage",
+        "Repeated leaks after repairs",
+        "Curling or missing material across the roof",
+        "Preparing to sell the home"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Roof replacement in {city}"
+        },
+        {
+          "tone": "premium",
+          "text": "A new roof built to last on your {city} home"
+        },
+        {
+          "tone": "reassuring",
+          "text": "What roof replacement involves, explained upfront"
+        },
+        {
+          "tone": "direct",
+          "text": "New roof in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "reassuring",
+          "text": "{business} explains the materials, the schedule, and the cost before any work begins."
+        }
+      ],
+      "blurb": "A full roof replacement with materials, schedule, and cost explained upfront.",
+      "directAnswer": "{business} replaces roofs across {areas}. We inspect the roof and decking, explain material options such as shingle, tile, foam, or metal, provide a written estimate, and handle permits and cleanup. Call {phone} for an inspection.",
+      "process": [
+        "Inspect the roof, decking, and ventilation",
+        "Explain material options and give a written estimate",
+        "Remove the old roof and repair the decking",
+        "Install, inspect, and clean up"
+      ],
+      "faq": [
+        {
+          "q": "How long does a roof last?",
+          "a": "It depends on the material and climate. Heat and sun can shorten the life of some materials. An inspection shows where yours stands."
+        },
+        {
+          "q": "How long does replacement take?",
+          "a": "It varies with the roof's size, material, and weather. Ask for a schedule before work starts."
+        },
+        {
+          "q": "Do I need a permit?",
+          "a": "Many cities require one for a full replacement. {business} can explain what applies in {city}."
+        }
+      ]
+    },
+    {
+      "id": "leak-repair",
+      "name": "Roof leak repair",
+      "symptoms": [
+        "Water stains on ceilings",
+        "Dripping during rain",
+        "Damp attic",
+        "Mold or musty smell",
+        "Stains around vents or chimneys"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Roof leak in {city}? Call {business}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Find where the water is really coming in"
+        },
+        {
+          "tone": "practical",
+          "text": "Roof leak repair in {city}"
+        },
+        {
+          "tone": "direct",
+          "text": "Leaking roof in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} traces the leak to its source and repairs it, not just the stain."
+        }
+      ],
+      "blurb": "Leaks traced to their true source and fixed, not just patched under the stain.",
+      "directAnswer": "{business} repairs roof leaks across {areas}. Water often travels before it shows up inside, so the stain is rarely under the leak. We trace it to the source, explain it, and repair it. If you have active water intrusion, place a bucket, move belongings, and call {phone}.",
+      "process": [
+        "Locate the entry point, not just the stain",
+        "Explain the cause and the repair",
+        "Repair and seal the leak source",
+        "Check for interior water damage and advise on next steps"
+      ],
+      "faq": [
+        {
+          "q": "Why is the ceiling stain not under the leak?",
+          "a": "Water can travel along rafters or decking before dripping through. A roofer traces it back to the entry point."
+        },
+        {
+          "q": "Can a leak wait until it stops raining?",
+          "a": "A small leak can become larger damage. Contain the water now and get it inspected soon."
+        },
+        {
+          "q": "Should I tarp the roof myself?",
+          "a": "Climbing on a wet roof is dangerous. Many roofers can install a temporary cover."
+        }
+      ]
+    },
+    {
+      "id": "inspection",
+      "name": "Roof inspection",
+      "symptoms": [
+        "Buying or selling a home",
+        "After a storm",
+        "Roof age is unknown",
+        "Insurance renewal",
+        "Noticed changes in the roof's appearance"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Roof inspection in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Know the true condition of your roof"
+        },
+        {
+          "tone": "friendly",
+          "text": "A clear report on your {city} roof"
+        },
+        {
+          "tone": "direct",
+          "text": "Roof inspection in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} inspects the roof and gives you a clear, photo-backed report."
+        }
+      ],
+      "blurb": "An honest inspection and written report on your roof's condition.",
+      "directAnswer": "{business} inspects roofs across {areas}. An inspection covers the roofing material, flashing, penetrations, and visible decking issues, with photos and a plain explanation. It is useful before buying or selling a home and after storms. Call {phone}.",
+      "process": [
+        "Inspect the roof surface, flashing, and penetrations",
+        "Photograph any issues",
+        "Explain findings in plain language",
+        "Provide a written summary"
+      ],
+      "faq": [
+        {
+          "q": "When should a roof be inspected?",
+          "a": "After major storms, before buying or selling a home, and periodically as the roof ages."
+        },
+        {
+          "q": "Does an inspection cost money?",
+          "a": "Pricing varies by company. Ask {business} when you call."
+        },
+        {
+          "q": "Will an inspection find every problem?",
+          "a": "It covers what is visible and accessible. It cannot see inside sealed areas."
+        }
+      ]
+    },
+    {
+      "id": "storm-damage",
+      "name": "Storm damage repair",
+      "symptoms": [
+        "Missing or lifted roofing after wind",
+        "Hail dents or cracks",
+        "Debris on the roof",
+        "Water inside after a storm",
+        "Damaged gutters or flashing"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Storm damage to your {city} roof? Call {business}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Storm damage documented and repaired properly"
+        },
+        {
+          "tone": "practical",
+          "text": "Roof storm damage repair in {city}"
+        },
+        {
+          "tone": "direct",
+          "text": "Storm damage in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} documents the damage with photos and repairs it, so you have what your insurer needs."
+        }
+      ],
+      "blurb": "Storm damage documented with photos and repaired properly.",
+      "directAnswer": "{business} repairs storm-damaged roofs across {areas}. After a storm, stay off the roof, take photos of visible damage from the ground, and call {phone}. We document the damage, help you understand the repair scope, and repair the roof. Insurance decisions are between you and your insurer.",
+      "process": [
+        "Inspect and photograph all damage",
+        "Explain the repair scope",
+        "Provide a written estimate you can share with your insurer",
+        "Repair and confirm the roof is watertight"
+      ],
+      "faq": [
+        {
+          "q": "What should I do after a storm?",
+          "a": "Stay off the roof, photograph visible damage from the ground, cover interior water intrusion, and call a roofer and your insurer."
+        },
+        {
+          "q": "Will insurance pay for roof damage?",
+          "a": "It depends on your policy and the cause. Your insurer decides."
+        },
+        {
+          "q": "How soon should I get it fixed?",
+          "a": "Sooner is better, since water can cause more damage. Temporary covers can help until repairs are made."
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "name": "Roof maintenance",
+      "symptoms": [
+        "Debris build-up",
+        "Clogged gutters",
+        "Small cracks or lifted edges",
+        "Sealant wear around vents",
+        "Moss or algae on the surface"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Roof maintenance in {city}"
+        },
+        {
+          "tone": "friendly",
+          "text": "A little upkeep adds years to your roof"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Catch small problems before they cause leaks"
+        },
+        {
+          "tone": "direct",
+          "text": "Roof maintenance in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} clears debris, checks flashing and seals, and reports what needs attention."
+        }
+      ],
+      "blurb": "Regular upkeep that helps a roof reach its full life.",
+      "directAnswer": "{business} maintains roofs across {areas}. Routine maintenance covers debris removal, gutter checks, sealant and flashing inspection, and small repairs. Catching small problems early is usually cheaper than fixing a leak. Call {phone} to schedule.",
+      "process": [
+        "Inspect the roof and remove debris",
+        "Check flashing, sealants, and gutters",
+        "Do small repairs on the spot",
+        "Report anything that needs attention"
+      ],
+      "faq": [
+        {
+          "q": "How often should a roof be maintained?",
+          "a": "At least once a year and after major storms is commonly recommended."
+        },
+        {
+          "q": "Does maintenance extend a roof's life?",
+          "a": "Removing debris and fixing small problems early can help a roof last, though age and materials matter most."
+        },
+        {
+          "q": "What are signs of trouble?",
+          "a": "Missing pieces, sagging, stains inside, and granules in gutters are common signs."
+        }
+      ]
+    }
+  ]
+}
