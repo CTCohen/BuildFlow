@@ -1,0 +1,50 @@
+[
+ {
+  "company": "Desert Air Heating & Cooling",
+  "vertical": "hvac",
+  "city": "Mesa",
+  "state": "AZ",
+  "phone": "(480) 555-0142",
+  "address": "1200 W Main St, Mesa AZ",
+  "review_count": 212,
+  "review_velocity": 4.5,
+  "has_gbp": true,
+  "website": "https://desertairaz.example",
+  "has_website": true
+ },
+ {
+  "company": "Lone Star Roofing Co",
+  "vertical": "roofing",
+  "city": "Austin",
+  "state": "TX",
+  "phone": "(512) 555-0177",
+  "address": "88 Congress Ave, Austin TX",
+  "review_count": 37,
+  "review_velocity": 0.5,
+  "has_gbp": true,
+  "has_website": false
+ },
+ {
+  "company": "Bright Spark Electric",
+  "vertical": "electrical",
+  "city": "Tampa",
+  "state": "FL",
+  "phone": "(813) 555-0119",
+  "review_count": 0,
+  "has_gbp": true,
+  "has_website": false
+ },
+ {
+  "company": "Rivera Plumbing & Drain",
+  "vertical": "plumbing",
+  "city": "Fresno",
+  "state": "CA",
+  "phone": "(559) 555-0133",
+  "address": "41 Olive Ave, Fresno CA",
+  "review_count": 58,
+  "review_velocity": 1.0,
+  "has_gbp": true,
+  "has_website": true,
+  "website": "https://riveraplumbingfresno.example"
+ }
+]

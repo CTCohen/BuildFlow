@@ -1,0 +1,68 @@
+[
+ {
+  "company": "Desert Air Heating & Cooling LLC",
+  "vertical": "hvac",
+  "city": "Mesa",
+  "state": "AZ",
+  "phone": "(480) 555-0142",
+  "headcount": 8,
+  "years_in_business": 11,
+  "contact_name": "Dana Ortiz",
+  "email": "dana@desertairaz.example",
+  "revenue_estimate": 900000,
+  "domain": "desertairaz.example"
+ },
+ {
+  "company": "Lone Star Roofing Co",
+  "vertical": "roofing",
+  "city": "Austin",
+  "state": "TX",
+  "phone": "(512) 555-0177",
+  "headcount": 14,
+  "years_in_business": 6,
+  "contact_name": "Marcus Hale",
+  "email": "marcus@lonestarroof.example",
+  "domain": "lonestarroof.example"
+ },
+ {
+  "company": "Bright Spark Electric",
+  "vertical": "electrical",
+  "city": "Tampa",
+  "state": "FL",
+  "phone": "(813) 555-0119",
+  "headcount": 2,
+  "years_in_business": 3,
+  "contact_name": "Priya Nair",
+  "domain": "brightsparkfl.example"
+ },
+ {
+  "company": "Metro Mechanical Group Inc",
+  "vertical": "hvac",
+  "city": "Brooklyn",
+  "state": "NY",
+  "phone": "(718) 555-0190",
+  "headcount": 45,
+  "years_in_business": 22,
+  "contact_name": "Tom Reyes",
+  "email": "treyes@metromech.example",
+  "domain": "metromech.example"
+ },
+ {
+  "company": "Rivera Plumbing",
+  "vertical": "plumbing",
+  "city": "Fresno",
+  "state": "CA",
+  "phone": "(559) 555-0133",
+  "headcount": 4,
+  "years_in_business": 9,
+  "contact_name": "Luis Rivera"
+ },
+ {
+  "company": "Rivera Plumbing",
+  "vertical": "plumbing",
+  "city": "Fresno",
+  "state": "OH",
+  "phone": "(614) 555-0166",
+  "headcount": 30
+ }
+]

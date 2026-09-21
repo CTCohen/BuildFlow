@@ -1,0 +1,172 @@
+[
+ {
+  "id": "z01",
+  "desc": "headcount 1 is micro",
+  "lead": {
+   "headcount": 1
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "z02",
+  "desc": "headcount 2 micro",
+  "lead": {
+   "headcount": 2
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "z03",
+  "desc": "headcount 3 smb",
+  "lead": {
+   "headcount": 3
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "z04",
+  "desc": "headcount 20 smb",
+  "lead": {
+   "headcount": 20
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "z05",
+  "desc": "headcount 21 mid",
+  "lead": {
+   "headcount": 21
+  },
+  "expect": {
+   "tier": "mid_market"
+  }
+ },
+ {
+  "id": "z06",
+  "desc": "revenue 100k micro",
+  "lead": {
+   "revenue_estimate": 100000
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "z07",
+  "desc": "revenue 900k smb",
+  "lead": {
+   "revenue_estimate": 900000
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "z08",
+  "desc": "revenue 6M mid",
+  "lead": {
+   "revenue_estimate": 6000000
+  },
+  "expect": {
+   "tier": "mid_market"
+  }
+ },
+ {
+  "id": "z09",
+  "desc": "headcount beats revenue",
+  "lead": {
+   "headcount": 5,
+   "revenue_estimate": 9000000
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "z10",
+  "desc": "franchise is mid",
+  "lead": {
+   "is_franchise": true
+  },
+  "expect": {
+   "tier": "mid_market"
+  }
+ },
+ {
+  "id": "z11",
+  "desc": "3 locations is mid",
+  "lead": {
+   "location_count": 3
+  },
+  "expect": {
+   "tier": "mid_market"
+  }
+ },
+ {
+  "id": "z12",
+  "desc": "team page of 6",
+  "lead": {
+   "team_page_count": 6
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "z13",
+  "desc": "fleet of 1 truck is micro",
+  "lead": {
+   "fleet_size": 1
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "z14",
+  "desc": "owner-named no site",
+  "lead": {
+   "owner_named_business": true,
+   "has_website": false
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "z15",
+  "desc": "no signals unknown",
+  "lead": {},
+  "expect": {
+   "tier": "unknown"
+  }
+ },
+ {
+  "id": "z16",
+  "desc": "fleet of 15 mid",
+  "lead": {
+   "fleet_size": 15
+  },
+  "expect": {
+   "tier": "mid_market"
+  }
+ },
+ {
+  "id": "z17",
+  "desc": "fleet of 2 trucks is about 4 people, smb",
+  "lead": {
+   "fleet_size": 2
+  },
+  "expect": {
+   "tier": "smb"
+  }
+ }
+]

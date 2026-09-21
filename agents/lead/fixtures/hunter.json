@@ -1,0 +1,25 @@
+[
+ {
+  "company": "Desert Air Heating and Cooling",
+  "state": "AZ",
+  "city": "Mesa",
+  "domain": "desertairaz.example",
+  "email": "office@desertairaz.example",
+  "contact_name": "Dana Ortiz",
+  "phone": "(480) 555-0142"
+ },
+ {
+  "company": "Lone Star Roofing",
+  "state": "TX",
+  "domain": "lonestarroof.example",
+  "email": "marcus@lonestarroof.example"
+ },
+ {
+  "company": "Rivera Plumbing",
+  "state": "CA",
+  "city": "Fresno",
+  "domain": "riveraplumbingfresno.example",
+  "email": "luis@riveraplumbingfresno.example",
+  "phone": "(559) 555-0133"
+ }
+]
