@@ -26,7 +26,7 @@
  */
 import { execFileSync } from "node:child_process";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
-import { join, dirname, relative } from "node:path";
+import { join, dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createServer } from "node:http";
 import { validateClient } from "../src/data/schema.mjs";
@@ -36,6 +36,11 @@ const args = process.argv.slice(2);
 const slug = valueOf("--client");
 const skipBuild = args.includes("--skip-build");
 const skipBrowser = args.includes("--skip-browser");
+// Design QA loop hooks (agents/design/): build into an isolated dir, read the resolved client
+// from a file (not src/data/clients), and emit machine-readable results.
+const outDirArg = valueOf("--out-dir");
+const clientFileArg = valueOf("--client-file");
+const jsonOut = args.includes("--json");
 
 if (!slug) {
   console.error("usage: node scripts/qa.mjs --client <slug> [--skip-build]");
@@ -51,7 +56,7 @@ const results = []; // { name, status: 'pass'|'fail'|'warn'|'skip', detail }
 const add = (name, status, detail = "") => results.push({ name, status, detail });
 
 // ---------------------------------------------------------------- 1. schema
-const clientPath = join(ROOT, "src/data/clients", `${slug}.json`);
+const clientPath = clientFileArg || join(ROOT, "src/data/clients", `${slug}.json`);
 if (!existsSync(clientPath)) {
   console.error(`✗ no client file at ${relative(ROOT, clientPath)}`);
   process.exit(2);
@@ -62,13 +67,34 @@ if (v.ok) add("schema", "pass", `${v.warnings.length} warning(s)`);
 else add("schema", "fail", v.errors.join("; "));
 for (const w of v.warnings) add("schema:warn", "warn", w);
 
+// ---------------------------------------------------------------- 1b. brand contrast (WCAG 1.4.3)
+// Brand color is used as text/links on white, so it needs 4.5:1 there. Static check: no browser needed.
+{
+  const lum = (hex) => {
+    let h = String(hex || "").replace("#", "");
+    if (h.length === 3) h = h.split("").map((x) => x + x).join("");
+    const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255)
+      .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+  const r = ratio(data?.brand?.primary, "#ffffff");
+  if (Number.isNaN(r)) add("brand-contrast", "skip", "no valid brand.primary");
+  else add("brand-contrast", r >= 4.5 ? "pass" : "fail", `brand.primary ${data.brand.primary} on white = ${r.toFixed(2)}:1 (needs 4.5:1)`);
+}
+
 // ---------------------------------------------------------------- 2. build
-const dist = join(ROOT, "dist");
+const dist = outDirArg ? resolve(outDirArg) : join(ROOT, "dist");
 if (!skipBuild) {
   try {
-    execFileSync("npx", ["astro", "build"], {
+    execFileSync("node", ["node_modules/astro/astro.js", "build"], {
       cwd: ROOT,
-      env: { ...process.env, CLIENT: slug },
+      env: {
+        ...process.env,
+        CLIENT: slug,
+        ...(clientFileArg ? { CLIENT_DATA: JSON.stringify(data) } : {}),
+        ...(outDirArg ? { OUT_DIR: dist, CACHE_DIR: join(dist, "..", `.cache-${slug}`) } : {}),
+      },
       stdio: "pipe",
     });
     add("build", "pass");
@@ -103,6 +129,7 @@ if (pages.length === 0) {
     ["bracket token", /\[(business|name|city|phone|trade|company|insert)[^\]]*\]/i],
     ["example.com", /example\.com/i],
     ["xxxx", /x{4,}/i],
+    ["scaffold FILL_ value", /\bFILL_/],
   ];
   // scan VISIBLE TEXT only: drop scripts/styles/head, then strip all tags.
   // (example.com etc. in canonical/og tags is the build's SITE_URL default,
@@ -190,13 +217,22 @@ async function serveDist() {
     res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream" });
     res.end(readFileSync(full));
   });
-  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  await new Promise((resolveP, reject) => { server.once("error", reject); server.listen(0, "127.0.0.1", resolveP); });
   const port = server.address().port;
   return { server, base: `http://127.0.0.1:${port}` };
 }
 
 async function runBrowserChecks() {
-  const { server, base } = await serveDist();
+  let served;
+  try {
+    served = await serveDist();
+  } catch (e) {
+    const why = `cannot start local preview server: ${String(e.message || e).slice(0, 120)}`;
+    add("lighthouse-budget", "fail", why);
+    add("layout-sanity", "fail", why);
+    return;
+  }
+  const { server, base } = served;
   try {
     await runLighthouse(base);
     await runLayoutSanity(base);
@@ -315,6 +351,10 @@ async function runLayoutSanity(base) {
 add("llm-rubric", "skip", "not wired: would call the metered Anthropic API — see header note");
 
 // ---------------------------------------------------------------- report
+if (jsonOut) {
+  console.log(JSON.stringify({ slug, results, failed: results.filter((r) => r.status === "fail").map((r) => r.name) }));
+  process.exit(results.some((r) => r.status === "fail") ? 1 : 0);
+}
 const icon = { pass: "✓", fail: "✗", warn: "!", skip: "·" };
 console.log(`\nBuildFlow QA — client: ${slug}\n${"─".repeat(48)}`);
 for (const r of results) {

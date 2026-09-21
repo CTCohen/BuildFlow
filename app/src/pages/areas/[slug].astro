@@ -2,11 +2,12 @@
 import Base from "../../layouts/Base.astro";
 import QuoteForm from "../../components/QuoteForm.astro";
 import FAQ from "../../components/FAQ.astro";
-import { client, t } from "../../lib/client";
+import { client, t, isMicro } from "../../lib/client";
 
 export function getStaticPaths() {
   const langs = (Object.keys(client.content) as ("en" | "es")[]).filter((l) => client.content[l]);
   const paths = [];
+  if (isMicro) return paths;
   for (const lang of langs) {
     for (const area of client.business.serviceAreas) {
       paths.push({

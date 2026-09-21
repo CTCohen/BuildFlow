@@ -1,4 +1,4 @@
-import { client } from "../lib/client";
+import { client, isMicro } from "../lib/client";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = () => {
@@ -16,9 +16,11 @@ export const GET: APIRoute = () => {
     ...services.map(
       (s) => `  - [${s.name}](/services/${s.slug || s.name.toLowerCase().replace(/[^\w]+/g, "-")})`
     ),
-    "- [Service Areas](/areas) — Coverage by city",
-    ...areas.map((a) => `  - [Service in ${a}](/areas/${a.toLowerCase().replace(/[^\w]+/g, "-")})`),
-    "- [About](/about) — Company history, team, license",
+    ...(isMicro ? [] : [
+      "- [Service Areas](/areas) — Coverage by city",
+      ...areas.map((a) => `  - [Service in ${a}](/areas/${a.toLowerCase().replace(/[^\w]+/g, "-")})`),
+      "- [About](/about) — Company history, team, license",
+    ]),
     "- [Contact](/contact) — Quote form, emergency line, address",
   ];
 
