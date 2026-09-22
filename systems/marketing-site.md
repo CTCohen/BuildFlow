@@ -15,6 +15,9 @@ The public-facing site (separate from the admin CRM and customer dashboards): Ho
 Blog, Docs, About. Built as draft Astro pages 2026-09-22 per `operations/BUILD_TASKS.md` §9. Case Studies is
 explicitly withheld pending real customers.
 
+
+**Code lives at:** `website/`
+
 ## Built and verified
 - [x] Home, Features, Pricing, Demo, Blog, Docs, About pages — draft Astro pages under `website/src/pages/`
   (`index.astro` pre-existing and extended; new: `features.astro`, `pricing.astro`, `demo.astro`,

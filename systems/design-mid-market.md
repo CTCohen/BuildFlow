@@ -15,6 +15,14 @@ phase: phase_1
 site and pricing page only — no lead-scoring routing sends real customers to it, and no design system code
 exists for it. This file exists to preserve the spec as reference for whenever the pause lifts.
 
+
+**Code lives at:** none — see pause note above
+
+**Saved demo builds:** n/a while paused — nothing is built, so nothing to save. When the pause lifts, the same
+convention as Micro/SMB applies: `agents/design/demos/mid-market/<vertical>-<slug>/` for builds worth keeping
+past the run that produced them, gitignored except for `agents/design/demos/README.md` and curated review
+reports. See `agents/design/demos/README.md`.
+
 ## Built and verified
 - (none — nothing built, by design, per the pause ruling)
 

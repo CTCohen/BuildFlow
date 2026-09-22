@@ -16,6 +16,9 @@ container on Railway now, Google Cloud Run later (per the 2026-09-18 override, w
 original Lightsail/Vercel finalist list). Code: `platform/hosting/`, built 2026-09-22 on mocks (no Cloudflare
 account exists yet).
 
+
+**Code lives at:** `platform/hosting/`
+
 ## Built and verified
 - [x] Pages/Workers deploy + versioning/rollback — `platform/hosting/deploy.mjs`: real per-client project
   naming (`fornax-site-<slug>`), real versioning (`VersionStore`), auto-rollback to last known-good deploy on

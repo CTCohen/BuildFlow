@@ -15,6 +15,9 @@ Stripe-based subscription billing for all three tiers, versioned prices to suppo
 guarantee ahead of a planned post-launch price rise, and an automated Tier 1-3 dunning ladder (Tier 4-5 legal
 escalation explicitly out of scope per DECISIONS.md #14). Code: `billing/`.
 
+
+**Code lives at:** `billing/`
+
 ## Built and verified
 - [x] Versioned price catalog on placeholder IDs — `billing/prices.py`. Launch prices per DECISIONS.md item 3:
   Micro $149/mo·$1,490/yr, SMB $249/mo·$2,490/yr, annual = 10x monthly. `launch_cohort` flag

@@ -15,6 +15,16 @@ Website generation for solo-contractor customers: one fixed design, minimal inpu
 customization. Philosophy: "We pick the best defaults." Built **after** SMB per Tyler's sequencing
 (`docs/DESIGN_SYSTEMS/MICRO.md`).
 
+
+**Code lives at:** `agents/design/`
+
+**Saved demo builds:** `app/dist/` is Astro's ephemeral build output (gitignored, wiped every build — not a
+storage location) and `agents/design/out/smoke/` is scratch space for a single smoke-test run (overwritten next
+run). A build worth keeping past the run that produced it — for review, a QA escalation, or an outreach send —
+gets copied into `agents/design/demos/micro/<vertical>-<slug>/`. Only `agents/design/demos/README.md` and any
+curated review report are tracked in git; the generated site output itself is gitignored
+(`agents/design/demos/*/*/` in `.gitignore`). See `agents/design/demos/README.md` for the full convention.
+
 ## Built and verified
 - (none confirmed Micro-specific. The shared Design Agent that Micro will run through — `agents/design/`,
   67/67 evals passing — is built and verified for SMB; `operations/BUILD_TASKS.md` does not list a Micro-tier

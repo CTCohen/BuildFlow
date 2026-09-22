@@ -16,6 +16,9 @@ workflows (`platform/retention/`), and (2) **drafted legal documents** (Terms, P
 that are written but explicitly still need lawyer review before the first real charge, per
 `legal/SPEC-11-compliance-security.md`'s own override note. Neither is "done" in the same sense.
 
+
+**Code lives at:** `platform/retention/` (code); `legal/` (draft legal documents, out of scope for this session's edits)
+
 ## Built and verified
 - [x] Data retention/deletion workflows — `platform/db/migrations/0005_retention.sql` (scheduled purge job
   `admin.purge_expired_data`; deletion-request workflow `admin.request_deletion`/

@@ -1,5 +1,5 @@
 ---
-title: Offboarding System
+title: Client Offboarding System
 purpose: Authoritative spec and build checklist for the Offboard tier's data export/handoff and cancellation flow. Superseded/absorbed from onboarding/SPEC-12-customer-lifecycle.md (System 12) and platform/SPEC-03-hosting-infrastructure.md's Offboard export override.
 status: active
 owner: c.t.cohen
@@ -9,13 +9,16 @@ tier_scope: all
 phase: phase_1
 ---
 
-# Offboarding System
+# Client Offboarding System
 
 Handles a customer leaving Fornax two ways: an Offboard-tier one-time purchase where the customer takes their
 domain and site files with no ongoing support (per `CLAUDE.md`: "Never hand over code, DNS or hosting under
 Managed. Never delete"), and a Managed-tier cancellation, which triggers the retention/deletion timeline. No
 dedicated Offboarding spec file exists — its content lives inside System 12 (customer lifecycle) and System 03
 (hosting, "after conversion a site runs on our hosting or the client's — Offboard export").
+
+
+**Code lives at:** `platform/retention/`, `platform/dashboards/`, `platform/hosting/`
 
 ## Built and verified
 - [x] Cancelled-customer data retention timeline (90 days then delete) — `platform/db/migrations/0005_retention.sql`
@@ -27,6 +30,25 @@ dedicated Offboarding spec file exists — its content lives inside System 12 (c
 - [x] Deletion-request workflow (customer-initiated data deletion, 45-day SLA) — same migration file:
   `admin.request_deletion` / `admin.fulfill_deletion_request`, logged to `admin.deletion_requests`, with an
   SLA-overdue alert hook (`admin.overdue_deletion_requests`). Same live-run caveat as above.
+
+## Blocking dependency (Tyler, 2026-09-22)
+Neither Client Onboarding nor Client Offboarding should be built out further until the customer dashboard and
+hosting specs for BOTH paths are exact: what a Managed customer's dashboard/hosting setup looks like, and
+separately what an Offboard customer walks away with. Building onboarding/offboarding logic ahead of those specs
+being nailed down risks building the wrong handoff shape twice.
+
+## Real open question, needs research before committing to this tier (Tyler, 2026-09-22)
+Is offboarding actually simple enough to sell? The original idea was to sell Offboard to prospects who would
+never buy Managed at all — a low-commitment entry point. Whether that's viable depends entirely on how tightly
+the site/dashboard is integrated with things that can't be cleanly hand off to a customer own their infra:
+- A static site + exported lead data → easy, genuinely simple to offboard
+- If a customer's phone number, voicemail, or call routing runs through Fornax → hard, possibly not cleanly
+  offboardable at all without breaking their business continuity
+**Recommendation, not yet ruled:** exclude phone/voicemail/call-routing integration from anything sold as
+Offboard-eligible — keep those Managed-only, which keeps the actual offboarding mechanics simple (files + data
+export + DNS handoff, nothing tied to a live phone number). If a future feature needs phone integration, it
+should ship as a Managed-only feature, not offered to the Offboard tier. This needs a real decision before any
+onboarding/offboarding code gets built, not just a note here.
 
 ## Specified, not yet built
 - [ ] Offboard export mechanics — handing the customer their domain and static site files with no ongoing

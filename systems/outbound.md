@@ -14,6 +14,12 @@ phase: phase_1
 Finds candidate businesses, scores whether they're a fit and which tier, and contacts them with a personalized
 demo link on a fixed schedule — without Tyler doing manual prospecting. Code: `agents/lead/`.
 
+
+**Code lives at:** `agents/lead/`
+
+**Flow diagram:** `docs/workflow-graph.html` (needs refresh — stale as of 2026-09-22) shows the lead → demo →
+outreach sequence this system executes; treat its visual sequencing as unconfirmed until refreshed.
+
 ## Built and verified
 - [x] Business-size classification and tier routing (Micro under 3 employees, SMB 3-20, Mid-Market above/$5M+)
   — kept as built, ruled by Tyler 2026-09-21, matches `docs/PRICING_STRATEGY_RESEARCH.md`. `agents/lead/size.py`.

@@ -17,6 +17,9 @@ phase: phase_1
 `unsupported tier "mid-market" (only "micro" and "smb" are in scope, see LANE-H-dashboards.md)`. Mid-Market is
 explicitly out of scope for the current dashboard build, not merely unstarted.
 
+
+**Code lives at:** none — no design or dashboard code exists for this tier; `platform/dashboards/lib/tier-features.mjs` explicitly throws on `"mid-market"`
+
 ## Built and verified
 - (none — nothing built, by design, per the pause ruling; the shared dashboard code actively rejects this tier)
 

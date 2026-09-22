@@ -31,6 +31,26 @@ these system files, not duplicated. As each system file below absorbs its old sp
 interacts with as a unit — not a code module, not a single feature. "Outbound" is a system. "The bounce-rate
 pause threshold" is one line inside Outbound's spec, not its own file.
 
+**Flow diagram:** `docs/workflow-graph.html` (needs refresh — stale as of 2026-09-22) is the existing visual
+pipeline diagram. It predates tonight's builds and the Fornax rename in places, so treat what it shows as
+unconfirmed until it's redrawn — that redraw is separate, larger follow-up work, not done in this pass. It's
+also linked from `systems/outbound.md`, `systems/onboarding.md`, and `systems/admin-dashboard.md`, the three
+system files a visual flow would most help.
+
+**Specs vs. flows vs. workflows.** Three different things, easy to blur together — Tyler's terms for each:
+- **Specs** (`systems/*.md`, this folder) are the checkbox-tracked *what and why*: what a system does, what's
+  built and verified, what's specified but not built, what's possible but not committed to, and what's still
+  an open question. Text, one file per system, the authoritative source.
+- **Flows** are visual diagrams showing the sequence a lead, a customer, or a dollar actually moves through —
+  e.g. lead discovered → scored → demo built → outreach sent → opened → converted. They live as diagrams (like
+  `docs/workflow-graph.html`), referenced from whichever system file(s) the sequence touches, not re-described
+  as duplicate prose in the spec. A flow shows the path; the spec it's linked from explains each stop on it.
+- **Workflows** are who/what does each step — human (Tyler) vs. agent, retries, and approval gates. That's
+  already `operations/LOOPS.md`: its table (trigger, runs where, inputs → outputs, approval gate, lane/budget)
+  is the workflow layer for every automated loop in the business. Don't duplicate LOOPS.md content into a
+  system file — cross-link it (as several system files already do implicitly via their agent/automation
+  descriptions) instead.
+
 **File format every system file follows:**
 ```
 ---
@@ -57,8 +77,8 @@ One paragraph: what this system does, for whom, and how it fits the rest of the 
 | System | File | Status |
 |---|---|---|
 | Outbound (lead discovery, scoring, outreach) | [systems/outbound.md](systems/outbound.md) | drafted |
-| Onboarding | [systems/onboarding.md](systems/onboarding.md) | drafted |
-| Offboarding | [systems/offboarding.md](systems/offboarding.md) | drafted |
+| Client Onboarding | [systems/onboarding.md](systems/onboarding.md) | drafted |
+| Client Offboarding | [systems/offboarding.md](systems/offboarding.md) | drafted |
 | Admin command center (CRM view, outbound pacing/scripts, analytics, financials) | [systems/admin-dashboard.md](systems/admin-dashboard.md) | drafted |
 | Design system — Micro | [systems/design-micro.md](systems/design-micro.md) | drafted |
 | Design system — SMB | [systems/design-smb.md](systems/design-smb.md) | drafted |
@@ -70,6 +90,11 @@ One paragraph: what this system does, for whom, and how it fits the rest of the 
 | Hosting & deployment | [systems/hosting.md](systems/hosting.md) | drafted |
 | Compliance & data retention | [systems/compliance.md](systems/compliance.md) | drafted |
 | Marketing site | [systems/marketing-site.md](systems/marketing-site.md) | drafted |
+| Customer Support | systems/support.md (not yet created) | identified, not yet drafted |
+| Customer Feedback & Iteration | systems/feedback.md (not yet created) | identified, not yet drafted |
+| SEO / AI-Visibility | systems/seo-ai-visibility.md (not yet created) | identified, not yet drafted |
+| Experimentation | systems/experimentation.md (not yet created) | identified, not yet drafted |
+| *(meta, not a system)* Coverage audit | [systems/AUDIT.md](systems/AUDIT.md) | reference |
 
 **Note on dashboards:** per Tyler's ruling (2026-09-22), dashboards are uniform within a tranche — every Micro
 customer's dashboard looks and functions identically, wired to their site's own lead-capture endpoints. Not
@@ -78,6 +103,7 @@ the opposite of the website design system, which is deliberately per-business th
 
 ## Governance
 - Every file in `systems/` must be listed in the table above, and every table row must point to a real file —
-  `governance/enforce.py` checks this (implementation pending, see systems/README.md status).
+  `governance/enforce.py --check-systems` (also part of the default full-cycle run) checks this both
+  directions. See `governance/README.md` for what governance means here and how the checks run.
 - `CLAUDE.md` points here as the entry point for "what does the business actually do and what's built."
 - Update this file's `updated:` date whenever a system is added, renamed, or its status column changes.

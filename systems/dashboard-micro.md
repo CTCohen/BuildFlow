@@ -17,6 +17,9 @@ most edit capabilities flagged off: effectively lead-inbox-only, wired to that c
 lead-capture endpoints. Dashboards are uniform within the Micro tranche — not per-vertical (yet; open question
 below).
 
+
+**Code lives at:** `platform/dashboards/lib/customer-dashboard.mjs`, `tier-features.mjs`, `sandbox-dashboard.mjs`, `demo-tracking.mjs` (shared with SMB, see `systems/dashboard-smb.md`)
+
 ## Built and verified
 - [x] Feature-flag resolution for Micro — `platform/dashboards/lib/tier-features.mjs`'s `MICRO_OVERRIDES`:
   turns off `notes`, `pipeline`, `imageUploads` (multi-image), `crmConfig`, `editServiceDescriptions`,
@@ -32,6 +35,42 @@ below).
   `buildSandboxDashboard("micro")`, built on sample/fixture data only (`sample-*` ids, `@example.com` emails),
   `assertSampleShaped()` throws on any real-looking id, no mutation helpers re-exported. Includes
   `demoAnalytics` from `demo-tracking.mjs`.
+
+### Exact fields shown (lead inbox — the only data view Micro has)
+`buildLeadInbox()` maps each `app.form_submissions` row to: `id`, `name` (`prospect_name`), `email`
+(`prospect_email`), `phone` (`prospect_phone`), `message`, `submittedAt` (`submitted_at`), `crmSyncStatus`
+(defaults `"pending"`) and `pipelineStage` (defaults `"new"` — Micro never lets the customer move it, see below).
+Sorted newest-submission-first. `toCsv()` exports the same seven columns as `id,name,email,phone,submitted_at,
+pipeline_stage,crm_sync_status`.
+
+### Exact actions available to Micro (`platform/dashboards/lib/tier-features.mjs` `MICRO_OVERRIDES`)
+- View lead inbox (`leadInbox: true`), export CSV (`csvExport: true`), receive email alerts on new leads
+  (`emailAlerts: true`) — same as SMB.
+- Replace the site logo, one image only (`singleLogoUpload: true` via `buildImageUploadConfig("micro")` →
+  `{mode: "single-logo", targets: ["logo"], maxFiles: 1}`).
+- Add/edit one phone number (`singlePhoneNumberEdit: true`) — not full contact-info editing.
+- Edit business hours (`editHours: true`, inherited unchanged from the SMB base set — not overridden off).
+- Everything else is off: `notes`, `pipeline` (`buildPipeline`/`moveSubmissionStage` both throw
+  `"pipeline is not enabled for tier \"micro\""`), `imageUploads` (multi-image), `crmConfig`
+  (`buildCrmConfigView` throws), `editServiceDescriptions`, `addTestimonials`, `editContactInfo` (full),
+  `editBrandColor`, `editFonts`, `customCss`, `multiUser`, `apiAccess` — the last five are off for SMB too
+  (see `systems/dashboard-smb.md`), not a Micro-specific reduction.
+
+### Exact data sources
+`app.form_submissions` (lead inbox, CSV export) — no live Supabase wiring yet, fixture/mock rows only.
+Sandbox view additionally reads `fixtures/sandbox-dashboard.fixtures.mjs`'s `SAMPLE_FORM_SUBMISSIONS`,
+`SAMPLE_CRM_INTEGRATION` (unused since `crmConfig` is off), `SAMPLE_DEMO_EVENTS` (→ `demo-tracking.mjs`'s
+`buildDemoAnalytics()` for the read-only demo analytics block: view count, unique sessions, device/referrer
+counts, scroll-depth milestones, section clicks, form-engagement rate, avg time on site).
+
+### Exact differences from SMB (not just "less")
+Same component tree, same `customer-dashboard.mjs`/`tier-features.mjs` functions — Micro is a flag reduction,
+not a separate build. The concrete deltas: Micro trades SMB's multi-image uploader for a single logo replace,
+trades full contact-info editing for one phone-number field, and has no notes, no pipeline (lead status is
+always `"new"` in the UI, uneditable), and no CRM config screen at all (Micro has no CRM integration — CRM
+sync is an SMB-tier capability per `systems/outbound.md`/`systems/admin-dashboard.md`). `editHours` and the
+five always-off flags (`editBrandColor`, `editFonts`, `customCss`, `multiUser`, `apiAccess`) are identical
+between tiers.
 
 **Test evidence:** part of the 43/43 `platform/dashboards` `node --test` suite, verified live 2026-09-22
 (`operations/BUILD_TASKS.md` §7, `operations/COORDINATOR_STATE.md`'s "5 buildable-now items" run). **Not wired

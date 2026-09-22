@@ -15,6 +15,16 @@ The ICP tier's website generation: curated design choices (hero style, typograph
 layout, conditional trade-signal features, full QA gate. Philosophy: "You choose your aesthetic, we handle the
 rest." This is the design system the Design Agent is actually built against today (`agents/design/`).
 
+
+**Code lives at:** `agents/design/`, `app/`
+
+**Saved demo builds:** `app/dist/` is Astro's ephemeral build output (gitignored, wiped every build — not a
+storage location) and `agents/design/out/smoke/` is scratch space for a single smoke-test run (overwritten next
+run). A build worth keeping past the run that produced it — for review, a QA escalation, or an outreach send —
+gets copied into `agents/design/demos/smb/<vertical>-<slug>/`. Only `agents/design/demos/README.md` and any
+curated review report are tracked in git; the generated site output itself is gitignored
+(`agents/design/demos/*/*/` in `.gitignore`). See `agents/design/demos/README.md` for the full convention.
+
 ## Built and verified
 - [x] Design Agent v0 builds a site from client JSON — `operations/BUILD_TASKS.md` §3: "done, lane/design,
   verified 67/67 evals" (`agents/design/evals/design.eval.mjs`)

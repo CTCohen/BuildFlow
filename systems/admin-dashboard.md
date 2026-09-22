@@ -15,6 +15,12 @@ Tyler's own operations view: pipeline/CRM funnel, customer health, revenue, and 
 panel (the iOS photo-intake app is explicitly Phase 1.5, out of scope per the spec's own override). Code:
 `platform/dashboards/lib/admin-dashboard.mjs`, built and tested 2026-09-22 as part of Track H.
 
+
+**Code lives at:** `platform/dashboards/lib/admin-dashboard.mjs`, `agents/lead/`
+
+**Flow diagram:** `docs/workflow-graph.html` (needs refresh — stale as of 2026-09-22) shows how leads/outbound
+feed the admin view this system renders; treat its visual sequencing as unconfirmed until refreshed.
+
 ## Built and verified
 - [x] Pipeline funnel + stuck-deal detection — `platform/dashboards/lib/admin-dashboard.mjs`'s
   `buildPipelineFunnel()` and `findStuckDeals()`. Funnel stages: Identified → Outreach Sent → Demo Viewed →

@@ -1,5 +1,5 @@
 ---
-title: Onboarding System
+title: Client Onboarding System
 purpose: Authoritative spec and build checklist for the 30-day post-purchase customer journey. Superseded/absorbed from onboarding/SPEC-12-customer-lifecycle.md (System 12), Section 1.
 status: active
 owner: c.t.cohen
@@ -9,13 +9,19 @@ tier_scope: all
 phase: phase_1
 ---
 
-# Onboarding System
+# Client Onboarding System
 
 Takes a customer from Stripe payment confirmed to a live, working relationship with their site: a Day 0-30
 automated email and dashboard sequence that gets them their first leads and their first content edit, with a
 success milestone at Day 30. Spec source: `onboarding/SPEC-12-customer-lifecycle.md` Section 1 (System 12).
 Code location once built: expected under `onboarding/` (folder exists, currently spec files only) plus the
 billing→hosting pipeline for the Day 0 trigger.
+
+
+**Code lives at:** `onboarding/`, `billing/webhooks.py`, `platform/dashboards/lib/demo-tracking.mjs`
+
+**Flow diagram:** `docs/workflow-graph.html` (needs refresh — stale as of 2026-09-22) shows the payment →
+onboarding → Day 0-30 sequence this system runs; treat its visual sequencing as unconfirmed until refreshed.
 
 ## Built and verified
 - (none — no onboarding-specific code exists yet per `operations/BUILD_TASKS.md`, which does not list an
