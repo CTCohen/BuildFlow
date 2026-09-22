@@ -40,9 +40,9 @@ account exists yet).
   `admin.resolve_alert` dedupe/escalate/resolve pattern from `0004_monitoring.sql`. `cost-alert.mjs`'s own 3 JS
   unit tests pass live.
 
-**Test evidence:** 40/40 unit tests pass (`node --test platform/hosting/*.test.mjs`), which includes the
-pipeline module's own 9/9 case subset — run live 2026-09-22 per `operations/BUILD_TASKS.md` §2 and
-`operations/COORDINATOR_STATE.md`. The SQL migration for the cost alert (`0006_hosting_cost_alert.sql`) and its
+**Test evidence:** 31/31 unit tests pass (`node --test platform/hosting/*.test.mjs` — assets 6, cost-alert 3,
+deploy 11, domains 6, pipeline 5), re-confirmed live by the coordinator session 2026-09-22 after an earlier
+agent's report cited an incorrect 40/40. The SQL migration for the cost alert (`0006_hosting_cost_alert.sql`) and its
 SQL test (`platform/db/tests/21_hosting_cost.sql`) were **not run live** — this sandbox cannot start local
 Postgres (`shmget: Operation not permitted`); needs Tyler's Mac or CI.
 
