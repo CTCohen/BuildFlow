@@ -113,21 +113,3 @@ export function makeDesignDecisions(c: Client = client): AgentDecision {
     reasoning,
   };
 }
-
-  return {
-    themeId: selectedTheme.themeId,
-    themeName: selectedTheme.themeName,
-    colors: selectedTheme.colors,
-    typography: data.pricing === 'premium' ? 'classic' : 'humanist',
-    density: analysis.scale === 'large' ? 'spacious' : 'comfortable',
-    components: {
-      heroVariant: variants.heroVariant,
-      servicesLayout: variants.servicesLayout,
-      testimonialStyle: variants.testimonialStyle,
-      ctaPosition: variants.ctaPosition,
-      footerVariant: variants.footerVariant,
-    },
-    contentTone: tone,
-    analysis,
-  };
-}
