@@ -49,7 +49,7 @@ Contractors with better websites book jobs 40% faster.
 
 See the difference → [2-min video]
 
-– BuildFlow
+– Fornax
 ```
 
 **Best for:** HVAC (summer rush), pressure washing, lawn care (spring)
@@ -69,7 +69,7 @@ Already getting online quote requests.
 
 Quick look? [2-min video]
 
-– BuildFlow
+– Fornax
 ```
 
 **Best for:** Competitive markets (every contractor you call has competition)
@@ -90,7 +90,7 @@ If it's under 5, we can help.
 
 5-min call? [Calendar link]
 
-– BuildFlow
+– Fornax
 ```
 
 **Best for:** Warm leads, follow-ups, prospects who engaged with email
@@ -111,7 +111,7 @@ Illustrative example (hypothetical, not a customer result): One HVAC contractor 
 
 Worth 10 minutes to talk? [Calendar]
 
-– BuildFlow
+– Fornax
 ```
 
 ### If they text "I have a website"
@@ -122,7 +122,7 @@ If it's less than 5, we can probably improve it in 1-2 weeks.
 
 Quick call? [Calendar]
 
-– BuildFlow
+– Fornax
 ```
 
 ### If they text "I'm not interested"
@@ -132,7 +132,7 @@ we can do it in a week. Just keep us in mind.
 
 Good luck!
 
-– BuildFlow
+– Fornax
 ```
 
 ---
@@ -244,7 +244,7 @@ Most contractors without sites are losing 60% of their potential leads..."
 **SMS compliance (US/Canada):**
 - Opt-in required (implied consent via email = okay)
 - Opt-out capability ("Reply STOP to unsubscribe")
-- Clear sender ID ("BuildFlow")
+- Clear sender ID ("Fornax")
 - No SMS before 9 AM or after 9 PM recipient's time
 
 **Implementation:**

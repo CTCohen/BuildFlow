@@ -12,7 +12,7 @@ phase: operational
 
 ## Overview
 
-The BuildFlow color token system provides 5 pre-configured color variants optimized for different service business positioning strategies. Each variant includes complete token definitions for light and dark modes, semantic colors, and badge configurations.
+The Fornax color token system provides 5 pre-configured color variants optimized for different service business positioning strategies. Each variant includes complete token definitions for light and dark modes, semantic colors, and badge configurations.
 
 **Key files:**
 - `color-token-structure.ts` - Core token interface and CSS generation

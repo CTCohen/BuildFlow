@@ -52,7 +52,7 @@ Step 1 starts tomorrow. Check your email tomorrow morning.
 Questions? Reply to this email anytime.
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 **Metadata:**
@@ -124,7 +124,7 @@ Once you finish both, reply "DONE" and we'll send you Part 3.
 Good luck!
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 **Metadata:**
@@ -149,7 +149,7 @@ Hi [First Name]! Quick reminder:
 Set up Google Business today? Takes 5 min: [GOOGLE_GUIDE_LINK]
 
 Reply YES when done, or HELP if stuck. 
-– BuildFlow
+– Fornax
 ```
 
 **Timing:** Send at 10 AM PT
@@ -219,7 +219,7 @@ This one step often brings your first website leads.
 Next up: Monthly checklist to keep your site fresh (coming Day 7).
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 **Metadata:**
@@ -291,10 +291,10 @@ Come back in 30 days and tell us:
 
 This helps us improve your site and gives you data on what's working.
 
-Thanks for choosing BuildFlow. Let's grow your business.
+Thanks for choosing Fornax. Let's grow your business.
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 **Metadata:**
@@ -310,7 +310,7 @@ BuildFlow
 ```
 Hi [Name]! Your new website is live: [SITE_URL]
 Google setup + call tracking guide coming tomorrow.
-– BuildFlow
+– Fornax
 ```
 
 **Day 1 (after email):**
@@ -318,7 +318,7 @@ Google setup + call tracking guide coming tomorrow.
 Set up Google Business today? Takes 5 min.
 Video: [VIDEO_2_LINK]
 Reply DONE when finished, or HELP if stuck.
-– BuildFlow
+– Fornax
 ```
 
 **Day 3 (reminder):**
@@ -326,14 +326,14 @@ Reply DONE when finished, or HELP if stuck.
 Don't forget to tell your customers about your new site!
 Email template: [EMAIL_TEMPLATE_LINK]
 Reply YES when done.
-– BuildFlow
+– Fornax
 ```
 
 **Day 7 (final checklist):**
 ```
 Setup done! Here's your monthly maintenance checklist: [CHECKLIST_LINK]
 Questions? Reply anytime.
-– BuildFlow
+– Fornax
 ```
 
 ---

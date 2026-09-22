@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# Buyer personas: BuildFlow
+# Buyer personas: Fornax
 
 ## Primary (ICP): SMB trades owner
 **Who:** owner or manager of an established trades business (plumbing, HVAC, electrical, roofing), 3-20 employees, $250k-$5M revenue. Already uses or is considering a CRM (HubSpot, Jobber, ServiceTitan, Housecall Pro, Successware).

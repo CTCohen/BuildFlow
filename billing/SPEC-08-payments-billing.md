@@ -91,7 +91,7 @@ Lock down payment infrastructure, billing automation, revenue accounting, and ta
 
 **Sales tax:** collect only if nexus established in a state; simplest default assumes no nexus Phase 1; reassess if any state exceeds $100K
 
-**Income tax:** BuildFlow revenue as business income; quarterly estimated taxes; CPA-prepared Schedule C
+**Income tax:** Fornax revenue as business income; quarterly estimated taxes; CPA-prepared Schedule C
 
 **Stripe 1099-K:** issued if volume >$20K and >200 transactions (likely hit month 2-3); requires EIN
 
@@ -124,7 +124,7 @@ Small claims filing (Arizona $3,500 limit, ~$100-150 filing cost, 70%+ win rate 
 ### Back-Payment Calculation (Agent Logic)
 Inputs: delinquency_count, delinquent_since, current_date, monthly_amount, tier. Calculation: months_delinquent × monthly_amount, minus 14-day forgiveness (1st only), plus 5% late fee if applicable, plus current month. Validated twice independently; alert Tyler if discrepancy >$1.
 
-### BuildFlow Tuning
+### Fornax Tuning
 Seasonal cash flow awareness (HVAC slower in winter, plumbing busier; vice versa in summer) — don't penalize seasonal dips harshly in Tier 1-2. Retention threshold: if LTV <$500, don't pursue small claims (cost/benefit negative); prefer payment plan or write-off. Every delinquency email includes value reminder ("You missed X qualified leads this week while offline").
 
 ### Delinquency Metrics Dashboard
@@ -147,7 +147,7 @@ Tracked daily: % delinquent by tier, total MRR at-risk, recovery rate by tier, l
 **Stripe implementation:**
 - One additional Stripe Price object per tier (interval: year) alongside the existing monthly Price objects
 - Checkout / dashboard billing settings present a monthly/annual toggle
-- Single invoice line item: "BuildFlow Annual -- [Tier] -- [start date] to [end date]"
+- Single invoice line item: "Fornax Annual -- [Tier] -- [start date] to [end date]"
 - Renewal: auto-charges the full annual amount on the anniversary date (same subscriptions-API mechanism as monthly, just yearly interval)
 
 **Revenue recognition:** despite the lump-sum charge, revenue is still recognized monthly over the 12-month period (1/12 per month), consistent with Section 3's SaaS revenue-recognition policy -- the annual charge creates a deferred-revenue liability on receipt, recognized down over the year. MRR calculation (Section 3) treats an annual customer's contribution as `annual_price / 12` so MRR stays a true like-for-like metric across monthly and annual customers.
@@ -156,7 +156,7 @@ Tracked daily: % delinquent by tier, total MRR at-risk, recovery rate by tier, l
 
 **Cancellation policy -- non-refundable, no proration:** Canceling an annual plan mid-term forfeits the remaining prepaid period; no partial refund is issued, and access is stopped immediately upon the cancellation request (does not continue through the remainder of the paid year). This is an intentional carve-out from the monthly plan's 30-day pro-rata refund policy (Section 4) -- the annual discount is priced against the certainty of a 12-month commitment.
 
-**Refund exceptions still apply:** the two existing exceptions in Section 4 -- BuildFlow billing error, and extended unplanned service failure (24+ hr downtime, reported within 7 days) -- still entitle an annual customer to a refund or credit. This policy removes only the "customer changed their mind" refund path, not BuildFlow's own error accountability.
+**Refund exceptions still apply:** the two existing exceptions in Section 4 -- Fornax billing error, and extended unplanned service failure (24+ hr downtime, reported within 7 days) -- still entitle an annual customer to a refund or credit. This policy removes only the "customer changed their mind" refund path, not Fornax's own error accountability.
 
 **Customer-facing framing (dashboard/checkout copy):** "Save $[X]/year -- billed once annually. Non-refundable; cancel anytime for future renewals, but the current year isn't prorated if you cancel early." Set this expectation clearly at the point of purchase, not just in fine print, given the harder-than-monthly cancellation terms.
 

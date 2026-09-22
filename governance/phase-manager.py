@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow Phase Manager
+Fornax Phase Manager
 Automatically promotes enforcement phases based on timeline
 
 Run daily via cron or /schedule:
@@ -77,7 +77,7 @@ def main():
     config = load_config(workspace_root)
     current = get_current_phase(config)
 
-    print(f"🔄 BuildFlow Phase Manager")
+    print(f"🔄 Fornax Phase Manager")
     print(f"   Today: {datetime.now().strftime('%Y-%m-%d')}")
     print(f"   Current phase should be: {current}")
 

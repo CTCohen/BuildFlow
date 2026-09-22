@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * BuildFlow per-client QA gate.
+ * Fornax per-client QA gate.
  *
  *   node scripts/qa.mjs --client demo-plumbing [--skip-build] [--skip-browser]
  *
@@ -356,7 +356,7 @@ if (jsonOut) {
   process.exit(results.some((r) => r.status === "fail") ? 1 : 0);
 }
 const icon = { pass: "✓", fail: "✗", warn: "!", skip: "·" };
-console.log(`\nBuildFlow QA — client: ${slug}\n${"─".repeat(48)}`);
+console.log(`\nFornax QA — client: ${slug}\n${"─".repeat(48)}`);
 for (const r of results) {
   console.log(`${icon[r.status]} ${r.name}${r.detail ? "  — " + r.detail : ""}`);
 }

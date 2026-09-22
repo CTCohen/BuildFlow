@@ -1,6 +1,6 @@
 ---
 title: System 09 — CRM Integration System
-purpose: Customer external CRM connection via BuildFlow MCPs—supported platforms, sync depth, authentication, onboarding
+purpose: Customer external CRM connection via Fornax MCPs—supported platforms, sync depth, authentication, onboarding
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -28,7 +28,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 ## Purpose
 
-Lock down how customers connect their own external CRM (ServiceTitan, Jobber, HubSpot, etc.) so leads captured in BuildFlow's lightweight dashboard automatically sync to their existing CRM system via our built MCPs.
+Lock down how customers connect their own external CRM (ServiceTitan, Jobber, HubSpot, etc.) so leads captured in Fornax's lightweight dashboard automatically sync to their existing CRM system via our built MCPs.
 
 ## Contents
 
@@ -48,13 +48,13 @@ Lock down how customers connect their own external CRM (ServiceTitan, Jobber, Hu
 - **HubSpot:** OAuth 2.0/API key, 500 req/min — general SMB CRM
 - **Successware:** OAuth 2.0, 100 req/min — trades-specific, growing
 
-**Rationale:** these five cover 70%+ of trades market in Phase 1 verticals. Custom MCPs per CRM (BuildFlow builds/maintains, not middleware). Customer owns their CRM credentials (BuildFlow stores encrypted auth tokens only).
+**Rationale:** these five cover 70%+ of trades market in Phase 1 verticals. Custom MCPs per CRM (Fornax builds/maintains, not middleware). Customer owns their CRM credentials (Fornax stores encrypted auth tokens only).
 
 ---
 
 ## SECTION 2: Sync Depth & Data Flow — LOCKED
 
-**Direction: One-way, BuildFlow dashboard → customer's external CRM** (Phase 1)
+**Direction: One-way, Fornax dashboard → customer's external CRM** (Phase 1)
 
 **Data synced:** name, email, phone, message, submission timestamp — within 5 minutes (batch sync every 5 min)
 
@@ -66,7 +66,7 @@ Lock down how customers connect their own external CRM (ServiceTitan, Jobber, Hu
 
 ## SECTION 3: Authentication & Customer Onboarding — LOCKED
 
-**OAuth flow:** Dashboard → Integrations → choose CRM → OAuth redirect → customer authorizes → BuildFlow receives token, stores encrypted, sync begins → success message
+**OAuth flow:** Dashboard → Integrations → choose CRM → OAuth redirect → customer authorizes → Fornax receives token, stores encrypted, sync begins → success message
 
 **Token security:** AES-256 encrypted, separate secrets manager, only sync agents can decrypt, auto-refresh before expiration, immediate revocation on disconnect
 
@@ -106,13 +106,13 @@ Lock down how customers connect their own external CRM (ServiceTitan, Jobber, Hu
 
 ## SECTION 6: CRM Conflict Resolution — LOCKED
 
-**Policy: CRM Wins by Default, Agent Reconciliation.** Customer's CRM is system of record; BuildFlow never unconditionally overwrites customer work.
+**Policy: CRM Wins by Default, Agent Reconciliation.** Customer's CRM is system of record; Fornax never unconditionally overwrites customer work.
 
 **Reconciliation logic (4 signals):** CRM edit recency (highest weight), data completeness, field type match, customer CRM activity level
 
 **Decision tree:**
 - CRM edit <24h old + field complete → CRM WINS
-- CRM edit >7d old + BuildFlow data higher quality → BuildFlow WINS
+- CRM edit >7d old + Fornax data higher quality → Fornax WINS
 - Custom/auxiliary field conflict → CRM ALWAYS WINS
 - Confidence <60% → FLAG TO TYLER
 - Default → CRM WINS

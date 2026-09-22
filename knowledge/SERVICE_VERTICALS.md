@@ -1,8 +1,8 @@
 > **Updated 2026-09-18:** Phase 1 verticals follow the spec (plumbing, HVAC, electrical, roofing). Vertical expansion beyond those waits for Phase 2+.
 
-# Service Business Verticals — BuildFlow Target Market
+# Service Business Verticals — Fornax Target Market
 
-> Complete taxonomy of service businesses BuildFlow can serve.
+> Complete taxonomy of service businesses Fornax can serve.
 > Used for discovery automation, prospect research, and knowledge base expansion.
 > Last updated: 2026-09-13
 
@@ -222,7 +222,7 @@
 
 - **Purpose:** Reference for vertical selection, discovery automation, knowledge base planning
 - **Updated:** When new verticals are added to discovery or when market research changes priorities
-- **Owner:** BuildFlow product/research team
+- **Owner:** Fornax product/research team
 - **Used by:** Discovery agents, knowledge base builders, sales positioning
 
-**File:** `/BuildFlow/knowledge/SERVICE_VERTICALS.md`
+**File:** `/Fornax/knowledge/SERVICE_VERTICALS.md`

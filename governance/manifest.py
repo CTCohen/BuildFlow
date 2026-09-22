@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow application manifest.
+Fornax application manifest.
 Lists every non-archive workspace file with its intended action from the spec reconciliation and whether it is done.
 Status is computed from git: a file is "done" if it changed since the tag `pre-spec-reconciliation` (or is new).
 

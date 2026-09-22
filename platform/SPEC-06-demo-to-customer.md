@@ -45,7 +45,7 @@ Lock down the complete flow from demo generation through conversion to payment a
 **LOCKED ARCHITECTURE:**
 - Trigger: when Outbound Campaign Agent sends prospect email (eager generation)
 - Rendering: Design Agent generates full static HTML website (~50KB, ~10 sec), QA validated (Lighthouse + axe) before upload
-- Storage: Cloudflare Workers/Pages (not S3); Demo URL: `buildflow.com/demo/[prospect-id]`
+- Storage: Cloudflare Workers/Pages (not S3); Demo URL: `[domain TBD under Fornax name]/demo/[prospect-id]`
 - Demo-to-live transition: same static files (regenerated with customer branding), same Cloudflare infra, <1 min from payment to live
 - Cost: $0 per demo (Cloudflare free tier / Pro at scale)
 
@@ -54,7 +54,7 @@ Lock down the complete flow from demo generation through conversion to payment a
 ## SECTION 2: Demo Delivery, Tracking & Analytics
 
 **Contents:**
-- Demo URL format: `buildflow.com/demo/[prospect-id]/[unique-token]` (non-guessable), no login required
+- Demo URL format: `[domain TBD under Fornax name]/demo/[prospect-id]/[unique-token]` (non-guessable), no login required
 - Tracking events: demo viewed (timestamp, device, referrer), time on site, scroll depth (25/50/75/100%), section clicks, form interaction
 - Analytics measured: view count, view duration, scroll depth, form engagement, conversion rate, device type, traffic source
 - Prospect feedback: "Interested?" CTA leads to conversion form

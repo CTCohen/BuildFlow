@@ -130,7 +130,7 @@ export function validateClient(data) {
   // "existing-identity": the business already has a logo/brand — media.logo must point to it,
   //   and brand.primary/accent below are expected to be EXTRACTED from that logo (by eye today;
   //   automatable later), not invented. Don't restyle these businesses — honor what they have.
-  // "generated-identity": no usable existing brand — brand.primary/accent are BuildFlow's
+  // "generated-identity": no usable existing brand — brand.primary/accent are Fornax's
   //   invented identity for them, chosen freely per the conditional-features rules.
   const media = data.media || {};
   if (!BRAND_SOURCES.includes(media.source)) {

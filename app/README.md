@@ -11,7 +11,7 @@ phase: operational
 > **Updated 2026-09-18 (spec reconciliation):** clients now carry `tier` (micro|smb) and `styleProfile` (see `src/data/schema.mjs`); `content.es` is optional (English-only at launch). Scaffold with `npm run new-client -- <slug> <trade> [--tier micro|smb] [--profile <id>] [--es]`. QA takes `--stage demo|live` (demo floor: Lighthouse 80/90/80; live 90). Deploy: static output goes to Cloudflare Pages/R2 (not one Railway service per client); see `docs/tech-stack.md`.
 
 
-# BuildFlow — website generator
+# Fornax — website generator
 
 One Astro codebase. **One client per build.** Each client is a single JSON file in
 `src/data/clients/<slug>.json`; the build renders that client's site into `dist/`.

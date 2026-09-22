@@ -57,7 +57,7 @@ See what we've built for similar contractors: https://buildflow.com/samples/hvac
 5-min call? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -95,7 +95,7 @@ See what we've built for similar contractors: https://buildflow.com/samples/plum
 5-min call? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -174,7 +174,7 @@ See what we've built for similar contractors: https://buildflow.com/samples/[tra
 5-min call? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ### Step 2: Personalize for Each Prospect

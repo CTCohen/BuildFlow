@@ -1,6 +1,6 @@
 ---
 title: external-integrations-system
-purpose: BuildFlow customer integrations with external CRMs. Top 10 trades CRMs supported; bidirectional sync of leads, conversions, and customer data. MCP-based connectors for easy customer onboarding.
+purpose: Fornax customer integrations with external CRMs. Top 10 trades CRMs supported; bidirectional sync of leads, conversions, and customer data. MCP-based connectors for easy customer onboarding.
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -50,13 +50,13 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 ---
 
-## 2. Data Flow: BuildFlow → Customer's External CRM
+## 2. Data Flow: Fornax → Customer's External CRM
 
 **Push events:** qualified_lead_generated (business info, contact, lead_quality_score, urgency, service_category), lead_converted (conversion value/type/date), website_interaction (real-time page views, calls, chat, form submits)
 
 ---
 
-## 3. Data Flow: Customer's External CRM → BuildFlow (Feedback Loop)
+## 3. Data Flow: Customer's External CRM → Fornax (Feedback Loop)
 
 **Pull events:** lead_status_updated (crm_status, notes, outcome, competitor_name if lost), customer_record_updated (contact info, notes, NPS, renewal flag)
 
@@ -68,17 +68,17 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 **Sync frequency:** lead push real-time (<2 min); status pull every 2 hours; daily bulk reconciliation
 
-**Conflict resolution:** BuildFlow source of truth for lead quality score + website-form contact info; CRM source of truth for lead status/outcome/notes; CRM wins for historical data, BuildFlow wins for new lead attributes
+**Conflict resolution:** Fornax source of truth for lead quality score + website-form contact info; CRM source of truth for lead status/outcome/notes; CRM wins for historical data, Fornax wins for new lead attributes
 
 ---
 
 ## 5. MCP Connector Implementation (Per CRM)
 
-Standard pattern: `buildflow-{crm_name}-connector` — authenticate(), create_lead(), update_lead(), get_lead_status(), sync_customer_data()
+Standard pattern: `fornax-{crm_name}-connector` — authenticate(), create_lead(), update_lead(), get_lead_status(), sync_customer_data()
 
 ---
 
-## 6. Data Mapping: BuildFlow Fields → CRM Fields
+## 6. Data Mapping: Fornax Fields → CRM Fields
 
 Standard fields (contact_name, contact_email, contact_phone, business_name, lead_quality_score, service_category, estimated_value, urgency) mapped per-CRM in onboarding config.
 

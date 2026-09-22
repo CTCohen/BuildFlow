@@ -128,7 +128,7 @@ create table app.crm_conflict_log (
   field text not null,
   old_value text,
   new_value text,
-  winner text not null check (winner in ('crm','buildflow','flagged')),
+  winner text not null check (winner in ('crm','fornax','flagged')),
   reason text,
   confidence numeric(4,3) check (confidence between 0 and 1),
   created_at timestamptz not null default now()

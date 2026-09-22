@@ -248,7 +248,7 @@ Your login: [Admin link]
 - Builds trust (you're the founder, not a production company)
 - Faster to record and update
 - Customers appreciate authenticity
-- Lowers expectations (we're not Wistia, we're BuildFlow)
+- Lowers expectations (we're not Wistia, we're Fornax)
 
 **Editing (Phase 1 — minimal):**
 - Cut dead air

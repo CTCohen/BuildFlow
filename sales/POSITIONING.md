@@ -12,8 +12,8 @@ phase: operational
 
 > Rebuilt 2026-09-18 from the business model (Part 7) and Systems 05/19. Message tone: casual but professional, direct, action-oriented. Core message: "Qualified leads, automatically. Your website does the work."
 
-## Why BuildFlow (not a cheaper Wix)
-Wix/Squarespace are generic, cheap and DIY. ServiceTitan/Jobber/Housecall Pro have basic landing pages. BuildFlow is a trade-specific site, CRM integration, built-in WCAG 2.1 AA, automated review aggregation, and done-for-you generation in one place.
+## Why Fornax (not a cheaper Wix)
+Wix/Squarespace are generic, cheap and DIY. ServiceTitan/Jobber/Housecall Pro have basic landing pages. Fornax is a trade-specific site, CRM integration, built-in WCAG 2.1 AA, automated review aggregation, and done-for-you generation in one place.
 Moats: trades-specific design, accessibility built in, review aggregation, CRM integration, done-for-you.
 
 ## The three stories

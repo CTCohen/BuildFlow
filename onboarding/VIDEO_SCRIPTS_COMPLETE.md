@@ -23,7 +23,7 @@ phase: operational
 
 **[OPEN WITH CONFIDENT SMILE, LOOK AT CAMERA]**
 
-"Hey, I'm Tyler with BuildFlow. Your site just went live, and I want to walk you through what happens next.
+"Hey, I'm Tyler with Fornax. Your site just went live, and I want to walk you through what happens next.
 
 Over the next week, I'm going to show you three things: how to set up your Google Business profile—which is where 60% of your new customers will find you—how to add call tracking so you know which calls come from your site, and how to tell your existing customers about the site.
 
@@ -192,7 +192,7 @@ Your site will be live on Day 7.
 Let's go.
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ---
@@ -232,6 +232,6 @@ Once these videos are recorded and uploaded, every customer you close gets these
 
 ---
 
-File: `/BuildFlow/onboarding/VIDEO_SCRIPTS_COMPLETE.md`
+File: `/Fornax/onboarding/VIDEO_SCRIPTS_COMPLETE.md`
 
 **Ready? Open your phone. Read Video 1. Record. Done.**

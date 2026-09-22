@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# Feature registry: BuildFlow
+# Feature registry: Fornax
 
 > Rebuilt 2026-09-18 from the 19 systems and the agent registry. Status: `idea` | `building` | `live` | `blocked` | `deferred`. Spec files sit beside their modules (`README.md` folder map).
 

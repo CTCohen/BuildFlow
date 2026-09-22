@@ -29,7 +29,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 **Phase:** Phase 1.5 (photo intake); Phase 1 (core web admin)
 
-**Architecture:** Separate iOS app (photo intake, pipeline, customer list, revenue, alerts, agent feedback) + web admin (admin.buildflow.com — full ops, reporting, config, CRM export). Bidirectional real-time sync; iOS works offline, syncs when online.
+**Architecture:** Separate iOS app (photo intake, pipeline, customer list, revenue, alerts, agent feedback) + web admin ([domain TBD under Fornax name] — full ops, reporting, config, CRM export). Bidirectional real-time sync; iOS works offline, syncs when online.
 
 ---
 

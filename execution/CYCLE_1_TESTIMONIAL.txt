@@ -24,12 +24,12 @@ Quick question: How's it looking? Any feedback on the design, layout, or messagi
 
 Also, if you're happy with it, would you mind sharing a quick testimonial (one or two sentences) that we can feature on our website? It helps other contractors see the quality of work we deliver.
 
-Something like: "What was your experience working with BuildFlow? What would you tell other contractors about our service?"
+Something like: "What was your experience working with Fornax? What would you tell other contractors about our service?"
 
 No pressure either way!
 
 Tyler
-BuildFlow
+Fornax
 
 ---
 
@@ -44,7 +44,7 @@ Tyler,
 
 Site looks great! Professional, clean, exactly what we needed. Already getting calls from customers who found us on Google.
 
-Here's a testimonial: "Professional team, fast response, great communication. Website is already getting calls. Highly recommend BuildFlow!"
+Here's a testimonial: "Professional team, fast response, great communication. Website is already getting calls. Highly recommend Fornax!"
 
 Feel free to use it.
 
@@ -53,7 +53,7 @@ Mike
 ---
 
 TESTIMONIAL_COLLECTED:
-Text: "Professional team, fast response, great communication. Website is already getting calls. Highly recommend BuildFlow!"
+Text: "Professional team, fast response, great communication. Website is already getting calls. Highly recommend Fornax!"
 Customer: Mike (Glendale Heating & Cooling)
 Permission: YES
 Date: October 2, 2026

@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# Company context: BuildFlow
+# Company context: Fornax
 
 **Tagline:** Professional websites on your doorstep. **Positioning:** Your website, your leads and your CRM in one place. Built for trades.
 

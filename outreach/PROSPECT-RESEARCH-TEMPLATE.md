@@ -164,7 +164,7 @@ See what we built: [PORTFOLIO_LINK]
 5-min call? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 **After personalization (real example):**
@@ -186,7 +186,7 @@ See what we built: buildflow.com/samples
 5-min call? [CALENDAR_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ---

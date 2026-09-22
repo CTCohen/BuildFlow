@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow Frontmatter Auto-Fix
+Fornax Frontmatter Auto-Fix
 Phase 4: Add frontmatter to all .md files based on path-specific rules
 
 Usage:
@@ -21,7 +21,7 @@ from datetime import datetime
 FRONTMATTER_TEMPLATES = {
     # Governance & decision documents
     'GOVERNANCE.md': {
-        'title': 'BuildFlow Governance & Frontmatter System',
+        'title': 'Fornax Governance & Frontmatter System',
         'purpose': 'Auto-improving governance system with frontmatter as first-class metadata',
         'status': 'active',
         'owner': 'c.t.cohen',
@@ -46,7 +46,7 @@ FRONTMATTER_TEMPLATES = {
     },
 
     'STATUS.md': {
-        'title': 'BuildFlow Execution Status',
+        'title': 'Fornax Execution Status',
         'purpose': 'Real-time tracking of Phase 1 execution status and blockers',
         'status': 'active',
         'owner': 'c.t.cohen',
@@ -56,7 +56,7 @@ FRONTMATTER_TEMPLATES = {
     },
 
     'PROGRESS.md': {
-        'title': 'BuildFlow Weekly Progress',
+        'title': 'Fornax Weekly Progress',
         'purpose': 'Weekly snapshot of progress, blockers, and next steps',
         'status': 'active',
         'owner': 'c.t.cohen',
@@ -272,7 +272,7 @@ def main():
     workspace_root = Path(os.getcwd())
     dry_run = '--apply' not in sys.argv
 
-    print(f"🔧 BuildFlow Frontmatter Auto-Fix")
+    print(f"🔧 Fornax Frontmatter Auto-Fix")
     print(f"   Workspace: {workspace_root}")
     print(f"   Mode: {'DRY RUN' if dry_run else 'APPLY'}")
     print()

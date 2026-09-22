@@ -13,11 +13,11 @@ phase: operational
 
 # Logo-First Design System
 
-**Competitive Advantage:** BuildFlow designs around YOUR logo, not around templates.
+**Competitive Advantage:** Fornax designs around YOUR logo, not around templates.
 
 Most web design agencies use a template-first approach: pick a template, inject your colors, done. This results in homogeneous websites that feel generic.
 
-BuildFlow uses a **logo-first approach**: analyze your logo → extract brand identity → select template variants that complement your brand.
+Fornax uses a **logo-first approach**: analyze your logo → extract brand identity → select template variants that complement your brand.
 
 ---
 

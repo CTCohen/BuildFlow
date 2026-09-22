@@ -131,7 +131,7 @@ Lock down how AI generates high-quality websites, design constraints that ensure
 
 ## SECTION 5: Design Discovery Agent (Phase 1.5)
 
-**Purpose:** Automatically crawl customer's existing website to extract brand, aesthetics, layout patterns, copy tone, and preserve them in new BuildFlow site.
+**Purpose:** Automatically crawl customer's existing website to extract brand, aesthetics, layout patterns, copy tone, and preserve them in new Fornax site.
 
 **Workflow:**
 1. Customer provides existing website URL during onboarding
@@ -188,7 +188,7 @@ Lock down how AI generates high-quality websites, design constraints that ensure
 
 **Process:** questionnaire → Tyler/designer sketches 2-3 concepts → customer picks → designer builds → QA review → deploy. Turnaround 7-14 days.
 
-**Value prop:** keeps customer on BuildFlow instead of losing to Wix/Squarespace; revenue uplift; positioned at onboarding, at churn-risk moment, or as optional upsell.
+**Value prop:** keeps customer on Fornax instead of losing to Wix/Squarespace; revenue uplift; positioned at onboarding, at churn-risk moment, or as optional upsell.
 
 ---
 

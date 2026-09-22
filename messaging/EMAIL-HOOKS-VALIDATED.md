@@ -47,7 +47,7 @@ See what we built: [PORTFOLIO_LINK]
 5-min call? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -78,7 +78,7 @@ We built sites for [# similar contractors] in [City]. Average result: 2-3 new le
 Worth 5 minutes to talk about it? [CALENDAR_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -109,7 +109,7 @@ If you want to stay competitive, now's the time. We still have [#] spots availab
 See examples: [PORTFOLIO_LINK]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---

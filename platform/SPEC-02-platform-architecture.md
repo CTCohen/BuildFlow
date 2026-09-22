@@ -48,16 +48,16 @@ Define the foundational technical architecture—schema, data flows, and agent o
 
 ## CRITICAL PRINCIPLE: Two-Dashboard Architecture
 
-BuildFlow has TWO distinct dashboards with different purposes, data access, and users:
+Fornax has TWO distinct dashboards with different purposes, data access, and users:
 
-**Customer Dashboard** (app.buildflow.com/dashboard) — Beautiful product UI for customers
+**Customer Dashboard** ([domain TBD under Fornax name]/dashboard) — Beautiful product UI for customers
 - Users: customers only
 - Purpose: Manage their website, view analytics, configure CRM integration
 - Data visibility: Website, FormSubmission (their leads), CRMIntegration (their config), Subscription (billing summary only), Reviews
 - UX: Clean, minimal, intuitive
 - Security: Row-level security by customer_id (database enforces it)
 
-**Admin Dashboard** (admin.buildflow.com) — Dense ops tool for Tyler only
+**Admin Dashboard** ([domain TBD under Fornax name]) — Dense ops tool for Tyler only
 - Users: Tyler only
 - Purpose: Monitor business health, debug agents, track revenue, manage escalations
 - Data visibility: All customers' data + AgentRun logs + PaymentTransaction + LeadWarehouse + OutboundCampaignRun + support tickets
@@ -108,7 +108,7 @@ BuildFlow has TWO distinct dashboards with different purposes, data access, and 
   - **Conversion → Payment:** prospect purchases → Stripe webhook → create customer record (real-time)
   - **Payment → Site Deployment:** customer paid → regenerate static site → deploy to Cloudflare → send welcome email (<1 min)
   - **Customer Dashboard Edit → Site Regen:** customer edits copy/features → trigger regeneration → push to Cloudflare (5-10 seconds)
-  - **Form Submit → CRM Sync Queue:** prospect submits contact form on customer website → stored in BuildFlow → queued for hourly CRM sync
+  - **Form Submit → CRM Sync Queue:** prospect submits contact form on customer website → stored in Fornax → queued for hourly CRM sync
   - **CRM Sync Agent → Customer CRM:** every hour 6am-8pm, batch leads captured → push to ServiceTitan/Jobber/etc (hourly batch)
   - **Review Sync → Customer Site:** daily check Google/Yelp APIs → new reviews pulled → site regenerated with fresh reviews → pushed to Cloudflare (daily 6am)
   - **Site Analytics → Dashboard:** customer logs in → sees real-time stats (leads, form submissions, page views) (real-time)

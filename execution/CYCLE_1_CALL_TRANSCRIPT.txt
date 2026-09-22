@@ -5,7 +5,7 @@ DATE: September 21, 2026
 TIME: 14:00:15 UTC (2:00 PM PT)
 DURATION: 13 minutes 42 seconds
 CALLER: Mike (Glendale Heating & Cooling)
-RECEIVER: Tyler (BuildFlow)
+RECEIVER: Tyler (Fornax)
 STATUS: COMPLETED
 OUTCOME: DEAL CLOSED
 

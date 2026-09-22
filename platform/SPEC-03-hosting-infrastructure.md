@@ -114,8 +114,8 @@ Phase 1 (Pre-Conversion) uses stateless, pay-per-use architecture. Phase 2 (Post
 **Domain provider: Cloudflare** — bulk registration (100k+ domains), full API automation, automatic DNS + SSL
 
 **Two-domain model:**
-1. **Platform subdomain (automatic):** `[company-name].buildflowsites.com` — every customer gets this by default, zero setup, wildcard SSL
-2. **Custom domain (customer brings own):** Customer points nameservers to Cloudflare; BuildFlow automation configures DNS records; SSL via Cloudflare (automatic, free)
+1. **Platform subdomain (automatic):** `[company-name].[domain TBD under Fornax name]` — every customer gets this by default, zero setup, wildcard SSL
+2. **Custom domain (customer brings own):** Customer points nameservers to Cloudflare; Fornax automation configures DNS records; SSL via Cloudflare (automatic, free)
 
 ---
 

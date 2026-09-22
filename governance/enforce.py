@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow Governance Enforcement
+Fornax Governance Enforcement
 Phase 6: Tidy integration + progressive enforcement
 
 Enforces frontmatter compliance based on current phase (learning → advisory → strict)
@@ -217,7 +217,7 @@ def run_enforcement_cycle(workspace_root: str):
     """Run complete enforcement cycle"""
     phase, _ = load_enforcement_state(workspace_root)
 
-    print(f"\n🏛️  BuildFlow Governance Enforcement")
+    print(f"\n🏛️  Fornax Governance Enforcement")
     print(f"   Phase: {phase.upper()} — {PHASES[phase]['description']}")
     print(f"   Workspace: {workspace_root}")
 

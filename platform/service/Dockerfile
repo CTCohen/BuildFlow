@@ -1,5 +1,5 @@
 # Platform service image. Same image runs on Railway now and Google Cloud Run later (a redeploy, not a rewrite).
-# Build from this folder:  docker build -t buildflow-platform platform/service
+# Build from this folder:  docker build -t fornax-platform platform/service
 FROM node:22-alpine
 WORKDIR /app
 ENV NODE_ENV=production

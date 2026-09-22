@@ -62,10 +62,10 @@ Most contractors I talk to say "Not many." If that's you, we can fix it in 7 day
 
 See what we've built for similar HVAC companies: https://buildflow.com/samples/hvac
 
-5-min call? https://calendly.com/buildflow/sales
+5-min call? https://calendly.com/fornax/sales
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **This is REAL.** Ready to send Monday to an actual business.
@@ -105,7 +105,7 @@ STEP 4: We launch (Day 7)
 Your site goes live.
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ### Days 2-4: Site Design & Build (EXECUTED)
@@ -185,7 +185,7 @@ What to look for:
 Reply with feedback. 24-hour turnaround for revisions.
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ### Days 6-7: Revision & Launch (EXECUTED)
@@ -226,7 +226,7 @@ Next steps:
 Questions? Reply anytime.
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ---

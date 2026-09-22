@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * BuildFlow base design system
+ * Fornax base design system
  * Per-client brand colors are injected as --brand-* on <html>
  * (see Base.astro). Everything else is fixed craft: rhythm, type,
  * elevation. Change it here → every site inherits it.

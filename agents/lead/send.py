@@ -51,11 +51,11 @@ class Enrollment:
 
 
 class Campaign:
-    def __init__(self, sender, *, secret: str, postal_address: str, base_url="https://unsub.buildflow.example",
-                 sender_name="Tyler", sender_email="hello@buildflow.example", max_new_per_day=100, templates=None):
+    def __init__(self, sender, *, secret: str, postal_address: str, base_url="https://unsub.fornax.example",
+                 sender_name="Tyler", sender_email="hello@fornax.example", max_new_per_day=100, templates=None):
         # sender_email default follows D01 (ruled 2026-09-21): the outbound sender address is
         # hello@<domain>, not a personal address. Domain is a placeholder (.example) — D32 (which
-        # domain BuildFlow actually owns) is still open, matching base_url's existing placeholder.
+        # domain Fornax actually owns) is still open, matching base_url's existing placeholder.
         self.sender, self.secret, self.postal = sender, secret, postal_address
         self.base_url, self.sender_name, self.sender_email = base_url, sender_name, sender_email
         self.max_new_per_day = max_new_per_day

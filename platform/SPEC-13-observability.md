@@ -1,6 +1,6 @@
 ---
 title: System 13 — Observability System
-purpose: Monitor uptime, performance, errors, and business metrics across all BuildFlow systems with alerting and dashboards
+purpose: Monitor uptime, performance, errors, and business metrics across all Fornax systems with alerting and dashboards
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -45,7 +45,7 @@ Track system health, customer behavior, and operational metrics to detect failur
 
 | Category | Frequency | Alert Threshold |
 |---|---|---|
-| Infrastructure uptime (buildflowsites.com, DNS, Cloud Run, DB) | 1-5 min | 3 failed checks = down |
+| Infrastructure uptime ([domain TBD under Fornax name], DNS, Cloud Run, DB) | 1-5 min | 3 failed checks = down |
 | Demo generation/QA pass rate | 1h | <5 generated/24h; <90% QA pass |
 | Lead warehouse volume | 1h | <50 leads rolling 7d |
 | Form submissions / conversion rate | 1h | <5/24h; <5% conversion |
@@ -63,7 +63,7 @@ Track system health, customer behavior, and operational metrics to detect failur
 
 **3. Alert Dispatcher Job:** gathers alerts, dedupes (30 min window), categorizes CRITICAL (SMS+Slack+email immediate) / WARNING (Slack+email, hourly digest) / INFO (daily digest 8am)
 
-**4. Dashboard Renderer Job:** fetches latest data on-demand or pre-caches every 5 min (Redis TTL 5 min), returns JSON to admin.buildflow.com/dashboard
+**4. Dashboard Renderer Job:** fetches latest data on-demand or pre-caches every 5 min (Redis TTL 5 min), returns JSON to [domain TBD under Fornax name]/dashboard
 
 **Deployment:** Cloud Run + Cloud Scheduler; PostgreSQL tables (health_check_log 30d retention, business_metrics_log 90d, alerts until ack+7d)
 

@@ -197,7 +197,7 @@ function testClient(testConfig) {
  * Run the test suite
  */
 async function runTests() {
-  console.log('🚀 Constrained Variety Test: Mega-Scale BuildFlow');
+  console.log('🚀 Constrained Variety Test: Mega-Scale Fornax');
   console.log(`Generating ${VERTICALS.length * TEST_ROUNDS} test sites...`);
   console.log('');
 

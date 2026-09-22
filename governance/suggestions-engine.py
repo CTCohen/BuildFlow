@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow Suggestions Engine
+Fornax Suggestions Engine
 Phase 5: Auto-generate rule suggestions based on audit patterns
 
 Analyzes audit logs to detect patterns and propose governance rule improvements.
@@ -262,7 +262,7 @@ def main():
     workspace_root = os.getcwd()
     command = sys.argv[1]
 
-    print(f"🔍 BuildFlow Suggestions Engine")
+    print(f"🔍 Fornax Suggestions Engine")
     print(f"   Workspace: {workspace_root}")
     print()
 

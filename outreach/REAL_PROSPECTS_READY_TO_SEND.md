@@ -48,7 +48,7 @@ See what we've built for similar HVAC companies: https://buildflow.com/samples/h
 5-min call? [CALENDLY_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **Send to:** contact@glendaleheatingcooling.com
@@ -84,7 +84,7 @@ See what we've built: https://buildflow.com/samples/hvac
 5-min call? [CALENDLY_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **Send to:** info@valleycomfortsystems.com
@@ -120,7 +120,7 @@ See what we've built: https://buildflow.com/samples/hvac
 5-min call? [CALENDLY_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **Send to:** contact@phoenixacspecialists.com
@@ -156,7 +156,7 @@ See what we've built: https://buildflow.com/samples/hvac
 5-min call? [CALENDLY_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **Send to:** info@desertclimatecontrol.net
@@ -192,7 +192,7 @@ See what we've built: https://buildflow.com/samples/hvac
 5-min call? [CALENDLY_LINK]
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 **Send to:** info@premierheatingairphoenix.com
@@ -321,7 +321,7 @@ You have:
 
 ---
 
-This file: `/BuildFlow/outreach/REAL_PROSPECTS_READY_TO_SEND.md`
+This file: `/Fornax/outreach/REAL_PROSPECTS_READY_TO_SEND.md`
 
 You have everything you need. Just send.
 

@@ -11,7 +11,7 @@ phase: operational
 > **Updated 2026-09-18:** log dollars as well as tokens, and the lane. Lane A = no LLM, B = Claude Pro (tokens only), C = API (dollars). API cap: **$30/mo before first revenue**; the cost guard (`operations/LOOPS.md` L10) kills a loop at its cap. Rate card and plan: `docs/LLM_COST_AND_API_PLAN.md`.
 
 
-# Token & production log — BuildFlow
+# Token & production log — Fornax
 
 Claude Pro budget this month. Every automated run records here.
 

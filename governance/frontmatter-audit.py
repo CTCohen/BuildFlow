@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BuildFlow Frontmatter Audit & Management System
+Fornax Frontmatter Audit & Management System
 Phase 2: Parsing, validation, and audit collection
 
 Usage:

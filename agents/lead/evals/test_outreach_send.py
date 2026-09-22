@@ -141,12 +141,12 @@ class SendWorkflow(unittest.TestCase):
         # D01 (ruled 2026-09-21): sender address is hello@, not a personal address.
         c = camp(); c.enroll(lead(), "u", D0)
         c.run(nine_am_az(D0))
-        self.assertEqual(c.sender.sent[0]["from"], "hello@buildflow.example")
+        self.assertEqual(c.sender.sent[0]["from"], "hello@fornax.example")
 
     def test_c09_sender_email_configurable(self):
-        c = camp(sender_email="hello@buildflow.com"); c.enroll(lead(), "u", D0)
+        c = camp(sender_email="hello@fornax.example"); c.enroll(lead(), "u", D0)
         c.run(nine_am_az(D0))
-        self.assertEqual(c.sender.sent[0]["from"], "hello@buildflow.com")
+        self.assertEqual(c.sender.sent[0]["from"], "hello@fornax.example")
 
     def test_c07_unsubscribe_stops_sequence(self):
         c = camp(); c.enroll(lead(), "u", D0); c.run(nine_am_az(D0))

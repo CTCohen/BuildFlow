@@ -74,7 +74,7 @@ async function safeGet(url, { fetchImpl, lookup, accept }) {
     const ctl = new AbortController();
     const timer = setTimeout(() => ctl.abort(), TIMEOUT_MS);
     try {
-      const res = await fetchImpl(u.href, { redirect: "manual", signal: ctl.signal, headers: { accept, "user-agent": "BuildFlowDiscovery/0.1" } });
+      const res = await fetchImpl(u.href, { redirect: "manual", signal: ctl.signal, headers: { accept, "user-agent": "FornaxDiscovery/0.1" } });
       if (res.status >= 300 && res.status < 400 && res.headers.get("location")) {
         current = new URL(res.headers.get("location"), u).href;
         continue;

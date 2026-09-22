@@ -51,7 +51,7 @@ Have you looked at your Google Business profile lately? Most contractors miss ea
 [2-min video] → [Your site]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -88,7 +88,7 @@ Interested in a 5-minute conversation?
 [Calendar link to book 15-min call]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -121,7 +121,7 @@ Price: $249/mo — we build it, host it, and keep it optimized (cancel anytime)
 Want to see an example? [Link to 2 case studies]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -138,7 +138,7 @@ Hi [Name]! Quick question: How many leads are you getting from your website?
 Video: [Short link]
 Call? [Calendar link]
 
-– BuildFlow
+– Fornax
 ```
 
 **Why it works:**
@@ -157,7 +157,7 @@ Only 3 spots left for this month.
 
 Details: [Short link]
 
-– BuildFlow
+– Fornax
 ```
 
 ---
@@ -175,7 +175,7 @@ If you don't show up, they call your competitor.
 See the difference: [Link to before/after case study]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ### Objection: "I already have a website"
@@ -190,7 +190,7 @@ If it's less than 5, most sites can be rebuilt and kept optimized for $249/mo.
 Quick call to see if it's worth it? [Calendar link]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ### Objection: "Too expensive / I can't afford it"
@@ -204,7 +204,7 @@ Each quote → $400-600 job. Covered the year in one month.
 Worth 15 minutes to talk about your specific situation? [Calendar link]
 
 [Your name]
-BuildFlow
+Fornax
 ```
 
 ---

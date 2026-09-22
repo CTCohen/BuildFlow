@@ -10,7 +10,7 @@ phase: operational
 
 # Variant Specifications
 
-Complete specifications for all 5 color scheme variants in the BuildFlow token system.
+Complete specifications for all 5 color scheme variants in the Fornax token system.
 
 ---
 
@@ -388,4 +388,4 @@ No runtime color calculations needed; all colors are pre-computed and stored as 
 **Variant Specifications Version:** 1.0
 **Last Updated:** 2026-09-07
 **Total Variants:** 5
-**Coverage:** 100% of BuildFlow service business positioning strategies
+**Coverage:** 100% of Fornax service business positioning strategies

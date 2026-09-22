@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-> **Updated 2026-09-18 (spec reconciliation):** BuildFlow's own offer and prices are in `docs/PRICING.md` and `sales/POSITIONING.md`. Competitor prices below are market data. The earlier BuildFlow price recommendations in this file ($375 and $595 one-time, monthly as a fallback) are superseded.
+> **Updated 2026-09-18 (spec reconciliation):** Fornax's own offer and prices are in `docs/PRICING.md` and `sales/POSITIONING.md`. Competitor prices below are market data. The earlier Fornax price recommendations in this file ($375 and $595 one-time, monthly as a fallback) are superseded.
 
 
 # Competitive Analysis: Agave + Contractor Web Design Market
@@ -24,7 +24,7 @@ Agave and similar contractors-focused web agencies operate in the $375-$1500 one
 
 **Key findings:**
 - **Positioning:** Speed (7-14 days) + Lead-generation focus (not just aesthetics)
-- **Pricing:** $375-$595 one-time (similar to BuildFlow target)
+- **Pricing:** $375-$595 one-time (similar to Fornax target)
 - **Messaging:** "Get more leads" not "build a website"
 - **Acquisition:** Cold email + local partnerships + referrals
 - **Competitive advantage:** "Done-for-you" (not DIY), faster than traditional agencies
@@ -192,7 +192,7 @@ Agave and similar contractors-focused web agencies operate in the $375-$1500 one
 
 ---
 
-## BuildFlow Competitive Advantage
+## Fornax Competitive Advantage
 
 ### What We Do Better
 1. **Logo-first design** (competitors: template-first)
@@ -293,7 +293,7 @@ Details: [LINK]"
 - Mid-range: $399-$499 (standard offering, most common)
 - High-end: $699-$999 (premium, includes SEO/support)
 
-**BuildFlow positioning (2026-09-18):**
+**Fornax positioning (2026-09-18):**
 - Offboard (one-time): $499 Micro, $799 SMB
 - Managed (monthly): $149 Micro, $249 SMB
 - Justification: trade-specific design, built-in accessibility, review aggregation, CRM integration, done-for-you
@@ -303,7 +303,7 @@ Details: [LINK]"
 - Mid-range: $99-$149/mo (managed hosting + updates)
 - High-end: $199-$299/mo (managed hosting + marketing)
 
-**BuildFlow decision (2026-09-18):** Managed is the primary offer; Offboard is offered alongside at conversion.
+**Fornax decision (2026-09-18):** Managed is the primary offer; Offboard is offered alongside at conversion.
 
 ---
 

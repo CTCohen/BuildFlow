@@ -11,7 +11,7 @@ phase: operational
 # references/
 
 The visual bar. Drop 8–12 screenshots of local service-business sites that represent the
-quality level every BuildFlow site must hit (and a few "what not to do" for contrast).
+quality level every Fornax site must hit (and a few "what not to do" for contrast).
 
 ## How to use
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * BuildFlow Testing Loop v1
+ * Fornax Testing Loop v1
  *
  * Automated 10-round Build→Test→Learn cycle:
  * 1. Generate random HVAC/plumbing sample clients
@@ -220,7 +220,7 @@ function runRound(round) {
 }
 
 // Main loop
-console.log(`\nBuildFlow Testing Loop — 10 rounds\n`);
+console.log(`\nFornax Testing Loop — 10 rounds\n`);
 
 const results = [];
 const startTime = Date.now();

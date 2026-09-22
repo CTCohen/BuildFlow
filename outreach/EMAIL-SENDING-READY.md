@@ -85,7 +85,7 @@ See what we've built for similar contractors: https://buildflow.com/samples/[tra
 5-min call? [CALENDAR LINK]
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 **Personalization checklist:**
@@ -110,10 +110,10 @@ Most contractors I talk to say "Not many." If that's you, we can fix it in 7 day
 
 See what we've built for similar contractors: https://buildflow.com/samples/hvac
 
-5-min call? https://calendly.com/buildflow/sales
+5-min call? https://calendly.com/fornax/sales
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ---
@@ -136,7 +136,7 @@ Worth a quick 5-min call to see if it makes sense?
 [CALENDAR LINK]
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -159,7 +159,7 @@ Interested in seeing what we build? [PORTFOLIO LINK]
 5-min call? [CALENDAR LINK]
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 ---
@@ -202,7 +202,7 @@ Tom, Apex Pressure Washing is ranking higher than you on Google
 **Send SMS follow-up (for those who didn't open email)**
 - Optional (email alone is fine)
 - If sending SMS: Use template from `/messaging/SMS-HOOKS.md`
-- Message: "Hi [Name]! Quick question: How many leads from your website last month? If under 5, we can help. Video: [LINK]. – BuildFlow"
+- Message: "Hi [Name]! Quick question: How many leads from your website last month? If under 5, we can help. Video: [LINK]. – Fornax"
 
 ### Thursday-Friday (72+ hrs after send)
 
@@ -303,7 +303,7 @@ Tom, Apex Pressure Washing is ranking higher than you on Google
 ### SMS Follow-Up (Day 2)
 ```
 Hi [Name]! Quick question: How many leads from your website last month? 
-If under 5, we can help. Video: https://buildflow.com/samples/[trade]. – BuildFlow
+If under 5, we can help. Video: https://buildflow.com/samples/[trade]. – Fornax
 ```
 
 ### Calendar Reminder (Day 7, if no response)
@@ -334,7 +334,7 @@ Plan: $249/mo Managed (we host it and keep it optimized; cancel anytime)
 Ready to move forward? Reply with "yes" and I'll get the ball rolling.
 
 Tyler
-BuildFlow
+Fornax
 ```
 
 ---

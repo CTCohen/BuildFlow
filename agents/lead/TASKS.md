@@ -36,7 +36,7 @@ Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Pytho
 
 ## Ruled 2026-09-21 (see TYLER_QUEUE.md "Ruled tonight")
 - **D01 sender address = `hello@`** — `send.Campaign` now takes `sender_email` (default
-  `hello@buildflow.example`, matching the existing `.example` placeholder pattern used for
+  `hello@fornax.example`, matching the existing `.example` placeholder pattern used for
   `base_url` since the real domain (D32) isn't settled) and stamps it as `msg["from"]` on every
   send. Covered by `evals/test_outreach_send.py::SendWorkflow::test_c08_sender_is_hello_by_default`
   and `test_c09_sender_email_configurable`.

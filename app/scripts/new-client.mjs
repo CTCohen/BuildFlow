@@ -9,7 +9,7 @@
  * during discovery. That's the design system's one branch point (media.source in schema.mjs):
  *   existing-identity  → set media.logo to where it lives, and set brand.primary/accent to
  *                         colors EXTRACTED from that logo. Honor their brand, don't restyle it.
- *   generated-identity → no usable existing brand. brand.primary/accent are BuildFlow's own
+ *   generated-identity → no usable existing brand. brand.primary/accent are Fornax's own
  *                         invented identity, chosen freely.
  * Omit the flag (the default) for generated-identity.
  */

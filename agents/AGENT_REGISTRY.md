@@ -1,6 +1,6 @@
 ---
-title: BuildFlow Agent Registry
-purpose: Unified catalog of every BuildFlow AI agent — purpose, pattern, model tier, inputs/outputs, retry/escalation logic, monitoring, scaling model, and 2026 eval standards. Covers all 19 systems.
+title: Fornax Agent Registry
+purpose: Unified catalog of every Fornax AI agent — purpose, pattern, model tier, inputs/outputs, retry/escalation logic, monitoring, scaling model, and 2026 eval standards. Covers all 19 systems.
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -24,11 +24,11 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 > - Agents that the spec says need no LLM (CRM push, Review Sync, churn formula, experiment math, health checks) are plain code.
 
 
-# BuildFlow Agent Registry
+# Fornax Agent Registry
 
 **Purpose:** Single source of truth for every agent in the system. Built from Anthropic's "Building Effective Agents" patterns (workflows vs. agents; prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer) + 2026 production orchestration practice (triage/router, fan-out/fan-in, supervisor, pipeline patterns; mandatory retry/escalation/human-gate design), refreshed against current research (see Section D for citations).
 
-**Core design principle:** Default to the simplest structure — a fixed-step **workflow**, not an autonomous **agent** — unless the task genuinely needs the model to decide its own path. Most of BuildFlow's "agents" are actually **workflows** (predictable, auditable, code-controlled sequences). This is validated by 2026 research: Princeton NLP found a single well-scoped agent matches or outperforms multi-agent systems on 64% of benchmarked tasks when given the same tools/context, and 40% of multi-agent pilots fail within six months of production deployment — usually from over-engineering separation that isn't needed. BuildFlow's existing separation (Lead Lookup / Lead Scoring / Outreach-Copy as three distinct agents rather than one monolith) is the exception that's justified: 2026 AI-SDR benchmarks show multi-agent architectures with separated lead-gen/qualification/outreach roles converting up to 7x higher than single-agent approaches, specifically because each step needs a different tool/judgment shape.
+**Core design principle:** Default to the simplest structure — a fixed-step **workflow**, not an autonomous **agent** — unless the task genuinely needs the model to decide its own path. Most of Fornax's "agents" are actually **workflows** (predictable, auditable, code-controlled sequences). This is validated by 2026 research: Princeton NLP found a single well-scoped agent matches or outperforms multi-agent systems on 64% of benchmarked tasks when given the same tools/context, and 40% of multi-agent pilots fail within six months of production deployment — usually from over-engineering separation that isn't needed. Fornax's existing separation (Lead Lookup / Lead Scoring / Outreach-Copy as three distinct agents rather than one monolith) is the exception that's justified: 2026 AI-SDR benchmarks show multi-agent architectures with separated lead-gen/qualification/outreach roles converting up to 7x higher than single-agent approaches, specifically because each step needs a different tool/judgment shape.
 
 **Model tiering principle:** Use a cheap/fast model for extraction, classification, and formatting. Reserve a stronger model for judgment calls (scoring with nuance, design QA, customer-facing copy). Mixing tiers cuts cost significantly with no quality loss on the cheap-tier tasks.
 
@@ -77,7 +77,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 - **Input:** Company profile (website quality signals, vertical, business size, location), engagement signals if available
 - **Output:** Score 0–100, reasoning, ICP match %
 - **Retry logic:** If external data source fails (Apollo/Hunter down), score on available data with lower confidence flag; don't block
-- **Eval metrics:** score-to-conversion calibration (is a 70 actually converting more than a 50 — the single most important number for this agent), segmentation-error rate BY VERTICAL (2026 benchmark data shows ~30% of AI-SDR campaigns underperform specifically from segmentation errors — this agent must be evaluated per-vertical, not just in aggregate, since BuildFlow spans 4 verticals with different buying signals)
+- **Eval metrics:** score-to-conversion calibration (is a 70 actually converting more than a 50 — the single most important number for this agent), segmentation-error rate BY VERTICAL (2026 benchmark data shows ~30% of AI-SDR campaigns underperform specifically from segmentation errors — this agent must be evaluated per-vertical, not just in aggregate, since Fornax spans 4 verticals with different buying signals)
 - **Monitoring:** Score-to-conversion calibration, tracked per-vertical in System 18 Agent Insights
 - **⚠️ Cross-system requirement:** SAME agent/model used by System 7 (outbound) and System 18 (photo intake). Do not fork into two separate scoring logics.
 
@@ -223,7 +223,7 @@ Some workflows mentioned across systems are deterministic data movement with no 
 
 ## Section B: Agent Scaling Model — Instances vs. Parameters
 
-**The question this section answers:** given 4 verticals (plumbing, HVAC, electrical, roofing), 3 tranches (Micro/SMB/Mid-Market), and multi-touch outbound sequences (5 emails), how many agents does BuildFlow actually need to build?
+**The question this section answers:** given 4 verticals (plumbing, HVAC, electrical, roofing), 3 tranches (Micro/SMB/Mid-Market), and multi-touch outbound sequences (5 emails), how many agents does Fornax actually need to build?
 
 **Answer: 15 agent types (Section A), zero additional builds for vertical/tranche/touch-count variation.** These are runtime parameters passed into a shared agent, not separate agents. Building separate agents per segment would mean 15 × 4 verticals × 3 tranches = 180 "agents" to maintain — this is exactly the over-engineering failure mode 2026 research warns against (40% of multi-agent pilots fail from unnecessary complexity). The correct pattern is: **narrow agent scope (one job), broad parameterization (many contexts).**
 
@@ -241,7 +241,7 @@ Some workflows mentioned across systems are deterministic data movement with no 
 
 **Outbound touch-count scaling:** System 7's 5-email sequence (Section 3) is 5 calls to the SAME Outreach/Copy Agent with `touch_number` as an input parameter selecting tone/urgency (per the existing template variants A/B/C). Adding a 6th touch, or a SMS touch (System 17 Section 2 mentions this for Phase 2+), is a workflow config change, not a new agent.
 
-**When you WOULD need a genuinely separate agent (none apply yet, but the test to apply later):** per Anthropic's guidance and the 2026 research above, split into a new agent only when (a) the subtask requires a fundamentally different tool set the shared agent doesn't have, or (b) true parallelism is needed (the tasks must run simultaneously, not just be called repeatedly), or (c) a different model tier is genuinely warranted for cost reasons at the new task's volume. None of BuildFlow's tranche/vertical/touch variations meet this bar today.
+**When you WOULD need a genuinely separate agent (none apply yet, but the test to apply later):** per Anthropic's guidance and the 2026 research above, split into a new agent only when (a) the subtask requires a fundamentally different tool set the shared agent doesn't have, or (b) true parallelism is needed (the tasks must run simultaneously, not just be called repeatedly), or (c) a different model tier is genuinely warranted for cost reasons at the new task's volume. None of Fornax's tranche/vertical/touch variations meet this bar today.
 
 ---
 
@@ -263,9 +263,9 @@ Some workflows mentioned across systems are deterministic data movement with no 
 | 17 (Experimentation) | Routing | Guardrail breach vs. clean run routes to different outcomes |
 | 18 (Photo Intake) | Pipeline (fan-out inside it) | OCR → Lookup (fan-out to 3 sources) → Score → Build, sequential overall |
 
-**Systems with no agents at all (confirmed, not gaps):** 1 (Business Operations — financial modeling, no automation target), 3 (Hosting & Infrastructure — provisioning is IaC/Terraform-style config, not agentic), 5 (Feature System — scope/acceptance-criteria doc, no runtime component), 11 (Compliance & Security — audit logging is deterministic, incident response is a human runbook per its own spec), 19 (BuildFlow Website — Phase 1 blog is manually written per System 19's own roadmap; a Content Agent would be a reasonable Phase 2 addition once posting volume justifies it, but is explicitly not built yet).
+**Systems with no agents at all (confirmed, not gaps):** 1 (Business Operations — financial modeling, no automation target), 3 (Hosting & Infrastructure — provisioning is IaC/Terraform-style config, not agentic), 5 (Feature System — scope/acceptance-criteria doc, no runtime component), 11 (Compliance & Security — audit logging is deterministic, incident response is a human runbook per its own spec), 19 (Fornax Website — Phase 1 blog is manually written per System 19's own roadmap; a Content Agent would be a reasonable Phase 2 addition once posting volume justifies it, but is explicitly not built yet).
 
-**None of BuildFlow's agents need full autonomous agent architecture** (open-ended, unbounded tool use). All map to workflows or the routing/pipeline/evaluator-optimizer patterns. Per 2026 production research, this is the right default — reserve genuine agentic autonomy for tasks with unknown step count, which none of BuildFlow's current tasks are.
+**None of Fornax's agents need full autonomous agent architecture** (open-ended, unbounded tool use). All map to workflows or the routing/pipeline/evaluator-optimizer patterns. Per 2026 production research, this is the right default — reserve genuine agentic autonomy for tasks with unknown step count, which none of Fornax's current tasks are.
 
 ---
 
@@ -284,9 +284,9 @@ Applied across every agent in Section A, based on current (2026) production rese
 
 **Eval suite standard before shipping any agent:** Enterprise 2026 practice calls for ≥50 representative test cases per agent across difficulty tiers, with baseline metrics recorded (accuracy, latency, cost) and CI-gated regression checks on every change. For a solo-founder build, the proportionate version is: **≥15–20 hand-built test cases per agent before Phase 1 launch** (covering the obvious case, the edge case, and the failure case for each), with the full 50-case suite as a Phase 2 target once volume justifies the investment. Don't skip this step to save time — per 2026 field reports, skipping eval infrastructure is the single most common cause of teams "firefighting quality issues for weeks that a disciplined eval suite would have caught on day one."
 
-**Reliability target:** 2026 field data consistently shows a gap between demo-quality (~80% reliability) and production-quality (99%+) agents. BuildFlow's existing QA gates (Lighthouse 80+ demo threshold, 90+ manual-review threshold, System 9's 95%+ CRM reconciliation target) are already calibrated in this range — this section confirms those thresholds match current best practice rather than being arbitrary.
+**Reliability target:** 2026 field data consistently shows a gap between demo-quality (~80% reliability) and production-quality (99%+) agents. Fornax's existing QA gates (Lighthouse 80+ demo threshold, 90+ manual-review threshold, System 9's 95%+ CRM reconciliation target) are already calibrated in this range — this section confirms those thresholds match current best practice rather than being arbitrary.
 
-**Why most BuildFlow agents stay single-call workflows, not multi-step autonomous loops:** validated directly by the Princeton NLP finding cited in this document's intro — multi-agent orchestration adds roughly 2.1 percentage points of accuracy at double the cost and 10–30× the latency versus a well-scoped single agent, and is worth it only for genuinely cross-domain work. None of BuildFlow's 15 cataloged agents meet that bar individually; the system-level separation between agents (Section A) is where the real value comes from, not internal agentic looping within any one agent.
+**Why most Fornax agents stay single-call workflows, not multi-step autonomous loops:** validated directly by the Princeton NLP finding cited in this document's intro — multi-agent orchestration adds roughly 2.1 percentage points of accuracy at double the cost and 10–30× the latency versus a well-scoped single agent, and is worth it only for genuinely cross-domain work. None of Fornax's 15 cataloged agents meet that bar individually; the system-level separation between agents (Section A) is where the real value comes from, not internal agentic looping within any one agent.
 
 **Sources (searched September 2026, current within the past 6 months):**
 - Princeton NLP single-vs-multi-agent benchmark findings; 40%-multi-agent-pilot-failure stat — beam.ai, "6 Multi-Agent Orchestration Patterns for Production" (Jul 2026)
@@ -336,7 +336,7 @@ Applied across every agent in Section A, based on current (2026) production rese
 
 ## Section G: System Coverage Completeness Audit
 
-Every one of BuildFlow's 19 systems checked against the registry:
+Every one of Fornax's 19 systems checked against the registry:
 
 | System | Agent-touching? | Status |
 |---|---|---|
@@ -358,7 +358,7 @@ Every one of BuildFlow's 19 systems checked against the registry:
 | 16 SEO/GEO | Yes | Cross-referenced |
 | 17 Experimentation | Yes | Was entirely manual/spreadsheet-driven; Experimentation Agent added |
 | 18 Admin CRM & Operations | Yes | Cross-referenced |
-| 19 BuildFlow Website | No (yet) | Confirmed — Phase 1 blog is manual; Content Agent is a reasonable Phase 2 addition, explicitly not built now |
+| 19 Fornax Website | No (yet) | Confirmed — Phase 1 blog is manual; Content Agent is a reasonable Phase 2 addition, explicitly not built now |
 
 **No cycles found.** The dependency graph is a DAG: Lead Lookup/Scoring → Outreach/Copy → Design → Design QA → (Dunning ⇄ Lifecycle is the only bidirectional link, and it's a one-way notification in each direction, not a loop — Dunning notifies Lifecycle on Tier 3 entry; Lifecycle never triggers Dunning). The Design Agent ⇄ Design QA Agent retry loop (generate → check → re-generate) is an intentional bounded loop (evaluator-optimizer pattern, capped at 2 retries), not an uncontrolled cycle.
 
