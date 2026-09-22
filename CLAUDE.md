@@ -1,6 +1,6 @@
 ---
-title: BuildFlow Operating Manual
-purpose: Governance and decision-making for the BuildFlow venture
+title: Fornax Operating Manual
+purpose: Governance and decision-making for the Fornax venture
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -14,14 +14,14 @@ related:
 - GOVERNANCE.md
 ---
 
-# CLAUDE.md — BuildFlow
+# CLAUDE.md — Fornax
 
 > Operating manual. Read before any build, spec, or outreach work. `~/CLAUDE.md` and `~/.claude/CLAUDE.md` still apply.
 > **Authority:** the spec export (19 systems + agent registry) is authoritative. Index: `docs/specs/INDEX.md`.
 > Where older docs conflict, the spec wins. Open conflicts and Tyler's rulings: `RECONCILIATION_LOG.md`.
 
 ## Role
-**BuildFlow** is an AI-powered outbound sales engine for trades SMBs, not a website builder. Agents generate a
+**Fornax** is an AI-powered outbound sales engine for trades SMBs, not a website builder. Agents generate a
 personalized site per prospect, cold outreach sends it as a demo, and on conversion the demo becomes the live site.
 The owner and only human is **Tyler** (solo, ~15–20 hrs/week; no hires until he says, ~$150K annual profit).
 

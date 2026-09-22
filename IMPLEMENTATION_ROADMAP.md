@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Implementation Roadmap
+title: Fornax Implementation Roadmap
 purpose: SUPERSEDED by RECONCILIATION_LOG.md v2 (written before specs were fully read; do not build from this)
 status: deprecated
 owner: c.t.cohen
@@ -13,7 +13,7 @@ updated: 2026-09-18
 Maps 19 systems to folder layout so each system's spec lives next to its code.
 
 ```
-BuildFlow/
+Fornax/
 ├── buildflow-specs/              # [STAGING] Spec exports from claude.ai memory
 │   ├── index.md
 │   ├── business-model-and-constraints.md
@@ -137,7 +137,7 @@ BuildFlow/
 │   │   └── retry-logic.ts
 │   └── tests/
 │
-├── website/                      # System 19: BuildFlow Public Website
+├── website/                      # System 19: Fornax Public Website
 │   ├── SPEC.md                   # System 19 spec file
 │   ├── src/
 │   │   ├── pages/
@@ -305,7 +305,7 @@ BuildFlow/
 **Task 2.5: CRM Sync Agent (#8) — Pipeline + Evaluator**
 - [ ] Read System 09 Section 5B, System 10, Agent Registry (#8)
 - [ ] Implement for ServiceTitan first (Task 3.5 adds others)
-- [ ] Field mapping: BuildFlow Lead → ServiceTitan Lead schema
+- [ ] Field mapping: Fornax Lead → ServiceTitan Lead schema
 - [ ] Implement conflict resolver: if lead exists in CRM, use System 09's "4 signals" logic
 - [ ] Retry logic: temporary fail (retry 5m ×6), auth fail (alert customer), rate limit (batch), max 3 failures → Tyler alert
 - [ ] Sync success rate target: >95%, <5% manual escalation
@@ -336,7 +336,7 @@ BuildFlow/
 
 ### **PHASE 3: Platform** (Step 5 → Step 6)
 
-**Task 3.1: Customer Dashboard (app.buildflow.com)**
+**Task 3.1: Customer Dashboard ([domain TBD under Fornax name])**
 - [ ] Read System 02, System 06 Section 5, System 05 feature matrix
 - [ ] Implement in Astro (`app/src/pages/app/`)
 - [ ] Micro features: lead inbox only (view forms, export CSV, email notifications)
@@ -347,7 +347,7 @@ BuildFlow/
 - [ ] Design: minimal, intuitive UX (not data-dense)
 - [ ] Test: responsive design, accessibility (WCAG 2.1 AA)
 
-**Task 3.2: Admin Dashboard (admin.buildflow.com)**
+**Task 3.2: Admin Dashboard ([domain TBD under Fornax name])**
 - [ ] Read System 18 Section 8, System 13
 - [ ] Implement in Astro (`app/src/pages/admin/`)
 - [ ] Sections: KPI dashboard (MRR, churn), customer list, agent logs, revenue, escalations
@@ -357,7 +357,7 @@ BuildFlow/
 - [ ] Export: PDF/CSV reports
 - [ ] Test: performance with large datasets
 
-**Task 3.3: BuildFlow Marketing Website (buildflow.io)**
+**Task 3.3: Fornax Marketing Website ([domain TBD under Fornax name])**
 - [ ] Read System 19
 - [ ] Sections needed: Home, Features, Pricing, Demo (form + live preview), Blog (3 posts), Docs, About
 - [ ] Design: brand-aligned, professional services tone
@@ -366,7 +366,7 @@ BuildFlow/
 - [ ] Blog: 3 starter posts (e.g., "Why SMBs Need Websites", "CRM Integration Guide", "Review Management Best Practices")
 - [ ] Docs: getting started, feature overview, pricing comparison
 - [ ] Test: SEO basics (meta tags, sitemap), Core Web Vitals, mobile responsive
-- [ ] Deploy to buildflow.com (via Cloudflare)
+- [ ] Deploy to [domain TBD under Fornax name] (via Cloudflare)
 
 **Task 3.4: Feature Flags & Tranche Gating**
 - [ ] Read System 05 Section 1
@@ -462,7 +462,7 @@ BuildFlow/
 ### **Authentication & Identity** (System 11)
 - [ ] **Google OAuth**
   - Credential: OAuth 2.0 Client ID + Secret
-  - Use: customer login (app.buildflow.com)
+  - Use: customer login ([domain TBD under Fornax name])
   - Setup: Google Cloud Console → create project → enable Google+ API → generate credentials
   - Cost: free
 
@@ -667,10 +667,10 @@ BuildFlow/
 - [ ] Railway Dashboard Login: ____________________
 
 ### Domain & Email
-- [ ] BuildFlow.com Domain Registrar Login: ____________________
-- [ ] BuildFlow.com DNS Records Set Up: [ ] Yes / [ ] No
-- [ ] Email: tyler@buildflow.com Set Up: [ ] Yes / [ ] No
-- [ ] Email: support@buildflow.com Set Up: [ ] Yes / [ ] No
+- [ ] [domain TBD under Fornax name] Domain Registrar Login: ____________________
+- [ ] [domain TBD under Fornax name] DNS Records Set Up: [ ] Yes / [ ] No
+- [ ] Email: tyler@[domain TBD under Fornax name] Set Up: [ ] Yes / [ ] No
+- [ ] Email: support@[domain TBD under Fornax name] Set Up: [ ] Yes / [ ] No
 ```
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Governance & Frontmatter System
+title: Fornax Governance & Frontmatter System
 purpose: Auto-improving governance system with frontmatter as first-class metadata
 status: active
 owner: c.t.cohen
@@ -14,7 +14,7 @@ related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 > **Updated 2026-09-18:** the owner is Tyler. Spec files carry the extra fields `spec_name`, `spec_aliases`, `spec_sources`, `spec_authority` and follow the spec convention: (1) what is this file for, (2) what is in it, (3) the specs. Root docs must not contain the stale terms listed in `governance/enforce.py` (the stale-term lint).
 
 
-# BuildFlow Auto-Governance System
+# Fornax Auto-Governance System
 
 **Frontmatter as first-class governance.** Every `.md` file in the workspace declares its purpose, status, and dependencies via structured metadata. The system observes compliance patterns and suggests tighter rules as the workspace scales.
 
@@ -87,7 +87,7 @@ related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 - Manage budget and spending
 - Hiring decisions
 
-**Hours:** 12-14 hours/week on BuildFlow (alongside Vanguard)
+**Hours:** 12-14 hours/week on Fornax (alongside Vanguard)
 
 ---
 
@@ -428,11 +428,11 @@ related: [CLAUDE.md, DECISIONS.md, .workspace.toml]
 
 ## 10. Changes to Governance
 
-This document will evolve as BuildFlow scales. Changes will be logged here with dates. Do not overthink governance at this stage—refactor when complexity actually arises.
+This document will evolve as Fornax scales. Changes will be logged here with dates. Do not overthink governance at this stage—refactor when complexity actually arises.
 
 **Version History:**
 - v1.0 (Sept 2026): Initial governance framework, solo operation
 
 ---
 
-**By operating under this governance framework, BuildFlow ensures consistency, accountability, and scalability as we grow.**
+**By operating under this governance framework, Fornax ensures consistency, accountability, and scalability as we grow.**

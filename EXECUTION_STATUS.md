@@ -43,7 +43,7 @@ phase: operational
 ## What's Done (✅ Complete)
 
 ### Phase 1 Infrastructure
-- ✅ BuildFlow Astro application (multi-tenant, per-client theming)
+- ✅ Fornax Astro application (multi-tenant, per-client theming)
 - ✅ Automated QA gate (`qa.mjs`) with 7/9 checks passing:
   - Schema validation
   - Build compilation
@@ -56,7 +56,7 @@ phase: operational
   - (Visual regression: not yet automated)
 
 ### Website & Landing Page
-- ✅ BuildFlow.com landing page built (Astro, responsive, fast)
+- ✅ [domain TBD under Fornax name] landing page built (Astro, responsive, fast)
 - ✅ Pricing section with two clear offers ($249/mo Managed, $799 Offboard)
 - ✅ Sample portfolio pages (HVAC, Plumbing, Cleaning)
 - ✅ Legal pages (Terms of Service, Privacy Policy, Security Statement)
@@ -115,15 +115,15 @@ phase: operational
 - **Status:** ☐ Not started
 - **Blocker for:** Phase 1 email send (Monday 9 AM)
 - **Action:** Tyler creates Calendly account + 30-min call slot
-- **Output:** Calendly link (e.g., `calendly.com/tyler/buildflow-demo`)
+- **Output:** Calendly link (e.g., `calendly.com/tyler/fornax-demo`)
 - **Impact:** Without this, prospects can't book calls
 
 ### B2: Business Email Addresses (⏱️ 30 min)
 - **Status:** ☐ Not started
 - **Blocker for:** Outreach email delivery (Monday 9 AM)
-- **Action:** Set up `tyler@buildflow.com`, `hello@buildflow.com`, `support@buildflow.com`
+- **Action:** Set up `tyler@[domain TBD under Fornax name]`, `hello@[domain TBD under Fornax name]`, `support@[domain TBD under Fornax name]`
 - **Output:** 3 working email addresses
-- **Impact:** Emails from personal Gmail look unprofessional; prospects trust @buildflow.com
+- **Impact:** Emails from personal Gmail look unprofessional; prospects trust @[domain TBD under Fornax name]
 
 ### B3: Stripe Products & Checkout Links (⏱️ 20 min)
 - **Status:** ☐ Not started
@@ -137,7 +137,7 @@ phase: operational
 ### B4: Domain Confirmation (⏱️ 5 min)
 - **Status:** ☐ Not started
 - **Blocker for:** Website deployment + email setup
-- **Action:** Confirm buildflow.com is registered and DNS-manageable
+- **Action:** Confirm [domain TBD under Fornax name] is registered and DNS-manageable
 - **Output:** Domain status (ready to point to Railway)
 - **Impact:** Website can't go live without a real domain
 
@@ -161,10 +161,10 @@ phase: operational
 1. **Update prospect emails** — Replace `[CALENDLY_LINK]` with Tyler's actual link (B1)
 2. **Update website pricing buttons** — Replace `mailto:` placeholders with Stripe checkout URLs (B3)
 3. **Fill in Terms §16** — Add business address (B5)
-4. **Confirm email sender** — Use `tyler@buildflow.com` for outreach (B2)
+4. **Confirm email sender** — Use `tyler@[domain TBD under Fornax name]` for outreach (B2)
 
 ### In Parallel
-1. **Deploy website to Railway** — Point `buildflow.com` custom domain once B4 confirmed
+1. **Deploy website to Railway** — Point [domain TBD under Fornax name] custom domain once B4 confirmed
 2. **Generate Railway domain** — Temporary `buildflow.up.railway.app` URL while waiting for B4
 3. **QA check website live** — Ensure pricing buttons work, forms submit, pages load fast
 4. **Prepare build pipeline** — Set up automated site generation to trigger on close
@@ -186,7 +186,7 @@ TODAY (9/11)
 
 TOMORROW (9/12)
 ├─ Verify: All Stripe links work, emails have Calendly link
-├─ Verify: Website live at buildflow.com (or temporary Railway URL)
+├─ Verify: Website live at [domain TBD under Fornax name] (or temporary Railway URL)
 └─ Verify: No placeholders remain
 
 MONDAY 9 AM (9/16)
@@ -249,7 +249,7 @@ TARGET: 5 closes + revenue flowing by 9/30
 - **Fallback:** Send invoice via email, collect payment later (not ideal)
 
 ### Domain not confirmed (B4)
-- **Impact:** Website can't use buildflow.com
+- **Impact:** Website can't use [domain TBD under Fornax name]
 - **Mitigation:** Use temporary Railway domain (`buildflow.up.railway.app`) for first customers
 - **Fallback:** Get real domain in days 1–2 after first close, then switch
 
@@ -268,9 +268,9 @@ TARGET: 5 closes + revenue flowing by 9/30
 ## How to Unblock Phase 1 (Tyler's Checklist)
 
 1. ☐ **B1: Calendly** (15 min) — Create account + meeting link
-2. ☐ **B2: Email** (30 min) — Set up @buildflow.com addresses
+2. ☐ **B2: Email** (30 min) — Set up @[domain TBD under Fornax name] addresses
 3. ☐ **B3: Stripe** (20 min) — Create 2 products + get checkout links
-4. ☐ **B4: Domain** (5 min) — Confirm buildflow.com ready
+4. ☐ **B4: Domain** (5 min) — Confirm [domain TBD under Fornax name] ready
 5. ☐ **B5: Address** (5 min) — Provide business address for Terms
 6. ☐ **B6: Warmup** (optional) — Send test emails to self
 
@@ -297,7 +297,7 @@ Once done, email Claude with:
 3. ✅ Update `/BuildFlow/legal/TERMS_OF_SERVICE.md`
    - Fill in business address
 4. ✅ Deploy website to Railway
-   - Generate public domain (`buildflow.up.railway.app` or `buildflow.com`)
+   - Generate public domain (`buildflow.up.railway.app` or [domain TBD under Fornax name])
    - Verify all links work, forms submit, pages load
 5. ✅ Prepare build pipeline
    - Set up automated site generation for incoming closes
@@ -315,7 +315,7 @@ Once done, email Claude with:
 - **Railway Project:** ✅ Created (`7e9d9f50-e944-4445-850c-2520513d280b`)
 - **Environment:** ✅ Production created (`e32777a0-a52a-4262-be5d-935e10694ce1`)
 - **Service:** ⏳ Ready to deploy (Dockerfile + server.js in place)
-- **Domain:** ⏳ Waiting on B4 (buildflow.com DNS configuration)
+- **Domain:** ⏳ Waiting on B4 ([domain TBD under Fornax name] DNS configuration)
 - **Deployment:** ⏳ Ready to trigger once domain confirmed
 
 ### Database
@@ -323,7 +323,7 @@ Once done, email Claude with:
 - ✅ Airtable free tier available for prospect tracking (not yet set up)
 
 ### Email
-- ⏳ B2 blocker (waiting for @buildflow.com setup)
+- ⏳ B2 blocker (waiting for @[domain TBD under Fornax name] setup)
 - ✅ Email templates drafted and ready
 
 ### Payments

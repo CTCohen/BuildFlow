@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Spec Reconciliation Log
+title: Fornax Spec Reconciliation Log
 purpose: Line-by-line reconciliation of the buildflow-specs export (authoritative) against the existing workspace, with recommendations awaiting Tyler's determinations
 status: active
 owner: c.t.cohen
@@ -11,7 +11,7 @@ critical_path: true
 related: [buildflow-specs/index.md, buildflow-specs/launch-readiness-plan.md, DECISIONS.md]
 ---
 
-# BuildFlow Spec Reconciliation Log (v2)
+# Fornax Spec Reconciliation Log (v2)
 
 **Rule:** the spec export is authoritative. Nothing in the workspace is changed until Tyler rules on Section 4.
 **Supersedes:** the v1 log and `IMPLEMENTATION_ROADMAP.md` (both written before the specs were fully read).
@@ -55,7 +55,7 @@ All 27 files were read in full (198 KB). "Blocked by" = decisions in Section 4 t
 | 16 SEO/GEO | ✔ | `knowledge/`, `app/` defaults | D26 |
 | 17 Experimentation | ✔ | Phase 2 backlog | D40 |
 | 18 Admin CRM & Operations | ✔ | `platform/admin` | D03, D08 |
-| 19 BuildFlow Website | ✔ | `website/` | D27, D32 |
+| 19 Fornax Website | ✔ | `website/` | D27, D32 |
 | agent-registry.md | ✔ | `agents/` (cross-cutting, stays at docs root) | D14, D25 |
 
 ## 2. Determinations already received (applied once this log is closed)
@@ -92,7 +92,7 @@ Tags: **[S↔S]** spec contradicts itself. **[S↔W]** spec vs existing workspac
 
 | ID | Conflict | Rec |
 |---|---|---|
-| **D01** | Outreach emails and onboarding scripts are signed "Chase" and use chase@buildflow.com. | Replace with Tyler across 36 files. **Ask:** sender address (`tyler@` or a role address like `hello@`)? |
+| **D01** | Outreach emails and onboarding scripts are signed "Chase" and use chase@[domain TBD under Fornax name]. | Replace with Tyler across 36 files. **Ask:** sender address (`tyler@` or a role address like `hello@`)? |
 | **D02** | Prices will rise "soon." Spec plan: raise at ~25 customers / Month 7+ to $199/$349/$599 for new customers, grandfather the first 25–50. Grandfathering strategy lives **only** in business-model Part 2. Systems 01 and 08 reference "cohort tracking" without defining it. **[S↔S]** | Build billing with versioned Stripe Price IDs plus `launch_cohort` on the customer now. **Ask:** target date/numbers for the increase, and do early customers still get grandfathered? |
 | **D03** | Free trial: System 19 (14-day trial, "Start Free Trial") and System 18 ("Trial Active" stage, trial-conversion metric) vs Systems 06/08 (pay at conversion, live in 60 s). Workspace has "first 3 free." **[S↔S][S↔W]** | No trial. Remove trial stage/metric. **Ask:** keep "first 3 free" as a design-partner soft-launch cohort (Step 8.8), or retire it? |
 | **D04** | "Ownership $497 / 1-month support / you host it" vs spec "Offboard $499–$1,299, domain transfer, no ongoing support." Your R6 adds "migrate to our hosting or theirs." | Adopt Offboard naming/prices. **Ask:** keep 1 month of transition support? (Spec says none; offboard video says "where to get help.") |
@@ -110,7 +110,7 @@ Tags: **[S↔S]** spec contradicts itself. **[S↔W]** spec vs existing workspac
 | **D12** | Database and auth: spec says shared Postgres, row-level security on `customer_id`, custom bcrypt auth, AWS Secrets Manager, Redis cache. You: Supabase; auth Google + email/password. | Supabase Postgres (RLS) and Supabase Auth (covers bcrypt, reset links, Google OAuth, optional TOTP). Secrets in provider stores (Railway vars → GCP Secret Manager), not AWS. Skip Redis at launch. **Ask:** OK to use Supabase Auth instead of hand-rolled auth? |
 | **D13** | Design Agent output: spec "static HTML ~50KB in ~10 s" per demo vs existing Astro app that builds one client per `npm run build` (workspace docs also disagree: tech-stack says one multi-tenant service routed by domain; app/README says one client per build). | Contract = client JSON (`schema.mjs`) → static bundle → Cloudflare. Retire the "one Railway service, many domains" idea. Benchmark build time before promising 10 s; run parallel builds in a queue. |
 | **D14** | Agents on Claude Pro vs API. Pro/Claude Code cannot be called by cron jobs or webhooks. Spec requires unattended flows (payment→live <60 s, edit→live <5 s, daily review sync, dunning, triage). **Verify current terms before assuming unattended automation is permitted on a subscription.** | Deterministic code, no LLM: CRM push, Review Sync, Health/Metrics jobs, churn formula, experiment math. Pro/Claude Code for build-time and operator-time work: writing templates, evals, QA triage, batch runs in attended waves. Cheap-tier API only for unattended LLM steps (personalization copy, extraction, triage), with a per-agent monthly cap logged in `metrics/token-log.md`. **Ask:** approve a capped API key? |
-| **D32** | Domains conflict. Marketing `buildflow.io` (System 19, plan 6.2); app/admin/demo on `buildflow.com` (`app.`, `admin.`, `/demo/`); platform sites and support on `buildflowsites.com`; workspace emails/legal use `buildflow.com`. **[S↔S][S↔W]** | Three-domain model: `buildflow.io` marketing, `buildflow.com` app/admin/demo/email, `buildflowsites.com` customer subdomains + support/help. **Ask:** which do you own?|
+| **D32** | Domains conflict. Marketing [domain TBD under Fornax name] (System 19, plan 6.2); app/admin/demo on [domain TBD under Fornax name] (`app.`, `admin.`, `/demo/`); platform sites and support on [domain TBD under Fornax name]; workspace emails/legal use [domain TBD under Fornax name]. **[S↔S][S↔W]** | Three-domain model: [domain TBD under Fornax name] marketing, [domain TBD under Fornax name] app/admin/demo/email, [domain TBD under Fornax name] customer subdomains + support/help. **Ask:** which do you own?|
 | **D38** | Monitoring: System 13 is homegrown (Cloud Run + Scheduler + Postgres + Slack + Twilio, ~$1–5/mo). | Follow System 13; no Sentry/LogRocket. Needs a Slack workspace/webhook. Pre-launch subset only: Health Check, Alert Dispatcher, basic dashboard. |
 | **D39** | System 02 schema: says admin-only tables have **no** `customer_id`, then defines PaymentTransaction **with** `customer_id`. Entities used elsewhere are missing: LeadWarehouse, OutboundCampaignRun, `crm_sync_log`, `crm_conflict_log`, health/metrics/alert logs, photo intake, agent feedback, support tickets, experiments, `launch_cohort`. **[S↔S]** | Derive one consolidated schema; admin tables in a separate schema/role (PaymentTransaction keeps `customer_id`, admin-only access). |
 

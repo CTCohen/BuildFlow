@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Weekly Roadmap
+title: Fornax Weekly Roadmap
 purpose: Weekly planning and execution tracking with clear goals and success metrics
 status: active
 owner: c.t.cohen
@@ -14,7 +14,7 @@ related:
 - phases/PHASE_1.md
 ---
 
-# ROADMAP.md — BuildFlow
+# ROADMAP.md — Fornax
 
 > Rebuilt 2026-09-20 as a **parallel plan**: tracks that run at the same time, not phases that wait for each other.
 > Every launch step and sub-step is still listed in `LAUNCH_ROADMAP.md` (the checklist). Open conflicts: `RECONCILIATION_LOG.md`. What needs Tyler: `operations/TYLER_QUEUE.md`. How the tracks work: `operations/lanes/README.md`.
@@ -67,7 +67,7 @@ G0 `platform/CONTRACT.md` committed and imported by other tracks · G1 a generat
 One branch and one folder set per track (`operations/lanes/`); only Track A changes the data contract; a weekly Friday integration day (merge in dependency order, run the manifest check, lint and evals; Tyler approves each merge); each track writes a status file when it stops; independent pieces inside a track can be fanned out to sub-agents. Constraints: at most four Claude sessions at once, Tyler's 15-20 hrs/week, and **no technical checks (Lighthouse, browser QA) are run or requested until the setup work is done**: those run on Tyler's machine in one batch at W6 or later.
 
 ## Open decisions never block a track (defaults)
-D02 price timing: build versioned prices, use launch prices · D22 first CRM: HubSpot · D26: `llms.txt` and answer-structured FAQ in Layer 1 · D29 Mid-Market-size leads: suppressed · D32 domains: `.io` marketing, `.com` app/admin/demo, `buildflowsites.com` customer sites · D01 sender: `hello@`.
+D02 price timing: build versioned prices, use launch prices · D22 first CRM: HubSpot · D26: `llms.txt` and answer-structured FAQ in Layer 1 · D29 Mid-Market-size leads: suppressed · D32 domains: `.io` marketing, `.com` app/admin/demo, [domain TBD under Fornax name] customer sites · D01 sender: `hello@`.
 
 ## Out of scope
 Mid-Market build, SMS outreach, Spanish sites, iOS app, customer mobile app, more verticals, paid acquisition.

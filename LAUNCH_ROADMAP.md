@@ -75,7 +75,7 @@ The spec's Month 1–12 revenue projection assumed 20% Mid-Market by revenue and
   `agent-decisions.ts`, `conditional-features.ts`) and a token system
 - Automated per-client QA gate (`app/scripts/qa.mjs`) with 9 checks incl. an LLM rubric pass
 - `knowledge/` base: trade-specific SEO/content knowledge (HVAC fully built), SOPs, principles
-- Legal (Terms/Privacy/Security), reconciled sales + messaging stack, BuildFlow.com site (built, undeployed)
+- Legal (Terms/Privacy/Security), reconciled sales + messaging stack, [domain TBD under Fornax name] site (built, undeployed)
 - Competitive research (`research/COMPETITIVE-ANALYSIS.md`), delivery model with real market pricing rationale
 
 **What "launch" means here:** ready to run outreach at real volume (50+/week) and have every
@@ -93,8 +93,8 @@ resulting site, onboarding, and cancellation handled without Chase doing manual 
 | B1 | No Calendly link | Create it; replace `[CALENDLY_LINK]`/`[CALENDAR_LINK]` placeholders in outreach + messaging docs |
 | B2 | Outreach not sent | Send the 5 emails in `outreach/REAL_PROSPECTS_READY_TO_SEND.md` |
 | B3 | No Stripe products | Create $99/mo subscription + $497 one-time; get checkout links |
-| B4 | No business email addresses | `hello@`, `support@`, `legal@`, `chase@buildflow.com` need to exist |
-| B5 | Domain not confirmed | Confirm `buildflow.com` registered + DNS-pointable to Railway |
+| B4 | No business email addresses | `hello@`, `support@`, `legal@`, `chase@[domain TBD under Fornax name]` need to exist |
+| B5 | Domain not confirmed | Confirm [domain TBD under Fornax name] registered + DNS-pointable to Railway |
 | B6 | Terms missing business address | `legal/TERMS_OF_SERVICE.md` §16 placeholder needs a real address |
 
 🟡 **Needs a decision:**
@@ -113,8 +113,8 @@ Full detail and dependency graph: `PHASE_1_BLOCKERS.md`.
 
 ## 1. Website: perfect it + automate onboarding + automate offboarding
 
-### 1a. BuildFlow.com — remaining polish
-- [ ] Deploy to Railway, point `buildflow.com` once domain is confirmed (see Blockers B5)
+### 1a. [domain TBD under Fornax name] — remaining polish
+- [ ] Deploy to Railway, point [domain TBD under Fornax name] once domain is confirmed (see Blockers B5)
 - [ ] Replace `mailto:` CTAs and the Formspree placeholder with a real signup flow (ties to §5 billing)
 - [ ] Add real case studies once Phase 1 sites exist (the 3 on the page today are illustrative, not real — label them as such or swap in real ones the moment they exist)
 - [ ] `og:image` referenced in `Layout.astro` doesn't exist yet — needed for link previews when emails get forwarded/shared
@@ -148,8 +148,8 @@ Two distinct offboarding paths, currently undocumented:
 per-client execution. Nothing runs these against a generated site automatically.
 
 - [ ] Turn `seo-audit.md` and `ai-seo-setup.md` from SOPs into scripted checks — fold into `qa.mjs` (schema markup present, meta tags complete, sitemap/robots.txt correct, canonical tags, structured data for LocalBusiness/Service) rather than a human reading a checklist per client
-- [ ] Google Business Profile: today it's "we provide guidance in onboarding videos" — decide whether BuildFlow claims/manages it directly (stronger offer, more liability) or stays guidance-only (weaker, but matches "we promise machinery not results")
-- [ ] AI-search optimization ("AI SEO" is in the priced offer) — needs a concrete, defensible definition: llms.txt (already exists at `app/src/pages/llms.txt.ts` — good), structured FAQ schema, clear entity/NAP consistency. Write down what BuildFlow actually *does* here before selling it as a line item.
+- [ ] Google Business Profile: today it's "we provide guidance in onboarding videos" — decide whether Fornax claims/manages it directly (stronger offer, more liability) or stays guidance-only (weaker, but matches "we promise machinery not results")
+- [ ] AI-search optimization ("AI SEO" is in the priced offer) — needs a concrete, defensible definition: llms.txt (already exists at `app/src/pages/llms.txt.ts` — good), structured FAQ schema, clear entity/NAP consistency. Write down what Fornax actually *does* here before selling it as a line item.
 - [ ] `knowledge/trades/hvac/` is fully built out (must-haves, keyword-map, page-map, trust-signals, seasonal). **Only HVAC.** Plumbing, electrical, roofing, cleaning, etc. need the same depth before outreach expands past HVAC — right now quality is trade-uneven.
 - [ ] Ongoing SEO (the recurring part of the $99/mo promise) needs a monthly automated task per client, not a one-time setup — currently nothing runs "ongoing."
 
@@ -188,7 +188,7 @@ partner, or Chase-in-six-months could read end to end.
 - [ ] **Billing automation** — Stripe subscription + one-time products don't exist yet (Blocker B3). Failed-payment handling, dunning, and the suspend-after-10-days rule in the Terms need to actually run, not just be written down.
 - [ ] **A real pipeline/CRM** — prospect tracking is currently markdown tables (`outreach/PROSPECT_LIST_PHASE_1.md`). Fine for 5 prospects, breaks at 50+/week. Needs at minimum an Airtable base (already the stated Phase 1 tool per `CLAUDE.md`) actually set up, not just referenced.
 - [ ] **Monitoring/uptime** — the Terms promise 99.5% uptime and 48-hour breach notification. Nothing currently watches for either. Minimum: uptime pings per client domain, an alert channel.
-- [ ] **Support intake** — `support@buildflow.com` is promised with 24–48hr response in the Terms. Needs to actually route somewhere Chase checks, ideally with a lightweight ticket/thread tracker so nothing falls through at 10+ clients.
+- [ ] **Support intake** — `support@[domain TBD under Fornax name]` is promised with 24–48hr response in the Terms. Needs to actually route somewhere Chase checks, ideally with a lightweight ticket/thread tracker so nothing falls through at 10+ clients.
 - [ ] **Backup/disaster recovery** — Terms promise daily backups retained 30 days. Confirm Railway/whatever host actually does this, or it's a liability, not a feature.
 - [ ] **A soft-launch cohort** — before opening the floodgates, is there a plan to run the first 5–10 clients (Phase 1 itself) as a deliberate calibration cohort with extra hand-holding, explicitly to surface the gaps in §1–3 before scaling outreach volume?
 

@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Decisions & Rationale
+title: Fornax Decisions & Rationale
 purpose: Single source of truth for all business, product, and technical decisions with context and impact
 status: active
 owner: c.t.cohen
@@ -45,6 +45,7 @@ Ruled = Tyler decided. Provisional = my recommendation applied, easy to reverse 
 | 14 | Provisional: Offboard replaces Ownership (D04), no free trial (D03), 90-day demos (D30), QA floors 80/90 demo and 90 live (D31), email-only outreach (D33), 24-48 h published support (D37), pre-selected tier (D28). | Provisional |
 | 15 | Orchestration between phases is parked until most of the platform exists; today handoffs run through Tyler and documents. | Ruled |
 | 16 | Open items from System 01 still undecided: spend-approval thresholds, tool sunset policy, CAC/LTV targets, multi-year projections, hire-onboarding budget, remote-hiring policy. | Open |
+| 17 | **Rebrand: "BuildFlow" → "Fornax" (tagline "Ops Suite"), 2026-09-22.** "BuildFlow" was taken by too many other companies. Applies everywhere the brand name appears in content, docs, code identifiers, legal/pricing text, website copy, and the GitHub repo name. **Exception: the local folder path stays `~/BuildFlow`** — not renamed, per Tyler's explicit instruction. Domains not yet owned; new domain plan needed once purchased (was `buildflow.io`/`buildflow.com`/`buildflowsites.com`, D32). | Ruled |
 
 Risk register: `docs/RISKS.md`. LLM cost plan: `docs/LLM_COST_AND_API_PLAN.md`.
 

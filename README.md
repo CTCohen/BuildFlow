@@ -1,5 +1,5 @@
 ---
-title: BuildFlow
+title: Fornax
 purpose: Workspace overview, quick navigation, and status dashboard
 status: active
 owner: c.t.cohen
@@ -13,7 +13,7 @@ related:
 - ROADMAP.md
 ---
 
-# BuildFlow
+# Fornax
 
 **An AI-powered outbound sales engine for trades SMBs.** Agents find and score prospects, generate a personalized website for each,
 and email it as a demo. A prospect who likes it clicks "Get This Site", pays, and the demo becomes their live site in about a minute.
@@ -47,7 +47,7 @@ Launch scope: English only, Micro and SMB, email-only outreach, HubSpot first. *
 | `onboarding/` | 30-day journey, emails, video scripts | `SPEC-12` |
 | `operations/` | Support, feedback, experimentation, runbooks, loops, Tyler queue | `SPEC-14, 15, 17` |
 | `knowledge/` | Trade packs, SEO/GEO, SOPs, principles | `SPEC-16` |
-| `website/` | BuildFlow's own marketing site | `SPEC-19` |
+| `website/` | Fornax's own marketing site | `SPEC-19` |
 | `messaging/`, `sales/`, `context/`, `research/`, `customers/` | Copy hooks, positioning, personas, research, customer records | `SPEC-07` |
 | `docs/` | Cross-cutting: business model, pricing, stack, tier matrix, CRM roadmap | `01`, `BUSINESS_MODEL` |
 | `specs/` | Feature registry and the feature system | `05-feature-system.md` |

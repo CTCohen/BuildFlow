@@ -1,5 +1,5 @@
 ---
-title: BuildFlow Execution Status
+title: Fornax Execution Status
 purpose: Real-time tracking of Phase 1 execution status and blockers
 status: active
 owner: c.t.cohen
@@ -15,7 +15,7 @@ phase: phase_1
 ## Done this session
 
 **Decisions locked** (in `docs/`, `CLAUDE.md`):
-- Delivery: one multi-tenant Astro codebase, BuildFlow hosts + maintains, no code handoff.
+- Delivery: one multi-tenant Astro codebase, Fornax hosts + maintains, no code handoff.
 - Offer (then): a two-tier pre-spec offer. **Superseded 2026-09-18** by the spec pricing: see `docs/PRICING.md`.
   (downsell, "you host it", offered only if they reject monthly). Market-researched — see
   `docs/delivery-model.md`.

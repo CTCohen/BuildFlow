@@ -1,6 +1,6 @@
 ---
 title: Governance System Index
-purpose: Single entry point to the complete BuildFlow auto-governance system
+purpose: Single entry point to the complete Fornax auto-governance system
 status: active
 owner: c.t.cohen
 updated: 2026-09-16
@@ -11,7 +11,7 @@ phase: operational
 related: [GOVERNANCE.md, .workspace.toml]
 ---
 
-# BuildFlow Governance System — Complete Index
+# Fornax Governance System — Complete Index
 
 **One place to understand and operate the auto-improving governance system.**
 

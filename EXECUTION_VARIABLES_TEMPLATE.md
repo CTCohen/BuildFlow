@@ -26,12 +26,12 @@ phase: operational
 
 ### B2: Business Email Addresses
 **What we need:**
-- Email that shows in From: line on outreach → use `tyler@buildflow.com`
-- Support email → use `hello@buildflow.com` (or ops email)
+- Email that shows in From: line on outreach → use `tyler@[domain TBD under Fornax name]
+- Support email → use `hello@[domain TBD under Fornax name] (or ops email)
 
 **Status:** ☐ Email addresses confirmed working  
-**From address:** `tyler@buildflow.com`  
-**Support address:** `hello@buildflow.com`
+**From address:** `tyler@[domain TBD under Fornax name]  
+**Support address:** `hello@[domain TBD under Fornax name]
 
 ### B3: Stripe Checkout Links
 **What we need (2 links from Stripe dashboard):**
@@ -48,7 +48,7 @@ phase: operational
 
 ### B4: Domain Confirmation
 **What we need:**
-- Confirm buildflow.com is registered and accessible
+- Confirm [domain TBD under Fornax name] is registered and accessible
 - Note: website deploy depends on domain pointing to Railway
 
 **Status:** ☐ Domain confirmed  
@@ -60,7 +60,7 @@ phase: operational
 
 **Format:**
 ```
-BuildFlow LLC
+Fornax LLC
 [Address]
 [City], [State] [ZIP]
 ```
@@ -96,14 +96,14 @@ sed -i 's|\[CALENDLY_LINK\]|<B1_LINK>|g' /BuildFlow/outreach/REAL_PROSPECTS_READ
 **Action — Line 180 (Managed, $249/mo):**
 Replace the email link with Stripe checkout:
 ```
-OLD: href="mailto:hello@buildflow.com?subject=Start%20BuildFlow%20Managed%20Growth"
+OLD: href="mailto:hello@buildflow.com?subject=Start%20Fornax%20Managed%20Growth"
 NEW: href="<B3_MANAGED_GROWTH_CHECKOUT_URL>"
 ```
 
 **Action — Line 198 (Offboard, $799 one-time):**
 Replace the email link with Stripe checkout:
 ```
-OLD: href="mailto:hello@buildflow.com?subject=BuildFlow%20Ownership%20plan"
+OLD: href="mailto:hello@buildflow.com?subject=Fornax%20Ownership%20plan"
 NEW: href="<B3_OWNERSHIP_CHECKOUT_URL>"
 ```
 
@@ -130,7 +130,7 @@ sed -i 's|\[ADDRESS\]|<B5_ADDRESS>|g' /BuildFlow/legal/TERMS_OF_SERVICE.md
 
 ### 4. Website — Footer/Contact Links
 **Files:** `/BuildFlow/website/src/components/Footer.astro` (or similar)  
-**Placeholder:** `hello@buildflow.com` or `support@buildflow.com`  
+**Placeholder:** `hello@[domain TBD under Fornax name] or `support@[domain TBD under Fornax name]  
 **Needs:** B2 (email addresses confirmed)  
 **Action:** Verify footer has correct support email. Usually pre-filled; no change needed if already correct.
 
@@ -139,7 +139,7 @@ sed -i 's|\[ADDRESS\]|<B5_ADDRESS>|g' /BuildFlow/legal/TERMS_OF_SERVICE.md
 ### 5. Outreach Messaging — Reply-To Address
 **Files:** Any outreach script or email template  
 **Needs:** B2 (email address)  
-**Action:** Ensure "From" line uses `tyler@buildflow.com` when sending.
+**Action:** Ensure "From" line uses `tyler@[domain TBD under Fornax name] when sending.
 
 ---
 

@@ -1,8 +1,8 @@
-# .workspace.toml — BuildFlow Governance & Structure
+# .workspace.toml — Fornax Governance & Structure
 # Auto-improving governance system with frontmatter as first-class metadata
 
 [workspace]
-name = "BuildFlow"
+name = "Fornax"
 description = "Professional websites on your doorstep — AI-automated discovery, outreach, site generation"
 version = "1.0"
 owner = "c.t.cohen"
@@ -24,12 +24,12 @@ owner = { type = "string", pattern = "c.t.cohen|tyler" }
 updated = { type = "date", format = "YYYY-MM-DD" }
 version = { type = "semver", pattern = "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
 
-# LAYER 2: BuildFlow workspace overrides (inherits global, adds specificity)
+# LAYER 2: Fornax workspace overrides (inherits global, adds specificity)
 [governance.frontmatter.workspace]
 required = ["title", "purpose", "status", "owner", "updated"]
 recommended = ["version", "tier_scope", "phase", "critical_path", "related"]
 
-# Additional fields specific to BuildFlow
+# Additional fields specific to Fornax
 [governance.frontmatter.workspace.additional]
 tier_scope = { type = "enum", allowed = ["micro", "smb", "mid-market", "all"], default = "all" }
 phase = { type = "enum", allowed = ["phase_1", "phase_2", "phase_3", "operational"], default = "operational" }

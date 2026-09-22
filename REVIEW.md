@@ -9,7 +9,7 @@ phase: phase_1
 critical_path: true
 ---
 
-# REVIEW.md — BuildFlow shipping checklist
+# REVIEW.md — Fornax shipping checklist
 
 > Run before shipping anything on a critical path: a delivered site, an outreach change,
 > an onboarding change, or an automation going live.
