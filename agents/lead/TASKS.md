@@ -3,8 +3,8 @@ title: Lead Engine Tasks
 purpose: Status, run instructions, assumptions and open questions for Lane C (lead scoring, lookup, outreach, send workflow)
 status: active
 owner: c.t.cohen
-updated: '2026-09-20'
-version: 1.0.0
+updated: '2026-09-21'
+version: 1.1.0
 tier_scope: all
 phase: phase_1
 related: [operations/lanes/LANE-C-lead.md, outreach/SPEC-07-lead-to-customer-pipeline.md, agents/AGENT_REGISTRY.md]
@@ -21,7 +21,8 @@ Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Pytho
 | 3 | Size classification from free signals | Done | `size.py` |
 | 4 | 5-touch templates, hook chosen from signals | Done, copy is DRAFT | `sequence.py`, `messaging/outreach_sequence_draft.json` |
 | 5 | Send and sequence workflow on a mock SendGrid | Done | `send.py` |
-| 6 | Evals (all pass) | Done: scoring 18, size 17, lookup 16, outreach+send 38 | `evals/` |
+| 6 | Evals (all pass) | Done: scoring 18, size 17, lookup 16, outreach+send 40, adapter 8 (99 total) | `evals/` |
+| 7 | Adapter: plain-dict lead/prospect shapes → `platform/CONTRACT.md` tables | Done | `adapter.py` |
 
 ## Assumptions to confirm (I chose, spec is silent)
 1. **Size tiers** come from `docs/PRICING.md`: Micro <3, SMB 3-20, Mid-Market >20 or >$5M revenue. SPEC-07 targets 1-50 employees, so 21-50 still earns the size points but the lead is suppressed as Mid-Market.
@@ -33,6 +34,20 @@ Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Pytho
 7. Unsubscribe token is HMAC-SHA256 of lead_id with a secret; the URL host is a placeholder.
 8. Local time zones: AZ Phoenix (no DST), CA Pacific, TX Central, FL/NY Eastern; unknown state defaults to Eastern.
 
+## Ruled 2026-09-21 (see TYLER_QUEUE.md "Ruled tonight")
+- **D01 sender address = `hello@`** — `send.Campaign` now takes `sender_email` (default
+  `hello@buildflow.example`, matching the existing `.example` placeholder pattern used for
+  `base_url` since the real domain (D32) isn't settled) and stamps it as `msg["from"]` on every
+  send. Covered by `evals/test_outreach_send.py::SendWorkflow::test_c08_sender_is_hello_by_default`
+  and `test_c09_sender_email_configurable`.
+- **D29 Mid-Market leads: capture in warehouse, no outreach, nothing built yet** — this was already
+  this lane's default (`scoring.py`'s `suppressed` flag, `send.py`'s `enroll()` refusing suppressed
+  leads). The new `adapter.py` makes the "capture" half concrete: a suppressed lead still gets a
+  `to_lead_warehouse_row()` and `to_lead_row()` (status `"suppressed"`, `assigned_tier` null), but
+  `to_prospect_row()` raises `ValueError` if called on one — so nothing downstream can accidentally
+  build a demo or enroll it in outreach. No real warehouse write yet (no live Supabase project per
+  `operations/BUILD_TASKS.md` §1); this is the shape Lane A's service layer inserts once it exists.
+
 ## Blocked on / needs Tyler
 - **Approve the outreach copy** (`messaging/outreach_sequence_draft.json`, `meta.status` is `draft`). The engine refuses any non-mock sender until it says `approved`.
 - **Postal address** for the email footer (CAN-SPAM). The engine refuses to run without one.
@@ -40,8 +55,11 @@ Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Pytho
 - Real provider clients are not written; they only need to implement `search(query)`.
 
 ## Not done / next
-- `platform/CONTRACT.md` (Lane A) did not exist yet. Leads here are plain dicts; when the Lead/Prospect shapes land, add a thin adapter.
-- Persistence: state is in memory. Storage arrives with the Supabase schema.
+- Persistence: state is in memory. Storage arrives with the Supabase schema — `adapter.py` produces
+  the rows but nothing calls a DB client yet (no real Supabase project provisioned).
 - Calibration needs real outcomes; the function is tested only for shape.
 - Lookup fixtures are small and hand-made (6 businesses). Real-world name matching will need tuning once recorded live responses exist.
 - Score note for the 50-69 band (LLM, ~$0.003) deliberately not built: API is out of scope.
+- `send.py`'s `Campaign._send()` discards `self.sender.send(msg)`'s return value (the would-be
+  SendGrid message id) — `adapter.to_campaign_run_row()` accepts `sendgrid_message_id` as soon as
+  something upstream starts capturing it.

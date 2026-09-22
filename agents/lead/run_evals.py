@@ -72,11 +72,12 @@ def main() -> int:
                 print(f"FAIL {suite}/{c['id']} {c['desc']}: {'; '.join(errs)}")
         failed += bad
         print(f"{suite}: {len(cases) - bad}/{len(cases)} passed")
-    from .evals import test_outreach_send
-    res = unittest.TextTestRunner(verbosity=0).run(unittest.defaultTestLoader.loadTestsFromModule(test_outreach_send))
-    total += res.testsRun
-    failed += len(res.failures) + len(res.errors)
-    print(f"outreach+send: {res.testsRun - len(res.failures) - len(res.errors)}/{res.testsRun} passed")
+    from .evals import test_adapter, test_outreach_send
+    for label, mod in (("outreach+send", test_outreach_send), ("adapter", test_adapter)):
+        res = unittest.TextTestRunner(verbosity=0).run(unittest.defaultTestLoader.loadTestsFromModule(mod))
+        total += res.testsRun
+        failed += len(res.failures) + len(res.errors)
+        print(f"{label}: {res.testsRun - len(res.failures) - len(res.errors)}/{res.testsRun} passed")
     print(f"TOTAL {total - failed}/{total}")
     return 1 if failed else 0
 

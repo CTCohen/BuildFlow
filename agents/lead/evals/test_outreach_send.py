@@ -137,6 +137,17 @@ class SendWorkflow(unittest.TestCase):
             self.assertEqual(m["headers"]["List-Unsubscribe-Post"], "List-Unsubscribe=One-Click")
             self.assertIn("Unsubscribe:", m["body"])
 
+    def test_c08_sender_is_hello_by_default(self):
+        # D01 (ruled 2026-09-21): sender address is hello@, not a personal address.
+        c = camp(); c.enroll(lead(), "u", D0)
+        c.run(nine_am_az(D0))
+        self.assertEqual(c.sender.sent[0]["from"], "hello@buildflow.example")
+
+    def test_c09_sender_email_configurable(self):
+        c = camp(sender_email="hello@buildflow.com"); c.enroll(lead(), "u", D0)
+        c.run(nine_am_az(D0))
+        self.assertEqual(c.sender.sent[0]["from"], "hello@buildflow.com")
+
     def test_c07_unsubscribe_stops_sequence(self):
         c = camp(); c.enroll(lead(), "u", D0); c.run(nine_am_az(D0))
         self.assertTrue(c.unsubscribe("L1", unsubscribe_token("test-secret", "L1")))
