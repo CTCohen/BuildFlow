@@ -53,7 +53,7 @@ onboarding/offboarding code gets built, not just a note here.
 ## Specified, not yet built
 - [ ] Offboard export mechanics — handing the customer their domain and static site files with no ongoing
   support (D04: "Offboard replaces Ownership"). No code found under any folder implementing an export/handoff
-  flow; `platform/hosting/` (built on mocks, 40/40 tests) covers deploy/DNS/R2 for *our* hosting, not an export
+  flow; `platform/hosting/` (built on mocks, 31/31 tests) covers deploy/DNS/R2 for *our* hosting, not an export
   path off of it.
 - [ ] Offboard tier's data export/handoff UI or API — not found in `platform/dashboards/` or `platform/hosting/`
 - [ ] Cancellation flow (customer-initiated, Managed tier): "cancel anytime (access through end of month)" per
