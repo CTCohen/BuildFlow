@@ -47,7 +47,13 @@ Rules: secrets go in a gitignored `.env` or the provider's secret store, never i
 - Logo, marketing-site copy, Mid-Market waitlist copy
 - Profile and QA-threshold choices, prompt changes proposed by the monthly QA loop
 
+## Lane B: design engine (decisions from the build, `operations/lanes/STATUS-B-design.md`)
+- [ ] **Micro: how many fixed hero options?** Built with 1 (`split`, the MICRO.md default) so there is something concrete to look at. `docs/DESIGN_SYSTEMS/MICRO.md`'s open item asked whether Micro should offer 2-3. Decide: ship with 1, or have Lane B add 2 more (e.g. `full-bleed`, `minimal`) before launch.
+- [ ] **Micro: single service page vs. services grid?** Also open in `MICRO.md`. Currently Micro has both — a `/services` grid and per-service pages (same components as SMB, reduced set) — because dropping either wasn't an obvious call. Confirm that's right for a $149/mo customer, or say which one to cut.
+- [ ] **SMB font-dropdown sliders: build them, or is the type-pairing set enough?** Spec System 04 §7 lists separate headline-font and body-font dropdowns (4 options / 2 options) as customer sliders. What's built instead is the pre-existing 3 `typePairing` choices (grotesk-serif / humanist / classic), set by the styling profile and not currently slider-exposed to the SMB customer alongside color/spacing/radius. Decide: leave it as profile-only, or have Lane B expose `typePairing` as a fourth SMB slider (cheap: it's already validated in the schema).
+- [ ] **Run the browser QA checks (Lighthouse + layout) on your machine** — the build sandbox can't open a local port or launch Chrome, so this hasn't been done yet. From `app/`: `CLIENT=demo-plumbing npm run build && npm run qa -- --client demo-plumbing --stage demo`, or `node agents/design/smoke.mjs --browser require` for all 20 smoke sites. Report back if any site is below the demo floor (Lighthouse 80 / accessibility 90).
+- [ ] **First-10 site scoring (QA rubric, calibration)** — now has something to score: run `node agents/design/smoke.mjs`, open `agents/design/out/smoke/index.html` (20 fictional sites, 4 verticals x SMB/Micro x 2-3 profiles), and score per the manual-review checklist in `design/SPEC-04-design-quality.md` §2.
+
 ## Calls and hands-on
 - Sales calls and onboarding during the soft launch
 - Record the onboarding and offboarding videos (about 4-5 hours on camera)
-- First-10 site scoring with the QA rubric (calibration)

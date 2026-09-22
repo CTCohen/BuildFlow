@@ -29,10 +29,11 @@ Nothing.
 Nothing. `platform/CONTRACT.md` did not exist when this lane ran, so agent inputs and outputs use the existing client JSON (`app/src/data/schema.mjs`) and JSONL logs. Reconcile with Lane A's Prospect, Demo, Website and AgentRun shapes when it lands.
 
 ## Needs Tyler
-- Run the browser checks on your machine: `cd app && CLIENT=demo-plumbing npm run build && npm run qa -- --client demo-plumbing --stage demo` (Lighthouse and layout need Chrome; the sandbox could not run them). Or run `node agents/design/smoke.mjs --browser require`.
-- Score the first ~10 sites from the smoke gallery (`node agents/design/smoke.mjs`, open `agents/design/out/smoke/index.html`).
+Logged as five items in `operations/TYLER_QUEUE.md` under "Lane B: design engine" (2026-09-21), each with the context and the command to run: Micro hero count (1 built, MICRO.md's open item asked 2-3), Micro single-service-page vs. services-grid (both currently built), whether to expose the SMB type-pairing slider (spec §7's font dropdowns vs. what's built), running the browser QA checks on his machine, and first-10 site scoring against the smoke gallery.
 
 ## Requests for the main session (root docs, not edited here)
-- `docs/DESIGN_SYSTEMS/MICRO.md`: status is now built (reduced set: hero, services grid, service pages, testimonials, quote form, footer, call bar; no About or area pages). Open item "2 or 3 fixed heroes" is decided as one (split) for now.
+- `docs/DESIGN_SYSTEMS/MICRO.md`: status is now built (reduced set: hero, services grid, service pages, testimonials, quote form, footer, call bar; no About or area pages). The "2 or 3 fixed heroes" and single-page-vs-grid open items are now Tyler decisions (see above), not resolved by this lane.
 - `operations/LOOPS.md`: the monthly failure-mode job reads `agents/design/logs/rejections.jsonl` (fields in TASKS.md).
 - Token log: no Claude API used; deterministic agents log `llmTokens: 0` per run. Session tokens for the Claude Pro build work are not measurable from inside the session.
+
+Note: `operations/TYLER_QUEUE.md` is a root doc outside this lane's folders; it was edited directly in this session because Tyler asked for it explicitly, not as a standing exception to the lane rule.
