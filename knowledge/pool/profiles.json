@@ -1,0 +1,84 @@
+{
+  "note": "Maps each of the 10 styling profiles to preferred headline tones, in order. The Design Agent picks the first variant whose tone matches and whose 'requires' flags the business confirms; if none, it falls back to 'practical'.",
+  "tones": [
+    "practical",
+    "urgent",
+    "reassuring",
+    "premium",
+    "friendly",
+    "direct"
+  ],
+  "default": "professional-service",
+  "profiles": [
+    {
+      "id": "professional-service",
+      "tones": [
+        "practical",
+        "reassuring"
+      ]
+    },
+    {
+      "id": "modern-minimalist",
+      "tones": [
+        "direct",
+        "practical"
+      ]
+    },
+    {
+      "id": "cutting-edge-tech",
+      "tones": [
+        "direct",
+        "premium"
+      ]
+    },
+    {
+      "id": "established-authority",
+      "tones": [
+        "reassuring",
+        "premium"
+      ]
+    },
+    {
+      "id": "energetic-bold",
+      "tones": [
+        "urgent",
+        "direct"
+      ]
+    },
+    {
+      "id": "eco-conscious",
+      "tones": [
+        "friendly",
+        "reassuring"
+      ]
+    },
+    {
+      "id": "luxury-premium",
+      "tones": [
+        "premium",
+        "reassuring"
+      ]
+    },
+    {
+      "id": "community-focused",
+      "tones": [
+        "friendly",
+        "reassuring"
+      ]
+    },
+    {
+      "id": "modern-industrial",
+      "tones": [
+        "direct",
+        "practical"
+      ]
+    },
+    {
+      "id": "transparent-honest",
+      "tones": [
+        "direct",
+        "reassuring"
+      ]
+    }
+  ]
+}

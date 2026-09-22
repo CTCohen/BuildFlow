@@ -1,0 +1,494 @@
+{
+  "vertical": "plumbing",
+  "version": 1,
+  "status": "draft",
+  "note": "Draft. Merge fields are filled at build time. Claims tagged 'requires' are used only when the business confirms them. Educational answers are general and unverified against local code; review before relying on them.",
+  "services": [
+    {
+      "id": "drain-cleaning",
+      "name": "Drain cleaning",
+      "symptoms": [
+        "Slow drains",
+        "Gurgling sounds",
+        "Water backs up in tubs or sinks",
+        "Repeated clogs in the same spot",
+        "Bad smell from drains"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Drain cleaning in {city}, cleared and checked"
+        },
+        {
+          "tone": "urgent",
+          "text": "Backed-up drain in {city}? Call {business}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Find out why your drain keeps clogging"
+        },
+        {
+          "tone": "direct",
+          "text": "Clogged drain in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} clears the clog and checks the line so it does not come straight back."
+        }
+      ],
+      "blurb": "Slow, gurgling, or backed-up drains cleared, with a look at why they clog.",
+      "directAnswer": "{business} clears drains across {areas}. A single slow sink is often a local clog, but several drains backing up at once can point to the main line. We clear the blockage, and when it keeps returning we inspect the pipe with a camera to find the cause. Call {phone}.",
+      "process": [
+        "Find where the clog is and how far it goes",
+        "Clear it with the right tool for the pipe",
+        "Camera-inspect if it keeps coming back",
+        "Explain the cause and how to prevent it"
+      ],
+      "faq": [
+        {
+          "q": "Why does my drain keep clogging?",
+          "a": "Grease, hair, wipes, and roots are common causes. A recurring clog can also mean a damaged or sagging pipe. A camera inspection shows which."
+        },
+        {
+          "q": "Are chemical drain cleaners safe?",
+          "a": "They can damage pipes and are hazardous to handle. Many plumbers recommend mechanical clearing instead."
+        },
+        {
+          "q": "When are several backed-up drains an emergency?",
+          "a": "When multiple fixtures back up together, the main sewer line may be blocked. Stop using water and call a plumber."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "water-heater",
+      "name": "Water heater repair and replacement",
+      "symptoms": [
+        "No hot water",
+        "Water is not hot enough",
+        "Popping or rumbling noises",
+        "Rust-colored hot water",
+        "Water around the tank"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "No hot water in {city}? Call {business}"
+        },
+        {
+          "tone": "practical",
+          "text": "Water heater repair and replacement in {city}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Repair or replace? A clear answer for your water heater"
+        },
+        {
+          "tone": "direct",
+          "text": "Water heater service in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} finds out whether a repair makes sense or whether the tank is at the end of its life."
+        }
+      ],
+      "blurb": "No hot water, strange noises, or a leaking tank: we repair or replace it.",
+      "directAnswer": "{business} services and replaces water heaters across {areas}. Tank water heaters often last 8 to 12 years, and hard water can shorten that. We diagnose the problem, tell you plainly whether a repair or replacement makes sense, and install to code. A leaking tank should be shut off and replaced. Call {phone}.",
+      "process": [
+        "Diagnose heating element, thermostat, burner, or leak",
+        "Explain repair or replacement with the cost picture",
+        "Install to code with correct venting and shutoffs",
+        "Test and show you the shutoff valves"
+      ],
+      "faq": [
+        {
+          "q": "How long does a water heater last?",
+          "a": "Tank models commonly last 8 to 12 years. Sediment from hard water can shorten that. Age matters when choosing repair or replacement."
+        },
+        {
+          "q": "Why does my water heater make popping sounds?",
+          "a": "Usually sediment on the bottom of the tank. Flushing it can help, and heavy buildup can signal the tank is aging."
+        },
+        {
+          "q": "What should I do if the tank is leaking?",
+          "a": "Shut off the water supply to the heater and the power or gas, and call a plumber. A leak from the tank body generally means replacement."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leak-repair",
+      "name": "Leak detection and repair",
+      "symptoms": [
+        "Unexplained rise in the water bill",
+        "Water meter moves with everything off",
+        "Damp spots on walls or floors",
+        "Sound of running water",
+        "Low water pressure"
+      ],
+      "headlines": [
+        {
+          "tone": "reassuring",
+          "text": "Find the leak without tearing up your home"
+        },
+        {
+          "tone": "practical",
+          "text": "Leak detection and repair in {city}"
+        },
+        {
+          "tone": "urgent",
+          "text": "Water leak in {city}? Call {business}"
+        },
+        {
+          "tone": "direct",
+          "text": "Leak repair in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "practical",
+          "text": "{business} locates the leak, explains what it found, and repairs it."
+        }
+      ],
+      "blurb": "Hidden or visible leaks found and fixed before they damage your home.",
+      "directAnswer": "{business} finds and repairs leaks across {areas}. A quick test is to turn off every fixture and check whether your water meter still moves. If it does, you may have a leak. We locate it, explain the repair, and fix it. Call {phone}.",
+      "process": [
+        "Confirm the leak with a pressure or meter check",
+        "Locate it with the least damage to your home",
+        "Explain the repair and quote it",
+        "Repair and test the line"
+      ],
+      "faq": [
+        {
+          "q": "How can I tell if I have a hidden leak?",
+          "a": "An unexplained rise in your water bill, a water meter that moves when nothing is running, damp spots, or the sound of running water are common signs."
+        },
+        {
+          "q": "What is a slab leak?",
+          "a": "A leak in a pipe under or within the concrete foundation. It can be hard to spot and needs a plumber to locate it."
+        },
+        {
+          "q": "Where is my main shutoff?",
+          "a": "Usually near where the water line enters the home or at the meter. Everyone in the household should know where it is."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repiping",
+      "name": "Repiping",
+      "symptoms": [
+        "Discolored water",
+        "Low water pressure throughout the house",
+        "Repeated pinhole leaks",
+        "Old galvanized or polybutylene pipes",
+        "Metallic taste"
+      ],
+      "headlines": [
+        {
+          "tone": "practical",
+          "text": "Repiping in {city}, done with minimal disruption"
+        },
+        {
+          "tone": "reassuring",
+          "text": "Is it time to replace your home's pipes?"
+        },
+        {
+          "tone": "premium",
+          "text": "Whole-home repiping for your {city} home"
+        },
+        {
+          "tone": "direct",
+          "text": "Repiping in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "reassuring",
+          "text": "{business} inspects your plumbing and tells you honestly whether repair or repiping makes sense."
+        }
+      ],
+      "blurb": "When repairs keep coming, we replace the pipes with a lasting material.",
+      "directAnswer": "{business} repipes homes across {areas}. Repeated leaks, discolored water, and falling pressure can signal aging pipes. We inspect, explain whether spot repair or full repiping fits, and replace pipes with materials such as copper or PEX. Call {phone} for an inspection.",
+      "process": [
+        "Inspect and map the existing plumbing",
+        "Explain repair versus repipe with the cost picture",
+        "Replace lines and restore walls where opened",
+        "Pressure test and confirm everything works"
+      ],
+      "faq": [
+        {
+          "q": "What are signs my pipes need replacing?",
+          "a": "Repeated leaks, discolored water, low pressure, and old pipe materials are common signs. An inspection confirms the condition."
+        },
+        {
+          "q": "What is PEX?",
+          "a": "A flexible plastic pipe widely used in residential plumbing. Copper is another common choice. The right one depends on the home and local code."
+        },
+        {
+          "q": "How long does repiping take?",
+          "a": "It varies with the size of the home. Ask for a schedule and how water shutoff will be handled."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sewer-line",
+      "name": "Sewer line repair and inspection",
+      "symptoms": [
+        "Several drains back up at once",
+        "Gurgling from multiple fixtures",
+        "Sewage smell",
+        "Wet or sunken patches in the yard",
+        "Frequent main line clogs"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Sewer backup in {city}? Call {business}"
+        },
+        {
+          "tone": "reassuring",
+          "text": "See inside your sewer line before you dig"
+        },
+        {
+          "tone": "practical",
+          "text": "Sewer line inspection and repair in {city}"
+        },
+        {
+          "tone": "direct",
+          "text": "Sewer line problems in {city}. Call {phone}"
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "reassuring",
+          "text": "{business} inspects with a camera so the repair targets the actual problem."
+        }
+      ],
+      "blurb": "Camera inspection and repair for sewer line backups and damage.",
+      "directAnswer": "{business} inspects and repairs sewer lines across {areas}. A camera inspection shows roots, breaks, or a sagging pipe without guessing. We explain the findings and the repair options, including methods that limit digging where they apply. Call {phone}.",
+      "process": [
+        "Camera-inspect the line",
+        "Show and explain what the camera found",
+        "Present repair options, including less-digging methods where suitable",
+        "Repair and verify flow"
+      ],
+      "faq": [
+        {
+          "q": "How do I know if my sewer line is the problem?",
+          "a": "Several drains backing up together, gurgling from multiple fixtures, or sewage smells suggest the main line rather than one fixture."
+        },
+        {
+          "q": "What is a camera inspection?",
+          "a": "A small camera on a flexible cable goes through the pipe so the plumber can see cracks, roots, or a blockage."
+        },
+        {
+          "q": "Can a sewer line be repaired without digging up the yard?",
+          "a": "Sometimes. Certain methods work from inside the pipe. Whether they fit depends on the pipe's condition."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emergency-plumbing",
+      "name": "Emergency plumbing",
+      "symptoms": [
+        "Burst pipe",
+        "Overflowing toilet or sewage backup",
+        "No water at all",
+        "Water heater flooding",
+        "Water spreading in the home"
+      ],
+      "headlines": [
+        {
+          "tone": "urgent",
+          "text": "Emergency plumbing in {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "urgent",
+          "text": "Burst pipe? Shut off the water and call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "reassuring",
+          "text": "After-hours plumbing help for {city}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "tone": "direct",
+          "text": "Emergency plumber in {city}. Call {phone}",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "heroSub": [
+        {
+          "tone": "urgent",
+          "text": "Call {phone} any time. {business} serves {areas}.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        }
+      ],
+      "blurb": "Burst pipes, flooding, and sewage backups handled by a plumber who can come now.",
+      "directAnswer": "{business} handles plumbing emergencies across {areas}. First, shut off the main water valve. If water is near electrical outlets or panels, stay away and shut off power only if it is safe. Then call {phone}. We stop the damage first and explain repairs afterward.",
+      "process": [
+        "Take your call and give shutoff instructions",
+        "Send a plumber to your home",
+        "Stop the water and limit the damage",
+        "Repair, or explain the next step clearly"
+      ],
+      "faq": [
+        {
+          "q": "What should I do first in a burst pipe?",
+          "a": "Shut off the main water valve, open a faucet to drain the line, and move valuables away from water. Then call a plumber."
+        },
+        {
+          "q": "Is water near outlets dangerous?",
+          "a": "Yes. Stay away from water near electrical outlets or appliances and call an electrician or plumber."
+        },
+        {
+          "q": "Will insurance cover water damage?",
+          "a": "It depends on your policy and the cause. Take photos before cleanup and contact your insurer."
+        }
+      ],
+      "requires": [
+        "emergency_24_7"
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Available 24/7, including nights and weekends.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
+      ]
+    }
+  ]
+}

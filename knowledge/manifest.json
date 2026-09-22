@@ -25,15 +25,72 @@
         "trades/hvac/schema",
         "trades/hvac/keyword-map",
         "trades/hvac/phoenix-seasonal"
+      ],
+      "plumbing": [
+        "trades/plumbing/must-haves",
+        "trades/plumbing/page-map",
+        "trades/plumbing/copy-bank",
+        "trades/plumbing/objection-handling",
+        "trades/plumbing/trust-signals",
+        "trades/plumbing/schema",
+        "trades/plumbing/keyword-map",
+        "trades/plumbing/phoenix-context"
+      ],
+      "electrical": [
+        "trades/electrical/must-haves",
+        "trades/electrical/page-map",
+        "trades/electrical/copy-bank",
+        "trades/electrical/objection-handling",
+        "trades/electrical/trust-signals",
+        "trades/electrical/schema",
+        "trades/electrical/keyword-map",
+        "trades/electrical/phoenix-context"
+      ],
+      "roofing": [
+        "trades/roofing/must-haves",
+        "trades/roofing/page-map",
+        "trades/roofing/copy-bank",
+        "trades/roofing/objection-handling",
+        "trades/roofing/trust-signals",
+        "trades/roofing/schema",
+        "trades/roofing/keyword-map",
+        "trades/roofing/phoenix-context"
       ]
     }
   },
   "seo": {
-    "always": ["principles/local-seo", "principles/ai-seo", "sops/seo-audit", "sops/ai-seo-setup"],
-    "byTrade": { "hvac": ["trades/hvac/schema", "trades/hvac/keyword-map"] }
+    "always": [
+      "principles/local-seo",
+      "principles/ai-seo",
+      "sops/seo-audit",
+      "sops/ai-seo-setup"
+    ],
+    "byTrade": {
+      "hvac": [
+        "trades/hvac/schema",
+        "trades/hvac/keyword-map"
+      ],
+      "plumbing": [
+        "trades/plumbing/schema",
+        "trades/plumbing/keyword-map"
+      ],
+      "electrical": [
+        "trades/electrical/schema",
+        "trades/electrical/keyword-map"
+      ],
+      "roofing": [
+        "trades/roofing/schema",
+        "trades/roofing/keyword-map"
+      ]
+    }
   },
   "managed": {
-    "always": ["sops/managed-monthly", "sops/content-refresh", "principles/local-seo", "principles/ai-seo"],
+    "always": [
+      "sops/managed-monthly",
+      "sops/content-refresh",
+      "principles/local-seo",
+      "principles/ai-seo"
+    ],
     "byTrade": {}
   }
 }
