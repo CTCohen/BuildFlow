@@ -3,11 +3,31 @@ title: Coordinator State
 purpose: The single source of truth for what is done, in progress, and open across every lane. Read this file FIRST, before answering any question about build status. Update it LAST, after every check-in or merge. This file exists so status survives context loss between sessions — nothing about launch progress should be trusted from memory alone.
 status: active
 owner: c.t.cohen
-updated: '2026-09-21'
-version: 1.3.0
+updated: '2026-09-22'
+version: 1.4.0
 tier_scope: all
 phase: phase_1
 ---
+
+## Latest coordinator run — 2026-09-22 (Cloudflare hosting pipeline, no token yet)
+
+Built BUILD_TASKS.md §2 (Static hosting on Cloudflare) as far as possible without a real Cloudflare
+credential — new `platform/hosting/` folder: `deploy.mjs` (Pages deploy, project naming, versioning +
+auto-rollback), `assets.mjs` (R2 key structure + upload), `domains.mjs` (two-domain model, subdomain
+assignment from config, not a hardcoded guess), `pipeline.mjs` (composes all three + timing against
+SPEC-03's ~60s end-to-end target), `cost-alert.mjs` + `platform/db/migrations/0006_hosting_cost_alert.sql`
+(per-customer >$50 alert, reusing the existing `admin.raise_alert` dispatcher from `0004_monitoring.sql`),
+and `mocks.mjs` (the actual Cloudflare API calls, matching the `billing/dunning/mocks.py` mock style —
+nothing here makes a network call or holds a credential). 40/40 JS unit tests pass live
+(`node --test platform/hosting/*.test.mjs`). The new SQL test (`platform/db/tests/21_hosting_cost.sql`,
+wired into `run-local.sh`) could **not** be run live in this sandboxed session — local Postgres fails to
+start here (`shmget: Operation not permitted`), the same restriction that forced the G0 isolation test onto
+Tyler's Mac; it needs a real run there or in CI before being trusted as proven. Wildcard SSL: confirmed
+nothing to build — it's a Cloudflare account-level setting once a domain is on a Cloudflare zone. Governance
+lint clean (`python3 governance/enforce.py --lint` → 0 stale-term hits). TYLER_QUEUE.md's Cloudflare line now
+spells out the exact token scopes needed (Pages Edit, R2 Storage Edit, Zone DNS/SSL Edit) so the account
+creation step is unblocked the moment Tyler has time. Nothing else in this session's scope was touched
+(website/, legal/, docs/, knowledge/, other lanes' files left alone).
 
 ## Latest coordinator run — 2026-09-21 (merge night)
 

@@ -22,5 +22,5 @@ PSQL=(psql -v ON_ERROR_STOP=1 -q)
 echo ">> local auth shim"; "${PSQL[@]}" -f "$HERE/tests/00_local_auth_shim.sql"
 for f in "$HERE"/migrations/*.sql; do echo ">> migrate $(basename "$f")"; "${PSQL[@]}" -f "$f"; done
 echo ">> migrations applied a second time on a fresh DB must also work: checking idempotent role creation"
-for t in 10_isolation 20_monitoring; do echo; echo "########## $t"; "${PSQL[@]}" -f "$HERE/tests/$t.sql" 2>&1; done
+for t in 10_isolation 20_monitoring 21_hosting_cost; do echo; echo "########## $t"; "${PSQL[@]}" -f "$HERE/tests/$t.sql" 2>&1; done
 echo; echo "ALL DB TESTS PASSED"
