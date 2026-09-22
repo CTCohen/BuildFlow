@@ -67,6 +67,26 @@
           "q": "How often should I change my air filter?",
           "a": "Many manufacturers suggest every one to three months, depending on the filter type, pets, and dust. A clogged filter is one of the most common causes of poor cooling."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -127,6 +147,32 @@
         {
           "q": "Do I need a permit for a new AC?",
           "a": "Many cities require a permit for replacing an air conditioner. A licensed contractor normally handles it. Ask {business} what applies in {city}."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
         }
       ]
     },
@@ -189,6 +235,26 @@
           "q": "How often should a furnace be serviced?",
           "a": "Annual service is commonly recommended before the heating season to check safety controls and airflow."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -246,6 +312,32 @@
           "q": "Can I replace only the furnace?",
           "a": "Sometimes. Matching the outdoor unit, coil, and ductwork affects performance, so a technician should assess the whole system."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     },
     {
@@ -302,6 +394,26 @@
         {
           "q": "Will a tune-up lower my bills?",
           "a": "A clean, well-adjusted system runs more efficiently, but savings depend on the system's condition. It also reduces the chance of a breakdown."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
         }
       ]
     },
@@ -378,6 +490,26 @@
       ],
       "requires": [
         "emergency_24_7"
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Available 24/7, including nights and weekends.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     }
   ]

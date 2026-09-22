@@ -59,6 +59,26 @@
           "q": "When are several backed-up drains an emergency?",
           "a": "When multiple fixtures back up together, the main sewer line may be blocked. Stop using water and call a plumber."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -115,6 +135,26 @@
         {
           "q": "What should I do if the tank is leaking?",
           "a": "Shut off the water supply to the heater and the power or gas, and call a plumber. A leak from the tank body generally means replacement."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
         }
       ]
     },
@@ -173,6 +213,26 @@
           "q": "Where is my main shutoff?",
           "a": "Usually near where the water line enters the home or at the meter. Everyone in the household should know where it is."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -230,6 +290,32 @@
           "q": "How long does repiping take?",
           "a": "It varies with the size of the home. Ask for a schedule and how water shutoff will be handled."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     },
     {
@@ -286,6 +372,26 @@
         {
           "q": "Can a sewer line be repaired without digging up the yard?",
           "a": "Sometimes. Certain methods work from inside the pipe. Whether they fit depends on the pipe's condition."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
         }
       ]
     },
@@ -362,6 +468,26 @@
       ],
       "requires": [
         "emergency_24_7"
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Available 24/7, including nights and weekends.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     }
   ]

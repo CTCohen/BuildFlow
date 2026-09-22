@@ -59,6 +59,26 @@
           "q": "Why does flashing matter?",
           "a": "Flashing seals joints such as chimneys and vents. It is a common leak source when it fails."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -115,6 +135,32 @@
         {
           "q": "Do I need a permit?",
           "a": "Many cities require one for a full replacement. {business} can explain what applies in {city}."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
         }
       ]
     },
@@ -173,6 +219,26 @@
           "q": "Should I tarp the roof myself?",
           "a": "Climbing on a wet roof is dangerous. Many roofers can install a temporary cover."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -229,6 +295,26 @@
         {
           "q": "Will an inspection find every problem?",
           "a": "It covers what is visible and accessible. It cannot see inside sealed areas."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
         }
       ]
     },
@@ -287,6 +373,26 @@
           "q": "How soon should I get it fixed?",
           "a": "Sooner is better, since water can cause more damage. Temporary covers can help until repairs are made."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -343,6 +449,26 @@
         {
           "q": "What are signs of trouble?",
           "a": "Missing pieces, sagging, stains inside, and granules in gutters are common signs."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
         }
       ]
     }

@@ -59,6 +59,32 @@
           "q": "Can I upgrade my panel myself?",
           "a": "No. Work inside the panel is dangerous and is normally restricted to licensed electricians."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     },
     {
@@ -115,6 +141,26 @@
         {
           "q": "Can I replace an outlet myself?",
           "a": "Only if you are qualified and turn off the breaker. Many people prefer a licensed electrician for safety and code compliance."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
         }
       ]
     },
@@ -173,6 +219,26 @@
           "q": "Do dimmers work with all bulbs?",
           "a": "No. LED bulbs and dimmers must be compatible. Ask when choosing fixtures."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
+        }
       ]
     },
     {
@@ -230,6 +296,32 @@
           "q": "Does my panel need an upgrade?",
           "a": "Sometimes. A load calculation shows whether it has capacity."
         }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Free, no-obligation estimates before any work starts.",
+          "requires": [
+            "free_estimate"
+          ]
+        },
+        {
+          "text": "Financing options are available for larger jobs.",
+          "requires": [
+            "financing"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     },
     {
@@ -286,6 +378,26 @@
         {
           "q": "What causes flickering lights?",
           "a": "Loose connections, failing fixtures, or a load on the circuit. A widespread flicker can indicate a bigger issue."
+        }
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        },
+        {
+          "text": "Same-day appointments are available in {areas}.",
+          "requires": [
+            "same_day"
+          ]
         }
       ]
     },
@@ -362,6 +474,26 @@
       ],
       "requires": [
         "emergency_24_7"
+      ],
+      "facts": [
+        {
+          "text": "{years} years serving {areas}."
+        },
+        {
+          "text": "Licensed and insured, license {license}."
+        },
+        {
+          "text": "Available 24/7, including nights and weekends.",
+          "requires": [
+            "emergency_24_7"
+          ]
+        },
+        {
+          "text": "Workmanship on this service is covered by a written warranty.",
+          "requires": [
+            "warranty"
+          ]
+        }
       ]
     }
   ]

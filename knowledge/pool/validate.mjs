@@ -52,7 +52,16 @@ export function serviceProblems(s) {
   if (da < 30 || da > 90) p.push(`directAnswer is ${da} words (want 30-90)`);
   if (!s.process || s.process.length < 3 || s.process.length > 5) p.push("process needs 3-5 steps");
   if (!s.faq || s.faq.length < 3) p.push("needs at least 3 FAQ entries");
-  const all = [...(s.symptoms || []), ...(s.headlines || []).map((h) => h.text), ...(s.heroSub || []).map((h) => h.text), s.blurb, s.directAnswer, ...(s.process || []), ...(s.faq || []).flatMap((f) => [f.q, f.a])].filter(Boolean);
+  // SPEC-16 Layer 1 "fact density" (ai-seo-setup.md step 3): >=3 concrete facts per
+  // service, and at least 2 must be ungated (always true) so fact density never
+  // depends on the business confirming anything.
+  if (!s.facts || s.facts.length < 3) p.push("needs at least 3 facts (fact density, SPEC-16 Layer 1)");
+  else {
+    for (const f of s.facts) for (const r of f.requires || []) if (!REQUIRES.has(r)) p.push(`unknown requires ${r} in fact "${f.text}"`);
+    const ungated = s.facts.filter((f) => !(f.requires || []).length).length;
+    if (ungated < 2) p.push(`needs at least 2 ungated facts (has ${ungated})`);
+  }
+  const all = [...(s.symptoms || []), ...(s.headlines || []).map((h) => h.text), ...(s.heroSub || []).map((h) => h.text), s.blurb, s.directAnswer, ...(s.process || []), ...(s.faq || []).flatMap((f) => [f.q, f.a]), ...(s.facts || []).map((f) => f.text)].filter(Boolean);
   for (const t of all) for (const x of textProblems(t)) p.push(`${x} in "${t.slice(0, 60)}"`);
   return p;
 }
@@ -78,6 +87,9 @@ check("catches bracket placeholder", textProblems("[City] plumbing").length > 0)
 check("accepts clean text", textProblems("{business} repairs drains across {areas}. Call {phone}.").length === 0);
 check("catches ungated 24/7 claim", serviceProblems({ id: "x", symptoms: [1,2,3,4], headlines: [{tone:"urgent",text:"Open 24/7 in {city}"},{tone:"practical",text:"Repair in {city}"},{tone:"direct",text:"Call {phone}"}], heroSub:[{tone:"practical",text:"a"}], blurb:"one two three four five six seven eight nine", directAnswer: Array(40).fill("word").join(" "), process:["a","b","c"], faq:[1,2,3].map(()=>({q:"q?",a:"a."})) }).some((m) => m.includes("ungated")));
 check("catches emergency service without gate", serviceProblems({ id: "emergency-x", symptoms:[1,2,3,4], headlines:[], heroSub:[], blurb:"", directAnswer:"", process:[], faq:[] }).some((m) => m.includes("must require")));
+check("catches missing facts", serviceProblems({ id: "x", symptoms:[1,2,3,4], headlines:[{tone:"practical",text:"a"}], heroSub:[{tone:"practical",text:"a"}], blurb:"one two three four five six seven eight nine", directAnswer: Array(40).fill("word").join(" "), process:["a","b","c"], faq:[1,2,3].map(()=>({q:"q?",a:"a."})), facts:[] }).some((m) => m.includes("fact density")));
+check("catches under-ungated facts", serviceProblems({ id: "x", symptoms:[1,2,3,4], headlines:[{tone:"practical",text:"a"}], heroSub:[{tone:"practical",text:"a"}], blurb:"one two three four five six seven eight nine", directAnswer: Array(40).fill("word").join(" "), process:["a","b","c"], faq:[1,2,3].map(()=>({q:"q?",a:"a."})), facts:[{text:"a"},{text:"b",requires:["warranty"]},{text:"c",requires:["same_day"]}] }).some((m) => m.includes("ungated facts")));
+check("accepts valid facts", !serviceProblems({ id: "x", symptoms:[1,2,3,4], headlines:[{tone:"practical",text:"a"},{tone:"urgent",text:"b"}], heroSub:[{tone:"practical",text:"a"}], blurb:"one two three four five six seven eight nine", directAnswer: Array(40).fill("word").join(" "), process:["a","b","c"], faq:[1,2,3].map(()=>({q:"q?",a:"a."})), facts:[{text:"{years} years serving {areas}."},{text:"Licensed and insured, license {license}."},{text:"Written warranty on this service.",requires:["warranty"]}] }).some((m) => m.includes("fact")));
 
 // ---- real data ----
 console.log("Pool data");
@@ -101,7 +113,7 @@ for (const v of VERTICALS) {
     }
   }
   check(`${v}: every profile resolves a headline for every ungated service`, resolved === cells, `(${resolved}/${cells})`);
-  summary.push(`${v}: ${d.services.length} services, ${d.services.reduce((n, s) => n + s.headlines.length, 0)} headlines, ${d.services.reduce((n, s) => n + s.faq.length, 0)} FAQs, profile coverage ${resolved}/${cells}`);
+  summary.push(`${v}: ${d.services.length} services, ${d.services.reduce((n, s) => n + s.headlines.length, 0)} headlines, ${d.services.reduce((n, s) => n + s.faq.length, 0)} FAQs, ${d.services.reduce((n, s) => n + (s.facts?.length || 0), 0)} facts, profile coverage ${resolved}/${cells}`);
 }
 const ph = JSON.parse(readFileSync(join(DIR, "cities/phoenix.json"), "utf8"));
 check("phoenix facts are marked unverified", ph.facts.every((f) => f.verified === false));

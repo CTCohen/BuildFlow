@@ -15,7 +15,7 @@ related: [docs/LLM_COST_AND_API_PLAN.md, knowledge/trades, app/src/data/stylePro
 **What it is:** copy written once and reused for every prospect, instead of generated per prospect. It is the main way the design engine stays under the API budget (`docs/LLM_COST_AND_API_PLAN.md`).
 
 ## Files
-- `hvac.json`, `plumbing.json`, `electrical.json`, `roofing.json`: six services each. Per service: symptoms, headline variants (each tagged with a tone), hero sub-lines, a one-sentence blurb, a 30-90 word direct-answer opener, process steps, and FAQ.
+- `hvac.json`, `plumbing.json`, `electrical.json`, `roofing.json`: six services each. Per service: symptoms, headline variants (each tagged with a tone), hero sub-lines, a one-sentence blurb, a 30-90 word direct-answer opener, process steps, FAQ, and facts (concrete numbers — years, license, warranty, same-day, etc. — gated the same way as headlines; satisfies SPEC-16 Layer 1 "fact density", `knowledge/sops/ai-seo-setup.md` step 3).
 - `profiles.json`: maps each of the 10 styling profiles to preferred headline tones, in order.
 - `cities/phoenix.json`: the Phoenix-area city list and general climate and water observations, all marked unverified.
 - `validate.mjs`: checks the pool and proves the checker catches bad input. Run `node knowledge/pool/validate.mjs`.
