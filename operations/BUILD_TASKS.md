@@ -3,7 +3,7 @@ title: Build Tasks
 purpose: The one master checklist of concrete deliverables and subtasks, each tagged with what's blocking it. Read before every scheduled check. Only two things are allowed to block a task — a decision only Tyler can rule on, or a credential only Tyler can provide. Everything else should be buildable now, on mocks if needed.
 status: active
 owner: c.t.cohen
-updated: '2026-09-21'
+updated: '2026-09-22'
 version: 1.0.2
 tier_scope: all
 phase: phase_1
@@ -132,10 +132,28 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
   (`crm/evals/test_sync.py::TestEndToEndTestLead`: transient failure then success, field
   mapping + contact/deal IDs verified); real sandbox push blocked on the HubSpot app above.
 
-## 7. Dashboards (Track H — not started)
-- [ ] Customer dashboard (SMB first) [depends: Foundation schema, Design output format]
-- [ ] Admin web dashboard [depends: Foundation]
-- [ ] Micro dashboard (lead inbox only) [depends: SMB dashboard component library]
+## 7. Dashboards (Track H — in progress, 2026-09-22)
+- [◐] Customer dashboard (SMB first, one dashboard/feature-flag layer per the plan's ruling) — real, tested
+  view-model layer built: `platform/dashboards/lib/tier-features.mjs` (SMB base + Micro override flags),
+  `platform/dashboards/lib/customer-dashboard.mjs` (lead inbox, CSV export, simple pipeline
+  new/contacted/converted, notes, CRM config view that never leaks `auth_token_encrypted`, image-upload
+  config). 26/26 `node --test` tests pass live (`platform/dashboards/*.test.mjs`, run 2026-09-22 — see
+  `platform/dashboards/TASKS.md` for the exact command/output). Fixtures shaped to `platform/CONTRACT.md`
+  (`platform/dashboards/fixtures/`). **Not wired to a live database** — no Supabase service-role key yet
+  (gate G3) — and no rendered UI components yet, only the tested logic layer. Found and logged a real contract
+  gap (`form_submissions` has no `pipeline_stage`/`notes` column) to `operations/TYLER_QUEUE.md` §4 rather than
+  guessing it into `platform/CONTRACT.md`.
+- [◐] Admin web dashboard [depends: Foundation] — core view models built and tested:
+  `platform/dashboards/lib/admin-dashboard.mjs` — pipeline funnel + stuck-deal detection (SPEC-18 §1, Trial
+  Active stage removed per the 2026-09-18 spec override), customer record view, health score (SPEC-18 §4's
+  40/30/20/10 weighting), revenue dashboard (MRR/ARR/churn/ARPU by tier, Mid-Market and trial-conversion
+  excluded per the override), alerts view (SPEC-18 §6). Same "tested on fixtures, not wired" status as above.
+  Not built: Google+2FA login, bulk CRM export, config screens for thresholds/dunning, onboarding queue,
+  invoice disputes — deeper SPEC-18 §8 web-only items, next up once there's a real backend to build UI against.
+- [ ] Micro dashboard (lead inbox only) [depends: SMB dashboard component library] — logic is in place
+  (`resolveFeatures("micro")` reduces the same component set, per `tier-features.test.mjs`); no rendered
+  component library exists yet for either tier to share.
+- [ ] Sandbox dashboard (read-only demo embed) — not started.
 
 ## 8. Legal and compliance
 - [ ] Terms of Service, Privacy Policy — lawyer review [credential/decision: T1, lawyer chosen by Tyler]

@@ -3,7 +3,7 @@ title: Tyler Queue
 purpose: The only list of things that need Tyler: rulings, approvals, accounts and credentials, and calls. Loops append here instead of interrupting.
 status: active
 owner: c.t.cohen
-updated: '2026-09-21'
+updated: '2026-09-22'
 version: 2.1.0
 tier_scope: all
 phase: phase_1
@@ -101,6 +101,13 @@ no reason to chase them before there's revenue to justify the cost. Build keeps 
 - [ ] **Offboard transition support (D04)** — default: one month included
 - [ ] **Pre-launch data/tools budget (D05)** — default: none set, so far nothing has hit a wall over cost, but flag before real Apollo/Hunter spend starts
 - [ ] **Other provisional rulings** — full list in `DECISIONS.md` item 14; same rule, defaults are in use, only flag if you want to change one
+- [ ] **Contract gap: `app.form_submissions` has no `pipeline_stage` or `notes` column** — found building the
+  customer dashboard (`platform/dashboards/lib/customer-dashboard.mjs`, 2026-09-22). SMB's simple pipeline
+  (new/contacted/converted) and per-lead notes, both required by `docs/TIER-FEATURE-MATRIX.md` and
+  `operations/BUILD_TASKS.md` §7, have nowhere to persist in `platform/CONTRACT.md` today. Working default in
+  use: the dashboard logic treats them as optional extension fields on the `form_submissions` shape so it's
+  real and tested now. Needs Lane A (owns CONTRACT.md) to decide: two new columns on `form_submissions`, or a
+  separate `app.lead_notes`/`app.lead_pipeline` table. Nothing blocked — flag before wiring to a live database.
 
 ## Approvals (needed at the moment each thing is ready, not now)
 - **Outreach copy** ([messaging/outreach_sequence_draft.json](../../messaging/outreach_sequence_draft.json)) — the
