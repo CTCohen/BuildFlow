@@ -10,7 +10,7 @@ phase: operational
 
 # Operations
 
-How we run BuildFlow day-to-day.
+How we run Fornax day-to-day.
 
 ## What's Here
 

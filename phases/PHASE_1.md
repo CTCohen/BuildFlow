@@ -86,8 +86,8 @@ REVENUE COLLECTED
    - 30 minutes
    - Mon–Fri, 9 AM–5 PM PT
    - Location: Zoom or phone
-   - Note: "We'll discuss your current website, competitors, and how BuildFlow can help in 7 days"
-3. Copy public link (e.g., `calendly.com/tyler/buildflow-demo`)
+   - Note: "We'll discuss your current website, competitors, and how Fornax can help in 7 days"
+3. Copy public link (e.g., `calendly.com/tyler/fornax-demo`)
 4. Send to Claude
 
 **Status:** ☐ Not done / ☐ In progress / ☐ Done (link: ___________________)
@@ -96,15 +96,15 @@ REVENUE COLLECTED
 
 ### B2: Business Email Addresses ⏰ (30 min)
 
-**What:** @buildflow.com email addresses (not Gmail)
+**What:** @[domain TBD under Fornax name] email addresses (not Gmail)
 
 **Why:** Prospects need to see a real business, not a personal Gmail account
 
 **Emails needed:**
-- `tyler@buildflow.com` (your personal address, used in outreach)
-- `hello@buildflow.com` (main contact, website footer)
-- `support@buildflow.com` (customer support)
-- `legal@buildflow.com` (legal notices)
+- `tyler@[domain TBD under Fornax name]` (your personal address, used in outreach)
+- `hello@[domain TBD under Fornax name]` (main contact, website footer)
+- `support@[domain TBD under Fornax name]` (customer support)
+- `legal@[domain TBD under Fornax name]` (legal notices)
 
 **Options:**
 - **Simple (recommended):** Gmail + add custom domain aliases (~$12/yr domain cost, 30 min)
@@ -114,7 +114,7 @@ REVENUE COLLECTED
 **Action:**
 1. Choose option above
 2. Set up all 4 emails
-3. Test: Send from `tyler@buildflow.com` to yourself
+3. Test: Send from `tyler@[domain TBD under Fornax name]` to yourself
 4. Verify it arrives (don't want bounces on prospects)
 5. Confirm ready to Claude
 
@@ -130,15 +130,15 @@ REVENUE COLLECTED
 
 **Products to create:**
 
-1. **BuildFlow Managed (Monthly)**
-   - Name: "BuildFlow Managed"
+1. **Fornax Managed (Monthly)**
+   - Name: "Fornax Managed"
    - Description: "Professional website + hosting + SEO, managed monthly"
    - Price: **$249/month** (recurring)
    - Billing interval: Monthly
    - Get checkout link (looks like `https://buy.stripe.com/XXXXX`)
 
-2. **BuildFlow Offboard (One-Time)**
-   - Name: "BuildFlow Offboard"
+2. **Fornax Offboard (One-Time)**
+   - Name: "Fornax Offboard"
    - Description: "One-time site delivery + 1 month transition support"
    - Price: **$799 one-time** (non-recurring)
    - Get checkout link
@@ -157,15 +157,15 @@ REVENUE COLLECTED
 
 ---
 
-### B4: Confirm buildflow.com Domain ⏰ (5 min)
+### B4: Confirm [domain TBD under Fornax name] Domain ⏰ (5 min)
 
-**What:** Verify that buildflow.com is registered and you can manage DNS
+**What:** Verify that [domain TBD under Fornax name] is registered and you can manage DNS
 
 **Why:** Website, emails, and landing page all need a real domain. If it's not yours, we can't use it.
 
 **Action:**
 1. Go to your domain registrar (GoDaddy, Namecheap, Google Domains, etc.)
-2. Search for buildflow.com
+2. Search for [domain TBD under Fornax name]
 3. If available: **Confirm with Claude before buying** (cost, setup, etc.)
 4. If registered: Confirm you have admin access to DNS settings
 5. Report status to Claude
@@ -178,14 +178,14 @@ REVENUE COLLECTED
 
 **What:** Your real business address in the legal Terms
 
-**Why:** Legal requirement. Terms say "BuildFlow LLC located at [ADDRESS]". Empty = not legal.
+**Why:** Legal requirement. Terms say "Fornax LLC located at [ADDRESS]". Empty = not legal.
 
 **Action:**
 1. Open `/legal/TERMS_OF_SERVICE.md`
-2. Find the section with "BuildFlow LLC" or "[ADDRESS PLACEHOLDER]"
+2. Find the section with "Fornax LLC" or "[ADDRESS PLACEHOLDER]"
 3. Replace with your real address:
    ```
-   BuildFlow LLC
+   Fornax LLC
    [Your Address]
    [City], [State] [ZIP]
    ```
@@ -193,7 +193,7 @@ REVENUE COLLECTED
 
 **Example:**
    ```
-   BuildFlow LLC
+   Fornax LLC
    1234 Main Street
    Scottsdale, Arizona 85251
    ```
@@ -209,7 +209,7 @@ REVENUE COLLECTED
 **Why:** Email providers (Gmail, Outlook) flag new accounts as spam. A warm account has higher deliverability.
 
 **Action:**
-1. After setting up `tyler@buildflow.com`, send 5–10 test emails to yourself
+1. After setting up `tyler@[domain TBD under Fornax name]`, send 5–10 test emails to yourself
    - Subject: "Testing email deliverability"
    - Content: Anything
 2. Wait 24 hours before sending prospect emails
@@ -244,7 +244,7 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 
 **Tyler's Setup (B1–B6)**
 - [ ] B1: Calendly link created and working
-- [ ] B2: Email addresses confirmed working (@buildflow.com)
+- [ ] B2: Email addresses confirmed working (@[domain TBD under Fornax name])
 - [ ] B3: Stripe checkout links created
 - [ ] B4: Domain status confirmed
 - [ ] B5: Business address in Terms §16
@@ -261,9 +261,9 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 
 **Outreach Readiness**
 - [ ] Calendly shows 30-min slots, correct timezone (PT for Phoenix prospects)
-- [ ] Calendly invitation message mentions BuildFlow + 7-day timeline
+- [ ] Calendly invitation message mentions Fornax + 7-day timeline
 - [ ] 5 prospect emails personalized (not generic)
-- [ ] Email From: address is `tyler@buildflow.com`
+- [ ] Email From: address is `tyler@[domain TBD under Fornax name]`
 - [ ] Subject lines follow pattern: "[Business], [Competitor] outranks you"
 - [ ] Tracking spreadsheet ready (see REAL_PROSPECTS_READY_TO_SEND.md)
 - [ ] Prospect phone numbers on hand (fallback if emails bounce)
@@ -291,7 +291,7 @@ Once you send Claude the 6 values above (Calendly link, Stripe links, email addr
 **Legal/Compliance**
 - [ ] Terms has real business address (not placeholder)
 - [ ] Privacy Policy doesn't reference placeholder values
-- [ ] Website footer has `hello@buildflow.com`
+- [ ] Website footer has `hello@[domain TBD under Fornax name]`
 - [ ] No references to test/demo/development
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: PM Review
-purpose: Weekly project-management review of BuildFlow's organization and communication — a separate, slower check from the daily coordinator loop
+purpose: Weekly project-management review of Fornax's organization and communication — a separate, slower check from the daily coordinator loop
 status: active
 owner: c.t.cohen
 updated: '2026-09-21'
@@ -13,7 +13,7 @@ phase: phase_1
 
 ## 2026-09-21 (first review)
 
-**Note on timing:** the `buildflow-coordinator` scheduled task ran live, in parallel with this review (its output
+**Note on timing:** the `fornax-coordinator` scheduled task ran live, in parallel with this review (its output
 landed in `COORDINATOR_STATE.md` and `BUILD_TASKS.md` while this review was in progress). This review reflects
 the files *after* that run, and evaluates that run's behavior below.
 
@@ -40,8 +40,8 @@ Nothing else needs you yet. No lane has merged to `main`, which is expected — 
 Per `operations/lanes/README.md`, each lane writes `operations/lanes/STATUS-<lane>.md` on its own branch at
 handoff. All four active lanes did this: `lane/foundation:...STATUS-foundation.md`, `lane/design:...STATUS-B-design.md`,
 `lane/lead:...STATUS-lead.md`, `lane/content:...STATUS-content.md`. None are on `main` (no lane has merged), and
-**`buildflow-coordinator`'s own SKILL.md Step 1 orientation list never mentions these files** — confirmed by
-reading `/Users/c.t.cohen/.claude/scheduled-tasks/buildflow-coordinator/SKILL.md` directly, zero occurrences of
+**`fornax-coordinator`'s own SKILL.md Step 1 orientation list never mentions these files** — confirmed by
+reading `/Users/c.t.cohen/.claude/scheduled-tasks/fornax-coordinator/SKILL.md` directly, zero occurrences of
 "STATUS". This is the root cause of finding 2, and it did not self-correct even in today's live coordinator run
 (see below) — its own report added a new code-level finding to `BUILD_TASKS.md` but still didn't touch the
 lane-STATUS-to-TYLER_QUEUE gap, because nothing in its instructions tells it to look.
@@ -70,7 +70,7 @@ category rather than forcing everything into "blocking."
 conventions. `LANE-*.md` briefs are consistently `LANE-<letter>-<name>.md`; the status files should match before
 lanes E-H start and add more.
 
-**5. Executor (buildflow-coordinator) behavior today: good.** It found a real correctness bug (dead code in
+**5. Executor (fornax-coordinator) behavior today: good.** It found a real correctness bug (dead code in
 `agent-decisions.ts` silently breaking `tsc`, uncaught because the normal test suite doesn't run a type-check),
 fixed it minimally, and verified by re-running all 67 design tests before calling it done — exactly the
 "prove it, don't claim it" standard this project holds itself to. It correctly identified the styleProfile /
@@ -97,7 +97,7 @@ overclaims — Foundation is explicit its SQL is "reviewed by eye only" and has 
 2. **Applied now:** added the matching postal-address and assumptions-confirmation subtasks to `BUILD_TASKS.md`
    §4, so the task tree and the queue agree. Bumped to v1.0.2.
 3. **Proposed, not applied — needs a human read before it changes an unattended agent's behavior:** add to
-   `buildflow-coordinator`'s SKILL.md, in Step 1 or Step 2:
+   `fornax-coordinator`'s SKILL.md, in Step 1 or Step 2:
 
    > Also check each active lane's handoff file on its own branch: `git show lane/<x>:operations/lanes/STATUS-<lane>.md`
    > for foundation, design, lead, content (filenames aren't standardized yet — see `operations/PM_REVIEW.md`

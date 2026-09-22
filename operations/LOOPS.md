@@ -1,6 +1,6 @@
 ---
 title: Loops
-purpose: The automated loops that move BuildFlow forward without Tyler doing the manual work: trigger, where it runs, inputs and outputs, approval gate, and budget
+purpose: The automated loops that move Fornax forward without Tyler doing the manual work: trigger, where it runs, inputs and outputs, approval gate, and budget
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'

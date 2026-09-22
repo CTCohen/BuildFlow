@@ -111,6 +111,6 @@ Once your link is set, you can send emails Monday with full confidence that pros
 
 ---
 
-File: `/BuildFlow/operations/CALENDLY_SETUP_5MIN.md`
+File: `/Fornax/operations/CALENDLY_SETUP_5MIN.md`
 
 **Ready? Do it now. 5 minutes and you're done.**

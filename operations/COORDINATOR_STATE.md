@@ -69,10 +69,10 @@ significant time or new commits have passed.
 
 | Lane | Branch | Worktree | Commits ahead of main | Status | Merged to main? |
 |---|---|---|---|---|---|
-| A Foundation | lane/foundation | ~/BuildFlow-lanes/foundation | 2 (`4462209`,`2dd5a19`) | Contract + migrations + RLS policies + service (6/6 tests pass) + isolation/monitoring DB tests — **all confirmed passing on Tyler's Mac 2026-09-21**. Fully proven, ready to merge. | No |
-| B Design | lane/design | ~/BuildFlow-lanes/design | 4 (`bd2db94`,`a6c2940`,`56af207`,`c5119fc`) | Verified: 67/67 evals pass live; real build-speed benchmark 1.22s vs 10s target. `a6c2940` (2026-09-21) removes dead code that broke `tsc`. `c5119fc` (2026-09-21) archives `agent-decisions.ts`/`vertical-pools.ts` — investigated the "wire styleProfile" task and found it was already done in the real pipeline (`agents/design/design-agent.mjs`); those two files were an orphaned, never-imported earlier design engine that made the gap look real (see BUILD_TASKS.md §3). All 4 commits now pushed to GitHub. | No |
-| C Lead | lane/lead | ~/BuildFlow-lanes/lead | 3 (`1ae4bda`,`d3c0f19`,`ed9f4e4`) | Verified: 99/99 evals pass live (`python3 -m agents.lead.run_evals`, run 2026-09-21). `ed9f4e4` adds `agents/lead/adapter.py` — pure functions mapping this lane's plain-dict leads to `platform/CONTRACT.md`'s `admin.lead_warehouse`/`leads`/`prospects`/`outbound_campaign_runs` row shapes (D29-enforced: `to_prospect_row()` raises on a suppressed/Mid-Market lead) — and wires D01 (`hello@` sender) into `send.py`'s `Campaign.sender_email`. Still in-memory only, no DB client wired (no real Supabase project yet); no real send (by design — needs Tyler approval + real address first). | No |
-| D Content | lane/content | ~/BuildFlow-lanes/content | 2 (`2e39a9e`, new) | Reviewed by coordinator session; validator passed 49/49, 0 stubs/dangling in graph. New commit (2026-09-21) adds `facts` (fact-density) content to all 24 pool service cards per SPEC-16 Layer 1 / `ai-seo-setup.md` step 3 (D26 reconfirmed tonight); validator extended and passes 52/52 live. | No — awaiting merge order (after Foundation) |
+| A Foundation | lane/foundation | ~/BuildFlow-lanes/foundation | merged | Contract + migrations + RLS policies + service (6/6 tests pass) + isolation/monitoring DB tests — **all confirmed passing on Tyler's Mac 2026-09-21**. | **Yes** — merged `a46c17a`, pushed |
+| B Design | lane/design | ~/BuildFlow-lanes/design | merged | Verified: 67/67 evals pass live; real build-speed benchmark 1.22s vs 10s target. Archived an orphaned dead-code path (`agent-decisions.ts`/`vertical-pools.ts`) that was creating a false gap. | **Yes** — merged `d99cae0`, pushed |
+| C Lead | lane/lead | ~/BuildFlow-lanes/lead | merged | Verified: 99/99 evals pass live. `adapter.py` maps this lane's plain-dict leads to `platform/CONTRACT.md` row shapes (D29-enforced). Still in-memory only, no DB client wired (no service role key yet); no real send (by design). | **Yes** — merged `2a37d0c`, pushed |
+| D Content | lane/content | ~/BuildFlow-lanes/content | merged | Validator passed 52/52, 0 stubs/dangling in graph. Fact-density content added for AI SEO Layer 1. | **Yes** — merged, pushed |
 | E Public | — | not started | 0 | Not started (planned W2) | — |
 | F Billing | — | not started | 0 | Not started (planned W3, needs A+Stripe test) | — |
 | G CRM | — | not started | 0 | Not started (planned W3, needs A+HubSpot app) | — |
@@ -106,7 +106,7 @@ tracks **what needs Tyler**. Keep them separate.
 
 ## 5a. Standing references (read once, applies always)
 - `docs/CUSTOMER_VS_INTERNAL.md` — which folders/systems are the product (for customers) vs our own ops (for us). Check before creating any design, dashboard, or CRM file.
-- `operations/PHASE_TRANSITION.md` — how every agent gets reprogrammed when BuildFlow moves from build to run. Current phase: BUILD. Do not act on this file's checklist until Tyler explicitly declares launch.
+- `operations/PHASE_TRANSITION.md` — how every agent gets reprogrammed when Fornax moves from build to run. Current phase: BUILD. Do not act on this file's checklist until Tyler explicitly declares launch.
 
 ## 5. Next coordinator action (as of 2026-09-21, post coordinator run)
 

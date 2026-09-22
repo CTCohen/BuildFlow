@@ -1,6 +1,6 @@
 ---
 title: Lanes
-purpose: How several Claude sessions build BuildFlow in parallel without colliding: lanes, ownership, sync, merge order and handoff
+purpose: How several Claude sessions build Fornax in parallel without colliding: lanes, ownership, sync, merge order and handoff
 status: active
 owner: c.t.cohen
 updated: '2026-09-19'

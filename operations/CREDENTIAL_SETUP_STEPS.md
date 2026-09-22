@@ -41,7 +41,7 @@ file — it's tracked by git. Real values go in `.local/*.env` (gitignored) or t
 
 ## SendGrid
 **Status: not started — only the MCP plumbing exists, no account or key.**
-1. ☐ Create a SendGrid account (this needs to be BuildFlow's own — confirmed no reusable account-wide key exists)
+1. ☐ Create a SendGrid account (this needs to be Fornax's own — confirmed no reusable account-wide key exists)
 2. ☐ Verify a sending domain (not just a single email) — needed for deliverability
 3. ☐ Create a **separate** sender domain/subdomain just for cold outreach, distinct from transactional email —
    keeps a bad cold-email day from breaking password-reset emails etc.
@@ -49,7 +49,7 @@ file — it's tracked by git. Real values go in `.local/*.env` (gitignored) or t
 5. ☐ Start domain warmup — this takes real calendar time (days to weeks), so earlier is better even before
    anything else here is ready
 6. ☐ Fill the key into `~/Claude-Optimization/mcp/sendgrid-mcp/`'s config (currently blank) if you want the
-   SendGrid MCP tools working, and/or into `.local/sendgrid.env` for BuildFlow's own use
+   SendGrid MCP tools working, and/or into `.local/sendgrid.env` for Fornax's own use
 
 ## Stripe
 **Status: not started.**
@@ -85,7 +85,7 @@ file — it's tracked by git. Real values go in `.local/*.env` (gitignored) or t
 2. ☐ Set a **$30/mo spend limit** on it — this is a hard rule from the cost plan, not optional
 3. ☐ Store in `.local/anthropic-api.env` — note this is different from the `ANTHROPIC_API_KEY` in
    `~/.claude/credentials.env`, which is explicitly NOT auto-exported to avoid billing Claude Code itself
-   pay-per-token. Keep BuildFlow's key separate from that one.
+   pay-per-token. Keep Fornax's key separate from that one.
 
 ---
 ## How this file gets used

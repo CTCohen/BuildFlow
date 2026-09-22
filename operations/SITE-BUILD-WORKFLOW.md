@@ -56,7 +56,7 @@ Timeline: 7 days total from today.
 Questions? Call me: [YOUR PHONE]
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 **Send at:** Within 1 hour of close
@@ -194,7 +194,7 @@ Feedback? Reply with any changes you want:
 Turnaround: 24 hours for revisions.
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 **Send at:** End of Day 4 or morning of Day 5
@@ -223,12 +223,12 @@ BuildFlow
 2. [ ] Help them get tracking number (CallRail, Invoca, or similar)
 3. [ ] Prepare domain (if they don't have one):
    - Register domain (usually $12/year)
-   - Or point existing domain to BuildFlow hosting
+   - Or point existing domain to Fornax hosting
 4. [ ] Get SSL certificate (automatic via Cloudflare)
 5. [ ] Deploy site to production:
    ```
    Copy built files to production server
-   Point domain DNS to BuildFlow hosting
+   Point domain DNS to Fornax hosting
    Test that site is live
    ```
 
@@ -270,7 +270,7 @@ Next steps:
 Questions? Reply anytime.
 
 [Your Name]
-BuildFlow
+Fornax
 ```
 
 2. Send onboarding sequence:
@@ -282,7 +282,7 @@ BuildFlow
 3. Collect testimonial:
    - Ask: "How was the experience? One sentence for future customers?"
    - Get their permission to use it
-   - Add to portfolio (buildflow.com/samples)
+   - Add to portfolio ([domain TBD under Fornax name]/samples)
 
 ---
 

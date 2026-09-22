@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# PR review checklist — BuildFlow
+# PR review checklist — Fornax
 
 ## Before requesting review
 

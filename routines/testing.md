@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# Testing strategy: BuildFlow
+# Testing strategy: Fornax
 
 > Rebuilt 2026-09-18 from System 04 (QA), the agent registry (Section D) and the launch plan (Steps 3.4, 4.6-4.8, 8). Three layers.
 

@@ -1,6 +1,6 @@
 ---
 title: Phase Transition (Build to Run)
-purpose: How every coordinating agent and lane session gets reprogrammed when BuildFlow moves from "being built" to "launched and running." Read this before touching any agent's prompt after launch.
+purpose: How every coordinating agent and lane session gets reprogrammed when Fornax moves from "being built" to "launched and running." Read this before touching any agent's prompt after launch.
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
@@ -28,7 +28,7 @@ down and recreated.
 
 ## What changes, piece by piece
 
-### buildflow-coordinator (scheduled task) → becomes the chief-of-staff / ops loop
+### fornax-coordinator (scheduled task) → becomes the chief-of-staff / ops loop
 - Task source changes from `BUILD_TASKS.md`'s gates (G0-G8, "prove this got built") to an ops backlog driven by
   real metrics: `metrics/METRICS.md`, churn, MRR, support load, conversion rate — the rituals already defined
   in the plan (monthly business review, weekly pipeline report).
@@ -40,7 +40,7 @@ down and recreated.
   consciously deferred; a new `operations/RUN_TASKS.md` replaces it as the ops backlog, same tagging convention
   ([none]/[depends:]/[decision:]/[credential:]) so the format doesn't have to be relearned.
 
-### buildflow-pm-reviewer (scheduled task) → keeps its job, watches a different phase
+### fornax-pm-reviewer (scheduled task) → keeps its job, watches a different phase
 - Same self-improving weekly review structure. What it evaluates changes from "is the build organized" to
   "are the ops agents behaving well, is the run-phase backlog clear, is Tyler's queue still short and honest."
 
@@ -74,8 +74,8 @@ from build-mode to run-mode alongside the original four.
 2. Write `operations/RUN_TASKS.md`, seeded from `metrics/METRICS.md` and any known post-launch priorities.
 3. Archive `operations/BUILD_TASKS.md` to `archive/` once its remaining open items are migrated or consciously
    dropped (with a note why).
-4. Update `buildflow-coordinator`'s scheduled-task prompt per the section above.
-5. Update `buildflow-pm-reviewer`'s scheduled-task prompt per the section above.
+4. Update `fornax-coordinator`'s scheduled-task prompt per the section above.
+5. Update `fornax-pm-reviewer`'s scheduled-task prompt per the section above.
 6. Update each of the four lane sessions' scope/prompt per the section above.
 7. Flip "Current phase" at the top of this file to **RUN**, dated.
 8. Tell Tyler plainly what changed and what to expect differently going forward.

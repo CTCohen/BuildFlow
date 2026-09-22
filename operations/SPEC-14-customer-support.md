@@ -41,7 +41,7 @@ Lock down customer support workflows, help center documentation, and SLA targets
 
 ### SECTION 1: Support Workflow & Triage
 
-**Channels:** email (support@buildflowsites.com, primary), help center self-serve, chat (Phase 2), no phone Phase 1
+**Channels:** email (support@[domain TBD under Fornax name], primary), help center self-serve, chat (Phase 2), no phone Phase 1
 
 **Severity definitions:**
 - **P0 (respond <1hr, resolve 24hr):** site down, payment failure blocking ops, security concern, multi-customer issue
@@ -57,7 +57,7 @@ Lock down customer support workflows, help center documentation, and SLA targets
 
 **Format:** written step-by-step + screenshots, 2-3 min videos, FAQs, troubleshooting flowcharts
 
-**Structure:** help.buildflowsites.com — categories, full-text search, related articles, "was this helpful?" feedback
+**Structure:** [domain TBD under Fornax name] — categories, full-text search, related articles, "was this helpful?" feedback
 
 **Maintenance:** new articles on feature launch; quarterly review of top 10 articles; deprecation marking
 

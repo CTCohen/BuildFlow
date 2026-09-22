@@ -22,7 +22,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 ## Purpose
 
-Lock down how customer feedback flows into product decisions and how BuildFlow iterates and ships improvements.
+Lock down how customer feedback flows into product decisions and how Fornax iterates and ships improvements.
 
 ## Contents
 
