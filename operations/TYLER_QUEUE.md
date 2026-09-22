@@ -34,14 +34,17 @@ yourself — the daily/weekly agents log new items here and read this file to kn
 ## 2. Accounts and credentials — needed before the *real* (not mock/local) version of each piece can run
 Not blocking today's build work, but each one unlocks something specific. Do these on your own timeline; the
 build keeps moving on mocks until you do.
-- [ ] **Domains** — confirm which of `buildflow.io` / `buildflow.com` / `buildflowsites.com` you actually own, move to Cloudflare Registrar if needed
+- [ ] **Domains (OPEN — rebrand impact)** — domain plan: TBD under the Fornax name. `buildflow.io` / `buildflow.com` / `buildflowsites.com` no longer apply post-rebrand and none were purchased; buy the equivalent Fornax domains (marketing, app/admin/demo, customer-subdomain root) and register via Cloudflare Registrar.
 - [ ] **Mailboxes** — `tyler@`, `hello@`, `support@`, `legal@`, `security@`
-- [ ] **SendGrid** — needs its own BuildFlow account (checked: no account-wide key exists, only another venture's — don't reuse it, it would hurt that venture's sender reputation). Domain auth + separate cold-outreach sender domain; warmup takes time, so earlier is better.
+- [ ] **SendGrid** — needs its own Fornax account (checked: no account-wide key exists, only another venture's — don't reuse it, it would hurt that venture's sender reputation). Domain auth + separate cold-outreach sender domain; warmup takes time, so earlier is better.
 - [ ] **Cloudflare** — account + API token (unlocks real site hosting)
 - [◐] **Supabase** — project created (`wvkvcuffyzbejuipjfhu.supabase.co`), URL + publishable key stored locally 2026-09-21. Still need the **service role key** (Project Settings → API → service_role) before Foundation can actually connect for real.
 - [ ] **Google Cloud** — OAuth client (unlocks real customer/admin login)
 - [ ] **Stripe** — test-mode account first (unlocks real billing testing)
-- [ ] **Anthropic Console API key** — with a $30/mo spend limit set
+- [ ] **Anthropic Console API key** — tried to get this myself via Chrome tonight (2026-09-22) but hit a real
+  login wall (Google sign-in or email) that only you can complete — not something I should do on your behalf.
+  Log in at console.anthropic.com yourself, create a key, **set the $30/mo spend limit**, and either drop it in
+  `.local/anthropic-api.env` or tell me and I'll set that file up for you to paste into.
 - [ ] **Apollo + Hunter** (free tiers) and **Google Places API** (with a quota cap) — unlocks real lead lookup
 - [ ] **HubSpot** developer/private app — unlocks real CRM sync; also apply now for Jobber/ServiceTitan partner access (1-2 week lead time)
 - [ ] **Twilio** — for critical alerts only (Slack dropped, see below)
@@ -90,6 +93,38 @@ no reason to chase them before there's revenue to justify the cost. Build keeps 
 - [ ] **SMB font choice: leave it tied to the style profile, or add it as its own separate slider?** Cheap to add if you want it — already validated in the schema, just not exposed as a control yet.
 - [ ] **Run the visual/speed QA checks on your machine (not blocking, whenever convenient)** — the build sandbox can't open a browser to run these. From `app/`: `CLIENT=demo-plumbing npm run build && npm run qa -- --client demo-plumbing --stage demo`. Flag anything scoring below 80.
 - [ ] **Eyeball the 20 sample sites** — run `node agents/design/smoke.mjs`, open `agents/design/out/smoke/index.html`, see if they look right to you (4 trades × 2 tiers × a few styles).
+
+## 7. Retention/deletion — open questions (2026-09-21)
+Built the data retention/deletion code (`platform/db/migrations/0005_retention.sql`,
+`platform/retention/retention.mjs`) using exactly the numbers in `legal/SPEC-11-compliance-security.md`
+(90 days after cancel, 12 months for unconverted leads, 45 days to fulfill a deletion request). Three spots
+where the spec doesn't say exactly how, so a default was picked rather than guessed silently — flag if you'd
+pick differently:
+- [ ] **What counts as "cancelled"?** Used the customer's own `churn_date` field, not the subscription's
+  `canceled_at`. Both exist. If a customer can have `canceled_at` set on a subscription without `churn_date`
+  being set on the customer row, the 90-day clock won't start — worth confirming that's not a real gap.
+- [ ] **Unconverted lead: delete or anonymize?** The spec says "delete/anonymize" (either). Built it as
+  anonymize (null out name/email/phone/company, keep the row) so lead-scoring analytics still have something
+  to count. If you want a hard delete instead, that's a one-function swap.
+- [ ] **A customer with billing history can't be hard-deleted.** `admin.payment_transactions` references the
+  customer and isn't set to cascade-delete (financial records need their own retention rule the spec never
+  states). Built it so that customer's row gets anonymized (name/email scrubbed) and everything else about
+  them deleted, instead of a true hard delete. Worth confirming that's the right call, and whether payment
+  records need their own stated retention period at some point.
+
+## 7. Billing lane — Tiers 1-3 dunning state machine built tonight (2026-09-21), on mocks
+- [x] **Dunning state machine (Tiers 1-3)** — built and passing 20/20 live tests
+  (`billing/dunning/state_machine.py`, `python3 -m billing.dunning.run_evals`). Tier 4-5 (legal
+  escalation, collections, write-off) intentionally not built — DECISIONS.md #14 keeps that manual.
+- [ ] **Confirm the header-override day numbers over Section 6's prose** — `billing/SPEC-08-payments-billing.md`'s
+  header says Tier 1 emails land days 1/4/7 and Tier 2 starts day 7; Section 6's own body just says "Days 1-7"
+  without naming days. Built to the header (it's the more recent, explicit ruling) — say if that's wrong.
+- [ ] **Minimum "partial payment" floor** — Section 6 says "site re-enabled on first partial payment" but
+  doesn't define partial. Built with no floor (any amount under the full monthly charge counts as partial and
+  unpauses the site). Want a minimum, e.g. 10%, so a token $1 payment doesn't re-enable service?
+- [ ] **Back-payment calculation logic (Section 6 "Back-Payment Calculation")** — not built, judged out of scope
+  for the Tier 1-3 task (it's really Tier 4/5 collections math). Flag when Tier 4/5 gets scoped for real.
+- Full list of build assumptions: `billing/TASKS.md`.
 
 ## Calls and hands-on (needed later, not now)
 - Sales calls and onboarding during the soft launch

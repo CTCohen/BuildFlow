@@ -1,10 +1,10 @@
 ---
 title: Platform Data Contract
-purpose: The one shared definition of every BuildFlow entity and field; all lanes code against this
+purpose: The one shared definition of every Fornax entity and field; all lanes code against this
 status: active
 owner: c.t.cohen
-updated: '2026-09-20'
-version: 1.0.0
+updated: '2026-09-21'
+version: 1.0.1
 tier_scope: all
 phase: phase_1
 related: [platform/SPEC-02-platform-architecture.md, legal/SPEC-11-compliance-security.md, platform/SPEC-13-observability.md, RECONCILIATION_LOG.md]
@@ -54,6 +54,7 @@ Derived from System 02 Section 1 plus the entities other specs use (Systems 07, 
 | alerts | `alerts` | admin | never | until acknowledged + 7 days |
 | Admin | `admins` | admin | never | Tyler's user id |
 | CustomerAdmin | `customer_admin` | admin | never | ltv, phone, payment status, notes |
+| DeletionRequest | `deletion_requests` | admin | never | System 11 retention/deletion workflow; due 45 days after `requested_at` |
 
 ## Enumerations
 
@@ -104,7 +105,7 @@ Derived from System 02 Section 1 plus the entities other specs use (Systems 07, 
 | customer_id | uuid FK NOT NULL | RLS key |
 | slug | text unique | matches `client_json.slug` |
 | domain | text | |
-| subdomain_fallback | text | e.g. `slug.buildflowsites.com` |
+| subdomain_fallback | text | e.g. `slug.[domain TBD under Fornax name]` |
 | client_json | jsonb NOT NULL | **the client JSON the design engine renders** (see below) |
 | ssl_certificate_expires_at | timestamptz | |
 | deployed_at, last_updated_at | timestamptz | |
@@ -206,3 +207,4 @@ Rules the platform enforces: `client_json.slug` equals `websites.slug`; `client_
 
 ## Change log
 - 1.0.0 (2026-09-20): first version.
+- 1.0.1 (2026-09-21): added `admin.deletion_requests` (System 11 retention/deletion workflow, BUILD_TASKS.md §8; `platform/db/migrations/0005_retention.sql`).

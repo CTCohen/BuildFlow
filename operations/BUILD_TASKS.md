@@ -27,7 +27,7 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [ ] Cloudflare account + API token [credential: Cloudflare]
 - [ ] Pages/Workers project wired to the Astro build output [depends: Cloudflare account]
 - [ ] R2 bucket for site assets [depends: Cloudflare account]
-- [ ] DNS + two-domain model (`buildflow.com` app, `buildflowsites.com` customer sites) [decision: D32 which domains you own]
+- [ ] DNS + two-domain model ([domain TBD under Fornax name] app, [domain TBD under Fornax name] customer sites) [decision: D32 which domains you own]
 - [ ] Wildcard SSL for customer subdomains [depends: DNS setup]
 - [ ] Deploy pipeline: generated site → live URL, timed end to end [depends: Cloudflare account, design lane merged]
 - [ ] Per-customer hosting cost alert (>$50) [depends: Cloudflare account]
@@ -67,7 +67,7 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 ## 5. Billing (Track F — not started)
 - [ ] Stripe test-mode products/prices (Micro, SMB, monthly+annual) [credential: Stripe test account]
 - [ ] Webhook handling, versioned prices, `launch_cohort` flag [depends: Stripe test account]
-- [ ] Dunning state machine (tiers 1-3 automated) [none, buildable on mocks]
+- [x] Dunning state machine (tiers 1-3 automated) [none, buildable on mocks] — done 2026-09-21: `billing/dunning/state_machine.py` (+ `mocks.py` for Stripe/SendGrid), 20/20 evals pass live (`python3 -m billing.dunning.run_evals`). Tier 4-5 explicitly out of scope per DECISIONS.md #14. Assumptions and what's left: `billing/TASKS.md`.
 - [ ] Payment → live site fulfillment <60s [depends: Cloudflare hosting §2, Stripe §5]
 - [ ] Live Stripe switch [decision: legal sign-off (G7) required first — do not do before then]
 
@@ -84,7 +84,19 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 ## 8. Legal and compliance
 - [ ] Terms of Service, Privacy Policy — lawyer review [credential/decision: T1, lawyer chosen by Tyler]
 - [ ] Security Statement finalized [depends: lawyer review]
-- [ ] Data retention/deletion workflows built [none, buildable now]
+- [◐] Data retention/deletion workflows built — `platform/db/migrations/0005_retention.sql` (scheduled purge
+  job `admin.purge_expired_data`; deletion-request workflow `admin.request_deletion` /
+  `admin.fulfill_deletion_request`, logged in new table `admin.deletion_requests`; SLA-overdue alert hook
+  `admin.overdue_deletion_requests`) + JS runner `platform/retention/retention.mjs`. Numbers used exactly as
+  in `legal/SPEC-11-compliance-security.md` section 1: cancelled customer 90 days, unconverted lead 12 months,
+  crm_sync_log 90 days, crm_conflict_log 30 days, deletion-on-request fulfilled within 45 days. Real unit
+  tests: `node --test platform/retention/retention.test.mjs` — 7/7 pass. Could not run the SQL live in this
+  sandbox (Postgres can't start here — `shmget: Operation not permitted`, same limitation noted for Foundation's
+  isolation test); syntax reviewed by hand (balanced parens/`$$` pairs, functions match their grant/revoke
+  signatures). Three genuine ambiguities in the spec's exact deletion mechanics logged to
+  `operations/TYLER_QUEUE.md` under "Retention/deletion — open questions" rather than guessed. **Someone should
+  run `platform/db/run-local.sh` on a real machine (as Tyler did for Foundation's isolation test) before this
+  is trusted as proven, not just written.**
 
 ## 9. Marketing site (Track E — not started)
 - [ ] Home, Features, Pricing, Demo, Blog, Docs, About pages [none, buildable now — draft, not deployed]
