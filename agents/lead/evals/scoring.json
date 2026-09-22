@@ -1,0 +1,326 @@
+[
+ {
+  "id": "s01",
+  "desc": "perfect lead",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "score": 100,
+   "route": "outreach_now",
+   "tier": "smb"
+  }
+ },
+ {
+  "id": "s02",
+  "desc": "non-ICP vertical loses 20",
+  "lead": {
+   "vertical": "landscaping",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "score": 80,
+   "route": "outreach_now"
+  }
+ },
+ {
+  "id": "s03",
+  "desc": "non-test-market state loses 10",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "OH",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "score": 90
+  }
+ },
+ {
+  "id": "s04",
+  "desc": "alias 'roofer' normalises",
+  "lead": {
+   "vertical": "roofer",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "score": 100,
+   "vertical": "roofing"
+  }
+ },
+ {
+  "id": "s05",
+  "desc": "no digital presence, no reviews",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 0,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": false,
+   "has_website": false,
+   "review_velocity": 0
+  },
+  "expect": {
+   "score": 58,
+   "route": "secondary"
+  }
+ },
+ {
+  "id": "s06",
+  "desc": "exactly 50 is secondary",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 1,
+   "review_count": 0,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": false,
+   "has_website": false,
+   "review_velocity": 0
+  },
+  "expect": {
+   "score": 50,
+   "route": "secondary"
+  }
+ },
+ {
+  "id": "s07",
+  "desc": "70+ with several soft signals missing",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 1,
+   "review_count": 40,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 0
+  },
+  "expect": {
+   "score": 76,
+   "route": "outreach_now"
+  }
+ },
+ {
+  "id": "s08",
+  "desc": "non-ICP vertical and state, thin data",
+  "lead": {
+   "vertical": "x",
+   "state": "OH",
+   "headcount": 8,
+   "years_in_business": 1,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": false,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 0
+  },
+  "expect": {
+   "score": 53,
+   "route": "secondary"
+  }
+ },
+ {
+  "id": "s09",
+  "desc": "low score lands in backlog",
+  "lead": {
+   "vertical": "x",
+   "state": "OH",
+   "headcount": 8,
+   "has_website": true,
+   "has_gbp": true
+  },
+  "expect": {
+   "score": 36,
+   "route": "backlog"
+  }
+ },
+ {
+  "id": "s10",
+  "desc": "score under 20 deprioritized",
+  "lead": {
+   "vertical": "x",
+   "state": "OH",
+   "has_website": true
+  },
+  "expect": {
+   "score": 8,
+   "route": "deprioritize"
+  }
+ },
+ {
+  "id": "s11",
+  "desc": "mid-market headcount suppressed but scored",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 40,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "route": "suppress_waitlist",
+   "suppressed": true,
+   "tier": null,
+   "threshold_route": "outreach_now"
+  }
+ },
+ {
+  "id": "s12",
+  "desc": "micro tier",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 1,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": true,
+   "social_active": true,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3
+  },
+  "expect": {
+   "tier": "micro"
+  }
+ },
+ {
+  "id": "s13",
+  "desc": "vertical only = exactly 20 is backlog, not deprioritize",
+  "lead": {
+   "vertical": "hvac"
+  },
+  "expect": {
+   "confidence": "low",
+   "route": "backlog",
+   "score": 20
+  }
+ },
+ {
+  "id": "s14",
+  "desc": "unknown size gets provisional smb",
+  "lead": {
+   "vertical": "hvac",
+   "state": "TX",
+   "has_website": true
+  },
+  "expect": {
+   "tier": "smb",
+   "tier_provisional": true
+  }
+ },
+ {
+  "id": "s15",
+  "desc": "photo intake 50-69 needs Tyler",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 0,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": false,
+   "has_website": false,
+   "review_velocity": 0,
+   "source": "photo_intake"
+  },
+  "expect": {
+   "score": 58,
+   "tyler_gate": true
+  }
+ },
+ {
+  "id": "s16",
+  "desc": "outbound 50-69 no Tyler gate",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 0,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": false,
+   "has_website": false,
+   "review_velocity": 0
+  },
+  "expect": {
+   "tyler_gate": false
+  }
+ },
+ {
+  "id": "s17",
+  "desc": "revenue estimate counts as fit signal",
+  "lead": {
+   "vertical": "plumbing",
+   "state": "AZ",
+   "headcount": 8,
+   "years_in_business": 5,
+   "review_count": 40,
+   "has_social": false,
+   "social_active": false,
+   "has_gbp": true,
+   "has_website": true,
+   "review_velocity": 3,
+   "revenue_estimate": 600000
+  },
+  "expect": {
+   "score": 94
+  }
+ },
+ {
+  "id": "s18",
+  "desc": "empty lead does not crash",
+  "lead": {},
+  "expect": {
+   "score": 0,
+   "route": "deprioritize",
+   "confidence": "low"
+  }
+ }
+]

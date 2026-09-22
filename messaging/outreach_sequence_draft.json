@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "status": "draft",
+    "note": "DRAFT COPY. Tyler must approve before any real send. No claims of lead outcomes, no testimonials. Set status to 'approved' only after his sign-off.",
+    "sequence_days": [
+      0,
+      3,
+      7,
+      14,
+      21
+    ],
+    "send_hour_local": 9,
+    "merge_fields": [
+      "first_name",
+      "company",
+      "service",
+      "location",
+      "num_reviews",
+      "demo_url",
+      "sender_name",
+      "unsubscribe_url",
+      "postal_address"
+    ]
+  },
+  "hooks": {
+    "no_website": "I looked for {{company}} online and couldn't find a website of your own, only listings.",
+    "weak_website": "I had a look at the {{company}} website and thought it could work harder for you.",
+    "reviews_strong": "{{num_reviews}} Google reviews for {{company}} is a real reputation in {{location}}.",
+    "no_gbp": "I couldn't find a Google Business Profile for {{company}} in {{location}}.",
+    "default": "I came across {{company}} while looking at {{service}} businesses in {{location}}."
+  },
+  "touches": {
+    "1": {
+      "angle": "personalized hook + demo",
+      "subject": "{{first_name}}, a site for {{company}}",
+      "body": "Hi {{first_name}},\n\n{{hook}}\n\nSo I built a sample site for {{company}} to show what it could look like: {{demo_url}}\n\nIt's yours to look at, no strings. If you like it, reply and I'll tell you how it works.\n\n{{sender_name}}\nBuildFlow"
+    },
+    "2": {
+      "angle": "re-send, shorter",
+      "subject": "Re: a site for {{company}}",
+      "body": "Hi {{first_name}},\n\nIn case my last note got buried, here's the sample site again: {{demo_url}}\n\nTakes a minute to look through.\n\n{{sender_name}}\nBuildFlow"
+    },
+    "3": {
+      "angle": "how it works",
+      "subject": "How a {{service}} site works with BuildFlow",
+      "body": "Hi {{first_name}},\n\nA different angle. If you like the sample, we host it and keep it running for a flat monthly price, so you don't have to manage a website. If you'd rather own it, you can take the domain and files with you.\n\nSee it here: {{demo_url}}\n\n{{sender_name}}\nBuildFlow"
+    },
+    "4": {
+      "angle": "last attempt with easy out",
+      "subject": "Should I close this out, {{first_name}}?",
+      "body": "Hi {{first_name}},\n\nI'll stop after one more note. The sample site for {{company}} is here if you want it: {{demo_url}}\n\nIf it isn't for you, no problem. Just reply 'no' or use the link below.\n\n{{sender_name}}\nBuildFlow"
+    },
+    "5": {
+      "angle": "final note",
+      "subject": "Closing the loop on {{company}}",
+      "body": "Hi {{first_name}},\n\nLast note from me. The sample site for {{company}} is still here if you ever want it: {{demo_url}}\n\nWishing you a busy season.\n\n{{sender_name}}\nBuildFlow"
+    }
+  },
+  "footer": "\n\n--\nBuildFlow, {{postal_address}}\nDon't want these emails? Unsubscribe: {{unsubscribe_url}}"
+}

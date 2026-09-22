@@ -21,12 +21,16 @@ yourself — the daily/weekly agents log new items here and read this file to kn
   The Foundation lane is now fully proven and ready to merge.
 - [ ] **Give a mailing address** for the bottom of outreach emails (the law requires a real postal address on any
   commercial email — CAN-SPAM). The lead-engine lane has this coded as a hard requirement and won't run for real
-  without it. A PO box is fine.
-- [ ] **Skim and confirm 5 small technical guesses** the lead-engine lane made where the spec didn't say (full
-  detail in `agents/lead/TASKS.md`): (1) send emails on weekends too, or skip them? (2) pause outreach once 5%+
-  of emails bounce? (3) skip the day-3 follow-up if someone already opened the day-0 email? (4) count days as
-  calendar days, not business days, for the 0/3/7/14/21 send schedule? (5) default to Eastern time for any state
-  it doesn't recognize? Current defaults: yes to all five. Say only if you want one changed.
+  without it. A PO box is recommended over a home address, since you'd rather not use that.
+- [x] **The 5 lead-engine send-mechanics guesses** (weekend sends, bounce-pause threshold, skip-if-opened, calendar
+  vs. business days, default timezone) — keeping all 5 defaults, per Tyler 2026-09-21. Resolved, not open.
+- [ ] **Two more lead-engine numbers, not part of the 5 above, still genuinely open:**
+  - **Company-size cutoffs.** The spec just says "1-50 employees" without splitting it — the build guessed Micro
+    = under 3 people, SMB = 3-20, Mid-Market = above that or over $5M revenue. This number decides who gets
+    contacted at all vs. suppressed, so worth a real look when you have a minute — not blocking anything today.
+  - **Manual-review threshold for lead lookup.** When the system isn't confident it found the right business
+    online, it flags it for you to check by hand below a 0.7 confidence score (spec doesn't set a number). Fine
+    as a default; flag if you want it more or less cautious.
 
 ## 2. Accounts and credentials — needed before the *real* (not mock/local) version of each piece can run
 Not blocking today's build work, but each one unlocks something specific. Do these on your own timeline; the
@@ -64,7 +68,9 @@ build keeps moving on mocks until you do.
 - [ ] **Other provisional rulings** — full list in `DECISIONS.md` item 14; same rule, defaults are in use, only flag if you want to change one
 
 ## Approvals (needed at the moment each thing is ready, not now)
-- Outreach and messaging copy — all current drafts are on hold and marked re-priced
+- **Outreach copy** ([messaging/outreach_sequence_draft.json](../../messaging/outreach_sequence_draft.json)) — the
+  5-touch email sequence and CAN-SPAM footer are drafted but code-blocked from sending until you approve them
+  (flip `meta.status` from `draft` to `approved`). Won't send for real even once keys are in place until then.
 - Legal text (drafts in `legal/`), any price change, the first outbound batch, the first live Stripe charge
 - Logo, marketing-site copy, Mid-Market waitlist copy
 - Style-profile choices and any QA-threshold change the monthly review loop proposes
