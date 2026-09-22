@@ -11,7 +11,7 @@ phase: phase_1
 
 # Spec location map
 
-The spec export (`buildflow-specs.zip`, exported from claude.ai project memory on 2026-09-17) is **authoritative**. Its files were moved beside the modules they govern (launch plan Step 2.4). The repo copy is now the source of truth; if a spec is edited in claude.ai, re-export and reconcile.
+The spec export (`fornax-specs.zip`, exported from claude.ai project memory on 2026-09-17) is **authoritative**. Its files were moved beside the modules they govern (launch plan Step 2.4). The repo copy is now the source of truth; if a spec is edited in claude.ai, re-export and reconcile.
 
 | System | File | Module |
 |---|---|---|
@@ -38,7 +38,7 @@ The spec export (`buildflow-specs.zip`, exported from claude.ai project memory o
 | 16 SEO/GEO | `knowledge/SPEC-16-seo-geo.md` | knowledge |
 | 17 Experimentation | `operations/SPEC-17-experimentation.md` | operations |
 | 18 Admin CRM and Operations | `platform/SPEC-18-admin-crm-operations.md` | platform |
-| 19 BuildFlow Website | `website/SPEC-19-website.md` | website |
+| 19 Fornax Website | `website/SPEC-19-website.md` | website |
 | Agent Registry | `agents/AGENT_REGISTRY.md` | agents |
 
 ## Overrides

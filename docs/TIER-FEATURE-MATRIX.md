@@ -1,7 +1,7 @@
 ---
 updated: '2026-09-18'
 title: docs/TIER-FEATURE-MATRIX.md
-purpose: BuildFlow document
+purpose: Fornax document
 status: active
 owner: c.t.cohen
 ---
@@ -140,7 +140,7 @@ SMB: as Micro plus address, 5-10 services, 5+ testimonials, about/brand story, s
 | Edit contact info | ✅ | Phone, email, address |
 | Edit about/team info | Optional | One page, short bio |
 | **Customization (Limited)** |
-| Edit brand color | No | Pre-approved by BuildFlow |
+| Edit brand color | No | Pre-approved by Fornax |
 | Edit fonts | No | Locked to 3 preset options |
 | Change hero style | No | Locked to current style |
 | **Not Available** |
@@ -176,7 +176,7 @@ SMB: as Micro plus address, 5-10 services, 5+ testimonials, about/brand story, s
 | Font upload | ✅ | Custom fonts (Google Fonts + uploads) |
 | Hero/section editor | ✅ | Visual builder for layouts |
 | Custom CSS | ✅ | Full CSS override capability |
-| White-label option | ✅ | Remove "Built by BuildFlow" branding |
+| White-label option | ✅ | Remove "Built by Fornax" branding |
 | **Advanced Features** |
 | Multi-user team access | ✅ | Roles: Owner, Editor, Viewer |
 | API access | ✅ | Read/write data via REST API |
@@ -300,7 +300,7 @@ SMB: as Micro plus address, 5-10 services, 5+ testimonials, about/brand story, s
 
 1. **Micro dashboard access:** Should they have ANY editing capability, or purely view-only with email support for changes?
 2. **SMB testimonial management:** Can they add testimonials directly, or submit for approval first?
-3. **Mid-market white-label:** Can they hide "Built by BuildFlow" completely, or always visible in footer?
+3. **Mid-market white-label:** Can they hide "Built by Fornax" completely, or always visible in footer?
 4. **Micro design:** Single fixed hero style, or 2–3 simple preset options?
 5. **Integrations roadmap:** Which integrations (CRM, calendar, payment) ship with Mid-market v1 vs. Phase 2+?
 6. **SMB analytics:** Google Analytics only, or custom dashboard too?

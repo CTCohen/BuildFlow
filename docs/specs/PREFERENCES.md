@@ -1,13 +1,13 @@
 ---
-title: BuildFlow project preferences
-purpose: Communication style, presentation format, and workflow preferences for BuildFlow documentation and specification work
+title: Fornax project preferences
+purpose: Communication style, presentation format, and workflow preferences for Fornax documentation and specification work
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
 version: 1.0.0
 tier_scope: all
 phase: phase_1
-spec_name: BuildFlow project preferences
+spec_name: Fornax project preferences
 spec_aliases: []
 spec_sources:
 - chat
@@ -16,7 +16,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 - [stated] "Show me [docs]" means: present as clickable file links Tyler can open, NOT prose descriptions
 - [stated] When presenting files, use interactive links (not summaries or tables of contents)
-- [stated] Save this interpretation to universal memory for future BuildFlow sessions
+- [stated] Save this interpretation to universal memory for future Fornax sessions
 
 ## Documentation Structure Philosophy
 

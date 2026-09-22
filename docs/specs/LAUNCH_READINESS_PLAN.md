@@ -1,6 +1,6 @@
 ---
-title: BuildFlow — Launch Readiness Plan
-purpose: The 8 remaining steps to BuildFlow launch, broken into sub-steps, mapped to the 19 locked systems + agent registry. Includes conflicts needing Tyler's decision and a consolidated Phase 2+ list.
+title: Fornax — Launch Readiness Plan
+purpose: The 8 remaining steps to Fornax launch, broken into sub-steps, mapped to the 19 locked systems + agent registry. Includes conflicts needing Tyler's decision and a consolidated Phase 2+ list.
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -18,7 +18,7 @@ spec_sources:
 spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
-# BuildFlow — Launch Readiness Plan
+# Fornax — Launch Readiness Plan
 
 ## Purpose
 
@@ -39,7 +39,7 @@ Break Tyler's 8 remaining pre-launch steps into concrete sub-steps, each mapped 
 
 ### Step 1 — Migrate specs to the Claude Code venture
 
-1.1. Unzip the current spec export (`buildflow-specs.zip`) into the BuildFlow Claude Code repo at a staging path like `docs/buildflow-specs/` — this is a landing spot, not the final home; final placement happens in Step 2.4 below, once each spec's corresponding module exists to receive it.
+1.1. Unzip the current spec export (`buildflow-specs.zip`) into the Fornax Claude Code repo at a staging path like `docs/buildflow-specs/` — this is a landing spot, not the final home; final placement happens in Step 2.4 below, once each spec's corresponding module exists to receive it.
 1.2. Before overwriting anything in the existing "buildflow lock" directory, snapshot it (git branch or plain copy) so nothing is lost if a reconciliation call (Step 2) turns out wrong.
 1.3. Merge the included `CLAUDE.md` stub into the repo root so Claude Code knows to treat `docs/buildflow-specs/` as authoritative before writing code.
 1.4. Commit the spec files to version control as their own commit, separate from any implementation changes — gives you a clean diff history as specs themselves evolve later.
@@ -93,12 +93,12 @@ Break Tyler's 8 remaining pre-launch steps into concrete sub-steps, each mapped 
 5.4. Record tranche-specific segments only where the dashboard genuinely differs (Mid-Market's custom stages/lead scoring/task assignment aren't in Micro/SMB) — don't produce three full separate videos if 80% of the walkthrough is shared.
 5.5. Host and link: embed in the welcome email sequence (System 6 Section 5) and the Help Center (System 14 Section 2, which already calls for 2–3 min videos as a content format).
 
-### Step 6 — Build BuildFlow website, dashboard, logo, admin app, customer app
+### Step 6 — Build Fornax website, dashboard, logo, admin app, customer app
 
-6.1. **Logo/brand identity** — not currently specified anywhere; this is a new prerequisite. Needed before the marketing site (6.2) and the design system's own "Professional Service" default styling profile can be finalized, since BuildFlow's own brand informs tone.
-6.2. Marketing website (buildflow.io) per System 19 — Home, Features, Pricing, Demo, Blog (first 3 posts), Docs, About. Phase 1 scope only (System 19's own roadmap section).
-6.3. Customer dashboard (app.buildflow.com) per System 2's two-dashboard architecture, System 6 Section 5's first-login UX, and System 4 Section 7's customization sliders.
-6.4. Admin web dashboard (admin.buildflow.com) per System 18 Section 8's web-admin feature list + System 13's dashboard layout.
+6.1. **Logo/brand identity** — not currently specified anywhere; this is a new prerequisite. Needed before the marketing site (6.2) and the design system's own "Professional Service" default styling profile can be finalized, since Fornax's own brand informs tone.
+6.2. Marketing website ([domain TBD under Fornax name]) per System 19 — Home, Features, Pricing, Demo, Blog (first 3 posts), Docs, About. Phase 1 scope only (System 19's own roadmap section).
+6.3. Customer dashboard ([domain TBD under Fornax name]) per System 2's two-dashboard architecture, System 6 Section 5's first-login UX, and System 4 Section 7's customization sliders.
+6.4. Admin web dashboard ([domain TBD under Fornax name]) per System 18 Section 8's web-admin feature list + System 13's dashboard layout.
 6.5. Admin iOS app per System 18 — confirmed staying on the spec's original phasing: web admin ships at launch, iOS app (photo intake) follows in Phase 1.5, not a launch blocker (see Resolved Decisions below).
 6.6. Customer mobile app — confirmed Phase 2+, targeted for a few months post-launch, not in launch scope (see Resolved Decisions below and Phase 2+ list).
 
@@ -139,7 +139,7 @@ Not a rigid schedule — a guide to what can run in parallel vs. what blocks wha
 
 **Customer mobile app.** Confirmed Phase 2+, targeted for a few months after launch — not in launch scope. Launch ships web-only for customers, matching System 5 Section 3's original deferral. Added to the Phase 2+ list below with the rough timeframe.
 
-**Admin iOS app timing.** Confirmed staying on System 18's original phasing: web admin (admin.buildflow.com) ships at launch; the iOS app (photo intake specifically) follows in Phase 1.5, shortly after. Not a launch blocker.
+**Admin iOS app timing.** Confirmed staying on System 18's original phasing: web admin ([domain TBD under Fornax name]) ships at launch; the iOS app (photo intake specifically) follows in Phase 1.5, shortly after. Not a launch blocker.
 
 **Tranche dashboards.** Confirmed as one customer dashboard with a feature-flag layer, not three separate builds. Tranche difference is which features render — higher tier exposes more features (Micro → SMB → Mid-Market is additive, per Step 7's breakdown), not a different underlying dashboard.
 

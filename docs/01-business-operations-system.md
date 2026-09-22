@@ -31,7 +31,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 ## Purpose
 
-Lock down unit economics, margins, financial projections, budget constraints, and hiring decisions—ensuring all operational choices stay within financial reality. This system governs pricing structure, infrastructure costs, margin targets, and hiring triggers—providing the guardrails that ensure BuildFlow remains financially viable as it scales from initial launch through 1,000+ sites/day.
+Lock down unit economics, margins, financial projections, budget constraints, and hiring decisions—ensuring all operational choices stay within financial reality. This system governs pricing structure, infrastructure costs, margin targets, and hiring triggers—providing the guardrails that ensure Fornax remains financially viable as it scales from initial launch through 1,000+ sites/day.
 
 ## Contents
 
@@ -58,7 +58,7 @@ Lock down unit economics, margins, financial projections, budget constraints, an
 | **SMB** | $249/mo | $799 |
 | **Mid-Market** | $399/mo | $1,299 |
 
-**Pricing philosophy:** Premium positioning, not race-to-bottom. BuildFlow brings WCAG 2.1 AA compliance, trade-specific automation, CRM integration, and Done-For-You site generation. This is worth $150–$400/mo. Offboard price = 3–3.3 months of Managed cost (incentivizes long-term stickiness).
+**Pricing philosophy:** Premium positioning, not race-to-bottom. Fornax brings WCAG 2.1 AA compliance, trade-specific automation, CRM integration, and Done-For-You site generation. This is worth $150–$400/mo. Offboard price = 3–3.3 months of Managed cost (incentivizes long-term stickiness).
 
 ### Annual Billing Option — LOCKED
 
@@ -74,7 +74,7 @@ Lock down unit economics, margins, financial projections, budget constraints, an
 
 **Margin impact:** COGS is unchanged (same infrastructure cost regardless of billing cadence) and is a small fraction of price, so the 16.7% discount compresses gross margin only marginally (e.g., Micro: $124.17/mo effective revenue - $11/mo COGS = 91.1% margin, still comfortably above the 90% target).
 
-**Cancellation policy:** Annual plans are non-refundable and non-prorated -- canceling mid-year forfeits the remaining prepaid period, and access stops immediately upon cancellation request (does not run through the paid year). This is a deliberate deviation from the monthly plan's 30-day pro-rata refund policy (System 08 Section 4) to maximize revenue certainty on the annual commitment. The two existing refund exceptions (BuildFlow billing error, extended unplanned service failure) still apply to annual plans -- this policy only removes the "changed my mind" refund path, not BuildFlow's own error accountability.
+**Cancellation policy:** Annual plans are non-refundable and non-prorated -- canceling mid-year forfeits the remaining prepaid period, and access stops immediately upon cancellation request (does not run through the paid year). This is a deliberate deviation from the monthly plan's 30-day pro-rata refund policy (System 08 Section 4) to maximize revenue certainty on the annual commitment. The two existing refund exceptions (Fornax billing error, extended unplanned service failure) still apply to annual plans -- this policy only removes the "changed my mind" refund path, not Fornax's own error accountability.
 
 **Full billing implementation:** System 08 Section 7.
 
@@ -106,7 +106,7 @@ Design generation cost amortized across 5,000+ sites = ~$2/site.
 
 ### Cost Control: $50/mo Constraint
 
-BuildFlow operates under a hard $50/month spending constraint per system, regardless of infrastructure:
+Fornax operates under a hard $50/month spending constraint per system, regardless of infrastructure:
 
 **Allocation Framework:**
 - Cloud hosting + infrastructure: $35/month (70%)
@@ -187,7 +187,7 @@ BuildFlow operates under a hard $50/month spending constraint per system, regard
 
 ### Hiring Decision Gates
 
-**Gate: No hires until BuildFlow generates $100k+ annual profit.**
+**Gate: No hires until Fornax generates $100k+ annual profit.**
 - Seriously consider hiring at $150k+ annual profit
 - This is both a business metric AND a personal threshold (ability to pay $60–70k salary)
 - Part-time availability: Evenings (5:30pm–7pm+ AZ) and weekends only

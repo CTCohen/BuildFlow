@@ -12,7 +12,7 @@ phase: operational
 
 > Rebuilt 2026-09-18. The full version is [`DELIVERY_MODEL.md`](DELIVERY_MODEL.md); prices are in [`PRICING.md`](PRICING.md).
 
-- **One multi-tenant codebase.** BuildFlow hosts and maintains every Managed site. No code, hosting or DNS is handed over under Managed. No per-client code.
+- **One multi-tenant codebase.** Fornax hosts and maintains every Managed site. No code, hosting or DNS is handed over under Managed. No per-client code.
 - **Managed** (default): Micro $149/mo, SMB $249/mo (Mid-Market $399/mo, paused). Annual is 10x monthly.
 - **Offboard** (one-time): Micro $499, SMB $799 (Mid-Market $1,299, paused). The customer takes domain ownership, files and docs; no ongoing support. Hosting, domain and email bills become theirs at handoff, stated in writing.
 - **Go-to-market:** every prospect gets their own demo site and their tier's dashboard preview; the tier is assigned by scoring. Managed is the default; Offboard is offered alongside at conversion.
@@ -20,11 +20,11 @@ phase: operational
 
 ## Superseded delivery model (2026-09-07, kept for history)
 
-# Delivery & ownership model — BuildFlow
+# Delivery & ownership model — Fornax
 
 ## Core principle
 
-**One multi-tenant codebase. BuildFlow hosts and maintains every managed site. No code,
+**One multi-tenant codebase. Fornax hosts and maintains every managed site. No code,
 hosting, or DNS is ever handed to a managed client.** Each site is the same Astro app
 rendering a per-client content folder (`content/<slug>/`) + `theme.json`. A bug fixed once
 is fixed everywhere. There is no per-client code.

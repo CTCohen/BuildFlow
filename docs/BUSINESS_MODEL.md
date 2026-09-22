@@ -1,5 +1,5 @@
 ---
-title: BuildFlow — COMPLETE BUSINESS MODEL & CONSTRAINTS
+title: Fornax — COMPLETE BUSINESS MODEL & CONSTRAINTS
 purpose: Complete business model, GTM strategy, unit economics, pricing, constraints, and operational limits—consolidated for iOS readability
 status: active
 owner: c.t.cohen
@@ -7,7 +7,7 @@ updated: '2026-09-18'
 version: 1.0.0
 tier_scope: all
 phase: phase_1
-spec_name: BuildFlow Business Model & Constraints
+spec_name: Fornax Business Model & Constraints
 spec_aliases:
 - business summary
 - GTM strategy
@@ -27,11 +27,11 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 > - Claude API only for unattended real-time steps, capped at $30/mo pre-revenue.
 
 
-# BuildFlow — COMPLETE BUSINESS MODEL & CONSTRAINTS
+# Fornax — COMPLETE BUSINESS MODEL & CONSTRAINTS
 
 ## EXECUTIVE SUMMARY
 
-BuildFlow is an AI-powered website design and lead management platform for service industry SMBs (trades: plumbing, HVAC, electrical, roofing; maintenance: landscaping, cleaning; automotive; security).
+Fornax is an AI-powered website design and lead management platform for service industry SMBs (trades: plumbing, HVAC, electrical, roofing; maintenance: landscaping, cleaning; automotive; security).
 
 **Core Model:**
 - AI agents generate 500-5,000 static website designs and store them offline
@@ -49,9 +49,9 @@ BuildFlow is an AI-powered website design and lead management platform for servi
 
 ## PART 1: THE PRODUCT MODEL
 
-### What BuildFlow Sells (NOT "Website Builder")
+### What Fornax Sells (NOT "Website Builder")
 
-BuildFlow is **NOT** a website builder (like Wix, Squarespace). It's an **automated outbound sales engine** that uses AI-generated websites as cold-outreach collateral.
+Fornax is **NOT** a website builder (like Wix, Squarespace). It's an **automated outbound sales engine** that uses AI-generated websites as cold-outreach collateral.
 
 **The workflow:**
 1. **Lead Discovery:** AI agents query Apollo/Hunter.io + Google Places API -> prospect contact list (by vertical, geography, business size)
@@ -65,7 +65,7 @@ BuildFlow is **NOT** a website builder (like Wix, Squarespace). It's an **automa
 
 ### Two-Dashboard Architecture (Critical Product Design)
 
-**Customer Dashboard** (`app.buildflow.com/dashboard`)
+**Customer Dashboard** (`[domain TBD under Fornax name]/dashboard`)
 - Users: customers only
 - Purpose: manage website, view analytics, configure CRM sync, manage fields/features
 - Sections: Lead Inbox, Notes, Pipeline (simple), Analytics (per tranche), CRM Config
@@ -73,7 +73,7 @@ BuildFlow is **NOT** a website builder (like Wix, Squarespace). It's an **automa
 - UX: beautiful, minimal, intuitive
 - Security: row-level by customer_id (database enforces isolation)
 
-**Admin Dashboard** (`admin.buildflow.com`)
+**Admin Dashboard** ([domain TBD under Fornax name])
 - Users: Tyler only
 - Purpose: monitor business health, debug agents, track revenue, manage escalations
 - Sections: KPI dashboard (MRR, churn, ARR), Customer list, Agent logs, Revenue, Escalations
@@ -130,16 +130,16 @@ You're delivering:
 - AI-driven SEO optimization (Micro: none, SMB: monthly, Mid-Market: monthly + tracking)
 
 Compare to competitors:
-- ServiceTitan: $398+/mo per tech -> BuildFlow premium at $149-399 is CHEAPER but adds website
-- Jobber: $49-349/mo -> BuildFlow in their range but with better value
-- Housecall Pro: $169+/mo -> BuildFlow $149 Micro undercuts; $249 SMB same price, more features
+- ServiceTitan: $398+/mo per tech -> Fornax premium at $149-399 is CHEAPER but adds website
+- Jobber: $49-349/mo -> Fornax in their range but with better value
+- Housecall Pro: $169+/mo -> Fornax $149 Micro undercuts; $249 SMB same price, more features
 - Positioning: "We're not cheaper Wix. We're built for trades, compliant, and include lead management."
 
 **Two-Option Strategy:**
 - **Option A (Managed):** $149-399/mo recurring, or annual prepay at 10x monthly ("2 months free" -- Micro $1,490/yr, SMB $2,490/yr, Mid-Market $3,990/yr; non-refundable, non-prorated on cancellation). You host, maintain, handle SEO, CRM sync, customer support.
 - **Option B (Offboard):** $499-1,299 one-time. Customer takes domain ownership, you provide offboarding docs/videos, no ongoing support. Design cost amortized across 5,000+ sites = ~$2/site.
 
-**Offboard pricing = 3.2-3.3 months of Managed cost. Annual Managed pricing = 10 months of Managed cost.** Long-term customer logic: three ways to pay (monthly forever, annual for a discount + BuildFlow gets cash upfront, or buy-once-and-own).
+**Offboard pricing = 3.2-3.3 months of Managed cost. Annual Managed pricing = 10 months of Managed cost.** Long-term customer logic: three ways to pay (monthly forever, annual for a discount + Fornax gets cash upfront, or buy-once-and-own).
 
 ### Pricing Evolution & Grandfathering Strategy (LOCKED)
 
@@ -242,12 +242,12 @@ Compare to competitors:
 
 **Current role:** HNW Client Relationship Associate at Vanguard, full-time 9-5:30pm AZ (sometimes 7pm)
 
-**BuildFlow availability:**
+**Fornax availability:**
 - Evenings: 5:30pm-7pm+ AZ
 - Weekends: flexible
 - **Total: ~15-20 hrs/week max** (while maintaining Vanguard job)
 
-**NOT a bottleneck constraint because: BuildFlow is 95% automated**
+**NOT a bottleneck constraint because: Fornax is 95% automated**
 - Design generation: agent
 - Website deployment: agent
 - Lead discovery: agent
@@ -321,13 +321,13 @@ Compare to competitors:
 
 ## PART 7: COMPETITIVE POSITIONING
 
-### Why BuildFlow (NOT "Cheaper Wix")
+### Why Fornax (NOT "Cheaper Wix")
 
 **Wix/Squarespace/GoDaddy:** generic, cheap, no trades features, no compliance, no CRM, customer does own design work
 
 **ServiceTitan/Jobber/Housecall Pro:** trade-specific CRM but basic landing pages, no design automation, no review management
 
-**BuildFlow:** Trade-specific website builder + CRM integration + compliance + reviews + automation
+**Fornax:** Trade-specific website builder + CRM integration + compliance + reviews + automation
 
 **Moats:** (1) Trades-specific design, (2) WCAG 2.1 AA built-in, (3) Automated review aggregation, (4) CRM integration, (5) Done-For-You generation
 
@@ -335,7 +335,7 @@ Compare to competitors:
 
 ### Competitor Differentiation
 
-| Feature | BuildFlow | ServiceTitan | Jobber | Wix |
+| Feature | Fornax | ServiceTitan | Jobber | Wix |
 |---|---|---|---|---|
 | Website design | AI-generated, trade-specific | Basic landing page | Basic landing page | DIY |
 | WCAG 2.1 AA | Built-in | No | No | No |

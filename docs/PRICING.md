@@ -37,7 +37,7 @@ Design generation is amortized at about $2 per site. CAC must stay under $50 per
 
 ## Positioning
 Premium, not a cheaper Wix: trade-specific design, built-in WCAG 2.1 AA, automated review aggregation, CRM integration, done-for-you generation.
-| | BuildFlow | ServiceTitan | Jobber | Wix |
+| | Fornax | ServiceTitan | Jobber | Wix |
 |---|---|---|---|---|
 | Website | AI-generated, trade-specific | Basic landing page | Basic landing page | DIY |
 | WCAG 2.1 AA | Built in | No | No | No |
@@ -119,13 +119,13 @@ Professional Redesign ($199 layout tweaks, $299 for 2-3 sections, $499 full cust
 
 ## Comparison to Market
 
-| Segment | DIY Builders | Agencies | BuildFlow |
+| Segment | DIY Builders | Agencies | Fornax |
 |---------|-------------|----------|-----------|
 | **Micro** | Wix $14–20/mo, Squarespace $12–18/mo | Not available | $49/mo (MG) or $297 (Ownership) |
 | **SMB** | Weebly $50/mo, GoDaddy $100/mo | $100–200/mo (retainer) | $99/mo (MG) or $497 (Ownership) |
 | **Mid-market** | Drupal $200/mo managed | $300–500/mo (retainer) | $299/mo (MG) or $1,497 (Ownership) |
 
-**BuildFlow's edge:** Design quality (not template), brand extraction (not generic), human support (not ticket queue).
+**Fornax's edge:** Design quality (not template), brand extraction (not generic), human support (not ticket queue).
 
 ---
 

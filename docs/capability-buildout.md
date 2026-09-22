@@ -19,7 +19,7 @@ launch-quality HVAC websites (plus SEO, AI SEO, and managed ops) every time.
 on real Phoenix HVAC businesses you never contact. The learning phase front-loads known
 best practice so round 1 doesn't start from zero.
 
-Venture: **BuildFlow** (locked). Repo: `~/BuildFlow`. Knowledge base: `knowledge/`
+Venture: **Fornax** (locked; local repo folder stays `~/BuildFlow`). Repo: `~/BuildFlow`. Knowledge base: `knowledge/`
 (local; lifts to Cortex nodecards later, unchanged format).
 
 ---

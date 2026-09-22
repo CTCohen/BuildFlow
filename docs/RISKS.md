@@ -1,6 +1,6 @@
 ---
 title: Risk Register
-purpose: Known risks to the BuildFlow launch with an owner and a mitigation
+purpose: Known risks to the Fornax launch with an owner and a mitigation
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'

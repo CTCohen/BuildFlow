@@ -1,13 +1,13 @@
 ---
-title: BuildFlow — Master System Index
-purpose: Macro-level overview of all 19 BuildFlow systems, organized by tier, dependencies, and launch phase
+title: Fornax — Master System Index
+purpose: Macro-level overview of all 19 Fornax systems, organized by tier, dependencies, and launch phase
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
 version: 1.0.0
 tier_scope: all
 phase: phase_1
-spec_name: BuildFlow Master Index
+spec_name: Fornax Master Index
 spec_aliases:
 - systems index
 - architecture index
@@ -17,7 +17,7 @@ spec_sources:
 spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
 
-# BuildFlow — Master System Index
+# Fornax — Master System Index
 
 **19 consolidated systems** — one doc per system + this overview. See "File Locations" below
 
@@ -58,7 +58,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 | # | System | Purpose | Status |
 |---|--------|---------|--------|
 | 18 | Admin CRM & Operations System (18) | Tyler's iOS app + web admin. Photo intake, pipeline, customer health, revenue, agent feedback | LOCKED |
-| 19 | BuildFlow Public Website (19) | buildflow.io marketing site | LOCKED |
+| 19 | Fornax Public Website (19) | [domain TBD under Fornax name] marketing site | LOCKED |
 
 ## TIER 4: OPTIMIZE (2 Systems)
 
@@ -71,7 +71,7 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 
 ## Agent Registry (Cross-Cutting — Not a Numbered System)
 
-`agents/AGENT_REGISTRY.md` — catalogs all 15 BuildFlow agents (Design, Discovery, Design QA, Lead Scoring, Lead Lookup, OCR, Outreach/Copy, CRM Sync, Dunning, Support Triage, Feedback Triage, Lifecycle/Churn, SEO Optimization, Review Sync, Experimentation/Guardrail) with pattern classification, model tier, retry logic, human-gate requirements, 2026 eval standards, and an agent-scaling model confirming no additional agents are needed per vertical/tranche/outbound-touch. Read this alongside any system that mentions an agent (2, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18). Systems 1, 3, 5, 11, 19 need no agent; System 13's "agents" are infrastructure cron jobs, not LLM agents.
+`agents/AGENT_REGISTRY.md` — catalogs all 15 Fornax agents (Design, Discovery, Design QA, Lead Scoring, Lead Lookup, OCR, Outreach/Copy, CRM Sync, Dunning, Support Triage, Feedback Triage, Lifecycle/Churn, SEO Optimization, Review Sync, Experimentation/Guardrail) with pattern classification, model tier, retry logic, human-gate requirements, 2026 eval standards, and an agent-scaling model confirming no additional agents are needed per vertical/tranche/outbound-touch. Read this alongside any system that mentions an agent (2, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18). Systems 1, 3, 5, 11, 19 need no agent; System 13's "agents" are infrastructure cron jobs, not LLM agents.
 
 ---
 

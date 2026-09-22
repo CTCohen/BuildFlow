@@ -18,7 +18,7 @@ phase: operational
 |---|---|---|
 | Site rendering | Existing **Astro** design system, one client per build, static output | Design Agent supplies the client data file; QA gate before anything ships |
 | Site hosting (demo and live) | **Cloudflare Pages/Workers + R2** | Free tier pre-conversion; scales to thousands of demos at near-zero cost |
-| Domains and DNS | **Cloudflare** (Registrar, DNS, automatic SSL) | Customer subdomains `[company].buildflowsites.com`; custom domains via Cloudflare DNS |
+| Domains and DNS | **Cloudflare** (Registrar, DNS, automatic SSL) | Customer subdomains `[company].[domain TBD under Fornax name]`; custom domains via Cloudflare DNS |
 | Database | **Supabase Postgres**, row-level security on `customer_id` | Admin tables in a separate schema and role |
 | Auth | **Supabase Auth**: Google and email/password (12+ characters), optional TOTP | Tyler's admin login: Google OAuth plus 2FA |
 | Backend, dashboards, agents | Containerized service: **Railway now, Google Cloud Run later** | Docker from day 1 so the move is a redeploy |
@@ -51,7 +51,7 @@ phase: operational
 
 ## Superseded stack document (2026-09-12)
 
-# Tech stack — BuildFlow
+# Tech stack — Fornax
 
 Solo operator. Cheap to run. No rewrite later. One codebase for all sites.
 

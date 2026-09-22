@@ -1,6 +1,6 @@
 ---
-title: BuildFlow — Spec Export
-purpose: BuildFlow spec export document
+title: Fornax — Spec Export
+purpose: Fornax spec export document
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -9,9 +9,9 @@ tier_scope: all
 phase: phase_1
 spec_authority: authoritative (exported from claude.ai project memory 2026-09-17)
 ---
-# BuildFlow — Spec Export
+# Fornax — Spec Export
 
-This is a snapshot export of the BuildFlow systems documentation, originally
+This is a snapshot export of the Fornax systems documentation, originally
 maintained as Claude Project memory in claude.ai, migrated for use in a local
 Claude Code project.
 
@@ -24,7 +24,7 @@ Claude Code project.
   first if you're picking up implementation work.
 - `preferences.md` — documentation style conventions used across the systems/ files
 - `systems/` — all 19 numbered system specs (01-19) + `agent-registry.md`
-  (the cross-cutting catalog of every AI agent BuildFlow uses, referenced by
+  (the cross-cutting catalog of every AI agent Fornax uses, referenced by
   most of the numbered systems)
 
 ## Not included
@@ -42,13 +42,13 @@ memory on request.
    ```
    your-repo/
      docs/
-       buildflow-specs/   <- this folder
+       fornax-specs/   <- this folder
    ```
 2. Point Claude Code at it. Either:
    - Drop the included `CLAUDE.md` snippet (see below) into your repo root
      (merge it with any existing `CLAUDE.md`), or
    - Just reference the folder directly in a prompt, e.g. "read
-     docs/buildflow-specs/index.md and build System 6 per spec."
+     docs/fornax-specs/index.md and build System 6 per spec."
 3. Claude Code reads these as plain Markdown with its normal file tools — no
    special import step needed. Treat `systems/*.md` as the build spec; each
    file is written to be agent-actionable per the conventions in

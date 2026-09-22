@@ -40,7 +40,7 @@ Demo and live site are the same thing: gated before conversion, public after. No
 Launch is English-only, email-outreach-only.
 
 ## Hosting and migration
-Static sites live on Cloudflare (Pages/Workers, R2). Customer subdomains: `[company].buildflowsites.com`; custom domains through Cloudflare DNS with automatic SSL.
+Static sites live on Cloudflare (Pages/Workers, R2). Customer subdomains: `[company].[domain TBD under Fornax name]`; custom domains through Cloudflare DNS with automatic SSL.
 The platform (dashboards, API, agents) runs containerized: Railway first, Google Cloud Run later. Because demo and live share the same infrastructure, conversion is a
 re-render and a domain change, not a provider migration. Offboard exports the static bundle to the customer's host.
 

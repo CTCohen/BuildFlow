@@ -1,6 +1,6 @@
 ---
 title: Customer Vs Internal
-purpose: Which folders/systems are the PRODUCT (built for customers, sold to them) vs OUR OWN OPERATIONS (BuildFlow running itself). Read this before creating any design, dashboard, CRM, or system file — it decides which side it belongs on.
+purpose: Which folders/systems are the PRODUCT (built for customers, sold to them) vs OUR OWN OPERATIONS (Fornax running itself). Read this before creating any design, dashboard, CRM, or system file — it decides which side it belongs on.
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
@@ -13,7 +13,7 @@ phase: phase_1
 
 Two completely separate categories. Nothing should sit ambiguously between them. If you're about to create a
 design, a dashboard, a CRM connection, or any "system," ask first: **is this something a customer uses/sees, or
-is this something Tyler/BuildFlow uses to run the company?** Then put it on the correct side of this table.
+is this something Tyler/Fornax uses to run the company?** Then put it on the correct side of this table.
 
 ## For customers (the product we build and sell)
 
@@ -28,24 +28,24 @@ is this something Tyler/BuildFlow uses to run the company?** Then put it on the 
 | CRM sync **into the customer's own CRM** (HubSpot, later others) | `crm/`, `agents/lead/` (adapter) | We're building the pipe; the CRM itself is theirs |
 | Lead scoring, outreach, demo generation for prospects | `agents/lead/`, `outreach/`, `messaging/` | Also customer-facing — the "customer" here is the prospect we're selling to |
 
-## For us (running BuildFlow as a business)
+## For us (running Fornax as a business)
 
 | What | Lives in | Notes |
 |---|---|---|
-| BuildFlow's own logo, brand identity, voice/tone guide | `brand/` (new, see below) | Does not exist as a build task yet — Tyler picks a direction (TYLER_QUEUE.md), then this gets built |
-| BuildFlow's own marketing site (buildflow.io) | `website/` | Already correctly separate — do not confuse with customer sites |
+| Fornax's own logo, brand identity, voice/tone guide | `brand/` (new, see below) | Does not exist as a build task yet — Tyler picks a direction (TYLER_QUEUE.md), then this gets built |
+| Fornax's own marketing site ([domain TBD under Fornax name]) | `website/` | Already correctly separate — do not confuse with customer sites |
 | Admin dashboard (Tyler's view: all customers, health, revenue) | `platform/dashboards/admin/` | This is OUR tool, not a customer's |
 | Our own operating files, coordination, task tracking | `operations/` | `COORDINATOR_STATE.md`, `BUILD_TASKS.md`, `TYLER_QUEUE.md`, `LOOPS.md` |
 | Our own business metrics | `metrics/` | MRR, churn, CAC — about the business, not a customer's site |
-| Our own use of a CRM to run BuildFlow's own sales (if we ever adopt one) | Not yet a repo concern | Distinct from `crm/`, which is the connector we BUILD for customers' CRMs |
+| Our own use of a CRM to run Fornax's own sales (if we ever adopt one) | Not yet a repo concern | Distinct from `crm/`, which is the connector we BUILD for customers' CRMs |
 | Legal (our Terms/Privacy, our compliance posture) | `legal/` | Governs how we treat customers, but it's our document, not theirs |
 
 ## The `brand/` folder (new)
 
-Doesn't exist yet as real content — scaffolded now so there's a clear place for it. Holds BuildFlow's own:
+Doesn't exist yet as real content — scaffolded now so there's a clear place for it. Holds Fornax's own:
 - Logo files and usage rules
 - Brand color/type system (separate from the *customer* style-profile system in `design/`)
-- Voice and tone guide for BuildFlow's own marketing copy (distinct from `messaging/`, which is customer-facing outreach copy)
+- Voice and tone guide for Fornax's own marketing copy (distinct from `messaging/`, which is customer-facing outreach copy)
 
 This is a `[decision: Tyler picks a direction]` item per `TYLER_QUEUE.md` — nothing gets built here until he does.
 

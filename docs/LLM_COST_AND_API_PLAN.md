@@ -1,6 +1,6 @@
 ---
 title: LLM Cost and API Plan
-purpose: Every place BuildFlow could call a model API, whether it needs one, what it costs per use and per customer, how it can be abused, and how to avoid or cap it
+purpose: Every place Fornax could call a model API, whether it needs one, what it costs per use and per customer, how it can be abused, and how to avoid or cap it
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'

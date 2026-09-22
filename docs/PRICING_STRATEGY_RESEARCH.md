@@ -14,7 +14,7 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 
 # Pricing Strategy Analysis & Market Research
 
-> Comprehensive pricing research, competitive analysis, and signal positioning for BuildFlow.
+> Comprehensive pricing research, competitive analysis, and signal positioning for Fornax.
 > Date: 2026-09-18 | Based on market research + business model analysis
 
 ---
@@ -48,7 +48,7 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 - **10Web:** $49-299/mo (AI assistant, not full automation)
 - **Signal:** "Professional business software"
 
-### BuildFlow (AI-generated + done-for-you + CRM)
+### Fornax (AI-generated + done-for-you + CRM)
 - **Micro:** $149/mo (below ServiceTitan, 2.5x DIY)
 - **SMB:** $249/mo (within boutique agency range, 50-75% less than full agency)
 - **Mid-Market:** $399/mo (premium-premium, not yet launched)
@@ -88,7 +88,7 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 
 ### Unique Differentiation
 
-| Dimension | BuildFlow | DIY | CRM Platform | Agency |
+| Dimension | Fornax | DIY | CRM Platform | Agency |
 |-----------|-----------|-----|--------------|--------|
 | **Website Quality** | AI-generated, trade-specific | Template-based | Basic landing page | Custom, high-touch |
 | **Time to Live** | 1 minute (auto-generated) | 2-4 hours (DIY) | 2-4 hours (DIY) | 6-12 weeks |
@@ -188,7 +188,7 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 
 ---
 
-## What Your Pricing Says About BuildFlow
+## What Your Pricing Says About Fornax
 
 | Price | Sends Signal | Attracts |
 |-------|--------------|----------|
@@ -214,7 +214,7 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 
 ### Your Positioning Is Clear
 
-**If customers remember one thing:** "BuildFlow is the fast automation between DIY websites and hiring a $3k agency. Done-for-you. Integrated with your CRM. Professional. Serious."
+**If customers remember one thing:** "Fornax is the fast automation between DIY websites and hiring a $3k agency. Done-for-you. Integrated with your CRM. Professional. Serious."
 
 ### Execute the Price Increase Plan
 
@@ -229,6 +229,6 @@ related: [docs/PRICING.md, RECONCILIATION_LOG.md]
 
 ---
 
-**File:** `/BuildFlow/docs/PRICING_STRATEGY_RESEARCH.md`  
+**File:** `/Fornax/docs/PRICING_STRATEGY_RESEARCH.md`  
 **Date:** 2026-09-18  
 **Status:** Ready for approval & messaging alignment

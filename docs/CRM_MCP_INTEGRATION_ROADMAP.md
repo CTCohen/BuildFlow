@@ -1,7 +1,7 @@
 ---
 updated: '2026-09-18'
 title: docs/CRM_MCP_INTEGRATION_ROADMAP.md
-purpose: BuildFlow document
+purpose: Fornax document
 status: active
 owner: c.t.cohen
 ---
@@ -18,10 +18,10 @@ owner: c.t.cohen
 | 3 | ServiceTitan | OAuth 2.0 | 200 req/min | Apply now; market leader HVAC/plumbing/electrical |
 | 4 | Housecall Pro | API key | 50 req/min | |
 | 5 | Successware | OAuth 2.0 | 100 req/min | HVAC-heavy |
-These five cover about 70-85% of the Phase 1 trades market. Custom connectors, built and maintained by BuildFlow; the customer owns their CRM credentials.
+These five cover about 70-85% of the Phase 1 trades market. Custom connectors, built and maintained by Fornax; the customer owns their CRM credentials.
 
 ## Mechanism (locked)
-One-way push, BuildFlow dashboard to the customer's CRM, batch every 5 minutes. Cloud Scheduler triggers a function that reads new submissions, groups by customer, decrypts the token, pushes through the CRM API, logs to `crm_sync_log`, and retries with backoff (1 s, 5 s, 30 s, 5 min, max 5 attempts). No LLM in the push.
+One-way push, Fornax dashboard to the customer's CRM, batch every 5 minutes. Cloud Scheduler triggers a function that reads new submissions, groups by customer, decrypts the token, pushes through the CRM API, logs to `crm_sync_log`, and retries with backoff (1 s, 5 s, 30 s, 5 min, max 5 attempts). No LLM in the push.
 Synced: name, email, phone, message, submission time. Field mapping is confirmed during onboarding. Errors: transient errors auto-retry; persistent errors (mapping mismatch, revoked token) need the customer; after 3 failures Tyler is notified; after 5 the sync pauses and the customer is alerted; a sync down more than 2 hours alerts both.
 Tokens: AES-256, separate secrets manager, decryptable only by the sync agent, refreshed automatically, revoked immediately on disconnect.
 Targets: latency under 5 min, success above 99%.
@@ -43,7 +43,7 @@ OAuth flow and token refresh · API review · create-lead endpoint · rate limit
 # CRM MCP Integration Roadmap
 
 > Backend MCP integrations for each vertical phase.
-> Connects customer CRM data to BuildFlow sites for real-time lead/job data display.
+> Connects customer CRM data to Fornax sites for real-time lead/job data display.
 > Last updated: 2026-09-13
 
 ---
@@ -217,15 +217,15 @@ OAuth flow and token refresh · API review · create-lead endpoint · rate limit
 ```
 CRM (ServiceTitan, Jobber, etc.)
     ↓ (OAuth 2.0)
-BuildFlow Backend MCP
+Fornax Backend MCP
     ↓ (REST/GraphQL)
-BuildFlow Site Dashboard
+Fornax Site Dashboard
     ↓
 Customer Portal (on their site)
 ```
 
 ### Data Flow
-1. **Authentication:** Customer authorizes BuildFlow to read their CRM
+1. **Authentication:** Customer authorizes Fornax to read their CRM
 2. **Sync:** Real-time or hourly sync of relevant data
 3. **Display:** Site shows live job status, upcoming appointments, customer info
 4. **Bidirectional:** Optional write-back (lead capture, status updates)
@@ -269,7 +269,7 @@ Customer Portal (on their site)
 
 ## Business Value
 
-### For BuildFlow
+### For Fornax
 - **Differentiation:** Only web builder offering live CRM integration
 - **Stickiness:** Sites more valuable with real-time data (harder to leave)
 - **Upsell:** CRM integration as premium tier ($149/mo instead of $99/mo)
@@ -329,7 +329,7 @@ Customer Portal (on their site)
 ## File Structure
 
 ```
-BuildFlow/
+Fornax/
 ├── backend/
 │   └── mcps/
 │       ├── jobber/              [Phase 1A]
@@ -356,6 +356,6 @@ BuildFlow/
 
 ---
 
-**This file:** `/BuildFlow/docs/CRM_MCP_INTEGRATION_ROADMAP.md`  
+**This file:** `/Fornax/docs/CRM_MCP_INTEGRATION_ROADMAP.md`  
 **Status:** Strategic roadmap (execution starts Phase 1B, Oct 1)  
 **Last updated:** 2026-09-13

@@ -8,7 +8,7 @@ tier_scope: all
 phase: operational
 ---
 
-# Later development ideas — BuildFlow
+# Later development ideas — Fornax
 
 Parked ideas. Not in the current build. Revisit after the core pipeline works.
 
