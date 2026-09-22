@@ -11,7 +11,11 @@ import hmac
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 
+from .config import get_env
 from .sequence import load_templates, render_touch, schedule, tz_for
+
+MAILING_ADDRESS_ENV_VAR = "BUILDFLOW_MAILING_ADDRESS"
+MAILING_ADDRESS_LOCAL_FILE = "business-contact.env"
 
 MIN_SAMPLE = 20             # do not judge rates on fewer sends
 PAUSE_SPAM_RATE = 0.05      # SPEC-07 s3: pause at 5% marked spam
@@ -34,6 +38,13 @@ class MockSendGrid:
         return f"mock-{len(self.sent)}"
 
 
+def load_mailing_address() -> str | None:
+    """CAN-SPAM postal address (Tyler's, gitignored) — real env var first,
+    then `.local/business-contact.env`. Returns None if neither has it; never
+    reads or returns a git-tracked value."""
+    return get_env(MAILING_ADDRESS_ENV_VAR, local_file=MAILING_ADDRESS_LOCAL_FILE)
+
+
 def unsubscribe_token(secret: str, lead_id: str) -> str:
     """Deterministic: same lead + secret always yields the same token."""
     return hmac.new(secret.encode(), lead_id.encode(), hashlib.sha256).hexdigest()[:32]
@@ -51,12 +62,19 @@ class Enrollment:
 
 
 class Campaign:
-    def __init__(self, sender, *, secret: str, postal_address: str, base_url="https://unsub.fornax.example",
+    def __init__(self, sender, *, secret: str, postal_address: str | None = None,
+                 base_url="https://unsub.fornax.example",
                  sender_name="Tyler", sender_email="hello@fornax.example", max_new_per_day=100, templates=None):
         # sender_email default follows D01 (ruled 2026-09-21): the outbound sender address is
         # hello@<domain>, not a personal address. Domain is a placeholder (.example) — D32 (which
         # domain Fornax actually owns) is still open, matching base_url's existing placeholder.
-        self.sender, self.secret, self.postal = sender, secret, postal_address
+        #
+        # postal_address: pass it explicitly (tests do), or leave it unset and it is read at
+        # runtime from BUILDFLOW_MAILING_ADDRESS / .local/business-contact.env (gitignored, never
+        # committed — see load_mailing_address()). Either way, _guard() still refuses to run with
+        # no address configured.
+        self.sender, self.secret = sender, secret
+        self.postal = postal_address if postal_address is not None else load_mailing_address()
         self.base_url, self.sender_name, self.sender_email = base_url, sender_name, sender_email
         self.max_new_per_day = max_new_per_day
         self.templates = templates or load_templates()
@@ -69,7 +87,11 @@ class Campaign:
     # -- guards -----------------------------------------------------------
     def _guard(self):
         if not self.postal:
-            raise ConfigError("postal address required (CAN-SPAM)")
+            raise ConfigError(
+                "postal address required (CAN-SPAM): set "
+                f"{MAILING_ADDRESS_ENV_VAR} in the environment, or in the gitignored "
+                f".local/{MAILING_ADDRESS_LOCAL_FILE}, or pass postal_address= explicitly"
+            )
         if not getattr(self.sender, "is_mock", False):
             if self.templates["meta"]["status"] != "approved":
                 raise ConfigError("outreach copy not approved by Tyler; real sending is blocked")

@@ -1,10 +1,20 @@
 """Evals for the Outreach/Copy templates, sequence scheduler and send workflow (all mock)."""
 import copy
+import os
 import re
 import unittest
 from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from unittest import mock
 
-from agents.lead.send import Campaign, ConfigError, MockSendGrid, unsubscribe_token
+from agents.lead.send import (
+    MAILING_ADDRESS_ENV_VAR,
+    Campaign,
+    ConfigError,
+    MockSendGrid,
+    load_mailing_address,
+    unsubscribe_token,
+)
 from agents.lead.sequence import choose_hook, load_templates, render_touch, schedule
 
 UTC = timezone.utc
@@ -232,6 +242,36 @@ class SendWorkflow(unittest.TestCase):
         c.enroll(lead(), "u", D0)
         with self.assertRaises(ConfigError):
             c.run(nine_am_az(D0))
+
+    def test_c23_mailing_address_env_var_populates_footer(self):
+        """When BUILDFLOW_MAILING_ADDRESS is set and postal_address= is left
+        unset, the Campaign reads it and the send actually goes out with it
+        in the footer/body (render_touch embeds postal_address)."""
+        addr = "742 Evergreen Terrace, Springfield"
+        with mock.patch.dict(os.environ, {MAILING_ADDRESS_ENV_VAR: addr}):
+            self.assertEqual(load_mailing_address(), addr)
+            c = Campaign(MockSendGrid(), secret="test-secret")  # no postal_address kwarg
+            self.assertEqual(c.postal, addr)
+            c.enroll(lead(), "https://demo.example/u", D0)
+            c.run(nine_am_az(D0))
+        self.assertEqual(len(c.sender.sent), 1)
+        msg = c.sender.sent[0]
+        body = msg.get("html", "") + msg.get("text", "") + str(msg)
+        self.assertIn(addr, body)
+
+    def test_c24_send_still_refuses_when_env_var_unset(self):
+        """No explicit postal_address and no env var/.local file configured
+        -> Campaign.postal is falsy and run() still refuses (ConfigError),
+        exactly like the pre-existing explicit-empty-string case."""
+        env_without_addr = {k: v for k, v in os.environ.items() if k != MAILING_ADDRESS_ENV_VAR}
+        with mock.patch.dict(os.environ, env_without_addr, clear=True), \
+             mock.patch("agents.lead.config._LOCAL_ENV_DIR", Path("/nonexistent-dir-for-test")):
+            self.assertIsNone(load_mailing_address())
+            c = Campaign(MockSendGrid(), secret="test-secret")  # no postal_address kwarg
+            self.assertFalse(c.postal)
+            c.enroll(lead(), "u", D0)
+            with self.assertRaises(ConfigError):
+                c.run(nine_am_az(D0))
 
     def test_c22_new_lead_cap_per_day(self):
         c = self._big(10, max_new_per_day=4)
