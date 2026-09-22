@@ -145,6 +145,15 @@ Derived from System 02 Section 1 plus the entities other specs use (Systems 07, 
 ### admin.demos
 `id`, `prospect_id` FK, `client_slug`, `design_template_used`, `style_profile`, `cloudflare_url`, `cloudflare_deployment_id`, `status`, `created_at`, `expires_at`, `archived_at`, `view_count`, `conversion_flag`, `core_web_vitals_score`, `lighthouse_score`, `qa_passed boolean`.
 
+### admin.demo_tracking_events (added `0007_demo_tracking.sql`, BUILD_TASKS.md §3)
+Raw per-event log behind `admin.demos`'s aggregate `view_count`/`conversion_flag` columns — SPEC-06 section 2's
+locked event schema (view, scroll depth 25/50/75/100%, section clicks, form interaction, time on site) has
+nowhere else to land. `id`, `demo_id` FK, `event_type` (`view`, `scroll_depth`, `section_click`,
+`form_interaction`, `time_on_site`), `payload jsonb`, `session_id`, `occurred_at`, `created_at`. Written only
+through `admin.record_demo_event()` (idempotent per `demo_id`+`session_id`+`event_type`+`payload`; bumps
+`admin.demos.view_count`/`admin.prospects.demo_view_count` on a session's first `view` event). Read/aggregated
+by `platform/dashboards/lib/demo-tracking.mjs`.
+
 ### admin.outbound_campaign_runs
 `id`, `lead_id` FK, `prospect_id` FK, `touch_number` (1-5), `template_variant` (`A`, `B`, `C`), `status`, `subject`, `sendgrid_message_id`, `demo_url`, `utm jsonb`, `sent_at`, `opened_at`, `clicked_at`, `replied_at`, `error_message`, `agent_run_id` FK, `created_at`. Unique `(lead_id, touch_number)` so a touch is never sent twice.
 
