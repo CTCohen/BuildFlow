@@ -9,6 +9,17 @@ tier_scope: all
 phase: phase_1
 ---
 
+## Latest coordinator run — 2026-09-21 (merge night)
+
+All four lanes — Foundation, Content, Design, Lead — merged into `main` and pushed to GitHub (`4befe42..a5369bc`).
+Foundation's database safety test ran clean on Tyler's Mac first (every isolation/monitoring check passed), so
+this was a real, proven merge, not a guess. Governance checks after merging: stale-term lint 0 hits, manifest
+regenerated (164 kept, 230 done, 6 newly-created files not yet categorized — harmless). TYLER_QUEUE.md's old
+flat list was rewritten tonight into three tiers (blocking / accounts / decisions-with-defaults) and each lane's
+own leftover open items were folded in during the merges rather than lost. Four decisions ruled tonight: D01
+sender = `hello@`, D22 CRM = HubSpot, D26 "GEO" relabeled AI SEO (Generative Engine Optimization), D29 Mid-Market
+leads now captured in the warehouse (not suppressed, not yet built). Nothing currently blocking build work.
+
 ## Latest coordinator run — 2026-09-21 (design lane session)
 
 Pushed lane/design's previously-stuck commit (`a6c2940`) to GitHub successfully this run — GitHub was reachable
