@@ -4,10 +4,25 @@ purpose: The single source of truth for what is done, in progress, and open acro
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
-version: 1.5.0
+version: 1.5.1
 tier_scope: all
 phase: phase_1
 ---
+
+## Coordinator note — 2026-09-22, same run: two coordinator sessions overlapped
+
+A second coordinator session was found already active on this exact run (same repo, same day) while
+this one was starting up — its commits (`6b208ce`, `a9b8901`, `1282fff`, `1a3a390`, `9f7d555`, listed
+below) and this file's own "5 buildable-now items" entry appeared on disk while this session was still
+orienting. No file corruption resulted — git's own conflict detection caught every collision (a couple
+of edit attempts here failed with "file changed since read" and were safely re-read) — but one real gap
+came from it: the other session's `platform/dashboards/customer-dashboard.test.mjs` edit (the Micro
+dashboard end-to-end test, 2 tests) was run and counted toward its claimed "43/43 tests," but never
+`git add`ed, so the pushed repo actually only had 41 committed. Fixed this run: staged and committed
+that file (`6887e94`), verified 43/43 still pass live. **Flagging for Tyler, not fixing myself:** if the
+`buildflow-coordinator` scheduled task can fire more than once concurrently, that's worth tightening
+(e.g. a lock file, or checking for another coordinator's uncommitted changes before starting) — this
+time it self-healed, but two unattended sessions racing to commit isn't a guarantee it always will.
 
 ## Latest coordinator run — 2026-09-22 (5 buildable-now items: lead lookup, demo tracking, dashboards)
 
