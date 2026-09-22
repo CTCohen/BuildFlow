@@ -77,8 +77,33 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [x] Style-profile-to-theme mapping (`styleProfiles.json`) — done: all 32 themes in `themes-30.json` map 1:1 to the 10 spec profiles, no dupes/typos (verified 2026-09-21 by script cross-check)
 - [x] **Wire the customer's chosen `styleProfile` into the live Design Agent** — done, already wired; the prior note above was based on a stale/orphaned file, not the real pipeline. Investigated 2026-09-21 (lane/design, commit `c5119fc`): the actual production pipeline (`agents/design/design-agent.mjs`, `pickTheme`/`resolveDesign`) already reads `client.styleProfile`, resolves it through `styleProfiles.json` to a theme in `themes-30.json`, and writes the resolved `brand.primary/accent/...` into the client JSON the Astro site renders from (`app/src/data/clients/*.json`). Proven by the existing eval suite (`agents/design/evals/design.eval.mjs` d01/d02/d09/d14/d15), which was already passing 67/67 before this change and still passes 67/67 after. `app/src/lib/agent-decisions.ts` and `app/src/data/vertical-pools.ts` were a separate, never-imported "Agent Decision Engine v2" (only referenced from archived docs, not from any live code path) that read `vertical-pools.ts` instead of `styleProfile` — that dead code is what made the gap look real. Archived both to `archive/legacy-agent-decisions/` (not deleted) rather than left in place to keep confusing future audits. No design-system judgment call was actually needed — no decision logged to TYLER_QUEUE.md.
 - [ ] Discovery Agent (brand extraction from a real business URL) [◐ exists, evals passing; real-world test needs live URLs]
-- [ ] Demo includes the tier's sandbox dashboard (your ruling) [not started — needs Track H]
-- [ ] Demo tracking (view, scroll depth, section clicks) [not started]
+- [◐] **Demo includes the tier's sandbox dashboard (your ruling)** — view-model layer built,
+  2026-09-22: `platform/dashboards/lib/sandbox-dashboard.mjs` (see §7 for detail). Not yet rendered
+  into the live demo page — that's `website/`/`app/`, outside this session's allowed scope.
+- [x] **Demo tracking (view, scroll depth, section clicks)** — built 2026-09-22, per SPEC-06
+  section 2's locked event schema ("demo viewed (timestamp, device, referrer), time on site,
+  scroll depth (25/50/75/100%), section clicks, form interaction" / "view count, view duration,
+  scroll depth, form engagement, conversion rate, device type, traffic source"). `CONTRACT.md`
+  gap found first (checked before building, per this task's instruction): `admin.demos` only had
+  aggregate columns (`view_count`, `conversion_flag`), nowhere to log an individual scroll-depth
+  tick or section click. Added `platform/db/migrations/0007_demo_tracking.sql`:
+  `admin.demo_tracking_events` (one row per event, `event_type` + `payload jsonb` + `session_id`)
+  + `admin.record_demo_event()` (idempotent per demo+session+type+payload so a client-side beacon
+  retry never double-counts; bumps `admin.demos.view_count`/`admin.prospects.demo_view_count` on a
+  session's first `view`). New SQL test `platform/db/tests/22_demo_tracking.sql` (9 checks:
+  aggregate bump, session-scoped dedupe, cross-session counting, scroll-depth dedupe by exact
+  payload, section click + form interaction recording, unknown-event-type rejection, two demos not
+  colliding on a shared session_id), wired into `run-local.sh` — **not run live**, same
+  `shmget: Operation not permitted` sandbox restriction as the G0 isolation test and 0006's SQL
+  test; needs Tyler's Mac or CI. Read/aggregation side (DB-agnostic, fully tested):
+  `platform/dashboards/lib/demo-tracking.mjs` — `buildDemoAnalytics()` (view count, unique
+  sessions, device/referrer breakdown, scroll-depth reach per milestone as counts and %, section
+  click tally, form-engagement % of sessions, avg time on site) + `buildConversionRate()`. 9/9 new
+  JS unit tests pass live (`platform/dashboards/demo-tracking.test.mjs`). CONTRACT.md updated with
+  the new table. **Not built:** the client-side tracking beacon itself (the JS snippet embedded in
+  the demo page that fires these events on scroll/click) — that lives in the demo template under
+  `website/`/`app/`, outside this session's allowed scope (`agents/lead/` + `platform/dashboards/`
+  only); the recording/aggregation backend it would call is real and tested.
 
 ## 4. Lead pipeline — set up and tested
 - [x] Scoring model, business-size logic [done, lane/lead, verified 89/89 evals]
@@ -91,12 +116,13 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [ ] Postal address for the outreach email footer [credential/decision: Tyler — CAN-SPAM requires it; the send workflow refuses to run without one, see TYLER_QUEUE.md]
 - [x] Confirm or reverse 5 lead-engine implementation assumptions (weekend sends, bounce-rate pause threshold, open-triggered skip, calendar vs business days, default timezone) — kept all 5 defaults, ruled 2026-09-21
 - [x] Company-size cutoffs for Micro/SMB/Mid-Market routing — kept as built, ruled 2026-09-21
-- [ ] **Replace manual-review-by-Tyler for low-confidence lead lookups with an automated deep-research fallback**
-  [none — buildable now, lane/lead] — ruled 2026-09-21: below the 0.7 confidence bar, `agents/lead/lookup.py`
-  currently just flags the lead for Tyler to check by hand. Instead: add a second automated pass that widens the
-  search (more provider fan-out, cross-check the actual business website/socials/GBP listing directly rather than
-  just aggregator matches) before deciding. If the deeper pass still can't confirm the business, suppress/skip
-  that lead automatically — never surface individual leads to Tyler for review.
+- [x] **Replace manual-review-by-Tyler for low-confidence lead lookups with an automated deep-research fallback**
+  — done, commit `6b208ce`: below the 0.7 confidence bar (or no match), `lookup()` now falls through into a
+  second automated pass (`_deep_research`) that widens provider fan-out and verifies the business directly
+  against its website/GBP listing (`_verify_direct`) instead of only aggregator name-fuzz. Confirmed matches
+  are floored at 0.7 confidence and never flagged to Tyler; still-unconfirmed leads are suppressed
+  automatically. 101/101 lane evals pass, verified live 2026-09-22 (`python3 -m agents.lead.run_evals`).
+  Details: `agents/lead/TASKS.md`.
 
 ## 5. Billing (Track F — in progress, mocks only)
 - [x] Stripe test-mode products/prices (Micro, SMB, monthly+annual) [was: credential: Stripe test account] — done
@@ -150,10 +176,34 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
   excluded per the override), alerts view (SPEC-18 §6). Same "tested on fixtures, not wired" status as above.
   Not built: Google+2FA login, bulk CRM export, config screens for thresholds/dunning, onboarding queue,
   invoice disputes — deeper SPEC-18 §8 web-only items, next up once there's a real backend to build UI against.
-- [ ] Micro dashboard (lead inbox only) [depends: SMB dashboard component library] — logic is in place
-  (`resolveFeatures("micro")` reduces the same component set, per `tier-features.test.mjs`); no rendered
-  component library exists yet for either tier to share.
-- [ ] Sandbox dashboard (read-only demo embed) — not started.
+- [x] **Micro dashboard (lead inbox only) — verified end to end, 2026-09-22.** Confirmed
+  `resolveFeatures("micro")` correctly reduces `customer-dashboard.mjs`'s SMB-shaped builders:
+  `buildLeadInbox`/`toCsv` work identically for both tiers (lead inbox + CSV export are not
+  tier-gated at all, per the matrix), while `buildPipeline`, `setSubmissionNotes`,
+  `buildCrmConfigView` all throw for Micro, and `buildImageUploadConfig("micro")` returns
+  `single-logo` mode — landing Micro on lead-inbox-only in practice, not by a separate code path.
+  Added `platform/dashboards/customer-dashboard.test.mjs`'s
+  `"Micro dashboard end to end: lead inbox works, every other capability refuses Micro by flag"`
+  (walks every capability once for both tiers so a future SMB-only addition fails loudly instead
+  of silently leaking to Micro) + a CSV-export-still-works case. Was substantially done already
+  (per the dashboards agent's report); this session's work was the verification pass + the two new
+  tests. No rendered UI component library yet for either tier — same "logic layer only, gate G3"
+  status as the rest of Track H.
+- [x] **Sandbox dashboard (read-only demo embed) — built, 2026-09-22.**
+  `platform/dashboards/lib/sandbox-dashboard.mjs`'s `buildSandboxDashboard(tier)` composes the
+  SAME view-model logic the real customer dashboard uses (`tier-features.mjs`,
+  `customer-dashboard.mjs`, the new `demo-tracking.mjs`) over dedicated sample/fixture data
+  (`fixtures/sandbox-dashboard.fixtures.mjs` — every id is `sample-*`, every email `@example.com`),
+  never a real customer row: `assertSampleShaped()` throws if a real-looking id (`cust-*`, `fs-*`)
+  is ever passed in, and no mutation helper (`moveSubmissionStage`, `setSubmissionNotes`) is
+  re-exported, so nothing can wire a save button to it. Also serves BUILD_TASKS.md §3's "wire the
+  tier dashboard preview into demos" — the view includes `demoAnalytics` from the new demo-tracking
+  module (see §3 below), so a prospect's sandbox preview shows sample view/scroll/section-click
+  stats, matching Tyler's ruling that demos include the tier's sandbox dashboard. 6/6 new tests
+  pass (`platform/dashboards/sandbox-dashboard.test.mjs`). **Not done:** rendering this view model
+  into the actual Astro demo page markup — that's `website/`/`app/`/`agents/design/`, outside this
+  session's allowed scope (`agents/lead/` + `platform/dashboards/` only); the view model is real
+  and tested, the embed is the next lane's job.
 
 ## 8. Legal and compliance
 - [ ] Terms of Service, Privacy Policy — lawyer review [credential/decision: T1, lawyer chosen by Tyler]

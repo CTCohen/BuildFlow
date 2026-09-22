@@ -46,6 +46,35 @@ $ cd platform/dashboards && node --test *.test.mjs
 # fail 0
 ```
 
+## Built 2026-09-22 (follow-up session: demo tracking, sandbox dashboard, Micro verification)
+
+- `lib/demo-tracking.mjs` + `platform/db/migrations/0007_demo_tracking.sql` — demo tracking
+  (BUILD_TASKS.md §3, SPEC-06 §2's event schema: view/device/referrer, scroll depth 25/50/75/100%,
+  section clicks, form interaction, time on site). New `admin.demo_tracking_events` table +
+  idempotent `admin.record_demo_event()` (checked `platform/CONTRACT.md` first — `admin.demos` only
+  had aggregate `view_count`/`conversion_flag`, nowhere to log an individual event, so this table
+  was genuinely needed, not invented casually). SQL test `platform/db/tests/22_demo_tracking.sql`
+  (9 checks), wired into `run-local.sh` but **not run live** — same `shmget: Operation not
+  permitted` sandbox limit as gate G0 and 0006's SQL test. `demo-tracking.mjs`'s read/aggregation
+  side is fully tested live: `buildDemoAnalytics()`, `buildConversionRate()`.
+- `lib/sandbox-dashboard.mjs` — read-only demo-embed dashboard (BUILD_TASKS.md §7) and the tier
+  dashboard preview wired into the demo flow's view-model layer (§3's Tyler-ruling item). Composes
+  `tier-features.mjs` + `customer-dashboard.mjs` + `demo-tracking.mjs` over dedicated sample data
+  (`fixtures/sandbox-dashboard.fixtures.mjs`, all `sample-*` ids), never real rows — guarded by
+  `assertSampleShaped()` and by not re-exporting any mutation helper.
+- Micro dashboard: verified `tier-features.mjs`'s Micro override is correctly wired end to end
+  through every `customer-dashboard.mjs` builder (lead-inbox-only in practice, not just in the flag
+  object) and added the missing end-to-end test coverage BUILD_TASKS.md §7 called for.
+
+**Test evidence (run 2026-09-22):**
+```
+$ cd platform/dashboards && node --test *.test.mjs
+# tests 43
+# suites 0
+# pass 43
+# fail 0
+```
+
 ## Contract gap found, logged, not guessed around
 `app.form_submissions` (CONTRACT.md) has no `pipeline_stage` or `notes` column, but the tier matrix and
 BUILD_TASKS.md §7 require SMB to have an editable simple pipeline and per-lead notes. `customer-dashboard.mjs`
@@ -59,7 +88,9 @@ side table).
   provisions it (COORDINATOR_STATE.md gate G3).
 - Auth (Google + 2FA for Tyler's admin login; customer Supabase Auth) is not built here — out of this session's
   scope, needs the live Supabase project too.
-- Sandbox dashboard (read-only demo-page embed, per LANE-H-dashboards.md task 2) — not started this session.
+- Sandbox dashboard (read-only demo-page embed, per LANE-H-dashboards.md task 2) — view-model layer
+  built and tested this session (`lib/sandbox-dashboard.mjs`); embedding it into the live Astro
+  demo page markup is `website/`/`app/`, outside this session's allowed scope.
 - Actual React/Astro UI components (buttons, forms, tables) rendering these view models — not started; this
   session built the tested logic layer the UI would call. No existing dashboard UI location/pattern was found
   in the repo to match (checked `app/` — that's the Design Agent's per-client site renderer, a different
