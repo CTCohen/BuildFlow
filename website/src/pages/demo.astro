@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="See your demo — Fornax">
+  <section class="page-hero">
+    <h1>See your site before you pay for anything</h1>
+    <p class="tagline">We build your site before we ever ask you for money. This page explains the flow — there's no live intake form wired up yet (see the note below).</p>
+  </section>
+
+  <section class="demo-flow">
+    <h2>How a demo works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Tell us your business</h4>
+        <p>Name, trade, service area and a phone or email — that's all we need to start.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We build your site</h4>
+        <p>Our design agent generates a site from your brand and trade, checked for accessibility and speed before it reaches you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>You see the site and the dashboard</h4>
+        <p>A demo link shows your actual generated site plus a preview of the dashboard for your assigned tier: sample leads, CRM sync status, and your plan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Say yes and it goes live</h4>
+        <p>Choose Managed or Offboard, pay, and your site is live in about a minute.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-preview">
+    <h2>What the dashboard preview shows</h2>
+    <div class="preview-card">
+      <div class="preview-row">
+        <span class="preview-label">Site</span>
+        <span class="preview-value">Your generated site, live at a preview link</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">Leads</span>
+        <span class="preview-value">Sample lead activity so you can see the inbox in action</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">CRM status</span>
+        <span class="preview-value">Connected / not connected, shown for your assigned tier</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">Plan</span>
+        <span class="preview-value">Your assigned tier and price, ready to activate</span>
+      </div>
+    </div>
+    <p class="preview-note">
+      <strong>Placeholder — this preview mockup does not represent a real customer or real data.</strong>
+      A working sandbox dashboard is planned but not built yet (Track H, not started — see <code>operations/COORDINATOR_STATE.md</code>).
+    </p>
+  </section>
+
+  <section class="samples">
+    <h2>Sample generated sites</h2>
+    <p class="section-subtitle">Illustrative examples of the site quality Fornax generates — these are not real customers.</p>
+    <div class="samples-grid">
+      <a href="/samples/hvac" class="sample-card">HVAC</a>
+      <a href="/samples/plumbing" class="sample-card">Plumbing</a>
+      <a href="/samples/cleaning" class="sample-card">Cleaning</a>
+    </div>
+  </section>
+
+  <section class="cta-footer">
+    <h2>Want your own demo?</h2>
+    <p>The live intake form isn't wired up on this draft site yet. Once outreach is approved, demo requests will flow through here.</p>
+    <a href="/pricing" class="button button-secondary">See pricing</a>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 60px 20px 20px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    font-size: 40px;
+    margin: 0 0 16px;
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    color: #666;
+    font-size: 17px;
+  }
+
+  .demo-flow, .dashboard-preview, .samples, .cta-footer {
+    padding: 48px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .demo-flow h2, .dashboard-preview h2, .samples h2, .cta-footer h2 {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 28px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .step {
+    text-align: center;
+    padding: 24px;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #dc2626;
+    color: white;
+    font-weight: 800;
+    margin: 0 auto 16px;
+  }
+
+  .step h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+
+  .step p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .preview-card {
+    max-width: 640px;
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .preview-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+  }
+
+  .preview-row:last-child {
+    border-bottom: none;
+  }
+
+  .preview-label {
+    font-weight: 600;
+    color: #333;
+    flex-shrink: 0;
+  }
+
+  .preview-value {
+    color: #666;
+    text-align: right;
+  }
+
+  .preview-note {
+    max-width: 640px;
+    margin: 24px auto 0;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.6;
+  }
+
+  .preview-note code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: #666;
+    margin: -16px 0 32px;
+  }
+
+  .samples-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sample-card {
+    padding: 16px 28px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .sample-card:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+    text-decoration: none;
+  }
+
+  .cta-footer {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+
+  .cta-footer p {
+    color: #666;
+    margin: 0 0 24px;
+  }
+
+  .button {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  .button-secondary {
+    background: white;
+    color: #333;
+    border: 2px solid #e5e5e5;
+  }
+
+  .button-secondary:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+    text-decoration: none;
+  }
+</style>

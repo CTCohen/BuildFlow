@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Features — Fornax">
+  <section class="page-hero">
+    <h1>What Fornax does for your business</h1>
+    <p class="tagline">A site built for your trade, leads that reach you in real time, and a CRM sync that keeps your pipeline current — without you touching a website builder.</p>
+  </section>
+
+  <section class="feature-block">
+    <h2>Lead Generation Engine</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Scoring, not guesswork</h3>
+        <p>Every prospect and every lead is scored so effort goes where it converts, and your tier is assigned to match your business rather than a self-service picker.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Real-time push</h3>
+        <p>Form submissions and click-to-call events land in your dashboard as they happen, not in a weekly digest.</p>
+      </div>
+      <div class="feature-card">
+        <h3>CRM auto-create</h3>
+        <p>On SMB, a new lead becomes a record in your CRM automatically — no manual re-entry.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-block feature-block-alt">
+    <h2>AI-Designed Websites</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Brand preserved, not replaced</h3>
+        <p>Your logo, colors and service area drive the design — we don't hand you a generic template.</p>
+      </div>
+      <div class="feature-card">
+        <h3>8-10 styling profiles</h3>
+        <p>Each generated site is resolved through a styling profile matched to your trade and brand, not a single one-size-fits-all theme.</p>
+      </div>
+      <div class="feature-card">
+        <h3>One-click customization</h3>
+        <p>Within your plan, adjust text, images, contact details and (on SMB) colors and fonts — no code, no separate editor to learn.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Professional Redesign (waitlist)</h3>
+        <p>Want deeper layout changes? Our human-executed redesign service is available as an add-on, currently waitlisted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-block">
+    <h2>CRM Integrations</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Top trades CRMs</h3>
+        <p>HubSpot first at launch, with Jobber, ServiceTitan, Housecall Pro and Successware planned next.</p>
+      </div>
+      <div class="feature-card">
+        <h3>One-way sync at launch</h3>
+        <p>New leads push into your CRM automatically. A feedback loop back into your dashboard is on the roadmap.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-block feature-block-alt">
+    <h2>Analytics &amp; Reporting</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Dashboard</h3>
+        <p>See every lead, its source, and its status in one place.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Monthly report</h3>
+        <p>A recurring summary of leads, site performance and search visibility.</p>
+      </div>
+      <div class="feature-card">
+        <h3>ROI calculator</h3>
+        <p>Plan-level tooling to see what your site is worth against its cost — coming as reporting matures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-block">
+    <h2>Customer Support</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Email support</h3>
+        <p>Published response times of 24-48 hours on Managed plans.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Help center</h3>
+        <p>Public docs for getting started, CRM setup per integration, troubleshooting and best practices — see <a href="/docs">Docs</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-footer">
+    <h2>See it on your own business</h2>
+    <p>Request a demo and we'll show you the actual site and dashboard, not a mockup.</p>
+    <a href="/demo" class="button button-primary">Get my demo</a>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 60px 20px 20px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    font-size: 40px;
+    margin: 0 0 16px;
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    color: #666;
+    font-size: 17px;
+  }
+
+  .feature-block {
+    padding: 48px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-block-alt {
+    background: #f9f9f9;
+    max-width: none;
+  }
+
+  .feature-block-alt > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature-block h2 {
+    font-size: 28px;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #dc2626;
+  }
+
+  .feature-block-alt .feature-card {
+    background: white;
+  }
+
+  .feature-card h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+  }
+
+  .feature-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .cta-footer {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 40px auto 60px;
+  }
+
+  .cta-footer h2 {
+    font-size: 32px;
+    margin: 0 0 12px;
+  }
+
+  .cta-footer p {
+    color: #666;
+    margin: 0 0 24px;
+  }
+
+  .button {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  .button-primary {
+    background: #dc2626;
+    color: white;
+  }
+
+  .button-primary:hover {
+    background: #b91c1c;
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Docs — Fornax">
+  <section class="page-hero">
+    <h1>Docs</h1>
+    <p class="tagline">Public documentation — no login required. This is a Phase 1 draft; content will expand as features ship.</p>
+  </section>
+
+  <section class="docs-body">
+    <nav class="docs-nav">
+      <a href="#getting-started">Getting Started</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#best-practices">Best Practices</a>
+    </nav>
+
+    <article id="getting-started" class="docs-section">
+      <h2>Getting Started</h2>
+      <p>After you request a demo, here's what happens:</p>
+      <ol>
+        <li>We build your site from your business name, trade, service area and logo (if you have one).</li>
+        <li>You get a demo link showing your actual site and a preview of your dashboard.</li>
+        <li>If you say yes, you choose Managed (we host it) or Offboard (you take it), pay, and your site is live in about a minute.</li>
+        <li>Your dashboard login arrives by email. From there you can edit text, contact info and images (Micro), or colors, fonts and gallery content (SMB).</li>
+      </ol>
+      <p>There's no website editor to learn and no separate hosting account to set up on Managed plans.</p>
+    </article>
+
+    <article id="integrations" class="docs-section">
+      <h2>Integrations</h2>
+      <p>CRM sync is available on the SMB tier and above. At launch:</p>
+      <ul>
+        <li><strong>HubSpot</strong> — first CRM integration, one-way sync (new leads push into HubSpot automatically).</li>
+        <li><strong>Jobber, ServiceTitan, Housecall Pro, Successware</strong> — planned next, not yet available.</li>
+      </ul>
+      <p>Per-CRM setup guides will be published here as each integration ships. None are published yet beyond this overview.</p>
+    </article>
+
+    <article id="troubleshooting" class="docs-section">
+      <h2>Troubleshooting</h2>
+      <p>Common questions while this product is early:</p>
+      <ul>
+        <li><strong>My leads aren't showing up in my CRM.</strong> Confirm CRM sync is enabled for your tier (SMB and above) and that your CRM connection shows "Connected" in your dashboard.</li>
+        <li><strong>I need to update my site's contact info or hours.</strong> Use your dashboard's edit screen — changes apply within your plan's editing scope.</li>
+        <li><strong>Something looks broken on my site.</strong> Email support with a screenshot and the page URL; published response time is 24-48 hours.</li>
+      </ul>
+      <p>This section will grow as real support tickets surface real issues — it's not exhaustive yet.</p>
+    </article>
+
+    <article id="best-practices" class="docs-section">
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Keep your Google Business Profile reviews current — they pull directly onto your site.</li>
+        <li>Respond to leads quickly; response speed matters more to conversion than site polish.</li>
+        <li>Use your service area setting accurately — it affects which searches your site is relevant for.</li>
+        <li>On SMB, review your CRM sync weekly until you're confident leads are landing correctly.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="cta-footer">
+    <h2>Still have questions?</h2>
+    <p>See <a href="/features">Features</a> and <a href="/pricing">Pricing</a>, or request a <a href="/demo">demo</a>.</p>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 60px 20px 20px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    font-size: 40px;
+    margin: 0 0 16px;
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    color: #666;
+    font-size: 17px;
+  }
+
+  .docs-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  .docs-nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+
+  .docs-nav a {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .docs-section {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .docs-section:last-child {
+    border-bottom: none;
+  }
+
+  .docs-section h2 {
+    font-size: 24px;
+    margin: 0 0 16px;
+  }
+
+  .docs-section p {
+    color: #444;
+    line-height: 1.7;
+    margin: 0 0 16px;
+  }
+
+  .docs-section ul, .docs-section ol {
+    color: #444;
+    line-height: 1.8;
+    padding-left: 20px;
+    margin: 0 0 16px;
+  }
+
+  .cta-footer {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 48px 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .cta-footer h2 {
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+
+  .cta-footer p {
+    color: #666;
+    margin: 0;
+  }
+</style>

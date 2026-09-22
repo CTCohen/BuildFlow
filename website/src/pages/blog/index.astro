@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'why-most-service-business-ads-fail',
+    title: 'Why Most Service Business Ads Fail (And What to Fix First)',
+    excerpt: 'Ad spend rarely fails because of the ad. It fails because of what happens after the click. Here\'s where trades businesses actually lose leads.',
+    date: '2026-09-15',
+  },
+  {
+    slug: 'traffic-vs-conversion-for-trades',
+    title: 'Traffic vs. Conversion: Why More Visitors Isn\'t the Goal',
+    excerpt: 'A busier website isn\'t a better one. For a trades business, conversion — not traffic — is the number that pays the bills.',
+    date: '2026-09-18',
+  },
+];
+---
+
+<Layout title="Blog — Fornax">
+  <section class="page-hero">
+    <h1>Blog</h1>
+    <p class="tagline">Lead generation, website design, and what actually moves the needle for trades businesses. Written in-house, published as we go.</p>
+  </section>
+
+  <section class="posts">
+    {posts.map((post) => (
+      <article class="post-card">
+        <p class="post-date">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+        <p class="post-excerpt">{post.excerpt}</p>
+        <a href={`/blog/${post.slug}`} class="post-link">Read more →</a>
+      </article>
+    ))}
+  </section>
+
+  <section class="cta-footer">
+    <h2>Want leads, not just visitors?</h2>
+    <p>See how Fornax turns your site into a lead-capture machine.</p>
+    <a href="/features" class="button button-primary">See Features</a>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 60px 20px 20px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    font-size: 40px;
+    margin: 0 0 16px;
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    color: #666;
+    font-size: 17px;
+  }
+
+  .posts {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  .post-card {
+    padding: 28px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .post-card:last-child {
+    border-bottom: none;
+  }
+
+  .post-date {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .post-card h2 {
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+
+  .post-card h2 a {
+    color: #333;
+  }
+
+  .post-card h2 a:hover {
+    color: #dc2626;
+    text-decoration: none;
+  }
+
+  .post-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+
+  .post-link {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .cta-footer {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 48px 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .cta-footer h2 {
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+
+  .cta-footer p {
+    color: #666;
+    margin: 0 0 24px;
+  }
+
+  .button {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  .button-primary {
+    background: #dc2626;
+    color: white;
+  }
+
+  .button-primary:hover {
+    background: #b91c1c;
+    text-decoration: none;
+  }
+</style>

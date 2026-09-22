@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta name="description" content="Fornax builds a website for your trades business before you ask, shows it to you with your own dashboard, and puts it live in about a minute when you say yes." />
     <meta property="og:title" content="Fornax — Professional Websites for Service Businesses" />
     <meta property="og:description" content="Your website, your leads, your CRM. Built for trades." />
-    <meta property="og:image" content="https://buildflow.com/og-image.png" />
+    <meta property="og:image" content="/og-image.png" />
     <style is:global>
       * {
         margin: 0;
@@ -138,9 +138,12 @@ const { title } = Astro.props;
           </a>
         </div>
         <ul class="nav-links">
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#results">Results</a></li>
-          <li><a href="mailto:hello@buildflow.com">Contact</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/demo">Demo</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </div>
     </nav>
@@ -161,15 +164,19 @@ const { title } = Astro.props;
           <h4>Links</h4>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#results">Examples</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/demo">Demo</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/docs">Docs</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="/legal/terms">Terms of Service</a></li>
             <li><a href="/legal/privacy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <p><a href="mailto:hello@buildflow.com">hello@buildflow.com</a></p>
+          <p>Contact email and live domain are not yet public — see <code>TYLER_QUEUE.md</code>. This site is a draft, not yet deployed.</p>
         </div>
       </div>
       <div class="footer-bottom">

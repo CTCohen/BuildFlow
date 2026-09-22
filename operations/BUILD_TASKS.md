@@ -172,10 +172,24 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
   run `platform/db/run-local.sh` on a real machine (as Tyler did for Foundation's isolation test) before this
   is trusted as proven, not just written.**
 
-## 9. Marketing site (Track E — not started)
-- [ ] Home, Features, Pricing, Demo, Blog, Docs, About pages [none, buildable now — draft, not deployed]
+## 9. Marketing site (Track E — pages built, 2026-09-22)
+- [✔] Home, Features, Pricing, Demo, Blog, Docs, About pages — all built as draft Astro pages under `website/src/pages/`
+  (`index.astro` pre-existing, extended; new: `features.astro`, `pricing.astro`, `demo.astro`, `about.astro`,
+  `docs/index.astro`, `blog/index.astro` + 2 posts). Pricing page numbers match `docs/PRICING.md` exactly
+  (Micro $149/$1,490/$499, SMB $249/$2,490/$799, Mid-Market $399/$3,990/$1,299 shown as paused/waitlist per
+  DECISIONS.md item 4). No fabricated testimonials, customer logos or case studies — Demo page's dashboard
+  preview and About page's proof section are explicitly marked as placeholders pending real customers, per
+  CLAUDE.md's "Don't" rule. No real domain hardcoded: replaced pre-existing `hello@buildflow.com` mailto links
+  and the absolute `https://buildflow.com/og-image.png` OG tag with internal `/demo` links and a relative
+  `/og-image.png` path; footer states the contact email/domain are not yet public. Build proof:
+  `cd website && npm run build` → `15 page(s) built in 648ms`, no errors (the `failed to copy trust settings of
+  system certificate` lines are unrelated macOS keychain warnings, not build failures). `python3
+  governance/enforce.py --lint` → `0 stale-term hit(s)`. Not done: Case Studies page (spec lists it, but Tyler's
+  override explicitly forbids case studies before real customers exist, and it's outside this task's scope
+  list) — logged as a real gap, not silently dropped.
 - [ ] Logo and brand identity [decision: Tyler picks direction]
-- [ ] Deploy (not before legal sign-off if it names real pricing/claims) [depends: §8]
+- [ ] Deploy (not before legal sign-off if it names real pricing/claims) [depends: §8]. Also stay clear of
+  `platform/hosting/` — another lane is building Cloudflare hosting concurrently; this task never touched it.
 
 ## 10. Business setup (Tyler-only, no Claude task)
 - [ ] Entity, EIN, bank account, business address [credential/action: Tyler only]
