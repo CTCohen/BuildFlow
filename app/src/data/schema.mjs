@@ -70,6 +70,7 @@ const PLACEHOLDER_PATTERNS = [
   ["'insert X here'", /\binsert\b[^.]{0,30}\bhere\b/i],
   ["xxxx", /x{4,}/i],
   ["lipsum filler", /\bipsum\b/i],
+  ["scaffold FILL_ value", /\bFILL_/],
 ];
 
 function isNonEmptyString(v) {
@@ -102,6 +103,16 @@ export function validateClient(data) {
   if (!TIERS.includes(data.tier)) err(`tier: required, one of ${TIERS.join(", ")}`);
   else if (data.tier === "mid-market") warn("tier: mid-market is paused (not built); use smb or micro");
   if (!STYLE_PROFILES.includes(data.styleProfile)) err(`styleProfile: required, one of ${STYLE_PROFILES.join(", ")}`);
+
+  // ---- customer sliders (SMB only) ----
+  if (data.customization != null) {
+    const cu = data.customization;
+    if (data.tier === "micro") warn("customization: Micro has no sliders; it will be ignored");
+    if (cu.primary != null && !HEX_RE.test(cu.primary)) err("customization.primary: hex color");
+    if (cu.accent != null && !HEX_RE.test(cu.accent)) err("customization.accent: hex color");
+    if (cu.spacing != null && !(typeof cu.spacing === "number" && cu.spacing >= 0.8 && cu.spacing <= 1.3)) err("customization.spacing: number 0.8-1.3");
+    if (cu.radius != null && !(typeof cu.radius === "number" && cu.radius >= 0 && cu.radius <= 20)) err("customization.radius: number 0-20 (px)");
+  }
 
   // ---- business ----
   const b = data.business || {};

@@ -36,7 +36,7 @@ const brandInk = readableInk(client.brand.primary);
 const accentInk = readableInk(client.brand.accent);
 
 // Extended CSS variables for mega-scale design tokens
-const cssVars = [
+const cssVarList = [
   `--brand:${client.brand.primary}`,
   `--brand-ink:${brandInk}`,
   `--brand-accent:${client.brand.accent}`,
@@ -44,7 +44,17 @@ const cssVars = [
   // Support primaryDark/primaryLight if present (from vertical pools)
   ...(client.brand.primaryDark ? [`--brand-dark:${client.brand.primaryDark}`] : []),
   ...(client.brand.primaryLight ? [`--brand-light:${client.brand.primaryLight}`] : []),
-].join(';');
+];
+
+// SMB customer sliders (System 04 section 7): spacing scale 0.8-1.3x, border radius 0-20px.
+const custom = client.tier === "smb" ? client.customization : undefined;
+const BASE_SECTION_REM = { compact: 4, comfortable: 5.5, spacious: 7 }[client.brand.density] ?? 5.5;
+const sliderVars = [
+  ...(custom?.spacing != null ? [`--density-section:${(BASE_SECTION_REM * custom.spacing).toFixed(2)}rem`] : []),
+  ...(custom?.radius != null ? [`--radius-lg:${custom.radius}px`, `--radius-xl:${Math.round(custom.radius * 1.5)}px`] : []),
+];
+
+const cssVars = [...cssVarList, ...sliderVars].join(';');
 
 const jsonLd = {
   "@context": "https://schema.org",

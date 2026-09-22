@@ -61,6 +61,8 @@ export interface Client {
   brand: {
     primary: string;
     accent: string;
+    primaryDark?: string;
+    primaryLight?: string;
     heroStyle: "photo-left" | "full-bleed" | "split" | "accent-bar" | "minimal";
     typePairing: "grotesk-serif" | "humanist" | "classic";
     density: "compact" | "comfortable" | "spacious";
@@ -70,6 +72,8 @@ export interface Client {
   content: { en: ClientContent; es?: ClientContent };
   tier: "micro" | "smb" | "mid-market";
   styleProfile: string;
+  // SMB-only customer sliders (System 04 section 7); ignored for Micro.
+  customization?: { primary?: string; accent?: string; spacing?: number; radius?: number };
   media?: { heroImage?: string; logo?: string };
   // Mega-scale: Vertical pool + conditional features
   vertical?: string;
@@ -85,7 +89,9 @@ export interface Client {
   };
 }
 
-const raw = loadRaw(SLUG);
+// The Design Agent passes the resolved client inline (CLIENT_DATA); otherwise read the file.
+const INLINE = import.meta.env.CLIENT_DATA as string;
+const raw = INLINE ? JSON.parse(INLINE) : loadRaw(SLUG);
 const result = validateClient(raw);
 if (!result.ok) {
   throw new Error(
@@ -106,3 +112,5 @@ export function t(lang: Lang): ClientContent {
 }
 // Languages this client actually has content for (English-only at launch).
 export const langs = (Object.keys(client.content) as Lang[]).filter((l) => client.content[l]);
+// Micro is the reduced template: no About page, no service-area pages, no About/Area sections on home.
+export const isMicro = client.tier === "micro";

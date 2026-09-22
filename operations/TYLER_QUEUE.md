@@ -74,6 +74,13 @@ build keeps moving on mocks until you do.
 - [ ] **Build the Docker image once**, to prove it, not just its unit tests: `docker build -t buildflow-platform platform/service && docker run -p 8080:8080 buildflow-platform`, then `curl localhost:8080/health` should return 200.
 - [ ] **When you create the real Supabase project:** expose only the `app` schema to its Data API (never `admin`), set minimum password length to 12, and enroll TOTP on your own account before adding yourself to `admin.admins`. Full steps in `platform/AUTH-SETUP.md`.
 
+## 6. Design lane — three small design calls, two you can just run
+- [ ] **Micro tier: one hero layout or a few?** Built with one (`split`) so there's something concrete to look at. Ship with one, or want 2-3 options?
+- [ ] **Micro tier: keep both the services grid page and individual service pages, or cut one?** Both exist now; wasn't an obvious call which one a $149/mo customer needs.
+- [ ] **SMB font choice: leave it tied to the style profile, or add it as its own separate slider?** Cheap to add if you want it — already validated in the schema, just not exposed as a control yet.
+- [ ] **Run the visual/speed QA checks on your machine (not blocking, whenever convenient)** — the build sandbox can't open a browser to run these. From `app/`: `CLIENT=demo-plumbing npm run build && npm run qa -- --client demo-plumbing --stage demo`. Flag anything scoring below 80.
+- [ ] **Eyeball the 20 sample sites** — run `node agents/design/smoke.mjs`, open `agents/design/out/smoke/index.html`, see if they look right to you (4 trades × 2 tiers × a few styles).
+
 ## Calls and hands-on (needed later, not now)
 - Sales calls and onboarding during the soft launch
 - Recording the onboarding/offboarding videos (~4-5 hours on camera)

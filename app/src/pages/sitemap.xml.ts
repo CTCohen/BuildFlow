@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
+import { isMicro } from "../lib/client";
 
-const PATHS = ["/", "/services", "/about", "/contact"];
+const PATHS = isMicro ? ["/", "/services", "/contact"] : ["/", "/services", "/about", "/contact"];
 
 export const GET: APIRoute = ({ site }) => {
   const origin = (site?.toString() ?? "https://example.com").replace(/\/$/, "");
