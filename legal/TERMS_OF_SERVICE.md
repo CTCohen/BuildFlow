@@ -10,7 +10,7 @@ phase: operational
 
 > **DRAFT for counsel review (2026-09-18).** Rebuilt from the spec (Systems 01, 03, 08, 11, 14). Do not publish or charge anyone until a lawyer has reviewed it and the business address in Section 16 is filled in.
 
-# BuildFlow Terms of Service
+# Fornax Terms of Service
 
 **Last Updated:** September 2026
 
@@ -18,11 +18,11 @@ phase: operational
 
 ## 1. Overview
 
-BuildFlow ("we," "us," "our") provides automated website design, hosting, and lead-management services to service-based businesses ("you," "Customer"). By purchasing a BuildFlow plan you agree to these Terms.
+Fornax ("we," "us," "our") provides automated website design, hosting, and lead-management services to service-based businesses ("you," "Customer"). By purchasing a Fornax plan you agree to these Terms.
 
-**Service:** BuildFlow builds a website for your business from information you provide and public information about your business. Under **Managed**, we host and operate the site as an ongoing service; no code, hosting or DNS control is handed to you. Under **Offboard**, we deliver the site and transfer domain ownership to you, and the ongoing relationship ends.
+**Service:** Fornax builds a website for your business from information you provide and public information about your business. Under **Managed**, we host and operate the site as an ongoing service; no code, hosting or DNS control is handed to you. Under **Offboard**, we deliver the site and transfer domain ownership to you, and the ongoing relationship ends.
 
-**Plans and pricing** (your tier is assigned by BuildFlow based on your business; it is shown to you before you pay):
+**Plans and pricing** (your tier is assigned by Fornax based on your business; it is shown to you before you pay):
 
 | Tier | Managed (monthly) | Managed (annual) | Offboard (one-time) |
 |---|---|---|---|
@@ -38,7 +38,7 @@ Prices may change for new customers; a price already agreed for your plan does n
 
 **Included:** hosting on our infrastructure (Cloudflare and our platform providers), SSL, custom domain routing, a lead inbox and email lead alerts, review display, accessibility and performance checks, and the features listed for your tier (SMB also includes a CRM connection to one supported CRM). Support is by email and help center.
 
-**What BuildFlow retains:** the site runs on our platform. We do not hand over source code, server access or DNS control. We maintain SSL, backups and security updates.
+**What Fornax retains:** the site runs on our platform. We do not hand over source code, server access or DNS control. We maintain SSL, backups and security updates.
 
 **Your edits:** you edit your content through the dashboard within your tier's limits. Micro: business name, service text, contact information, hours, logo and gallery images. SMB: text and images, plus color, font and spacing settings within a design profile. Requests outside your tier's limits are either added as platform-wide features or declined; we do not write per-customer code.
 
@@ -98,7 +98,7 @@ We collect the business, contact, brand, content and usage information needed to
 
 ## 9. Intellectual property
 
-You retain all rights to content you provide and license it to us solely to build, host and maintain your site. The platform, templates, design system and code remain BuildFlow's property. Under Managed you receive a license to have your site served from the platform for your business only. Under Offboard you receive the delivered site files for your business only; you may not resell or redistribute the templates or design system.
+You retain all rights to content you provide and license it to us solely to build, host and maintain your site. The platform, templates, design system and code remain Fornax's property. Under Managed you receive a license to have your site served from the platform for your business only. Under Offboard you receive the delivered site files for your business only; you may not resell or redistribute the templates or design system.
 
 ---
 
@@ -140,7 +140,7 @@ If we make a material change we will email you at least 30 days in advance. Cont
 
 ## 16. Contact
 
-**BuildFlow**
+**Fornax**
 - Support: support@buildflow.com
 - Legal: legal@buildflow.com
 - Website: buildflow.io
@@ -148,4 +148,4 @@ If we make a material change we will email you at least 30 days in advance. Cont
 
 ---
 
-**By purchasing a BuildFlow plan, you agree to these Terms of Service.**
+**By purchasing a Fornax plan, you agree to these Terms of Service.**

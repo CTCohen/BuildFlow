@@ -48,7 +48,7 @@ Lock down legal compliance (GDPR, CCPA), security infrastructure (auth, encrypti
 - **HIPAA:** Not required (service businesses don't handle PHI). Defer indefinitely.
 - **SOC 2 Type II:** Pursue in Phase 2 (10–50 customers, $3–5K ARR). Rationale: sales accelerant at that ARR (~30-40% of prospects ask); pre-revenue = opportunity cost; Phase 3+ too late (procurement blockers). Timeline: Week 5-8 of Phase 2. Cost: ~$50K audit + 200 hrs documentation.
 
-**CCPA compliance (applies now):** BuildFlow is Service Provider; customer discloses collection, honors opt-outs; BuildFlow encrypts/secures/deletes on request (45 days), no data sale.
+**CCPA compliance (applies now):** Fornax is Service Provider; customer discloses collection, honors opt-outs; Fornax encrypts/secures/deletes on request (45 days), no data sale.
 
 **GDPR (Phase 2+ if EU customers):** DPA, data subject rights, 72-hour breach notification; Phase 1 deferred (US-only).
 
@@ -80,7 +80,7 @@ Lock down legal compliance (GDPR, CCPA), security infrastructure (auth, encrypti
 
 **Backups:** daily, 30-day retention, separate region, same encryption
 
-**Payment cards:** Stripe handles entirely; BuildFlow never sees card data, stores tokens only; PCI out of scope (Stripe Level 1)
+**Payment cards:** Stripe handles entirely; Fornax never sees card data, stores tokens only; PCI out of scope (Stripe Level 1)
 
 **API keys:** cryptographically random 32+ chars, hashed storage, HTTPS-only transmission, customer-rotatable
 
@@ -112,18 +112,18 @@ Lock down legal compliance (GDPR, CCPA), security infrastructure (auth, encrypti
 
 **Vetting:** security questionnaire pre-signing; require SOC 2 Type II or equivalent, TLS 1.2+/at-rest encryption, retention policy, incident SLA
 
-**DPA:** required for vendors accessing personal data; BuildFlow as Controller, vendor as Processor; vendor liable if breached
+**DPA:** required for vendors accessing personal data; Fornax as Controller, vendor as Processor; vendor liable if breached
 
 ---
 
 ## SECTION 7: Liability & Insurance
 
-**Framework:** BuildFlow responsible for infra/security/uptime/privacy; customer responsible for content/business decisions/law compliance
+**Framework:** Fornax responsible for infra/security/uptime/privacy; customer responsible for content/business decisions/law compliance
 
-**ToS customer restrictions:** no illegal content, no spam, no harassment, no IP violations — BuildFlow can disable site without notice on violation
+**ToS customer restrictions:** no illegal content, no spam, no harassment, no IP violations — Fornax can disable site without notice on violation
 
 **Insurance:** E&O + cyber liability — skip Phase 1 (too small), consider Phase 2 at $100K+ ARR
 
 **Limitation of liability:** capped at 12 months of fees paid; excludes indirect/consequential damages
 
-**Indemnification:** customer indemnifies BuildFlow for content-caused lawsuits; BuildFlow indemnifies customer for BuildFlow-security-caused breaches
+**Indemnification:** customer indemnifies Fornax for content-caused lawsuits; Fornax indemnifies customer for Fornax-security-caused breaches

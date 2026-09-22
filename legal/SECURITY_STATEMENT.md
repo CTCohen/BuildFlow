@@ -8,16 +8,16 @@ tier_scope: all
 phase: operational
 ---
 
-> **DRAFT for counsel review (2026-09-18).** Rebuilt from spec System 11 and System 03. It states commitments and targets only; it does not claim certifications BuildFlow does not hold. Not to be published until reviewed.
+> **DRAFT for counsel review (2026-09-18).** Rebuilt from spec System 11 and System 03. It states commitments and targets only; it does not claim certifications Fornax does not hold. Not to be published until reviewed.
 
-# BuildFlow Security Statement
+# Fornax Security Statement
 
 ## Summary
-BuildFlow hosts customer websites on established infrastructure providers, isolates each customer's data, encrypts sensitive credentials, keeps daily backups, and logs administrative access. This page describes our practices and targets.
+Fornax hosts customer websites on established infrastructure providers, isolates each customer's data, encrypts sensitive credentials, keeps daily backups, and logs administrative access. This page describes our practices and targets.
 
 ## 1. Infrastructure
 - **Sites, DNS, CDN, storage:** Cloudflare. **Database and authentication:** Supabase (PostgreSQL). **Backend services:** a containerized cloud service. **Payments:** Stripe (we never see card numbers). **Email:** SendGrid.
-- Our providers publish their own certifications (for example SOC 2). **These are the providers' certifications, not BuildFlow's.** BuildFlow has not yet completed its own SOC 2 audit; we plan to pursue it as we grow.
+- Our providers publish their own certifications (for example SOC 2). **These are the providers' certifications, not Fornax's.** Fornax has not yet completed its own SOC 2 audit; we plan to pursue it as we grow.
 - Availability target: 99.5% per month, excluding scheduled maintenance. Scheduled maintenance happens outside business hours with notice where possible.
 
 ## 2. Encryption
@@ -33,7 +33,7 @@ BuildFlow hosts customer websites on established infrastructure providers, isola
 - Sessions: httpOnly, Secure, SameSite cookies, CSRF protection, inactivity timeout.
 
 ## 4. Payments
-Stripe handles all card data; BuildFlow stores tokens only. Payment card data is out of BuildFlow's PCI scope.
+Stripe handles all card data; Fornax stores tokens only. Payment card data is out of Fornax's PCI scope.
 
 ## 5. Vendor risk
 We review each critical vendor (Stripe, Cloudflare, Supabase, SendGrid, our backend cloud provider) for security posture, retention policy and incident response before relying on it, and sign data processing terms where personal data is involved.
