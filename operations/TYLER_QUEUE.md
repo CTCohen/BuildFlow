@@ -38,7 +38,7 @@ build keeps moving on mocks until you do.
 - [ ] **Mailboxes** — `tyler@`, `hello@`, `support@`, `legal@`, `security@`
 - [ ] **SendGrid** — needs its own BuildFlow account (checked: no account-wide key exists, only another venture's — don't reuse it, it would hurt that venture's sender reputation). Domain auth + separate cold-outreach sender domain; warmup takes time, so earlier is better.
 - [ ] **Cloudflare** — account + API token (unlocks real site hosting)
-- [ ] **Supabase** — needs its own BuildFlow project (checked: none exists yet — every venture gets its own). Unlocks the real database; Foundation lane is fully tested but local-only until this exists.
+- [◐] **Supabase** — project created (`wvkvcuffyzbejuipjfhu.supabase.co`), URL + publishable key stored locally 2026-09-21. Still need the **service role key** (Project Settings → API → service_role) before Foundation can actually connect for real.
 - [ ] **Google Cloud** — OAuth client (unlocks real customer/admin login)
 - [ ] **Stripe** — test-mode account first (unlocks real billing testing)
 - [ ] **Anthropic Console API key** — with a $30/mo spend limit set

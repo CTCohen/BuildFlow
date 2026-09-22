@@ -19,7 +19,7 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [x] Migrations, RLS policies, service skeleton, monitoring script — done, commit `2dd5a19`
 - [x] Service unit tests (6/6) — verified passing
 - [x] **RLS isolation test actually run and confirmed** — done, Tyler ran it 2026-09-21, all isolation + monitoring tests PASS
-- [ ] Real Supabase project provisioned [credential: Supabase account + project]
+- [◐] Real Supabase project provisioned — project exists, URL + publishable key stored in `.local/supabase.env` 2026-09-21 [credential: still need the service role key before backend can connect]
 - [ ] Real Google OAuth client [credential: Google Cloud OAuth client]
 - [ ] Container deploy to Railway (real, not local) [credential: Railway project already exists — confirm env]
 
