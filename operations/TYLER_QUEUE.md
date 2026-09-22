@@ -19,37 +19,41 @@ yourself — the daily/weekly agents log new items here and read this file to kn
 ## 1. Genuinely blocking work right now
 - [x] **Run the database safety-test script** — done 2026-09-21. Every isolation and monitoring test passed.
   The Foundation lane is now fully proven and ready to merge.
-- [ ] **Give a mailing address** for the bottom of outreach emails (the law requires a real postal address on any
-  commercial email — CAN-SPAM). The lead-engine lane has this coded as a hard requirement and won't run for real
-  without it. A PO box is recommended over a home address, since you'd rather not use that.
+- [x] **Mailing address** — given 2026-09-21 (your home address, for now). Stored in `.local/business-contact.env`,
+  gitignored, never in a tracked file. Recommend switching to a PO box before real volume, but this unblocks
+  building/testing now.
 - [x] **The 5 lead-engine send-mechanics guesses** (weekend sends, bounce-pause threshold, skip-if-opened, calendar
   vs. business days, default timezone) — keeping all 5 defaults, per Tyler 2026-09-21. Resolved, not open.
-- [ ] **Two more lead-engine numbers, not part of the 5 above, still genuinely open:**
-  - **Company-size cutoffs.** The spec just says "1-50 employees" without splitting it — the build guessed Micro
-    = under 3 people, SMB = 3-20, Mid-Market = above that or over $5M revenue. This number decides who gets
-    contacted at all vs. suppressed, so worth a real look when you have a minute — not blocking anything today.
-  - **Manual-review threshold for lead lookup.** When the system isn't confident it found the right business
-    online, it flags it for you to check by hand below a 0.7 confidence score (spec doesn't set a number). Fine
-    as a default; flag if you want it more or less cautious.
+- [x] **Company-size cutoffs** — kept as built (Micro under 3 employees, SMB 3-20, Mid-Market above/$5M+), matches
+  your own pricing research. Ruled 2026-09-21, revisit only if it looks wrong later.
+- [x] **Manual-review threshold for lead lookup** — redesigned instead of ruled: a low-confidence lead no longer
+  gets flagged for you to check by hand. It now gets a second, deeper automated pass (broader search, more source
+  cross-checks, a look at the actual site/socials) before a decision. Only skipped if that still can't confirm it.
+  New build task logged in `BUILD_TASKS.md` §4. You should never see individual leads for review.
 
 ## 2. Accounts and credentials — needed before the *real* (not mock/local) version of each piece can run
 Not blocking today's build work, but each one unlocks something specific. Do these on your own timeline; the
 build keeps moving on mocks until you do.
-- [ ] **Business basics** — entity/EIN, business bank account, real business address (needed for Stripe/1099-K and the Terms of Service)
-- [ ] **A lawyer** for Terms/Privacy review — required before the first real charge, not before
 - [ ] **Domains** — confirm which of `buildflow.io` / `buildflow.com` / `buildflowsites.com` you actually own, move to Cloudflare Registrar if needed
 - [ ] **Mailboxes** — `tyler@`, `hello@`, `support@`, `legal@`, `security@`
-- [ ] **SendGrid** — account, domain authentication, a separate cold-outreach sender domain (warmup takes time, so earlier is better)
+- [ ] **SendGrid** — needs its own BuildFlow account (checked: no account-wide key exists, only another venture's — don't reuse it, it would hurt that venture's sender reputation). Domain auth + separate cold-outreach sender domain; warmup takes time, so earlier is better.
 - [ ] **Cloudflare** — account + API token (unlocks real site hosting)
-- [ ] **Supabase** — real project (unlocks the real database — Foundation lane is currently local-only)
+- [ ] **Supabase** — needs its own BuildFlow project (checked: none exists yet — every venture gets its own). Unlocks the real database; Foundation lane is fully tested but local-only until this exists.
 - [ ] **Google Cloud** — OAuth client (unlocks real customer/admin login)
 - [ ] **Stripe** — test-mode account first (unlocks real billing testing)
 - [ ] **Anthropic Console API key** — with a $30/mo spend limit set
 - [ ] **Apollo + Hunter** (free tiers) and **Google Places API** (with a quota cap) — unlocks real lead lookup
 - [ ] **HubSpot** developer/private app — unlocks real CRM sync; also apply now for Jobber/ServiceTitan partner access (1-2 week lead time)
-- [ ] **Slack workspace + webhook**, **Twilio** — unlocks real alerting
+- [ ] **Twilio** — for critical alerts only (Slack dropped, see below)
 - [ ] **Calendly link** — for the high-touch sales path
-- [ ] **Housekeeping:** refresh the expired GitHub token; rotate the plaintext keys in `~/.claude/CLAUDE.md`; confirm the GitHub repo is set to Private (still unconfirmed)
+- [x] **GitHub token** — already covered account-wide, confirmed working (pushed tonight). Nothing needed.
+- [ ] **Confirm the GitHub repo is set to Private** — still unconfirmed, worth a 30-second check on github.com
+
+## Deferred until after revenue (Tyler's call, 2026-09-21) — not tracked as open until then
+- Business basics (entity, EIN, business bank account, permanent business address)
+- Choosing a lawyer for Terms/Privacy review
+These still block the *real* Stripe charge and legal sign-off gates (see COORDINATOR_STATE.md G7), but there's
+no reason to chase them before there's revenue to justify the cost. Build keeps moving without them.
 
 ## 3. Ruled tonight (2026-09-21) — closed, no longer open
 - [x] **D01 sender address** — `hello@` (Tyler: no objection to the recommendation)

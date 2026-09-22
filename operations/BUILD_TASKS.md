@@ -55,7 +55,14 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [ ] CAN-SPAM unsubscribe, real send test [depends: SendGrid] — D01 sender address ruled `hello@`, wired into `send.py` (lane/lead `ed9f4e4`); real send itself still needs SendGrid credential + warmed domain
 - [ ] Outreach copy approved for real use [decision: outreach copy approval — currently all drafts on hold]
 - [ ] Postal address for the outreach email footer [credential/decision: Tyler — CAN-SPAM requires it; the send workflow refuses to run without one, see TYLER_QUEUE.md]
-- [ ] Confirm or reverse 5 lead-engine implementation assumptions (weekend sends, bounce-rate pause threshold, open-triggered skip, calendar vs business days, default timezone) [decision: see `agents/lead/TASKS.md` and TYLER_QUEUE.md — defaults already in use, not blocking]
+- [x] Confirm or reverse 5 lead-engine implementation assumptions (weekend sends, bounce-rate pause threshold, open-triggered skip, calendar vs business days, default timezone) — kept all 5 defaults, ruled 2026-09-21
+- [x] Company-size cutoffs for Micro/SMB/Mid-Market routing — kept as built, ruled 2026-09-21
+- [ ] **Replace manual-review-by-Tyler for low-confidence lead lookups with an automated deep-research fallback**
+  [none — buildable now, lane/lead] — ruled 2026-09-21: below the 0.7 confidence bar, `agents/lead/lookup.py`
+  currently just flags the lead for Tyler to check by hand. Instead: add a second automated pass that widens the
+  search (more provider fan-out, cross-check the actual business website/socials/GBP listing directly rather than
+  just aggregator matches) before deciding. If the deeper pass still can't confirm the business, suppress/skip
+  that lead automatically — never surface individual leads to Tyler for review.
 
 ## 5. Billing (Track F — not started)
 - [ ] Stripe test-mode products/prices (Micro, SMB, monthly+annual) [credential: Stripe test account]

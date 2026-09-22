@@ -26,7 +26,7 @@ phase: operational
 | Payments | **Stripe** (monthly and annual Prices, webhooks) | Versioned price IDs, `launch_cohort` |
 | Email | **SendGrid** with a separate warmed sending domain | One-click unsubscribe; email-only outreach at launch |
 | CRM | **HubSpot** first (one-way push), then Jobber, ServiceTitan, Housecall Pro, Successware | Custom connectors, encrypted tokens |
-| Monitoring | Homegrown (System 13): health check, alert dispatcher, dashboard; Slack and Twilio for alerts | No Sentry/Datadog |
+| Monitoring | Homegrown (System 13): health check, alert dispatcher, dashboard; email and Twilio SMS for alerts (Slack dropped — solo founder, no team channel to page) | No Sentry/Datadog |
 | AI | Deterministic code first; **Claude Pro** for build/operator work; **Claude API** only for unattended real-time steps, capped $30/mo; Cloudflare Workers AI for cheap classification after an eval | `docs/LLM_COST_AND_API_PLAN.md` |
 | Knowledge base | `knowledge/` cards compiled by `compile.mjs` | Feeds the copy pool and Design Agent |
 
