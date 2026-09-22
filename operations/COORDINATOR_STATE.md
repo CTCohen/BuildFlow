@@ -4,10 +4,39 @@ purpose: The single source of truth for what is done, in progress, and open acro
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
-version: 1.4.0
+version: 1.5.0
 tier_scope: all
 phase: phase_1
 ---
+
+## Latest coordinator run — 2026-09-22 (5 buildable-now items: lead lookup, demo tracking, dashboards)
+
+Scope this run: `agents/lead/` and `platform/dashboards/` only (plus a new `platform/db/` migration,
+per the task's constraints) — no `website/`, `legal/`, `docs/`, `knowledge/`, `billing/`, `crm/`,
+`platform/hosting/` touched.
+
+1. **Lead lookup deep-research fallback** (BUILD_TASKS.md §4) — done. `agents/lead/lookup.py`'s
+   `lookup()` now runs `_deep_research()` for anything the primary pass would have sent to Tyler
+   (confidence < 0.7, or no match). Widens provider fan-out past `MATCH_MIN` and cross-checks the
+   business's own website/GBP listing directly (`_verify_direct`). Confirmed → matched, never
+   flagged; still unconfirmed → auto-suppressed, never surfaced to Tyler. 101/101 lane evals pass.
+2. **Demo tracking** (BUILD_TASKS.md §3) — done. New `admin.demo_tracking_events` table +
+   `admin.record_demo_event()` (`platform/db/migrations/0007_demo_tracking.sql`, SQL test written
+   but not run live — same Postgres sandbox limit as gate G0), plus a fully-tested read/aggregation
+   layer `platform/dashboards/lib/demo-tracking.mjs` (9/9 tests). Client-side tracking beacon itself
+   is out of this session's scope (`website/`/`app/`).
+3. **Tier dashboard preview wired into demos** — view-model done
+   (`platform/dashboards/lib/sandbox-dashboard.mjs`), embedding into the live Astro demo page is
+   not (outside allowed scope this run).
+4. **Micro dashboard variant** — verified already correctly wired end to end; added the missing
+   test coverage.
+5. **Sandbox/demo-embed dashboard** — done, same `sandbox-dashboard.mjs`, sample-data-only,
+   guarded against ever taking a real row.
+
+Real tests throughout: 43/43 `platform/dashboards` JS tests, 101/101 `agents/lead` evals, both run
+live. Governance lint clean (`python3 governance/enforce.py --lint` → 0 stale-term hits). Commits
+`6b208ce`, `a9b8901`, `1282fff`, `1a3a390`, all pushed to `main`. Full detail and exact test output:
+`operations/BUILD_TASKS.md` §3/§4/§7, `agents/lead/TASKS.md`, `platform/dashboards/TASKS.md`.
 
 ## Latest coordinator run — 2026-09-22 (Cloudflare hosting pipeline, no token yet)
 
