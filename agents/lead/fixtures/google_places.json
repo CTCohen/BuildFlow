@@ -46,5 +46,18 @@
   "has_gbp": true,
   "has_website": true,
   "website": "https://riveraplumbingfresno.example"
+ },
+ {
+  "company": "Ironclad Roofing Solutions",
+  "vertical": "roofing",
+  "city": "Denver",
+  "state": "CO",
+  "phone": "(303) 555-0199",
+  "address": "77 Blake St, Denver CO",
+  "review_count": 19,
+  "review_velocity": 0.8,
+  "has_gbp": true,
+  "has_website": true,
+  "website": "https://ironcladroofingco.example"
  }
 ]

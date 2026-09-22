@@ -17,12 +17,29 @@ Run everything: `python3 -m agents.lead.run_evals` (stdlib only, tested on Pytho
 | # | Task | Status | Where |
 |---|---|---|---|
 | 1 | Lead Scoring, 100-point model, thresholds 70/50/20, tiers, Mid-Market suppression, per-vertical calibration | Done | `scoring.py` |
-| 2 | Lead Lookup, fan-out to mock Apollo/Hunter/Places, merge by confidence, manual flag | Done | `lookup.py`, `fixtures/` |
+| 2 | Lead Lookup, fan-out to mock Apollo/Hunter/Places, merge by confidence, automated deep-research fallback (no manual Tyler flag) | Done | `lookup.py`, `fixtures/` |
 | 3 | Size classification from free signals | Done | `size.py` |
 | 4 | 5-touch templates, hook chosen from signals | Done, copy is DRAFT | `sequence.py`, `messaging/outreach_sequence_draft.json` |
 | 5 | Send and sequence workflow on a mock SendGrid | Done | `send.py` |
-| 6 | Evals (all pass) | Done: scoring 18, size 17, lookup 16, outreach+send 40, adapter 8 (99 total) | `evals/` |
+| 6 | Evals (all pass) | Done: scoring 18, size 17, lookup 18, outreach+send 40, adapter 8 (101 total) | `evals/` |
 | 7 | Adapter: plain-dict lead/prospect shapes → `platform/CONTRACT.md` tables | Done | `adapter.py` |
+
+## Ruled 2026-09-22 (BUILD_TASKS.md §4, "buildable now")
+- **Deep-research fallback replaces manual-review-by-Tyler for low-confidence lookups.** Below
+  0.7 confidence (or no match at all), `lookup()` now falls through from `_primary_lookup` into
+  `_deep_research`: widens provider fan-out (every record any provider returns for the query, not
+  just ones already over the primary `MATCH_MIN` threshold) and cross-checks the business's own
+  website/GBP listing directly (`_verify_direct` — live GBP/website presence plus a hard identifier:
+  exact phone match, or the business's own name tokens appearing in its own domain), rather than
+  only aggregator fuzzy-name matches. Confirmed → `status: "matched"`, confidence floored at 0.7,
+  `flag_tyler` always `False`. Still unconfirmed → `status: "suppressed"`, `score_allowed: False`,
+  `flag_tyler` always `False` — no individual lead is surfaced to Tyler for manual review anymore.
+  New fixture business (`fixtures/google_places.json`, "Ironclad Roofing Solutions") plus evals
+  `l17` (weak name match, no phone, confirmed via direct website/GBP check) and `l18` (no real
+  business behind the query, still suppressed after the deeper pass) added; `l04`/`l08`/`l12`
+  updated from `manual_lookup`/`flag_tyler: true` to `suppressed`/`flag_tyler: false` to match the
+  new behavior. 18/18 lookup evals pass, 101/101 lane evals pass
+  (`python3 -m agents.lead.run_evals`).
 
 ## Assumptions to confirm (I chose, spec is silent)
 1. **Size tiers** come from `docs/PRICING.md`: Micro <3, SMB 3-20, Mid-Market >20 or >$5M revenue. SPEC-07 targets 1-50 employees, so 21-50 still earns the size points but the lead is suppressed as Mid-Market.

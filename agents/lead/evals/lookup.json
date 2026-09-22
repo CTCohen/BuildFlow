@@ -1,266 +1,300 @@
 [
- {
-  "id": "l01",
-  "desc": "full match across three sources",
-  "query": {
-   "company": "Desert Air Heating & Cooling",
-   "city": "Mesa",
-   "state": "AZ",
-   "phone": "480-555-0142"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "sources": [
-    "apollo",
-    "google_places",
-    "hunter"
-   ],
-   "fields": {
-    "headcount": 8,
-    "review_count": 212,
-    "email": "office@desertairaz.example"
-   },
-   "min_conf": 0.9
-  }
- },
- {
-  "id": "l02",
-  "desc": "name variant matches (and vs &)",
-  "query": {
-   "company": "Desert Air Heating and Cooling",
-   "state": "AZ",
-   "city": "Mesa"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "fields": {
-    "headcount": 8
-   }
-  }
- },
- {
-  "id": "l03",
-  "desc": "phone-only formatting differs",
-  "query": {
-   "company": "Lone Star Roofing",
-   "state": "TX",
-   "phone": "+1 512.555.0177"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "fields": {
-    "headcount": 14
-   }
-  }
- },
- {
-  "id": "l04",
-  "desc": "no match flags Tyler and blocks scoring",
-  "query": {
-   "company": "Zed Nothing Services",
-   "state": "AZ"
-  },
-  "fail": [],
-  "expect": {
-   "status": "manual_lookup",
-   "flag_tyler": true,
-   "score_allowed": false
-  }
- },
- {
-  "id": "l05",
-  "desc": "same name wrong state rejected",
-  "query": {
-   "company": "Rivera Plumbing",
-   "state": "OH",
-   "city": "Columbus"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "fields": {
-    "headcount": 30
-   }
-  }
- },
- {
-  "id": "l06",
-  "desc": "Rivera in CA picks CA record, not OH",
-  "query": {
-   "company": "Rivera Plumbing",
-   "state": "CA",
-   "city": "Fresno"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "fields": {
-    "headcount": 4,
-    "review_count": 58
-   }
-  }
- },
- {
-  "id": "l07",
-  "desc": "one provider down, still matched, low-confidence flag",
-  "query": {
-   "company": "Desert Air Heating",
-   "state": "AZ"
-  },
-  "fail": [
-   "apollo"
-  ],
-  "expect": {
-   "status": "matched",
-   "low_confidence": true,
-   "failed": [
-    "apollo"
-   ]
-  }
- },
- {
-  "id": "l08",
-  "desc": "all providers down flags Tyler",
-  "query": {
-   "company": "Desert Air Heating",
-   "state": "AZ"
-  },
-  "fail": [
-   "apollo",
-   "hunter",
-   "google_places"
-  ],
-  "expect": {
-   "status": "manual_lookup",
-   "reason": "all sources failed",
-   "flag_tyler": true
-  }
- },
- {
-  "id": "l09",
-  "desc": "email from hunter, firmographics from apollo",
-  "query": {
-   "company": "Lone Star Roofing Co",
-   "state": "TX"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "fields": {
-    "email": "marcus@lonestarroof.example",
-    "headcount": 14
-   },
-   "provenance": {
-    "email": "hunter",
-    "headcount": "apollo"
-   }
-  }
- },
- {
-  "id": "l10",
-  "desc": "place facts from google_places",
-  "query": {
-   "company": "Lone Star Roofing Co",
-   "state": "TX"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "provenance": {
-    "review_count": "google_places",
-    "has_gbp": "google_places"
-   }
-  }
- },
- {
-  "id": "l11",
-  "desc": "single source only match",
-  "query": {
-   "company": "Bright Spark Electric",
-   "state": "FL",
-   "city": "Tampa"
-  },
-  "fail": [],
-  "expect": {
-   "status": "matched",
-   "sources": [
-    "apollo",
-    "google_places"
-   ]
-  }
- },
- {
-  "id": "l12",
-  "desc": "junk query with no company",
-  "query": {
-   "state": "AZ"
-  },
-  "fail": [],
-  "expect": {
-   "status": "manual_lookup"
-  }
- },
- {
-  "id": "l13",
-  "desc": "batch mode: hvac in AZ",
-  "query": {
-   "mode": "batch",
-   "vertical": "hvac",
-   "state": "AZ"
-  },
-  "fail": [],
-  "expect": {
-   "batch_min": 1,
-   "batch_max": 1
-  }
- },
- {
-  "id": "l14",
-  "desc": "batch dedupes across providers",
-  "query": {
-   "mode": "batch",
-   "vertical": "roofing",
-   "state": "TX"
-  },
-  "fail": [],
-  "expect": {
-   "batch_min": 1,
-   "batch_max": 1,
-   "batch_sources_min": 2
-  }
- },
- {
-  "id": "l15",
-  "desc": "batch survives a failed provider",
-  "query": {
-   "mode": "batch",
-   "vertical": "plumbing",
-   "state": "CA"
-  },
-  "fail": [
-   "google_places"
-  ],
-  "expect": {
-   "batch_min": 1,
-   "failed": [
-    "google_places"
-   ]
-  }
- },
- {
-  "id": "l16",
-  "desc": "batch limit respected",
-  "query": {
-   "mode": "batch",
-   "state": "CA",
-   "limit": 1
-  },
-  "fail": [],
-  "expect": {
-   "batch_max": 1
-  }
- }
+    {
+        "id": "l01",
+        "desc": "full match across three sources",
+        "query": {
+            "company": "Desert Air Heating & Cooling",
+            "city": "Mesa",
+            "state": "AZ",
+            "phone": "480-555-0142"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "sources": [
+                "apollo",
+                "google_places",
+                "hunter"
+            ],
+            "fields": {
+                "headcount": 8,
+                "review_count": 212,
+                "email": "office@desertairaz.example"
+            },
+            "min_conf": 0.9
+        }
+    },
+    {
+        "id": "l02",
+        "desc": "name variant matches (and vs &)",
+        "query": {
+            "company": "Desert Air Heating and Cooling",
+            "state": "AZ",
+            "city": "Mesa"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "fields": {
+                "headcount": 8
+            }
+        }
+    },
+    {
+        "id": "l03",
+        "desc": "phone-only formatting differs",
+        "query": {
+            "company": "Lone Star Roofing",
+            "state": "TX",
+            "phone": "+1 512.555.0177"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "fields": {
+                "headcount": 14
+            }
+        }
+    },
+    {
+        "id": "l04",
+        "desc": "no match: deep research also fails, auto-suppressed, never flags Tyler",
+        "query": {
+            "company": "Zed Nothing Services",
+            "state": "AZ"
+        },
+        "fail": [],
+        "expect": {
+            "status": "suppressed",
+            "flag_tyler": false,
+            "score_allowed": false
+        }
+    },
+    {
+        "id": "l05",
+        "desc": "same name wrong state rejected",
+        "query": {
+            "company": "Rivera Plumbing",
+            "state": "OH",
+            "city": "Columbus"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "fields": {
+                "headcount": 30
+            }
+        }
+    },
+    {
+        "id": "l06",
+        "desc": "Rivera in CA picks CA record, not OH",
+        "query": {
+            "company": "Rivera Plumbing",
+            "state": "CA",
+            "city": "Fresno"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "fields": {
+                "headcount": 4,
+                "review_count": 58
+            }
+        }
+    },
+    {
+        "id": "l07",
+        "desc": "one provider down, still matched, low-confidence flag",
+        "query": {
+            "company": "Desert Air Heating",
+            "state": "AZ"
+        },
+        "fail": [
+            "apollo"
+        ],
+        "expect": {
+            "status": "matched",
+            "low_confidence": true,
+            "failed": [
+                "apollo"
+            ]
+        }
+    },
+    {
+        "id": "l08",
+        "desc": "all providers down: deep research finds nothing either, suppressed not flagged",
+        "query": {
+            "company": "Desert Air Heating",
+            "state": "AZ"
+        },
+        "fail": [
+            "apollo",
+            "hunter",
+            "google_places"
+        ],
+        "expect": {
+            "status": "suppressed",
+            "flag_tyler": false,
+            "score_allowed": false
+        }
+    },
+    {
+        "id": "l09",
+        "desc": "email from hunter, firmographics from apollo",
+        "query": {
+            "company": "Lone Star Roofing Co",
+            "state": "TX"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "fields": {
+                "email": "marcus@lonestarroof.example",
+                "headcount": 14
+            },
+            "provenance": {
+                "email": "hunter",
+                "headcount": "apollo"
+            }
+        }
+    },
+    {
+        "id": "l10",
+        "desc": "place facts from google_places",
+        "query": {
+            "company": "Lone Star Roofing Co",
+            "state": "TX"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "provenance": {
+                "review_count": "google_places",
+                "has_gbp": "google_places"
+            }
+        }
+    },
+    {
+        "id": "l11",
+        "desc": "single source only match",
+        "query": {
+            "company": "Bright Spark Electric",
+            "state": "FL",
+            "city": "Tampa"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "sources": [
+                "apollo",
+                "google_places"
+            ]
+        }
+    },
+    {
+        "id": "l12",
+        "desc": "junk query with no company: suppressed, never flagged to Tyler",
+        "query": {
+            "state": "AZ"
+        },
+        "fail": [],
+        "expect": {
+            "status": "suppressed",
+            "flag_tyler": false,
+            "score_allowed": false
+        }
+    },
+    {
+        "id": "l13",
+        "desc": "batch mode: hvac in AZ",
+        "query": {
+            "mode": "batch",
+            "vertical": "hvac",
+            "state": "AZ"
+        },
+        "fail": [],
+        "expect": {
+            "batch_min": 1,
+            "batch_max": 1
+        }
+    },
+    {
+        "id": "l14",
+        "desc": "batch dedupes across providers",
+        "query": {
+            "mode": "batch",
+            "vertical": "roofing",
+            "state": "TX"
+        },
+        "fail": [],
+        "expect": {
+            "batch_min": 1,
+            "batch_max": 1,
+            "batch_sources_min": 2
+        }
+    },
+    {
+        "id": "l15",
+        "desc": "batch survives a failed provider",
+        "query": {
+            "mode": "batch",
+            "vertical": "plumbing",
+            "state": "CA"
+        },
+        "fail": [
+            "google_places"
+        ],
+        "expect": {
+            "batch_min": 1,
+            "failed": [
+                "google_places"
+            ]
+        }
+    },
+    {
+        "id": "l16",
+        "desc": "batch limit respected",
+        "query": {
+            "mode": "batch",
+            "state": "CA",
+            "limit": 1
+        },
+        "fail": [],
+        "expect": {
+            "batch_max": 1
+        }
+    },
+    {
+        "id": "l17",
+        "desc": "low-confidence match (name variant, no phone) confirmed by deep-research direct verification",
+        "query": {
+            "company": "Ironclad Roof Co",
+            "state": "CO"
+        },
+        "fail": [],
+        "expect": {
+            "status": "matched",
+            "flag_tyler": false,
+            "score_allowed": true,
+            "min_conf": 0.7,
+            "fields": {
+                "review_count": 19
+            }
+        }
+    },
+    {
+        "id": "l18",
+        "desc": "unconfirmable business auto-suppressed after deep research, never surfaced to Tyler",
+        "query": {
+            "company": "Totally Fake Business Inc",
+            "state": "CO"
+        },
+        "fail": [],
+        "expect": {
+            "status": "suppressed",
+            "flag_tyler": false,
+            "score_allowed": false
+        }
+    }
 ]

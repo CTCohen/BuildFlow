@@ -73,10 +73,21 @@ def match_score(r, q) -> float:
 
 
 def lookup(query: dict, providers=None) -> dict:
+    """Single-lead lookup. Anything the primary pass would have sent to Tyler (confidence
+    < 0.7, including no match at all) instead falls through to `_deep_research` — ruled
+    2026-09-21 (BUILD_TASKS.md §4): manual Tyler review is retired for this path. Tyler is
+    never shown an individual low-confidence lead again; unconfirmed leads are suppressed."""
     providers = providers or default_providers()
     if query.get("mode") == "batch":
         return _batch(query, providers)
 
+    result = _primary_lookup(query, providers)
+    if result["flag_tyler"]:
+        result = _deep_research(query, providers, result)
+    return result
+
+
+def _primary_lookup(query: dict, providers) -> dict:
     hits, errors = [], {}
 
     def run(p):
@@ -114,6 +125,74 @@ def lookup(query: dict, providers=None) -> dict:
             "sources_matched": sorted({h[0] for h in cluster}), "sources_failed": errors,
             "flag_tyler": conf < 0.7, "score_allowed": True,
             "low_confidence": bool(errors) or conf < 0.7}
+
+
+def _deep_research(query: dict, providers, primary: dict) -> dict:
+    """Second automated pass for a lead the primary pass could not confirm with confidence
+    (status `manual_lookup`, or `matched` below 0.7). Two things the primary pass doesn't do:
+    1. Widens provider fan-out — considers every record any provider returned for this query,
+       not just ones already over the primary MATCH_MIN name/phone threshold.
+    2. Cross-checks the business's own website/socials/GBP listing directly (`_verify_direct`)
+       instead of relying only on aggregator fuzzy-name matches.
+    Confirmed -> matched, confidence floored at 0.7, never flagged to Tyler. Still unconfirmed
+    after this deeper pass -> suppressed automatically; never surfaced to Tyler either way."""
+    hits, errors = [], dict(primary.get("sources_failed") or {})
+
+    def run(p):
+        if getattr(p, "fail", False):  # still down: a widened fan-out can't read a dead provider
+            return p.name, [], f"{p.name} unavailable"
+        try:
+            return p.name, list(p.records), None
+        except Exception as e:
+            return p.name, [], str(e)
+
+    with ThreadPoolExecutor(max_workers=max(len(providers), 1)) as ex:
+        for name, recs, err in ex.map(run, providers):
+            if err:
+                errors[name] = err
+                continue
+            for r in recs:
+                s = match_score(r, query)
+                if s > 0:  # widened fan-out: any positive signal, not just >= MATCH_MIN
+                    hits.append((name, dict(r), s))
+
+    base = {**primary, "sources_failed": errors, "deep_research": True, "flag_tyler": False}
+    if not hits:
+        return {**base, "status": "suppressed", "score_allowed": False,
+                "reason": "unconfirmed after deep pass", "record": None, "sources_matched": []}
+
+    anchor = max(hits, key=lambda h: h[2])[1]
+    cluster = [h for h in hits if h[1] is anchor or _same_business(h[1], anchor)]
+    if not _verify_direct(query, cluster):
+        return {**base, "status": "suppressed", "score_allowed": False,
+                "reason": "unconfirmed after deep pass", "record": None,
+                "sources_matched": sorted({h[0] for h in cluster})}
+
+    record, provenance = _merge(cluster)
+    conf = round(max(0.7, max(h[2] for h in cluster)), 3)
+    return {"status": "matched", "record": record, "provenance": provenance, "confidence": conf,
+            "sources_matched": sorted({h[0] for h in cluster}), "sources_failed": errors,
+            "flag_tyler": False, "score_allowed": True, "low_confidence": False, "deep_research": True}
+
+
+def _verify_direct(query: dict, cluster) -> bool:
+    """Direct verification against the business's own web presence, not just aggregator
+    name-fuzz: a candidate counts as confirmed when it carries a live GBP listing or website
+    AND at least one hard identifier lines up — an exact phone match, or the business's own
+    name tokens showing up in its own website/domain — with no state contradiction."""
+    for _, r, _ in cluster:
+        if not (r.get("has_gbp") or r.get("has_website") or r.get("website")):
+            continue
+        if query.get("state") and r.get("state") and query["state"] != r["state"]:
+            continue
+        phone_ok = bool(query.get("phone") and r.get("phone") and _digits(query["phone"]) == _digits(r["phone"]))
+        website = (r.get("website") or "").lower()
+        name_tokens = [t for t in _norm(r.get("company") or query.get("company")) if len(t) > 3]
+        domain_ok = bool(website and any(t in website for t in name_tokens))
+        name_ok = name_sim(r.get("company"), query.get("company")) >= 0.5
+        if phone_ok or (domain_ok and name_ok):
+            return True
+    return False
 
 
 def _same_business(a, b):
