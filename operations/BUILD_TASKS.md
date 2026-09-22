@@ -25,12 +25,46 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 
 ## 2. Static hosting on Cloudflare — set up and tested
 - [ ] Cloudflare account + API token [credential: Cloudflare]
-- [ ] Pages/Workers project wired to the Astro build output [depends: Cloudflare account]
-- [ ] R2 bucket for site assets [depends: Cloudflare account]
-- [ ] DNS + two-domain model ([domain TBD under Fornax name] app, [domain TBD under Fornax name] customer sites) [decision: D32 which domains you own]
-- [ ] Wildcard SSL for customer subdomains [depends: DNS setup]
-- [ ] Deploy pipeline: generated site → live URL, timed end to end [depends: Cloudflare account, design lane merged]
-- [ ] Per-customer hosting cost alert (>$50) [depends: Cloudflare account]
+- [x] **Pages/Workers project wired to the Astro build output** — done on mocks, `platform/hosting/deploy.mjs` +
+  `platform/hosting/mocks.mjs`: real per-client project naming (`fornax-site-<slug>`), real versioning/rollback
+  (`VersionStore`, auto-rollback to last known-good deploy on a failed deploy, plus an explicit `rollback()`),
+  the actual Cloudflare Pages API call mocked behind `MockCloudflareAdapter.deployPages`/`rollbackTo`. Reads
+  the real build output from `agents/design/design-agent.mjs`'s `renderSite()` (`buildResult.outDir`).
+  40/40 unit tests pass (`node --test platform/hosting/*.test.mjs`). [depends on real token for the live call]
+- [x] **R2 bucket for site assets** — done on mocks, `platform/hosting/assets.mjs`: real key structure
+  (`sites/<slug>/<version>/<relative path>`, versioned so re-deploys/rollback never clobber a prior version's
+  assets), real content-type mapping, real manifest built from the actual build output; upload itself mocked
+  via `MockCloudflareAdapter.uploadObject`. Returns a `bundleUrl` shaped like `app.websites.bundle_url`
+  (`platform/CONTRACT.md`). [depends on real bucket for the live call]
+- [x] **DNS + two-domain model** — done, `platform/hosting/domains.mjs`: `subdomainForSlug()` assigns each
+  customer `<slug>.<customerRootDomain>`; `primaryHostnameFor()` picks the customer's own domain when set,
+  else the subdomain. Domain names are config/env placeholders (`FORNAX_APP_DOMAIN`,
+  `FORNAX_CUSTOMER_ROOT_DOMAIN`), not hardcoded guesses — see TYLER_QUEUE.md "Domains". D32 (which domains
+  you own) still needs your call before the real values go in.
+- [ ] Wildcard SSL for customer subdomains — **nothing to build here.** This is a Cloudflare account-level
+  setting (issued automatically for any domain/subdomain on a Cloudflare zone, or via the Universal SSL /
+  Advanced Certificate Manager wildcard option) once the domain is on Cloudflare, not application code. The
+  mock DNS step in `platform/hosting/mocks.mjs`'s `provisionDns()` reports `sslStatus: "active"` as a stand-in;
+  there is no separate SSL code path to write. [depends: Cloudflare account, domain purchased]
+- [x] **Deploy pipeline: generated site → live URL, timed end to end** — done on mocks,
+  `platform/hosting/pipeline.mjs` `runDeployPipeline()`: composes deploy → R2 upload → DNS/SSL provision →
+  health check, timing each stage. Target used: `platform/SPEC-03-hosting-infrastructure.md` section 2's
+  locked "~60 seconds, fully automated" total (design gen ~10s spec target, proven ~1.2s in
+  `agents/design/BENCHMARKS.md` + QA ~5s, upstream of this module) — this module's own share of that budget
+  (upload ~2s + DNS/SSL ~30s + health check ~5s = 37s) is `PIPELINE_TARGET_MS`, checked via `withinTarget` on
+  every run. 9/9 pipeline unit tests pass live. [depends on real Cloudflare token for a real end-to-end timing run]
+- [x] **Per-customer hosting cost alert (>$50)** — done, `platform/hosting/cost-alert.mjs` +
+  `platform/db/migrations/0006_hosting_cost_alert.sql`. Deterministic, no LLM. Follows the exact pattern
+  already built in `platform/monitoring/` (`admin.raise_alert`/`admin.resolve_alert` from
+  `0004_monitoring.sql`, same dedupe/escalate/resolve rules and dispatcher): `admin.record_hosting_cost()`
+  logs the reading to `admin.business_metrics_log` and raises a `warning` alert once a customer's reading is
+  over $50 (`SPEC-03-hosting-infrastructure.md` section 4), resolves it once back under. New SQL test
+  `platform/db/tests/21_hosting_cost.sql` (5 checks: threshold, dedupe, resolve, re-open, no cross-customer
+  collision), wired into `platform/db/run-local.sh`'s test list — **not run live**: this sandboxed session
+  can't start local Postgres (`shmget: Operation not permitted`, same restriction noted for the G0 isolation
+  test), so it needs Tyler's Mac or CI to actually execute, same as that gate. `cost-alert.mjs`'s own 3 JS
+  unit tests (calling the SQL function through a fake `db`) do pass live. [depends on a real per-customer cost
+  feed — Cloudflare/R2 billing API — to call `recordHostingCost` from; nothing wires that in yet]
 
 ## 2b. Content — copy pool and trade packs (lane/content)
 - [x] Copy pool for 4 verticals (hvac/plumbing/electrical/roofing), 24 service cards, validator — done, commit `2e39a9e`, 49/49 checks passing

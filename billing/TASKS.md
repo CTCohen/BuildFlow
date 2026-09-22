@@ -3,8 +3,8 @@ title: Billing Lane Tasks
 purpose: Status, run instructions, assumptions and open questions for Track F (dunning state machine)
 status: active
 owner: c.t.cohen
-updated: '2026-09-21'
-version: 1.0.0
+updated: '2026-09-22'
+version: 1.1.0
 tier_scope: all
 phase: phase_1
 related: [operations/BUILD_TASKS.md, billing/SPEC-08-payments-billing.md, DECISIONS.md, agents/AGENT_REGISTRY.md]
@@ -12,7 +12,8 @@ related: [operations/BUILD_TASKS.md, billing/SPEC-08-payments-billing.md, DECISI
 
 # Track F (Billing) tasks
 
-Run everything: `python3 -m billing.dunning.run_evals` (stdlib only, no keys, no network, no LLM).
+Run everything: `python3 -m billing.run_evals` (stdlib only, no keys, no network, no LLM). Dunning alone:
+`python3 -m billing.dunning.run_evals`.
 
 | # | Task | Status | Where |
 |---|---|---|---|
@@ -21,7 +22,56 @@ Run everything: `python3 -m billing.dunning.run_evals` (stdlib only, no keys, no
 | 3 | Evals (all pass) | Done: 20/20 | `billing/dunning/evals/test_state_machine.py`, run via `billing/dunning/run_evals.py` |
 | 4 | Tier 4-5 (legal escalation, collections, write-off) | **Out of scope**, not built | `billing/SPEC-08-payments-billing.md` Section 6 Tiers 4-5 |
 | 5 | Back-payment calculation agent logic (Section 6 "Back-Payment Calculation") | **Out of scope**, not built | see assumption 5 below |
-| 6 | Stripe test-mode products/prices, webhooks, `launch_cohort` flag | Not started — needs Stripe test account (TYLER_QUEUE §2) | — |
+| 6 | Stripe products/prices catalog: Micro + SMB, monthly + annual, versioned, `launch_cohort` | Done: 10/10 | `billing/prices.py`, `billing/evals/test_prices.py` |
+| 7 | Webhook handler: `invoice.payment_{succeeded,failed}`, `customer.subscription.{created,updated,deleted}`, wired to dunning on the 3rd failed retry | Done: 12/12 | `billing/webhooks.py`, `billing/mocks.py`, `billing/evals/test_webhooks.py` |
+
+## Task 6/7 detail (added 2026-09-22)
+
+**Price catalog (`billing/prices.py`).** Micro and SMB only — Mid-Market stays absent from the catalog per
+DECISIONS.md item 4/14 (paused, "shown on the site and pricing, nothing built"; do not add it here without a
+Tyler ruling reversing the pause). v1 launch prices match `CLAUDE.md`'s pricing table exactly: Micro
+$149/mo·$1,490/yr, SMB $249/mo·$2,490/yr — annual computed as `monthly × 10`, per CLAUDE.md's own note
+("annual = 10x monthly"), not hand-copied from SPEC-08 Section 7's table (which shows the same numbers, so no
+conflict, just noting the source of truth used).
+
+**Versioning scheme (DECISIONS.md D02 / RECONCILIATION_LOG D02).** Each `(tier, billing_cycle)` has one or more
+`PriceVersion` rows tagged `launch_cohort="launch"` or `"standard"`; only one version per
+`(tier, cycle, cohort)` is `active` at a time. `price_for_cohort()` resolves a customer's own cohort to its
+price — a `launch` customer keeps resolving to the v1 launch price forever, even after `add_price_increase()`
+adds a new `standard` version, because `add_price_increase()` only ever deactivates prior **standard** rows,
+never `launch` ones. This is the actual grandfathering mechanism DECISIONS.md D02 asked for, built now even
+though real Stripe Price IDs don't exist yet — every `stripe_price_id`/`stripe_product_id` is an obvious
+placeholder (`price_ph_...`/`prod_ph_...`), swapped for real Stripe object IDs once a Stripe account exists
+(TYLER_QUEUE.md §2). **Open**: RECONCILIATION_LOG D02 flags the actual increase timing/target numbers and
+whether early customers still get grandfathered as still needing Tyler's input — this catalog's `launch`
+cohort assumes yes (grandfathered), matching TASKS.md/TYLER_QUEUE's existing D02 framing; the scheme supports
+either answer without a redesign, only a data change.
+
+**Webhook handler (`billing/webhooks.py`, `billing/mocks.py`).** `handle_event()` is real dispatch logic — no
+stub — covering `invoice.payment_succeeded`, `invoice.payment_failed`, and the three
+`customer.subscription.*` lifecycle events, with an in-memory `Subscription` record shaped exactly like
+`platform/CONTRACT.md`'s `app.subscriptions` (same field names, so a later swap to real Supabase reads/writes
+is mechanical). Two things are mocked, both because no real Stripe account/webhook endpoint exists yet:
+signature verification (`WebhookSignatureMock`, standing in for `stripe.Webhook.construct_event`) and the
+event payloads themselves (`StripeEventFactory`, builds Stripe-shaped event dicts for tests). SPEC-08 Section
+2's locked 3-attempt retry ladder is respected as a precondition, matching how `billing/dunning/` already
+treats it: this module only calls `start_delinquency()` once `attempt_count >= 3` on an
+`invoice.payment_failed` event, and then defers entirely to dunning's own `advance()`/`record_payment()` for
+everything after that (no duplicate tier logic here). `invoice.payment_succeeded` while an account is mid-
+dunning calls dunning's `record_payment()` with the real amount paid, so a partial vs. full payment is
+respected exactly as `billing/dunning/state_machine.py` already defines it.
+
+**Not done / next for Task 6/7:**
+- Real Stripe Products/Prices creation (Dashboard or `stripe.Price.create`) and a real webhook endpoint +
+  signing secret — both blocked on TYLER_QUEUE.md §2 "Stripe".
+- No HTTP route exists yet (e.g. a Railway/Cloud Run endpoint that receives the real POST, calls
+  `verify_and_parse()` then `handle_event()`) — this task built the verification + dispatch logic and its
+  mocks/evals only, same scope boundary Task 1-3 drew for the dunning machine itself.
+- Persistence: `Subscription` and `DunningAccount` records are both in-memory, same open item as Task 1-5 and
+  Lane C (`agents/lead/TASKS.md`) — no live Supabase project connection wired yet.
+- Proration (SPEC-08 Section 2), refunds/disputes (Section 4), tax (Section 5), and the annual-plan
+  cancellation/refund carve-outs (Section 7) are not implemented — out of scope for this task, which was
+  products/prices + webhook dispatch only.
 
 ## Scope (per the task that produced this)
 Only Tiers 1-3 of `billing/SPEC-08-payments-billing.md` Section 6, matching BUILD_TASKS.md §5's line item

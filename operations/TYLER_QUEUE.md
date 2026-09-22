@@ -37,7 +37,19 @@ build keeps moving on mocks until you do.
 - [ ] **Domains (OPEN — rebrand impact)** — domain plan: TBD under the Fornax name. `buildflow.io` / `buildflow.com` / `buildflowsites.com` no longer apply post-rebrand and none were purchased; buy the equivalent Fornax domains (marketing, app/admin/demo, customer-subdomain root) and register via Cloudflare Registrar.
 - [ ] **Mailboxes** — `tyler@`, `hello@`, `support@`, `legal@`, `security@`
 - [ ] **SendGrid** — needs its own Fornax account (checked: no account-wide key exists, only another venture's — don't reuse it, it would hurt that venture's sender reputation). Domain auth + separate cold-outreach sender domain; warmup takes time, so earlier is better.
-- [ ] **Cloudflare** — account + API token (unlocks real site hosting)
+- [ ] **Cloudflare** — account + API token (unlocks real site hosting). The whole deploy pipeline is built and
+  tested on mocks (`platform/hosting/`, see BUILD_TASKS.md §2) and ready to flip to real the moment this
+  exists. What's actually needed, once you've created the account:
+  - **Account ID** (Cloudflare dashboard, right sidebar) — a config value, not a secret; goes in
+    `FORNAX_CF_ACCOUNT_ID`.
+  - **API token** (My Profile → API Tokens → Create Token, custom token) with these permission scopes:
+    `Account.Cloudflare Pages: Edit` (deploy/rollback), `Account.Workers R2 Storage: Edit` (site asset uploads),
+    `Zone.DNS: Edit` and `Zone.SSL and Certificates: Edit` scoped to whichever zone(s) the Fornax domains end
+    up on (Domains item above — needs D32 first). Store it in the provider's secret store or a gitignored
+    `.local/` env file, never in chat or a tracked file.
+  - **R2 bucket name** — once the account exists, create one bucket for site assets and give me the name for
+    `FORNAX_R2_BUCKET` (currently a placeholder).
+  - **Zone ID(s)** for the purchased domain(s) — needed for the DNS/SSL calls once domains are bought.
 - [◐] **Supabase** — project created (`wvkvcuffyzbejuipjfhu.supabase.co`), URL + publishable key stored locally 2026-09-21. Still need the **service role key** (Project Settings → API → service_role) before Foundation can actually connect for real.
 - [ ] **Google Cloud** — OAuth client (unlocks real customer/admin login)
 - [ ] **Stripe** — test-mode account first (unlocks real billing testing). Once it exists, three things are
