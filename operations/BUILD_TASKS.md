@@ -76,7 +76,15 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
 - [ ] Design QA loop (Lighthouse/axe gate, retries, escalation) [◐ partial — exists in lane/design, full run needs a local browser (Tyler's machine), not before W6 per your rule]
 - [x] Style-profile-to-theme mapping (`styleProfiles.json`) — done: all 32 themes in `themes-30.json` map 1:1 to the 10 spec profiles, no dupes/typos (verified 2026-09-21 by script cross-check)
 - [x] **Wire the customer's chosen `styleProfile` into the live Design Agent** — done, already wired; the prior note above was based on a stale/orphaned file, not the real pipeline. Investigated 2026-09-21 (lane/design, commit `c5119fc`): the actual production pipeline (`agents/design/design-agent.mjs`, `pickTheme`/`resolveDesign`) already reads `client.styleProfile`, resolves it through `styleProfiles.json` to a theme in `themes-30.json`, and writes the resolved `brand.primary/accent/...` into the client JSON the Astro site renders from (`app/src/data/clients/*.json`). Proven by the existing eval suite (`agents/design/evals/design.eval.mjs` d01/d02/d09/d14/d15), which was already passing 67/67 before this change and still passes 67/67 after. `app/src/lib/agent-decisions.ts` and `app/src/data/vertical-pools.ts` were a separate, never-imported "Agent Decision Engine v2" (only referenced from archived docs, not from any live code path) that read `vertical-pools.ts` instead of `styleProfile` — that dead code is what made the gap look real. Archived both to `archive/legacy-agent-decisions/` (not deleted) rather than left in place to keep confusing future audits. No design-system judgment call was actually needed — no decision logged to TYLER_QUEUE.md.
-- [ ] Discovery Agent (brand extraction from a real business URL) [◐ exists, evals passing; real-world test needs live URLs]
+- [x] **Discovery Agent real-world test + fix** — done 2026-09-22 (lane/design, commit `5f4159f`).
+  Live smoke test run against a real HVAC site (deljoheating.com, not a fixture — see
+  `agents/design/evals/live-smoke-test-report.md`) found and fixed two real gaps: (1) `og:site_name`/
+  `description` meta values weren't HTML-entity-decoded, (2) `extractServices()`'s heading regex
+  missed real pages that use per-service headings ("Emergency Heating Services") instead of one
+  umbrella "Services" section — now falls back to a service-keyword heading scan. Confidence on the
+  real site went from 0.75 (services missing) to 1.0 (all 4 signals, 8 services extracted). 67/67
+  design evals still pass live, governance lint clean. Not pushed yet — GitHub unreachable from this
+  sandbox this run (proxy timeout on `git ls-remote`); commit is safe locally on `lane/design`.
 - [◐] **Demo includes the tier's sandbox dashboard (your ruling)** — view-model layer built,
   2026-09-22: `platform/dashboards/lib/sandbox-dashboard.mjs` (see §7 for detail). Not yet rendered
   into the live demo page — that's `website/`/`app/`, outside this session's allowed scope.

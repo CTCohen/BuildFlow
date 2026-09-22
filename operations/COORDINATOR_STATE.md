@@ -4,10 +4,32 @@ purpose: The single source of truth for what is done, in progress, and open acro
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
-version: 1.5.1
+version: 1.5.2
 tier_scope: all
 phase: phase_1
 ---
+
+## Latest coordinator run — 2026-09-22 (Discovery Agent bug fix, lane/design)
+
+Picked up where the prior session's live smoke test (commit `9223eff`) left off: that test ran the
+real Discovery Agent extraction code against a real HVAC business site and found two real bugs,
+pinned as a "KNOWN GAP" regression test rather than fixed. This run fixed both, in the
+`lane/design` worktree (fast-forwarded to `main` first — it was 18 commits behind):
+1. `extractBasics()` wasn't decoding HTML entities in `og:site_name`/`description` meta values —
+   a real business name with an "&" came back as `"...&amp;..."`.
+2. `extractServices()` only recognized one umbrella "Services" heading; real pages that use
+   specific per-service headings instead (e.g. "Emergency Heating Services") returned no services
+   at all. Added a fallback that collects service-keyword-shaped h2/h3 headings when the umbrella
+   pattern finds nothing.
+
+Verified live: 67/67 design evals pass, the live-smoke-test now shows confidence 1.0 (was 0.75)
+with all 8 real services extracted, governance lint clean. Committed to `lane/design`
+(`5f4159f`) — **not `main`**, per this run's hard limit on lane work. Full detail:
+`operations/BUILD_TASKS.md` §3, `agents/design/evals/live-smoke-test-report.md`.
+
+**Push status:** GitHub was unreachable this run (`git ls-remote origin` hit a proxy timeout) —
+noted plainly per instructions, not treated as fatal. The commit is safe locally on `lane/design`;
+push on the next run that has network, or Tyler can `git push origin lane/design` from his Mac.
 
 ## Coordinator note — 2026-09-22, same run: two coordinator sessions overlapped
 
