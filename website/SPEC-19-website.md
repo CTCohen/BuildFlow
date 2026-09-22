@@ -1,6 +1,6 @@
 ---
 title: buildflow-website-system
-purpose: BuildFlow public marketing website — buildflow.io. Positioning, messaging, sections, UX, CTAs, blog, docs. Separate from admin CRM and customer dashboard.
+purpose: Fornax public marketing website — [domain TBD under Fornax name]. Positioning, messaging, sections, UX, CTAs, blog, docs. Separate from admin CRM and customer dashboard.
 status: active
 owner: c.t.cohen
 updated: '2026-09-18'
@@ -10,7 +10,7 @@ phase: phase_1
 spec_name: buildflow-website-system
 spec_aliases:
 - marketing website
-- buildflow.io
+- [domain TBD under Fornax name]
 - public website
 - landing page
 spec_sources:
@@ -24,9 +24,9 @@ spec_authority: authoritative (exported from claude.ai project memory 2026-09-17
 > - The Demo page includes the sandbox dashboard preview. Domains follow the domain map (D32).
 
 
-## System 19: BuildFlow Public Marketing Website
+## System 19: Fornax Public Marketing Website
 
-**Domain:** buildflow.io. **Audience:** prospective trades SMB customers. **Architecture:** separate from admin.buildflow.com (Tyler's CRM) and customer dashboards.
+**Domain:** [domain TBD under Fornax name]. **Audience:** prospective trades SMB customers. **Architecture:** separate from [domain TBD under Fornax name] (Tyler's CRM) and customer dashboards.
 
 ---
 

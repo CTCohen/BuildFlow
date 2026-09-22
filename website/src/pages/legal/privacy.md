@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/LegalLayout.astro
-title: "Privacy Policy — BuildFlow (DRAFT)"
+title: "Privacy Policy — Fornax (DRAFT)"
 ---
 
 > **DRAFT for counsel review (2026-09-18).** Aligned to spec System 11 (US-only at launch; GDPR handling applies if EU customers appear). Not to be published until reviewed.
 
 
-# BuildFlow Privacy Policy
+# Fornax Privacy Policy
 
 **Last Updated:** September 2026
 
@@ -14,7 +14,7 @@ title: "Privacy Policy — BuildFlow (DRAFT)"
 
 ## 1. Introduction
 
-BuildFlow ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
+Fornax ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
 
 Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our services.
 
@@ -135,7 +135,7 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 - Sensitive credentials (for example CRM connection tokens) are encrypted with AES-256; our infrastructure providers also encrypt stored data at rest
 
 **Access Control:**
-- BuildFlow staff access is restricted to authorized personnel only
+- Fornax staff access is restricted to authorized personnel only
 - We use role-based access control (engineers, support, admins have different permissions)
 - All access is logged for audit trails
 
@@ -144,7 +144,7 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 - Backups are stored on separate secure servers
 
 **Infrastructure:**
-- Hosted on Cloudflare (sites, DNS, CDN), Supabase (database and authentication) and our backend cloud provider; these providers hold their own security certifications, which are not certifications of BuildFlow
+- Hosted on Cloudflare (sites, DNS, CDN), Supabase (database and authentication) and our backend cloud provider; these providers hold their own security certifications, which are not certifications of Fornax
 - Cloudflare provides DDoS protection and a web application firewall
 
 **However:**
@@ -171,7 +171,7 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 - Government agencies (if required by law)
 
 **Business Transfer:**
-- If BuildFlow is acquired or merges, your data may be transferred to the new owner
+- If Fornax is acquired or merges, your data may be transferred to the new owner
 - You will be notified if this occurs
 
 **Your Control:**
@@ -228,7 +228,7 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 
 ## 9. Children's Privacy
 
-BuildFlow is not intended for children under 13. We do not knowingly collect information from children under 13. If we learn a child under 13 has provided information, we will delete it immediately.
+Fornax is not intended for children under 13. We do not knowingly collect information from children under 13. If we learn a child under 13 has provided information, we will delete it immediately.
 
 If you are a parent/guardian and believe your child provided information, email: privacy@buildflow.com
 
@@ -236,7 +236,7 @@ If you are a parent/guardian and believe your child provided information, email:
 
 ## 10. International Data Transfers
 
-Your data may be transferred to, stored in, and processed in countries other than your country of residence. By using BuildFlow, you consent to the transfer of your data to the United States and other countries where our service providers operate.
+Your data may be transferred to, stored in, and processed in countries other than your country of residence. By using Fornax, you consent to the transfer of your data to the United States and other countries where our service providers operate.
 
 ---
 
@@ -274,7 +274,7 @@ Your data may be transferred to, stored in, and processed in countries other tha
 
 We may update this Privacy Policy from time to time. Changes will be posted to buildflow.com with an updated "Last Updated" date. Material changes will be communicated via email 30 days in advance.
 
-Your continued use of BuildFlow after changes means you accept the updated policy.
+Your continued use of Fornax after changes means you accept the updated policy.
 
 ---
 
@@ -286,7 +286,7 @@ Your continued use of BuildFlow after changes means you accept the updated polic
 - We do not use personal information for profiling
 
 **California Online Privacy Protection Act (COPPA):**
-- We are not subject to COPPA (BuildFlow is not directed at children)
+- We are not subject to COPPA (Fornax is not directed at children)
 
 ---
 
@@ -302,11 +302,11 @@ Your continued use of BuildFlow after changes means you accept the updated polic
 - Response time: 30 days
 
 **Mailing Address:**
-- BuildFlow
+- Fornax
 - [Your Address if you add it]
 
 ---
 
 **Last Updated: September 2026**
 
-By using BuildFlow, you agree to this Privacy Policy.
+By using Fornax, you agree to this Privacy Policy.

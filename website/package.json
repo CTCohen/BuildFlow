@@ -1,7 +1,7 @@
 {
   "name": "buildflow-website",
   "version": "0.1.0",
-  "description": "BuildFlow landing page",
+  "description": "Fornax landing page",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
