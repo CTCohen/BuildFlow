@@ -40,13 +40,29 @@ build keeps moving on mocks until you do.
 - [ ] **Cloudflare** — account + API token (unlocks real site hosting)
 - [◐] **Supabase** — project created (`wvkvcuffyzbejuipjfhu.supabase.co`), URL + publishable key stored locally 2026-09-21. Still need the **service role key** (Project Settings → API → service_role) before Foundation can actually connect for real.
 - [ ] **Google Cloud** — OAuth client (unlocks real customer/admin login)
-- [ ] **Stripe** — test-mode account first (unlocks real billing testing)
+- [ ] **Stripe** — test-mode account first (unlocks real billing testing). Once it exists, three things are
+  ready to wire in (code and tests already built on mocks, `billing/prices.py` + `billing/webhooks.py`):
+  1. Create the real Products/Prices in test mode — 2 tiers (Micro $149/mo, SMB $249/mo) × 2 cycles
+     (monthly, annual = 10x monthly) = 4 Prices, then drop the real Price IDs into `billing/prices.py`
+     replacing the `price_ph_...` placeholders.
+  2. Register a webhook endpoint (once there's a URL to point it at) for `invoice.payment_succeeded`,
+     `invoice.payment_failed`, and the `customer.subscription.*` events, and give me the signing secret
+     (`.local/`, gitignored) — swaps into `billing/webhooks.py` in place of the current mock verifier.
+  3. Confirm whether early customers keep grandfathered pricing forever once prices rise, and roughly when/
+     to what (D02, still open — see RECONCILIATION_LOG.md) — the versioning scheme is already built either way,
+     this only picks the numbers/date.
 - [ ] **Anthropic Console API key** — tried to get this myself via Chrome tonight (2026-09-22) but hit a real
   login wall (Google sign-in or email) that only you can complete — not something I should do on your behalf.
   Log in at console.anthropic.com yourself, create a key, **set the $30/mo spend limit**, and either drop it in
   `.local/anthropic-api.env` or tell me and I'll set that file up for you to paste into.
 - [ ] **Apollo + Hunter** (free tiers) and **Google Places API** (with a quota cap) — unlocks real lead lookup
-- [ ] **HubSpot** developer/private app — unlocks real CRM sync; also apply now for Jobber/ServiceTitan partner access (1-2 week lead time)
+- [ ] **HubSpot** developer/private app — unlocks real CRM sync; also apply now for Jobber/ServiceTitan partner access (1-2 week lead time).
+  Push connector logic and retries are already built and tested on mocks (`crm/TASKS.md`); once the app exists,
+  three things unblock it: (1) the private app's access token, dropped in `.local/hubspot.env`, gitignored; (2)
+  a few custom properties need creating in HubSpot's own schema UI on both the Contact and Deal objects —
+  `fornax_lead_id`, `fornax_lead_score`, `fornax_vertical`, `fornax_source` on contacts, `fornax_lead_id` and
+  `fornax_assigned_tier` on deals — before the API can set them; (3) confirm the real pipeline/stage IDs for
+  your HubSpot account (we used HubSpot's generic defaults as placeholders, your actual pipeline may differ).
 - [ ] **Twilio** — for critical alerts only (Slack dropped, see below)
 - [ ] **Calendly link** — for the high-touch sales path
 - [x] **GitHub token** — already covered account-wide, confirmed working (pushed tonight). Nothing needed.

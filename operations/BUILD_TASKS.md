@@ -64,17 +64,39 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
   just aggregator matches) before deciding. If the deeper pass still can't confirm the business, suppress/skip
   that lead automatically — never surface individual leads to Tyler for review.
 
-## 5. Billing (Track F — not started)
-- [ ] Stripe test-mode products/prices (Micro, SMB, monthly+annual) [credential: Stripe test account]
-- [ ] Webhook handling, versioned prices, `launch_cohort` flag [depends: Stripe test account]
+## 5. Billing (Track F — in progress, mocks only)
+- [x] Stripe test-mode products/prices (Micro, SMB, monthly+annual) [was: credential: Stripe test account] — done
+  2026-09-22 on placeholder IDs (no real Stripe account exists yet): `billing/prices.py`. Versioned
+  `PriceVersion` catalog (v1 launch prices: Micro $149/mo·$1,490/yr, SMB $249/mo·$2,490/yr, annual = 10x
+  monthly), `launch_cohort` flag (`launch`/`standard`) per DECISIONS.md D02, `add_price_increase()` for the
+  future price rise (creates a new `standard` version, never touches `launch` rows — that's the grandfathering
+  guarantee). Mid-Market intentionally absent (DECISIONS.md item 4/14, paused). 10/10 evals pass
+  (`billing/evals/test_prices.py`). Real Stripe Products/Prices still need creating once a Stripe account
+  exists — see TYLER_QUEUE.md.
+- [x] Webhook handling, versioned prices, `launch_cohort` flag [was: depends: Stripe test account] — done
+  2026-09-22 on mocks: `billing/webhooks.py` (`handle_event`, real dispatch logic) + `billing/mocks.py`
+  (`WebhookSignatureMock`, `StripeEventFactory` — mocked signature verification and event construction, no
+  real Stripe account/webhook secret exists yet). Handles `invoice.payment_succeeded`,
+  `invoice.payment_failed`, `customer.subscription.{created,updated,deleted}`. On the 3rd failed retry
+  (`attempt_count>=3`, per SPEC-08 Section 2's locked retry count), hands off into the already-merged
+  `billing/dunning/` Tier 1-3 state machine (`start_delinquency()` + `advance()`) — real, tested wiring, not a
+  stub. 12/12 evals pass (`billing/evals/test_webhooks.py`); full billing suite 42/42
+  (`python3 -m billing.run_evals`). Real Stripe webhook endpoint/secret still needed — see TYLER_QUEUE.md.
 - [x] Dunning state machine (tiers 1-3 automated) [none, buildable on mocks] — done 2026-09-21: `billing/dunning/state_machine.py` (+ `mocks.py` for Stripe/SendGrid), 20/20 evals pass live (`python3 -m billing.dunning.run_evals`). Tier 4-5 explicitly out of scope per DECISIONS.md #14. Assumptions and what's left: `billing/TASKS.md`.
 - [ ] Payment → live site fulfillment <60s [depends: Cloudflare hosting §2, Stripe §5]
 - [ ] Live Stripe switch [decision: legal sign-off (G7) required first — do not do before then]
 
-## 6. CRM (Track G — not started)
+## 6. CRM (Track G — mocked build done, real account blocked)
 - [ ] HubSpot developer/private app [credential: HubSpot app]
-- [ ] One-way push connector, 5-minute batch, retries [depends: HubSpot app, Foundation contract]
-- [ ] Test lead lands in a HubSpot sandbox [depends: above]
+- [x] One-way push connector, 5-minute batch, retries — done 2026-09-22: `crm/hubspot/mapping.py`
+  (admin.leads/admin.prospects -> HubSpot contact/deal, per platform/CONTRACT.md) + `crm/hubspot/sync.py`
+  (batching, retry ladder 1s/5s/30s/5min max 5, Tyler-notify at 3, pause at 5 — verified against both
+  `crm/SPEC-09-crm-integration.md` override block and `crm/SPEC-10-external-integrations.md` line 89, they
+  agree) + `crm/hubspot/mocks.py` (mock HubSpot client, same pattern as `billing/dunning/mocks.py`). 18/18
+  evals pass live (`python3 -m crm.run_evals`). Details and assumptions: `crm/TASKS.md`.
+- [◐] Test lead lands in a HubSpot sandbox — proven end-to-end on mocks
+  (`crm/evals/test_sync.py::TestEndToEndTestLead`: transient failure then success, field
+  mapping + contact/deal IDs verified); real sandbox push blocked on the HubSpot app above.
 
 ## 7. Dashboards (Track H — not started)
 - [ ] Customer dashboard (SMB first) [depends: Foundation schema, Design output format]

@@ -6,3 +6,4 @@ knowledge/graph.json
 knowledge/graph.mmd
 governance/__pycache__/
 .local/
+__pycache__/
