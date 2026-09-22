@@ -69,6 +69,11 @@ build keeps moving on mocks until you do.
 - Logo, marketing-site copy, Mid-Market waitlist copy
 - Style-profile choices and any QA-threshold change the monthly review loop proposes
 
+## 5. Foundation lane — small items left, not blocking
+- [ ] **`npm install pg`** in `platform/service` (your terminal — this session's sandbox can't reach the npm registry). Standard Postgres driver; without it the service's `/ready` endpoint always reports ready instead of actually checking the database.
+- [ ] **Build the Docker image once**, to prove it, not just its unit tests: `docker build -t buildflow-platform platform/service && docker run -p 8080:8080 buildflow-platform`, then `curl localhost:8080/health` should return 200.
+- [ ] **When you create the real Supabase project:** expose only the `app` schema to its Data API (never `admin`), set minimum password length to 12, and enroll TOTP on your own account before adding yourself to `admin.admins`. Full steps in `platform/AUTH-SETUP.md`.
+
 ## Calls and hands-on (needed later, not now)
 - Sales calls and onboarding during the soft launch
 - Recording the onboarding/offboarding videos (~4-5 hours on camera)
