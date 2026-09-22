@@ -11,6 +11,7 @@ Usage:
   python3 enforce.py --phase advisory
   python3 enforce.py --phase strict
   python3 enforce.py --lint                   # stale-term lint only (exit 1 on hits)
+  python3 enforce.py --check-systems          # systems.md <-> systems/*.md sync check only (exit 1 on mismatch)
 """
 
 import os
@@ -87,6 +88,54 @@ def lint_stale_terms(workspace_root: str) -> list:
                 if re.search(pat, line):
                     hits.append((rel, i, pat, hint))
     return hits
+
+# ============================================================================
+# SYSTEMS.MD <-> systems/*.md SYNC CHECK
+# ============================================================================
+
+def check_systems_sync(workspace_root: str) -> list:
+    """
+    Bidirectional consistency check between systems.md's table and the real files
+    under systems/.
+
+    Returns a list of human-readable problem strings; empty list means clean.
+      1. Every row in systems.md's `| System | File | Status |` table must point to a
+         file that actually exists under systems/.
+      2. Every actual systems/*.md file must be referenced by some row in that table.
+    """
+    root = Path(workspace_root)
+    index_path = root / "systems.md"
+    problems = []
+
+    if not index_path.exists():
+        return ["systems.md not found"]
+
+    text = index_path.read_text(encoding="utf-8")
+
+    # Pull every markdown link that points at systems/*.md out of the table rows.
+    # Row shape: | System | [systems/foo.md](systems/foo.md) | status |
+    listed = set(re.findall(r"\(systems/([A-Za-z0-9_\-]+\.md)\)", text))
+
+    if not listed:
+        problems.append("systems.md: no systems/*.md rows found in the table (parse failure or empty table)")
+
+    # Direction 1: every listed file must exist.
+    for name in sorted(listed):
+        if not (root / "systems" / name).exists():
+            problems.append(f"systems.md lists 'systems/{name}' but that file does not exist")
+
+    # Direction 2: every real systems/*.md file must be listed (README.md is the folder's
+    # own doc, not a system, and is exempt).
+    systems_dir = root / "systems"
+    if systems_dir.is_dir():
+        for f in sorted(systems_dir.glob("*.md")):
+            if f.name == "README.md":
+                continue
+            if f.name not in listed:
+                problems.append(f"systems/{f.name} exists but is not listed in systems.md's table")
+
+    return problems
+
 
 # ============================================================================
 # ENFORCEMENT LOGIC
@@ -230,6 +279,16 @@ def run_enforcement_cycle(workspace_root: str):
     else:
         print("\n✅ Stale-term lint: clean")
 
+    # Step 0b: systems.md <-> systems/*.md sync check (all phases; reported, never blocks
+    # a learning-phase run, same treatment as the stale-term lint above)
+    sync_problems = check_systems_sync(workspace_root)
+    if sync_problems:
+        print(f"\n⚠️  systems.md sync check: {len(sync_problems)} issue(s)")
+        for p in sync_problems:
+            print(f"   • {p}")
+    else:
+        print("\n✅ systems.md sync check: clean")
+
     # Step 1: Audit
     audit_result = run_audit(workspace_root)
     if not audit_result:
@@ -279,6 +338,13 @@ def main():
             print(f"{rel}:{line}: {hint}")
         print(f"{len(hits)} stale-term hit(s)")
         sys.exit(1 if hits else 0)
+
+    if len(sys.argv) > 1 and sys.argv[1] == '--check-systems':
+        problems = check_systems_sync(workspace_root)
+        for p in problems:
+            print(p)
+        print(f"{len(problems)} systems.md sync issue(s)")
+        sys.exit(1 if problems else 0)
 
     if len(sys.argv) > 1 and sys.argv[1] == '--phase':
         if len(sys.argv) < 3:

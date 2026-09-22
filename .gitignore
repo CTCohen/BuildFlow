@@ -7,3 +7,7 @@ knowledge/graph.mmd
 governance/__pycache__/
 .local/
 __pycache__/
+# saved demo builds: keep the README and any curated review report, not the generated site output
+agents/design/demos/*/*/
+!agents/design/demos/*/*/README.md
+!agents/design/demos/*/*/*-review.md
