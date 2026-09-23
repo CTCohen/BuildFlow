@@ -11,3 +11,5 @@ __pycache__/
 agents/design/demos/*/*/
 !agents/design/demos/*/*/README.md
 !agents/design/demos/*/*/*-review.md
+agents/design/scratch/*
+!agents/design/scratch/README.md

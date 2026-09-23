@@ -1,6 +1,6 @@
 ---
-title: Communications System
-purpose: Authoritative spec and build checklist for domain, email infrastructure, DNS configuration, and email addressing across all customer-facing and operational channels.
+title: Communications & Tech Stack System
+purpose: Authoritative spec and build checklist for domain, email, phone/voicemail, DNS, and the complete account/service inventory that runs Fornax.
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
@@ -39,8 +39,32 @@ only Tyler's confirmation or an independently-verified check is.
 - Google Workspace once past the email-forwarding stage
 - SMS channel (explicitly off at launch, email-only)
 
+## Phone and voicemail
+Not built, not purchased. Directly tied to the Client Offboarding System's open research question: if any
+customer's phone/voicemail/call-routing runs through Fornax, that customer may not be cleanly offboardable.
+**Recommendation (not yet ruled by Tyler):** keep phone/voicemail features Managed-only, never sold as
+Offboard-eligible — this keeps both Communications and Offboarding simpler. See
+`systems/offboarding_system.md`.
+
+## Complete tech stack (real accounts only — nothing here implies it exists until checked off)
+| Layer | Provider | Status |
+|---|---|---|
+| Domain registrar | Not chosen (Cloudflare Registrar was the original plan) | not purchased |
+| Site/dashboard hosting (static) | Cloudflare Pages/Workers/R2 | plugin installed, no API token yet |
+| Backend/API/database logic | Railway (now) → Google Cloud Run (later, once volume justifies it) | Railway project exists, service not deployed |
+| Database | Supabase (Postgres) | project created, publishable key stored, service-role key missing |
+| Transactional/outbound email | SendGrid | account not created |
+| CRM | HubSpot | account not created |
+| Billing | Stripe | account not created |
+| Login | Google OAuth (via Supabase Auth) | not configured |
+| AI (build/ops) | Claude Pro (existing) | in use |
+| AI (unattended, capped) | Anthropic Console API key, $30/mo cap | not created |
+| Phone/voicemail | none chosen | not started, see above |
+| Alerts | Email + Twilio SMS (Slack dropped, solo founder) | Twilio not set up |
+
 ## Open questions
 - Which registrar (Cloudflare Registrar was the original plan per the spec export; a prior fabricated version of
   this file claimed Porkbun — that claim is not evidence of an actual decision, Tyler has not chosen a registrar)
+- Phone/voicemail: confirm the Managed-only recommendation above, or say otherwise
 - All items in `operations/TYLER_QUEUE.md`'s domain/mailbox/SendGrid entries remain the real source of truth for
   what's actually needed here

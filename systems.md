@@ -87,7 +87,7 @@ One paragraph: what this system does, for whom, and how it fits the rest of the 
 | Customer dashboard — SMB | [systems/dashboard_smb_system.md](systems/dashboard_smb_system.md) | drafted |
 | Customer dashboard — Mid-Market | [systems/dashboard_mid_market_system.md](systems/dashboard_mid_market_system.md) | drafted (tier paused) |
 | Billing | [systems/billing_system.md](systems/billing_system.md) | drafted |
-| Communications (domain, DNS, email) | [systems/communications_system.md](systems/communications_system.md) | drafted |
+| Communications & Tech Stack (domain, DNS, email, phone, full account inventory) | [systems/communications_system.md](systems/communications_system.md) | drafted |
 | Hosting & deployment | [systems/hosting_system.md](systems/hosting_system.md) | drafted |
 | Compliance & data retention | [systems/compliance_system.md](systems/compliance_system.md) | drafted |
 | Marketing site | [systems/marketing_site_system.md](systems/marketing_site_system.md) | drafted |
