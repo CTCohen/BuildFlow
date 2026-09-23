@@ -90,16 +90,40 @@ One paragraph: what this system does, for whom, and how it fits the rest of the 
 | Hosting & deployment | [systems/hosting.md](systems/hosting.md) | drafted |
 | Compliance & data retention | [systems/compliance.md](systems/compliance.md) | drafted |
 | Marketing site | [systems/marketing-site.md](systems/marketing-site.md) | drafted |
-| Customer Support | systems/support.md (not yet created) | identified, not yet drafted |
-| Customer Feedback & Iteration | systems/feedback.md (not yet created) | identified, not yet drafted |
-| SEO / AI-Visibility | systems/seo-ai-visibility.md (not yet created) | identified, not yet drafted |
-| Experimentation | systems/experimentation.md (not yet created) | identified, not yet drafted |
+| CRM & External Integrations | [systems/crm-integrations.md](systems/crm-integrations.md) | drafted |
+| Observability | [systems/observability.md](systems/observability.md) | drafted |
+| Business Operations & Financials | [systems/business-operations-financials.md](systems/business-operations-financials.md) | drafted |
+| Customer Support | [systems/customer-support.md](systems/customer-support.md) | drafted |
+| Customer Feedback & Iteration | [systems/customer-feedback.md](systems/customer-feedback.md) | drafted |
+| SEO / AI-Visibility | [systems/seo-ai-visibility.md](systems/seo-ai-visibility.md) | drafted |
+| Experimentation | [systems/experimentation.md](systems/experimentation.md) | drafted |
 | *(meta, not a system)* Coverage audit | [systems/AUDIT.md](systems/AUDIT.md) | reference |
 
 **Note on dashboards:** per Tyler's ruling (2026-09-22), dashboards are uniform within a tranche — every Micro
 customer's dashboard looks and functions identically, wired to their site's own lead-capture endpoints. Not
 per-vertical (yet — may change based on need, tracked as an open question in each dashboard system file). This is
 the opposite of the website design system, which is deliberately per-business through multi-layer review.
+
+## Open questions on file granularity (Tyler's call, 2026-09-22)
+
+Three systems from the original 19-system export don't have their own dedicated `systems/*.md` file — their
+content is folded into other systems' files instead. Whether that should change is genuinely undecided; each
+option below has a real tradeoff, and it's Tyler's call, not decided here:
+
+1. **System 02 (Platform Architecture)** — currently split across `systems/hosting.md`,
+   `systems/admin-dashboard.md`, and other files' "Code lives at" sections, per the granularity rule (platform
+   architecture is a code-organization concern, not a customer-facing unit with its own lifecycle). Own file =
+   clearer single place to find cross-cutting infra decisions; folded = fewer files, but architecture detail is
+   scattered and harder to find standalone.
+2. **System 05 (Feature System)** — currently folded into the tier-specific `systems/design-*.md` and
+   `systems/dashboard-*.md` files (feature availability per tier is described where each tier's design/
+   dashboard is described). Own file = one place to see the full feature matrix across tiers at once; folded =
+   fewer files, but comparing feature availability across tiers means opening multiple files.
+3. **System 06 (Demo-to-Customer)** — currently folded into `systems/admin-dashboard.md` (the demo→conversion
+   flow is described alongside the admin/CRM funnel view that tracks it). Own file = the demo-to-customer
+   journey (a real, distinct lifecycle stage between Outbound and Onboarding) gets its own authoritative home;
+   folded = fewer files, but the conversion mechanics are buried inside a file primarily about the admin
+   dashboard rather than about the journey itself.
 
 ## Governance
 - Every file in `systems/` must be listed in the table above, and every table row must point to a real file —
