@@ -14,15 +14,14 @@ phase: phase_1
 Ties directly to D02 (price-increase timing, provisional) and D03 (soft-launch cohort, provisional) in
 `DECISIONS.md`. This does not go live, does not get quoted to anyone, until Tyler approves it.
 
-## Proposed pricing (locked for life of the customer, not just an intro rate)
-| Tier | Standard | Founding | Discount |
-|---|---|---|---|
-| Micro | $149/mo | $119/mo | ~20% off |
-| SMB | $249/mo | $199/mo | ~20% off |
-| Mid-Market | paused, not offered | — | — |
+## Proposed pricing — 4 numbers (locked for life of the customer, not just an intro rate)
+| Tier | Managed, standard | Managed, founding | Offboard, standard | Offboard, founding |
+|---|---|---|---|---|
+| Micro | $149/mo | **$119/mo** | $499 | **$399** |
+| SMB | $249/mo | **$199/mo** | $799 | **$639** |
 
-Annual stays 10x the founding monthly rate (same ratio as standard), so Micro founding annual = $1,190,
-SMB founding annual = $1,990.
+Same ~20% discount applied to both paths, not just Managed. Mid-Market not offered (tier paused).
+Annual stays 10x the founding monthly rate, so Micro founding annual = $1,190, SMB founding annual = $1,990.
 
 **Why locked for life, not just an intro period:** a temporary discount that jumps to full price at renewal reads
 as a bait-and-switch to a first customer who took a real risk on an unproven company. Locking it permanently is

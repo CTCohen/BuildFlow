@@ -37,18 +37,16 @@ hosting specs for BOTH paths are exact: what a Managed customer's dashboard/host
 separately what an Offboard customer walks away with. Building onboarding/offboarding logic ahead of those specs
 being nailed down risks building the wrong handoff shape twice.
 
-## Real open question, needs research before committing to this tier (Tyler, 2026-09-22)
-Is offboarding actually simple enough to sell? The original idea was to sell Offboard to prospects who would
-never buy Managed at all — a low-commitment entry point. Whether that's viable depends entirely on how tightly
-the site/dashboard is integrated with things that can't be cleanly hand off to a customer own their infra:
-- A static site + exported lead data → easy, genuinely simple to offboard
-- If a customer's phone number, voicemail, or call routing runs through Fornax → hard, possibly not cleanly
-  offboardable at all without breaking their business continuity
-**Recommendation, not yet ruled:** exclude phone/voicemail/call-routing integration from anything sold as
-Offboard-eligible — keep those Managed-only, which keeps the actual offboarding mechanics simple (files + data
-export + DNS handoff, nothing tied to a live phone number). If a future feature needs phone integration, it
-should ship as a Managed-only feature, not offered to the Offboard tier. This needs a real decision before any
-onboarding/offboarding code gets built, not just a note here.
+## RULED (Tyler, 2026-09-22): offboarding is viable
+Phone/voicemail/call-routing is Managed-only, never Offboard-eligible — confirmed. Edge cases and client-
+experience recovery on the phone side are handled personally by Tyler, manually, not automated (his own
+day-job experience in client relations covers this). With phone off the table for Offboard customers, what's
+left to hand off is a static site + exported lead data + a DNS pointer change — genuinely simple. **Offboarding
+is viable as a low-commitment entry-tier product**, exactly as originally intended: something to sell to
+prospects who'd never buy Managed at all.
+
+Still blocked on the dependency above (exact dashboard/hosting specs for both paths) before building the actual
+handoff mechanics — but the viability question itself is closed, not open anymore.
 
 ## Specified, not yet built
 - [ ] Offboard export mechanics — handing the customer their domain and static site files with no ongoing
