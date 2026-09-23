@@ -21,8 +21,8 @@ old SPEC's content against whether a `systems/*.md` file already absorbs it.
 ### 1. Customer Support
 **Why missing:** `operations/SPEC-14-customer-support.md` (System 14 in the old numbering) exists and is
 `status: active`, but nothing in `systems/` covers it. A grep across all 14 existing system files for "support
-ticket", "help center", "knowledge base", "SLA" only turns up two incidental hits — `systems/compliance.md`'s
-deletion-request SLA and `systems/offboarding.md`'s same SLA reference — neither is a real description of a
+ticket", "help center", "knowledge base", "SLA" only turns up two incidental hits — `systems/compliance_system.md`'s
+deletion-request SLA and `systems/offboarding_system.md`'s same SLA reference — neither is a real description of a
 support/ticketing system. This is a genuine gap: support triage, severity levels (P0-P3), help center/KB
 structure, and the support→product feedback loop have no home.
 **What it should absorb:** all of `operations/SPEC-14-customer-support.md` — support workflow and triage,
@@ -34,7 +34,7 @@ re-described, once the system file is drafted.
 
 ### 2. Customer Feedback & Iteration
 **Why missing:** `operations/SPEC-15-customer-feedback.md` (System 15) exists, `status: active`, but no
-`systems/*.md` file covers it. The only related hit is a single unbuilt checkbox in `systems/admin-dashboard.md`
+`systems/*.md` file covers it. The only related hit is a single unbuilt checkbox in `systems/admin_dashboard_system.md`
 ("Agent QA & feedback loop dashboard card... not found") — that's an admin-dashboard feature referencing
 feedback data, not a description of the feedback capture/triage/roadmap system itself.
 **What it should absorb:** all of `operations/SPEC-15-customer-feedback.md` — feedback capture and sources
@@ -45,14 +45,14 @@ shipped-feature impact metrics.
 ### 3. SEO / AI-Visibility
 **Why missing:** `knowledge/SPEC-16-seo-geo.md` (System 16) exists, `status: active`, with a real Tyler override
 (2026-09-18) on scope by layer. The only hit in `systems/` is one unbuilt checkbox inside
-`systems/design-mid-market.md` mentioning "Core Web Vitals" as part of a paused-tier QA gate — that's a design
+`systems/design_mid_market_system.md` mentioning "Core Web Vitals" as part of a paused-tier QA gate — that's a design
 QA line item, not a description of the SEO/AI-visibility system's three layers.
 **What it should absorb:** all of `knowledge/SPEC-16-seo-geo.md` — Layer 1 (design defaults: schema, meta
 tags, Core Web Vitals, `llms.txt`, answer-structured FAQ — applies to every tier per Tyler's override), Layer 2
 (dynamic per-customer optimization, SMB only per the override), Layer 3 (ranking monitoring and
 auto-optimization triggers, deferred until revenue per the override). Note: per the override, "GEO" here means
 geographic targeting, not generative-engine-optimization — the file name should make that unambiguous
-(suggested: `systems/seo-ai-visibility.md`, since the AI-answer-optimization half lives in Layer 1).
+(suggested: `systems/seo_ai_visibility_system.md`, since the AI-answer-optimization half lives in Layer 1).
 
 ### 4. Experimentation
 **Why missing:** `operations/SPEC-17-experimentation.md` (System 17) exists, `status: active`, with a Tyler
@@ -66,13 +66,13 @@ the drafted system file should carry mostly "Specified, not yet built" and "Open
 "Built and verified".
 
 **Not missing — checked and already covered:** SPEC-02 (Platform Architecture) is split across
-`systems/hosting.md`/`admin-dashboard.md`/others' "Code lives at" sections rather than one system, which is
+`systems/hosting_system.md`/`admin-dashboard.md`/others' "Code lives at" sections rather than one system, which is
 correct per the granularity rule (platform architecture is a code-organization concern, not a customer-facing
 system). SPEC-06 (Demo→Customer), SPEC-07 (Lead pipeline), SPEC-08 (Billing), SPEC-09/10 (CRM), SPEC-11
 (Compliance/Security), SPEC-12 (Customer Lifecycle), SPEC-13 (Observability), SPEC-18 (Admin/CRM Ops), SPEC-19
 (Website), SPEC-03/04 (Hosting/Design Quality) all map cleanly onto existing drafted systems files (outbound,
 billing, admin-dashboard, compliance, onboarding, design-*, marketing-site, hosting). SPEC-13 (Observability)
-is the one partial exception: it's referenced piecemeal inside `systems/hosting.md` and `systems/compliance.md`
+is the one partial exception: it's referenced piecemeal inside `systems/hosting_system.md` and `systems/compliance_system.md`
 rather than having its own row, but it's infrastructure-facing (logging/alerting/cost-alerts, not a
 customer-facing unit with its own lifecycle) — under the granularity rule this correctly stays as detail inside
 Hosting/Compliance rather than becoming its own system. Not flagged as missing.
@@ -106,5 +106,5 @@ touch point, not redundancy, on full read.
 ## Changes made to `systems.md`
 Added four new table rows for the systems identified above, each marked `identified, not yet drafted` and
 pointing at a not-yet-created filename (`systems/support.md`, `systems/feedback.md`,
-`systems/seo-ai-visibility.md`, `systems/experimentation.md`). Per this task's scope, the full file content for
+`systems/seo_ai_visibility_system.md`, `systems/experimentation_system.md`). Per this task's scope, the full file content for
 these four is **not** written here — that's separate follow-up work, tracked by their table row's status.

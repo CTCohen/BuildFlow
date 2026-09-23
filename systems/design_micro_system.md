@@ -43,7 +43,7 @@ curated review report are tracked in git; the generated site output itself is gi
 - [ ] Locked editable scope in dashboard (business name, service text, contact info, hours, logo, gallery
   images only — hero/layout/colors/fonts locked, per RECONCILIATION_LOG D18)
 - [ ] No CRM connector at launch (email lead alerts + CSV export only, per D21) — the dashboard side of this is
-  partially covered by `platform/dashboards/lib/tier-features.mjs`'s Micro overrides (see systems/dashboard-micro.md), which correctly set `crmConfig: false` for Micro; the *design system's* copy/template side of "no CRM" is not itself a build item, just a non-feature
+  partially covered by `platform/dashboards/lib/tier-features.mjs`'s Micro overrides (see systems/dashboard_micro_system.md), which correctly set `crmConfig: false` for Micro; the *design system's* copy/template side of "no CRM" is not itself a build item, just a non-feature
 - [ ] Smoke test across each of the 4 verticals with 2-3 profiles
 
 ## Possible future specs (not built, not committed to)

@@ -45,9 +45,13 @@ the domain and files, no ongoing support. Details: `docs/PRICING.md`, `specs/05-
   Log runs in `metrics/token-log.md`.
 
 ## Where things live
-Specs sit beside their module: `platform/`, `design/`, `agents/`, `billing/`, `crm/`, `outreach/`, `legal/`,
-`onboarding/`, `operations/`, `knowledge/`, `website/`. Cross-cutting: `docs/`, `docs/specs/`. Site renderer: `app/`.
-Marketing site: `website/`. Live file status: `docs/specs/APPLICATION_MANIFEST.md`. Loops: `operations/LOOPS.md`.
+**Start at `systems.md`** for what the business actually is and does — one authoritative file per business system
+under `systems/`, checkbox-tracked (built vs. specified-not-built vs. future-possible). This is the source of
+truth for "what's built," ahead of any code folder. Engineering module specs (the old `SPEC-NN` files) sit beside
+their module: `platform/`, `design/`, `agents/`, `billing/`, `crm/`, `outreach/`, `legal/`, `onboarding/`,
+`operations/`, `knowledge/`, `website/` — these are being folded into `systems/*.md` and superseded there.
+Cross-cutting: `docs/`, `docs/specs/`. Site renderer: `app/`. Marketing site: `website/`. Live file status:
+`docs/specs/APPLICATION_MANIFEST.md`. Loops: `operations/LOOPS.md`.
 
 ## Critical paths (cannot break)
 Design → QA → deploy of demos and live sites · lead discovery and outreach delivery · Stripe payment → live (<60 s) ·

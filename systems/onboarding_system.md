@@ -60,6 +60,6 @@ onboarding → Day 0-30 sequence this system runs; treat its visual sequencing a
 ## Open questions
 - Whether onboarding milestone thresholds (5/20/100 leads for Micro, etc.) are realistic pre-launch numbers or
   need revisiting once real lead volume exists — same caveat as Outbound's tier cutoffs
-  (`systems/outbound.md`'s open question).
+  (`systems/outbound_system.md`'s open question).
 - Whether the Day 0-30 sequence should be a standalone build task in `operations/BUILD_TASKS.md` (it currently
   isn't tracked as one at all) — flagging this gap rather than guessing why it's missing.

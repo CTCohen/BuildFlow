@@ -52,5 +52,5 @@ export, unchanged).
 - No feedback-storage tool (GitHub issues vs. Notion vs. Airtable) has been chosen — a prerequisite decision
   before any capture tooling can be built.
 - This system's automated triage layer is explicitly meant to receive forwarded "feature request" items from
-  the Customer Support system's triage agent (`systems/customer-support.md`) — both are unbuilt, so this
+  the Customer Support system's triage agent (`systems/customer_support_system.md`) — both are unbuilt, so this
   hand-off is untested and worth building together rather than independently.

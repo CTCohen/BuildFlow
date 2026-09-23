@@ -12,11 +12,11 @@ phase: phase_1
 # Customer Dashboard — SMB
 
 The base feature set of the one shared dashboard codebase (Micro is a reduction of this, not a fork — see
-`systems/dashboard-micro.md`). SMB gets full lead management: notes, a simple pipeline, image uploads, and a
+`systems/dashboard_micro_system.md`). SMB gets full lead management: notes, a simple pipeline, image uploads, and a
 CRM config UI, per `docs/TIER-FEATURE-MATRIX.md`.
 
 
-**Code lives at:** `platform/dashboards/lib/customer-dashboard.mjs`, `tier-features.mjs`, `sandbox-dashboard.mjs`, `demo-tracking.mjs` (shared with Micro, see `systems/dashboard-micro.md`)
+**Code lives at:** `platform/dashboards/lib/customer-dashboard.mjs`, `tier-features.mjs`, `sandbox-dashboard.mjs`, `demo-tracking.mjs` (shared with Micro, see `systems/dashboard_micro_system.md`)
 
 ## Built and verified
 - [x] Lead inbox + CSV export — `platform/dashboards/lib/customer-dashboard.mjs`'s `buildLeadInbox()`
@@ -57,7 +57,7 @@ either tier at launch.
 view, via `buildCrmConfigView`) — no live Supabase wiring yet (gate G3), fixture/mock rows only in tests.
 
 ### Exact differences from Micro
-See `systems/dashboard-micro.md`'s "Exact differences from SMB" section for the same comparison from the
+See `systems/dashboard_micro_system.md`'s "Exact differences from SMB" section for the same comparison from the
 other side — not duplicated here to avoid drift between the two files.
 
 **Test evidence:** part of the 26/26 (admin) + 43/43 (full suite including customer/sandbox/tier-features)
@@ -82,4 +82,4 @@ wired to a live database** — no Supabase service-role key yet (gate G3) — lo
 - Whether `pipeline_stage`/`notes` land as new `form_submissions` columns or a side table — open in
   `operations/TYLER_QUEUE.md` §4, unresolved as of this pass.
 - Per Tyler's 2026-09-22 ruling: dashboards stay uniform within a tranche (not per-vertical) — same open door
-  noted in `systems/dashboard-micro.md`, applies here too.
+  noted in `systems/dashboard_micro_system.md`, applies here too.

@@ -54,7 +54,7 @@ export, unchanged).
 
 ## Open questions
 - No experimentation work should start before real outbound traffic exists (there are zero live customers and
-  zero real sends per `systems/outbound.md`'s "Specified, not yet built" section) — this system's entire
+  zero real sends per `systems/outbound_system.md`'s "Specified, not yet built" section) — this system's entire
   backlog is correctly blocked on other systems going live first, not on its own design work.
 - Feature-flag tooling choice (LaunchDarkly vs. custom) has real cost implications against the $50/mo
-  constraint (see `systems/business-operations-financials.md`) and hasn't been decided.
+  constraint (see `systems/business_operations_financials_system.md`) and hasn't been decided.

@@ -12,7 +12,7 @@ phase: phase_1
 # Customer Dashboard — Mid-Market
 
 **Tier paused ~12 months (Tyler, 2026-09-18, `DECISIONS.md` item 4).** Same pause status as
-`systems/design-mid-market.md`. Confirmed in code: `platform/dashboards/lib/tier-features.mjs`'s
+`systems/design_mid_market_system.md`. Confirmed in code: `platform/dashboards/lib/tier-features.mjs`'s
 `resolveFeatures()` only accepts `"smb"` and `"micro"` — passing `"mid-market"` throws
 `unsupported tier "mid-market" (only "micro" and "smb" are in scope, see LANE-H-dashboards.md)`. Mid-Market is
 explicitly out of scope for the current dashboard build, not merely unstarted.
@@ -42,5 +42,5 @@ explicitly out of scope for the current dashboard build, not merely unstarted.
   ruling lifting the pause.
 
 ## Open questions
-- Same as `systems/design-mid-market.md`: no date or trigger condition found for lifting the pause beyond
+- Same as `systems/design_mid_market_system.md`: no date or trigger condition found for lifting the pause beyond
   "~12 months."

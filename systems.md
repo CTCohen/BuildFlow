@@ -3,7 +3,7 @@ title: Systems Index
 purpose: The authoritative list of every business system and where its spec file lives. CLAUDE.md points here. Governance checks that every systems/*.md file is listed here and every listing has a real file — nothing drifts unlisted.
 status: active
 owner: c.t.cohen
-updated: '2026-09-22'
+updated: '2026-09-23'
 version: 1.0.0
 tier_scope: all
 phase: phase_1
@@ -34,7 +34,7 @@ pause threshold" is one line inside Outbound's spec, not its own file.
 **Flow diagram:** `docs/workflow-graph.html` (needs refresh — stale as of 2026-09-22) is the existing visual
 pipeline diagram. It predates tonight's builds and the Fornax rename in places, so treat what it shows as
 unconfirmed until it's redrawn — that redraw is separate, larger follow-up work, not done in this pass. It's
-also linked from `systems/outbound.md`, `systems/onboarding.md`, and `systems/admin-dashboard.md`, the three
+also linked from `systems/outbound_system.md`, `systems/onboarding_system.md`, and `systems/admin_dashboard_system.md`, the three
 system files a visual flow would most help.
 
 **Specs vs. flows vs. workflows.** Three different things, easy to blur together — Tyler's terms for each:
@@ -76,27 +76,28 @@ One paragraph: what this system does, for whom, and how it fits the rest of the 
 
 | System | File | Status |
 |---|---|---|
-| Outbound (lead discovery, scoring, outreach) | [systems/outbound.md](systems/outbound.md) | drafted |
-| Client Onboarding | [systems/onboarding.md](systems/onboarding.md) | drafted |
-| Client Offboarding | [systems/offboarding.md](systems/offboarding.md) | drafted |
-| Admin command center (CRM view, outbound pacing/scripts, analytics, financials) | [systems/admin-dashboard.md](systems/admin-dashboard.md) | drafted |
-| Design system — Micro | [systems/design-micro.md](systems/design-micro.md) | drafted |
-| Design system — SMB | [systems/design-smb.md](systems/design-smb.md) | drafted |
-| Design system — Mid-Market | [systems/design-mid-market.md](systems/design-mid-market.md) | drafted (tier paused) |
-| Customer dashboard — Micro | [systems/dashboard-micro.md](systems/dashboard-micro.md) | drafted |
-| Customer dashboard — SMB | [systems/dashboard-smb.md](systems/dashboard-smb.md) | drafted |
-| Customer dashboard — Mid-Market | [systems/dashboard-mid-market.md](systems/dashboard-mid-market.md) | drafted (tier paused) |
-| Billing | [systems/billing.md](systems/billing.md) | drafted |
-| Hosting & deployment | [systems/hosting.md](systems/hosting.md) | drafted |
-| Compliance & data retention | [systems/compliance.md](systems/compliance.md) | drafted |
-| Marketing site | [systems/marketing-site.md](systems/marketing-site.md) | drafted |
-| CRM & External Integrations | [systems/crm-integrations.md](systems/crm-integrations.md) | drafted |
-| Observability | [systems/observability.md](systems/observability.md) | drafted |
-| Business Operations & Financials | [systems/business-operations-financials.md](systems/business-operations-financials.md) | drafted |
-| Customer Support | [systems/customer-support.md](systems/customer-support.md) | drafted |
-| Customer Feedback & Iteration | [systems/customer-feedback.md](systems/customer-feedback.md) | drafted |
-| SEO / AI-Visibility | [systems/seo-ai-visibility.md](systems/seo-ai-visibility.md) | drafted |
-| Experimentation | [systems/experimentation.md](systems/experimentation.md) | drafted |
+| Outbound (lead discovery, scoring, outreach) | [systems/outbound_system.md](systems/outbound_system.md) | drafted |
+| Client Onboarding | [systems/onboarding_system.md](systems/onboarding_system.md) | drafted |
+| Client Offboarding | [systems/offboarding_system.md](systems/offboarding_system.md) | drafted |
+| Admin command center (CRM view, outbound pacing/scripts, analytics, financials) | [systems/admin_dashboard_system.md](systems/admin_dashboard_system.md) | drafted |
+| Design system — Micro | [systems/design_micro_system.md](systems/design_micro_system.md) | drafted |
+| Design system — SMB | [systems/design_smb_system.md](systems/design_smb_system.md) | drafted |
+| Design system — Mid-Market | [systems/design_mid_market_system.md](systems/design_mid_market_system.md) | drafted (tier paused) |
+| Customer dashboard — Micro | [systems/dashboard_micro_system.md](systems/dashboard_micro_system.md) | drafted |
+| Customer dashboard — SMB | [systems/dashboard_smb_system.md](systems/dashboard_smb_system.md) | drafted |
+| Customer dashboard — Mid-Market | [systems/dashboard_mid_market_system.md](systems/dashboard_mid_market_system.md) | drafted (tier paused) |
+| Billing | [systems/billing_system.md](systems/billing_system.md) | drafted |
+| Communications (domain, DNS, email) | [systems/communications_system.md](systems/communications_system.md) | drafted |
+| Hosting & deployment | [systems/hosting_system.md](systems/hosting_system.md) | drafted |
+| Compliance & data retention | [systems/compliance_system.md](systems/compliance_system.md) | drafted |
+| Marketing site | [systems/marketing_site_system.md](systems/marketing_site_system.md) | drafted |
+| CRM & External Integrations | [systems/crm_integrations_system.md](systems/crm_integrations_system.md) | drafted |
+| Observability | [systems/observability_system.md](systems/observability_system.md) | drafted |
+| Business Operations & Financials | [systems/business_operations_financials_system.md](systems/business_operations_financials_system.md) | drafted |
+| Customer Support | [systems/customer_support_system.md](systems/customer_support_system.md) | drafted |
+| Customer Feedback & Iteration | [systems/customer_feedback_system.md](systems/customer_feedback_system.md) | drafted |
+| SEO / AI-Visibility | [systems/seo_ai_visibility_system.md](systems/seo_ai_visibility_system.md) | drafted |
+| Experimentation | [systems/experimentation_system.md](systems/experimentation_system.md) | drafted |
 | *(meta, not a system)* Coverage audit | [systems/AUDIT.md](systems/AUDIT.md) | reference |
 
 **Note on dashboards:** per Tyler's ruling (2026-09-22), dashboards are uniform within a tranche — every Micro
@@ -110,8 +111,8 @@ Three systems from the original 19-system export don't have their own dedicated 
 content is folded into other systems' files instead. Whether that should change is genuinely undecided; each
 option below has a real tradeoff, and it's Tyler's call, not decided here:
 
-1. **System 02 (Platform Architecture)** — currently split across `systems/hosting.md`,
-   `systems/admin-dashboard.md`, and other files' "Code lives at" sections, per the granularity rule (platform
+1. **System 02 (Platform Architecture)** — currently split across `systems/hosting_system.md`,
+   `systems/admin_dashboard_system.md`, and other files' "Code lives at" sections, per the granularity rule (platform
    architecture is a code-organization concern, not a customer-facing unit with its own lifecycle). Own file =
    clearer single place to find cross-cutting infra decisions; folded = fewer files, but architecture detail is
    scattered and harder to find standalone.
@@ -119,7 +120,7 @@ option below has a real tradeoff, and it's Tyler's call, not decided here:
    `systems/dashboard-*.md` files (feature availability per tier is described where each tier's design/
    dashboard is described). Own file = one place to see the full feature matrix across tiers at once; folded =
    fewer files, but comparing feature availability across tiers means opening multiple files.
-3. **System 06 (Demo-to-Customer)** — currently folded into `systems/admin-dashboard.md` (the demo→conversion
+3. **System 06 (Demo-to-Customer)** — currently folded into `systems/admin_dashboard_system.md` (the demo→conversion
    flow is described alongside the admin/CRM funnel view that tracks it). Own file = the demo-to-customer
    journey (a real, distinct lifecycle stage between Outbound and Onboarding) gets its own authoritative home;
    folded = fewer files, but the conversion mechanics are buried inside a file primarily about the admin

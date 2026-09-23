@@ -18,7 +18,7 @@ lead-capture endpoints. Dashboards are uniform within the Micro tranche — not 
 below).
 
 
-**Code lives at:** `platform/dashboards/lib/customer-dashboard.mjs`, `tier-features.mjs`, `sandbox-dashboard.mjs`, `demo-tracking.mjs` (shared with SMB, see `systems/dashboard-smb.md`)
+**Code lives at:** `platform/dashboards/lib/customer-dashboard.mjs`, `tier-features.mjs`, `sandbox-dashboard.mjs`, `demo-tracking.mjs` (shared with SMB, see `systems/dashboard_smb_system.md`)
 
 ## Built and verified
 - [x] Feature-flag resolution for Micro — `platform/dashboards/lib/tier-features.mjs`'s `MICRO_OVERRIDES`:
@@ -54,7 +54,7 @@ pipeline_stage,crm_sync_status`.
   `"pipeline is not enabled for tier \"micro\""`), `imageUploads` (multi-image), `crmConfig`
   (`buildCrmConfigView` throws), `editServiceDescriptions`, `addTestimonials`, `editContactInfo` (full),
   `editBrandColor`, `editFonts`, `customCss`, `multiUser`, `apiAccess` — the last five are off for SMB too
-  (see `systems/dashboard-smb.md`), not a Micro-specific reduction.
+  (see `systems/dashboard_smb_system.md`), not a Micro-specific reduction.
 
 ### Exact data sources
 `app.form_submissions` (lead inbox, CSV export) — no live Supabase wiring yet, fixture/mock rows only.
@@ -68,7 +68,7 @@ Same component tree, same `customer-dashboard.mjs`/`tier-features.mjs` functions
 not a separate build. The concrete deltas: Micro trades SMB's multi-image uploader for a single logo replace,
 trades full contact-info editing for one phone-number field, and has no notes, no pipeline (lead status is
 always `"new"` in the UI, uneditable), and no CRM config screen at all (Micro has no CRM integration — CRM
-sync is an SMB-tier capability per `systems/outbound.md`/`systems/admin-dashboard.md`). `editHours` and the
+sync is an SMB-tier capability per `systems/outbound_system.md`/`systems/admin_dashboard_system.md`). `editHours` and the
 five always-off flags (`editBrandColor`, `editFonts`, `customCss`, `multiUser`, `apiAccess`) are identical
 between tiers.
 
