@@ -44,6 +44,7 @@ from enum import Enum
 
 from .dunning.mocks import SendGridDunningMock, StripeChargeMock
 from .dunning.state_machine import DunningAccount, State, TylerNotification, advance, record_payment, start_delinquency
+from .fulfillment import FulfillmentEvent, build_fulfillment_event
 from .mocks import WebhookSignatureMock
 from .prices import PRICE_CATALOG
 
@@ -101,6 +102,7 @@ class WebhookResult:
     customer_id: str | None
     action: str
     notifications: list = field(default_factory=list)
+    fulfillment_event: FulfillmentEvent | None = None
 
 
 def verify_and_parse(payload: dict, sig_header: str, verifier: WebhookSignatureMock) -> dict:
@@ -124,11 +126,22 @@ def handle_event(
     dunning_accounts: dict[str, DunningAccount],
     sendgrid: SendGridDunningMock,
     today: date,
+    fulfilled_customers: set[str] | None = None,
 ) -> WebhookResult:
     """Dispatch one already-verified Stripe event. `subscriptions` and
     `dunning_accounts` are both keyed by `customer_id` and mutated in place — callers
     (an eval, or eventually a real route reading/writing Supabase rows) own their
     lifecycle across calls, this function does not create its own storage.
+
+    `fulfilled_customers` (same "caller owns the storage" pattern as the two dicts
+    above) tracks which customers already have a live site. When a customer's
+    payment succeeds for the first time — the signal that triggers
+    "payment -> live site" (BUILD_TASKS.md §5) — this function builds a
+    `FulfillmentEvent` (see `billing/fulfillment.py`), returns it on the result, and
+    adds the customer to the set so a renewal's `invoice.payment_succeeded` (or a
+    dunning recovery) never re-triggers a second deploy. Pass `None` (the default) to
+    skip fulfillment entirely, e.g. for callers that only care about dunning/billing
+    state.
     """
     event_type = event.get("type")
     if event_type not in SUPPORTED_EVENT_TYPES:
@@ -137,6 +150,7 @@ def handle_event(
     obj = event["data"]["object"]
     customer_id = obj.get("customer")
     notifications: list[TylerNotification] = []
+    fulfillment_event: FulfillmentEvent | None = None
 
     if event_type == "customer.subscription.created":
         price_id = obj["items"]["data"][0]["price"]["id"]
@@ -229,6 +243,18 @@ def handle_event(
             sub.payment_status = PaymentStatus.ACTIVE
             action = "payment succeeded — no dunning episode in progress"
 
+        if fulfilled_customers is not None and customer_id not in fulfilled_customers:
+            # First successful payment this handler has seen for this customer ->
+            # the trigger for "payment succeeded -> deploy the live site"
+            # (BUILD_TASKS.md §5). A renewal's payment_succeeded, or a dunning
+            # recovery's (handled just above), never lands here twice because the
+            # customer is added to the set right after.
+            fulfillment_event = build_fulfillment_event(
+                customer_id=customer_id, stripe_event_id=event.get("id", ""), subscription=sub, on=today,
+            )
+            fulfilled_customers.add(customer_id)
+            action += " — fulfillment requested"
+
     else:  # pragma: no cover — guarded by SUPPORTED_EVENT_TYPES above
         raise WebhookHandlingError(f"unhandled event type: {event_type!r}")
 
@@ -238,4 +264,5 @@ def handle_event(
         customer_id=customer_id,
         action=action,
         notifications=notifications,
+        fulfillment_event=fulfillment_event,
     )

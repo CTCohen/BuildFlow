@@ -24,6 +24,51 @@ Run everything: `python3 -m billing.run_evals` (stdlib only, no keys, no network
 | 5 | Back-payment calculation agent logic (Section 6 "Back-Payment Calculation") | **Out of scope**, not built | see assumption 5 below |
 | 6 | Stripe products/prices catalog: Micro + SMB, monthly + annual, versioned, `launch_cohort` | Done: 10/10 | `billing/prices.py`, `billing/evals/test_prices.py` |
 | 7 | Webhook handler: `invoice.payment_{succeeded,failed}`, `customer.subscription.{created,updated,deleted}`, wired to dunning on the 3rd failed retry | Done: 12/12 | `billing/webhooks.py`, `billing/mocks.py`, `billing/evals/test_webhooks.py` |
+| 8 | Payment → live site fulfillment: wire `invoice.payment_succeeded` to `platform/hosting/`'s deploy pipeline | Done: 49/49 billing evals (7 new) + 5 cross-language integration tests | `billing/fulfillment.py`, `billing/fulfillment_cli.py`, `billing/evals/test_fulfillment.py`, `platform/hosting/fulfillment.mjs`, `platform/hosting/fulfillment.test.mjs` — see detail below |
+
+## Task 8 detail (added 2026-09-22)
+
+**The problem:** billing (Python) and hosting (`platform/hosting/`, Node) are different runtimes with no
+shared process, and no existing cross-language RPC pattern exists in this repo — checked `platform/CONTRACT.md`
+and `platform/service/` first, per the task instructions. `platform/service/server.mjs` is a bare health/ready
+probe, not a bridge. The one pattern that **does** already exist for exactly this hand-off is
+`platform/CONTRACT.md`'s `admin.events` table ("idempotent event log + DLQ"): `event_id`, `stream`, `source`,
+`recipient`, `event_type`, `payload jsonb`, `status`, `attempts`, `created_at`. That table has no live database
+yet (gate G3), but its shape is the contract every lane already codes against.
+
+**What was built, following that shape rather than inventing a new one:**
+- `billing/fulfillment.py` — `FulfillmentEvent` dataclass mirroring an `admin.events` row exactly;
+  `build_fulfillment_event()` builds one from a `Subscription`; `write_events_ndjson()`/`read_events_ndjson()`
+  are the concrete stand-in transport (newline-delimited JSON, append-only) for the eventual Postgres table —
+  going live later is a transport swap, not a schema or logic change.
+- `billing/webhooks.py::handle_event()` gained an optional `fulfilled_customers: set[str]` param (same
+  caller-owns-the-storage pattern as its existing `subscriptions`/`dunning_accounts` dicts). On
+  `invoice.payment_succeeded` for a customer not yet in that set, it builds a `FulfillmentEvent`, returns it on
+  `WebhookResult.fulfillment_event`, and marks the customer fulfilled — so a renewal payment or a dunning
+  recovery never re-triggers a second deploy. Passing `None` (the default) skips fulfillment entirely; every
+  pre-existing call site and all 42 prior webhook/dunning/price evals were unaffected (still 42/42, now 49/49
+  with the 7 new fulfillment evals in `billing/evals/test_fulfillment.py`).
+- `billing/fulfillment_cli.py` — `python3 -m billing.fulfillment_cli <queue-path> [customer_id]` runs a real
+  `subscription.created` + `invoice.payment_succeeded` sequence through the real `handle_event()` and writes
+  the resulting event to the ndjson queue. This is what the Node-side test spawns as a real subprocess.
+- `platform/hosting/fulfillment.mjs` — `readFulfillmentQueue()` parses that ndjson format independently (not a
+  shared parser — proving the format itself is the contract); `consumeFulfillmentEvent()` validates the event,
+  runs a caller-supplied `buildFn` (design generation is out of this task's scope — stays inside
+  `billing/`+`platform/hosting/`), and calls the existing `runDeployPipeline()` from `pipeline.mjs` unchanged.
+- `platform/hosting/fulfillment.test.mjs` — the proof this is a real connection, not two mocks asserted
+  separately: spawns `python3 -m billing.fulfillment_cli` as a real subprocess, reads its real ndjson output,
+  and drives it through `consumeFulfillmentEvent` → `runDeployPipeline` (mocked Cloudflare adapter only, same
+  mocking level as `pipeline.test.mjs`). 5/5 pass, including a **timing assertion**: billing dispatch measured
+  at ~15-50ms (budget 2s) plus the hosting pipeline's own `withinTarget` check (pipeline budget 37s per
+  `pipeline.mjs`'s existing `PIPELINE_TARGET_MS` comment) together stay inside SPEC-03's documented "~60 seconds
+  end to end" (`platform/SPEC-03-hosting-infrastructure.md` line 99) — full chain measured well under 1s on
+  mocks, nowhere near either budget.
+- Full suites re-run clean after the change: `python3 -m billing.run_evals` → 49/49;
+  `node --test platform/hosting/*.test.mjs` → 36/36 (31 pre-existing + 5 new); `python3 governance/enforce.py
+  --lint` → 0 stale-term hits.
+
+**Scope discipline:** touched only `billing/` and `platform/hosting/`, per the task's constraint —
+`systems/`, `docs/`, `website/`, `legal/`, `knowledge/`, `crm/`, `platform/dashboards/` untouched.
 
 ## Task 6/7 detail (added 2026-09-22)
 

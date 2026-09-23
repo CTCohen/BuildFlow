@@ -6,13 +6,13 @@ import sys
 import unittest
 
 from .dunning.evals import test_state_machine
-from .evals import test_prices, test_webhooks
+from .evals import test_fulfillment, test_prices, test_webhooks
 
 
 def main() -> int:
     suite = unittest.TestSuite()
     loader = unittest.defaultTestLoader
-    modules = [test_prices, test_webhooks, test_state_machine]
+    modules = [test_prices, test_webhooks, test_state_machine, test_fulfillment]
     for m in modules:
         suite.addTests(loader.loadTestsFromModule(m))
     res = unittest.TextTestRunner(verbosity=0).run(suite)

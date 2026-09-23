@@ -4,7 +4,7 @@ purpose: The single source of truth for what is done, in progress, and open acro
 status: active
 owner: c.t.cohen
 updated: '2026-09-22'
-version: 1.5.2
+version: 1.5.3
 tier_scope: all
 phase: phase_1
 ---
@@ -145,7 +145,7 @@ significant time or new commits have passed.
 | G1 design engine | Generated site for a vertical/tier + build-time numbers vs 10s target | ✔ done | 67/67 evals passed, run live by the audit; `agents/design/BENCHMARKS.md` shows ~1.22s/site build vs 10s target (M1, Node 22.23.1) |
 | G2 lead pipeline | Scores match spec thresholds; send dates correct; unsubscribe test passes | ✔ done (on mocks) | 99/99 evals passed, run live 2026-09-21 (was 89/89; +8 adapter, +2 sender evals in `ed9f4e4`). Contract adapter now exists (`agents/lead/adapter.py`) but nothing calls a real DB client yet — still in-memory/plain-dict at runtime, self-disclosed in `agents/lead/TASKS.md` |
 | G3 data flow | Scored lead + demo appear as rows in the database | ☐ not started (needs real Supabase, Phase 2) |
-| G4 payment to live | Test-mode payment → live site <60s | ☐ not started (Track F not begun) |
+| G4 payment to live | Test-mode payment → live site <60s | ◐ built and tested on mocks 2026-09-22 (billing webhook → hosting pipeline wired, 5/5 cross-language integration tests, full chain well under the 60s target) — real Stripe/Cloudflare accounts still needed for a true live-mode proof. See `operations/BUILD_TASKS.md` §5, `billing/TASKS.md` Task 8. |
 | G5 demo | Demo link showing site + tier sandbox dashboard | ☐ not started (Track H not begun) |
 | G6 end to end | Full funnel dry run | ☐ not started |
 | G7 legal | Counsel sign-off on Terms/Privacy | ☐ not started (needs T1 lawyer) |
@@ -160,7 +160,7 @@ significant time or new commits have passed.
 | C Lead | lane/lead | ~/BuildFlow-lanes/lead | merged | Verified: 99/99 evals pass live. `adapter.py` maps this lane's plain-dict leads to `platform/CONTRACT.md` row shapes (D29-enforced). Still in-memory only, no DB client wired (no service role key yet); no real send (by design). | **Yes** — merged `2a37d0c`, pushed |
 | D Content | lane/content | ~/BuildFlow-lanes/content | merged | Validator passed 52/52, 0 stubs/dangling in graph. Fact-density content added for AI SEO Layer 1. | **Yes** — merged, pushed |
 | E Public | — | not started | 0 | Not started (planned W2) | — |
-| F Billing | — | not started | 0 | Not started (planned W3, needs A+Stripe test) | — |
+| F Billing | — | not started | 0 | Webhooks/dunning/prices done on mocks (see G4 above for the fulfillment wiring); no real Stripe account yet | — |
 | G CRM | — | not started | 0 | Not started (planned W3, needs A+HubSpot app) | — |
 | H Dashboards | — | not started | 0 | Not started (planned W4, needs A+B) | — |
 | I Integration/QA | this session | main | — | Ongoing (this file + audits) | — |

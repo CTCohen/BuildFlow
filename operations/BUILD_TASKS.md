@@ -151,7 +151,27 @@ Blocked-by tags: **[none]** buildable now · **[decision: Dxx]** needs a Tyler r
   stub. 12/12 evals pass (`billing/evals/test_webhooks.py`); full billing suite 42/42
   (`python3 -m billing.run_evals`). Real Stripe webhook endpoint/secret still needed — see TYLER_QUEUE.md.
 - [x] Dunning state machine (tiers 1-3 automated) [none, buildable on mocks] — done 2026-09-21: `billing/dunning/state_machine.py` (+ `mocks.py` for Stripe/SendGrid), 20/20 evals pass live (`python3 -m billing.dunning.run_evals`). Tier 4-5 explicitly out of scope per DECISIONS.md #14. Assumptions and what's left: `billing/TASKS.md`.
-- [ ] Payment → live site fulfillment <60s [depends: Cloudflare hosting §2, Stripe §5]
+- [x] Payment → live site fulfillment <60s — done 2026-09-22, built and tested end to end on mocks (real
+  Stripe/Cloudflare accounts still needed for the two external calls; the connection between billing and
+  hosting is real, tested code). Billing (Python) and hosting (`platform/hosting/`, Node) share no process, so
+  the hand-off reuses `platform/CONTRACT.md`'s existing `admin.events` shape ("idempotent event log", not a new
+  pattern) rather than inventing glue code: `billing/webhooks.py::handle_event()`'s `invoice.payment_succeeded`
+  path now builds a `FulfillmentEvent` (`billing/fulfillment.py`) the first time a customer's payment succeeds
+  (tracked via a caller-owned `fulfilled_customers` set, same pattern as its existing subscription/dunning
+  dicts — a renewal or dunning-recovery payment never re-triggers a second deploy) and writes it to an ndjson
+  queue (`billing/fulfillment_cli.py` for the real Stripe-event → event-file path). `platform/hosting/
+  fulfillment.mjs`'s `readFulfillmentQueue()`/`consumeFulfillmentEvent()` reads that queue independently
+  (proving the ndjson *format* is the contract, not a shared parser) and drives the existing
+  `pipeline.mjs::runDeployPipeline()` unchanged. Proof this is a real connection, not two mocks asserted
+  separately: `platform/hosting/fulfillment.test.mjs` spawns `python3 -m billing.fulfillment_cli` as a real
+  subprocess, reads its real output, and feeds it through the real Node pipeline — 5/5 pass, including a timing
+  assertion that the full chain (billing dispatch + hosting pipeline) stays inside SPEC-03's ~60s target
+  (`platform/SPEC-03-hosting-infrastructure.md` line 99; pipeline's own budget is 37s per `pipeline.mjs`'s
+  `PIPELINE_TARGET_MS`, billing dispatch budgeted 2s, full chain measured well under 1s on mocks). Full suites
+  re-run clean: `python3 -m billing.run_evals` → 49/49 (was 42/42, +7 new fulfillment evals, all prior tests
+  unaffected); `node --test platform/hosting/*.test.mjs` → 36/36 (was 31/31, +5 new); `python3
+  governance/enforce.py --lint` → 0 stale-term hits. Scope: touched only `billing/` and `platform/hosting/`,
+  per this task's constraint. Detail: `billing/TASKS.md` Task 8.
 - [ ] Live Stripe switch [decision: legal sign-off (G7) required first — do not do before then]
 
 ## 6. CRM (Track G — mocked build done, real account blocked)
