@@ -78,8 +78,69 @@ wired to a live database** — no Supabase service-role key yet (gate G3) — lo
 ## Possible future specs (not built, not committed to)
 - None beyond what's already tracked as specified-not-built above
 
+## Proposed MVP spec (2026-09-22, needs Tyler approval)
+
+This section is a **proposal**, not a ruling — the SMB half of the same pass done in
+`systems/dashboard_micro_system.md`'s "Proposed MVP spec" section (read that section for the lead-inbox field
+list itself, shared verbatim between tiers; not repeated here to avoid drift).
+
+### Exact SMB feature set: Micro + what, and why each addition earns its place
+SMB is Micro's full feature list (lead inbox with the two proposed new fields, CSV export, email alerts, logo/
+phone/hours edits) **plus**, for a 3-20 person business where more than one person touches leads:
+1. **Notes per lead** (built: `setSubmissionNotes`) — earns its place because a 3-20 person shop has more than
+   one person who might answer a call; a note ("customer wants a callback Thursday") is how that information
+   survives a shift change. Micro (one person) doesn't need to write a note to themselves.
+2. **Simple pipeline: new / contacted / converted** (built: `buildPipeline`, `moveSubmissionStage`) — earns its
+   place for the same reason: a team needs to know at a glance which leads are still unworked versus already
+   handled, across people. A solo operator holds that state in their head; a team cannot.
+3. **CRM config view** (built: `buildCrmConfigView`, read-only connection health) — earns its place because SMB
+   is the tier `systems/outbound_system.md`/`systems/admin_dashboard_system.md` already gate CRM sync to; a
+   3-20 person business is more likely to already run a CRM (Jobber, ServiceTitan, HubSpot) that leads should
+   flow into automatically, where a Micro solo operator is more likely to just take the call.
+4. **Multi-image uploads** (built: `imageUploads` → `{mode: "multi", targets: ["logo","hero","services","team",
+   "testimonials"], maxFiles: 20}`) — earns its place because a larger business has more to show (team photos,
+   completed-job photos, testimonials) and more people who might want to update the site without asking Tyler.
+5. **Edit service descriptions, full contact info, add testimonials** (all built, `SMB_FEATURES`) — same
+   reasoning as #4: more content, more contributors, more reason for direct self-service instead of a single
+   owner's short list of edits.
+6. **Proposed new, not in current code:** a simple **lead volume view** — count of leads this week / this
+   month, no chart library needed at MVP, just the three numbers pulled from `form_submissions` grouped by
+   `submitted_at`. This is the one item flagged as missing in "Specified, not yet built" below
+   ("Real-time lead count / sources / 3-month trend analytics view") — proposing the MVP cut of it here:
+   **counts only, no trend chart, no source breakdown** at first ship, since a chart is a UI/analytics build
+   this logic layer doesn't have yet and a bare count already answers the SMB owner's real question
+   ("is this working").
+
+Everything else stays off for SMB too, exactly as already specified: `editBrandColor`, `editFonts`, `customCss`,
+`multiUser`, `apiAccess` — none of these exist at launch for either tier, and this proposal does not add any of
+them (multi-user in particular deliberately stays out of MVP scope even for a 3-20 person business — one
+dashboard login per customer at launch, per `app.customer_users`' `role` column being `owner`-only per
+`platform/CONTRACT.md`).
+
+### What current code doesn't yet support (tagged for future build)
+- `service_requested` and `urgency_flag` on `form_submissions` — same gap as Micro, see that file.
+- The proposed lead-volume count view has no builder function in `customer-dashboard.mjs` yet — would be a new
+  `buildLeadVolumeSummary(formSubmissions)`-shaped function, pure aggregation over dates already in hand, no new
+  schema needed (unlike Micro's proposed `contacted_by_owner` field, this one needs no new column).
+- `pipeline_stage`/`notes` as real schema columns — already logged, restated below unchanged.
+
 ## Open questions
 - Whether `pipeline_stage`/`notes` land as new `form_submissions` columns or a side table — open in
   `operations/TYLER_QUEUE.md` §4, unresolved as of this pass.
 - Per Tyler's 2026-09-22 ruling: dashboards stay uniform within a tranche (not per-vertical) — same open door
   noted in `systems/dashboard_micro_system.md`, applies here too.
+
+### (a) Can all 40+ verticals use the identical dashboard?
+Same answer as `systems/dashboard_micro_system.md`'s corresponding section (not duplicated here to avoid drift):
+yes at current MVP scope, because the dashboard operates only on `app.form_submissions`/`app.crm_integrations`
+rows that carry no vertical-specific fields in `platform/CONTRACT.md`. The one nuance for SMB specifically: CRM
+config (`crmType` enum: `hubspot`, `jobber`, `servicetitan`, `housecall-pro`, `successware`) is already generic
+across verticals by construction — it's a property of which CRM the business runs, not which trade it is in, so
+it adds no vertical-coupling risk to the "one dashboard" design.
+
+### (b) Can all verticals share the same basic website feature set?
+Same answer as `systems/dashboard_micro_system.md`'s corresponding section: yes, structurally, confirmed by
+reading all four built `knowledge/pool/*.json` files (hvac, plumbing, electrical, roofing) and finding identical
+top-level and per-service structure across all of them — only copy content differs by vertical, not structure.
+Same caveat carried over: confirmed only for the 4 built residential-trade verticals, not yet tested against a
+structurally different category (e.g. subscription/monitoring services) outside that set.
